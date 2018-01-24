@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+
+    <groups name="quiqqer/template-cologne" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER E-Commerce Cologne - Template]]></de>
+            <en><![CDATA[QUIQQER E-Commerce Cologne - Template]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+    </groups>
+
+
+    <groups name="quiqqer/template-cologne" datatype="php">
+
+        <locale name="template.login">
+            <de><![CDATA[Händler Login]]></de>
+            <en><![CDATA[Merchant Login]]></en>
+        </locale>
+        <locale name="template.loged.in">
+            <de><![CDATA[Angemeldet als: [username]]]></de>
+            <en><![CDATA[Loged in as: [username]]]></en>
+        </locale>
+    </groups>
+
+</locales>

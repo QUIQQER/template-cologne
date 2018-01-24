@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{$Project->getLang()}">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    {$Template->getHeader()}
+
+    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
+
+</head>
+<body class="page-{$Site->getId()} {$typeClass}">
+
+<header class="cologne-header-menu">
+    <div class="cologne-grid-container">
+        <a href="{url id=1}">
+            {image image=$Project->getMedia()->getLogoImage() class="logo"}
+        </a>
+
+        <a href="#login" class="login">
+            <span class="fa fa-spinner fa-spin"></span>
+            {if $User->getId()}
+            {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
+            {else}
+            {locale group="quiqqer/template-cologne" var="template.login"}
+            {/if}
+        </a>
+    </div>
+</header>
+
+
+<div class="cologne-header-menu cologne-bg-container">
+    <div class="cologne-grid-container">
+        {$Menu->create()}
+    </div>
+</div>
+
+
+<div class="cologne-breadcrumb">
+    <div class="cologne-grid-container">
+        {control control="\QUI\Controls\Breadcrumb"}
+    </div>
+</div>
+
+
+<main>
+    <div class="cologne-grid-container">
+        {$Template->getLayout()}
+    </div>
+</main>
+
+
+<footer>
+    <div class="cologne-grid-container">
+
+    </div>
+</footer>
+
+<script src="{$URL_TPL_DIR}bin/javascript/init.js"></script>
+</body>
+</html>
