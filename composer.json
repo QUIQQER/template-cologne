@@ -1,0 +1,24 @@
+{
+  "name": "quiqqer\/template-cologne",
+  "type": "quiqqer-template",
+  "description": "The QUIQQER Cologne E-Commerce Template",
+  "version": "dev-master",
+  "license": "GPLv3",
+  "authors": [
+    {
+      "name": "Henning Leutz",
+      "email": "support@pcsg.de",
+      "homepage": "http:\/\/www.pcsg.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "support@pcsg.de",
+    "url": "http:\/\/www.pcsg.de"
+  },
+  "require": {
+    "php": ">=5.3",
+    "quiqqer\/quiqqer": "1.*|dev-master|dev-dev",
+    "quiqqer\/erp": ">=1.*|dev-master|dev-dev"
+  }
+}
