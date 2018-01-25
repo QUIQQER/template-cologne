@@ -22,6 +22,10 @@ window.addEvent('domready', function () {
             Link = document.getElements('header .login'),
             Icon = Link.getElement('.fa');
 
+        window.addEvent('load', function () {
+            document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
+        });
+
         /**
          * Login
          */

@@ -7,11 +7,12 @@
     {$Template->getHeader()}
 
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
+    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/products.css"/>
 
 </head>
 <body class="page-{$Site->getId()} {$typeClass}">
 
-<header class="cologne-header-menu">
+<header class="cologne-header">
     <div class="cologne-grid-container">
         <a href="{url id=1}">
             {image image=$Project->getMedia()->getLogoImage() class="logo"}
@@ -35,24 +36,32 @@
     </div>
 </div>
 
-
+{if $Site->getId() !== 1}
 <div class="cologne-breadcrumb">
     <div class="cologne-grid-container">
         {control control="\QUI\Controls\Breadcrumb"}
     </div>
 </div>
+{/if}
 
-
-<main>
+<main class="cologne-footer">
     <div class="cologne-grid-container">
         {$Template->getLayout()}
     </div>
 </main>
 
 
-<footer>
-    <div class="cologne-grid-container">
-
+<footer class="cologne-footer">
+    <div class="cologne-footer-area cologne-bg-container">
+        <div class="cologne-grid-container">
+            FOOTER
+        </div>
+    </div>
+    <div class="cologne-footer-copyright">
+        <div class="cologne-grid-container">
+            Copyright {$smarty.now|date_format:"Y"}
+        </div>
+    </div>
     </div>
 </footer>
 

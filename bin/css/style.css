@@ -27,8 +27,11 @@ body {
     width: 100%;
 }
 
-main {
+main, footer {
+    clear: both;
+    float: left;
     position: relative;
+    width: 100%;
     z-index: 1;
 }
 
@@ -53,11 +56,31 @@ button:hover,
 
 .cologne-header-menu {
     float: left;
+    height: 40px;
+    overflow: hidden;
     width: 100%;
 }
 
 .quiqqer-menu-megaMenu-list-item-menu {
     background: #fff;
+}
+
+/** main / tpl body
+ ===================================== */
+
+.cologne-footer {
+    min-height: 400px; /* dev help @todo muss später raus */
+}
+
+/** footer
+ ===================================== */
+
+.cologne-footer .cologne-footer-area {
+    padding: 20px 0;
+}
+
+.cologne-footer .cologne-footer-copyright {
+    padding: 20px 0;
 }
 
 /** grid
