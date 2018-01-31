@@ -19,6 +19,7 @@
   "require": {
     "php": ">=5.3",
     "quiqqer\/quiqqer": "1.*|dev-master|dev-dev",
-    "quiqqer\/erp": "1.*|dev-master|dev-dev"
+    "quiqqer\/erp": "1.*|dev-master|dev-dev",
+    "quiqqer/frontend-users": "1.0|dev-master|dev-dev"
   }
 }
