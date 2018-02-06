@@ -40,6 +40,7 @@ button, .button {
     border: 0 solid transparent;
     color: #fff;
     cursor: pointer;
+    padding: 10px;
 }
 
 button:hover,
@@ -47,12 +48,40 @@ button:hover,
     background: #afafaf;
 }
 
+button:disabled,
+button:disabled:hover {
+    background: #DEDEDE;
+}
+
 .cologne-bg-container {
     background: #f8f8f8;
 }
 
-/** navigation menu
+/** header
  ===================================== */
+
+.cologne-header {
+    float: left;
+    height: 50px;
+    width: 100%;
+}
+
+.cologne-header .logo {
+    float: left;
+    height: 50px;
+}
+
+.cologne-header .login {
+    color: #333333;
+    float: left;
+    line-height: 50px;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.cologne-header .login:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
 
 .cologne-header-menu {
     float: left;
@@ -65,15 +94,31 @@ button:hover,
     background: #fff;
 }
 
+/** header basket
+ ===================================== */
+
+.cologne-header .quiqqer-order-basketButton {
+    background: transparent;
+    color: #333333;
+    float: left;
+    line-height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.cologne-header .quiqqer-order-basketButton:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
 /** main / tpl body
+ ===================================== */
+
+/** footer
  ===================================== */
 
 .cologne-footer {
     min-height: 400px; /* dev help @todo muss später raus */
 }
-
-/** footer
- ===================================== */
 
 .cologne-footer .cologne-footer-area {
     padding: 20px 0;

@@ -1,0 +1,23 @@
+
+.quiqqer-fupc-category-header {
+    line-height: 30px;
+}
+
+.quiqqer-fu-profile-categories-category-items {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.quiqqer-fupc-category-items-item {
+    clear: both;
+    color: #333;
+    float: left;
+    line-height: 40px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.quiqqer-fupc-category-items-item .fa {
+    line-height: 40px;
+}
