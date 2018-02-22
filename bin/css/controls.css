@@ -1,0 +1,41 @@
+/** sheets
+ ========================================== */
+
+.quiqqer-sheets-desktop .quiqqer-sheets-desktop-current,
+.quiqqer-sheets-desktop .quiqqer-sheets-sheet {
+    color: #666;
+    display: inline-block;
+    float: none;
+    margin: 0 1px;
+    padding: 0 10px;
+}
+
+.quiqqer-sheets-desktop .quiqqer-sheets-desktop-current,
+.quiqqer-sheets-desktop .quiqqer-sheets-desktop-current:hover {
+    color: #fff;
+    background: #666 !important;
+    border-color: #666 !important;
+}
+
+.quiqqer-sheets-desktop .quiqqer-sheets-first,
+.quiqqer-sheets-desktop .quiqqer-sheets-prev,
+.quiqqer-sheets-desktop .quiqqer-sheets-next,
+.quiqqer-sheets-desktop .quiqqer-sheets-last {
+    color: #666;
+    display: inline-block;
+    float: none;
+    margin: 0 1px;
+    padding: 0 10px;
+}
+
+.quiqqer-sheets-desktop a.quiqqer-sheets-sheet:hover,
+.quiqqer-sheets-desktop a.quiqqer-sheets-first:hover,
+.quiqqer-sheets-desktop a.quiqqer-sheets-prev:hover,
+.quiqqer-sheets-desktop a.quiqqer-sheets-next:hover,
+.quiqqer-sheets-desktop a.quiqqer-sheets-last:hover {
+    background: #ddd;
+}
+
+.quiqqer-sheets-desktop-disabled {
+    opacity: 0.5;
+}
