@@ -31,7 +31,7 @@ window.addEvent('domready', function () {
          */
         require([
             'controls/users/LoginWindow',
-            'package/quiqqer/intranet/bin/LogoutWindow'
+            'controls/users/LogoutWindow'
         ], function (LoginWindow, LogoutWindow) {
             Link.addEvents({
                 click: function (event) {
