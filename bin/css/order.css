@@ -1,6 +1,10 @@
 /** Order Process
  =================================================== */
 
+.cologne-main .message-error {
+    padding: 20px;
+}
+
 .quiqqer-order-basket-articles {
     width: 100%;
 }
