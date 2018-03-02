@@ -26,6 +26,10 @@
     line-height: 40px;
 }
 
+.quiqqer-frontendUsers-userdata-section {
+    max-width: 600px;
+}
+
 .quiqqer-frontend-users-address header,
 .quiqqer-frontendUsers-userdata-section header {
     padding: 20px 0;
@@ -42,4 +46,18 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
     width: 100%;
+}
+
+.quiqqer-frontendUsers-controls-profile-categoryContent [type="submit"] {
+    margin: 0 auto 20px;
+    max-width: 100%;
+    width: 200px;
+}
+
+.quiqqer-frontendUsers-userdata-invoiceaddress [type="submit"] {
+    width: 100px !important;
+}
+
+.quiqqer-frontend-users-address-list-entry-buttons button {
+    width: inherit !important;
 }
