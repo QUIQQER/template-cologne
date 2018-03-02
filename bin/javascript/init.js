@@ -83,8 +83,8 @@ window.addEvent('domready', function () {
         require([
             'package/quiqqer/order/bin/frontend/controls/basket/Button'
         ], function (Basket) {
-            var Header = document.getElement('header .cologne-grid-container');
-            new Basket().inject(Header);
+            var BasketPlaceholde = document.getElement('.cologne-header-control-basket');
+            new Basket().inject(BasketPlaceholde);
         });
     });
 

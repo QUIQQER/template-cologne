@@ -8,36 +8,75 @@
 
     {fontawesome}
 
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700" rel="stylesheet">
+
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/products.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/frontend-users.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/order.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/controls.css"/>
 
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">-->
+
+
 </head>
 <body class="page-{$Site->getId()} {$typeClass}">
 
-<header class="cologne-header">
-    <div class="cologne-grid-container">
-        <a href="{url id=1}">
+<div class="topbar cologne-row columns">
+    <div class="column topbar-contact">
+        <span class="topbar-contact-mail">
+            <span class="fa fa-envelope-o"></span>
+            <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
+        </span>
+        <span class="topbar-phone">
+            <span class="fa fa-phone"></span>
+            0202 2454545
+        </span>
+    </div>
+    <div class="column topbar-social">
+        <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
+        <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
+        <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+        <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+    </div>
+    <div class="column topbar-additional">
+        DE EN <span class="fa fa-angle-down"></span>
+    </div>
+</div>
+
+<header class="cologne-header columns">
+    <div class="column cologne-header-logo">
+        <a href="/" class="cologne-header-logo-link">
             {image image=$Project->getMedia()->getLogoImage() class="logo"}
         </a>
+    </div>
 
-        <a href="#login" class="login">
-            <span class="fa fa-spinner fa-spin"></span>
-            {if $User->getId()}
-            {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
-            {else}
-            {locale group="quiqqer/template-cologne" var="template.login"}
-            {/if}
-        </a>
+    <div class="column cologne-header-nav">
+        {$Menu->create()}
+    </div>
+
+    <div class="cologne-header-control">
+        <div class="column cologne-header-control-user">
+            <a href="#login" class="login btn btn-outline-primary">
+                <span class="fa fa-spinner fa-spin"></span>
+                {if $User->getId()}
+                    {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
+                {else}
+                    {locale group="quiqqer/template-cologne" var="template.login"}
+                {/if}
+            </a>
+        </div>
+        <div class="column cologne-header-control-basket">
+
+        </div>
+
     </div>
 </header>
 
 
 <div class="cologne-header-menu cologne-bg-container">
     <div class="cologne-grid-container">
-        {$Menu->create()}
+
     </div>
 </div>
 
