@@ -12,7 +12,7 @@ QUI\Utils\Site::setRecursivAttribute($Site, 'layout');
  */
 
 $Menu = new QUI\Menu\MegaMenu(array(
-    'showStart' => true,
+    'showStart' => false,
     'Project'   => $Site->getProject()
 ));
 
