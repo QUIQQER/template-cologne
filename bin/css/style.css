@@ -146,6 +146,12 @@ img {
 
 }
 
+/* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
+.cologne-row {
+    max-width: 1400px;
+    width: calc(100% - 20px)
+}
+
 .cologne-grid-container {
     margin-left: auto;
     margin-right: auto;
@@ -213,6 +219,13 @@ img {
 .cologne-header-logo-link img {
     max-height: 60px;
     min-width: 60px;
+}
+
+/** footer
+ ===================================== */
+
+.cologne-footer {
+    clear: both;
 }
 
 /* mega menu */
