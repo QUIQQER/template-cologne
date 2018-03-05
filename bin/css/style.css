@@ -147,9 +147,9 @@ img {
 }
 
 /* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
-.cologne-row {
+.cologne-main .column {
     max-width: 1400px;
-    width: calc(100% - 20px)
+    width: calc(100% - 20px);
 }
 
 .cologne-grid-container {
