@@ -146,15 +146,19 @@ img {
 
 }
 
-/* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
-.cologne-main .column {
-    max-width: 1400px;
-    width: calc(100% - 20px);
-}
-
 .cologne-grid-container {
     margin-left: auto;
     margin-right: auto;
+}
+
+/* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
+.cologne-main .column {
+    max-width: 1400px;
+}
+
+.cologne-grid-container {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /** topbar
