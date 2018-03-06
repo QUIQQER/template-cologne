@@ -24,7 +24,7 @@
             <en><![CDATA[Loged in as: [username]]]></en>
         </locale>
 
-        <locale name="template.topbar.content-left" html="true">
+        <locale name="template.topbar.content.left" html="true">
             <de><![CDATA[
                     <span class="topbar-contact-mail">
                         <span class="fa fa-envelope-o"></span>

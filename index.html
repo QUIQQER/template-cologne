@@ -26,9 +26,21 @@
 
 <div class="topbar cologne-row columns">
     <div class="column topbar-left">
-        {locale group="quiqqer/template-cologne" var="topbar.content.left"}
+        {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
     </div>
-    <div class="column topbar-additional">
+    <div class="column topbar-right">
+
+        <span class="column cologne-header-control-user">
+            <a href="#login" class="login btn btn-primary btn-outline">
+                <span class="fa fa-spinner fa-spin"></span>
+                {if $User->getId()}
+                {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
+                {else}
+                {locale group="quiqqer/template-cologne" var="template.login"}
+                {/if}
+            </a>
+        </span>
+
         DE EN <span class="fa fa-angle-down"></span>
     </div>
 </div>
@@ -45,16 +57,7 @@
     </div>
 
     <div class="cologne-header-control">
-        <div class="column cologne-header-control-user">
-            <a href="#login" class="login btn btn-primary btn-outline">
-                <span class="fa fa-spinner fa-spin"></span>
-                {if $User->getId()}
-                    {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
-                {else}
-                    {locale group="quiqqer/template-cologne" var="template.login"}
-                {/if}
-            </a>
-        </div>
+
         <div class="column cologne-header-control-basket">
 
         </div>

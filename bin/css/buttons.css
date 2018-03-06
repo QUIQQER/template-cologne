@@ -4,6 +4,7 @@ input[type="reset"],
 button.qui-button,
 button,
 a.qui-button,
+a.btn,
 .btn {
     display: inline-block;
     font-weight: 400;

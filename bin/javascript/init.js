@@ -19,7 +19,7 @@ window.addEvent('domready', function () {
         QUI.setAttribute('control-loader-color', '#999999');
 
         var Logo = document.getElement('header .logo'),
-            Link = document.getElements('header .login'),
+            Link = document.getElements('.topbar-right'),
             Icon = Link.getElement('.fa');
 
         window.addEvent('load', function () {
