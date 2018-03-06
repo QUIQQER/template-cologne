@@ -25,21 +25,8 @@
 <body class="page-{$Site->getId()} {$typeClass}">
 
 <div class="topbar cologne-row columns">
-    <div class="column topbar-contact">
-        <span class="topbar-contact-mail">
-            <span class="fa fa-envelope-o"></span>
-            <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
-        </span>
-        <span class="topbar-phone">
-            <span class="fa fa-phone"></span>
-            0202 2454545
-        </span>
-    </div>
-    <div class="column topbar-social">
-        <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
-        <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
-        <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
-        <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+    <div class="column topbar-left">
+        {locale group="quiqqer/template-cologne" var="topbar.content.left"}
     </div>
     <div class="column topbar-additional">
         DE EN <span class="fa fa-angle-down"></span>
@@ -85,6 +72,7 @@
 {if $Site->getId() !== 1}
 <div class="cologne-breadcrumb">
     <div class="cologne-grid-container">
+        <h1 class="page-title">{$Site->getAttribute('title')}</h1>
         {control control="\QUI\Controls\Breadcrumb"}
     </div>
 </div>

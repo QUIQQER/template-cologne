@@ -16,13 +16,51 @@
     <groups name="quiqqer/template-cologne" datatype="php">
 
         <locale name="template.login">
-            <de><![CDATA[Händler Login]]></de>
-            <en><![CDATA[Merchant Login]]></en>
+            <de><![CDATA[Login]]></de>
+            <en><![CDATA[Login]]></en>
         </locale>
         <locale name="template.loged.in">
             <de><![CDATA[Angemeldet als: [username]]]></de>
             <en><![CDATA[Loged in as: [username]]]></en>
         </locale>
+
+        <locale name="template.topbar.content-left" html="true">
+            <de><![CDATA[
+                    <span class="topbar-contact-mail">
+                        <span class="fa fa-envelope-o"></span>
+                        <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
+                    </span>
+
+                    <span class="topbar-phone">
+                        <span class="fa fa-phone"></span>
+                        0202 2454545
+                    </span>
+
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+                ]]>
+            </de>
+            <en><![CDATA[
+                    <span class="topbar-contact-mail">
+                        <span class="fa fa-envelope-o"></span>
+                        <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
+                    </span>
+
+                    <span class="topbar-phone">
+                        <span class="fa fa-phone"></span>
+                        0202 2454545
+                    </span>
+
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+                ]]>
+            </en>
+        </locale>
+
     </groups>
 
 </locales>
