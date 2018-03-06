@@ -225,6 +225,28 @@ img {
     min-width: 60px;
 }
 
+.cologne-breadcrumb {
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+    width: 100%;
+}
+
+/** main
+ ===================================== */
+
+/* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
+.cologne-main {
+    margin-top: 40px;
+}
+
+.content-headerpage-multible-left header:first-child h1,
+.content-headerpage-multible-left header:first-child h2,
+.content-headerpage-multible-left header:first-child h3,
+.content-headerpage-multible-left header:first-child h4 {
+    margin-top: 0;
+}
+
 /** footer
  ===================================== */
 

@@ -61,3 +61,12 @@
 .quiqqer-frontend-users-address-list-entry-buttons button {
     width: inherit !important;
 }
+
+.cologne-main .quiqqer-frontendUsers-userdata-address h2,
+.cologne-main .quiqqer-frontendUsers-userdata-invoiceaddress h2,
+.cologne-main .quiqqer-frontendUsers-userdata-invoiceaddress header,
+.cologne-main .quiqqer-frontendUsers-controls-profile-changepassword h2,
+.cologne-main .quiqqer-frontendUsers-controls-profile-deleteaccount h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
