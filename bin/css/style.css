@@ -56,57 +56,24 @@ small, .font_small {
     font-size: 0.75em;
 }
 
-a,
-.cologne-header-nav a:hover,
-.cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a {
-    color: #0da491;
+a {
     text-decoration: none;
-    background-color: transparent;
-}
-
-a.btn-primary {
-    color: #0da491;
+    color: #3986dd;
 }
 
 a:hover {
-    color: #0da491;
+    color: #3986dd;
 }
+
+.cologne-header-nav a:hover,
+.cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a {
+    color: #3986dd;
+    /*background-color: transparent;*/
+}
+
 
 img {
     max-width: 100%;
-}
-
-/** Button
- ===================================== */
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.btn-outline-primary {
-    /*color: #007bff;*/
-    background-color: transparent;
-    background-image: none;
-    border-color: inherit;
-}
-
-.btn-outline-primary:hover {
-    color: #fff;
-    background-color: #0da491;
-    border-color: #0da491;
 }
 
 /** helper
@@ -238,6 +205,7 @@ img {
 /* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
 .cologne-main {
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .content-headerpage-multible-left header:first-child h1,
@@ -254,10 +222,11 @@ img {
     clear: both;
 }
 
-/* mega menu */
+/** Mega Menu
+ ===================================== */
 
 .cologne-header-nav {
-    position: absolute;
+    /*position: absolute;*/
     height: 100%;
     right: 0;
     left: 0;

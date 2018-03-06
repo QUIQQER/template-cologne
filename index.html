@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700" rel="stylesheet">
 
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
+    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/buttons.css"/>
+    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/form.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/products.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/frontend-users.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/order.css"/>
@@ -57,7 +59,7 @@
 
     <div class="cologne-header-control">
         <div class="column cologne-header-control-user">
-            <a href="#login" class="login btn btn-outline-primary">
+            <a href="#login" class="login btn btn-primary btn-outline">
                 <span class="fa fa-spinner fa-spin"></span>
                 {if $User->getId()}
                     {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
