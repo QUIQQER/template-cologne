@@ -83,8 +83,26 @@ window.addEvent('domready', function () {
         require([
             'package/quiqqer/order/bin/frontend/controls/basket/Button'
         ], function (Basket) {
-            var BasketPlaceholde = document.getElement('.cologne-header-control-basket');
-            new Basket().inject(BasketPlaceholde);
+            new Basket({
+                styles: {
+                    width: 100
+                },
+                events: {
+                    onCreate: function (Basket) {
+                        var BasketNode = Basket.getElm();
+
+                        // beispiel
+                        BasketNode.set('html', 'huhu');
+                    },
+
+                    showBasketBegin: function (Basket, pos) {
+                        console.warn(pos);
+
+                        // beispiel
+                        pos.x = pos.x - 200;
+                    }
+                }
+            }).inject(document.getElement('.cologne-header-control-basket'));
         });
     });
 
