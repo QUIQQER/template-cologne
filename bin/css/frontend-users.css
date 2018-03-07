@@ -70,3 +70,7 @@
     margin-top: 0;
     padding-top: 0;
 }
+
+.cologne-main .quiqqer-order-customerData-edit-businessType [name="businessType"] {
+    width: 70%;
+}
