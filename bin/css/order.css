@@ -46,6 +46,14 @@
     text-align: right;
 }
 
+.type-quiqqer-order-types-orderingProcess .content-header {
+    display: none;
+}
+
+.quiqqer-order-ordering-buttons-backToShop {
+    margin-right: 10px;
+}
+
 /** article content
  =========================================== */
 
