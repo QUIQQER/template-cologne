@@ -341,3 +341,7 @@ img {
     position: relative;
     z-index: 2;
 }
+
+.cologne-header-control-basket {
+    width: 150px;
+}

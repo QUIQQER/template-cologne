@@ -46,6 +46,10 @@
     text-align: right;
 }
 
+.type-quiqqer-order-types-orderingProcess .content-header {
+    display: none;
+}
+
 /** article content
  =========================================== */
 
