@@ -643,16 +643,27 @@ button.btn-outline:disabled:focus,
 /* button sizes */
 /****************/
 
-.btn-small {
+.btn-small,
+input[type="submit"].btn-small,
+input[type="button"].btn-small,
+input[type="reset"].btn-small,
+.qui-button.btn-small {
     padding: .25rem .5rem;
     font-size: .875rem;
     line-height: 1.5;
     border-radius: .2rem;
+    height: auto;
 }
 
-.btn-large {
+.btn-large,
+input[type="submit"].btn-large,
+input[type="button"].btn-large,
+input[type="reset"].btn-large,
+.qui-button.btn-large {
     padding: .5rem 1rem;
     font-size: 1.25rem;
     line-height: 1.5;
     border-radius: .3rem;
+    height: auto;
+
 }
