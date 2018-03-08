@@ -667,3 +667,10 @@ input[type="reset"].btn-large,
     height: auto;
 
 }
+
+/****************************/
+/* template specific button */
+/****************************/
+.tpl-btn {
+
+}

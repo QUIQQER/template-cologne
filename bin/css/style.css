@@ -347,5 +347,43 @@ img {
 }
 
 .cologne-header-control-basket {
-    width: 150px;
+    width: 200px;
+}
+
+.tpl-btn.quiqqer-order-basketButton {
+    border: 1px solid #ddd;
+    color: #616a76;
+    background: none;
+    padding: 10px 20px;
+}
+
+.tpl-btn.quiqqer-order-basketButton:hover,
+.tpl-btn.quiqqer-order-basketButton:focus,
+.tpl-btn.quiqqer-order-basketButton:active {
+    background: #f5f5f5;
+}
+
+.quiqqer-order-basketButton-icon-custom {
+    margin-right: 10px;
+}
+
+.quiqqer-order-basketButton-batch-custom {
+    margin-right: 10px;
+}
+
+.quiqqer-order-basketButton-batch.quiqqer-order-basketButton-batch-custom {
+    position: initial;
+    color: inherit;
+    background: none;
+    min-width: 2em;
+    display: inline-block;
+}
+
+.quiqqer-order-basket-sum-custom {
+    padding-left: 10px;
+    border-left: 1px solid #ddd;
+}
+
+.quiqqer-order-basket-small-container {
+    width: 260px;
 }

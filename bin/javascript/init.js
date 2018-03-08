@@ -85,21 +85,50 @@ window.addEvent('domready', function () {
         ], function (Basket) {
             new Basket({
                 styles: {
-                    width: 100
+                    float   : 'right'
                 },
                 events: {
                     onCreate: function (Basket) {
                         var BasketNode = Basket.getElm();
 
-                        // beispiel
-                        BasketNode.set('html', 'huhu');
+
+                        // clear default content
+                        BasketNode.set('html', '');
+                        BasketNode.addClass('tpl-btn');
+
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basketButton-icon-custom',
+                            html   : '<span class="fa fa-shopping-basket"></span>'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basketButton-batch quiqqer-order-basketButton-batch-custom',
+                            html   : '0'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basket-sum-custom',
+                            html   : '0 €',
+                            styles : {}
+                        }).inject(BasketNode);
                     },
 
                     showBasketBegin: function (Basket, pos) {
-                        console.warn(pos);
+
+                        var winSize = window.getSize(),
+                            basketSize = Basket.getElm().getSize();
 
                         // beispiel
-                        pos.x = pos.x - 200;
+//                        pos.x = pos.x - 500;
+                        // muss noch besser gemacht werden
+                        pos.x = winSize.x - 260 - 20;
+                        pos.y = pos.y + 10;
+
+
+                        Basket.$BasketContainer.setStyles({
+                            border: '1px solid #ddd'
+                        });
                     }
                 }
             }).inject(document.getElement('.cologne-header-control-basket'));
