@@ -4,7 +4,6 @@ input[type="reset"],
 button.qui-button,
 button,
 a.qui-button,
-a.btn,
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -39,7 +38,7 @@ button.qui-button,
 button,
 a.qui-button,
 .btn-primary {
-    background: #3986dd;
+    background-color: #3986dd;
     border-color: #3986dd;
     color: #fff;
 }
@@ -436,4 +435,20 @@ button.btn-outline:focus,
 .btn-outline:active,
 .btn-outline:focus {
     color: #fff;
+}
+
+
+/**********************************/
+/* button disabled standard design*/
+/**********************************/
+input[type="submit"]:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+button.qui-button:disabled,
+button:disabled,
+a.qui-button.btn-disabled,
+a.btn.btn-disabled,
+.bt-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
