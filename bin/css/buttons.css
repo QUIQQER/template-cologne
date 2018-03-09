@@ -21,6 +21,7 @@ a.qui-button,
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity .15s ease-in-out;
     cursor: pointer;
+    text-decoration: none;
     font-family: 'Maven Pro', Verdana, sans-serif;
     -webkit-box-shadow: none; /* qui-button reset */
     -moz-box-shadow: none; /* qui-button reset */

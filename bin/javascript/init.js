@@ -122,7 +122,7 @@ window.addEvent('domready', function () {
                         // beispiel
 //                        pos.x = pos.x - 500;
                         // muss noch besser gemacht werden
-                        pos.x = winSize.x - 260 - 20;
+                        pos.x = winSize.x - 350 - 20;
                         pos.y = pos.y + 10;
 
 

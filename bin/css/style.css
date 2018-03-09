@@ -203,6 +203,7 @@ img {
 
 .page-title {
     font-size: 2em;
+    margin: 0;
 }
 
 .cologne-breadcrumb .cologne-grid-container {
@@ -379,7 +380,7 @@ img {
     display: inline-block;
 }
 
-.quiqqer-order-basket-sum-custom {
+.quiqqer-order-basketButton-sum {
     padding-left: 10px;
     border-left: 1px solid #ddd;
 }
