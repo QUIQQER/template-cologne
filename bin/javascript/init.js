@@ -85,7 +85,7 @@ window.addEvent('domready', function () {
         ], function (Basket) {
             new Basket({
                 styles: {
-                    float   : 'right'
+                    float: 'right'
                 },
                 events: {
                     onCreate: function (Basket) {
@@ -103,20 +103,20 @@ window.addEvent('domready', function () {
                         }).inject(BasketNode);
 
                         new Element('span', {
-                            'class': 'quiqqer-order-basketButton-batch quiqqer-order-basketButton-batch-custom',
+                            'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
                             html   : '0'
                         }).inject(BasketNode);
 
                         new Element('span', {
-                            'class': 'quiqqer-order-basket-sum-custom',
-                            html   : '0 €',
+                            'class': 'quiqqer-order-basketButton-sum',
+                            html   : '---',
                             styles : {}
                         }).inject(BasketNode);
                     },
 
                     showBasketBegin: function (Basket, pos) {
 
-                        var winSize = window.getSize(),
+                        var winSize    = window.getSize(),
                             basketSize = Basket.getElm().getSize();
 
                         // beispiel
