@@ -11,15 +11,15 @@ QUI\Utils\Site::setRecursivAttribute($Site, 'layout');
  * Header
  */
 
-$Menu = new QUI\Menu\MegaMenu(array(
+$Menu = new QUI\Menu\MegaMenu([
     'showStart' => false,
     'Project'   => $Site->getProject()
-));
+]);
 
-$typeClass = 'type-'.str_replace(array('/', ':'), '-', $Site->getAttribute('type'));
+$typeClass = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
 
 
-$Engine->assign(array(
+$Engine->assign([
     'typeClass' => $typeClass,
     'Menu'      => $Menu
-));
+]);

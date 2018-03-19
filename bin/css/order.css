@@ -33,6 +33,18 @@
     text-align: center;
 }
 
+.quiqqer-order-basket-end {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    clear: both;
+    float: left;
+    height: 100px;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
 .quiqqer-order-basket-articles-header-price,
 .quiqqer-order-basket-articles-unitPrice,
 .quiqqer-order-basket-articles-article-price,

@@ -19,7 +19,7 @@ Frontend-Users
 Products
 ------
 
-- [ ] Produkt Kategrie
+- [ ] Produkt Kategorie
 - [ ] Einzelnes Produkt
 
 
