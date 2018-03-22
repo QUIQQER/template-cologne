@@ -6,9 +6,9 @@
             <config>
                 <section name="templateCologne.settings">
 
-                    <conf name="basket">
+                    <conf name="miniBasket">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue></defaultvalue>
+                        <defaultvalue>none</defaultvalue>
                     </conf>
                 </section>
             </config>
@@ -24,9 +24,9 @@
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
 
-                        <!-- Background Color Switcher Prefix / Suffix -->
-                       <!-- <settings title="templateBusinessPro.settings"
-                                  name="templateBusinessPro.settings.bgColorSwitcher">
+                        <!-- Basket button behaviour -->
+                        <!--<settings title="templateCologne.settings"
+                                  name="templateCologne.settings.general">
                             <title>
                                 <locale group="quiqqer/template-businesspro"
                                         var="templateBusinessPro.settings.bgColorSwitcher.title"
@@ -76,8 +76,6 @@
             <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/buttons.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/form.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/editor/editor.css"/>
-
-
 
         </wysiwyg>
 
