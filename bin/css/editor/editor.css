@@ -1,0 +1,8 @@
+body {
+    background: #fff;
+    padding: 10px;
+}
+
+.content-message-information, .content-message-attention, .content-message-error, .content-message-success {
+    margin: 1em 0 !important;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <project>
+
+        <settings>
+            <config>
+                <section name="templateCologne.settings">
+
+                    <conf name="basket">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue></defaultvalue>
+                    </conf>
+                </section>
+            </config>
+
+            <window>
+                <categories>
+                    <category name="templateCologne">
+                        <text>
+                            <locale group="quiqqer/template-cologne"
+                                    var="templateCologne.settings.menu.title"
+                                    />
+                        </text>
+                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+
+                        <!-- Background Color Switcher Prefix / Suffix -->
+                       <!-- <settings title="templateBusinessPro.settings"
+                                  name="templateBusinessPro.settings.bgColorSwitcher">
+                            <title>
+                                <locale group="quiqqer/template-businesspro"
+                                        var="templateBusinessPro.settings.bgColorSwitcher.title"
+                                        />
+                            </title>
+
+                            &lt;!&ndash; Background Color Switcher Prefix &ndash;&gt;
+                            <select conf="templateBusinessPro.settings.bgColorSwitcherPrefix">
+                                <text>
+                                    <locale group="quiqqer/template-businesspro"
+                                            var="templateBusinessPro.settings.bgColorSwitcherPrefix.text"
+                                            />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-businesspro"
+                                            var="templateBusinessPro.settings.bgColorSwitcherPrefix.description"
+                                            />
+                                </description>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-businesspro"
+                                            var="templateBusinessPro.settings.bgColorSwitcher.hide"
+                                            />
+                                </option>
+                                <option value="display">
+                                    <locale group="quiqqer/template-businesspro"
+                                            var="templateBusinessPro.settings.bgColorSwitcher.display"
+                                            />
+                                </option>
+                            </select>
+
+                        </settings>-->
+
+
+
+
+                    </category>
+                </categories>
+
+            </window>
+        </settings>
+
+        <wysiwyg class="page-content">
+            <css src="//fonts.googleapis.com/css?family=Maven+Pro:400,500,700"/>
+            <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/style.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/buttons.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/form.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-cologne/bin/css/editor/editor.css"/>
+
+
+
+        </wysiwyg>
+
+    </project>
+</quiqqer>
