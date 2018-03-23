@@ -10,16 +10,15 @@ QUI\Utils\Site::setRecursivAttribute($Site, 'layout');
 /**
  * Header
  */
-
 $Menu = new QUI\Menu\MegaMenu([
     'showStart' => false,
     'Project'   => $Site->getProject()
 ]);
 
-$typeClass = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
-
+$typeClass = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
 
 $Engine->assign([
-    'typeClass' => $typeClass,
-    'Menu'      => $Menu
+    'BricksManager'   => QUI\Bricks\Manager::init(),
+    'typeClass'       => $typeClass,
+    'Menu'            => $Menu
 ]);

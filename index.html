@@ -21,7 +21,6 @@
 
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">-->
 
-
 </head>
 <body class="page-{$Site->getId()} {$typeClass}">
 
@@ -59,9 +58,7 @@
 
     <div class="cologne-header-control">
 
-        <div class="column cologne-header-control-basket">
-
-        </div>
+        <div class="column cologne-header-control-basket"></div>
 
     </div>
 </header>
@@ -73,6 +70,14 @@
     </div>
 </div>
 
+{assign var=header value=$BricksManager->getBricksByArea('header', $Site)}
+{foreach $header as $Brick}
+    <section>
+        {$Brick->create()}
+    </section>
+{/foreach}
+
+
 {if $Site->getId() !== 1}
 <div class="cologne-breadcrumb">
     <div class="cologne-grid-container">
@@ -81,6 +86,7 @@
     </div>
 </div>
 {/if}
+
 
 <main class="cologne-main">
     <div class="cologne-grid-container column">

@@ -169,6 +169,7 @@ img {
     display: flex;
     justify-content: space-between;
     position: relative;
+    z-index: 50;
 }
 
 .cologne-header-logo {

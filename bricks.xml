@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <bricks>
+
+        <!-- defined areas in the template -->
+        <templateAreas>
+            <!-- global areas -->
+
+            <areas>
+                <area name="header" inheritance="1" priority="1">
+                    <title>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.header.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.header.description"
+                                />
+                    </description>
+                </area>
+
+                <area name="headerSuffix" inheritance="1" priority="1">
+                    <title>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.headerSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.headerSuffix.description"
+                        />
+                    </description>
+                </area>
+
+                <area name="footerPrefix" inheritance="1" priority="5">
+                    <title>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.footerPrefix.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.footerPrefix.description"
+                                />
+                    </description>
+                </area>
+
+                <area name="footer" inheritance="1" priority="6">
+                    <title>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.footer.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/product-bricks"
+                                var="area.footer.description"
+                                />
+                    </description>
+                </area>
+            </areas>
+
+
+        </templateAreas>
+    </bricks>
+
+</quiqqer>

@@ -10,6 +10,42 @@
             <de><![CDATA[]]></de>
             <en><![CDATA[]]></en>
         </locale>
+
+        <!-- areas -->
+        <locale name="area.header.title">
+            <de><![CDATA[Kopfbereich (Header)]]></de>
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="area.header.description">
+            <de><![CDATA[Bausteinzone des Headers]]></de>
+            <en><![CDATA[Brick area of the header]]></en>
+        </locale>
+        <locale name="area.headerSuffix.title">
+            <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+            <en><![CDATA[Brick area after the header]]></en>
+        </locale>
+
+        <locale name="area.footerPrefix.title">
+            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+            <en><![CDATA[Brick area before the footer]]></en>
+        </locale>
+        <locale name="area.footer.title">
+            <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
+            <en><![CDATA[Footer brick area]]></en>
+        </locale>
+        <locale name="area.footer.description">
+            <de><![CDATA[Bausteinzone des Footer]]></de>
+            <en><![CDATA[Brick area of the footer]]></en>
+        </locale>
+
     </groups>
 
 
