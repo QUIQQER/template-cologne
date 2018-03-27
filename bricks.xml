@@ -2,58 +2,69 @@
 <quiqqer>
     <bricks>
 
+        <!-- for all bricks -->
+        <brick control="*">
+            <settings>
+                <setting name="brickFullWidth" type="checkbox">
+                    <locale group="quiqqer/template-cologne"
+                            var="brickFullWidth"/>
+                </setting>
+            </settings>
+        </brick>
+
         <!-- defined areas in the template -->
         <templateAreas>
-            <!-- global areas -->
 
+            <!-- global areas -->
             <areas>
-                <area name="header" inheritance="1" priority="1">
-                    <title>
-                        <locale group="quiqqer/product-bricks"
-                                var="area.header.title"
-                                />
-                    </title>
-                    <description>
-                        <locale group="quiqqer/product-bricks"
-                                var="area.header.description"
-                                />
-                    </description>
-                </area>
 
                 <area name="headerSuffix" inheritance="1" priority="1">
                     <title>
-                        <locale group="quiqqer/product-bricks"
+                        <locale group="quiqqer/template-cologne"
                                 var="area.headerSuffix.title"
                         />
                     </title>
                     <description>
-                        <locale group="quiqqer/product-bricks"
+                        <locale group="quiqqer/template-cologne"
                                 var="area.headerSuffix.description"
                         />
                     </description>
                 </area>
 
-                <area name="footerPrefix" inheritance="1" priority="5">
+                <area name="contentPrefix" inheritance="1" priority="3">
                     <title>
-                        <locale group="quiqqer/product-bricks"
-                                var="area.footerPrefix.title"
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentPrefix.title"
                                 />
                     </title>
                     <description>
-                        <locale group="quiqqer/product-bricks"
-                                var="area.footerPrefix.description"
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentPrefix.description"
                                 />
+                    </description>
+                </area>
+
+                <area name="contentSuffix" inheritance="1" priority="4">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentSuffix.description"
+                        />
                     </description>
                 </area>
 
                 <area name="footer" inheritance="1" priority="6">
                     <title>
-                        <locale group="quiqqer/product-bricks"
+                        <locale group="quiqqer/template-cologne"
                                 var="area.footer.title"
                                 />
                     </title>
                     <description>
-                        <locale group="quiqqer/product-bricks"
+                        <locale group="quiqqer/template-cologne"
                                 var="area.footer.description"
                                 />
                     </description>

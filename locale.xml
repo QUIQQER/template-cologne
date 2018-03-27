@@ -11,15 +11,14 @@
             <en><![CDATA[]]></en>
         </locale>
 
+
+        <!-- global brick settings -->
+        <locale name="brickFullWidth">
+            <de><![CDATA[Baustein nimmt volle Breite]]></de>
+            <en><![CDATA[Brick takes full width]]></en>
+        </locale>
+
         <!-- areas -->
-        <locale name="area.header.title">
-            <de><![CDATA[Kopfbereich (Header)]]></de>
-            <en><![CDATA[Header]]></en>
-        </locale>
-        <locale name="area.header.description">
-            <de><![CDATA[Bausteinzone des Headers]]></de>
-            <en><![CDATA[Brick area of the header]]></en>
-        </locale>
         <locale name="area.headerSuffix.title">
             <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
             <en><![CDATA[Header suffix]]></en>
@@ -29,14 +28,24 @@
             <en><![CDATA[Brick area after the header]]></en>
         </locale>
 
-        <locale name="area.footerPrefix.title">
-            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
-            <en><![CDATA[Footer Prefix]]></en>
+        <locale name="area.contentPrefix.title">
+            <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
+            <en><![CDATA[Prefix area]]></en>
         </locale>
-        <locale name="area.footerPrefix.description">
-            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
-            <en><![CDATA[Brick area before the footer]]></en>
+        <locale name="area.contentPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+            <en><![CDATA[Brick area before the content]]></en>
         </locale>
+
+        <locale name="area.contentSuffix.title">
+            <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.contentSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+            <en><![CDATA[Brick area after the content]]></en>
+        </locale>
+
         <locale name="area.footer.title">
             <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
             <en><![CDATA[Footer brick area]]></en>
