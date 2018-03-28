@@ -73,10 +73,10 @@
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-    {assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'brickFullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
     <section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-container {$brickFullWidth}">
             {$Brick->create()}
@@ -96,16 +96,17 @@
 
 {assign var=contentPrefix value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {foreach $contentPrefix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-    {assign var=brickFullWidth value='brick-full-width'}
-{/if}
-<section class="template-content-prefix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container {$brickFullWidth}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'brickFullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
+    <section class="template-content-prefix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container {$brickFullWidth}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
+
 
 <main class="cologne-main">
     <div class="cologne-grid-container column">
@@ -115,15 +116,15 @@
 
 {assign var=contentSuffix value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
 {foreach $contentSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
-<section class="template-content-suffix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container {$brickFullWidth}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickFullWidth value=''}
+        {if $Brick->getSetting( 'brickFullWidth' )}
+    {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
+    <section class="template-content-suffix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container {$brickFullWidth}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
 
 

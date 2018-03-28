@@ -7,6 +7,18 @@
     -webkit-box-sizing: border-box;
 }
 
+.grid-children {
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.grid-children-container {
+    position: relative;
+    left: -20px;
+    width: calc(100% + 40px);
+}
+
 html {
     background: #ffffff;
     font-size: 14px;
@@ -132,6 +144,22 @@ img {
 /* divider */
 .section-divider {
     border-bottom: 1px solid #ddd;
+}
+
+/** brick header & content
+ ===================================== */
+
+.control-header {
+    margin-bottom: 3rem;
+}
+
+.control-header h1 {
+    font-size: 2.369em;
+    margin: 0;
+}
+
+.control-content {
+    margin: 0 0 3rem;
 }
 
 /** topbar
