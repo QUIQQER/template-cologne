@@ -24,13 +24,13 @@
 </head>
 <body class="page-{$Site->getId()} {$typeClass}">
 
-<div class="topbar cologne-row columns">
-    <div class="column topbar-left">
+<div class="topbar template-columns">
+    <div class="template-column topbar-left">
         {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
     </div>
-    <div class="column topbar-right">
+    <div class="template-column topbar-right">
 
-        <span class="column cologne-header-control-user">
+        <span class="template-column cologne-header-control-user">
             <a href="#login" class="login btn btn-primary btn-outline">
                 <span class="fa fa-spinner fa-spin"></span>
                 {if $User->getId()}
@@ -45,20 +45,20 @@
     </div>
 </div>
 
-<header class="cologne-header cologne-header-menu columns">
-    <div class="column cologne-header-logo">
+<header class="cologne-header cologne-header-menu template-columns">
+    <div class="template-column cologne-header-logo">
         <a href="/" class="cologne-header-logo-link">
             {image image=$Project->getMedia()->getLogoImage() class="logo"}
         </a>
     </div>
 
-    <div class="column cologne-header-nav">
+    <div class="template-column cologne-header-nav">
         {$Menu->create()}
     </div>
 
     <div class="cologne-header-control">
 
-        <div class="column cologne-header-control-basket"></div>
+        <div class="template-column cologne-header-control-basket"></div>
 
     </div>
 </header>
@@ -77,8 +77,13 @@
     {if $Brick->getSetting( 'brickFullWidth' )}
         {assign var=brickFullWidth value='brick-full-width'}
     {/if}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('noPadding')}
+        {assign var=brickNoPadding value="brick-no-padding"}
+    {/if}
     <section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container {$brickFullWidth}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
     </section>
@@ -100,8 +105,13 @@
     {if $Brick->getSetting( 'brickFullWidth' )}
         {assign var=brickFullWidth value='brick-full-width'}
     {/if}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('noPadding')}
+        {assign var=brickNoPadding value="brick-no-padding"}
+    {/if}
     <section class="template-content-prefix brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container {$brickFullWidth}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
     </section>
@@ -109,7 +119,7 @@
 
 
 <main class="cologne-main">
-    <div class="cologne-grid-container column">
+    <div class="cologne-grid-container template-column">
         {$Template->getLayout()}
     </div>
 </main>
@@ -120,8 +130,13 @@
         {if $Brick->getSetting( 'brickFullWidth' )}
     {assign var=brickFullWidth value='brick-full-width'}
     {/if}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('noPadding')}
+        {assign var=brickNoPadding value="brick-no-padding"}
+    {/if}
     <section class="template-content-suffix brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container {$brickFullWidth}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
     </section>

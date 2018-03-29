@@ -111,17 +111,23 @@ img {
 /** grid
  ===================================== */
 
-.columns {
+.template-columns {
     display: flex;
 }
 
-.column {
+.template-column {
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.cologne-row {
+.template-grid-row {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
 
+.template-grid-row.brick-no-padding {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .template-grid-container,
@@ -430,4 +436,18 @@ img {
 
 .quiqqer-order-basket-small-container {
     width: 260px;
+}
+
+/** Product Children Slider (horizontal)
+ ===================================== */
+.brick-full-width .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry:first-child {
+    margin: 0 5px 0 5px;
+}
+
+.brick-full-width .quiqqer-bricks-children-slider-child:first-child .quiqqer-products-control-product-childrenslider-entry:first-child {
+    margin-left: 20px;
+}
+
+.brick-full-width .quiqqer-bricks-children-slider-child:last-child .quiqqer-products-control-product-childrenslider-entry:first-child {
+    margin-right: 20px;
 }

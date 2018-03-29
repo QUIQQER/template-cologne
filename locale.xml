@@ -17,6 +17,11 @@
             <de><![CDATA[Baustein nimmt volle Breite]]></de>
             <en><![CDATA[Brick takes full width]]></en>
         </locale>
+        <locale name="noPadding">
+            <de><![CDATA[Kein Abstand von oben und unten]]></de>
+            <en><![CDATA[No padding top and bottom]]></en>
+        </locale>
+
 
         <!-- areas -->
         <locale name="area.headerSuffix.title">
