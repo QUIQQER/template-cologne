@@ -110,7 +110,7 @@
     {if $Brick->getSetting('noPadding')}
         {assign var=brickNoPadding value="brick-no-padding"}
     {/if}
-    <section class="template-content-prefix brick-id-{$Brick->getAttribute('id')}">
+    <section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
@@ -118,7 +118,7 @@
 {/foreach}
 
 
-<main class="cologne-main">
+<main class="cologne-main section-divider">
     <div class="cologne-grid-container template-column">
         {$Template->getLayout()}
     </div>
@@ -135,7 +135,7 @@
     {if $Brick->getSetting('noPadding')}
         {assign var=brickNoPadding value="brick-no-padding"}
     {/if}
-    <section class="template-content-suffix brick-id-{$Brick->getAttribute('id')}">
+    <section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>

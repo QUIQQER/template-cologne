@@ -147,9 +147,15 @@ img {
     padding-right: 0;
 }
 
+.brick-full-width .control-header,
+.brick-full-width .control-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 /* divider */
 .section-divider {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 
 /** brick header & content
