@@ -41,6 +41,8 @@
             </a>
         </span>
 
+        <span class="template-column cologne-header-control-currencies"></span>
+
         DE EN <span class="fa fa-angle-down"></span>
     </div>
 </div>
@@ -73,20 +75,20 @@
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'brickFullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
+{assign var=brickFullWidth value=''}
+{if $Brick->getSetting( 'brickFullWidth' )}
+{assign var=brickFullWidth value='brick-full-width'}
+{/if}
 
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('noPadding')}
-        {assign var=brickNoPadding value="brick-no-padding"}
-    {/if}
-    <section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
+{assign var=brickNoPadding value=""}
+{if $Brick->getSetting('noPadding')}
+{assign var=brickNoPadding value="brick-no-padding"}
+{/if}
+<section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
+    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+        {$Brick->create()}
+    </div>
+</section>
 {/foreach}
 
 
@@ -101,20 +103,20 @@
 
 {assign var=contentPrefix value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {foreach $contentPrefix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'brickFullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
+{assign var=brickFullWidth value=''}
+{if $Brick->getSetting( 'brickFullWidth' )}
+{assign var=brickFullWidth value='brick-full-width'}
+{/if}
 
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('noPadding')}
-        {assign var=brickNoPadding value="brick-no-padding"}
-    {/if}
-    <section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
+{assign var=brickNoPadding value=""}
+{if $Brick->getSetting('noPadding')}
+{assign var=brickNoPadding value="brick-no-padding"}
+{/if}
+<section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
+    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+        {$Brick->create()}
+    </div>
+</section>
 {/foreach}
 
 
@@ -126,20 +128,20 @@
 
 {assign var=contentSuffix value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
 {foreach $contentSuffix as $Brick}
-    {assign var=brickFullWidth value=''}
-        {if $Brick->getSetting( 'brickFullWidth' )}
-    {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
+{assign var=brickFullWidth value=''}
+{if $Brick->getSetting( 'brickFullWidth' )}
+{assign var=brickFullWidth value='brick-full-width'}
+{/if}
 
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('noPadding')}
-        {assign var=brickNoPadding value="brick-no-padding"}
-    {/if}
-    <section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
+{assign var=brickNoPadding value=""}
+{if $Brick->getSetting('noPadding')}
+{assign var=brickNoPadding value="brick-no-padding"}
+{/if}
+<section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
+    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+        {$Brick->create()}
+    </div>
+</section>
 {/foreach}
 
 
@@ -149,7 +151,7 @@
     <div class="template-grid-container cologne-bg-container">
         <div class="cologne-grid-container">
             {foreach from=$footer item=Brick}
-                {$Brick->create()}
+            {$Brick->create()}
             {/foreach}
         </div>
     </div>

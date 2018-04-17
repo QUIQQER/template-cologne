@@ -19,7 +19,7 @@ window.addEvent('domready', function () {
         QUI.setAttribute('control-loader-color', '#999999');
 
         var Logo = document.getElement('header .logo'),
-            Link = document.getElements('.topbar-right'),
+            Link = document.getElements('.cologne-header-control-user'),
             Icon = Link.getElement('.fa');
 
         window.addEvent('load', function () {
@@ -133,6 +133,13 @@ window.addEvent('domready', function () {
                 }
             }).inject(document.getElement('.cologne-header-control-basket'));
         });
-    });
 
+        /**
+         * Currencies
+         */
+
+        require(['package/quiqqer/currency/bin/controls/Switch'], function (Switch) {
+            new Switch().inject(document.getElement('.cologne-header-control-currencies'));
+        });
+    });
 });
