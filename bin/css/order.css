@@ -76,3 +76,50 @@
 .quiqqer-order-basket-articles-article-data ul {
     margin-left: 20px;
 }
+
+@media (max-width: 768px) {
+    .quiqqer-order-ordering header h1 {
+        font-size: 2em;
+    }
+
+    .quiqqer-order-basket-articles table,
+    .quiqqer-order-basket-articles tbody,
+    .quiqqer-order-basket-articles th,
+    .quiqqer-order-basket-articles td,
+    .quiqqer-order-basket-articles tr {
+        display: block;
+        overflow: hidden;
+    }
+
+    .quiqqer-order-basket-articles thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .quiqqer-order-basket-articles td:before {
+        content: attr(data-label);
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        text-align: left;
+        width: 100px;
+    }
+
+    .quiqqer-order-basket-articles td {
+        text-align: left;
+        padding-bottom: 5px;
+        padding-left: 100px;
+        position: relative;
+        width: initial;
+    }
+
+    .quiqqer-order-basket-articles-article-title {
+        display: block;
+        width: 100%;
+    }
+
+    .quiqqer-order-ordering-buttons {
+        margin-bottom: 10px;
+    }
+}
