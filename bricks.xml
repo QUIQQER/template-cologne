@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <bricks>
+
+        <!-- for all bricks -->
+        <brick control="*">
+            <settings>
+                <setting name="brickFullWidth" type="checkbox">
+                    <locale group="quiqqer/template-cologne"
+                            var="brickFullWidth"/>
+                </setting>
+                <setting name="noPadding" type="checkbox">
+                    <locale group="quiqqer/template-cologne"
+                            var="noPadding"/>
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- defined areas in the template -->
+        <templateAreas>
+
+            <!-- global areas -->
+            <areas>
+
+                <area name="headerSuffix" inheritance="1" priority="1">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.headerSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.headerSuffix.description"
+                        />
+                    </description>
+                </area>
+
+                <area name="contentPrefix" inheritance="1" priority="3">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentPrefix.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentPrefix.description"
+                                />
+                    </description>
+                </area>
+
+                <area name="contentSuffix" inheritance="1" priority="4">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.contentSuffix.description"
+                        />
+                    </description>
+                </area>
+
+                <area name="footer" inheritance="1" priority="6">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.footer.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.footer.description"
+                                />
+                    </description>
+                </area>
+            </areas>
+
+
+        </templateAreas>
+    </bricks>
+
+</quiqqer>

@@ -1,0 +1,90 @@
+<div class="quiqqer-order-basket-small-articles">
+    {assign var=pos value=1}
+    {foreach $products as $product}
+    <div class="quiqqer-order-basket-small-articles-article" data-pos="{$pos}">
+
+        <div class="quiqqer-order-basket-small-articles-article-image">
+            <img src="{$product.image}">
+        </div>
+
+        <div class="quiqqer-order-basket-small-articles-article-content">
+            <h2>{$product.title}</h2>
+            <div class="quiqqer-order-basket-small-articles-article-price-wrapper">
+                <span>{$product.quantity} x</span>
+
+                <span class="quiqqer-order-basket-small-articles-article-price">
+                    {$product.price}
+                </span>
+
+                <span class="quiqqer-order-basket-small-articles-article-price-sum">
+                    {$product.sum}
+                </span>
+            </div>
+
+            <span class="quiqqer-order-basket-small-articles-article-delete fa fa-fw fa-close"></span>
+        </div>
+
+    </div>
+    {assign var=pos value=$pos+1}
+    {/foreach}
+</div>
+
+<table class="quiqqer-order-basket-small-total">
+    <tr class="quiqqer-order-basket-small-total-subSum">
+        <td class="quiqqer-order-basket-small-total-firstCell">
+            {locale group="quiqqer/products" var="product.list.products.subtotal"}
+        </td>
+        <td class="quiqqer-order-basket-small-total-secondCell">
+            {$data.subSum}
+        </td>
+    </tr>
+
+    {if count($data.attributes)}
+    <tr>
+        <td colspan="2"><br/></td>
+    </tr>
+    {/if}
+
+    {foreach $data.attributes as $attribute}
+    <tr>
+        <td>
+            {$attribute.title} ({$attribute.valueText})
+        </td>
+        <td>
+            {$attribute.value}
+        </td>
+    </tr>
+    {/foreach}
+
+    {foreach $data.vat as $vat}
+    <tr>
+        <td>
+            {$vat.text}
+        </td>
+        <td>
+            {$vat.value}
+        </td>
+    </tr>
+    {/foreach}
+
+    {if count($data.attributes)}
+    <tr>
+        <td colspan="2"><br/></td>
+    </tr>
+    {/if}
+
+    <tr class="quiqqer-order-basket-small-total-sum">
+        <td>
+            {locale group="quiqqer/products" var="product.list.products.sumtotal"}
+        </td>
+        <td>
+            {$data.sum}
+        </td>
+    </tr>
+</table>
+
+<div class="quiqqer-order-basket-small-buttons">
+    <a href="{url site=$OrderProcess rewritten=true}" class="to-the-checkout btn btn-primary">
+        Zur Kasse
+    </a>
+</div>

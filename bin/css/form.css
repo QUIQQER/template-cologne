@@ -1,0 +1,106 @@
+select,
+input,
+input[type="text"],
+input[type="email"] {
+    background: #fff;
+    border: 1px solid #c9c8c5;
+    border-radius: 2px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+/** checkbox
+ ===================================== */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    outline: none;
+    padding: 9px;
+    position: relative;
+}
+
+input[type="checkbox"]:active,
+input[type="checkbox"]:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:checked:after {
+    color: #99a1a7;
+    content: '\2714';
+    font-size: 14px;
+    left: 4px;
+    position: absolute;
+    top: -10px;
+}
+
+@supports (-ms-ime-align:auto) {
+    input[type="checkbox"]:checked,
+    input[type="checkbox"]:checked:active {
+        border: none;
+        padding: 3px 2px 4px;
+    }
+}
+
+/** radio buttons
+ ===================================== */
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    border-radius: 50px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    outline: none;
+    padding: 9px;
+    position: relative;
+}
+
+input[type="radio"]:checked:after {
+    background: #99a1a7;
+    border-radius: 50px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    content: ' ';
+    font-size: 32px;
+    height: 12px;
+    left: 3px;
+    position: absolute;
+    text-shadow: none;
+    top: 3px;
+    width: 12px;
+}
+
+input[type="radio"]:checked {
+    background-color: #e9ecee;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1),
+    inset 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #99a1a7;
+}
+
+@supports (-ms-ime-align:auto) {
+    input[type="radio"] {
+        padding: 9px 9px 10px 10px;
+    }
+
+    input[type="radio"]:checked {
+        padding: 3px;
+        background: #e9ecee;
+    }
+}
+
+input[type="radio"]:active,
+input[type="radio"]:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}

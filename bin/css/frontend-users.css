@@ -1,0 +1,76 @@
+.quiqqer-frontendUsers-controls-profile-categoryContent h2 {
+    font-weight: normal;
+    line-height: 40px;
+}
+
+.quiqqer-fupc-category-header {
+    line-height: 30px;
+}
+
+.quiqqer-fu-profile-categories-category-items {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.quiqqer-fupc-category-items-item {
+    clear: both;
+    color: #333;
+    float: left;
+    line-height: 40px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.quiqqer-fupc-category-items-item .fa {
+    line-height: 40px;
+}
+
+.quiqqer-frontendUsers-userdata-section {
+    max-width: 600px;
+}
+
+.quiqqer-frontend-users-address header,
+.quiqqer-frontendUsers-userdata-section header {
+    padding: 20px 0;
+}
+
+.quiqqer-frontend-users-address header h2,
+.quiqqer-frontendUsers-userdata-section header h2 {
+    padding-bottom: 0;
+}
+
+.quiqqer-frontendUsers-userdata-invoiceaddress {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    float: left;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.quiqqer-frontendUsers-controls-profile-categoryContent [type="submit"] {
+    margin: 0 auto 20px;
+    max-width: 100%;
+    width: 200px;
+}
+
+.quiqqer-frontendUsers-userdata-invoiceaddress [type="submit"] {
+    width: 100px !important;
+}
+
+.quiqqer-frontend-users-address-list-entry-buttons button {
+    width: inherit !important;
+}
+
+.cologne-main .quiqqer-frontendUsers-userdata-address h2,
+.cologne-main .quiqqer-frontendUsers-userdata-invoiceaddress h2,
+.cologne-main .quiqqer-frontendUsers-userdata-invoiceaddress header,
+.cologne-main .quiqqer-frontendUsers-controls-profile-changepassword h2,
+.cologne-main .quiqqer-frontendUsers-controls-profile-deleteaccount h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.cologne-main .quiqqer-order-customerData-edit-businessType [name="businessType"] {
+    width: 70%;
+}

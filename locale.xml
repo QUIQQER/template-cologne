@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+
+    <groups name="quiqqer/template-cologne" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER E-Commerce Cologne - Template]]></de>
+            <en><![CDATA[QUIQQER E-Commerce Cologne - Template]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+
+
+        <!-- global brick settings -->
+        <locale name="brickFullWidth">
+            <de><![CDATA[Baustein nimmt volle Breite]]></de>
+            <en><![CDATA[Brick takes full width]]></en>
+        </locale>
+        <locale name="noPadding">
+            <de><![CDATA[Kein Abstand von oben und unten]]></de>
+            <en><![CDATA[No padding top and bottom]]></en>
+        </locale>
+
+
+        <!-- areas -->
+        <locale name="area.headerSuffix.title">
+            <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+            <en><![CDATA[Brick area after the header]]></en>
+        </locale>
+
+        <locale name="area.contentPrefix.title">
+            <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
+            <en><![CDATA[Prefix area]]></en>
+        </locale>
+        <locale name="area.contentPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+            <en><![CDATA[Brick area before the content]]></en>
+        </locale>
+
+        <locale name="area.contentSuffix.title">
+            <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.contentSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+            <en><![CDATA[Brick area after the content]]></en>
+        </locale>
+
+        <locale name="area.footer.title">
+            <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
+            <en><![CDATA[Footer brick area]]></en>
+        </locale>
+        <locale name="area.footer.description">
+            <de><![CDATA[Bausteinzone des Footer]]></de>
+            <en><![CDATA[Brick area of the footer]]></en>
+        </locale>
+
+    </groups>
+
+
+    <groups name="quiqqer/template-cologne" datatype="php">
+
+        <locale name="template.login">
+            <de><![CDATA[Login]]></de>
+            <en><![CDATA[Login]]></en>
+        </locale>
+        <locale name="template.loged.in">
+            <de><![CDATA[Angemeldet als: [username]]]></de>
+            <en><![CDATA[Loged in as: [username]]]></en>
+        </locale>
+
+        <locale name="template.topbar.content.left" html="true">
+            <de><![CDATA[
+                    <span class="topbar-contact-mail">
+                        <span class="fa fa-envelope-o"></span>
+                        <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
+                    </span>
+
+                    <span class="topbar-phone">
+                        <span class="fa fa-phone"></span>
+                        0202 2454545
+                    </span>
+
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+                ]]>
+            </de>
+            <en><![CDATA[
+                    <span class="topbar-contact-mail">
+                        <span class="fa fa-envelope-o"></span>
+                        <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
+                    </span>
+
+                    <span class="topbar-phone">
+                        <span class="fa fa-phone"></span>
+                        0202 2454545
+                    </span>
+
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+                ]]>
+            </en>
+        </locale>
+
+    </groups>
+
+</locales>

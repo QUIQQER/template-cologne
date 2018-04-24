@@ -1,0 +1,677 @@
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button.qui-button,
+button,
+a.qui-button,
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity .15s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Maven Pro', Verdana, sans-serif;
+    -webkit-box-shadow: none; /* qui-button reset */
+    -moz-box-shadow: none; /* qui-button reset */
+    box-shadow: none; /* qui-button reset */
+    float: none; /* qui-button reset */
+}
+
+/*****************************/
+/* button primary & standard */
+/*****************************/
+input[type="submit"],
+input[type="submit"]:disabled,
+input[type="submit"][disabled],
+input[type="button"],
+input[type="button"]:disabled,
+input[type="button"][disabled],
+input[type="reset"],
+input[type="reset"]:disabled,
+input[type="reset"][disabled],
+button.qui-button,
+button.qui-button:disabled,
+button.qui-button[disabled],
+button,
+button:disabled,
+button[disabled],
+a.qui-button,
+.btn-primary {
+    background-color: #3986dd;
+    border-color: #3986dd;
+    color: #fff;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+button.qui-button.btn-primary:hover,
+button.qui-button.btn-primary:active,
+button.qui-button.btn-primary:focus,
+button.qui-button[disabled]:hover,
+button.qui-button[disabled]:active,
+button.qui-button[disabled]:focus,
+button:hover,
+button:active,
+button:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background: #2976cd;
+    color: #fff;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-outline,
+input[type="button"].btn-outline,
+input[type="reset"].btn-outline,
+button.qui-button.btn-outline,
+button.btn-outline,
+.btn-primary.btn-outline,
+input[type="submit"].btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-outline:disabled:active,
+input[type="submit"].btn-outline:disabled:focus,
+input[type="button"].btn-outline:disabled:hover,
+input[type="button"].btn-outline:disabled:active,
+input[type="button"].btn-outline:disabled:focus,
+input[type="reset"].btn-outline:disabled:hover,
+input[type="reset"].btn-outline:disabled:active,
+input[type="reset"].btn-outline:disabled:focus,
+button.qui-button.btn-primary.btn-outline:disabled:hover,
+button.qui-button.btn-primary.btn-outline:disabled:active,
+button.qui-button.btn-primary.btn-outline:disabled:focus,
+button:disabled.btn-outline:hover,
+button:disabled.btn-outline:active,
+button:disabled.btn-outline:focus,
+.btn-primary.btn-disabled.btn-outline:hover,
+.btn-primary.btn-disabled.btn-outline:active,
+.btn-primary.btn-disabled.btn-outline:focus {
+    color: #3986dd;
+}
+
+/***************/
+/* button link */
+/***************/
+input[type="submit"].btn-link,
+input[type="button"].btn-link,
+input[type="reset"].btn-link,
+button.qui-button.btn-link,
+button.btn-link,
+.btn-link {
+    background: none;
+    border: none;
+    color: #3986dd;
+}
+
+input[type="submit"].btn-link:hover,
+input[type="submit"].btn-link:active,
+input[type="submit"].btn-link:focus,
+input[type="button"].btn-link:hover,
+input[type="button"].btn-link:active,
+input[type="button"].btn-link:focus,
+input[type="reset"].btn-link:hover,
+input[type="reset"].btn-link:active,
+input[type="reset"].btn-link:focus,
+button.qui-button.btn-link:hover,
+button.qui-button.btn-link:active,
+button.qui-button.btn-link:focus,
+.btn-link:hover,
+.btn-link:active,
+.btn-link:focus {
+    text-decoration: underline;
+}
+
+/********************/
+/* button secondary */
+/********************/
+input[type="submit"].btn-secondary,
+input[type="button"].btn-secondary,
+input[type="reset"].btn-secondary,
+button.qui-button.btn-secondary,
+button.btn-secondary,
+.btn-secondary {
+    background: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+input[type="submit"].btn-secondary:hover,
+input[type="submit"].btn-secondary:active,
+input[type="submit"].btn-secondary:focus,
+input[type="button"].btn-secondary:hover,
+input[type="button"].btn-secondary:active,
+input[type="button"].btn-secondary:focus,
+input[type="reset"].btn-secondary:hover,
+input[type="reset"].btn-secondary:active,
+input[type="reset"].btn-secondary:focus,
+button.qui-button.btn-secondary:hover,
+button.qui-button.btn-secondary:active,
+button.qui-button.btn-secondary:focus,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+    background: #5c656d;
+    color: #fff;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-secondary.btn-outline,
+input[type="button"].btn-secondary.btn-outline,
+input[type="reset"].btn-secondary.btn-outline,
+button.btn-secondary.qui-button.btn-outline,
+button.btn-secondary.btn-outline,
+.btn-secondary.btn-outline,
+input[type="submit"].btn-secondary.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-secondary.btn-outline:disabled:active,
+input[type="submit"].btn-secondary.btn-outline:disabled:focus,
+input[type="button"].btn-secondary.btn-outline:disabled:hover,
+input[type="button"].btn-secondary.btn-outline:disabled:active,
+input[type="button"].btn-secondary.btn-outline:disabled:focus,
+input[type="reset"].btn-secondary.btn-outline:disabled:hover,
+input[type="reset"].btn-secondary.btn-outline:disabled:active,
+input[type="reset"].btn-secondary.btn-outline:disabled:focus,
+button.qui-button.btn-secondary.btn-outline:disabled:hover,
+button.qui-button.btn-secondary.btn-outline:disabled:active,
+button.qui-button.btn-secondary.btn-outline:disabled:focus,
+button.btn-secondary.btn-outline:disabled:hover,
+button.btn-secondary.btn-outline:disabled:active,
+button.btn-secondary.btn-outline:disabled:focus,
+.btn-secondary.btn-outline.btn-disabled:hover,
+.btn-secondary.btn-outline.btn-disabled:active,
+.btn-secondary.btn-outline.btn-disabled:focus {
+    color: #6c757d;
+}
+
+/******************/
+/* button success */
+/******************/
+input[type="submit"].btn-success,
+input[type="button"].btn-success,
+input[type="reset"].btn-success,
+button.qui-button.btn-success,
+button.btn-success,
+.btn-success {
+    background: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+input[type="submit"].btn-success:hover,
+input[type="submit"].btn-success:active,
+input[type="submit"].btn-success:focus,
+input[type="button"].btn-success:hover,
+input[type="button"].btn-success:active,
+input[type="button"].btn-success:focus,
+input[type="reset"].btn-success:hover,
+input[type="reset"].btn-success:active,
+input[type="reset"].btn-success:focus,
+button.qui-button.btn-success:hover,
+button.qui-button.btn-success:active,
+button.qui-button.btn-success:focus,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus {
+    background: #189735;
+    color: #fff;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-success.btn-outline,
+input[type="button"].btn-success.btn-outline,
+input[type="reset"].btn-success.btn-outline,
+button.btn-success.qui-button.btn-outline,
+button.btn-success.btn-outline,
+.btn-success.btn-outline,
+input[type="submit"].btn-success.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-success.btn-outline:disabled:active,
+input[type="submit"].btn-success.btn-outline:disabled:focus,
+input[type="button"].btn-success.btn-outline:disabled:hover,
+input[type="button"].btn-success.btn-outline:disabled:active,
+input[type="button"].btn-success.btn-outline:disabled:focus,
+input[type="reset"].btn-success.btn-outline:disabled:hover,
+input[type="reset"].btn-success.btn-outline:disabled:active,
+input[type="reset"].btn-success.btn-outline:disabled:focus,
+button.qui-button.btn-success.btn-outline:disabled:hover,
+button.qui-button.btn-success.btn-outline:disabled:active,
+button.qui-button.btn-success.btn-outline:disabled:focus,
+button.btn-success.btn-outline:disabled:hover,
+button.btn-success.btn-outline:disabled:active,
+button.btn-success.btn-outline:disabled:focus,
+.btn-success.btn-outline.btn-disabled:hover,
+.btn-success.btn-outline.btn-disabled:active,
+.btn-success.btn-outline.btn-disabled:focus {
+    color: #28a745;
+}
+
+/*****************/
+/* button danger */
+/*****************/
+input[type="submit"].btn-danger,
+input[type="button"].btn-danger,
+input[type="reset"].btn-danger,
+button.qui-button.btn-danger,
+button.btn-danger,
+.btn-danger {
+    background: #dc4139;
+    border-color: #dc4139;
+    color: #fff;
+}
+
+input[type="submit"].btn-danger:hover,
+input[type="submit"].btn-danger:active,
+input[type="submit"].btn-danger:focus,
+input[type="button"].btn-danger:hover,
+input[type="button"].btn-danger:active,
+input[type="button"].btn-danger:focus,
+input[type="reset"].btn-danger:hover,
+input[type="reset"].btn-danger:active,
+input[type="reset"].btn-danger:focus,
+button.qui-button.btn-danger:hover,
+button.qui-button.btn-danger:active,
+button.qui-button.btn-danger:focus,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+    background: #cc3129;
+    color: #fff;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-danger.btn-outline,
+input[type="button"].btn-danger.btn-outline,
+input[type="reset"].btn-danger.btn-outline,
+button.btn-danger.qui-button.btn-outline,
+button.btn-danger.btn-outline,
+.btn-danger.btn-outline,
+input[type="submit"].btn-danger.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-danger.btn-outline:disabled:active,
+input[type="submit"].btn-danger.btn-outline:disabled:focus,
+input[type="button"].btn-danger.btn-outline:disabled:hover,
+input[type="button"].btn-danger.btn-outline:disabled:active,
+input[type="button"].btn-danger.btn-outline:disabled:focus,
+input[type="reset"].btn-danger.btn-outline:disabled:hover,
+input[type="reset"].btn-danger.btn-outline:disabled:active,
+input[type="reset"].btn-danger.btn-outline:disabled:focus,
+button.qui-button.btn-danger.btn-outline:disabled:hover,
+button.qui-button.btn-danger.btn-outline:disabled:active,
+button.qui-button.btn-danger.btn-outline:disabled:focus,
+button.btn-danger.btn-outline:disabled:hover,
+button.btn-danger.btn-outline:disabled:active,
+button.btn-danger.btn-outline:disabled:focus,
+.btn-danger.btn-outline.btn-disabled:hover,
+.btn-danger.btn-outline.btn-disabled:active,
+.btn-danger.btn-outline.btn-disabled:focus {
+    color: #dc4139;
+}
+
+/******************/
+/* button warning */
+/******************/
+input[type="submit"].btn-warning,
+input[type="button"].btn-warning,
+input[type="reset"].btn-warning,
+button.qui-button.btn-warning,
+button.btn-warning,
+.btn-warning {
+    background: #ffd147;
+    border-color: #ffd147;
+    color: #333;
+}
+
+input[type="submit"].btn-warning:hover,
+input[type="submit"].btn-warning:active,
+input[type="submit"].btn-warning:focus,
+input[type="button"].btn-warning:hover,
+input[type="button"].btn-warning:active,
+input[type="button"].btn-warning:focus,
+input[type="reset"].btn-warning:hover,
+input[type="reset"].btn-warning:active,
+input[type="reset"].btn-warning:focus,
+button.qui-button.btn-warning:hover,
+button.qui-button.btn-warning:active,
+button.qui-button.btn-warning:focus,
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus {
+    background: #efc137;
+    color: #393f46;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-warning.btn-outline,
+input[type="button"].btn-warning.btn-outline,
+input[type="reset"].btn-warning.btn-outline,
+button.btn-warning.qui-button.btn-outline,
+button.btn-warning.btn-outline,
+.btn-warning.btn-outline,
+input[type="submit"].btn-warning.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-warning.btn-outline:disabled:active,
+input[type="submit"].btn-warning.btn-outline:disabled:focus,
+input[type="button"].btn-warning.btn-outline:disabled:hover,
+input[type="button"].btn-warning.btn-outline:disabled:active,
+input[type="button"].btn-warning.btn-outline:disabled:focus,
+input[type="reset"].btn-warning.btn-outline:disabled:hover,
+input[type="reset"].btn-warning.btn-outline:disabled:active,
+input[type="reset"].btn-warning.btn-outline:disabled:focus,
+button.qui-button.btn-warning.btn-outline:disabled:hover,
+button.qui-button.btn-warning.btn-outline:disabled:active,
+button.qui-button.btn-warning.btn-outline:disabled:focus,
+button.btn-warning.btn-outline:disabled:hover,
+button.btn-warning.btn-outline:disabled:active,
+button.btn-warning.btn-outline:disabled:focus,
+.btn-warning.btn-outline.btn-disabled:hover,
+.btn-warning.btn-outline.btn-disabled:active,
+.btn-warning.btn-outline.btn-disabled:focus {
+    color: #f4bd16;
+}
+
+/***************/
+/* button info */
+/***************/
+input[type="submit"].btn-info,
+input[type="button"].btn-info,
+input[type="reset"].btn-info,
+button.qui-button.btn-info,
+button.btn-info,
+.btn-info {
+    background: #51a1c0;
+    border-color: #51a1c0;
+    color: #fff;
+}
+
+input[type="submit"].btn-info:hover,
+input[type="submit"].btn-info:active,
+input[type="submit"].btn-info:focus,
+input[type="button"].btn-info:hover,
+input[type="button"].btn-info:active,
+input[type="button"].btn-info:focus,
+input[type="reset"].btn-info:hover,
+input[type="reset"].btn-info:active,
+input[type="reset"].btn-info:focus,
+button.qui-button.btn-info:hover,
+button.qui-button.btn-info:active,
+button.qui-button.btn-info:focus,
+.btn-info:hover,
+.btn-info:active,
+.btn-info:focus {
+    background: #4191b0;
+    color: #fff;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-info.btn-outline,
+input[type="button"].btn-info.btn-outline,
+input[type="reset"].btn-info.btn-outline,
+button.btn-info.qui-button.btn-outline,
+button.btn-info.btn-outline,
+.btn-info.btn-outline,
+input[type="submit"].btn-info.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-info.btn-outline:disabled:active,
+input[type="submit"].btn-info.btn-outline:disabled:focus,
+input[type="button"].btn-info.btn-outline:disabled:hover,
+input[type="button"].btn-info.btn-outline:disabled:active,
+input[type="button"].btn-info.btn-outline:disabled:focus,
+input[type="reset"].btn-info.btn-outline:disabled:hover,
+input[type="reset"].btn-info.btn-outline:disabled:active,
+input[type="reset"].btn-info.btn-outline:disabled:focus,
+button.qui-button.btn-info.btn-outline:disabled:hover,
+button.qui-button.btn-info.btn-outline:disabled:active,
+button.qui-button.btn-info.btn-outline:disabled:focus,
+button.btn-info.btn-outline:disabled:hover,
+button.btn-info.btn-outline:disabled:active,
+button.btn-info.btn-outline:disabled:focus,
+.btn-info.btn-outline.btn-disabled:hover,
+.btn-info.btn-outline.btn-disabled:active,
+.btn-info.btn-outline.btn-disabled:focus {
+    color: #51a1c0;
+}
+
+/***************/
+/* button dark */
+/***************/
+input[type="submit"].btn-dark,
+input[type="button"].btn-dark,
+input[type="reset"].btn-dark,
+button.qui-button.btn-dark,
+button.btn-dark,
+.btn-dark {
+    background: #393f46;
+    border-color: #393f46;
+    color: #fff;
+}
+
+input[type="submit"].btn-dark:hover,
+input[type="submit"].btn-dark:active,
+input[type="submit"].btn-dark:focus,
+input[type="button"].btn-dark:hover,
+input[type="button"].btn-dark:active,
+input[type="button"].btn-dark:focus,
+input[type="reset"].btn-dark:hover,
+input[type="reset"].btn-dark:active,
+input[type="reset"].btn-dark:focus,
+button.qui-button.btn-dark:hover,
+button.qui-button.btn-dark:active,
+button.qui-button.btn-dark:focus,
+.btn-dark:hover,
+.btn-dark:active,
+.btn-dark:focus {
+    background: #292f36;
+    color: #fff;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-dark.btn-outline,
+input[type="button"].btn-dark.btn-outline,
+input[type="reset"].btn-dark.btn-outline,
+button.btn-dark.qui-button.btn-outline,
+button.btn-dark.btn-outline,
+.btn-dark.btn-outline,
+input[type="submit"].btn-dark.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-dark.btn-outline:disabled:active,
+input[type="submit"].btn-dark.btn-outline:disabled:focus,
+input[type="button"].btn-dark.btn-outline:disabled:hover,
+input[type="button"].btn-dark.btn-outline:disabled:active,
+input[type="button"].btn-dark.btn-outline:disabled:focus,
+input[type="reset"].btn-dark.btn-outline:disabled:hover,
+input[type="reset"].btn-dark.btn-outline:disabled:active,
+input[type="reset"].btn-dark.btn-outline:disabled:focus,
+button.qui-button.btn-dark.btn-outline:disabled:hover,
+button.qui-button.btn-dark.btn-outline:disabled:active,
+button.qui-button.btn-dark.btn-outline:disabled:focus,
+button.btn-dark.btn-outline:disabled:hover,
+button.btn-dark.btn-outline:disabled:active,
+button.btn-dark.btn-outline:disabled:focus,
+.btn-dark.btn-outline.btn-disabled:hover,
+.btn-dark.btn-outline.btn-disabled:active,
+.btn-dark.btn-outline.btn-disabled:focus {
+    color: #393f46;
+}
+
+/***************/
+/* button light */
+/***************/
+input[type="submit"].btn-light,
+input[type="button"].btn-light,
+input[type="reset"].btn-light,
+button.qui-button.btn-light,
+button.btn-light,
+.btn-light {
+    background: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #393f46;
+}
+
+input[type="submit"].btn-light:hover,
+input[type="submit"].btn-light:active,
+input[type="submit"].btn-light:focus,
+input[type="button"].btn-light:hover,
+input[type="button"].btn-light:active,
+input[type="button"].btn-light:focus,
+input[type="reset"].btn-light:hover,
+input[type="reset"].btn-light:active,
+input[type="reset"].btn-light:focus,
+button.qui-button.btn-light:hover,
+button.qui-button.btn-light:active,
+button.qui-button.btn-light:focus,
+.btn-light:hover,
+.btn-light:active,
+.btn-light:focus {
+    background: #d5d5d5;
+    color: #393f46;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-light.btn-outline,
+input[type="button"].btn-light.btn-outline,
+input[type="reset"].btn-light.btn-outline,
+button.btn-light.qui-button.btn-outline,
+button.btn-light.btn-outline,
+.btn-light.btn-outline,
+input[type="submit"].btn-light.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-light.btn-outline:disabled:active,
+input[type="submit"].btn-light.btn-outline:disabled:focus,
+input[type="button"].btn-light.btn-outline:disabled:hover,
+input[type="button"].btn-light.btn-outline:disabled:active,
+input[type="button"].btn-light.btn-outline:disabled:focus,
+input[type="reset"].btn-light.btn-outline:disabled:hover,
+input[type="reset"].btn-light.btn-outline:disabled:active,
+input[type="reset"].btn-light.btn-outline:disabled:focus,
+button.qui-button.btn-light.btn-outline:disabled:hover,
+button.qui-button.btn-light.btn-outline:disabled:active,
+button.qui-button.btn-light.btn-outline:disabled:focus,
+button.btn-light.btn-outline:disabled:hover,
+button.btn-light.btn-outline:disabled:active,
+button.btn-light.btn-outline:disabled:focus,
+.btn-light.btn-outline.btn-disabled:hover,
+.btn-light.btn-outline.btn-disabled:active,
+.btn-light.btn-outline.btn-disabled:focus {
+    color: #aaa;
+}
+
+/**********************************/
+/* button outline standard design */
+/**********************************/
+input[type="submit"].btn-outline,
+input[type="button"].btn-outline,
+input[type="reset"].btn-outline,
+button.btn-outline,
+.btn-outline {
+    background-color: transparent;
+}
+
+input[type="submit"].btn-outline:hover,
+input[type="submit"].btn-outline:active,
+input[type="submit"].btn-outline:focus,
+input[type="button"].btn-outline:hover,
+input[type="button"].btn-outline:active,
+input[type="button"].btn-outline:focus,
+input[type="reset"].btn-outline:hover,
+input[type="reset"].btn-outline:active,
+input[type="reset"].btn-outline:focus,
+button.btn-outline:not(:disabled):hover,
+button.btn-outline:active,
+button.btn-outline:focus,
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus {
+    color: #fff;
+}
+
+/**********************************/
+/* button disabled standard design*/
+/**********************************/
+input[type="submit"]:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+button.qui-button:disabled,
+button:disabled,
+a.qui-button.btn-disabled,
+a.btn.btn-disabled,
+.bt-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+input[type="submit"].btn-outline:disabled:hover,
+input[type="submit"].btn-outline:disabled:active,
+input[type="submit"].btn-outline:disabled:focus,
+input[type="button"].btn-outline:disabled:hover,
+input[type="button"].btn-outline:disabled:active,
+input[type="button"].btn-outline:disabled:focus,
+input[type="reset"].btn-outline:disabled:hover,
+input[type="reset"].btn-outline:disabled:active,
+input[type="reset"].btn-outline:disabled:focus,
+button.qui-button.btn-outline:disabled:hover,
+button.qui-button.btn-outline:disabled:active,
+button.qui-button.btn-outline:disabled:focus,
+button.btn-outline:disabled:hover,
+button.btn-outline:disabled:active,
+button.btn-outline:disabled:focus,
+.btn-outline.btn-disabled:hover,
+.btn-outline.btn-disabled:active,
+.btn-outline.btn-disabled:focus {
+    background: transparent;
+    opacity: 0.3;
+}
+
+/****************/
+/* button sizes */
+/****************/
+
+.btn-small,
+input[type="submit"].btn-small,
+input[type="button"].btn-small,
+input[type="reset"].btn-small,
+.qui-button.btn-small {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    height: auto;
+}
+
+.btn-large,
+input[type="submit"].btn-large,
+input[type="button"].btn-large,
+input[type="reset"].btn-large,
+.qui-button.btn-large {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    height: auto;
+
+}
+
+/****************************/
+/* template specific button */
+/****************************/
+.tpl-btn {
+
+}
