@@ -62,6 +62,11 @@
     display: none;
 }
 
+.content-template .quiqqer-order-ordering {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
 .quiqqer-order-ordering-buttons-backToShop {
     margin-right: 10px;
 }
@@ -126,4 +131,10 @@
     .quiqqer-order-ordering-buttons-backToShop {
         margin-bottom: 20px;
     }
+}
+
+.quiqqer-order-customerData-edit [name="businessType"] {
+    line-height: 40px;
+    padding: 8px;
+    width: 60% !important;
 }

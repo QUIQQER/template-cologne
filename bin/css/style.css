@@ -215,6 +215,22 @@ img {
     margin-left: auto;
 }
 
+.topbar-mobile-menu {
+    padding: 0 10px;
+    width: 100%;
+}
+
+.topbar-mobile-logo {
+    padding: 0 0 0 20px;
+}
+
+@media (min-width: 768px) {
+    .topbar-mobile-menu {
+        padding: 0 6px;
+        width: 100%;
+    }
+}
+
 /** header
  ===================================== */
 
@@ -277,13 +293,34 @@ img {
     text-align: right;
 }
 
+@media (max-width: 768px) {
+    .cologne-breadcrumb {
+        height: initial;
+    }
+
+    .cologne-breadcrumb .cologne-grid-container {
+        flex-direction: column;
+        height: initial;
+        width: 100%;
+    }
+
+    .cologne-breadcrumb h1 {
+        flex: 1 auto;
+        line-height: 1em;
+        padding-top: 10px;
+        width: 100%;
+    }
+}
+
 /** main
  ===================================== */
 
 /* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
 .cologne-main {
+    display: inline-block;
     margin-top: 40px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .content-headerpage-multible-left header:first-child h1,
@@ -364,6 +401,10 @@ img {
     box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2) !important;
     min-width: 200px;
     z-index: 100;
+}
+
+.quiqqer-menu-megaMenu-list-item-menu li {
+    text-align: left;
 }
 
 .quiqqer-menu-megaMenu-list-item-simple {

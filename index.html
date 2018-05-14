@@ -25,11 +25,18 @@
 <body class="page-{$Site->getId()} {$typeClass}">
 
 <div class="topbar template-columns">
-    <div class="template-column topbar-left">
+    <a href="/" class="topbar-mobile-logo hide-on-desktop">
+        {image image=$Project->getMedia()->getLogoImage() class="logo"}
+    </a>
+
+    <div class="topbar-mobile-menu hide-on-desktop">
+        {$Menu->create()}
+    </div>
+    <div class="template-column topbar-left hide-on-mobile">
         {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
     </div>
-    <div class="template-column topbar-right">
 
+    <div class="template-column topbar-right hide-on-mobile">
         <span class="template-column cologne-header-control-user">
             <a href="#login" class="login btn btn-primary btn-outline">
                 <span class="fa fa-spinner fa-spin"></span>
@@ -48,30 +55,26 @@
 </div>
 
 <header class="cologne-header cologne-header-menu template-columns">
-    <div class="template-column cologne-header-logo">
+    <div class="template-column cologne-header-logo hide-on-mobile">
         <a href="/" class="cologne-header-logo-link">
             {image image=$Project->getMedia()->getLogoImage() class="logo"}
         </a>
     </div>
 
-    <div class="template-column cologne-header-nav">
+    <div class="template-column cologne-header-nav hide-on-mobile">
         {$Menu->create()}
     </div>
 
+    <div class="template-column cologne-header-nav hide-on-desktop"></div>
+
     <div class="cologne-header-control">
-
         <div class="template-column cologne-header-control-basket"></div>
-
     </div>
 </header>
 
-
 <div class="cologne-header-menu cologne-bg-container">
-    <div class="cologne-grid-container">
-
-    </div>
+    <div class="cologne-grid-container"></div>
 </div>
-
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
