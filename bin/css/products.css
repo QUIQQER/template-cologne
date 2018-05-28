@@ -1,0 +1,39 @@
+.type-quiqqer-products-types-category .cologne-main .grid-children-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.type-quiqqer-products-types-category .content-headerpage-multible-left {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.type-quiqqer-products-types-category .quiqqer-products-category {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+/** Categories
+ ============================================== */
+
+.type-quiqqer-products-types-category .quiqqer-products-category {
+    padding-right: 0;
+}
+
+
+.quiqqer-products-productList-categories .quiqqer-products-categoryGallery-categories {
+    display: inline-grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    width: 100%;
+}
+
+
+/** Product list
+ ============================================== */
+
+
+.quiqqer-products-productList-products-container-real {
+    display: inline-grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    width: 100%;
+}
