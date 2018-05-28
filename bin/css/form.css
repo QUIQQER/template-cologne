@@ -9,6 +9,10 @@ input[type="email"] {
     padding: 0 10px;
 }
 
+select {
+    padding: 10px;
+}
+
 /** checkbox
  ===================================== */
 
