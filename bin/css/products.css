@@ -20,20 +20,35 @@
     padding-right: 0;
 }
 
-
 .quiqqer-products-productList-categories .quiqqer-products-categoryGallery-categories {
     display: inline-grid;
     grid-template-columns: 33.333% 33.333% 33.333%;
     width: 100%;
 }
 
-
 /** Product list
  ============================================== */
-
 
 .quiqqer-products-productList-products-container-real {
     display: inline-grid;
     grid-template-columns: 33.333% 33.333% 33.333%;
     width: 100%;
+}
+
+.quiqqer-products-productGallery-products-product-short-image {
+    width: 100%;
+}
+
+.quiqqer-products-productGallery-products-product > a > img {
+    max-height: initial !important;
+    max-width: initial !important;
+    padding: 0;
+    width: 100%;
+}
+
+/** Product
+ ============================================== */
+
+.quiqqer-order-button-add input {
+    padding: initial;
 }
