@@ -40,6 +40,20 @@
     padding-bottom: 0;
 }
 
+.quiqqer-frontend-users-address-edit select,
+.quiqqer-frontend-users-address-edit .qui-select {
+    width: 50% !important;
+}
+
+.quiqqer-frontend-users-address-edit .qui-select,
+.quiqqer-frontend-users-address-edit .qui-select .drop-icon {
+    height: 40px;
+}
+
+.quiqqer-frontend-users-address-edit .qui-select .text {
+    line-height: 40px;
+}
+
 .quiqqer-frontendUsers-userdata-invoiceaddress {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     float: left;
