@@ -1,0 +1,36 @@
+<article class="quiqqer-productList-product-detail"
+         data-pid="{$Product->getId()}"
+>
+    <div class="quiqqer-productList-product-detail-image">
+        <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
+        {image image=$Product->getImage() title=$Product->getTitle() height=48}
+        </a>
+    </div>
+
+    <div class="quiqqer-productList-product-detail-text">
+        <header>
+            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
+                {$Product->getTitle()}
+            </a>
+        </header>
+        <div class="quiqqer-productList-product-detail-text-desription">
+            {$Product->getDescription()}
+        </div>
+    </div>
+
+    <div class="quiqqer-productList-product-detail-buttons">
+        <span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>
+        <span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>
+    </div>
+
+    {if !$hidePrice}
+    <div class="quiqqer-productList-product-detail-price">
+        {locale
+            group="quiqqer/products"
+            var="price.starting.from"
+            price=$Product->getMinimumPrice()->getDisplayPrice()
+        }
+    </div>
+    {/if}
+
+</article>

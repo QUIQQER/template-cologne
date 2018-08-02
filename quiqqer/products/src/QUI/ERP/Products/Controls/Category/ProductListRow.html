@@ -1,0 +1,11 @@
+{if $count}
+
+{foreach from=$products item=Product}
+{$this->renderProduct($Product, $productTpl)}
+{/foreach}
+
+{else}
+<div class="quiqqer-products-productList-sort__noProducts">
+    {locale group="quiqqer/products" var="message.product.search.empty"}
+</div>
+{/if}

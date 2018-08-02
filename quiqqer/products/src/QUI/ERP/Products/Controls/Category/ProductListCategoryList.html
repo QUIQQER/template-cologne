@@ -1,0 +1,26 @@
+{if $categoryStartNumber === '' || (int)$categoryStartNumber !== 0}
+    <div class="quiqqer-products-categoryList">
+    {strip}
+        {assign var=c value=0}
+        {foreach from=$children item=Category}
+            {assign var=cssClass value=""}
+            {if $categoryStartNumber && $categoryStartNumber <= $c}
+                {assign var=cssClass value=" quiqqer-products-category__hide"}
+            {/if}
+
+            <a href="{url site=$Category}" class="quiqqer-products-categoryList-category button{$cssClass}">
+                {$Category->getAttribute('title')}
+                <span class="fa fa-angle-right"></span>
+            </a>
+
+            {assign var=c value=$c+1}
+        {/foreach}
+    {/strip}
+    </div>
+
+    {if $categoryStartNumber && $categoryStartNumber < count($children)}
+    <div class="quiqqer-products-categoryList-category-more button">
+        {locale group="quiqqer/products" var="category.control.productlist.button.more"}
+    </div>
+    {/if}
+{/if}

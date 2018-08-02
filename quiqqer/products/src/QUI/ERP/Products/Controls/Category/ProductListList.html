@@ -1,0 +1,40 @@
+<article class="quiqqer-productList-product-list"
+         data-pid="{$Product->getId()}"
+>
+    <div class="quiqqer-productList-product-list-text">
+        <header>
+            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
+            {$Product->getTitle()}
+            </a>
+        </header>
+
+        <div class="quiqqer-productList-product-list-text-description">
+            {$Product->getDescription()}
+        </div>
+    </div>
+
+    <div class="quiqqer-productList-product-list-artno">
+        <span class="quiqqer-productList-product-list-artno-title">
+            {locale group="quiqqer/products" var="productNo"}:
+        </span>
+        <br />
+        <span class="quiqqer-productList-product-list-artno-value">
+            {$Product->getFieldValue(3)}
+        </span>
+    </div>
+
+    <div class="quiqqer-productList-product-list-buttons">
+        <span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>
+        <span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>
+    </div>
+
+    {if !$hidePrice}
+    <div class="quiqqer-productList-product-list-price">
+        {locale
+            group="quiqqer/products"
+            var="price.starting.from"
+            price=$Product->getPrice()->getDisplayPrice()
+        }
+    </div>
+    {/if}
+</article>

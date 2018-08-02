@@ -1,0 +1,41 @@
+{if $categoryStartNumber === '' || (int)$categoryStartNumber !== 0}
+    <div class="quiqqer-products-categoryGallery-categories">
+        {assign var=c value=0}
+        {foreach from=$children item=Category}
+        {assign var=cssClass value=""}
+        {if $categoryStartNumber && $categoryStartNumber <= $c}
+            {assign var=cssClass value=" quiqqer-products-category__hide"}
+        {/if}
+        <section class="quiqqer-products-categoryGallery-category {$cssClass}"
+                 data-pid="{$Category->getId()}"
+        >
+        {strip}
+            <a href="{url site=$Category}" title="{$Category->getAttribute('title')|escape:" html"}">
+            {if $Category->getAttribute('image_site')}
+                {image src=$Category->getAttribute('image_site') title=$Category->getAttribute('title') width=400}
+            {else}
+                <img src="{$placeholder}" title="{$Category->getAttribute('title')}" />
+            {/if}
+            <header>
+                {$Category->getAttribute('title')}
+                <div class="quiqqer-products-categoryGallery-category-details">
+                    <span class="fa fa-sort-down"></span>
+                </div>
+            </header>
+
+            <div class="quiqqer-products-categoryGallery-category-short">
+                {$Category->getAttribute('short')}
+            </div>
+            </a>
+        {/strip}
+        {assign var=c value=$c+1}
+        </section>
+        {/foreach}
+    </div>
+
+    {if $categoryStartNumber && $categoryStartNumber < count($children)}
+        <div class="quiqqer-products-categoryGallery-category-more button">
+            {locale group="quiqqer/products" var="category.control.productlist.button.more"}
+        </div>
+    {/if}
+{/if}

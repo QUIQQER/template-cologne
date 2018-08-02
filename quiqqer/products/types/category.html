@@ -1,0 +1,109 @@
+<section class="grid-children-container">
+
+    {if $showFilter}
+    <div class="content-headerpage-multible-left">
+        <header>
+            <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
+        </header>
+        {if $CategoryMenu->countChildren()}
+            {$CategoryMenu->create()}
+        {/if}
+
+        {if !isset($Product) && $Site->getAttribute('quiqqer.products.settings.showFreeTextSearch')}
+        <header>
+            <h2>{locale group="quiqqer/products" var="type.category.freetextTitle"}</h2>
+        </header>
+        <label class="quiqqer-products-category-freetextSearch">
+            <input type="search" name="search"
+                   placeholder="{locale group="quiqqer/products" var="control.search.placeholder"}"
+            />
+            <input type="submit" name="submit" class="button"
+                   value="{locale group="quiqqer/products" var="type.category.freetextButtonText"}"
+            />
+            <noscript>
+                <style>
+                    .quiqqer-products-category-freetextSearch [type="submit"] {
+                        display: inline;
+                    }
+                </style>
+            </noscript>
+        </label>
+        {/if}
+
+        {if isset($ProductList) && $ProductList->count() && !empty($filter)}
+        <header>
+            <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
+        </header>
+        {$ProductList->createFilter()}
+        {/if}
+    </div>
+    {/if}
+
+    {if isset($Product)}
+        {assign
+            var=cssClasses
+            value="quiqqer-products-product page-multible-right"
+        }
+        {if $showFilter}
+            {assign
+                var=cssClasses
+                value="quiqqer-products-product page-multible-right"
+            }
+        {/if}
+
+        <div class="{$cssClasses}">
+            {$Product->create()}
+        </div>
+        <script>
+            var QUIQQER_PRODUCT_ID = '{$Product->getAttribute('data-productid')}';
+        </script>
+    {else}
+        {assign
+            var=cssClasses
+            value="quiqqer-products-category page-multible-right"
+        }
+
+        {if $showFilter}
+            {assign var=cssClasses value="quiqqer-products-category page-multible-right"}
+        {/if}
+
+        <div class="{$cssClasses}">
+        {if $Template->getAttribute('content-header')}
+            {if $Site->getAttribute('image_emotion')}
+            <header class="page-content-header-emotion"
+                    style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=820 onlysrc=1 rewrited=1}')"
+            >
+                <div class="page-content-header-emotion-container">
+                    <h1>{$Site->getAttribute('title')}</h1>
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')}
+                    </div>
+                </div>
+            </header>
+            {else}
+            <header class="page-content-header">
+                <h1>{$Site->getAttribute('title')}</h1>
+            </header>
+            {/if}
+        {/if}
+
+        {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+        <section class="content-body quiqqer-category-content">
+            {$Site->getAttribute('content')}
+        </section>
+        {/if}
+
+        {$ProductList->create()}
+        </div>
+
+        <script>
+            var _paq = _paq || [];
+            _paq.push([
+                'setEcommerceView',
+                false, // productSku
+                false, // productName
+                document.title // Category Page
+            ]);
+        </script>
+    {/if}
+</section>
