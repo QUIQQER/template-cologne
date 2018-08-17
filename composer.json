@@ -22,6 +22,7 @@
     "quiqqer\/erp": "1.*|dev-master|dev-dev",
     "quiqqer/products": "1.*|dev-master|dev-dev",
     "quiqqer/productstags": "1.*|dev-master|dev-dev",
+    "quiqqer/product-bricks": "1.*|dev-master|dev-dev",
     "quiqqer/frontend-users": "1.*|dev-master|dev-dev",
     "quiqqer/menu": "1.*|dev-master|dev-dev",
     "quiqqer/sitetypes": "1.*|dev-master|dev-dev",
