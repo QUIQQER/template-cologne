@@ -40,7 +40,7 @@
             <a href="#login" class="login btn btn-primary btn-outline">
                 <span class="fa fa-spinner fa-spin"></span>
                 {if $User->getId()}
-                {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
+                {locale group="quiqqer/template-cologne" var="template.logged.in" username=$User->getName()}
                 {else}
                 {locale group="quiqqer/template-cologne" var="template.login"}
                 {/if}

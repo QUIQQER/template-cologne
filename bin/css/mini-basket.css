@@ -56,13 +56,13 @@
     position: absolute;
     right: 0;
     top: 0;
-    color: #f14428;
+    color: #ababab;
     cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out;
 }
 
 .quiqqer-order-basket-small-articles-article-content .fa:hover {
-    background: #eee;
+    color: #f14428;
 }
 
 

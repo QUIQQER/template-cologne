@@ -69,7 +69,7 @@
             <de><![CDATA[Login]]></de>
             <en><![CDATA[Login]]></en>
         </locale>
-        <locale name="template.loged.in">
+        <locale name="template.logged.in">
             <de><![CDATA[Angemeldet als: [username]]]></de>
             <en><![CDATA[Loged in as: [username]]]></en>
         </locale>
@@ -109,6 +109,11 @@
                     <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
                 ]]>
             </en>
+        </locale>
+
+            <locale name="template.basket.removeProductFromBasket">
+            <de><![CDATA[Produkt aus dem Warenkorb löschen]]></de>
+            <en><![CDATA[Remove product from shopping cart]]></en>
         </locale>
 
     </groups>
