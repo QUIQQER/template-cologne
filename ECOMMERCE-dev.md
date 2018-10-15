@@ -36,7 +36,7 @@ Bricks
 
 #### Startseite
 
-1. Hauptslider \QUI\ProductBricks\Controls\Slider\ProductSlider
+1. **Produkte: Promoslider** (\QUI\ProductBricks\Controls\Slider\ProductSlider)
   - Unterhalb des Kopfbereiches (Header Suffix)
   - Zeit zum nächsten Slide (Verzögerung): 7000
   - Hintergrundfarbe: #f5f5f5
@@ -46,7 +46,7 @@ Bricks
   - Baustein nimmt volle Breite: true	
   - Kein Abstand von oben und unten: true
   
-2. Category Box \QUI\ProductBricks\Controls\CategoryBox
+2. **Produkte: Kategorie-Boxen** (\QUI\ProductBricks\Controls\CategoryBox)
   - Oberhalb vom Inhalt (Content Prefix)
   - Titel (Frontend): Top Categories
   - Hintergrundfarbe: none
@@ -59,7 +59,7 @@ Bricks
   - Baustein nimmt volle Breite: false	
   - Kein Abstand von oben und unten: false
 
-3. Horizontaler Produkt-Slider \QUI\ProductBricks\Controls\Children\Slider
+3. **Produkte: Horizontaler Slider** (\QUI\ProductBricks\Controls\Children\Slider)
   - Oberhalb vom Inhalt (Content Prefix)
   - Titel (Frontend): Product Slider
   - Produkte: Hier paar Produkte zur Liste hinzufügen.
