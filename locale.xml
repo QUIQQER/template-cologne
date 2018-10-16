@@ -35,7 +35,7 @@
 
         <locale name="area.contentPrefix.title">
             <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
-            <en><![CDATA[Prefix area]]></en>
+            <en><![CDATA[Content prefix]]></en>
         </locale>
         <locale name="area.contentPrefix.description">
             <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
@@ -44,7 +44,7 @@
 
         <locale name="area.contentSuffix.title">
             <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
-            <en><![CDATA[Suffix area]]></en>
+            <en><![CDATA[Content suffix]]></en>
         </locale>
         <locale name="area.contentSuffix.description">
             <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
