@@ -1,6 +1,8 @@
 window.addEvent('domready', function () {
     "use strict";
 
+    var Header = document.getElement('.cologne-header');
+
     require.config({
         paths: {
             Hammer   : URL_OPT_DIR + 'bin/hammerjs/hammer.min',
@@ -88,14 +90,12 @@ window.addEvent('domready', function () {
                     float: 'right'
                 },
                 events: {
-                    onCreate: function (Basket) {
+                    onCreate       : function (Basket) {
                         var BasketNode = Basket.getElm();
-
 
                         // clear default content
                         BasketNode.set('html', '');
                         BasketNode.addClass('tpl-btn');
-
 
                         new Element('span', {
                             'class': 'quiqqer-order-basketButton-icon-custom',
@@ -113,44 +113,40 @@ window.addEvent('domready', function () {
                             styles : {}
                         }).inject(BasketNode);
                     },
+                    /**
+                     * onShowBasketBegin event
+                     *
+                     * @param Basket
+                     * @param pos - position of popup basket
+                     * @param height - height of basket button
+                     */
+                    showBasketBegin: function (Basket, pos, height) {
 
-                    showBasketBegin: function (Basket, pos) {
+                        // move basket popup from bottom of the page to header
+                        // it's better to manage for sticky header
+                        Header.getElement('.cologne-header-control').adopt(Basket.$BasketContainer);
 
-                        var bPosition = Basket.getElm().offsetTop,
-                            bHeight = Basket.getElm().getHeight();
-//                        console.log(Basket.getElm().offsetTop)
-//                        console.log(bHeight)
+                        var headerHeight = Header.getSize().y;
 
-                        var winSize    = window.getSize(),
-                            basketSize = Basket.getElm().getSize();
+                        // -1px because of header bottom border
+                        pos.y = headerHeight - 1;
 
-                        // beispiel
-//                        pos.x = pos.x - 500;
-                        // muss noch besser gemacht werden
-                        pos.x = winSize.x - 350 - 20;
-//                        pos.y = pos.y + 10;
-//                        pos.y = bPosition  + bHeight + 12;
-
-
-
-                        /*neu*/
-                        var Header = document.getElement('.cologne-header');
-                        console.log(Header.getPosition().y)
-//                        console.log(Basket.getElm().getCoordinates(Header))
-console.log(pos.y)
-                        pos.y = Header.getPosition().y;
+                        // reset button height
+                        // see package/quiqqer/order/bin/frontend/controls/basket/Button.showSmallBasket()
+                        height.y = 0;
 
                         Basket.$BasketContainer.setStyles({
-                            position: 'fixed'
-                        })
+                            right: 20 // right margin from .cologne-header-control-basket
+                        });
 
-
+                        // Do not scroll the page
+                        Basket.$BasketContainer.addEvent('focus', function (event) {
+                            event.preventDefault();
+                        });
 
                         Basket.$BasketContainer.setStyles({
                             border: '1px solid #ddd'
                         });
-
-                        console.log(document.getElement('.quiqqer-order-basket-small-container').getPosition());
                     }
                 }
             }).inject(document.getElement('.cologne-header-control-basket'));
@@ -159,7 +155,6 @@ console.log(pos.y)
         /**
          * Currencies
          */
-
         require(['package/quiqqer/currency/bin/controls/Switch'], function (Switch) {
             new Switch().inject(document.getElement('.cologne-header-control-currencies'));
         });
@@ -169,28 +164,53 @@ console.log(pos.y)
          * Sticky menu
          * @type {boolean}
          */
-        var menuFixed    = false,
-            Menu         = document.getElement('.cologne-header'),
+        var Menu         = document.getElement('.cologne-header'),
             menuHeight   = Menu.getSize().y,
             topBarHeight = document.getElement('.topbar').getSize().y;
 
-        var setMenuFixed = function () {
+        /**
+         *
+         * @param smooth {bool} - helpful on page reload when the page is already scrolled
+         */
+        var setMenuFixed = function (smooth) {
+
+            if (smooth === true) {
+                Menu.setStyles({
+                    position : 'fixed',
+                    transform: 'translateY(-100px)'
+                });
+
+                // Delay 500ms for performance reasons (on page load)
+                (function () {
+                    moofx(Menu).animate({
+                        transform: 'translateY(0)'
+                    })
+
+                }).delay(500);
+            }
+
             Menu.addClass('cologne-header-fixed');
-            document.getElement('body').setStyle('padding-top', menuHeight);
-            menuFixed = true;
+
+            document.body.addClass('header-fixed');
         };
 
         var removeMenuFixed = function () {
             Menu.removeClass('cologne-header-fixed');
-            document.getElement('body').setStyle('padding-top', null);
-            menuFixed = false;
+            Menu.setStyle('position', null);
+//            document.body.setStyle('padding-top', null);
+            document.body.removeClass('header-fixed');
         };
 
         if (Menu) {
-            window.addEvent('scroll', function () {
+            // check on page load if menu should be sticked to the top
+            if (QUI.getScroll().y >= topBarHeight) {
 
+                setMenuFixed(true);
+            }
+
+            window.addEvent('scroll', function () {
                 if (QUI.getScroll().y >= topBarHeight) {
-                    setMenuFixed();
+                    setMenuFixed(false);
                     return;
                 }
 
