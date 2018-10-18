@@ -1,0 +1,22 @@
+a {
+    color: #3986dd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3986dd;
+}
+
+.cologne-header-nav a:hover,
+.cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a {
+    color: #3986dd;
+}
+
+.product-gallery .quiqqer-gallery-slider-active-preview {
+    opacity: 1;
+    border-color: #92bcec;
+}
+
+.product-data-more-tabs-tab.active {
+    color: #3986dd;
+}
