@@ -9,6 +9,7 @@
     <div class="grid-50 mobile-grid-100 grid-parent product-data">
         <header class="page-content-header">
             <h1>{$Product->getTitle()}</h1>
+            <p>{$Product->getFieldValue(QUI\ERP\Products\Handler\Fields::FIELD_PRODUCT_NO)}</p>
         </header>
 
         <div class="page-content-header-description">
