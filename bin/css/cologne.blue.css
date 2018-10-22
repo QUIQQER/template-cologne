@@ -12,10 +12,11 @@ a:hover {
     color: #3986dd;
 }
 
-.product-gallery .quiqqer-gallery-slider-active-preview {
+/*.product-gallery .quiqqer-gallery-slider-active-preview {
     opacity: 1;
     border-color: #92bcec;
-}
+    border-color: #3986dd;
+}*/
 
 .product-data-more-tabs-tab.active {
     color: #3986dd;
