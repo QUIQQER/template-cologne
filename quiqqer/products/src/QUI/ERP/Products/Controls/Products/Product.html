@@ -1,19 +1,20 @@
 <article>
     {template_event name="quiqqer::products::product::begin" Product=$Product}
 
-    <header class="page-content-header">
-        <h1>{$Product->getTitle()}</h1>
-
-    </header>
-
     <div class="grid-50 mobile-grid-100 grid-parent product-gallery">
-        {$Gallery->create()}
+        {*$Gallery->create()*}
+        {control control="QUI\TemplateCologne\Controls\ProductGallery" Product=$Product}
     </div>
 
     <div class="grid-50 mobile-grid-100 grid-parent product-data">
+        <header class="page-content-header">
+            <h1>{$Product->getTitle()}</h1>
+        </header>
+
         <div class="page-content-header-description">
             {$Product->getDescription()}
         </div>
+
 
         <div class="product-data-price">
             {$PriceDisplay->create()}
