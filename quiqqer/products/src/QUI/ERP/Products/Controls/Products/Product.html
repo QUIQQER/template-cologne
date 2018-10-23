@@ -9,7 +9,7 @@
     <div class="grid-50 mobile-grid-100 grid-parent product-data">
         <header class="page-content-header">
             <h1>{$Product->getTitle()}</h1>
-            <p>{$Product->getFieldValue(QUI\ERP\Products\Handler\Fields::FIELD_PRODUCT_NO)}</p>
+            <p>{$Product->getFieldValue("FIELD_PRODUCT_NO")}</p>
         </header>
 
         <div class="page-content-header-description">
@@ -40,13 +40,12 @@
             {/foreach}
         </div>
 
-
-
         <div class="product-data-actionButtons">
             {template_event name="quiqqer::products::product::buttons::begin" Product=$Product}
             {$buttonsHtml}
             {template_event name="quiqqer::products::product::buttons::end" Product=$Product}
         </div>
+
     </div>
 
     {assign var=ContentField value=$Product->getField(6)}

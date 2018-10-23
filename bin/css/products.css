@@ -49,6 +49,6 @@
 /** Product
  ============================================== */
 
-.quiqqer-order-button-add input {
-    padding: initial;
+.quiqqer-order-button-add.product-data-more-tabs {
+    border: none;
 }
