@@ -18,7 +18,8 @@ $Menu = new QUI\Menu\MegaMenu([
 $typeClass = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
 
 $Engine->assign([
-    'BricksManager'  => QUI\Bricks\Manager::init(),
-    'typeClass'      => $typeClass,
-    'Menu'           => $Menu
+    'BricksManager' => QUI\Bricks\Manager::init(),
+    'Project'       => $Project,
+    'typeClass'     => $typeClass,
+    'Menu'          => $Menu,
 ]);

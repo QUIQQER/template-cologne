@@ -6,9 +6,9 @@
             <config>
                 <section name="templateCologne.settings">
 
-                    <conf name="miniBasket">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>none</defaultvalue>
+                    <conf name="showRetailPrice">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
                     </conf>
                 </section>
             </config>
@@ -18,10 +18,33 @@
                     <category name="templateCologne">
                         <text>
                             <locale group="quiqqer/template-cologne"
-                                    var="templateCologne.settings.menu.title"
+                                    var="settings.menu.title"
                                     />
                         </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.settings.shop">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.shop.title"
+                                        />
+                            </title>
+
+
+                            <input conf="templateCologne.settings.showRetailPrice" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.retailPrice"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.retailPrice.desc"
+                                    />
+                                </description>
+                            </input>
+                        </settings>
 
 
                         <!-- Basket button behaviour -->

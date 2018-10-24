@@ -621,6 +621,15 @@ img {
     font-size: 1.8em;
     margin-bottom: 5px;
 }
+
+/* retail price */
+.product-data-price-retail .qui-products-price-display {
+    font-size: 1.3em;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+/* price */
 .product-data .product-data-price {
     border-top: none;
     padding: 0 0 20px;

@@ -16,8 +16,25 @@
             {$Product->getDescription()}
         </div>
 
-
         <div class="product-data-price">
+            {if $Site->getProject()->getConfig('templateCologne.settings.showRetailPrice')}
+                <div >
+                <p>Preis ($priceValue): {$priceValue}</p>
+                <p>UVP ($priceRetailValue): {$priceRetailValue}</p>
+                <p>Angebotspreis ($priceOfferValue): {$priceOfferValue}</p>
+                </div>
+
+                {if $PriceOfferDisplay && $priceOfferValue < $priceValue}
+                <div class="product-data-price-retail">
+                    {$PriceRetailDisplay->create()}
+                </div>
+                {else if $priceValue < $priceRetailValue}
+                <div class="product-data-price-retail">
+                    {$PriceOfferDisplay->create()}
+                </div>
+                {/if}
+            {/if}
+
             {$PriceDisplay->create()}
         </div>
 
