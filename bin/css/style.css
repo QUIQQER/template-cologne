@@ -695,9 +695,14 @@ img {
     font-size: 0.9rem;
 }
 
-.quiqqer-order-button-add-quantity-input {
+.quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
+    width: 40px;
+}
+
+.quiqqer-order-button-add .quiqqer-order-button-add-quantity-input {
     padding: initial;
     border: none;
+    outline: none;
 }
 
 .quiqqer-order-button-add-quantity-decrease,
@@ -709,6 +714,10 @@ img {
 .quiqqer-order-button-add-quantity-increase:hover {
     background: #eee;
     color: inherit;
+}
+
+.quiqqer-order-button-add-loader {
+    font-size: 2rem !important;
 }
 
 /* product data more */
