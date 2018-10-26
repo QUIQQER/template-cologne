@@ -10,14 +10,20 @@
         <div class="quiqqer-order-basket-small-articles-article-content">
             <h2>{$product.title}</h2>
             <div class="quiqqer-order-basket-small-articles-article-price-wrapper">
+                {if !isset($product.displayPrice) || $product.displayPrice}
                 <span>{$product.quantity} x</span>
+                {/if}
 
                 <span class="quiqqer-order-basket-small-articles-article-price">
+                    {if !isset($product.displayPrice) || $product.displayPrice}
                     {$product.price}
+                    {/if}
                 </span>
 
                 <span class="quiqqer-order-basket-small-articles-article-price-sum">
+                    {if !isset($product.displayPrice) || $product.displayPrice}
                     {$product.sum}
+                    {/if}
                 </span>
             </div>
 
