@@ -17,19 +17,32 @@
         </div>
 
         <div class="product-data-price">
-            {if $Site->getProject()->getConfig('templateCologne.settings.showRetailPrice')}
+
+            {*
+            $priceValue {$priceValue}<br>
+            $priceOfferValue {$priceOfferValue}<br>
+            $priceRetailValue {$priceRetailValue}<br>
+            {$Product->getOriginalPrice()|var_dump}<br>
+            *}
+
+            {if $Site->getProject()->getConfig('templateCologne.settings.showRetailPrice') &&
+            $Product->hasOfferPrice()}
                 {if $PriceOfferDisplay && $priceOfferValue < $priceValue}
-                <div class="product-data-price-retail">
-                    {$PriceRetailDisplay->create()}
-                </div>
-                {else if $priceValue < $priceRetailValue}
                 <div class="product-data-price-retail">
                     {$PriceOfferDisplay->create()}
                 </div>
-                {/if}
-            {/if}
-
             {$PriceDisplay->create()}
+                {else if $priceValue < $priceRetailValue}
+                <div class="product-data-price-retail">
+
+                    {$PriceRetailDisplay->create()}
+                </div>
+                {/if}
+
+
+            {else}
+                {$PriceDisplay->create()}
+            {/if}
         </div>
 
         {if count($productAttributeList)}
