@@ -23,6 +23,7 @@ window.addEvent('domready', function () {
         var Logo = document.getElement('header .logo'),
             Link = document.getElements('.cologne-header-control-user'),
             Icon = Link.getElement('.fa');
+        console.log(Link)
 
         window.addEvent('load', function () {
             document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
@@ -45,7 +46,10 @@ window.addEvent('domready', function () {
                         new LogoutWindow().open();
                     } else {
                         new LoginWindow({
-                            maxHeight   : 380,
+                            title       : false,
+                            maxHeight   : 450,
+                            maxWidth    : 400,
+                            icon        : false,
                             social      : false,
                             registration: false,
                             logo        : Logo.src,

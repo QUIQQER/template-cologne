@@ -549,6 +549,28 @@ img {
     width: 260px;
 }
 
+/** Login popup
+ ===================================== */
+.quiqqer-login-logo {
+    max-height: 100px;
+    margin-top: 3em !important;
+    margin-bottom: 2em !important;
+    max-width: calc(100% - 80px);
+}
+
+.quiqqer-login {
+    padding: 20px 40px !important;
+}
+
+.quiqqer-login-auth label {
+    margin-bottom: 20px !important;
+}
+
+.quiqqer-login-auth [type="submit"] {
+    float: right;
+    min-width: 100px;
+}
+
 /** Product Children Slider (horizontal)
  ===================================== */
 .brick-full-width .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry:first-child {
