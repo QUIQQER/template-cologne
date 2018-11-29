@@ -551,24 +551,75 @@ img {
 
 /** Login popup
  ===================================== */
+/* show close button */
+.qui-window-popup-title {
+    display: block !important;
+    padding: 0 !important;
+    background: none !important;
+}
+
+.qui-window-popup-title-close {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0 !important;
+    position: relative !important;
+    border-radius: 0;
+}
+
+/* logo image */
 .quiqqer-login-logo {
     max-height: 100px;
-    margin-top: 3em !important;
+    margin-top: 0.5em !important;
     margin-bottom: 2em !important;
-    max-width: calc(100% - 80px);
+    max-width: calc(100% - 100px);
 }
 
 .quiqqer-login {
     padding: 20px 40px !important;
 }
 
+/* label */
 .quiqqer-login-auth label {
     margin-bottom: 20px !important;
 }
 
+/* disable ugly autofill background */
+.quiqqer-login-auth input {
+    box-shadow: 0 0 0 30px #fff inset;
+}
+
+/*
+ because of disabling autofill background
+ :focus is simulated by box.shadow
+ */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    box-shadow: 0 0 0 30px #f5f5f5 inset;
+}
+
+/* submit button */
 .quiqqer-login-auth [type="submit"] {
     float: right;
     min-width: 100px;
+}
+
+/* custom title */
+.quiqqer-loginWindow-content-title {
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+}
+
+.quiqqer-loginWindow-content-title:after {
+    content: '';
+    left: calc(50% - 40px);
+    bottom: -10px;
+    width: 80px;
+    height: 2px;
+    background: #3986dd;
+    position: absolute;
 }
 
 /** Product Children Slider (horizontal)

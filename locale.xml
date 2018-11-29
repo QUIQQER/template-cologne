@@ -145,4 +145,11 @@
         </locale>
     </groups>
 
+    <groups name="quiqqer/template-cologne" datatype="js">
+        <locale name="frontend.popup.login.title">
+            <de><![CDATA[Anmelden]]></de>
+            <en><![CDATA[Login]]></en>
+        </locale>
+    </groups>
+
 </locales>

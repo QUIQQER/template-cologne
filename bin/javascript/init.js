@@ -1,6 +1,7 @@
 window.addEvent('domready', function () {
     "use strict";
 
+    var lg = 'quiqqer/template-cologne';
     var Header = document.getElement('.cologne-header');
 
     require.config({
@@ -16,14 +17,13 @@ window.addEvent('domready', function () {
     });
 
     // QUI
-    require(['qui/QUI'], function (QUI) {
+    require(['qui/QUI', 'Locale'], function (QUI, QUILocale) {
         QUI.setAttribute('control-loader-type', 'fa-spinner');
         QUI.setAttribute('control-loader-color', '#999999');
 
         var Logo = document.getElement('header .logo'),
             Link = document.getElements('.cologne-header-control-user'),
             Icon = Link.getElement('.fa');
-        console.log(Link)
 
         window.addEvent('load', function () {
             document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
@@ -47,7 +47,7 @@ window.addEvent('domready', function () {
                     } else {
                         new LoginWindow({
                             title       : false,
-                            maxHeight   : 450,
+                            maxHeight   : 500,
                             maxWidth    : 400,
                             icon        : false,
                             social      : false,
@@ -56,6 +56,19 @@ window.addEvent('domready', function () {
                             events      : {
                                 onSuccess: function () {
                                     window.location.reload();
+                                },
+                                onOpen   : function (Popup) {
+                                    var Content = Popup.getElm().getElement('.quiqqer-loginWindow-content');
+
+                                    Content.setStyle('opacity', 0);
+                                    new Element('h2', {
+                                        'class': 'quiqqer-loginWindow-content-title',
+                                        html   : QUILocale.get(lg, 'frontend.popup.login.title')
+                                    }).inject(Content.getElement('img'), 'after');
+
+                                    moofx(Content).animate({
+                                        opacity: 1
+                                    });
                                 }
                             }
                         }).open();
