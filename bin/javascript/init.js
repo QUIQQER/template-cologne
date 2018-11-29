@@ -43,7 +43,42 @@ window.addEvent('domready', function () {
                     }
 
                     if (QUIQQER_USER.id) {
-                        new LogoutWindow().open();
+                        new LogoutWindow({
+                            class    : 'cologne-logout-dialog',
+                            title    : false,
+                            icon     : false,
+                            maxHeight: 320,
+                            maxWidth : 400,
+                            events   : {
+                                onOpen: function (Popup) {
+                                    var Content = Popup.getElm();
+
+                                    var ContentElms = [
+                                        Content.getElement('.qui-window-popup-content'),
+                                        Content.getElement('.qui-window-popup-buttons')
+                                    ];
+
+                                    ContentElms.each(function (ContentElm) {
+                                        ContentElm.setStyle('opacity', 0);
+                                    });
+
+                                    var CancelButton = Content.getElement('button[name="cancel"]');
+                                    if (CancelButton) {
+                                        CancelButton.addClass('btn-secondary btn-outline');
+                                    }
+
+                                    // workaround due to the CancelButton.addClass
+                                    // to avoid the "flash" effect
+                                    (function () {
+                                        ContentElms.each(function (ContentElm) {
+                                            moofx(ContentElm).animate({
+                                                opacity: 1
+                                            });
+                                        })
+                                    }).delay(50)
+                                }
+                            }
+                        }).open();
                     } else {
                         new LoginWindow({
                             title       : false,

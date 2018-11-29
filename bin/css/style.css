@@ -549,8 +549,9 @@ img {
     width: 260px;
 }
 
-/** Login popup
+/** Login / logout popup
  ===================================== */
+/* login */
 /* show close button */
 .qui-window-popup-title {
     display: block !important;
@@ -566,6 +567,8 @@ img {
     line-height: 0 !important;
     position: relative !important;
     border-radius: 0;
+    font-size: 1.5em !important;
+    padding: 0 !important;
 }
 
 /* logo image */
@@ -606,13 +609,16 @@ input[type="password"]:focus {
 }
 
 /* custom title */
-.quiqqer-loginWindow-content-title {
-    text-align: center;
+.quiqqer-loginWindow-content-title,
+.qui-window-popup h2 {
     margin-top: 0;
     position: relative;
+    margin-bottom: 1em;
+    text-align: center;
 }
 
-.quiqqer-loginWindow-content-title:after {
+.quiqqer-loginWindow-content-title:after,
+.qui-window-popup h2:after {
     content: '';
     left: calc(50% - 40px);
     bottom: -10px;
@@ -620,6 +626,46 @@ input[type="password"]:focus {
     height: 2px;
     background: #3986dd;
     position: absolute;
+}
+
+/* logout */
+.cologne-logout-dialog .qui-window-popup {
+    display: flex;
+    flex-direction: column;
+}
+
+.cologne-logout-dialog .qui-window-popup-content {
+    padding-top: 0 !important;
+}
+
+.cologne-logout-dialog .submit-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cologne-logout-dialog .submit-body .textbody {
+    width: 100% !important;
+}
+
+.cologne-logout-dialog .qui-window-popup-content .texticon {
+    float: none !important;
+    margin: 0 auto 30px !important;
+}
+
+.cologne-logout-dialog .qui-window-popup-buttons {
+    background: none !important;
+    height: auto !important;
+    padding: 20px 0 !important;
+}
+
+.cologne-logout-dialog .qui-window-popup-buttons button {
+    margin: 0 15px !important;
+}
+
+.cologne-logout-dialog .qui-window-popup-buttons:after {
+    display: none;
 }
 
 /** Product Children Slider (horizontal)

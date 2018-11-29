@@ -581,7 +581,10 @@ input[type="submit"].btn-outline,
 input[type="button"].btn-outline,
 input[type="reset"].btn-outline,
 button.btn-outline,
-.btn-outline {
+.btn-outline,
+.qui-button.btn-outline,
+a.qui-button.btn-outline,
+button.qui-button.btn-outline {
     background-color: transparent;
 }
 
