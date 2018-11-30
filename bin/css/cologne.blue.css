@@ -21,3 +21,12 @@ a:hover {
 .product-data-more-tabs-tab.active {
     color: #3986dd;
 }
+
+.quiqqer-fupc-category-items-item--active span:nth-child(2),
+.quiqqer-fupc-category-items-item--active {
+    color: #3986dd;
+}
+
+.quiqqer-fupc-category-items-item:before {
+    background: #3986dd;
+}

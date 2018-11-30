@@ -6,12 +6,8 @@
 
 namespace QUI\TemplateCologne\Controls;
 
-use DusanKasan\Knapsack\Collection;
 use QUI;
 use QUI\ERP\Products\Handler\Fields;
-
-//use QUI\ERP\Watchlist\Controls\ButtonAdd as WatchlistButton;
-//use QUI\ERP\Watchlist\Controls\ButtonPurchase as PurchaseButton;
 
 /**
  * Class ProductGallery

@@ -3,7 +3,21 @@
     line-height: 40px;
 }
 
+.quiqqer-fupc-category {
+    margin-bottom: 2em;
+}
+
+.quiqqer-fupc-category:last-child {
+    margin-bottom: 0;
+}
+
 .quiqqer-fupc-category-header {
+    line-height: 30px;
+}
+
+.quiqqer-fupc-category .quiqqer-fupc-category-header {
+    border-bottom: none !important;
+    font-size: 1.5em;
     line-height: 30px;
 }
 
@@ -20,6 +34,27 @@
     line-height: 40px;
     text-decoration: none;
     width: 100%;
+    padding: 5px 0;
+    position: relative;
+}
+
+.quiqqer-fupc-category-items-item:before {
+    content: '';
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+}
+
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item--active,
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item:hover {
+    background: none;
+}
+
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item--active:before,
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item:hover:before {
+    width: 4px;
 }
 
 .quiqqer-fupc-category-items-item .fa {
@@ -87,4 +122,10 @@
 
 .cologne-main .quiqqer-order-customerData-edit-businessType [name="businessType"] {
     width: 70%;
+}
+
+@media (max-width: 768px) {
+    .quiqqer-frontendUsers-controls-profile-categories-mobile {
+        margin-bottom: 2em;
+    }
 }
