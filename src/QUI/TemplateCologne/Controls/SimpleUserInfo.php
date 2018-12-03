@@ -13,13 +13,6 @@ use QUI;
  */
 class SimpleUserInfo extends QUI\Control
 {
-
-    /**
-     * @var UserInterface
-     */
-    protected $User = null;
-
-
     /**
      * constructor
      *
