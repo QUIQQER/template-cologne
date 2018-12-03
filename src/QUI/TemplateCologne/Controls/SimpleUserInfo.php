@@ -27,12 +27,9 @@ class SimpleUserInfo extends QUI\Control
      */
     public function __construct($attributes = [])
     {
-        // todo attributes?
         $this->setAttributes([
             'User' => null
         ]);
-
-        $this->User = $this->getUser();
 
         $this->addCSSFile(dirname(__FILE__).'/SimpleUserInfo.css');
 
@@ -95,6 +92,7 @@ class SimpleUserInfo extends QUI\Control
      * Return the current site
      *
      * @return QUI\Projects\Site
+     * @throws QUI\Exception
      */
     public function getSite()
     {
@@ -106,7 +104,10 @@ class SimpleUserInfo extends QUI\Control
     }
 
     /**
+     * Get number of orders
+     *
      * @param $User QUI\Interfaces\Users\User
+     * @return int
      */
     public function getOrdersNumber($User)
     {
