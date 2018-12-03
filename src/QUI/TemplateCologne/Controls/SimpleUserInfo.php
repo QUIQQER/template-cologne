@@ -113,6 +113,5 @@ class SimpleUserInfo extends QUI\Control
         $Orders = QUI\ERP\Order\Handler::getInstance();
 
         return $Orders->countOrdersByUser($User);
-
     }
 }

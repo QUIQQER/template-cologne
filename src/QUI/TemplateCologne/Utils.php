@@ -26,7 +26,8 @@ class Utils
         if (!$User instanceof QUI\Interfaces\Users\User) {
             throw new QUI\Exception([
                 QUI::getLocale()->get(
-                    'quiqqer/template-cologne', 'exception.user.required'
+                    'quiqqer/template-cologne',
+                    'exception.user.required'
                 )
             ]);
         }
