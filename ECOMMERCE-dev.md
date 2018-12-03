@@ -40,7 +40,7 @@ Bricks
   - Unterhalb des Kopfbereiches (Header Suffix)
   - Zeit zum nächsten Slide (Verzögerung): 7000
   - Hintergrundfarbe: #f5f5f5
-  - Hintergrundbild: Ein Beispielbild befindet sich im Ordner bin/image/bricks/demo/Slider
+  - Hintergrundbild: Ein Beispielbild befindet sich im Ordner bin/images/bricks/demo/Slider
   - Produkte: Paar Produkte auswählen. Das beste Ergebnis ist dann, wenn die 
     Produktbilder keinen Hintegrund haben (3 Beispiele im bin-Ordner). 
   - Baustein nimmt volle Breite: true	
