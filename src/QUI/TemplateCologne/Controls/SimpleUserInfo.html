@@ -1,0 +1,21 @@
+<div class="sui-container">
+    <div class="sui-top">
+        <span class="sui-badge">
+            <span class="fa fa-shopping-cart" style="margin-right: 10px;"></span>
+            {$ordersNumber}
+            {locale group="quiqqer/template-cologne" var="template.simpleUserInfo.ordersNumber"}
+        </span>
+    </div>
+    <div class="sui-image">
+        <img src="{$avatarUrl}" title="{$name}" alt="{$avatarUrl} avatar" />
+    </div>
+    <div class="sui-data">
+        <span class="sui-data-name">
+            {$name}
+        </span>
+        <span class="sui-data-joined">
+            {locale group="quiqqer/template-cologne" var="template.simpleUserInfo.joined"}
+            {locale_date timestamp=$registrationDay}
+        </span>
+    </div>
+</div>

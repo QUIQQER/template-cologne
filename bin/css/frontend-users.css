@@ -1,3 +1,19 @@
+/********************/
+/* simple user info */
+/********************/
+.quiqqer-fupc-userinfo {
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+.quiqqer-fupc-userinfo .sui-top {
+    background: url("../images/brushed_alu.png");
+}
+
+/*****************/
+/* category menu */
+/*****************/
 .quiqqer-frontendUsers-controls-profile-categoryContent h2 {
     font-weight: normal;
     line-height: 40px;
@@ -19,6 +35,7 @@
     border-bottom: none !important;
     font-size: 1.5em;
     line-height: 30px;
+    cursor: pointer;
 }
 
 .quiqqer-fu-profile-categories-category-items {
@@ -36,6 +53,20 @@
     width: 100%;
     padding: 5px 0;
     position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.quiqqer-fupc-category--open .quiqqer-fupc-category-items-item:last-child {
+    border-bottom: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.quiqqer-fupc-category--open .quiqqer-fupc-category-items-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .quiqqer-fupc-category-items-item:before {
@@ -128,4 +159,11 @@
     .quiqqer-frontendUsers-controls-profile-categories-mobile {
         margin-bottom: 2em;
     }
+}
+
+/******************/
+/* profile orders */
+/******************/
+.quiqqer-order-profile-orders .quiqqer-order-profile-orders-pagination:first-child {
+    display: none;
 }

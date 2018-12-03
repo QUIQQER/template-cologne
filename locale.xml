@@ -116,6 +116,15 @@
             <en><![CDATA[Remove product from shopping cart]]></en>
         </locale>
 
+        <locale name="template.simpleUserInfo.ordersNumber">
+            <de><![CDATA[Bestellungen]]></de>
+            <en><![CDATA[orders]]></en>
+        </locale>
+        <locale name="template.simpleUserInfo.joined">
+            <de><![CDATA[Account seit]]></de>
+            <en><![CDATA[Joined]]></en>
+        </locale>
+
         <!-- template settings -->
         <locale name="settings.menu.title">
             <de><![CDATA[Template Cologne Einstellungen]]></de>
@@ -143,6 +152,15 @@
             The retail price field in product properties must be filled.
             <br /><strong>The setting only affects the template. External bricks can control this themselves via their settings.</strong>]]></en>
         </locale>
+
+
+        <!-- exceptions -->
+        <locale name="exception.user.required">
+            <de><![CDATA[User Objekt (QUI\Interfaces\Users\User) wird benötigt.]]></de>
+            <en><![CDATA[User object (QUI\Interfaces\Users\User) is required.]]></en>
+        </locale>
+
+
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
