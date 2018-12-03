@@ -1,6 +1,12 @@
 <div class="sui-container">
     <div class="sui-top">
-        <span class="sui-badge">
+        <span class="sui-badge"
+              data-tooltip="Sie haben {$ordersNumber} Bestellungen bei <br />uns ausgeführt"
+              data-tooltip-animate-function="slidein"
+              data-tooltip-stickto="top"
+              data-tooltip-delay="200"
+              data-tooltip-hide-delay="800"
+        >
             <span class="fa fa-shopping-cart" style="margin-right: 10px;"></span>
             {$ordersNumber}
             {locale group="quiqqer/template-cologne" var="template.simpleUserInfo.ordersNumber"}

@@ -17,9 +17,15 @@ window.addEvent('domready', function () {
     });
 
     // QUI
-    require(['qui/QUI', 'Locale'], function (QUI, QUILocale) {
+    require([
+        'qui/QUI',
+        'Locale',
+        'package/quiqqer/tooltips/bin/html5tooltips'
+    ], function (QUI, QUILocale, html5tooltips) {
         QUI.setAttribute('control-loader-type', 'fa-spinner');
         QUI.setAttribute('control-loader-color', '#999999');
+
+
 
         var Logo = document.getElement('header .logo'),
             Link = document.getElements('.cologne-header-control-user'),

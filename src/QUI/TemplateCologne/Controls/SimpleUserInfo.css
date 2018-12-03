@@ -13,9 +13,10 @@
 }
 
 .sui-badge {
-    float: right;
     background: #fff;
+    cursor: help;
     display: block;
+    float: right;
     height: 26px;
     padding: 5px 10px;
     border-radius: 5px;
