@@ -19,8 +19,9 @@ window.addEvent('domready', function () {
     // QUI
     require([
         'qui/QUI',
-        'Locale'
-    ], function (QUI, QUILocale) {
+        'Locale',
+        'package/quiqqer/tooltips/bin/html5tooltips'
+    ], function (QUI, QUILocale, html5tooltips) {
         QUI.setAttribute('control-loader-type', 'fa-spinner');
         QUI.setAttribute('control-loader-color', '#999999');
 
