@@ -49,6 +49,7 @@
     border-bottom: none;
     clear: both;
     color: #333;
+    display: flex !important;
     float: left;
     line-height: 40px;
     overflow: hidden;
@@ -167,3 +168,4 @@
 .quiqqer-order-profile-orders .quiqqer-order-profile-orders-pagination:first-child {
     display: none;
 }
+

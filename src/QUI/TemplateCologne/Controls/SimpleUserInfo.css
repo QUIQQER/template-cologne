@@ -26,8 +26,8 @@
 }
 
 .sui-badge .fa {
-    margin-right: 7px;
     margin-left: 2px;
+    margin-right: 7px;
 }
 
 .sui-image {
@@ -59,4 +59,43 @@
 
 .sui-data-joined {
     opacity: 0.5;
+}
+
+@media (max-width: 999px) {
+    .sui-image {
+        height: 80px;
+        width: 80px;
+    }
+
+    .sui-image img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .sui-data {
+        padding: 5px 10px;
+        width: calc(100% - 80px);
+    }
+}
+
+@media (max-width: 768px) {
+    .quiqqer-frontendUsers-controls-profile-categories {
+        display: block !important;
+        margin-bottom: 1em;
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .quiqqer-frontendUsers-controls-profile-categories > div {
+        display: none;
+    }
+
+    .quiqqer-frontendUsers-controls-profile-categories > div.quiqqer-fupc-userinfo {
+        display: block;
+    }
+
+    .sui-top {
+        height: 70px;
+    }
 }
