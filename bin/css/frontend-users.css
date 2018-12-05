@@ -3,8 +3,8 @@
 /********************/
 .quiqqer-fupc-userinfo {
     border: 1px solid #ddd;
-    margin-bottom: 1em;
     border-radius: 5px;
+    margin-bottom: 1em;
 }
 
 .quiqqer-fupc-userinfo .sui-top {
@@ -33,9 +33,9 @@
 
 .quiqqer-fupc-category .quiqqer-fupc-category-header {
     border-bottom: none !important;
+    cursor: pointer;
     font-size: 1.5em;
     line-height: 30px;
-    cursor: pointer;
 }
 
 .quiqqer-fu-profile-categories-category-items {
@@ -45,17 +45,17 @@
 }
 
 .quiqqer-fupc-category-items-item {
+    border: 1px solid #ddd;
+    border-bottom: none;
     clear: both;
     color: #333;
     float: left;
     line-height: 40px;
-    text-decoration: none;
-    width: 100%;
+    overflow: hidden;
     padding: 5px 0;
     position: relative;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    border-bottom: none;
+    text-decoration: none;
+    width: 100%;
 }
 
 .quiqqer-fupc-category--open .quiqqer-fupc-category-items-item:last-child {
@@ -72,8 +72,8 @@
 .quiqqer-fupc-category-items-item:before {
     content: '';
     height: 100%;
-    position: absolute;
     left: 0;
+    position: absolute;
     top: 0;
     width: 0;
 }

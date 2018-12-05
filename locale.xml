@@ -120,6 +120,10 @@
             <de><![CDATA[Bestellungen]]></de>
             <en><![CDATA[orders]]></en>
         </locale>
+        <locale name="template.simpleUserInfo.ordersNumber.info">
+            <de><![CDATA[Sie haben bei uns [ordersNumber] Bestellungen ausgeführt.]]></de>
+            <en><![CDATA[You have already placed an order [ordersNumber] times.]]></en>
+        </locale>
         <locale name="template.simpleUserInfo.joined">
             <de><![CDATA[Account seit]]></de>
             <en><![CDATA[Joined]]></en>

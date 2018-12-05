@@ -7,50 +7,56 @@
 }
 
 .sui-top {
-    width: 100%;
-    height: 100px;
     background: #eee;
+    height: 100px;
+    width: 100%;
 }
 
 .sui-badge {
     background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
     cursor: help;
     display: block;
     float: right;
-    height: 26px;
-    padding: 5px 10px;
-    border-radius: 5px;
     font-size: 0.9em;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+    height: 26px;
     margin: 20px;
+    padding: 5px 10px;
+}
+
+.sui-badge .fa {
+    margin-right: 7px;
+    margin-left: 2px;
 }
 
 .sui-image {
-    width: 100px;
-    position: relative;
     height: 100px;
+    position: relative;
+    width: 100px;
 }
 
 .sui-image img {
+    background: #fff;
+    border: 8px solid #fff;
     border-radius: 50px;
+    height: 100px;
+    object-fit: cover;
     position: relative;
     top: -40%;
-    border: 8px solid #fff;
-    object-fit: cover;
     width: 100px;
-    height: 100px;
-    background: #fff;
 }
 
 .sui-data {
-    width: calc(100% - 100px);
     padding: 5px 20px;
+    width: calc(100% - 100px);
 }
 
 .sui-data-name {
-    font-size: 1.3em;
     display: block;
+    font-size: 1.3em;
 }
+
 .sui-data-joined {
     opacity: 0.5;
 }

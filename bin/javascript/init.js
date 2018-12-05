@@ -19,9 +19,8 @@ window.addEvent('domready', function () {
     // QUI
     require([
         'qui/QUI',
-        'Locale',
-        'package/quiqqer/tooltips/bin/html5tooltips'
-    ], function (QUI, QUILocale, html5tooltips) {
+        'Locale'
+    ], function (QUI, QUILocale) {
         QUI.setAttribute('control-loader-type', 'fa-spinner');
         QUI.setAttribute('control-loader-color', '#999999');
 
@@ -53,7 +52,7 @@ window.addEvent('domready', function () {
                             class    : 'cologne-logout-dialog',
                             title    : false,
                             icon     : false,
-                            maxHeight: 320,
+                            maxHeight: 350,
                             maxWidth : 400,
                             events   : {
                                 onOpen: function (Popup) {

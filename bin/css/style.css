@@ -1,8 +1,8 @@
 * {
-    box-sizing: border-box;
     -moz-box-sizing: border-box;
-
     -webkit-box-sizing: border-box;
+
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -99,10 +99,10 @@ h4 {
 }
 
 ul, ol {
-    margin-top: 0;
-    margin-bottom: 16px;
-    padding-left: 18px;
     line-height: 1.8;
+    margin-bottom: 16px;
+    margin-top: 0;
+    padding-left: 18px;
 }
 
 small, .font_small, .font-small {
@@ -111,6 +111,16 @@ small, .font_small, .font-small {
 
 img {
     max-width: 100%;
+}
+
+.html5tooltip-box {
+    background-color: #423d3d;
+    border-radius: 5px;
+    color: #F7F7F7;
+    cursor: default;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 /** helper
@@ -251,8 +261,8 @@ img {
 }
 
 .topbar-mobile-logo {
-    padding: 5px 0 5px 20px;
     height: 100%;
+    padding: 5px 0 5px 20px;
 }
 
 .topbar-mobile-logo img {
@@ -276,9 +286,9 @@ img {
  ===================================== */
 
 .cologne-header {
-    box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0);
     background: #fff;
     border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0);
     display: flex;
     height: 80px;
     justify-content: space-between;
@@ -334,6 +344,7 @@ img {
         border-top: 1px solid #ddd;
     }
 }
+
 /** Page title & breadcrumb
  ===================================== */
 
@@ -554,28 +565,28 @@ img {
 /* login */
 /* show close button */
 .qui-window-popup-title {
+    background: none !important;
     display: block !important;
     padding: 0 !important;
-    background: none !important;
 }
 
 .qui-window-popup-title-close {
+    align-items: center;
+    border-radius: 0;
     color: inherit;
     display: flex;
-    align-items: center;
+    font-size: 1.5em !important;
     justify-content: center;
     line-height: 0 !important;
-    position: relative !important;
-    border-radius: 0;
-    font-size: 1.5em !important;
     padding: 0 !important;
+    position: relative !important;
 }
 
 /* logo image */
 .quiqqer-login-logo {
-    max-height: 100px;
-    margin-top: 0.5em !important;
     margin-bottom: 2em !important;
+    margin-top: 0.5em !important;
+    max-height: 100px;
     max-width: calc(100% - 100px);
 }
 
@@ -611,21 +622,21 @@ input[type="password"]:focus {
 /* custom title */
 .quiqqer-loginWindow-content-title,
 .qui-window-popup h2 {
+    margin-bottom: 1em;
     margin-top: 0;
     position: relative;
-    margin-bottom: 1em;
     text-align: center;
 }
 
 .quiqqer-loginWindow-content-title:after,
 .qui-window-popup h2:after {
-    content: '';
-    left: calc(50% - 40px);
-    bottom: -10px;
-    width: 80px;
-    height: 2px;
     background: #3986dd;
+    bottom: -10px;
+    content: '';
+    height: 2px;
+    left: calc(50% - 40px);
     position: absolute;
+    width: 80px;
 }
 
 /* logout */
@@ -688,6 +699,7 @@ input[type="password"]:focus {
 .content-headerpage-multible-left {
     padding-right: 20px !important;
 }
+
 /***********/
 /* Product */
 /***********/
@@ -695,6 +707,7 @@ input[type="password"]:focus {
 .product-gallery {
     padding-right: 40px !important;
 }
+
 /* Gallery */
 .product-gallery .quiqqer-gallery-slider {
     border: none !important;
@@ -717,6 +730,7 @@ input[type="password"]:focus {
 .product-gallery .quiqqer-gallery-slider-previewOutside .quiqqer-gallery-slider-content {
     height: calc(100% - 90px)
 }
+
 .product-gallery .quiqqer-gallery-slider-previews {
     margin-top: 10px;
 }
@@ -732,13 +746,14 @@ input[type="password"]:focus {
 }
 
 .product-gallery .quiqqer-gallery-slider-previews-entry {
+    border: 2px solid #ddd;
+    border-radius: 3px;
     height: 70px;
     margin-right: 10px;
     padding: 5px;
-    border: 2px solid #ddd;
-    border-radius: 3px;
     transition: 0.30s border-color;
 }
+
 .product-gallery .quiqqer-gallery-slider-active-preview {
     border-color: #666;
     opacity: 1;
@@ -752,6 +767,7 @@ input[type="password"]:focus {
 .product-data {
     padding-left: 40px !important;
 }
+
 .product-data .page-content-header h1 {
     font-size: 1.8em;
     margin-bottom: 5px;
@@ -772,10 +788,10 @@ input[type="password"]:focus {
 
 .product-data-price .qui-products-price-display-value {
     color: inherit;
+    float: none;
     font-size: 3rem;
     font-weight: normal;
     line-height: normal;
-    float: none;
 }
 
 .product-data-price .qui-products-price-display-vat {
@@ -784,8 +800,8 @@ input[type="password"]:focus {
 
 /* product field (Auswahllisten) */
 .product-data .product-data-fieldlist {
-    display: flex;
     border-top: none;
+    display: flex;
 }
 
 .product-data .product-data-fieldlist .quiqqer-product-field {
@@ -796,9 +812,9 @@ input[type="password"]:focus {
 }
 
 .product-data-fieldlist .quiqqer-product-field-title {
-    padding: 0 10px;
-    margin-bottom: 5px;
     font-size: 0.9rem;
+    margin-bottom: 5px;
+    padding: 0 10px;
 }
 
 .quiqqer-product-field-value {
@@ -817,9 +833,10 @@ input[type="password"]:focus {
     justify-content: flex-end;
 
 }
+
 .product-data .quiqqer-order-button-add {
-    display: flex;
     align-items: flex-end;
+    display: flex;
     padding: 0;
 }
 
@@ -834,9 +851,9 @@ input[type="password"]:focus {
 }
 
 .quiqqer-order-button-add-quantity-label {
+    font-size: 0.9rem;
     margin-bottom: 5px;
     padding: 0 10px;
-    font-size: 0.9rem;
 }
 
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
@@ -844,9 +861,9 @@ input[type="password"]:focus {
 }
 
 .quiqqer-order-button-add .quiqqer-order-button-add-quantity-input {
-    padding: initial;
     border: none;
     outline: none;
+    padding: initial;
 }
 
 .quiqqer-order-button-add-quantity-decrease,
@@ -870,10 +887,10 @@ input[type="password"]:focus {
 }
 
 li.product-data-more-tabs-tab {
-    margin-bottom: -1px;
     background: #fff;
-    outline: none;
     border-color: transparent;
+    margin-bottom: -1px;
+    outline: none;
 }
 
 li.product-data-more-tabs-tab.active {
