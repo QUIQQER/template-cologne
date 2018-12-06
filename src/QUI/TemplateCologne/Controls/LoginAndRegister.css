@@ -1,0 +1,57 @@
+.loginAndRegister-wrapper {
+    display: flex;
+}
+
+.loginAndRegister-column {
+    width: 50%;
+}
+
+.loginAndRegister-login {
+    margin-right: 1em;
+}
+
+.loginAndRegister-register {
+    margin-left: 1em;
+}
+
+/* demo */
+
+.loginAndRegister-register label {
+    display: block;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.loginAndRegister-register .form-row label {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.loginAndRegister-register .form-row label:first-child {
+    padding-left: 0;
+}
+
+.loginAndRegister-register .form-row label:last-child {
+    padding-right: 0;
+}
+
+.loginAndRegister-register input,
+.loginAndRegister-register select {
+    width: 100%;
+}
+
+
+.loginAndRegister-register label span {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.loginAndRegister-register input[type="submit"] {
+    width: auto;
+    float: right;
+}
+
+.loginAndRegister-register .qui-select {
+    width: 100%;
+}

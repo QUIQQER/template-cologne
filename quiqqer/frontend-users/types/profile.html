@@ -1,0 +1,9 @@
+{if isset($SessionUser) && $SessionUser->getId()}
+<div class="quiqqer-frontendUsers-profile-container">
+    {$Control->create()}
+</div>
+{else}
+<div class="templateCologne-frontendUsers-profile-container-login">
+    {control control="QUI\TemplateCologne\Controls\LoginAndRegister"}
+</div>
+{/if}

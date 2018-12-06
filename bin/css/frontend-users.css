@@ -93,8 +93,8 @@
     line-height: 40px;
 }
 
-.quiqqer-frontendUsers-userdata-section {
-    max-width: 600px;
+.quiqqer-frontendUsers-userdata-section, .quiqqer-frontendUsers-userdata-address, .quiqqer-frontendUsers-userdata-address-additional {
+     max-width: 100% !important;
 }
 
 .quiqqer-frontend-users-address header,
