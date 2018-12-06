@@ -51,29 +51,24 @@
 
 
 {if $Site->getId() !== 1}
-<div class="cologne-breadcrumb">
-    <div class="cologne-grid-container">
-        <h1 class="page-title">{$Site->getAttribute('title')}</h1>
-        {control control="\QUI\Controls\Breadcrumb"}
-    </div>
-</div>
+    {fetch template="template/breadcrumb.html" Site=$Site}
 {/if}
 
 {assign var=contentPrefix value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {foreach $contentPrefix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'brickFullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
 
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('noPadding')}
-{assign var=brickNoPadding value="brick-no-padding"}
-{/if}
-<section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('noPadding')}
+        {assign var=brickNoPadding value="brick-no-padding"}
+    {/if}
+    <section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
 </section>
 {/foreach}
 
@@ -86,20 +81,20 @@
 
 {assign var=contentSuffix value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
 {foreach $contentSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'brickFullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
 
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('noPadding')}
-{assign var=brickNoPadding value="brick-no-padding"}
-{/if}
-<section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('noPadding')}
+        {assign var=brickNoPadding value="brick-no-padding"}
+    {/if}
+    <section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
 
 
