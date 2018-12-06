@@ -30,8 +30,6 @@ section.quiqqer-order-profile-orders-order {
 .quiqqer-order-profile-orders-order-header-addressDelivery > span:first-child,
 .quiqqer-order-profile-orders-order-header-orderId > span:first-child {
     display: block;
-    font-size: 0.9em;
-    opacity: 0.7;
 }
 
 .quiqqer-order-profile-orders-order-header-addressInvoice address {
@@ -112,6 +110,18 @@ section.quiqqer-order-profile-orders-order {
     align-self: end;
 }
 
+/**********/
+/* footer */
+/**********/
+.quiqqer-order-profile-orders-order footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-paymentType {
+    margin-top: 0;
+}
+
 @media (max-width: 768px) {
     /***********************/
     /* article list header */
@@ -148,10 +158,22 @@ section.quiqqer-order-profile-orders-order {
         padding-top: 10px;
     }
 
-    .quiqqer-order-profile-orders-order-articles-rebuy {
+    .quiqqer-order-profile-orders-order-articles-rebuy,
+    .quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-rightWrapper .btn {
         display: block;
         margin: 0 auto;
         max-width: 340px;
         width: 100%;
+    }
+
+    /**********/
+    /* footer */
+    /**********/
+    .quiqqer-order-profile-orders-order footer {
+        display: block;
+    }
+
+    .quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-rightWrapper .btn {
+        margin-top: 10px;
     }
 }
