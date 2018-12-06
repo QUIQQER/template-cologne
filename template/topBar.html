@@ -1,0 +1,31 @@
+<div class="topbar template-columns">
+    <a href="/" class="topbar-mobile-logo hide-on-desktop">
+        {image image=$Project->getMedia()->getLogoImage() class="logo"}
+    </a>
+
+    <div class="topbar-mobile-menu hide-on-desktop">
+        {$Menu->create()}
+    </div>
+    <div class="template-column topbar-left hide-on-mobile">
+        {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
+    </div>
+
+    <div class="template-column topbar-right hide-on-mobile">
+        <span class="template-column cologne-header-control-user">
+            <a href="#login" class="login btn btn-primary btn-outline">
+                <span class="fa fa-spinner fa-spin"></span>
+                {if $User->getId()}
+                    {locale group="quiqqer/template-cologne"
+                            var="template.logged.in" username=$User->getName()}
+                {else}
+                    {locale group="quiqqer/template-cologne"
+                            var="template.login"}
+                {/if}
+            </a>
+        </span>
+
+        <span class="template-column cologne-header-control-currencies"></span>
+
+        DE EN <span class="fa fa-angle-down"></span>
+    </div>
+</div>

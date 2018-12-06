@@ -1,0 +1,17 @@
+<header class="cologne-header cologne-header-menu template-columns">
+    <div class="template-column cologne-header-logo hide-on-mobile">
+        <a href="/" class="cologne-header-logo-link">
+            {image image=$Project->getMedia()->getLogoImage() class="logo"}
+        </a>
+    </div>
+
+    <div class="template-column cologne-header-nav hide-on-mobile">
+        {$Menu->create()}
+    </div>
+
+    <div class="template-column cologne-header-nav hide-on-desktop"></div>
+
+    <div class="cologne-header-control">
+        <div class="template-column cologne-header-control-basket"></div>
+    </div>
+</header>
