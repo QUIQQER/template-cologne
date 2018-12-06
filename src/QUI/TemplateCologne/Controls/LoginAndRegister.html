@@ -1,13 +1,14 @@
 <div class="loginAndRegister-wrapper">
     <div class="loginAndRegister-login loginAndRegister-column">
         <h3>Ich bin bereits Kunde</h3>
+        <p>Einloggen mit Ihrer E-Mail-Adresse und Ihrem Passwort</p>
         {$LoginControl->create()}
     </div>
     <div class="loginAndRegister-register loginAndRegister-column">
         <h3>Kundenkonto erstellen</h3>
         <p>Registration takes less than a minute but gives you full control over your orders.</p>
 
-        <form>
+        <form class="clearfix" style="margin-bottom: 1em;">
 
             <label class="">
                 <span class="quiqqer-frontendUsers-userdata-label">
@@ -92,5 +93,9 @@
             <input type="submit" value="Registrieren"/>
         </form>
 
+
+        <div class="quiqqer-frontendUsers-info">
+            Das hier ist nur ein Test. Registrierungsformular muss noch implementiert werden.
+        </div>
     </div>
 </div>

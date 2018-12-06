@@ -14,12 +14,22 @@
     margin-left: 1em;
 }
 
+/* login */
+.loginAndRegister .quiqqer-login {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    margin: 3em auto 0;
+    max-width: 360px;
+}
+
+
+/* register */
 /* demo */
 
 .loginAndRegister-register label {
     display: block;
-    margin-bottom: 20px;
     flex-grow: 1;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -48,8 +58,8 @@
 }
 
 .loginAndRegister-register input[type="submit"] {
-    width: auto;
     float: right;
+    width: auto;
 }
 
 .loginAndRegister-register .qui-select {
