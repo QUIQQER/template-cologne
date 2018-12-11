@@ -717,6 +717,25 @@ input[type="password"]:focus {
 
 /** Product Children Slider (horizontal)
  ===================================== */
+ul.quiqqer-bricks-children-slider-container-slide {
+    padding: 10px 0 !important;
+}
+
+.quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry {
+    transition: 0.2s all;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+    border-color: #ddd;
+}
+
+.quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.quiqqer-bricks-children-slider-container-slide .quiqqer-bricks-children-slider-child-display img:hover {
+    transform: none;
+    -webkit-transform: none;
+}
+
 .brick-full-width .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry:first-child {
     margin: 0 5px 0 5px;
 }
@@ -727,6 +746,13 @@ input[type="password"]:focus {
 
 .brick-full-width .quiqqer-bricks-children-slider-child:last-child .quiqqer-products-control-product-childrenslider-entry:first-child {
     margin-right: 20px;
+}
+
+/* nav arrows */
+.quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-prev,
+.quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-next {
+    height: calc(100% - 22px) !important;
+    margin: 10px 0;
 }
 
 /***************/

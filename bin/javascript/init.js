@@ -243,7 +243,7 @@ window.addEvent('domready', function () {
                         transform: 'translateY(0)'
                     })
 
-                }).delay(500);
+                }).delay(100);
             }
 
             Menu.addClass('cologne-header-fixed');
