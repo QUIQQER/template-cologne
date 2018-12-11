@@ -1,17 +1,17 @@
 <section class="quiqqer-order-profile-orders-order">
     <header>
         <div class="quiqqer-order-profile-orders-order-header-date">
-            <span class="text-muted">{locale group="quiqqer/order" var="control.profile.orders.order.date"}</span>
+            <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.date"}</span>
             <span>{$Order->getCreateDate()}</span>
         </div>
 
         <div class="quiqqer-order-profile-orders-order-header-total">
-            <span class="text-muted">{locale group="quiqqer/order" var="control.profile.orders.order.total"}</span>
+            <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.total"}</span>
             <span>{$order.calculations.display_sum}</span>
         </div>
 
         <div class="quiqqer-order-profile-orders-order-header-addressInvoice">
-            <span class="text-muted">{locale group="quiqqer/order" var="control.profile.orders.order.invoiceAddress"}</span>
+            <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.invoiceAddress"}</span>
             {if $Invoice}
             {assign var=Customer value=$Invoice->getCustomer()}
             {else}
@@ -27,7 +27,7 @@
         </div>
 
         <div class="quiqqer-order-profile-orders-order-header-orderId">
-            <span class="text-muted">{locale group="quiqqer/order" var="control.profile.orders.order.orderNo"}</span>
+            <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.orderNo"}</span>
             <a href="{$Utils->getOrderUrl($Project, $Order)}"
                target="_blank"
                data-hash="{$Order->getHash()}"
@@ -48,14 +48,14 @@
         <div class="quiqqer-order-profile-orders-order-footer-leftWrapper">
             {if $Payment}
             <div class="quiqqer-order-profile-orders-order-footer-paymentType">
-                <span class="text-muted">{locale group="quiqqer/order" var="control.profile.orders.order.paymentMethod"}:</span>
+                <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.paymentMethod"}:</span>
                 <span>{$Payment->getTitle()}</span>
             </div>
             {/if}
 
             {if isset($paymentStatus)}
             <div class="quiqqer-order-profile-orders-order-footer-paymentStatus">
-                <span class="text-muted">{locale group="quiqqer/order" var="control.profile.orders.order.paymentStatus"}:</span>
+                <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.paymentStatus"}:</span>
                 <span>{$paymentStatus}</span>
             </div>
             {/if}

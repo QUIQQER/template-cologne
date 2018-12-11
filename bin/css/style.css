@@ -124,8 +124,13 @@ img {
 }
 
 .text-muted {
+    color: #9ba3ad;
+}
+
+.text-small,
+.small,
+small {
     font-size: 0.9em;
-    color: #8e959d;
 }
 
 /** helper
@@ -778,10 +783,23 @@ input[type="password"]:focus {
     margin-bottom: 5px;
 }
 
+.product-data .page-content-header h1:before {
+    content: ' ';
+    width: 30px;
+    float: right;
+    height: 5px;
+}
+
+.quiqqer-products-product .product-close-button {
+    width: 30px;
+    font-size: 1.8em;
+    line-height: 30px;
+    text-align: right;
+}
+
 /* retail price */
 .product-data-price-retail .qui-products-price-display {
     font-size: 1.3em;
-    opacity: 0.5;
     text-decoration: line-through;
 }
 
