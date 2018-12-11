@@ -28,8 +28,8 @@ window.addEvent('domready', function () {
 
 
         var Logo = document.getElement('header .logo'),
-            Link = document.getElements('.cologne-header-control-user'),
-            Icon = Link.getElement('.fa');
+            UserButton = document.getElements('.cologne-header-control-user'),
+            UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
 
         window.addEvent('load', function () {
             document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
@@ -39,53 +39,54 @@ window.addEvent('domready', function () {
          * Login
          */
         require([
-            'controls/users/LoginWindow',
-            'controls/users/LogoutWindow'
-        ], function (LoginWindow, LogoutWindow) {
-            Link.addEvents({
+            'controls/users/LoginWindow'
+        ], function (LoginWindow) {
+
+            if (QUIQQER_USER.id) {
+                var UserIcon = document.getElement(
+                    '[data-qui="package/quiqqer/frontend-users/bin/frontend/controls/UserIcon"]'
+                );
+
+                if (UserIcon) {
+                    UserIcon.addEvent('load', function () {
+                        var Control = QUI.Controls.getById(UserIcon.get('data-quiid'));
+                        var Menu = Control.$Menu;
+
+                        /*require([
+                            'Locale',
+                            'qui/controls/contextmenu/Item',
+                            'qui/controls/contextmenu/Separator'
+                        ], function (QUILocale, Item, Separator) {
+                            Menu.appendChild(
+                                new Item({
+                                    icon  : 'fa fa-cog',
+                                    text  : QUILocale.get('sequry/template', 'sequry.usermenu.entrysettings.title'),
+                                    events: {
+                                        click: function () {
+                                            openUserMenu(QUILocale);
+                                        }
+                                    }
+                                })
+                            );
+                        });*/
+
+                        Control.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
+                            MenuNode.setStyles({
+                                left : null,
+                                right: -25
+                            });
+                        });
+                    });
+                }
+            }
+
+            UserButton.addEvents({
                 click: function (event) {
                     if (event) {
                         event.stop();
                     }
 
-                    if (QUIQQER_USER.id) {
-                        new LogoutWindow({
-                            class    : 'cologne-logout-dialog',
-                            title    : false,
-                            icon     : false,
-                            maxHeight: 350,
-                            maxWidth : 400,
-                            events   : {
-                                onOpen: function (Popup) {
-                                    var Content = Popup.getElm();
-
-                                    var ContentElms = [
-                                        Content.getElement('.qui-window-popup-content'),
-                                        Content.getElement('.qui-window-popup-buttons')
-                                    ];
-
-                                    ContentElms.each(function (ContentElm) {
-                                        ContentElm.setStyle('opacity', 0);
-                                    });
-
-                                    var CancelButton = Content.getElement('button[name="cancel"]');
-                                    if (CancelButton) {
-                                        CancelButton.addClass('btn-secondary btn-outline');
-                                    }
-
-                                    // workaround due to the CancelButton.addClass
-                                    // to avoid the "flash" effect
-                                    (function () {
-                                        ContentElms.each(function (ContentElm) {
-                                            moofx(ContentElm).animate({
-                                                opacity: 1
-                                            });
-                                        })
-                                    }).delay(50)
-                                }
-                            }
-                        }).open();
-                    } else {
+                    if (!QUIQQER_USER.id) {
                         new LoginWindow({
                             title       : false,
                             maxHeight   : 500,
@@ -117,10 +118,13 @@ window.addEvent('domready', function () {
                 }
             });
 
-            Icon.removeClass('fa-spinner');
-            Icon.removeClass('fa-spin');
-            Icon.addClass('fa-user');
-
+            moofx(UserButtonLoader).animate({
+                opacity: 0
+            }, {
+                callback: function () {
+                    UserButtonLoader.destroy();
+                }
+            });
 
             if ("QUIQQER_LOGIN_FAILED" in window && window.QUIQQER_LOGIN_FAILED) {
                 new LoginWindow({
@@ -213,9 +217,9 @@ window.addEvent('domready', function () {
         /**
          * Currencies
          */
-        require(['package/quiqqer/currency/bin/controls/Switch'], function (Switch) {
+        /*require(['package/quiqqer/currency/bin/controls/Switch'], function (Switch) {
             new Switch().inject(document.getElement('.cologne-header-control-currencies'));
-        });
+        });*/
 
 
         /**

@@ -10,8 +10,18 @@
         {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
     </div>
 
-    <div class="template-column topbar-right hide-on-mobile">
-        <span class="template-column cologne-header-control-user">
+    <div class="topbar-right hide-on-mobile">
+        <span class="cologne-header-control-user">
+            {if $User->getId()}
+                {$Avatar->create()}
+            {else}
+                <span class="fa fa-user-o" title="{locale group='quiqqer/template-cologne' var='template.login'}"></span>
+            {/if}
+            <span class="cologne-header-control-user-loader">
+                <span class="fa fa-pulse fa-spinner"></span>
+            </span>
+        </span>
+        <!--<span class="template-column cologne-header-control-user">
             <a href="#login" class="login btn btn-primary btn-outline">
                 <span class="fa fa-spinner fa-spin"></span>
                 {if $User->getId()}
@@ -22,9 +32,9 @@
                             var="template.login"}
                 {/if}
             </a>
-        </span>
+        </span>-->
 
-        <span class="template-column cologne-header-control-currencies"></span>
+        <!--<span class="template-column cologne-header-control-currencies"></span>-->
 
         DE EN <span class="fa fa-angle-down"></span>
     </div>

@@ -17,9 +17,16 @@ $Menu = new QUI\Menu\MegaMenu([
 
 $typeClass = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
 
+
+/* user avatar */
+$Avatar = new QUI\FrontendUsers\Controls\UserIcon([
+    'User' => QUI::getUserBySession()
+]);
+
 $Engine->assign([
     'BricksManager' => QUI\Bricks\Manager::init(),
     'Project'       => $Project,
     'typeClass'     => $typeClass,
     'Menu'          => $Menu,
+    'Avatar' => $Avatar
 ]);
