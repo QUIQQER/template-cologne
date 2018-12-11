@@ -30,3 +30,7 @@ a:hover {
 .quiqqer-fupc-category-items-item:before {
     background: #3986dd;
 }
+
+.noUi-connect {
+    background: #3986dd !important;
+}

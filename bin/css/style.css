@@ -133,6 +133,24 @@ small {
     font-size: 0.9em;
 }
 
+/* input range */
+.qui-control-input-range {
+    margin-top: 1em;
+}
+
+.qui-control-input-range .noUi-horizontal {
+    height: 12px;
+}
+
+.qui-control-input-range .noUi-horizontal .noUi-handle {
+    top: -8px;
+    height: 26px;
+}
+
+.qui-control-input-range-text {
+    margin-top: 1em;
+}
+
 /** helper
  ===================================== */
 
@@ -368,6 +386,14 @@ small {
     display: flex;
     height: 100%;
     justify-content: space-between;
+}
+
+.quiqqer-breadcrumb ul li {
+    color: #9ba3ad;
+}
+
+.quiqqer-breadcrumb ul li:last-child {
+    color: inherit;
 }
 
 .quiqqer-breadcrumb-link {
@@ -729,6 +755,7 @@ input[type="password"]:focus {
 
 .product-gallery .quiqqer-gallery-slider-image {
     cursor: zoom-in;
+    max-height: 100%;
 }
 
 .product-gallery .quiqqer-gallery-slider-prev,
@@ -881,6 +908,7 @@ input[type="password"]:focus {
 
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
     width: 40px;
+    height: auto;
 }
 
 .quiqqer-order-button-add .quiqqer-order-button-add-quantity-input {

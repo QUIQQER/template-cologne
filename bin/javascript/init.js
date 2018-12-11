@@ -223,7 +223,6 @@ window.addEvent('domready', function () {
          * @type {boolean}
          */
         var Menu         = document.getElement('.cologne-header'),
-            menuHeight   = Menu.getSize().y,
             topBarHeight = document.getElement('.topbar').getSize().y;
 
         /**
@@ -248,25 +247,22 @@ window.addEvent('domready', function () {
             }
 
             Menu.addClass('cologne-header-fixed');
-
             document.body.addClass('header-fixed');
         };
 
         var removeMenuFixed = function () {
             Menu.removeClass('cologne-header-fixed');
             Menu.setStyle('position', null);
-//            document.body.setStyle('padding-top', null);
             document.body.removeClass('header-fixed');
         };
 
         if (Menu) {
             // check on page load if menu should be sticked to the top
             if (QUI.getScroll().y >= topBarHeight) {
-
                 setMenuFixed(true);
             }
 
-            window.addEvent('scroll', function () {
+            QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y >= topBarHeight) {
                     setMenuFixed(false);
                     return;
