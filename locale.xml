@@ -172,6 +172,11 @@
             <de><![CDATA[Anmelden]]></de>
             <en><![CDATA[Login]]></en>
         </locale>
+
+        <locale name="frontend.usericon.menuentry.logout.label">
+            <de><![CDATA[Abmelden]]></de>
+            <en><![CDATA[Logout]]></en>
+        </locale>
     </groups>
 
 </locales>

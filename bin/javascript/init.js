@@ -39,8 +39,9 @@ window.addEvent('domready', function () {
          * Login
          */
         require([
-            'controls/users/LoginWindow'
-        ], function (LoginWindow) {
+            'controls/users/LoginWindow',
+            'controls/users/LogoutWindow'
+        ], function (LoginWindow, LogoutWindow) {
 
             if (QUIQQER_USER.id) {
                 var UserIcon = document.getElement(
@@ -52,23 +53,61 @@ window.addEvent('domready', function () {
                         var Control = QUI.Controls.getById(UserIcon.get('data-quiid'));
                         var Menu = Control.$Menu;
 
-                        /*require([
+                        require([
                             'Locale',
                             'qui/controls/contextmenu/Item',
                             'qui/controls/contextmenu/Separator'
                         ], function (QUILocale, Item, Separator) {
                             Menu.appendChild(
                                 new Item({
-                                    icon  : 'fa fa-cog',
-                                    text  : QUILocale.get('sequry/template', 'sequry.usermenu.entrysettings.title'),
+                                    icon  : 'fa fa-sign-out',
+                                    text  : QUILocale.get('quiqqer/template-cologne', 'frontend.usericon.menuentry.logout.label'),
                                     events: {
                                         click: function () {
-                                            openUserMenu(QUILocale);
+
+                                            new LogoutWindow({
+                                                class    : 'cologne-logout-dialog',
+                                                title    : false,
+                                                icon     : false,
+                                                maxHeight: 350,
+                                                maxWidth : 400,
+                                                events   : {
+                                                    onOpen: function (Popup) {
+
+                                                        var Content = Popup.getElm();
+
+                                                        var ContentElms = [
+                                                            Content.getElement('.qui-window-popup-content'),
+                                                            Content.getElement('.qui-window-popup-buttons')
+                                                        ];
+
+                                                        ContentElms.each(function (ContentElm) {
+                                                            ContentElm.setStyle('opacity', 0);
+                                                        });
+
+                                                        var CancelButton = Content.getElement('button[name="cancel"]');
+                                                        if (CancelButton) {
+                                                            CancelButton.addClass('btn-secondary btn-outline');
+                                                        }
+
+                                                        // workaround due to the CancelButton.addClass
+                                                        // to avoid the "flash" effect
+                                                        (function () {
+                                                            ContentElms.each(function (ContentElm) {
+                                                                moofx(ContentElm).animate({
+                                                                    opacity: 1
+                                                                });
+                                                            })
+                                                        }).delay(50)
+                                                    }
+                                                }
+                                            }).open();
+
                                         }
                                     }
                                 })
                             );
-                        });*/
+                        });
 
                         Control.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
                             MenuNode.setStyles({
