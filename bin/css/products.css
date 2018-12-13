@@ -5,11 +5,11 @@
 
 .type-quiqqer-products-types-category .content-headerpage-multible-left {
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 .type-quiqqer-products-types-category .quiqqer-products-category {
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 20px;
 }
 
@@ -31,19 +31,81 @@
 
 .quiqqer-products-productList-products-container-real {
     display: inline-grid;
-    grid-template-columns: 33.333% 33.333% 33.333%;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    grid-gap: 20px;
+}
+
+/* product list: gallery */
+.cologne-products-productGallery-products-product {
+    padding: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+}
+
+.cologne-products-productGallery-products-product:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cologne-products-productGallery-products-product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    height: 150px;
+    flex-grow: 0;
     width: 100%;
 }
 
-.quiqqer-products-productGallery-products-product-short-image {
-    width: 100%;
+.cologne-products-productGallery-products-product-image img {
+    max-height: 100%;
 }
 
-.quiqqer-products-productGallery-products-product > a > img {
-    max-height: initial !important;
-    max-width: initial !important;
-    padding: 0;
+.cologne-products-productGallery-products-product-title {
+    font-size: 1.2rem;
+    margin: 1em 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    max-width: 100%;
+}
+
+.cologne-products-productGallery-products-product-price {
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+
+.product-buttons {
+    margin-top: auto;
+}
+
+.product-buttons a {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    float: none;
+}
+
+.product-buttons label {
+    position: relative;
     width: 100%;
+    cursor: pointer;
+}
+
+.product-buttons .fa {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    line-height: inherit;
+    transform: scale(0);
+    opacity: 0;
 }
 
 /** Product

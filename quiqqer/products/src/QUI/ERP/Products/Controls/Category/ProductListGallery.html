@@ -1,24 +1,34 @@
-<article class="quiqqer-products-productGallery-products-product"
+<article class="cologne-products-productGallery-products-product"
          data-pid="{$Product->getId()}"
 >
     {strip}
-    <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
-    {image image=$Product->getImage() title=$Product->getTitle() width=400}
-    <header>
-        {$Product->getTitle()}
-        <div class="quiqqer-products-productGallery-products-product-details">
-            <span class="fa fa-sort-down"></span>
-        </div>
-    </header>
-    <div class="quiqqer-products-productGallery-products-product-short">
-        <div class="quiqqer-products-productGallery-products-product-short-title">
-            {$Product->getTitle()}
-        </div>
-        <div class="quiqqer-products-productGallery-products-product-short-image">
-            {image image=$Product->getImage() title=$Product->getTitle() width=100 height=200}
-        </div>
-        {$Product->getDescription()}
-    </div>
+    <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:' html'}"
+       class="cologne-products-productGallery-products-product-image">
+        {image image=$Product->getImage() title=$Product->getTitle() width=400}
     </a>
+
+    <header class="cologne-products-productGallery-products-product-title" title="{$Product->getTitle()}">
+        {$Product->getTitle()}
+    </header>
+
+    <span class="cologne-products-productGallery-products-product-price">
+        {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+    </span>
+
+    <div class="product-buttons">
+        {template_event name="quiqqer::product-event::slider::buttonAddToCart" Product=$Product}
+        <!--<a href="" class="btn btn-link add-to-card">Add to wish list</a>-->
+        <a href="{$Product->getUrl()}"
+           class="btn btn-primary add-to-card"
+           data-product-id="{$Product->getId()}"
+           data-product-animatable="true"
+           data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+        >
+            <label>
+                {locale group="quiqqer/product-bricks" var="brick.control.product.addToCart"}
+            </label>
+            <span class="fa fa-check"></span>
+        </a>
+    </div>
     {/strip}
 </article>
