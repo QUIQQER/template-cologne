@@ -20,7 +20,8 @@ $typeClass = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'))
 
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
-    'User' => QUI::getUserBySession()
+    'showLogout' => false, // template cologne use own logout popup (see bin/javascript/init.js)
+    'User'       => QUI::getUserBySession()
 ]);
 
 $Engine->assign([
@@ -28,5 +29,5 @@ $Engine->assign([
     'Project'       => $Project,
     'typeClass'     => $typeClass,
     'Menu'          => $Menu,
-    'Avatar' => $Avatar
+    'Avatar'        => $Avatar
 ]);

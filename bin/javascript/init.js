@@ -1,7 +1,8 @@
+var lg = 'quiqqer/template-cologne';
+
 window.addEvent('domready', function () {
     "use strict";
 
-    var lg = 'quiqqer/template-cologne';
     var Header = document.getElement('.cologne-header');
 
     require.config({
@@ -25,10 +26,8 @@ window.addEvent('domready', function () {
         QUI.setAttribute('control-loader-type', 'fa-spinner');
         QUI.setAttribute('control-loader-color', '#999999');
 
-
-
-        var Logo = document.getElement('header .logo'),
-            UserButton = document.getElements('.cologne-header-control-user'),
+        var Logo             = document.getElement('header .logo'),
+            UserButton       = document.getElements('.cologne-header-control-user'),
             UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
 
         window.addEvent('load', function () {
@@ -39,84 +38,18 @@ window.addEvent('domready', function () {
          * Login
          */
         require([
-            'controls/users/LoginWindow',
-            'controls/users/LogoutWindow'
-        ], function (LoginWindow, LogoutWindow) {
-
+            'utils/Controls'
+        ], function (QUIControlUtils) {
             if (QUIQQER_USER.id) {
                 var UserIcon = document.getElement(
                     '[data-qui="package/quiqqer/frontend-users/bin/frontend/controls/UserIcon"]'
                 );
 
-                if (UserIcon) {
-                    UserIcon.addEvent('load', function () {
-                        var Control = QUI.Controls.getById(UserIcon.get('data-quiid'));
-                        var Menu = Control.$Menu;
-
-                        require([
-                            'Locale',
-                            'qui/controls/contextmenu/Item',
-                            'qui/controls/contextmenu/Separator'
-                        ], function (QUILocale, Item, Separator) {
-                            Menu.appendChild(
-                                new Item({
-                                    icon  : 'fa fa-sign-out',
-                                    text  : QUILocale.get('quiqqer/template-cologne', 'frontend.usericon.menuentry.logout.label'),
-                                    events: {
-                                        click: function () {
-
-                                            new LogoutWindow({
-                                                class    : 'cologne-logout-dialog',
-                                                title    : false,
-                                                icon     : false,
-                                                maxHeight: 350,
-                                                maxWidth : 400,
-                                                events   : {
-                                                    onOpen: function (Popup) {
-
-                                                        var Content = Popup.getElm();
-
-                                                        var ContentElms = [
-                                                            Content.getElement('.qui-window-popup-content'),
-                                                            Content.getElement('.qui-window-popup-buttons')
-                                                        ];
-
-                                                        ContentElms.each(function (ContentElm) {
-                                                            ContentElm.setStyle('opacity', 0);
-                                                        });
-
-                                                        var CancelButton = Content.getElement('button[name="cancel"]');
-                                                        if (CancelButton) {
-                                                            CancelButton.addClass('btn-secondary btn-outline');
-                                                        }
-
-                                                        // workaround due to the CancelButton.addClass
-                                                        // to avoid the "flash" effect
-                                                        (function () {
-                                                            ContentElms.each(function (ContentElm) {
-                                                                moofx(ContentElm).animate({
-                                                                    opacity: 1
-                                                                });
-                                                            })
-                                                        }).delay(50)
-                                                    }
-                                                }
-                                            }).open();
-
-                                        }
-                                    }
-                                })
-                            );
-                        });
-
-                        Control.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
-                            MenuNode.setStyles({
-                                left : null,
-                                right: -25
-                            });
-                        });
+                QUIControlUtils.getControlByElement(UserIcon).then(function (UserIconControl) {
+                    UserIconControl.addEvent('load', function () {
+                        userIconLoadEvent(UserIconControl, QUILocale);
                     });
-                }
+                })
             }
 
             UserButton.addEvents({
@@ -126,33 +59,7 @@ window.addEvent('domready', function () {
                     }
 
                     if (!QUIQQER_USER.id) {
-                        new LoginWindow({
-                            title       : false,
-                            maxHeight   : 500,
-                            maxWidth    : 400,
-                            icon        : false,
-                            social      : false,
-                            registration: false,
-                            logo        : Logo.src,
-                            events      : {
-                                onSuccess: function () {
-                                    window.location.reload();
-                                },
-                                onOpen   : function (Popup) {
-                                    var Content = Popup.getElm().getElement('.quiqqer-loginWindow-content');
-
-                                    Content.setStyle('opacity', 0);
-                                    new Element('h2', {
-                                        'class': 'quiqqer-loginWindow-content-title',
-                                        html   : QUILocale.get(lg, 'frontend.popup.login.title')
-                                    }).inject(Content.getElement('img'), 'after');
-
-                                    moofx(Content).animate({
-                                        opacity: 1
-                                    });
-                                }
-                            }
-                        }).open();
+                        createLoginWindow(Logo, QUILocale);
                     }
                 }
             });
@@ -316,3 +223,125 @@ window.addEvent('domready', function () {
         }
     });
 });
+
+/**
+ * UserIcon load event
+ *
+ * @param UserIconControl
+ * @param QUILocale
+ */
+function userIconLoadEvent (UserIconControl, QUILocale) {
+    var Menu = UserIconControl.$Menu;
+
+    require([
+        'controls/users/LogoutWindow',
+        'qui/controls/contextmenu/Item',
+        'qui/controls/contextmenu/Separator'
+    ], function (LogoutWindow, Item, Separator) {
+        Menu.appendChild(new Separator());
+        // own logout entry
+        Menu.appendChild(
+            new Item({
+                icon  : 'fa fa-sign-out',
+                text  : QUILocale.get('quiqqer/template-cologne', 'frontend.usericon.menuentry.logout.label'),
+                events: {
+                    click: function () {
+                        createLogoutWindow(LogoutWindow);
+                    }
+                }
+            })
+        );
+    });
+
+    UserIconControl.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
+        MenuNode.setStyles({
+            left : null,
+            right: -25
+        });
+    });
+}
+
+/**
+ * Create and open logout window
+ *
+ * @param LogoutWindow
+ */
+function createLogoutWindow (LogoutWindow) {
+    new LogoutWindow({
+        class    : 'cologne-logout-dialog',
+        title    : false,
+        icon     : false,
+        maxHeight: 350,
+        maxWidth : 400,
+        events   : {
+            onOpen: function (Popup) {
+
+                var Content = Popup.getElm();
+
+                var ContentElms = [
+                    Content.getElement('.qui-window-popup-content'),
+                    Content.getElement('.qui-window-popup-buttons')
+                ];
+
+                ContentElms.each(function (ContentElm) {
+                    ContentElm.setStyle('opacity', 0);
+                });
+
+                var CancelButton = Content.getElement('button[name="cancel"]');
+                if (CancelButton) {
+                    CancelButton.addClass('btn-secondary btn-outline');
+                }
+
+                // workaround due to the CancelButton.addClass
+                // to avoid the "flash" effect
+                (function () {
+                    ContentElms.each(function (ContentElm) {
+                        moofx(ContentElm).animate({
+                            opacity: 1
+                        });
+                    })
+                }).delay(50)
+            }
+        }
+    }).open();
+}
+
+/**
+ * Create and open login popup
+ *
+ * @param {HTMLElement} Logo
+ * @param QUILocale
+ */
+function createLoginWindow (Logo, QUILocale) {
+    require([
+        'controls/users/LoginWindow'
+    ], function (LoginWindow) {
+        new LoginWindow({
+            title       : false,
+            maxHeight   : 500,
+            maxWidth    : 400,
+            icon        : false,
+            social      : false,
+            registration: false,
+            logo        : Logo.src,
+            events      : {
+                onSuccess: function () {
+                    window.location.reload();
+                },
+                onOpen   : function (Popup) {
+                    var Content = Popup.getElm().getElement('.quiqqer-loginWindow-content');
+
+                    Content.setStyle('opacity', 0);
+                    new Element('h2', {
+                        'class': 'quiqqer-loginWindow-content-title',
+                        html   : QUILocale.get(lg, 'frontend.popup.login.title')
+                    }).inject(Content.getElement('img'), 'after');
+
+                    moofx(Content).animate({
+                        opacity: 1
+                    });
+                }
+            }
+        }).open();
+    })
+}

@@ -613,6 +613,10 @@ small {
     height: 100% !important;
 }
 
+.qui-contextmenu-container .qui-contextitem {
+    border-bottom: none;
+}
+
 /*********************/
 /* user icon top bar */
 /*********************/

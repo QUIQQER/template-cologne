@@ -18,7 +18,8 @@ a:hover {
     border-color: #3986dd;
 }*/
 
-.product-data-more-tabs-tab.active {
+.product-data-more-tabs-tab.active,
+.qui-contextitem-container .qui-contextitem-icon {
     color: #3986dd;
 }
 

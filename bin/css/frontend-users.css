@@ -11,6 +11,15 @@
     background: url("../images/brushed_alu.png");
 }
 
+.quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categories {
+    padding-right: 20px;
+}
+
+.quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categoryContent {
+    padding-left: 20px;
+}
+
+
 /*****************/
 /* category menu */
 /*****************/
