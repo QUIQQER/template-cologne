@@ -29,14 +29,14 @@
 /** Product list
  ============================================== */
 
-.quiqqer-products-productList-products-container-real {
+/* product list: gallery */
+.quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     grid-gap: 20px;
 }
 
-/* product list: gallery */
 .cologne-products-productGallery-products-product {
     padding: 20px;
     border: 1px solid #ddd;
