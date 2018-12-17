@@ -16,10 +16,6 @@
 /** Categories
  ============================================== */
 
-.type-quiqqer-products-types-category .quiqqer-products-category {
-    padding-right: 0;
-}
-
 .quiqqer-products-productList-categories .quiqqer-products-categoryGallery-categories {
     display: inline-grid;
     grid-template-columns: 33.333% 33.333% 33.333%;
@@ -49,14 +45,19 @@
     border: 1px solid transparent;
     border-radius: 0.5rem;
     cursor: pointer;
+    padding: 0 !important;
     text-align: center;
     width: 40px;
-    padding: 0 !important;
 }
 
 
 .quiqqer-products-productList-products {
     float: none !important;
+}
+
+.quiqqer-product-list,
+.quiqqer-products-productList-products-container {
+    overflow: visible !important;
 }
 
 /* product list: gallery */
@@ -116,13 +117,6 @@
     margin-top: auto;
 }
 
-.product-buttons a {
-    display: inline-block;
-    float: none;
-    margin: 0 5px;
-    position: relative;
-}
-
 .product-buttons label {
     cursor: pointer;
     position: relative;
@@ -136,6 +130,55 @@
     position: absolute;
     transform: scale(0);
     width: 100%;
+}
+
+/* product list: details */
+.cologne-productList-product-details {
+    border: 1px solid #ddd;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.cologne-productList-product-details-image {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    max-height: 160px;
+    padding: 0 20px;
+    width: 220px;
+}
+
+.cologne-productList-product-details-image a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+.cologne-productList-product-details-image img {
+    max-height: 100%;
+}
+
+.cologne-productList-product-details-content-title a {
+    color: inherit;
+    font-size: 1.75em;
+}
+
+.cologne-productList-product-details-content-description {
+    color: #9ba3ad;
+    margin: 5px 0;
+}
+
+.cologne-productList-product-details-content-price {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.cologne-productList-product-details-content-buttons {
+    margin-top: 1em;
 }
 
 /** Product

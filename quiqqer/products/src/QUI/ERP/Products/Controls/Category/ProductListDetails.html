@@ -1,36 +1,44 @@
-<article class="quiqqer-productList-product-detail"
-         data-pid="{$Product->getId()}"
->
-    <div class="quiqqer-productList-product-detail-image">
+<article class="cologne-productList-product-details" data-pid="{$Product->getId()}">
+    <div class="cologne-productList-product-details-image">
         <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
-        {image image=$Product->getImage() title=$Product->getTitle() height=48}
+        {image image=$Product->getImage() title=$Product->getTitle() width=200}
         </a>
     </div>
 
-    <div class="quiqqer-productList-product-detail-text">
-        <header>
-            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
+    <div class="cologne-productList-product-details-content">
+        <header class="cologne-productList-product-details-content-title">
+            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}">
                 {$Product->getTitle()}
             </a>
         </header>
-        <div class="quiqqer-productList-product-detail-text-desription">
+        <div class="cologne-productList-product-details-content-description">
             {$Product->getDescription()}
         </div>
-    </div>
 
-    <div class="quiqqer-productList-product-detail-buttons">
-        <span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>
-        <span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>
-    </div>
+        {if !$hidePrice}
+        <div class="cologne-productList-product-details-content-price">
+            {locale
+                group="quiqqer/erp"
+                var="price.starting.from"
+                price=$Product->getMinimumPrice()->getDisplayPrice()
+            }
+        </div>
+        {/if}
 
-    {if !$hidePrice}
-    <div class="quiqqer-productList-product-detail-price">
-        {locale
-            group="quiqqer/products"
-            var="price.starting.from"
-            price=$Product->getMinimumPrice()->getDisplayPrice()
-        }
+        <div class="cologne-productList-product-details-content-buttons">
+            <!--<span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>-->
+            <!--<span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>-->
+            <a href="{$Product->getUrl()}"
+               class="btn btn-primary add-to-basket"
+               data-product-id="{$Product->getId()}"
+               data-product-animatable="1"
+               data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+            >
+                <label>
+                    {locale group="quiqqer/product-bricks" var="brick.control.product.addToCart"}
+                </label>
+                <span class="fa fa-check"></span>
+            </a>
+        </div>
     </div>
-    {/if}
-
 </article>
