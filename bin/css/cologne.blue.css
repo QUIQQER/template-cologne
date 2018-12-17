@@ -35,3 +35,14 @@ a:hover {
 .noUi-connect {
     background: #3986dd !important;
 }
+
+
+.quiqqer-products-productList-sort-display .button.active {
+    color: #3986dd;
+    border-color: #e5effb;
+    background: #e5effb;
+}
+
+.quiqqer-products-productList-sort .quiqqer-products-productList-sort-display .button:hover {
+    border-color: #e5effb;
+}
