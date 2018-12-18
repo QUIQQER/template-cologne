@@ -190,6 +190,14 @@
     padding: 0 10px;
 }
 
+/*****************/
+/* button "more" */
+/*****************/
+.quiqqer-products-productList-products-more .btn {
+    margin: 2em 0 !important;
+    width: auto !important;
+}
+
 /** Product
  ============================================== */
 
