@@ -16,10 +16,50 @@
 /** Categories
  ============================================== */
 
-.quiqqer-products-productList-categories .quiqqer-products-categoryGallery-categories {
-    display: inline-grid;
-    grid-template-columns: 33.333% 33.333% 33.333%;
+.cologne-products-categoryGallery-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.cologne-products-categoryGallery-category {
+    display: flex;
+    padding: 1em;
+    border: 1px solid #ddd;
+    flex-direction: column;
+}
+
+.cologne-products-categoryGallery-category-image {
+    margin-right: 1em;
     width: 100%;
+    height: 50%;
+}
+
+.cologne-products-categoryGallery-category-image-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cologne-products-categoryGallery-category-image-link-img {
+    max-height: 100%;
+}
+
+.cologne-products-categoryGallery-category-content {
+    width: 100%;
+}
+
+.cologne-products-categoryGallery-category-content-header {
+    text-align: center;
+}
+
+.cologne-products-categoryGallery-category-content-short {
+    margin-bottom: 1em;
+}
+
+.cologne-products-categoryGallery-category-content-buttonContainer {
+    text-align: center;
 }
 
 /** Product list

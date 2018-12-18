@@ -1,31 +1,43 @@
 {if $categoryStartNumber === '' || (int)$categoryStartNumber !== 0}
-    <div class="quiqqer-products-categoryGallery-categories">
+    <div class="cologne-products-categoryGallery-categories">
         {assign var=c value=0}
         {foreach from=$children item=Category}
         {assign var=cssClass value=""}
         {if $categoryStartNumber && $categoryStartNumber <= $c}
-            {assign var=cssClass value=" quiqqer-products-category__hide"}
+            {assign var=cssClass value=" quiqqer-products-category__hide"} <!--@todo michael-->
         {/if}
-        <section class="quiqqer-products-categoryGallery-category {$cssClass}"
+        <section class="cologne-products-categoryGallery-category {$cssClass}"
                  data-pid="{$Category->getId()}"
         >
         {strip}
-            <a href="{url site=$Category}" title="{$Category->getAttribute('title')|escape:" html"}">
-            {if $Category->getAttribute('image_site')}
-                {image src=$Category->getAttribute('image_site') title=$Category->getAttribute('title') width=400}
-            {else}
-                <img src="{$placeholder}" title="{$Category->getAttribute('title')}" />
-            {/if}
-            <header>
-                {$Category->getAttribute('title')}
-                <div class="quiqqer-products-categoryGallery-category-details">
-                    <span class="fa fa-sort-down"></span>
+                <div class="cologne-products-categoryGallery-category-image">
+                    <a href="{url site=$Category}" title="{$Category->getAttribute('title')|escape:'html'}"
+                        class="cologne-products-categoryGallery-category-image-link">
+                    {if $Category->getAttribute('image_site')}
+                        {image src=$Category->getAttribute('image_site') title=$Category->getAttribute('title') width=400 class="cologne-products-categoryGallery-category-image-link-img"}
+                    {else}
+                        <img src="{$placeholder}" title="{$Category->getAttribute('title')}"
+                            class="cologne-products-categoryGallery-category-image-link-img"/>
+                    {/if}
+                    </a>
                 </div>
-            </header>
+                <div class="cologne-products-categoryGallery-category-content">
+                    <header class="cologne-products-categoryGallery-category-content-header">
+                        <h3 class="cologne-products-categoryGallery-category-content-header-title">
+                        {$Category->getAttribute('title')}
+                        </h3>
+                    </header>
 
-            <div class="quiqqer-products-categoryGallery-category-short">
-                {$Category->getAttribute('short')}
-            </div>
+                    <div class="cologne-products-categoryGallery-category-content-short">
+                        {$Category->getAttribute('short')}
+                    </div>
+                    <div class="cologne-products-categoryGallery-category-content-buttonContainer">
+                        <a href="{url site=$Category}" title="{$Category->getAttribute('title')|escape:'html'}"
+                           class="btn btn-primary cologne-products-categoryGallery-category-content-button">
+                            View Products
+                        </a>
+                    </div>
+                </div>
             </a>
         {/strip}
         {assign var=c value=$c+1}
@@ -34,7 +46,7 @@
     </div>
 
     {if $categoryStartNumber && $categoryStartNumber < count($children)}
-        <div class="quiqqer-products-categoryGallery-category-more button">
+        <div class="cologne-products-categoryGallery-category-more button">
             {locale group="quiqqer/products" var="category.control.productlist.button.more"}
         </div>
     {/if}
