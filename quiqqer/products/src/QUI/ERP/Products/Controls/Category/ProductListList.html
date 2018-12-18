@@ -3,8 +3,9 @@
 >
     <div class="quiqqer-productList-product-list-text">
         <header>
-            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
-            {$Product->getTitle()}
+            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}"
+               class="quiqqer-productList-product-list-text-link">
+                {$Product->getTitle()}
             </a>
         </header>
 
@@ -14,7 +15,7 @@
     </div>
 
     <div class="quiqqer-productList-product-list-artno">
-        <span class="quiqqer-productList-product-list-artno-title">
+        <span class="quiqqer-productList-product-list-artno-title text-muted">
             {locale group="quiqqer/products" var="productNo"}:
         </span>
         <br />
@@ -24,14 +25,26 @@
     </div>
 
     <div class="quiqqer-productList-product-list-buttons">
-        <span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>
-        <span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>
+        <!--<span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>-->
+        <!--<span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>-->
+
+        <a href="{$Product->getUrl()}"
+           title="{locale group='quiqqer/product-bricks' var='brick.control.product.addToCart'}"
+           class="btn btn-primary btn-outline add-to-basket"
+           data-product-id="{$Product->getId()}"
+           data-product-animatable="1"
+           data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+        >
+            <label>
+                <span class="fa fa-shopping-cart"></span>
+            </label>
+        </a>
     </div>
 
     {if !$hidePrice}
-    <div class="quiqqer-productList-product-list-price">
+    <div class="quiqqer-productList-product-list-price font-weight-medium">
         {locale
-            group="quiqqer/products"
+            group="quiqqer/erp"
             var="price.starting.from"
             price=$Product->getPrice()->getDisplayPrice()
         }

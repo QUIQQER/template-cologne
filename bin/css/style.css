@@ -133,6 +133,18 @@ small {
     font-size: 0.9em;
 }
 
+.font-weight-normal {
+    font-weight: 400;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
 /* input range */
 .qui-control-input-range {
     margin-top: 1em;

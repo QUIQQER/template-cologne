@@ -55,6 +55,10 @@
     float: none !important;
 }
 
+.quiqqer-product-list {
+    width: auto !important;
+}
+
 .quiqqer-product-list,
 .quiqqer-products-productList-products-container {
     overflow: visible !important;
@@ -117,27 +121,18 @@
     margin-top: auto;
 }
 
-.product-buttons label {
-    cursor: pointer;
-    position: relative;
-    width: 100%;
-}
-
-.product-buttons .fa {
-    left: 0;
-    line-height: inherit;
-    opacity: 0;
-    position: absolute;
-    transform: scale(0);
-    width: 100%;
-}
-
 /* product list: details */
 .cologne-productList-product-details {
     border: 1px solid #ddd;
     display: flex;
     margin-bottom: 20px;
-    padding: 20px 0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    transition: 0.2s all;
+}
+
+.cologne-productList-product-details:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cologne-productList-product-details-image {
@@ -146,8 +141,8 @@
     flex-shrink: 0;
     justify-content: center;
     max-height: 160px;
-    padding: 0 20px;
-    width: 220px;
+    margin-right: 20px;
+    width: 200px;
 }
 
 .cologne-productList-product-details-image a {
@@ -167,7 +162,6 @@
 }
 
 .cologne-productList-product-details-content-description {
-    color: #9ba3ad;
     margin: 5px 0;
 }
 
@@ -179,6 +173,21 @@
 
 .cologne-productList-product-details-content-buttons {
     margin-top: 1em;
+}
+
+/* product list: list */
+.quiqqer-productList-product-list:last-child {
+    border-bottom: none;
+}
+.quiqqer-productList-product-list-text-link {
+    font-size: 1.2em;
+    color: inherit;
+    display: block;
+}
+
+.quiqqer-productList-product-list .quiqqer-productList-product-list-artno,
+.quiqqer-productList-product-list .quiqqer-productList-product-list-price {
+    padding: 0 10px;
 }
 
 /** Product
