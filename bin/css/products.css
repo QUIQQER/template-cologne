@@ -15,31 +15,37 @@
 
 /** Categories
  ============================================== */
-
+/* categories: gallery */
 .cologne-products-categoryGallery-categories {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .cologne-products-categoryGallery-category {
-    display: flex;
-    padding: 1em;
     border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    display: flex;
     flex-direction: column;
+    padding: 1em;
+    transition: 0.2s all;
+}
+
+.cologne-products-categoryGallery-category:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cologne-products-categoryGallery-category-image {
-    margin-right: 1em;
-    width: 100%;
-    height: 50%;
+    height: 160px;
 }
 
 .cologne-products-categoryGallery-category-image-link {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    color: inherit;
+    display: flex;
+    font-size: 80px;
     height: 100%;
+    justify-content: center;
 }
 
 .cologne-products-categoryGallery-category-image-link-img {
@@ -47,7 +53,9 @@
 }
 
 .cologne-products-categoryGallery-category-content {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .cologne-products-categoryGallery-category-content-header {
@@ -59,7 +67,20 @@
 }
 
 .cologne-products-categoryGallery-category-content-buttonContainer {
+    margin-top: auto;
     text-align: center;
+}
+
+/* categories: list */
+.quiqqer-products-categoryList .quiqqer-products-categoryList-category {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    transition: 0.2s all;
+}
+
+.quiqqer-products-categoryList-category:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /** Product list
@@ -164,10 +185,10 @@
 /* product list: details */
 .cologne-productList-product-details {
     border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     display: flex;
     margin-bottom: 20px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     transition: 0.2s all;
 }
 
@@ -180,8 +201,8 @@
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    max-height: 160px;
     margin-right: 20px;
+    max-height: 160px;
     width: 200px;
 }
 
@@ -219,10 +240,11 @@
 .quiqqer-productList-product-list:last-child {
     border-bottom: none;
 }
+
 .quiqqer-productList-product-list-text-link {
-    font-size: 1.2em;
     color: inherit;
     display: block;
+    font-size: 1.2em;
 }
 
 .quiqqer-productList-product-list .quiqqer-productList-product-list-artno,
