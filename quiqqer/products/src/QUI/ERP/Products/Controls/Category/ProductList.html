@@ -78,7 +78,8 @@
     {/if}
 
     <div class="quiqqer-products-productList-products-container">
-        <div class="quiqqer-products-productList-products-container-real">
+        <div class="quiqqer-products-productList-products-container-real
+            {if !$count}quiqqer-products-productList-products-container-real__noProducts{/if}">
             {if $count}
             {$products}
             {else}
