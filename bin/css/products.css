@@ -13,6 +13,34 @@
     padding-right: 20px;
 }
 
+/**********/
+/* Filter */
+/**********/
+.quiqqer-products-productList-filter-entry-title {
+    font-size: 0.9rem !important;
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+/******************/
+/* Header & title */
+/******************/
+.page-content-header-emotion {
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2em;
+}
+
+.page-content-header-emotion-container {
+    color: #fff;
+    padding: 1em;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 0 0 30px #333;
+    font-size: 1.2em;
+}
+
 /** Categories
  ============================================== */
 /* categories: gallery */
@@ -81,6 +109,41 @@
 
 .quiqqer-products-categoryList-category:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/***********************/
+/* product list filter */
+/***********************/
+.quiqqer-products-productList-filterList-fields {
+    display: flex;
+    margin-left: 0;
+    flex-wrap: wrap;
+}
+
+.quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter {
+    background: #3986dd;
+    color: #3986dd;
+    float: left;
+    font-weight: normal;
+    line-height: 28px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #3986dd;
+    background: #3986dd00;
+    border-radius: 0.25em;
+    padding: 0 0 0 10px;
+    overflow: hidden;
+}
+
+.quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    margin-left: 10px;
+    background: #e5effb;
 }
 
 /** Product list

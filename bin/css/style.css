@@ -78,7 +78,7 @@ p {
 h1, h2, h3, h4 {
     font-weight: inherit;
     line-height: 1.2;
-    margin: 1.414em 0 0.5em;
+    margin-bottom: 0.5em;
 }
 
 h1 {
@@ -394,6 +394,7 @@ small {
 .page-title {
     font-size: 2em;
     margin: 0;
+    flex-shrink: 0;
 }
 
 .cologne-breadcrumb .cologne-grid-container {
