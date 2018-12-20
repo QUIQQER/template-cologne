@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+    <!-- Product list: category -->
+    <!--<attributes>
+        <attribute>quiqqer.cologne.settings.category.hideHeaderOnProductOpen</attribute>
+    </attributes>
+
+    <settings>
+        <category name="category-settingss">
+            <settings>
+                <input conf="quiqqer.cologne.settings.category.hideHeaderOnProductOpen" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-cologne"
+                                var="site.types.settings.category.hideHeaderOnProductOpen"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>-->
+
+    <!-- layouts -->
+    <layouts>
+        <layout type="layout/startPage"
+                image="bin/layouts/startPage.png">
+            <title>
+                <locale group="quiqqer/template-cologne" var="admin.layout.startpage" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-cologne" var="admin.layout.startpage.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/noSidebar"
+                image="bin/layouts/noSidebar.png">
+            <title>
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/leftSidebar"
+                image="bin/layouts/leftSidebar.png">
+            <title>
+                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/rightSidebar"
+                image="bin/layouts/rightSidebar.png">
+            <title>
+                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar.desc" />
+            </description>
+        </layout>
+    </layouts>
+
+</site>

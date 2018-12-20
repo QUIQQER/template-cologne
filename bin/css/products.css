@@ -21,24 +21,25 @@
     margin-bottom: 5px;
     padding: 0 10px;
 }
+
 /******************/
 /* Header & title */
 /******************/
 .page-content-header-emotion {
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     margin-bottom: 2em;
 }
 
 .page-content-header-emotion-container {
     color: #fff;
-    padding: 1em;
-    min-height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-shadow: 0 0 30px #333;
     font-size: 1.2em;
+    justify-content: center;
+    min-height: 250px;
+    padding: 1em;
+    text-shadow: 0 0 30px #333;
 }
 
 /** Categories
@@ -102,8 +103,8 @@
 /* categories: list */
 .quiqqer-products-categoryList .quiqqer-products-categoryList-category {
     border: 1px solid #ddd;
-    margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    margin-bottom: 20px;
     transition: 0.2s all;
 }
 
@@ -116,34 +117,35 @@
 /***********************/
 .quiqqer-products-productList-filterList-fields {
     display: flex;
-    margin-left: 0;
     flex-wrap: wrap;
+    margin-left: 0;
 }
 
 .quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter {
-    background: #3986dd;
-    color: #3986dd;
+    background: #fff;
+    border: 1px solid;
+    border-radius: 0.25em;
     float: left;
     font-weight: normal;
     line-height: 28px;
-    margin-right: 10px;
     margin-bottom: 5px;
-    border: 1px solid #3986dd;
-    background: #3986dd00;
-    border-radius: 0.25em;
-    padding: 0 0 0 10px;
+    margin-right: 10px;
     overflow: hidden;
+    padding: 0 0 0 10px;
 }
 
 .quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy {
+    align-items: center;
     cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    padding: 0 10px;
+    justify-content: center;
     margin-left: 10px;
-    background: #e5effb;
+    padding: 0 10px;
+}
+
+.quiqqer-products-search-field .qui-select {
+    width: 100%;
 }
 
 /** Product list

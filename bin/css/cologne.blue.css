@@ -38,11 +38,19 @@ a:hover {
 
 
 .quiqqer-products-productList-sort-display .button.active {
-    color: #3986dd;
-    border-color: #e5effb;
     background: #e5effb;
+    border-color: #e5effb;
+    color: #3986dd;
 }
 
 .quiqqer-products-productList-sort .quiqqer-products-productList-sort-display .button:hover {
     border-color: #e5effb;
+}
+
+.quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter {
+    color: #3986dd;
+}
+
+.quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy {
+    background: #e5effb;
 }

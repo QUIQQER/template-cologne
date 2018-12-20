@@ -68,32 +68,32 @@
         {/if}
 
         <div class="{$cssClasses}">
-        {if $Template->getAttribute('content-header')}
-            {if $Site->getAttribute('image_emotion')}
-            <header class="page-content-header-emotion"
-                    style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1200 onlysrc=1 rewrited=1}')"
-            >
-                <div class="page-content-header-emotion-container">
-                    <h1>{$Site->getAttribute('title')}</h1>
-                    <div class="page-content-emotion-short">
-                        {$Site->getAttribute('short')}
+            {if $Template->getAttribute('content-header')}
+                {if $Site->getAttribute('image_emotion')}
+                <header class="page-content-header-emotion "
+                        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1200 onlysrc=1 rewrited=1}')"
+                >
+                    <div class="page-content-header-emotion-container">
+                        <h1>{$Site->getAttribute('title')}</h1>
+                        <div class="page-content-emotion-short">
+                            {$Site->getAttribute('short')}
+                        </div>
                     </div>
-                </div>
-            </header>
-            {else}
-            <header class="page-content-header">
-                <h1>{$Site->getAttribute('title')}</h1>
-            </header>
+                </header>
+                {else}
+                <header class="page-content-header">
+                    <h1>{$Site->getAttribute('title')}</h1>
+                </header>
+                {/if}
             {/if}
-        {/if}
 
-        {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
-        <section class="content-body quiqqer-category-content">
-            {$Site->getAttribute('content')}
-        </section>
-        {/if}
+            {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+            <section class="content-body quiqqer-category-content">
+                {$Site->getAttribute('content')}
+            </section>
+            {/if}
 
-        {$ProductList->create()}
+            {$ProductList->create()}
         </div>
 
         <script>

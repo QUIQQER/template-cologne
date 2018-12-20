@@ -22,6 +22,43 @@
             <en><![CDATA[No padding top and bottom]]></en>
         </locale>
 
+        <!-- layouts -->
+        <locale name="admin.layout.startpage">
+            <de><![CDATA[Landingpage (Startpage)]]></de>
+            <en><![CDATA[Landingpage (start page)]]></en>
+        </locale>
+        <locale name="admin.layout.startpage.description">
+            <de><![CDATA[Layout ohne Sidebars. Passend für Startseite.]]></de>
+            <en><![CDATA[Layout without sidebars. Intended for homepage / start page.]]></en>
+        </locale>
+
+        <locale name="admin.layout.noSidebar">
+            <de><![CDATA[Keine Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.noSidebar.description">
+            <de><![CDATA[Layout ohne Sidebars. Wird oft für alle anderen Seiten verwendet, die keine Sidebars haben, und nicht als Startseite gedacht sind.]]></de>
+            <en><![CDATA[Layout without sidebars. Is often used for all other pages that do not have sidebars and are not intended as a start page.]]></en>
+        </locale>
+
+        <locale name="admin.layout.leftSidebar">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.leftSidebar.description">
+            <de><![CDATA[Layout mit dem linken Bereich für Bausteine.]]></de>
+            <en><![CDATA[Layout with the left area for bricks.]]></en>
+        </locale>
+
+        <locale name="admin.layout.rightSidebar">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Right sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.rightSidebar.description">
+            <de><![CDATA[Layout mit dem rechten Bereich für Bausteine.]]></de>
+            <en><![CDATA[Layout with the right area for bricks.]]></en>
+        </locale>
+
 
         <!-- areas -->
         <locale name="area.headerSuffix.title">
