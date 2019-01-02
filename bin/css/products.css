@@ -13,6 +13,32 @@
     padding-right: 20px;
 }
 
+/****************/
+/* left sidebar */
+/****************/
+.content-headerpage-multible-left h2 {
+    font-size: 1.75rem;
+}
+
+.type-quiqqer-products-types-category .quiqqer-products-category-menu-navigation-li-label-icon,
+.type-quiqqer-products-types-category .quiqqer-products-category-menu-navigation-li-label-checkbox {
+    width: 15px;
+    margin-right: 15px;
+    padding: 5px 0;
+}
+
+.type-quiqqer-products-types-category .quiqqer-products-category-menu-navigation-li-label-checkbox:hover {
+    background: none;
+}
+
+.type-quiqqer-products-types-category .quiqqer-products-category-menu-navigation-li-label-link {
+    padding: 5px 0;
+}
+
+.quiqqer-products-category-menu-navigation-li-label-link {
+    color: inherit;
+}
+
 /**********/
 /* Filter */
 /**********/

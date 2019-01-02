@@ -54,3 +54,11 @@ a:hover {
 .quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy {
     background: #e5effb;
 }
+
+input[type="checkbox"]:checked {
+    background: #d0e2f7;
+}
+
+input[type="checkbox"]:checked:after {
+    color: #3986dd;
+}
