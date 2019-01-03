@@ -68,6 +68,12 @@
     text-shadow: 0 0 30px #333;
 }
 
+/* content */
+.quiqqer-category-content {
+    float: none !important;
+    margin-bottom: 40px;
+}
+
 /** Categories
  ============================================== */
 /* categories: gallery */
@@ -75,6 +81,7 @@
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 40px;
 }
 
 .cologne-products-categoryGallery-category {
@@ -127,6 +134,14 @@
 }
 
 /* categories: list */
+.quiqqer-products-productList-categories .quiqqer-products-categoryList {
+    margin-bottom: 20px;
+}
+
+.quiqqer-products-categoryList-category {
+    color: inherit;
+}
+
 .quiqqer-products-categoryList .quiqqer-products-categoryList-category {
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
