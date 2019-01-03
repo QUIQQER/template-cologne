@@ -47,12 +47,13 @@ a:hover {
     border-color: #e5effb;
 }
 
+/* products filter */
 .quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter {
-    color: #3986dd;
+    background: #e5effb;
 }
 
-.quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy {
-    background: #e5effb;
+.quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy:hover {
+    background: rgba(0,0,0,0.05);
 }
 
 input[type="checkbox"]:checked {
