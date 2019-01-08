@@ -2,7 +2,7 @@
 
     {if $showFilter}
     <div class="content-headerpage-multible-left">
-        <header>
+        <header class="left-sidebar-filter-header text-muted">
             <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
         </header>
         {if $CategoryMenu->countChildren()}
@@ -10,7 +10,7 @@
         {/if}
 
         {if !isset($Product) && $Site->getAttribute('quiqqer.products.settings.showFreeTextSearch')}
-        <header>
+        <header class="left-sidebar-filter-header text-muted">
             <h2>{locale group="quiqqer/products" var="type.category.freetextTitle"}</h2>
         </header>
         <label class="quiqqer-products-category-freetextSearch">
@@ -31,7 +31,7 @@
         {/if}
 
         {if isset($ProductList) && $ProductList->count() && !empty($filter)}
-        <header>
+        <header class="left-sidebar-filter-header text-muted">
             <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
         </header>
         {$ProductList->createFilter()}
