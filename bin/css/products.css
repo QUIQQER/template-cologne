@@ -55,6 +55,7 @@
 .quiqqer-products-category-freetextSearch input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    background: #fafafa;
 }
 
 .quiqqer-products-category-freetextSearch button {
