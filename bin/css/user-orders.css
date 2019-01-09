@@ -122,6 +122,11 @@ section.quiqqer-order-profile-orders-order {
     margin-top: 0;
 }
 
+.quiqqer-order-profile-orders-order-footer-rightWrapper {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     /***********************/
     /* article list header */
@@ -158,8 +163,7 @@ section.quiqqer-order-profile-orders-order {
         padding-top: 10px;
     }
 
-    .quiqqer-order-profile-orders-order-articles-rebuy,
-    .quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-rightWrapper .btn {
+    .quiqqer-order-profile-orders-order-articles-rebuy{
         display: block;
         margin: 0 auto;
         max-width: 340px;
@@ -174,6 +178,7 @@ section.quiqqer-order-profile-orders-order {
     }
 
     .quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-rightWrapper .btn {
-        margin-top: 10px;
+        padding-left: 3px;
+        padding-right: 3px;
     }
 }

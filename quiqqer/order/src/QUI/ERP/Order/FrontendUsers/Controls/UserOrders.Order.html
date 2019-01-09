@@ -64,13 +64,13 @@
         <div class="quiqqer-order-profile-orders-order-footer-rightWrapper">
             {if $Order->isPosted()}
             <a href="{$Order->getAttribute('downloadLink')}" target="_blank"
-               class="btn btn-primary btn-outline">
+               class="btn btn-link-dark">
                 <span class="fa fa-file-pdf-o"></span>
                 <span>{locale group="quiqqer/order" var="control.profile.orders.order.invoice"}</span>
             </a>
             {else if !$Order->isSuccessful()}
             <a href="{$orderUrl}" target="_blank"
-               class="btn btn-primary btn-outline">
+               class="btn btn-link-dark">
                 <span class="fa fa-shopping-basket"></span>
                 <span>{locale group="quiqqer/order" var="control.profile.orders.order.continuePayment"}</span>
             </a>

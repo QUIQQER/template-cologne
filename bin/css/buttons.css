@@ -29,6 +29,11 @@ a.qui-button,
     float: none; /* qui-button reset */
 }
 
+button .fa,
+.btn .fa {
+    margin-right: .75rem;
+}
+
 /*****************************/
 /* button primary & standard */
 /*****************************/
@@ -138,6 +143,38 @@ button.qui-button.btn-link:focus,
 .btn-link:active,
 .btn-link:focus {
     text-decoration: underline;
+}
+
+/********************/
+/* button link dark */
+/********************/
+input[type="submit"].btn-link-dark,
+input[type="button"].btn-link-dark,
+input[type="reset"].btn-link-dark,
+button.qui-button.btn-link-dark,
+button.btn-link-dark,
+.btn-link-dark {
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+input[type="submit"].btn-link-dark:hover,
+input[type="submit"].btn-link-dark:active,
+input[type="submit"].btn-link-dark:focus,
+input[type="button"].btn-link-dark:hover,
+input[type="button"].btn-link-dark:active,
+input[type="button"].btn-link-dark:focus,
+input[type="reset"].btn-link-dark:hover,
+input[type="reset"].btn-link-dark:active,
+input[type="reset"].btn-link-dark:focus,
+button.qui-button.btn-link-dark:hover,
+button.qui-button.btn-link-dark:active,
+button.qui-button.btn-link-dark:focus,
+.btn-link-dark:hover,
+.btn-link-dark:active,
+.btn-link-dark:focus {
+    color: #3986dd;
 }
 
 /********************/
