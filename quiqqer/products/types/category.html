@@ -1,11 +1,16 @@
-<section class="grid-children-container">
+<section class="grid-children-container quiqqer-products-wrapper">
+
+    {assign var=fullWidth value=""}
 
     {if $showFilter}
+
+    {assign var=fullWidth value="-fullWidth"}
     <div class="content-headerpage-multible-left">
-        <header class="left-sidebar-filter-header text-muted">
-            <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
-        </header>
+
         {if $CategoryMenu->countChildren()}
+            <header class="left-sidebar-filter-header text-muted">
+                <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
+            </header>
             {$CategoryMenu->create()}
         {/if}
 
@@ -40,15 +45,9 @@
     {/if}
 
     {if isset($Product)}
-        {assign
-            var=cssClasses
-            value="quiqqer-products-product page-multible-right"
-        }
+        {assign var=cssClasses value="quiqqer-products-product page-multible-right full-width"}
         {if $showFilter}
-            {assign
-                var=cssClasses
-                value="quiqqer-products-product page-multible-right"
-            }
+            {assign var=cssClasses value="quiqqer-products-product page-multible-right"}
         {/if}
 
         <div class="{$cssClasses}">
@@ -58,10 +57,7 @@
             var QUIQQER_PRODUCT_ID = '{$Product->getAttribute('data-productid')}';
         </script>
     {else}
-        {assign
-            var=cssClasses
-            value="quiqqer-products-category page-multible-right"
-        }
+        {assign var=cssClasses value="quiqqer-products-category page-multible-right full-width"}
 
         {if $showFilter}
             {assign var=cssClasses value="quiqqer-products-category page-multible-right"}

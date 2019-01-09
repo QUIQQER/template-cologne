@@ -1,0 +1,72 @@
+<div class="grid-children-container quiqqer-products-wrapper"
+     data-qui="package/quiqqer/products/bin/types/Search"
+>
+    {if $Site->getAttribute('quiqqer.products.settings.showFilterLeft')}
+    <div class="content-headerpage-multible-left">
+        <header class="left-sidebar-filter-header text-muted">
+            <h2>{locale group="quiqqer/products" var="type.search.searchTitle"}</h2>
+        </header>
+        <form action="{url site=$Site}" method="GET" class="quiqqer-products-search-form">
+            <input type="search" name="search" value="" autocomplete="off"
+                   placeholder="{locale group="quiqqer/products" var="type.search.searchPlaceholder"}"
+            />
+            <button class="quiqqer-products-search-form-button button--callToAction button">
+                <span class="fa fa-search quiqqer-products-search-suggest-form-button-icon"></span>
+            </button>
+        </form>
+
+        {if isset($ProductList) && $ProductList->count() && !empty($filter)}
+            <header class="left-sidebar-filter-header text-muted">
+                <h2>{locale group="quiqqer/products" var="type.search.filterTitle"}</h2>
+            </header>
+            {$ProductList->createFilter()}
+        {/if}
+    </div>
+    {/if}
+
+
+    {if $Site->getAttribute('quiqqer.products.settings.showFilterLeft')}
+        <div class="quiqqer-products-productsearch page-multible-right">
+    {else}
+        <div class="quiqqer-products-productsearch page-multible-right full-width">
+    {/if}
+
+        {if $Template->getAttribute('content-header')}
+            {if $Site->getAttribute('image_emotion')}
+            <header class="page-content-header-emotion"
+                    style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=820 onlysrc=1 rewrited=1}')"
+            >
+                <div class="page-content-header-emotion-container">
+                    <h1>{$Site->getAttribute('title')}</h1>
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')}
+                    </div>
+                </div>
+            </header>
+            {else}
+            <header class="page-content-header">
+                <h1>{$Site->getAttribute('title')}</h1>
+            </header>
+            {/if}
+        {/if}
+
+        {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+        <section class="content-body quiqqer-category-content">
+            {$Site->getAttribute('content')}
+        </section>
+        {/if}
+
+        {if !$Site->getAttribute('quiqqer.products.settings.showFilterLeft')}
+        <form action="{url site=$Site}" method="GET" class="quiqqer-products-search-form">
+            <input type="search" name="search" value="" autocomplete="off"
+                   placeholder="{locale group="quiqqer/products" var="type.search.searchPlaceholder"}"
+            />
+            <button class="quiqqer-products-search-form-button button--callToAction button">
+                <span class="fa fa-search quiqqer-products-search-suggest-form-button-icon"></span>
+            </button>
+        </form>
+        {/if}
+
+        {$ProductList->create()}
+    </div>
+</div>
