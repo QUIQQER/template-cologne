@@ -155,8 +155,8 @@ small {
 }
 
 .qui-control-input-range .noUi-horizontal .noUi-handle {
-    top: -8px;
     height: 26px;
+    top: -8px;
 }
 
 .qui-control-input-range-text {
@@ -293,9 +293,9 @@ small {
 }
 
 .topbar-right {
-    margin-left: auto;
     align-items: center;
     display: flex;
+    margin-left: auto;
 }
 
 .topbar-mobile-menu {
@@ -392,9 +392,9 @@ small {
  ===================================== */
 
 .page-title {
+    flex-shrink: 0;
     font-size: 2em;
     margin: 0;
-    flex-shrink: 0;
 }
 
 .cologne-breadcrumb .cologne-grid-container {
@@ -527,6 +527,7 @@ small {
     line-height: 1.5;
     max-width: 100% !important;
     min-width: 200px;
+    text-align: left;
     z-index: 100;
 }
 
@@ -613,17 +614,17 @@ small {
 }
 
 .quiqqer-frontendUsers-userIcon {
-    line-height: 30px;
-    width: 30px;
-    text-align: center;
     border-radius: 100px;
     box-shadow: 0 0 0 1px;
     height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
 }
 
 .quiqqer-frontendUsers-userIcon-icon {
-    width: 100% !important;
     height: 100% !important;
+    width: 100% !important;
 }
 
 .qui-contextmenu-container .qui-contextitem {
@@ -634,30 +635,31 @@ small {
 /* user icon top bar */
 /*********************/
 .cologne-header-control-user {
-    position: relative;
-    margin: 0 20px;
     cursor: pointer;
+    margin: 0 20px;
+    position: relative;
 }
+
 .cologne-header-control-user-loader {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    background: #fff;
+    border-radius: 100%;
     cursor: default;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 .cologne-header-control-user .fa-user-o {
-    line-height: 30px;
-    width: 30px;
-    text-align: center;
     border-radius: 100px;
     box-shadow: 0 0 0 1px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
 }
 
 /** Login / logout popup
@@ -786,18 +788,18 @@ ul.quiqqer-bricks-children-slider-container-slide {
 }
 
 .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry {
-    transition: 0.2s all;
-    box-shadow: 0 0 10px rgba(0,0,0,0);
     border-color: #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    transition: 0.2s all;
 }
 
 .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry:hover {
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .quiqqer-bricks-children-slider-container-slide .quiqqer-bricks-children-slider-child-display img:hover {
-    transform: none;
     -webkit-transform: none;
+    transform: none;
 }
 
 .brick-full-width .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry:first-child {
@@ -895,16 +897,16 @@ ul.quiqqer-bricks-children-slider-container-slide {
 
 .product-data .page-content-header h1:before {
     content: ' ';
-    width: 30px;
     float: right;
     height: 5px;
+    width: 30px;
 }
 
 .quiqqer-products-product .product-close-button {
-    width: 30px;
     font-size: 1.8em;
     line-height: 30px;
     text-align: right;
+    width: 30px;
 }
 
 /* retail price */
@@ -989,8 +991,8 @@ ul.quiqqer-bricks-children-slider-container-slide {
 }
 
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
-    width: 40px;
     height: auto;
+    width: 40px;
 }
 
 .quiqqer-order-button-add .quiqqer-order-button-add-quantity-input {
