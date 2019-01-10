@@ -83,6 +83,15 @@
 
 /*****************/
 /* Filter mobile */
+.qui-window-filterWindow .qui-window-popup-title {
+    background: none;
+}
+
+.qui-window-filterWindow .qui-window-popup-title-icon,
+.qui-window-filterWindow .qui-window-popup-title-text {
+    visibility: hidden;
+}
+
 .qui-window-popup .quiqqer-products-productList-filterMobile-content header {
     border-bottom: none;
     clear: both;
@@ -99,24 +108,24 @@
 }
 
 .qui-window-popup .quiqqer-products-productList-filterMobile-content header h2 {
-    text-align: left;
     font-size: inherit;
     margin-bottom: 0;
+    text-align: left;
 }
 
 .qui-window-popup .quiqqer-products-productList-filterMobile-content header h2:after {
     display: none;
 }
 
-.qui-window-popup .qui-window-popup-buttons.box button[name="cancel"]{
-    color: #6c757d;
+.qui-window-popup .qui-window-popup-buttons.box button[name="cancel"] {
     background: none;
     border-color: #6c757d;
+    color: #6c757d;
 }
 
 .qui-window-popup .qui-window-popup-buttons.box button[name="cancel"]:hover {
-    color: #fff;
     background: #6c757d;
+    color: #fff;
 }
 
 /******************/
