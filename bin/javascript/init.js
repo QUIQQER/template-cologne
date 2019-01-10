@@ -317,6 +317,7 @@ function createLoginWindow (Logo, QUILocale) {
         'controls/users/LoginWindow'
     ], function (LoginWindow) {
         new LoginWindow({
+            class       : 'cologne-login-dialog',
             title       : false,
             maxHeight   : 500,
             maxWidth    : 400,

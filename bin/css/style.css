@@ -662,17 +662,55 @@ small {
     width: 30px;
 }
 
+
+/*********/
+/* Popup */
+/*********/
+.qui-window-popup-title-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: inherit;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.qui-window-popup-buttons.box {
+    background: none;
+    height: auto !important;
+    padding: 20px 0;
+}
+
+.qui-window-popup-buttons.box button {
+    margin: 0 15px;
+}
+
+.qui-window-popup-buttons:after {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .qui-window-popup-buttons.box button {
+        margin: 10px 20px;
+        display: block !important;
+        width: calc(100% - 40px);
+    }
+}
+
 /** Login / logout popup
  ===================================== */
 /* login */
 /* show close button */
-.qui-window-popup-title {
+.cologne-logout-dialog .qui-window-popup-title,
+.cologne-login-dialog .qui-window-popup-title {
     background: none !important;
     display: block !important;
     padding: 0 !important;
 }
 
-.qui-window-popup-title-close {
+.cologne-logout-dialog .qui-window-popup-title-close,
+.cologne-login-dialog  .qui-window-popup-title-close {
     align-items: center;
     border-radius: 0;
     color: inherit;
@@ -765,20 +803,6 @@ input[type="password"]:focus {
 .cologne-logout-dialog .qui-window-popup-content .texticon {
     float: none !important;
     margin: 0 auto 30px !important;
-}
-
-.cologne-logout-dialog .qui-window-popup-buttons {
-    background: none !important;
-    height: auto !important;
-    padding: 20px 0 !important;
-}
-
-.cologne-logout-dialog .qui-window-popup-buttons button {
-    margin: 0 15px !important;
-}
-
-.cologne-logout-dialog .qui-window-popup-buttons:after {
-    display: none;
 }
 
 /** Product Children Slider (horizontal)
