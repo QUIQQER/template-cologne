@@ -22,6 +22,34 @@
             <!-- global areas -->
             <areas>
 
+                <!-- product sidebar prefix-->
+                <area name="productSidebarPrefix" site-type="products/category" inheritance="1" priority="1">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarPrefix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarPrefix.description"
+                        />
+                    </description>
+                </area>
+
+                <!-- product sidebar suffix-->
+                <area name="productSidebarSuffix" site-type="products/category" inheritance="1" priority="1">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarSuffix.description"
+                        />
+                    </description>
+                </area>
+
                 <area name="headerSuffix" inheritance="1" priority="1">
                     <title>
                         <locale group="quiqqer/template-cologne"

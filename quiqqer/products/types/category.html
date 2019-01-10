@@ -5,42 +5,80 @@
     {if $showFilter}
 
     {assign var=fullWidth value="-fullWidth"}
-    <div class="content-headerpage-multible-left hide-on-mobile">
+    <div class="product-sidebar content-headerpage-multible-left hide-on-mobile">
+
+        {assign var=productSidebarPrefix value=$BricksManager->getBricksByArea('productSidebarPrefix', $Site)}
+        {if $productSidebarPrefix}
+        <div class="product-sidebar-container product-sidebar-prefix">
+            {foreach $productSidebarPrefix as $Brick}
+                {if $Brick->getAttribute('frontendTitle')}
+                <header class="left-sidebar-filter-header text-muted">
+                    <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                </header>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            {/foreach}
+        </div>
+        {/if}
 
         {if $CategoryMenu->countChildren()}
-            <header class="left-sidebar-filter-header text-muted">
-                <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
-            </header>
-            {$CategoryMenu->create()}
+            <div class="product-sidebar-container product-sidebar-categoryMenu clearfix">
+                <header class="left-sidebar-filter-header text-muted">
+                    <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
+                </header>
+                {$CategoryMenu->create()}
+            </div>
         {/if}
 
         {if !isset($Product) && $Site->getAttribute('quiqqer.products.settings.showFreeTextSearch')}
-        <header class="left-sidebar-filter-header text-muted">
-            <h2>{locale group="quiqqer/products" var="type.category.freetextTitle"}</h2>
-        </header>
-        <label class="quiqqer-products-category-freetextSearch">
-            <input type="search" name="search"
-                   placeholder="{locale group="quiqqer/products" var="control.search.placeholder"}"
-            />
-            <input type="submit" name="submit" class="button"
-                   value="{locale group="quiqqer/products" var="type.category.freetextButtonText"}"
-            />
-            <noscript>
-                <style>
-                    .quiqqer-products-category-freetextSearch [type="submit"] {
-                        display: inline;
-                    }
-                </style>
-            </noscript>
-        </label>
+        <div class="product-sidebar-container product-sidebar-freeTextSearch clearfix">
+
+            <header class="left-sidebar-filter-header text-muted">
+                <h2>{locale group="quiqqer/products" var="type.category.freetextTitle"}</h2>
+            </header>
+            <label class="quiqqer-products-category-freetextSearch">
+                <input type="search" name="search"
+                       placeholder="{locale group="quiqqer/products" var="control.search.placeholder"}"
+                />
+                <input type="submit" name="submit" class="button"
+                       value="{locale group="quiqqer/products" var="type.category.freetextButtonText"}"
+                />
+                <noscript>
+                    <style>
+                        .quiqqer-products-category-freetextSearch [type="submit"] {
+                            display: inline;
+                        }
+                    </style>
+                </noscript>
+            </label>
+        </div>
         {/if}
 
         {if isset($ProductList) && $ProductList->count() && !empty($filter)}
-        <header class="left-sidebar-filter-header text-muted">
-            <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
-        </header>
-        {$ProductList->createFilter()}
+        <div class="product-sidebar-container product-sidebar-filter clearfix">
+            <header class="left-sidebar-filter-header text-muted">
+                <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
+            </header>
+            {$ProductList->createFilter()}
+        </div>
         {/if}
+
+        {assign var=productSidebarSuffix value=$BricksManager->getBricksByArea('productSidebarSuffix', $Site)}
+        {if $productSidebarSuffix}
+        <div class="product-sidebar-container product-sidebar-suffix">
+            {foreach $productSidebarSuffix as $Brick}
+                {if $Brick->getAttribute('frontendTitle')}
+                <header class="left-sidebar-filter-header text-muted">
+                    <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                </header>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            {/foreach}
+        </div>
+        {/if}
+
     </div>
     {/if}
 

@@ -50,6 +50,7 @@
 {/foreach}
 
 
+<!-- breadcrumb -->
 {if $Site->getId() !== 1}
     {fetch template="template/breadcrumb.html" Site=$Site}
 {/if}
@@ -71,7 +72,6 @@
         </div>
 </section>
 {/foreach}
-
 
 <main class="cologne-main section-divider">
     <div class="cologne-grid-container template-column">
