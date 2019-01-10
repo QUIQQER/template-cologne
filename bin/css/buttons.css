@@ -29,8 +29,8 @@ a.qui-button,
     float: none; /* qui-button reset */
 }
 
-button .fa,
-.btn .fa {
+button > .fa,
+.btn > .fa {
     margin-right: .75rem;
 }
 
