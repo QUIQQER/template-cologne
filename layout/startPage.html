@@ -1,0 +1,47 @@
+
+{assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
+{assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+
+{if !empty( $prefixContentBricks )}
+{foreach from=$prefixContentBricks item=Brick}
+<div class="tpl-businessPro-row">
+    {if $Brick->getAttribute('frontendTitle')}
+        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+    {/if}
+        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+    {$Brick->create()}
+</div>
+{/foreach}
+{/if}
+
+<div role="main">
+    {*if !$showHeader}
+        {if $showPageTitle}
+        <header class="content-header">
+            <h1 itemprop="name">
+                {$Site->getAttribute('title')}
+            </h1>
+        </header>
+        {/if}
+
+        {if $showPageShort}
+        <div class="content-short" itemprop="description">
+            {$Site->getAttribute('short')|nl2br}
+        </div>
+        {/if}
+    {/if*}
+
+    {$Template->getBody()}
+</div>
+
+{if !empty( $suffixContentBricks )}
+{foreach from=$suffixContentBricks item=Brick}
+<div class="tpl-businessPro-row">
+    {if $Brick->getAttribute('frontendTitle')}
+        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+    {/if}
+    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+    {$Brick->create()}
+</div>
+{/foreach}
+{/if}

@@ -1,0 +1,70 @@
+
+{assign var=rightSideBar value=$BricksManager->getBricksByArea('rightSidebar', $Site)}
+{assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
+{assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+
+<div class="page-multible-left grid-70 mobile-grid-100">
+
+    {if !empty( $prefixContentBricks )}
+    {foreach from=$prefixContentBricks item=Brick}
+    <div class="tpl-businessPro-row">
+        {if $Brick->getAttribute('frontendTitle')}
+            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+        {/if}
+        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+        {$Brick->create()}
+    </div>
+    {/foreach}
+    {/if}
+
+
+    {if !$showHeader}
+        {if $showPageTitle}
+        <header class="content-header">
+            <h1 itemprop="name">
+                {$Site->getAttribute('title')}
+            </h1>
+        </header>
+        {/if}
+
+        {if $showPageShort}
+        <div class="content-short" itemprop="description">
+            {$Site->getAttribute('short')|nl2br}
+        </div>
+        {/if}
+    {/if}
+
+    {$Template->getBody()}
+
+    {if !empty( $suffixContentBricks )}
+    {foreach from=$suffixContentBricks item=Brick}
+    <div class="tpl-businessPro-row">
+        {if $Brick->getAttribute('frontendTitle')}
+            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+        {/if}
+        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+        {$Brick->create()}
+    </div>
+    {/foreach}
+    {/if}
+</div>
+
+<div class="page-multible-right grid-30 mobile-grid-100">
+    {if !empty( $rightSideBar)}
+        {foreach from=$rightSideBar item=Brick}
+        <div class="tpl-businessPro-row">
+            {if $Brick->getAttribute('frontendTitle') &&
+                $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
+            }
+            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            {/if}
+            {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+            {/if}
+            {$Brick->create()}
+        </div>
+        {/foreach}
+    {else}
+        &nbsp
+    {/if}
+</div>
