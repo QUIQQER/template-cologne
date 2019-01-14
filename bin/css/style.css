@@ -163,8 +163,26 @@ small {
     margin-top: 1em;
 }
 
-/** helper
- ===================================== */
+/**********/
+/* Header */
+/**********/
+.page-header {
+    background-size: cover;
+}
+
+.page-header-container {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    justify-content: center;
+    padding: 1em;
+    text-shadow: 0 0 30px #333;
+}
+
+/**********/
+/* Helper */
+/**********/
 
 .hide-on-desktop {
     display: inline-block;
@@ -213,6 +231,7 @@ small {
     max-width: 1200px;
     padding-left: 20px;
     padding-right: 20px;
+    width: 100%;
 }
 
 .template-grid-container.brick-full-width {
@@ -374,6 +393,10 @@ small {
     width: 100%;
 }
 
+.cologne-breadcrumb-wrapper {
+    height: 100%;
+}
+
 .cologne-breadcrumb .quiqqer-breadcrumb-title {
     display: none;
 }
@@ -444,9 +467,9 @@ small {
 
 /* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
 .cologne-main {
-    display: inline-block;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    border-bottom: none;
+    margin-bottom: 2em;
+    margin-top: 2em;
     width: 100%;
 }
 
@@ -465,6 +488,7 @@ small {
     clear: both;
     float: none;
     padding: 1em 0;
+    border-top: 1px solid #ddd;
 }
 
 /** Mega Menu

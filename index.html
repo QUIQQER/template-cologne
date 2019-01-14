@@ -9,6 +9,8 @@
     {fontawesome}
     {unsemantic}
 
+    {$settingsCSS}
+
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/buttons.css"/>
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/form.css"/>
@@ -22,7 +24,7 @@
     <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/cologne.blue.css"/>
 
 </head>
-<body class="page-{$Site->getId()} {$typeClass}">
+<body class="page-{$Site->getId()} {$typeClass} {$siteType}">
 
 {* small top bar *}
 {fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar}
@@ -30,30 +32,44 @@
 {* main navigation / menu *}
 {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu}
 
+{if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
+<header class="page-header"
+        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1920 onlysrc=1 rewrited=1}')"
+>
+    <div class="page-header-container">
+        <div class="template-grid-container">
+            <h1>{$Site->getAttribute('title')}</h1>
+            <div class="page-content-emotion-short">
+                {$Site->getAttribute('short')}
+            </div>
+        </div>
+    </div>
+</header>
+{/if}
+
+<!-- breadcrumb -->
+{if $showBreadcrumb}
+    {fetch template="template/breadcrumb.html" Site=$Site}
+{/if}
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'brickFullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
 
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('noPadding')}
-{assign var=brickNoPadding value="brick-no-padding"}
-{/if}
-<section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickNoPadding value=""}
+        {if $Brick->getSetting('noPadding')}
+        {assign var=brickNoPadding value="brick-no-padding"}
+    {/if}
+    <section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
 
-
-<!-- breadcrumb -->
-{if $Site->getId() !== 1}
-    {fetch template="template/breadcrumb.html" Site=$Site}
-{/if}
 
 {assign var=contentPrefix value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {foreach $contentPrefix as $Brick}

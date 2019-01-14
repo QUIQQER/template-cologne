@@ -10,6 +10,52 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+
+                    <!-- header -->
+                    <conf name="headerStartPage">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="headerNoSidebar">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="headerLeftSidebar">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="headerRightSidebar">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+
+                    <!-- header img height position  -->
+                    <conf name="headerHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>250</defaultvalue>
+                    </conf>
+                    <conf name="headerImagePosition">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>center</defaultvalue>
+                    </conf>
+
+                    <!-- show breadcrumb -->
+                    <conf name="showBreadcrumbStartPage">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbNoSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbLeftSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbRightSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
                 </section>
             </config>
 
@@ -46,38 +92,242 @@
                             </input>
                         </settings>
 
+                        <!-- header -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.breadcrumb.settings">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.header.title"
+                                />
+                            </title>
+
+                            <!-- header: after nav, before content or hide? -->
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.header.title" />
+                            </text>
+
+                            <!-- header: start page -->
+                            <select conf="templateCologne.settings.headerStartPage">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.startPage.title"
+                                    />
+                                </text>
+
+                                <option value="afterNav">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.startPage.afterNav"
+                                    />
+                                </option>
+                                <option value="beforeContent">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.startPage.beforeContent"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.startPage.hide"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- header: no sidebar -->
+                            <select conf="templateCologne.settings.headerNoSidebar">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.noSidebar.title"
+                                    />
+                                </text>
+
+                                <option value="afterNav">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.noSidebar.afterNav"
+                                    />
+                                </option>
+                                <option value="beforeContent">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.noSidebar.beforeContent"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.noSidebar.hide"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- header: left sidebar -->
+                            <select conf="templateCologne.settings.headerLeftSidebar">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.leftSidebar.title"
+                                    />
+                                </text>
+
+                                <option value="afterNav">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.leftSidebar.afterNav"
+                                    />
+                                </option>
+                                <option value="beforeContent">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.leftSidebar.beforeContent"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.leftSidebar.hide"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- header: right sidebar -->
+                            <select conf="templateCologne.settings.headerRightSidebar">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.rightSidebar.title"
+                                    />
+                                </text>
+
+                                <option value="afterNav">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.rightSidebar.afterNav"
+                                    />
+                                </option>
+                                <option value="beforeContent">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.rightSidebar.beforeContent"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.rightSidebar.hide"
+                                    />
+                                </option>
+                            </select>
+
+
+                            <!-- header: image size -->
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.header.height.text"
+                                />
+                            </text>
+                            <input conf="templateCologne.settings.headerHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.height.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- header: image position -->
+                            <select conf="templateCologne.settings.headerImagePosition">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.imagePosition.text"
+                                    />
+                                </text>
+
+                                <option value="flex-start">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.imagePosition.top"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.imagePosition.center"
+                                    />
+                                </option>
+                                <option value="flex-end">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.header.imagePosition.bottom"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- breadrcumb -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.breadcrumb.settings">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="templateCologne.breadcrumb.settings.title"
+                                />
+                            </title>
+
+                            <!-- no breadcrumb? -->
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="showBreadcrumb.text" />
+                            </text>
+                            <input conf="templateCologne.settings.showBreadcrumbStartPage"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="showBreadcrumbStartPage.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templateCologne.settings.showBreadcrumbNoSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="showBreadcrumbNoSidebar.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templateCologne.settings.showBreadcrumbLeftSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="showBreadcrumbLeftSidebar.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templateCologne.settings.showBreadcrumbRightSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="showBreadcrumbRightSidebar.text"
+                                    />
+                                </text>
+                            </input>
+                        </settings>
+
 
                         <!-- Basket button behaviour -->
                         <!--<settings title="templateCologne.settings"
                                   name="templateCologne.settings.general">
                             <title>
-                                <locale group="quiqqer/template-businesspro"
-                                        var="templateBusinessPro.settings.bgColorSwitcher.title"
+                                <locale group="quiqqer/template-cologne"
+                                        var="templateCologne.settings.bgColorSwitcher.title"
                                         />
                             </title>
 
                             &lt;!&ndash; Background Color Switcher Prefix &ndash;&gt;
-                            <select conf="templateBusinessPro.settings.bgColorSwitcherPrefix">
+                            <select conf="templateCologne.settings.bgColorSwitcherPrefix">
                                 <text>
-                                    <locale group="quiqqer/template-businesspro"
-                                            var="templateBusinessPro.settings.bgColorSwitcherPrefix.text"
+                                    <locale group="quiqqer/template-cologne"
+                                            var="templateCologne.settings.bgColorSwitcherPrefix.text"
                                             />
                                 </text>
 
                                 <description>
-                                    <locale group="quiqqer/template-businesspro"
-                                            var="templateBusinessPro.settings.bgColorSwitcherPrefix.description"
+                                    <locale group="quiqqer/template-cologne"
+                                            var="templateCologne.settings.bgColorSwitcherPrefix.description"
                                             />
                                 </description>
 
                                 <option value="hide">
-                                    <locale group="quiqqer/template-businesspro"
-                                            var="templateBusinessPro.settings.bgColorSwitcher.hide"
+                                    <locale group="quiqqer/template-cologne"
+                                            var="templateCologne.settings.bgColorSwitcher.hide"
                                             />
                                 </option>
                                 <option value="display">
-                                    <locale group="quiqqer/template-businesspro"
-                                            var="templateBusinessPro.settings.bgColorSwitcher.display"
+                                    <locale group="quiqqer/template-cologne"
+                                            var="templateCologne.settings.bgColorSwitcher.display"
                                             />
                                 </option>
                             </select>

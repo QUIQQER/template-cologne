@@ -102,10 +102,10 @@
         {/if}
 
         <div class="{$cssClasses}">
-            {if $Template->getAttribute('content-header')}
+            {if $header == 'beforeContent'}
                 {if $Site->getAttribute('image_emotion')}
                 <header class="page-content-header page-content-header-emotion"
-                        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1200 onlysrc=1 rewrited=1}')"
+                        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"
                 >
                     <div class="page-content-header-emotion-container">
                         <h1>{$Site->getAttribute('title')}</h1>
@@ -116,7 +116,10 @@
                 </header>
                 {else}
                 <header class="page-content-header">
-                    <h1>{$Site->getAttribute('title')}</h1>
+                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
                 </header>
                 {/if}
             {/if}

@@ -53,4 +53,95 @@ class Utils
 
         return false;
     }
+
+    /**
+     * @param $params
+     * @return array|bool|object|string
+     * @throws QUI\Exception
+     */
+    public static function getConfig($params)
+    {
+        try {
+            return QUI\Cache\Manager::get(
+                'quiqqer/templateCologne/' . $params['Site']->getId()
+            );
+        } catch (QUI\Exception $Exception) {
+        }
+
+        $config = [];
+
+        /* @var $Project QUI\Projects\Project */
+        /* @var $Template QUI\Template() */
+        $Project  = $params['Project'];
+        $Template = $params['Template'];
+
+        /**
+         * no header?
+         * no breadcrumb?
+         * Body Class
+         *
+         * own site type
+         */
+        $header         = 'hide';
+        $showBreadcrumb = false;
+        $siteType       = 'no-sidebar';
+
+        switch ($Template->getLayoutType()) {
+            case 'layout/startPage':
+                $header         = $Project->getConfig('templateCologne.settings.headerStartPage');
+                $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbStartPage');
+                $siteType       = 'start-page';
+                break;
+
+            case 'layout/noSidebar':
+                $header         = $Project->getConfig('templateCologne.settings.headerNoSidebar');
+                $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebar');
+                $siteType       = 'no-sidebar';
+                break;
+
+            case 'layout/rightSidebar':
+                $header         = $Project->getConfig('templateCologne.settings.headerRightSidebar');
+                $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbRightSidebar');
+                $siteType       = 'right-sidebar';
+                break;
+
+            case 'layout/leftSidebar':
+                $header         = $Project->getConfig('templateCologne.settings.headerLeftSidebar');
+                $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbLeftSidebar');
+                $siteType       = 'left-sidebar';
+                break;
+        }
+
+        $showPageTitle = $params['Site']->getAttribute('templateCologne.showTitle');
+        $showPageShort = $params['Site']->getAttribute('templateCologne.showShort');
+
+        /* site own show header */
+        switch ($params['Site']->getAttribute('templateCologne.showEmotion')) {
+            case 'show':
+                $header = true;
+                break;
+            case 'hide':
+                $header = false;
+        }
+
+        $settingsCSS = include 'settings.css.php';
+
+        $config += [
+            'header'         => $header,
+            'showBreadcrumb' => $showBreadcrumb,
+            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
+            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'siteType'       => $siteType,
+            'showPageTitle'  => $showPageTitle,
+            'showPageShort'  => $showPageShort
+        ];
+
+        // set cache
+        QUI\Cache\Manager::set(
+            'quiqqer/templateCologne/' . $params['Site']->getId(),
+            $config
+        );
+
+        return $config;
+    }
 }

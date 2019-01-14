@@ -37,7 +37,7 @@
                 </area>
 
                 <!-- product sidebar suffix-->
-                <area name="productSidebarSuffix" site-type="products/category" inheritance="1" priority="1">
+                <area name="productSidebarSuffix" site-type="products/category" inheritance="1" priority="2">
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.productSidebarSuffix.title"
