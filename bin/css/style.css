@@ -43,6 +43,7 @@
     padding-right: 0;
 }
 
+.template-children-container,
 .grid-children-container {
     left: -20px;
     position: relative;
@@ -214,14 +215,27 @@ small {
     padding-right: 20px;
 }
 
-.template-grid-row {
-    padding-bottom: 3em;
-    padding-top: 3em;
+.start-page .template-grid-row{
+    margin-bottom: 5em;
+    margin-top: 5em;
 }
 
-.template-grid-row.brick-no-padding {
-    padding-bottom: 0;
-    padding-top: 0;
+.page-content-header,
+.content-body,
+.template-grid-row {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.start-page .template-grid-row{
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+.template-grid-row.brick-no-padding,
+.start-page .template-grid-row.brick-no-padding {
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .template-grid-container,
@@ -231,6 +245,7 @@ small {
     max-width: 1200px;
     padding-left: 20px;
     padding-right: 20px;
+
     width: 100%;
 }
 
@@ -250,8 +265,44 @@ small {
 
 /* divider */
 .section-divider {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e8e8e8;
 }
+
+/**********/
+/* Layouts*/
+/**********/
+/* left sidebar */
+.layout-left-sidebar {
+    display: flex;
+    align-items: flex-start;
+}
+
+.layout-left-sidebar .page-multiple-left {
+    order: 2;
+    width: 30%;
+}
+
+.layout-left-sidebar .page-multiple-right {
+    order: 1;
+    width: 70%;
+}
+
+/* right sidebar */
+.layout-right-sidebar {
+    display: flex;
+    align-items: flex-start;
+}
+
+.layout-right-sidebar .page-multiple-left {
+    width: 70%;
+    padding-left: 0;
+}
+
+.layout-right-sidebar .page-multiple-right {
+    width: 30%;
+    padding-right: 0;
+}
+
 
 /** brick header & content
  ===================================== */
@@ -278,7 +329,8 @@ small {
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
     height: 50px;
-    padding: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .header-fixed .topbar {
@@ -467,9 +519,6 @@ small {
 
 /* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
 .cologne-main {
-    border-bottom: none;
-    margin-bottom: 2em;
-    margin-top: 2em;
     width: 100%;
 }
 
@@ -488,7 +537,6 @@ small {
     clear: both;
     float: none;
     padding: 1em 0;
-    border-top: 1px solid #ddd;
 }
 
 /** Mega Menu
@@ -691,13 +739,13 @@ small {
 /* Popup */
 /*********/
 .qui-window-popup-title-close {
-    display: flex;
     align-items: center;
+    color: inherit;
+    display: flex;
     justify-content: center;
     line-height: 0;
-    color: inherit;
-    padding-top: 0;
     padding-bottom: 0;
+    padding-top: 0;
 }
 
 .qui-window-popup-buttons.box {
@@ -716,8 +764,8 @@ small {
 
 @media screen and (max-width: 767px) {
     .qui-window-popup-buttons.box button {
-        margin: 10px 20px;
         display: block !important;
+        margin: 10px 20px;
         width: calc(100% - 40px);
     }
 }
@@ -734,7 +782,7 @@ small {
 }
 
 .cologne-logout-dialog .qui-window-popup-title-close,
-.cologne-login-dialog  .qui-window-popup-title-close {
+.cologne-login-dialog .qui-window-popup-title-close {
     align-items: center;
     border-radius: 0;
     color: inherit;

@@ -23,7 +23,8 @@
             <areas>
 
                 <!-- product sidebar prefix-->
-                <area name="productSidebarPrefix" site-type="products/category" inheritance="1" priority="1">
+                <area name="productSidebarPrefix" site-type="products/category"
+                      inheritance="1" priority="1">
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.productSidebarPrefix.title"
@@ -37,7 +38,8 @@
                 </area>
 
                 <!-- product sidebar suffix-->
-                <area name="productSidebarSuffix" site-type="products/category" inheritance="1" priority="2">
+                <area name="productSidebarSuffix" site-type="products/category"
+                      inheritance="1" priority="1">
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.productSidebarSuffix.title"
@@ -63,28 +65,15 @@
                     </description>
                 </area>
 
-                <area name="contentPrefix" inheritance="1" priority="3">
+                <area name="footerPrefix" inheritance="1" priority="6">
                     <title>
                         <locale group="quiqqer/template-cologne"
-                                var="area.contentPrefix.title"
-                                />
-                    </title>
-                    <description>
-                        <locale group="quiqqer/template-cologne"
-                                var="area.contentPrefix.description"
-                                />
-                    </description>
-                </area>
-
-                <area name="contentSuffix" inheritance="1" priority="4">
-                    <title>
-                        <locale group="quiqqer/template-cologne"
-                                var="area.contentSuffix.title"
+                                var="area.footerPrefix.title"
                         />
                     </title>
                     <description>
                         <locale group="quiqqer/template-cologne"
-                                var="area.contentSuffix.description"
+                                var="area.footerPrefix.description"
                         />
                     </description>
                 </area>
@@ -93,18 +82,157 @@
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.footer.title"
-                                />
+                        />
                     </title>
                     <description>
                         <locale group="quiqqer/template-cologne"
                                 var="area.footer.description"
-                                />
+                        />
                     </description>
                 </area>
             </areas>
 
+            <!-- specific type areas -->
+            <layouts>
 
+                <layout layout="layout/startPage">
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/noSidebar">
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/leftSidebar">
+                    <area name="leftSidebar" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.sidebar.left.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.sidebar.left.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/rightSidebar">
+                    <area name="rightSidebar" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.sidebar.right.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.sidebar.right.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+            </layouts>
         </templateAreas>
     </bricks>
-
 </quiqqer>

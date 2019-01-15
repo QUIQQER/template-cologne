@@ -33,18 +33,7 @@
 {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu}
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-<header class="page-header"
-        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1920 onlysrc=1 rewrited=1}')"
->
-    <div class="page-header-container">
-        <div class="template-grid-container">
-            <h1>{$Site->getAttribute('title')}</h1>
-            <div class="page-content-emotion-short">
-                {$Site->getAttribute('short')}
-            </div>
-        </div>
-    </div>
-</header>
+    {fetch template="template/pageHeader.html" Site=$Site}
 {/if}
 
 <!-- breadcrumb -->
@@ -70,33 +59,14 @@
     </section>
 {/foreach}
 
-
-{assign var=contentPrefix value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
-{foreach $contentPrefix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'brickFullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
-
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('noPadding')}
-        {assign var=brickNoPadding value="brick-no-padding"}
-    {/if}
-    <section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-</section>
-{/foreach}
-
 <main class="cologne-main section-divider">
-    <div class="cologne-grid-container template-column">
+    <div class="cologne-grid-container">
         {$Template->getLayout()}
     </div>
 </main>
 
-{assign var=contentSuffix value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
-{foreach $contentSuffix as $Brick}
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+{foreach $footerPrefix as $Brick}
     {assign var=brickFullWidth value=''}
     {if $Brick->getSetting( 'brickFullWidth' )}
         {assign var=brickFullWidth value='brick-full-width'}
@@ -106,7 +76,7 @@
     {if $Brick->getSetting('noPadding')}
         {assign var=brickNoPadding value="brick-no-padding"}
     {/if}
-    <section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
+    <section class="header-prefix-area section-divider brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>

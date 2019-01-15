@@ -1,18 +1,17 @@
 .quiqqer-products-wrapper {
     display: flex;
+    align-items: flex-start;
 }
 
 .content-headerpage-multible-left {
-    padding-left: 20px;
-    padding-right: 20px;
     width: 30%;
+    padding-left: 0;
 }
 
 .quiqqer-products-category {
     flex-grow: 1;
-    padding-left: 20px;
-    padding-right: 20px;
     width: 70%;
+    padding-right: 0;
 }
 
 .type-quiqqer-products-types-category .quiqqer-products-category.full-width {
@@ -25,7 +24,6 @@
 .left-sidebar-filter-header {
     font-size: 1.5rem;
     font-weight: 400;
-    padding: 10px 0;
 }
 
 .left-sidebar-filter-header h2 {
@@ -51,6 +49,11 @@
 
 .quiqqer-products-category-menu-navigation-li-label-link {
     color: inherit;
+}
+
+.content-headerpage-multible-left .quiqqer-products-category-freetextSearch,
+.content-headerpage-multible-left .quiqqer-products-category-menu {
+    margin-bottom: 20px !important;
 }
 
 /* free text search */
