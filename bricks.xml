@@ -155,12 +155,12 @@
                     <area name="leftSidebar" inheritance="1" priority="3">
                         <title>
                             <locale group="quiqqer/template-cologne"
-                                    var="area.sidebar.left.title"
+                                    var="area.leftSidebar.title"
                             />
                         </title>
                         <description>
                             <locale group="quiqqer/template-cologne"
-                                    var="area.sidebar.left.description"
+                                    var="area.leftSidebar.description"
                             />
                         </description>
                     </area>
@@ -196,12 +196,12 @@
                     <area name="rightSidebar" inheritance="1" priority="3">
                         <title>
                             <locale group="quiqqer/template-cologne"
-                                    var="area.sidebar.right.title"
+                                    var="area.rightSidebar.title"
                             />
                         </title>
                         <description>
                             <locale group="quiqqer/template-cologne"
-                                    var="area.sidebar.right.description"
+                                    var="area.rightSidebar.description"
                             />
                         </description>
                     </area>

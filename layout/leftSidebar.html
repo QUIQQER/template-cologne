@@ -3,12 +3,12 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContent', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContent', $Site)}
 
-<div class="layout-left-sidebar">
+<div class="main-left-sidebar">
     <div class="page-multiple-right template-column" role="main">
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
-        <div class="tpl-businessPro-row">
+        <div class="template-grid-row">
             {if $Brick->getAttribute('frontendTitle')}
                 <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
             {/if}
@@ -46,7 +46,7 @@
 
         {if !empty( $suffixContentBricks )}
         {foreach from=$suffixContentBricks item=Brick}
-        <div class="tpl-businessPro-row">
+        <div class="template-grid-row">
             {if $Brick->getAttribute('frontendTitle')}
                 <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
             {/if}
@@ -60,7 +60,7 @@
 
     <div class="page-multiple-left template-column">
         {foreach from=$leftSideBar item=Brick}
-            <div class="tpl-businessPro-row">
+            <div class="template-grid-row">
                 {if $Brick->getAttribute('frontendTitle') &&
                     $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
                 }

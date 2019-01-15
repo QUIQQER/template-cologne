@@ -41,6 +41,15 @@
             <en><![CDATA[Layout without sidebars. Is often used for all other pages that do not have sidebars and are not intended as a start page.]]></en>
         </locale>
 
+        <locale name="admin.layout.noSidebarThin">
+            <de><![CDATA[Keine Sidebar (schmal)]]></de>
+            <en><![CDATA[No sidebar (thin)]]></en>
+        </locale>
+        <locale name="admin.layout.noSidebarThin.description">
+            <de><![CDATA[Layout ohne Sidebars. Der Inhalt ist schmaler als andere layouts. Es eignet sich perfekt für Blog oder News Beiträge.]]></de>
+            <en><![CDATA[Layout without sidebars. The content is thiner than other layouts. It is perfect for blog or news posts.]]></en>
+        </locale>
+
         <locale name="admin.layout.leftSidebar">
             <de><![CDATA[Linke Sidebar]]></de>
             <en><![CDATA[Left sidebar]]></en>
@@ -86,6 +95,33 @@
         <locale name="area.contentSuffix.description">
             <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
             <en><![CDATA[Brick area after the content]]></en>
+        </locale>
+
+        <locale name="area.footerPrefix.title">
+            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+            <en><![CDATA[Brick area before the footer]]></en>
+        </locale>
+
+        <locale name="area.leftSidebar.title">
+            <de><![CDATA[Linke Bausteinzone]]></de>
+            <en><![CDATA[Left brick area]]></en>
+        </locale>
+        <locale name="area.leftSidebar.description">
+            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
+            <en><![CDATA[Brick area to the left of the content]]></en>
+        </locale>
+
+        <locale name="area.rightSidebar.title">
+            <de><![CDATA[Rechte Bausteinzone]]></de>
+            <en><![CDATA[Right brick area]]></en>
+        </locale>
+        <locale name="area.rightSidebar.description">
+            <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
+            <en><![CDATA[Brick area to the right of the content]]></en>
         </locale>
 
         <locale name="area.footer.title">
@@ -212,6 +248,72 @@
             <br /><strong>The setting only affects the template. External bricks can control this themselves via their settings.</strong>]]></en>
         </locale>
 
+        <!-- header settings -->
+        <locale name="settings.header.title">
+            <de><![CDATA[Header Einstellungen]]></de>
+            <en><![CDATA[Header settings]]></en>
+        </locale>
+        <!-- header settings: display -->
+        <locale name="settings.header.text">
+            <de><![CDATA[Bestimmen Sie für jeden Seitentyp, wo der Header angezeigt werden soll.]]></de>
+            <en><![CDATA[For each page type, specify where you want the header to appear.]]></en>
+        </locale>
+
+        <locale name="settings.header.text" html="true">
+            <de><![CDATA[Header anzeigen? <br />Bestimmen Sie für jeden Seitentyp, wo der Header angezeigt werden soll.]]></de>
+            <en><![CDATA[Display header? <br />For each page type, specify where you want the header to appear.]]></en>
+        </locale>
+
+        <locale name="settings.header.display.afterNav">
+            <de><![CDATA[Nach der Navigation]]></de>
+            <en><![CDATA[After navigation]]></en>
+        </locale>
+        <locale name="settings.header.display.beforeContent">
+            <de><![CDATA[Vor dem Inhalt]]></de>
+            <en><![CDATA[Before the content]]></en>
+        </locale>
+        <locale name="settings.header.display.hide">
+            <de><![CDATA[Ausschalten]]></de>
+            <en><![CDATA[Hide]]></en>
+        </locale>
+
+        <!-- header settings: size -->
+        <locale name="settings.header.height.text">
+            <de><![CDATA[Höhe des Headers einstellen. Das ist die minimale Höhe. Wenn der Text (Titel und Kurzbeschreibung) mehr platz brauchen, wird der Header höher.]]></de>
+            <en><![CDATA[Adjust the height of the header. This is the minimum height. If the text (title and short description) needs more space, the header gets higher.]]></en>
+        </locale>
+        <locale name="settings.header.height.value">
+            <de><![CDATA[Höhe (in Pixel)]]></de>
+            <en><![CDATA[Height (in pixel)]]></en>
+        </locale>
+
+        <!-- header settings: image position -->
+        <locale name="settings.header.imagePosition.text">
+            <de><![CDATA[Position des Bildes]]></de>
+            <en><![CDATA[Image position]]></en>
+        </locale>
+        <locale name="settings.header.imagePosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="settings.header.imagePosition.center">
+            <de><![CDATA[Mitte]]></de>
+            <en><![CDATA[Middle]]></en>
+        </locale>
+        <locale name="settings.header.imagePosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+
+        <!-- breadcrumb settings -->
+        <locale name="settings.breadcrumb.title">
+            <de><![CDATA[Brotkrumennavigation Einstellungen (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb settings]]></en>
+        </locale>
+        <locale name="settings.breadcrumb.text" html="true">
+            <de><![CDATA[Brotkrumennavigation anzeigen? <br/>Bestimmen Sie für jeden Seitentyp, ob die Brotkrumennavigation angezeigt werden soll.]]></de>
+            <en><![CDATA[Display breadcrumb? <br/>For each page type, specify if you want the breadcrumb navigation to be displayed.]]></en>
+        </locale>
 
         <!-- exceptions -->
         <locale name="exception.user.required">

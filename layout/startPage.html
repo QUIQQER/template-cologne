@@ -2,7 +2,7 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
 
-<div class="layout-start-page">
+<div class="main-start-page">
     {if !empty( $prefixContentBricks )}
     {foreach from=$prefixContentBricks item=Brick}
     <div class="tpl-businessPro-row">

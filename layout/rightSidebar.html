@@ -3,8 +3,8 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
 
-<div class="layout-right-sidebar">
-    <div class="page-multiple-left template-column">
+<div class="main-right-sidebar">
+    <div class="page-multiple-left template-column" role="main">
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}

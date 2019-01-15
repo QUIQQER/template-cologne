@@ -90,25 +90,31 @@ class Utils
             case 'layout/startPage':
                 $header         = $Project->getConfig('templateCologne.settings.headerStartPage');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbStartPage');
-                $siteType       = 'start-page';
+                $siteType       = 'layout-start-page';
                 break;
 
             case 'layout/noSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerNoSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebar');
-                $siteType       = 'no-sidebar';
+                $siteType       = 'layout-no-sidebar';
+                break;
+
+            case 'layout/noSidebarThin':
+                $header         = $Project->getConfig('templateCologne.settings.headerNoSidebarThin');
+                $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebarThin');
+                $siteType       = 'layout-no-sidebar';
                 break;
 
             case 'layout/rightSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbRightSidebar');
-                $siteType       = 'right-sidebar';
+                $siteType       = 'layout-right-sidebar';
                 break;
 
             case 'layout/leftSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerLeftSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbLeftSidebar');
-                $siteType       = 'left-sidebar';
+                $siteType       = 'layout-left-sidebar';
                 break;
         }
 
