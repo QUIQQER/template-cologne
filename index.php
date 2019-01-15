@@ -27,7 +27,7 @@ switch ($Site->getAttribute('type')) {
     case 'quiqqer/products:types/category':
     case 'quiqqer/products:types/search':
         $productPage = true;
-
+        break;
 };
 
 $Engine->assign([
