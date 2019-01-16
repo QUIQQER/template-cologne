@@ -317,7 +317,7 @@ small {
     .main-left-sidebar .page-multiple-right {
         order: 1;
     }
-    
+
     .main-left-sidebar,
     .main-right-sidebar {
         flex-direction: column;

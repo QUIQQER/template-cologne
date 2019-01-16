@@ -5,7 +5,7 @@
     {if $showFilter}
 
     {assign var=fullWidth value="-fullWidth"}
-    <div class="product-sidebar content-headerpage-multible-left template-column hide-on-mobile">
+    <div class="quiqqer-product-sidebar content-headerpage-multible-left template-column hide-on-mobile">
 
         {assign var=productSidebarPrefix value=$BricksManager->getBricksByArea('productSidebarPrefix', $Site)}
         {if $productSidebarPrefix}
@@ -23,7 +23,7 @@
         {/if}
 
         {if $CategoryMenu->countChildren()}
-            <div class="product-sidebar-container product-sidebar-categoryMenu template-grid-row clearfix">
+            <div class="product-sidebar-container template-grid-row clearfix">
                 <header class="left-sidebar-filter-header text-muted">
                     <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
                 </header>
