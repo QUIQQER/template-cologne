@@ -1,9 +1,9 @@
 {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
 {if !empty($footer)}
-<div class="template-grid-container cologne-bg-container">
-    <div class="cologne-grid-container">
+<div class="template-grid-container cologne-bg-container clearfix">
+    <div class="template-children-container">
         {foreach from=$footer item=Brick}
-        {$Brick->create()}
+            {$Brick->create()}
         {/foreach}
     </div>
 </div>
