@@ -12,6 +12,7 @@ QUI\Utils\Site::setRecursivAttribute($Site, 'layout');
  */
 $Menu = new QUI\Menu\MegaMenu([
     'showStart' => false,
+    'data-show-button-on-desktop' => 1,
     'Project'   => $Site->getProject()
 ]);
 

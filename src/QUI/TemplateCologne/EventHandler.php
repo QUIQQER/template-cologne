@@ -15,6 +15,36 @@ use QUI;
 class EventHandler
 {
     /**
+     * Clear system cache on project save
+     *
+     * @return void
+     */
+    public static function onProjectConfigSave()
+    {
+        QUI\System\Log::writeRecursive('<-------------------------------------->');
+        try {
+            QUI\Cache\Manager::clear('quiqqer/templateCologne');
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+        }
+    }
+
+    /**
+     * Clear system cache on site save
+     *
+     * @return void
+     */
+    public static function onSiteSave()
+    {
+        QUI\System\Log::writeRecursive('<xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>');
+        try {
+            QUI\Cache\Manager::clear('quiqqer/templateCologne');
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+        }
+    }
+
+    /**
      * Event : on smarty init
      * @param \Smarty $Smarty - \Smarty
      */

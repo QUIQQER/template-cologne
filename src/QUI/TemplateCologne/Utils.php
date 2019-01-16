@@ -61,9 +61,11 @@ class Utils
      */
     public static function getConfig($params)
     {
+        /** @var $Site \QUI\Projects\Site */
+        $Site = $params['Site'];
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/' . $params['Site']->getId()
+                'quiqqer/templateCologne/' . $Site->getId()
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -71,6 +73,7 @@ class Utils
         $config = [];
 
         /* @var $Project QUI\Projects\Project */
+        /* @var $Template QUI\Template() */
         /* @var $Template QUI\Template() */
         $Project  = $params['Project'];
         $Template = $params['Template'];
@@ -118,16 +121,13 @@ class Utils
                 break;
         }
 
-        $showPageTitle = $params['Site']->getAttribute('templateCologne.showTitle');
-        $showPageShort = $params['Site']->getAttribute('templateCologne.showShort');
 
         /* site own show header */
-        switch ($params['Site']->getAttribute('templateCologne.showEmotion')) {
-            case 'show':
-                $header = true;
-                break;
+        switch ($Site->getAttribute('templateCologne.header')) {
+            case 'afterNav':
+            case 'beforeContent':
             case 'hide':
-                $header = false;
+                $header = $Site->getAttribute('templateCologne.header');
         }
 
         $settingsCSS = include 'settings.css.php';
@@ -136,15 +136,13 @@ class Utils
             'header'         => $header,
             'showBreadcrumb' => $showBreadcrumb,
             'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
-            'siteType'       => $siteType,
-            'showPageTitle'  => $showPageTitle,
-            'showPageShort'  => $showPageShort
+            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'siteType'       => $siteType
         ];
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/' . $params['Site']->getId(),
+            'quiqqer/templateCologne/' . $Site->getId(),
             $config
         );
 

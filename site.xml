@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 
-    <!-- Product list: category -->
-    <!--<attributes>
-        <attribute>quiqqer.cologne.settings.category.hideHeaderOnProductOpen</attribute>
+    <!-- global attributes -->
+    <attributes>
+        <attribute>templateCologne.header</attribute>
     </attributes>
 
     <settings>
-        <category name="category-settingss">
+        <category name="templateCologne.siteSettings">
             <settings>
-                <input conf="quiqqer.cologne.settings.category.hideHeaderOnProductOpen" type="checkbox">
+                <title>
+                    <locale group="quiqqer/template-cologne"
+                            var="templateCologne.siteSettings"/>
+                </title>
+
+                <!-- show header -->
+                <select conf="templateCologne.header">
                     <text>
                         <locale group="quiqqer/template-cologne"
-                                var="site.types.settings.category.hideHeaderOnProductOpen"/>
+                                var="siteSettings.header"/>
                     </text>
-                </input>
+                    <option value="default">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.showEmotion.default"/>
+                    </option>
+                    <option value="afterNav">
+                        <locale group="quiqqer/template-cologne"
+                                var="settings.header.display.afterNav"/>
+                    </option>
+                    <option value="beforeContent">
+                        <locale group="quiqqer/template-cologne"
+                                var="settings.header.display.beforeContent"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-cologne"
+                                var="settings.header.display.hide"/>
+                    </option>
+                </select>
+                <text>
+                    <locale group="quiqqer/template-cologne"
+                            var="siteSettings.info"/>
+                </text>
             </settings>
         </category>
-    </settings>-->
+    </settings>
 
     <!-- layouts -->
     <layouts>

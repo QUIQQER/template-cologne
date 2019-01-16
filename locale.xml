@@ -220,6 +220,24 @@
             <en><![CDATA[Joined]]></en>
         </locale>
 
+        <!-- site settings -->
+        <locale name="templateCologne.siteSettings">
+            <de><![CDATA[Template Cologne Einstellungen]]></de>
+            <en><![CDATA[Template cologne settings]]></en>
+        </locale>
+        <locale name="siteSettings.header">
+            <de><![CDATA[Header anzeigen]]></de>
+            <en><![CDATA[Show header]]></en>
+        </locale>
+        <locale name="siteSettings.showEmotion.default">
+            <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="siteSettings.info" html="true">
+            <de><![CDATA[<string>Header anzeigen</strong> überschreibt die Template Einstellung.]]></de>
+            <en><![CDATA[<string>Show header</strong> overwrites the template settings.]]></en>
+        </locale>
+
         <!-- template settings -->
         <locale name="settings.menu.title">
             <de><![CDATA[Template Cologne Einstellungen]]></de>
