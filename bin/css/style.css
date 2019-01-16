@@ -309,6 +309,32 @@ small {
     width: 30%;
 }
 
+@media (max-width: 767px) {
+    .main-left-sidebar .page-multiple-left {
+        order: 2;
+    }
+
+    .main-left-sidebar .page-multiple-right {
+        order: 1;
+    }
+    
+    .main-left-sidebar,
+    .main-right-sidebar {
+        flex-direction: column;
+    }
+
+    .main-right-sidebar .page-multiple-left,
+    .main-left-sidebar .page-multiple-left {
+        padding: 0;
+        width: 100%;
+    }
+
+    .main-right-sidebar .page-multiple-right,
+    .main-left-sidebar .page-multiple-right {
+        padding: 0;
+        width: 100%;
+    }
+}
 
 /** brick header & content
  ===================================== */
@@ -396,7 +422,7 @@ small {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .topbar {
         border-bottom: none;
     }
@@ -463,7 +489,7 @@ small {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .cologne-header {
         border-top: 1px solid #ddd;
     }
@@ -501,7 +527,7 @@ small {
     text-align: right;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .cologne-breadcrumb {
         height: initial;
     }
