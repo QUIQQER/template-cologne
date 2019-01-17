@@ -44,22 +44,22 @@
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
     {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'brickFullWidth' )}
+    {if $Brick->getSetting( 'general.fullWidth' )}
         {assign var=brickFullWidth value='brick-full-width'}
     {/if}
 
     {assign var=brickNoPadding value=""}
-        {if $Brick->getSetting('noPadding')}
-        {assign var=brickNoPadding value="brick-no-padding"}
+        {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
     {/if}
-    <section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
+    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
     </section>
 {/foreach}
 
-<main class="cologne-main section-divider">
+<main class="cologne-main">
     <div class="cologne-grid-container">
         {$Template->getLayout()}
     </div>
@@ -68,21 +68,20 @@
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 {foreach $footerPrefix as $Brick}
     {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'brickFullWidth' )}
+    {if $Brick->getSetting( 'general.fullWidth' )}
         {assign var=brickFullWidth value='brick-full-width'}
     {/if}
 
     {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('noPadding')}
-        {assign var=brickNoPadding value="brick-no-padding"}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
     {/if}
-    <section class="header-prefix-area section-divider brick-id-{$Brick->getAttribute('id')}">
+    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
     </section>
 {/foreach}
-
 
 <footer class="template-footer">
     {* footer brick area *}

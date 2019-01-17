@@ -2,16 +2,24 @@
 <quiqqer>
     <bricks>
 
-        <!-- for all bricks -->
+        <!-- generall settings for all bricks -->
         <brick control="*">
             <settings>
-                <setting name="brickFullWidth" type="checkbox">
+                <setting name="general.fullWidth" type="checkbox">
                     <locale group="quiqqer/template-cologne"
-                            var="brickFullWidth"/>
+                            var="brick.general.fullWidth"/>
                 </setting>
-                <setting name="noPadding" type="checkbox">
+                <setting name="general.noSpacing" type="checkbox">
                     <locale group="quiqqer/template-cologne"
-                            var="noPadding"/>
+                            var="brick.general.noSpacing"/>
+                </setting>
+                <setting name="general.stopCollapsingMargins" type="checkbox">
+                    <locale group="quiqqer/template-cologne"
+                            var="brick.general.stopCollapsingMargins"/>
+                </setting>
+                <setting name="general.brickWrapperBackground" class="media-color" type="text">
+                    <locale group="quiqqer/template-cologne"
+                            var="brick.general.wrapperBackground"/>
                 </setting>
             </settings>
         </brick>

@@ -227,11 +227,6 @@ small {
     padding-right: 20px;
 }
 
-.start-page .template-grid-row {
-    margin-bottom: 5em;
-    margin-top: 5em;
-}
-
 .page-content-header,
 .content-body,
 .content-template,
@@ -240,13 +235,18 @@ small {
     margin-top: 2em;
 }
 
-.start-page .template-grid-row {
+/* more spacing on start page */
+.layout-start-page .page-content-header,
+.layout-start-page .content-body,
+.layout-start-page .content-template,
+.layout-start-page .template-grid-row,
+.layout-start-page .template-grid-row {
     margin-bottom: 5em;
     margin-top: 5em;
 }
 
-.template-grid-row.brick-no-padding,
-.start-page .template-grid-row.brick-no-padding {
+.template-grid-row.brick-no-spacing,
+.start-page .template-grid-row.brick-no-spacing {
     margin-bottom: 0;
     margin-top: 0;
 }
@@ -258,7 +258,6 @@ small {
     max-width: 1200px;
     padding-left: 20px;
     padding-right: 20px;
-
     width: 100%;
 }
 
@@ -276,10 +275,12 @@ small {
     padding-right: 20px;
 }
 
-/* divider */
-.section-divider {
-    border-bottom: 1px solid #e8e8e8;
-}
+/* workaround to stop collapsing margins */
+/*.layout-start-page .template-header-suffix,
+.layout-start-page .template-footer-prefix,
+.layout-start-page .cologne-main {
+    overflow: auto;
+}*/
 
 /***********/
 /* Layouts */
@@ -579,6 +580,7 @@ small {
 
 .template-footer {
     background: #f8f8f8;
+    border-top: 1px solid #ddd;
     clear: both;
     float: none;
     padding: 2em 0;
@@ -925,7 +927,7 @@ input[type="password"]:focus {
 /** Product Children Slider (horizontal)
  ===================================== */
 ul.quiqqer-bricks-children-slider-container-slide {
-    padding: 10px 0 !important;
+    /*padding: 10px 0 !important;*/
 }
 
 .quiqqer-bricks-children-slider-container-slide .quiqqer-products-control-product-childrenslider-entry {
@@ -958,8 +960,8 @@ ul.quiqqer-bricks-children-slider-container-slide {
 /* nav arrows */
 .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-prev,
 .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-next {
-    height: calc(100% - 22px) !important;
-    margin: 10px 0;
+    /*height: calc(100% - 22px) !important;*/
+    /*margin: 10px 0;*/
 }
 
 /***********/

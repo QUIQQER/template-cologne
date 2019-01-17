@@ -8,13 +8,15 @@
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
-        <div class="template-grid-row">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-            {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </div>
+        <section class="template-brick-container template-brick-contentPrefix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
         {/foreach}
         {/if}
 
@@ -46,13 +48,15 @@
 
         {if !empty( $suffixContentBricks )}
         {foreach from=$suffixContentBricks item=Brick}
-        <div class="template-grid-row">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
-            {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </div>
+        <section class="template-brick-container template-brick-contentSuffix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
         {/foreach}
         {/if}
 
@@ -60,6 +64,7 @@
 
     <div class="page-multiple-left template-column">
         {foreach from=$leftSideBar item=Brick}
+        <section class="template-brick-container template-brick-leftSidebar brick-id-{$Brick->getAttribute('id')}">
             <div class="template-grid-row">
                 {if $Brick->getAttribute('frontendTitle') &&
                     $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
@@ -71,6 +76,7 @@
                 {/if}
                 {$Brick->create()}
             </div>
+        </section>
         {/foreach}
     </div>
 </div>

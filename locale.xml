@@ -13,11 +13,19 @@
 
 
         <!-- global brick settings -->
-        <locale name="brickFullWidth">
+        <locale name="brick.general.fullWidth">
             <de><![CDATA[Baustein nimmt volle Breite]]></de>
             <en><![CDATA[Brick takes full width]]></en>
         </locale>
-        <locale name="noPadding">
+        <locale name="brick.general.noSpacing">
+            <de><![CDATA[Kein Abstand von oben und unten]]></de>
+            <en><![CDATA[No spacing top and bottom]]></en>
+        </locale>
+        <locale name="brick.general.stopCollapsingMargins">
+            <de><![CDATA[Kein Abstand von oben und unten]]></de>
+            <en><![CDATA[No padding top and bottom]]></en>
+        </locale>
+        <locale name="brick.general.wrapperBackground">
             <de><![CDATA[Kein Abstand von oben und unten]]></de>
             <en><![CDATA[No padding top and bottom]]></en>
         </locale>

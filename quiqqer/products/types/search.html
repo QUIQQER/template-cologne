@@ -8,13 +8,17 @@
         {if $productSidebarPrefix}
         <div class="product-sidebar-container product-sidebar-prefix template-grid-row">
             {foreach $productSidebarPrefix as $Brick}
-                {if $Brick->getAttribute('frontendTitle')}
-                <header class="left-sidebar-filter-header text-muted">
-                    <h2>{$Brick->getAttribute('frontendTitle')}</h2>
-                </header>
-                {/if}
-                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {$Brick->create()}
+                <section class="template-brick-container template-brick-productSidebarSuffix brick-id-{$Brick->getAttribute('id')}">
+                    <div class="template-grid-row">
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <header class="left-sidebar-filter-header text-muted">
+                            <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                        </header>
+                        {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                        {$Brick->create()}
+                    </div>
+                </section>
             {/foreach}
         </div>
         {/if}
@@ -46,13 +50,17 @@
         {if $productSidebarSuffix}
         <div class="product-sidebar-container product-sidebar-suffix template-grid-row">
             {foreach $productSidebarSuffix as $Brick}
-                {if $Brick->getAttribute('frontendTitle')}
-                <header class="left-sidebar-filter-header text-muted">
-                    <h2>{$Brick->getAttribute('frontendTitle')}</h2>
-                </header>
-                {/if}
-                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {$Brick->create()}
+                <section class="template-brick-container template-brick-productSidebarPrefix brick-id-{$Brick->getAttribute('id')}">
+                    <div class="template-grid-row">
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <header class="left-sidebar-filter-header text-muted">
+                            <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                        </header>
+                        {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                        {$Brick->create()}
+                    </div>
+                </section>
             {/foreach}
         </div>
         {/if}
