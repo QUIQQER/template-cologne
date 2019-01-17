@@ -241,8 +241,8 @@ small {
 .layout-start-page .content-template,
 .layout-start-page .template-grid-row,
 .layout-start-page .template-grid-row {
-    margin-bottom: 5em;
-    margin-top: 5em;
+    /*margin-bottom: 5em;*/
+    /*margin-top: 5em;*/
 }
 
 .template-grid-row.brick-no-spacing,

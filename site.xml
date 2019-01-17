@@ -4,6 +4,7 @@
     <!-- global attributes -->
     <attributes>
         <attribute>templateCologne.header</attribute>
+        <attribute>templateCologne.largeSpacing</attribute>
     </attributes>
 
     <settings>
@@ -41,6 +42,14 @@
                     <locale group="quiqqer/template-cologne"
                             var="siteSettings.info"/>
                 </text>
+
+                <!-- more spacing between bricks -->
+                <input conf="templateCologne.largeSpacing" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.largeSpacing"/>
+                    </text>
+                </input>
             </settings>
         </category>
     </settings>

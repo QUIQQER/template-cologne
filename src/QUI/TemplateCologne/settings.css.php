@@ -1,11 +1,24 @@
 <?php
 
+$largeSpacing = $Site->getAttribute('templateCologne.largeSpacing');
 $headerImagePosition = $Project->getConfig('templateCologne.settings.headerImagePosition');
 $headerHeight = $Project->getConfig('templateCologne.settings.headerHeight');
 
 ob_start();
 
 ?>
+
+<?php if ($largeSpacing) { ?>
+/* more spacing */
+.page-content-header,
+.content-body,
+.content-template,
+.template-grid-row,
+.template-grid-row {
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+<?php }; ?>
 
 .page-header-container,
 .page-content-header-emotion-container {

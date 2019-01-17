@@ -14,20 +14,12 @@
 
         <!-- global brick settings -->
         <locale name="brick.general.fullWidth">
-            <de><![CDATA[Baustein nimmt volle Breite]]></de>
-            <en><![CDATA[Brick takes full width]]></en>
+            <de><![CDATA[Baustein nimmt volle Breite. Funktioniert nur in 2 Bausteinzonen: Header Suffix und Footer Prefix.]]></de>
+            <en><![CDATA[Brick takes full width. Only works in 2 block areas: Header Suffix and Footer Prefix.]]></en>
         </locale>
         <locale name="brick.general.noSpacing">
-            <de><![CDATA[Kein Abstand von oben und unten]]></de>
-            <en><![CDATA[No spacing top and bottom]]></en>
-        </locale>
-        <locale name="brick.general.stopCollapsingMargins">
-            <de><![CDATA[Kein Abstand von oben und unten]]></de>
-            <en><![CDATA[No padding top and bottom]]></en>
-        </locale>
-        <locale name="brick.general.wrapperBackground">
-            <de><![CDATA[Kein Abstand von oben und unten]]></de>
-            <en><![CDATA[No padding top and bottom]]></en>
+            <de><![CDATA[Kein Abstand von oben und unten. Hilfreich für Bausteine, die sich auf die ganze Breite der Seite erstrecken.]]></de>
+            <en><![CDATA[No spacing top and bottom. May be useful for bricks that extend across the entire width of the page.]]></en>
         </locale>
 
         <!-- layouts -->
@@ -244,6 +236,10 @@
         <locale name="siteSettings.info" html="true">
             <de><![CDATA[<string>Header anzeigen</strong> überschreibt die Template Einstellung.]]></de>
             <en><![CDATA[<string>Show header</strong> overwrites the template settings.]]></en>
+        </locale>
+        <locale name="siteSettings.largeSpacing">
+            <de><![CDATA[Standard-Abstand erhöhen? Das beeinflusst den vertikalen Abstand zwischen Bausteinen, Seiteninhalt, usw. Meistens benutzt für Landing-Page. ]]></de>
+            <en><![CDATA[Increase standard distance? This affects the vertical distance between bricks, side content, etc. Mostly used for landing page.]]></en>
         </locale>
 
         <!-- template settings -->
