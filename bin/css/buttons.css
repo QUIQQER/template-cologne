@@ -611,6 +611,87 @@ button.btn-light.btn-outline:disabled:focus,
     color: #aaa;
 }
 
+/****************/
+/* button white */
+/****************/
+input[type="submit"].btn-white,
+input[type="button"].btn-white,
+input[type="reset"].btn-white,
+button.qui-button.btn-white,
+button.btn-white,
+.btn-white {
+    background: #fafafa;
+    border-color: #fafafa;
+    color: #393f46;
+}
+
+input[type="submit"].btn-white:hover,
+input[type="submit"].btn-white:active,
+input[type="submit"].btn-white:focus,
+input[type="button"].btn-white:hover,
+input[type="button"].btn-white:active,
+input[type="button"].btn-white:focus,
+input[type="reset"].btn-white:hover,
+input[type="reset"].btn-white:active,
+input[type="reset"].btn-white:focus,
+button.qui-button.btn-white:hover,
+button.qui-button.btn-white:active,
+button.qui-button.btn-white:focus,
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus {
+    background: #eaeaea;
+    color: #393f46;
+    outline: none;
+}
+
+/* outline */
+input[type="submit"].btn-white.btn-outline,
+input[type="button"].btn-white.btn-outline,
+input[type="reset"].btn-white.btn-outline,
+button.btn-white.qui-button.btn-outline,
+button.btn-white.btn-outline,
+.btn-white.btn-outline,
+input[type="submit"].btn-white.btn-outline:disabled:hover, /* outline disabled */
+input[type="submit"].btn-white.btn-outline:disabled:active,
+input[type="submit"].btn-white.btn-outline:disabled:focus,
+input[type="button"].btn-white.btn-outline:disabled:hover,
+input[type="button"].btn-white.btn-outline:disabled:active,
+input[type="button"].btn-white.btn-outline:disabled:focus,
+input[type="reset"].btn-white.btn-outline:disabled:hover,
+input[type="reset"].btn-white.btn-outline:disabled:active,
+input[type="reset"].btn-white.btn-outline:disabled:focus,
+button.qui-button.btn-white.btn-outline:disabled:hover,
+button.qui-button.btn-white.btn-outline:disabled:active,
+button.qui-button.btn-white.btn-outline:disabled:focus,
+button.btn-white.btn-outline:disabled:hover,
+button.btn-white.btn-outline:disabled:active,
+button.btn-white.btn-outline:disabled:focus,
+.btn-white.btn-outline.btn-disabled:hover,
+.btn-white.btn-outline.btn-disabled:active,
+.btn-white.btn-outline.btn-disabled:focus {
+    color: #fafafa;
+}
+
+/* outline hover */
+input[type="submit"].btn-white.btn-outline:hover,
+input[type="submit"].btn-white.btn-outline:active,
+input[type="submit"].btn-white.btn-outline:focus,
+input[type="button"].btn-white.btn-outline:hover,
+input[type="button"].btn-white.btn-outline:active,
+input[type="button"].btn-white.btn-outline:focus,
+input[type="reset"].btn-white.btn-outline:hover,
+input[type="reset"].btn-white.btn-outline:active,
+input[type="reset"].btn-white.btn-outline:focus,
+button.btn-white.btn-outline:not(:disabled):hover,
+button.btn-white.btn-outline:active,
+button.btn-white.btn-outline:focus,
+.btn-white.btn-outline:hover,
+.btn-white.btn-outline:active,
+.btn-white.btn-outline:focus {
+    color: #393f46;
+}
+
 /**********************************/
 /* button outline standard design */
 /**********************************/
