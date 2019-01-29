@@ -215,6 +215,37 @@ small {
     }
 }
 
+
+/**********************/
+/* scroll to top icon */
+/**********************/
+.toTop {
+    background: transparent;
+    border-radius: 50%;
+    bottom: 1rem;
+    color: inherit;
+    line-height: 40px;
+    opacity: 0.5;
+    position: fixed;
+    right: 1rem;
+    text-align: center;
+    transition: 0.2s all;
+    width: 40px;
+}
+
+a.toTop:before {
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+    content: '';
+    height: calc(100% + 0px);
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: 0.2s all;
+    width: calc(100% + 0px);
+}
+
 /** grid
  ===================================== */
 
@@ -969,8 +1000,8 @@ ul.quiqqer-bricks-children-slider-container-slide {
 /***********/
 
 .product-gallery {
-    padding-right: 20px !important;
     margin-top: 2rem;
+    padding-right: 20px !important;
 }
 
 /* Gallery */
@@ -1049,9 +1080,9 @@ ul.quiqqer-bricks-children-slider-container-slide {
 .quiqqer-products-product .product-close-button {
     font-size: 1.8em;
     line-height: 30px;
+    margin-top: 2rem;
     text-align: right;
     width: 30px;
-    margin-top: 2rem;
 }
 
 /* retail price */
