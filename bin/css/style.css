@@ -221,22 +221,27 @@ small {
 /**********************/
 .toTop {
     background: transparent;
-    border-radius: 50%;
-    bottom: 1rem;
+    border-radius: 0.25rem;
+    bottom: -60px;
     color: inherit;
     line-height: 40px;
-    opacity: 0.5;
     position: fixed;
     right: 1rem;
     text-align: center;
-    transition: 0.2s all;
     width: 40px;
+    opacity: 0;
+    transition: bottom 450ms cubic-bezier(0.6, -0.4, 0.26, 1.55),opacity 0.3s,background-color 0.3s,border-color 0.3s;
+}
+
+.toTop__show {
+    bottom: 1rem;
+    opacity: 0.5;
 }
 
 a.toTop:before {
     background: transparent;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
     content: '';
     height: calc(100% + 0px);
     left: 0;
@@ -244,6 +249,15 @@ a.toTop:before {
     top: 0;
     transition: 0.2s all;
     width: calc(100% + 0px);
+}
+
+.toTop:hover {
+    color: inherit;
+    opacity: 1;
+}
+
+.toTop:hover:before {
+    transform: scale(1.1);
 }
 
 /** grid

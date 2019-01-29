@@ -343,6 +343,12 @@
             <en><![CDATA[User object (QUI\Interfaces\Users\User) is required.]]></en>
         </locale>
 
+        <!-- others -->
+        <locale name="template.button.toTop">
+            <de><![CDATA[Nach oben]]></de>
+            <en><![CDATA[To top]]></en>
+        </locale>
+
 
     </groups>
 
