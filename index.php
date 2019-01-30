@@ -11,9 +11,9 @@ QUI\Utils\Site::setRecursivAttribute($Site, 'layout');
  * Header
  */
 $Menu = new QUI\Menu\MegaMenu([
-    'showStart' => false,
+    'showStart'                   => false,
     'data-show-button-on-desktop' => 1,
-    'Project'   => $Site->getProject()
+    'Project'                     => $Site->getProject()
 ]);
 
 /* user avatar */
@@ -31,12 +31,14 @@ switch ($Site->getAttribute('type')) {
         break;
 };
 
-$Engine->assign([
-    'BricksManager' => QUI\Bricks\Manager::init(),
-    'Project'       => $Project,
-    'Menu'          => $Menu,
-    'Avatar'        => $Avatar,
-    'productPage'   => $productPage
+/**
+ * Flags
+ */
+$Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
+    'Site'      => $Site,
+    'showFlags' => true,
+    'showText'  => true,
+    'all'       => true
 ]);
 
 /**
@@ -47,5 +49,16 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
     'Site'     => $Site,
     'Template' => $Template
 ]);
+
+$LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
+
+// array to assign
+$templateSettings['BricksManager']      = QUI\Bricks\Manager::init();
+$templateSettings['Project']            = $Project;
+$templateSettings['Menu']               = $Menu;
+$templateSettings['Avatar']             = $Avatar;
+$templateSettings['productPage']        = $productPage;
+$templateSettings['Flags']              = $Flags;
+$templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
 
 $Engine->assign($templateSettings);

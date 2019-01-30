@@ -420,8 +420,8 @@ a.toTop:before {
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
     height: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /*padding-bottom: 10px;*/
+    /*padding-top: 10px;*/
 }
 
 .header-fixed .topbar {
@@ -458,6 +458,7 @@ a.toTop:before {
     align-items: center;
     display: flex;
     margin-left: auto;
+    height: 100%;
 }
 
 .topbar-mobile-menu {
@@ -825,7 +826,7 @@ a.toTop:before {
 /*********************/
 .cologne-header-control-user {
     cursor: pointer;
-    margin: 0 20px;
+    margin-left: 20px;
     position: relative;
 }
 

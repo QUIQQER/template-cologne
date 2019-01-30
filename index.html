@@ -31,12 +31,15 @@
 </head>
 <body class="page-{$Site->getId()} {$typeClass} {$siteType}">
 
+
 {* small top bar *}
-{fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar}
+{fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
+    Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch}
 
 {* main navigation / menu *}
-{fetch template="template/mainMenu.html" Project=$Project Menu=$Menu}
-
+<div>
+    {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu}
+</div>
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
     {fetch template="template/pageHeader.html" Site=$Site}
 {/if}

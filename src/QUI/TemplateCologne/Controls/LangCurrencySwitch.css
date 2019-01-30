@@ -1,0 +1,69 @@
+.lang-currency-switch {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.quiqqer-currency-switch {
+    z-index: auto !important;
+}
+
+.lcs-button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.lcs-button-flag {
+    padding: 0 1rem;
+    border-right: 1px solid #ddd;
+}
+
+.lcs-button-currency {
+    margin: 0 1rem;
+    font-weight: 300;
+}
+
+.lcs-button-currency-sign {
+
+}
+
+/********/
+/* menu */
+/********/
+.lcs-menu-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.lcs-menu {
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+    position: absolute;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+    width: 160px;
+    padding: 10px 20px;
+}
+
+.lcs-menu-curency-container {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    position: relative;
+    padding: 10px 0;
+}
+
+.quiqqer-currency-switch.button {
+    outline: none;
+    padding: 0;
+    width: 100%;
+}
+
+.lcs-menu ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}

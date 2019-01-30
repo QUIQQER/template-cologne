@@ -21,7 +21,6 @@ class EventHandler
      */
     public static function onProjectConfigSave()
     {
-        QUI\System\Log::writeRecursive('<-------------------------------------->');
         try {
             QUI\Cache\Manager::clear('quiqqer/templateCologne');
         } catch (QUI\Exception $Exception) {
@@ -36,7 +35,6 @@ class EventHandler
      */
     public static function onSiteSave()
     {
-        QUI\System\Log::writeRecursive('<xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>');
         try {
             QUI\Cache\Manager::clear('quiqqer/templateCologne');
         } catch (QUI\Exception $Exception) {

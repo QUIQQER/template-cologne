@@ -1,3 +1,7 @@
+.templateCologne-frontendUsers-profile-container-login {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 /********************/
 /* simple user info */
 /********************/
@@ -9,6 +13,12 @@
 
 .quiqqer-fupc-userinfo .sui-top {
     background: url("../images/brushed_alu.png");
+}
+
+.quiqqer-frontendUsers-profile-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
 }
 
 .quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categories {

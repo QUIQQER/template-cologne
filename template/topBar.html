@@ -11,6 +11,12 @@
     </div>
 
     <div class="topbar-right template-column">
+
+        {*$Flags->create()*}
+
+        {$LangCurrencySwitch->create()}
+
+
         <span class="cologne-header-control-user">
             {if $User->getId()}
                 {$Avatar->create()}
@@ -21,21 +27,8 @@
                 <span class="fa fa-pulse fa-spinner"></span>
             </span>
         </span>
-        <!--<span class="template-column cologne-header-control-user">
-            <a href="#login" class="login btn btn-primary btn-outline">
-                <span class="fa fa-spinner fa-spin"></span>
-                {if $User->getId()}
-                    {locale group="quiqqer/template-cologne"
-                            var="template.logged.in" username=$User->getName()}
-                {else}
-                    {locale group="quiqqer/template-cologne"
-                            var="template.login"}
-                {/if}
-            </a>
-        </span>-->
 
         <!--<span class="template-column cologne-header-control-currencies"></span>-->
 
-        DE EN <span class="fa fa-angle-down"></span>
     </div>
 </div>

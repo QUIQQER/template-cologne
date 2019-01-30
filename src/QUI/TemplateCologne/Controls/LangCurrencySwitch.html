@@ -1,0 +1,47 @@
+{assign var=path value=$this->getAttribute('flagFolderPath')}
+
+<div class="lcs-button">
+    <span class="lcs-button-flag">
+        <img src="{$path}{$projectLang}.png"/>
+    </span>
+
+    <span class="lcs-button-currency" title="{$DefaultCurrency->getText()}">
+        <span class="lcs-button-currency-sign">{$DefaultCurrency->getSign()}</span>
+        <span class="lcs-button-currency-code text-muted">{$DefaultCurrency->getCode()}</span>
+    </span>
+    <span class="fa fa-caret-down"></span>
+
+</div>
+<div class="lcs-menu-wrapper">
+
+    <div class="lcs-menu">
+        <div class="lcs-menu-curency-container">
+            <div data-qui="package/quiqqer/currency/bin/controls/Switch"></div>
+        </div>
+
+        {if count($langs) > 1}
+        {strip}
+        <ul class="lcs-menu-list">
+            {foreach from=$langs item=lang}
+            <li class="lcs-menu-list-entry">
+                {if $Site->getId($lang)}
+                <a href="{url id=$Site->getId($lang) lang=$lang}">
+                {else}
+                <a href="{url id=1 lang=$lang}">
+                {/if}
+
+                    <span class="lcs-menu-list-entry-icon">
+                        <img src="{$path}{$lang}.png"/>
+                    </span>
+                    <span class="lcs-menu-list-entry-text">
+                        {locale group="quiqqer/system" var="language.$lang"}
+                    </span>
+
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+        {/strip}
+        {/if}
+    </div>
+</div>
