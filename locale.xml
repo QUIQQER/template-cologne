@@ -270,6 +270,20 @@
             <br /><strong>The setting only affects the template. External bricks can control this themselves via their settings.</strong>]]></en>
         </locale>
 
+        <!-- basket style -->
+        <locale name="settings.shop.basketStyle">
+            <de><![CDATA[Warenkorb Style]]></de>
+            <en><![CDATA[Basket style]]></en>
+        </locale>
+            <locale name="settings.shop.basketStyle.full">
+                <de><![CDATA[Komplett (mit Icon und Price)]]></de>
+                <en><![CDATA[Complete ( with icon and price)]]></en>
+            </locale>
+            <locale name="settings.shop.basketStyle.compact">
+                <de><![CDATA[Kompakt (nur Icon)]]></de>
+                <en><![CDATA[Compact (only icon)]]></en>
+            </locale>
+
         <!-- header settings -->
         <locale name="settings.header.title">
             <de><![CDATA[Header Einstellungen]]></de>

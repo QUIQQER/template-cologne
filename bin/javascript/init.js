@@ -138,11 +138,16 @@ window.addEvent('domready', function () {
                     },
                     events: {
                         onCreate       : function (Basket) {
-                            var BasketNode = Basket.getElm();
+                            var BasketNode     = Basket.getElm(),
+                                basketStyleCss = '';
+
+                            if (basketStyle) {
+                                basketStyleCss = 'basket-style-' + basketStyle;
+                            }
 
                             // clear default content
                             BasketNode.set('html', '');
-                            BasketNode.addClass('tpl-btn');
+                            BasketNode.addClass('tpl-btn ' + basketStyleCss);
 
                             new Element('span', {
                                 'class': 'quiqqer-order-basketButton-icon-custom',
@@ -154,11 +159,13 @@ window.addEvent('domready', function () {
                                 html   : '0'
                             }).inject(BasketNode);
 
-                            new Element('span', {
-                                'class': 'quiqqer-order-basketButton-sum',
-                                html   : '---',
-                                styles : {}
-                            }).inject(BasketNode);
+                            if (basketStyle && basketStyle === 'full') {
+                                new Element('span', {
+                                    'class': 'quiqqer-order-basketButton-sum',
+                                    html   : '---',
+                                    styles : {}
+                                }).inject(BasketNode);
+                            }
                         },
                         /**
                          * onShowBasketBegin event

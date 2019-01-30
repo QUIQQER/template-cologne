@@ -3,7 +3,9 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover,
+.quiqqer-order-basketButton.basket-style-compact:hover .quiqqer-order-basketButton-icon-custom,
+.quiqqer-order-basketButton.basket-style-compact:active .quiqqer-order-basketButton-icon-custom {
     color: #3986dd;
 }
 

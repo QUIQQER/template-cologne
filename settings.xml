@@ -10,6 +10,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="basketStyle">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>full</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -86,6 +90,7 @@
                             </title>
 
 
+                            <!-- show retail price -->
                             <input conf="templateCologne.settings.showRetailPrice" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
@@ -98,6 +103,27 @@
                                     />
                                 </description>
                             </input>
+
+                            <!-- basket style -->
+                            <select conf="templateCologne.settings.basketStyle">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketStyle"
+                                    />
+                                </text>
+
+                                <option value="full">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketStyle.full"
+                                    />
+                                </option>
+                                <option value="compact">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketStyle.compact"
+                                    />
+                                </option>
+                            </select>
+
                         </settings>
 
                         <!-- header -->

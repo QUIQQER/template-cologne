@@ -746,33 +746,58 @@ a.toTop:before {
     padding: 10px 20px;
 }
 
-.tpl-btn.quiqqer-order-basketButton:hover,
-.tpl-btn.quiqqer-order-basketButton:focus,
-.tpl-btn.quiqqer-order-basketButton:active {
+.quiqqer-order-basketButton-icon-custom {
+    font-size: 16px;
+    transition: 0.3s color;
+}
+
+/* style: full */
+.basket-style-full.tpl-btn.quiqqer-order-basketButton:hover,
+.basket-style-full.tpl-btn.quiqqer-order-basketButton:focus {
     background: #f5f5f5;
 }
 
-.quiqqer-order-basketButton-icon-custom {
+.basket-style-full .quiqqer-order-basketButton-icon-custom,
+.basket-style-full .quiqqer-order-basketButton-batch-custom {
     margin-right: 10px;
 }
 
-.quiqqer-order-basketButton-batch-custom {
-    margin-right: 10px;
+.basket-style-full .quiqqer-order-basketButton-sum {
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
 }
 
+/* style: compact */
+.tpl-btn.quiqqer-order-basketButton.basket-style-compact {
+    padding: 10px;
+    border: none;
+}
+
+.basket-style-compact .quiqqer-order-basketButton-quantity {
+    position: absolute;
+    top: 0;
+    background: #3986dd;
+    width: 17px;
+    line-height: 17px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 10px;
+    right: 0;
+}
+
+/*
 .quiqqer-order-basketButton-batch.quiqqer-order-basketButton-batch-custom {
     background: none;
     color: inherit;
     display: inline-block;
     min-width: 2em;
     position: initial;
-}
+}*/
 
-.quiqqer-order-basketButton-sum {
-    border-left: 1px solid #ddd;
-    padding-left: 10px;
-}
 
+/****************/
+/* basket popup */
+/****************/
 .quiqqer-order-basket-small-container {
     width: 260px;
 }

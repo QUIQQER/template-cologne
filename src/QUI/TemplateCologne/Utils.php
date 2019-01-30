@@ -130,6 +130,12 @@ class Utils
                 $header = $Site->getAttribute('templateCologne.header');
         }
 
+        /* basket style */
+        $basketStyle = 'full';
+        if ($Project->getConfig('templateCologne.settings.basketStyle')) {
+            $basketStyle = $Project->getConfig('templateCologne.settings.basketStyle');
+        }
+
         $settingsCSS = include 'settings.css.php';
 
         $config += [
@@ -137,7 +143,8 @@ class Utils
             'showBreadcrumb' => $showBreadcrumb,
             'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
             'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'siteType'       => $siteType
+            'siteType'       => $siteType,
+            'basketStyle'    => $basketStyle
         ];
 
         // set cache
