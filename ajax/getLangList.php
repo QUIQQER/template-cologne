@@ -14,10 +14,9 @@ QUI::$Ajax->registerFunction(
     function ($flagFolderPath) {
 
         $Engine = QUI::getTemplateManager()->getEngine();
-        $Site   = QUI::getRewrite()->getSite();;
+        $Site   = QUI::getRewrite()->getSite();
         $Project = $Site->getProject();
-        $Project->getLanguages();
-        $langs = $Project->getLanguages();
+        $langs   = $Project->getLanguages();
 
         if (count($langs) < 2) {
             return '';

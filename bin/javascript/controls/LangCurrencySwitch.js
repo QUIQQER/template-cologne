@@ -88,7 +88,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 }
             });*/
 
-
             QUI.addEvent('scroll', this.closeImmediately);
 
             /*this.Background.create();
@@ -102,9 +101,22 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 self.Menu.inject(self.MenuWrapper);
                 self.Loader.hide();
                 self.isOpen = true;
-                self.Menu.focus();
+//                document.body.addEvent('click', self.close);
 
-                console.log(self.Menu)
+                /*self.Menu.getElements('a').each(function (Link) {
+                    Link.addEvent('click', function (event) {
+                        var Target = event.target;
+
+                        document.body.removeEvent('click', self.close);
+
+                        if (event.target !== 'A') {
+                            Target = Target.getParent();
+                        }
+
+                        window.open(Target.href, '_self');
+
+                    })
+                })*/
             });
         },
 
@@ -115,7 +127,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             if (this.closeAnimationIsRunning) {
                 return;
             }
-            
+
             this.closeAnimationIsRunning = true;
             var self = this;
 
@@ -170,8 +182,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                         'class': 'huh',
                         html   : html
                     }).inject(self.Menu);
-
-                    document.body.addEvent('click', self.close);
 
                     resolve();
                 }, {
