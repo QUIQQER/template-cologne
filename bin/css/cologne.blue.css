@@ -5,7 +5,11 @@ a {
 
 a:hover,
 .quiqqer-order-basketButton.basket-style-compact:hover .quiqqer-order-basketButton-icon-custom,
-.quiqqer-order-basketButton.basket-style-compact:active .quiqqer-order-basketButton-icon-custom {
+.quiqqer-order-basketButton.basket-style-compact:active .quiqqer-order-basketButton-icon-custom,
+.lcs-button:hover,
+.lcs-button:hover .lcs-button-currency-code,
+.lcs-button:active .lcs-button-currency-code,
+.lcs-button:active {
     color: #3986dd;
 }
 

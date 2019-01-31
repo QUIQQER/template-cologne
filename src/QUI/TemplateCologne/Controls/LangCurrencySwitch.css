@@ -1,7 +1,7 @@
 .lang-currency-switch {
-    height: 100%;
-    display: flex;
     align-items: center;
+    display: inline-flex;
+    height: 100%;
     position: relative;
 }
 
@@ -10,60 +10,112 @@
 }
 
 .lcs-button {
-    padding: 10px;
     cursor: pointer;
+    padding: 10px;
+    white-space: nowrap;
 }
 
 .lcs-button-flag {
-    padding: 0 1rem;
     border-right: 1px solid #ddd;
+    padding: 0 1rem;
 }
 
 .lcs-button-currency {
-    margin: 0 1rem;
     font-weight: 300;
+    margin: 0 1rem;
 }
 
 .lcs-button-currency-sign {
 
 }
 
+/* loader */
+.qui-loader-inner > div  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qui-loader-inner .qui-loader-inner-fa-circle-o-notch .fa-spin,
+.qui-loader-inner .qui-loader-inner-fa-gear .fa-spin,
+.qui-loader-inner .qui-loader-inner-fa-refresh .fa-spin,
+.qui-loader-inner .qui-loader-inner-fa-spinner .fa-spin {
+    font-size: 1.5rem;
+    top: 0;
+    position: initial;
+}
+
 /********/
 /* menu */
 /********/
 .lcs-menu-wrapper {
-    position: absolute;
     bottom: 0;
+    position: absolute;
     right: 0;
 }
 
 .lcs-menu {
+    background: #fff;
     border: 1px solid rgb(221, 221, 221);
     box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+    min-width: 200px;
+    padding: 16px 20px;
     position: absolute;
     right: 0;
-    background: #fff;
-    z-index: 1000;
-    width: 160px;
-    padding: 10px 20px;
+    z-index: 1001;
 }
 
-.lcs-menu-curency-container {
-    display: flex;
+.lcs-menu:focus {
+    border: 1px  solid red !important;
+}
+
+/* currency */
+.lcs-menu .quiqqer-currency-switch {
     border: 1px solid #ddd;
     border-radius: 0.25rem;
+    display: flex;
     position: relative;
-    padding: 10px 0;
+    float: none;
+    /*line-height: 40px;*/
+    /*height: 40px;*/
 }
 
 .quiqqer-currency-switch.button {
-    outline: none;
-    padding: 0;
+    align-items: center;
+    display: flex;
+    padding: 0 10px;
     width: 100%;
 }
 
+.quiqqer-currency-switch .quiqqer-currency-switch-arrow {
+    margin-left: auto;
+    position: initial;
+}
+
+/* lang menu */
 .lcs-menu ul {
-    margin: 0;
     list-style: none;
+    margin: 10px 0 0;
     padding: 0;
+}
+
+.lcs-menu-list-entry-link {
+    color: inherit;
+    display: block;
+    padding: 5px 0;
+}
+
+.lcs-menu-list-entry-link-icon {
+    margin-right: 1rem;
+}
+
+/* currency  */
+.quiqqer-currency-switch-dd {
+    display: none;
+    border: 1px solid rgb(221, 221, 221) !important;
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2) !important;
+}
+
+.quiqqer-currency-switch-dd:after {
+    display: none;
 }

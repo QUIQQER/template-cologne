@@ -21,8 +21,9 @@ class LangCurrencySwitch extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'          => 'lang-currency-switch',
-            'flagFolderPath' => URL_BIN_DIR . '16x16/flags/'
+            'class'      => 'lang-currency-switch',
+            'data-qui'   => 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
+            'flagFolder' => URL_BIN_DIR . '16x16/flags/',
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/LangCurrencySwitch.css');
@@ -47,14 +48,19 @@ class LangCurrencySwitch extends QUI\Control
             return '';
         }
 
-        QUI\System\Log::writeRecursive($Project->getLanguages());
+        $flagFolder = $this->getAttribute('flagFolder');
+
+        if (!is_dir($flagFolder)) {
+            $flagFolder = URL_BIN_DIR . '16x16/flags/';
+        }
+
+        $this->setJavaScriptControlOption('flag-folder', $flagFolder);
 
         $Engine->assign([
             'this'            => $this,
-            'Site' => $Site,
             'projectLang'     => $Project->getLang(),
             'DefaultCurrency' => QUI\ERP\Currency\Handler::getDefaultCurrency(),
-            'langs'           => $Project->getLanguages()
+            'flagFolderPath'  => $flagFolder
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/LangCurrencySwitch.html');

@@ -1,0 +1,22 @@
+{strip}
+<ul class="lcs-menu-list">
+    {foreach from=$langs item=lang}
+    <li class="lcs-menu-list-entry">
+        {if $Site->getId($lang)}
+        <a class="lcs-menu-list-entry-link {if $projectLang === $lang}current-lang{/if}" href="{url id=$Site->getId($lang) lang=$lang}">
+        {else}
+        <a class="lcs-menu-list-entry-link" href="{url id=1 lang=$lang}">
+        {/if}
+
+            <span class="lcs-menu-list-entry-link-icon">
+                <img src="{$path}{$lang}.png"/>
+            </span>
+            <span class="lcs-menu-list-entry-link-text ">
+                {locale group="quiqqer/system" var="language.$lang"}
+            </span>
+
+        </a>
+    </li>
+    {/foreach}
+</ul>
+{/strip}
