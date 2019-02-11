@@ -1153,6 +1153,7 @@ ul.quiqqer-bricks-children-slider-container-slide {
 .product-data .product-data-fieldlist {
     border-top: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .product-data .product-data-fieldlist .quiqqer-product-field {
