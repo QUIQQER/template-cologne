@@ -8,11 +8,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
     'qui/controls/Control',
     'Ajax',
     'qui/controls/loader/Loader',
-    'qui/controls/utils/Background',
-    'package/quiqqer/currency/bin/controls/Switch',
-    'package/quiqqer/currency/bin/Currency'
+    'package/quiqqer/currency/bin/controls/Switch'
 
-], function (QUI, QUIControl, QUIAjax, QUILoader, QUIBackground, CurrencySwitch, Currency) {
+], function (QUI, QUIControl, QUIAjax, QUILoader, CurrencySwitch) {
     "use strict";
 
     return new Class({
@@ -26,7 +24,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             '$changeDisplayCurrency',
             'open',
             'close',
-            'closeImmediately'
+            'hide'
         ],
 
         options: {},
@@ -38,7 +36,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             this.Currency = null;
             this.Menu = null;
             this.Loader = null;
-            this.Background = null;
             this.isOpen = false;
             this.closeAnimationIsRunning = false;
 
@@ -55,12 +52,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
             this.MenuWrapper = this.$Elm.getElement('.lcs-menu-wrapper');
             this.Button = this.$Elm.getElement('.lcs-button');
-
-            // todo vllt später wenn animation kommt.
-            // das braucht man damit der loader da bleibt.
-            /*this.MenuContainer = new Element('div', {
-                'class' : 'menu-container'
-            }).inject(this.MenuWrapper);*/
 
             this.Button.addEvent('click', function () {
                 if (self.isOpen) {
@@ -82,16 +73,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
             var self = this;
 
-            /*this.Background = new QUIBackground({
-                events: {
-                    onClick: self.close
-                }
-            });*/
-
-            QUI.addEvent('scroll', this.closeImmediately);
-
-            /*this.Background.create();
-            this.Background.show();*/
+            QUI.addEvent('scroll', this.hide);
 
             this.Loader = new QUILoader();
             this.Loader.inject(this.Button);
@@ -101,35 +83,23 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 self.Menu.inject(self.MenuWrapper);
                 self.Loader.hide();
                 self.isOpen = true;
-//                document.body.addEvent('click', self.close);
-
-                /*self.Menu.getElements('a').each(function (Link) {
-                    Link.addEvent('click', function (event) {
-                        var Target = event.target;
-
-                        document.body.removeEvent('click', self.close);
-
-                        if (event.target !== 'A') {
-                            Target = Target.getParent();
-                        }
-
-                        window.open(Target.href, '_self');
-
-                    })
-                })*/
+                document.body.addEvent('click', self.close);
             });
         },
 
         /**
-         * Close and destroy the menu
+         * Hide (with animation) and destroy the menu
          */
         close: function () {
             if (this.closeAnimationIsRunning) {
                 return;
             }
 
-            this.closeAnimationIsRunning = true;
             var self = this;
+            this.closeAnimationIsRunning = true;
+
+            QUI.removeEvent('scroll', this.hide);
+            document.body.removeEvent('click', self.close);
 
             moofx(this.Menu).animate({
                 opacity: 0
@@ -140,17 +110,14 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     self.Menu = null;
                     self.isOpen = false;
                     self.closeAnimationIsRunning = false;
-//                    self.Background.destroy();
-                    document.body.removeEvent('click', self.close);
                 }
             })
         },
 
         /**
-         * Close the menu immediately e.g. by on scroll
+         * Hide the menu immediately e.g. by on scroll
          */
-        closeImmediately: function () {
-            QUI.removeEvent('scroll', this.closeImmediately);
+        hide: function () {
             this.Menu.setStyle('display', 'none');
             this.close();
         },
@@ -166,14 +133,26 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     'class': 'lcs-menu',
                     events : {
                         click: function (event) {
-                            event.stop();
+                            var Target = event.target;
+
+                            if (Target.nodeName !== 'A') {
+                                Target = Target.getParent('a');
+                            }
+
+                            if (Target === null) {
+                                event.stop();
+                            }
                         }
                     }
                 });
 
                 self.CurrencySwitch = new CurrencySwitch({
                     events: {
-                        onChangeCurrency: self.$changeDisplayCurrency
+                        onChangeCurrency: function (Switch, Data) {
+                            self.$changeDisplayCurrency(Switch.$Elm, Data);
+                            // close menu after each click
+                            Switch.$Elm.blur();
+                        }
                     }
                 }).inject(self.Menu);
 
@@ -194,10 +173,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
         /**
          * Change button currency data (html)
          *
-         * @param Currency
+         * @param CurrencySwitch
          * @param Data
          */
-        $changeDisplayCurrency: function (Currency, Data) {
+        $changeDisplayCurrency: function (CurrencySwitch, Data) {
             var Display = this.$Elm.getElement('.lcs-button-currency'),
                 text    = '';
 
