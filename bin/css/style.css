@@ -96,20 +96,20 @@ h1, h2, h3, h4 {
 
 h1,
 .product-data .page-content-header h1 {
-    font-size: 2.369rem;
+    font-size: 2.369em;
     margin-top: 0;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 1.777rem;
+    font-size: 1.777em;
 }
 
 h4 {
-    font-size: 1.333rem;
+    font-size: 1.333em;
 }
 
 ul, ol {
