@@ -1,10 +1,10 @@
 <section class="quiqqer-products-wrapper">
 
-    {assign var=fullWidth value=""}
+    {assign var=fullWidth value="-fullWidth"}
 
     {if $showFilter}
 
-    {assign var=fullWidth value="-fullWidth"}
+    {assign var=fullWidth value=""}
     <div class="quiqqer-product-sidebar content-headerpage-multible-left template-column hide-on-mobile">
 
         {assign var=productSidebarPrefix value=$BricksManager->getBricksByArea('productSidebarPrefix', $Site)}

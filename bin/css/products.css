@@ -6,6 +6,7 @@
 .quiqqer-product-sidebar {
     width: 30%;
     padding-left: 0;
+    flex-shrink: 0;
 }
 
 .quiqqer-products-category,
@@ -15,7 +16,8 @@
     padding-right: 0;
 }
 
-.type-quiqqer-products-types-category .quiqqer-products-category.full-width {
+.type-quiqqer-products-types-category .quiqqer-products-category.full-width,
+.quiqqer-products-product.full-width {
     width: 100%;
     padding-left: 0;
     padding-right: 0;

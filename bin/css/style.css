@@ -94,21 +94,22 @@ h1, h2, h3, h4 {
     margin-bottom: 0.5em;
 }
 
-h1 {
-    font-size: 3.157em;
+h1,
+.product-data .page-content-header h1 {
+    font-size: 2.369rem;
     margin-top: 0;
 }
 
 h2 {
-    font-size: 2.369em;
+    font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.777em;
+    font-size: 1.777rem;
 }
 
 h4 {
-    font-size: 1.333em;
+    font-size: 1.333rem;
 }
 
 ul, ol {
@@ -403,7 +404,6 @@ a.toTop:before {
 }
 
 .control-header h1 {
-    font-size: 2.369em;
     margin: 0;
     text-align: center;
 }
@@ -636,9 +636,9 @@ a.toTop:before {
  ===================================== */
 
 .cologne-header-nav {
-    position: absolute;
     height: 100%;
     left: 0;
+    position: absolute;
     right: 0;
     text-align: center;
     z-index: 1;
@@ -1040,7 +1040,7 @@ ul.quiqqer-bricks-children-slider-container-slide {
 /***********/
 
 .product-gallery {
-    margin-top: 2rem;
+    margin: 2rem 0;
     padding-right: 20px !important;
 }
 
@@ -1102,11 +1102,11 @@ ul.quiqqer-bricks-children-slider-container-slide {
 
 /* product data */
 .product-data {
+    margin: 2rem 0;
     padding-left: 20px !important;
 }
 
 .product-data .page-content-header h1 {
-    font-size: 1.8em;
     margin-bottom: 5px;
 }
 
@@ -1173,6 +1173,14 @@ ul.quiqqer-bricks-children-slider-container-slide {
     min-width: 140px;
 }
 
+/* product bricks */
+.template-brick-productDescPrefix,
+.template-brick-productDescSuffix {
+    clear: both;
+    float: none;
+    margin: 2rem 0;
+}
+
 /* product data fields */
 .product-data .product-data-fields {
     border-top: none;
@@ -1234,6 +1242,10 @@ ul.quiqqer-bricks-children-slider-container-slide {
 }
 
 /* product data more */
+article .product-data-more {
+    margin-top: 2rem;
+}
+
 .product-data-more-tabs {
     border-bottom: 1px solid #f1f1f1;
 }

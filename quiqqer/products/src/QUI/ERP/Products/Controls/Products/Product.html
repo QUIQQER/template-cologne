@@ -60,7 +60,54 @@
 
     </div>
 
+    {assign var=BricksManager value=QUI\Bricks\Manager::init()}
+    {assign var=productDescPrefix value=$BricksManager->getBricksByArea('productDescPrefix', $Site)}
+    {if $productDescPrefix}
+        {foreach $productDescPrefix as $Brick}
+
+        {assign var=brickNoPadding value=""}
+        {if $Brick->getSetting('general.noSpacing')}
+            {assign var=brickNoPadding value="brick-no-spacing"}
+        {/if}
+        <section class="template-brick-container template-brick-productDescPrefix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row {$brickNoPadding}">
+                {if $Brick->getAttribute('frontendTitle')}
+                <header class="left-sidebar-filter-header">
+                    <h1>{$Brick->getAttribute('frontendTitle')}</h1>
+                </header>
+                {/if}
+
+                {assign var=t value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
+        {/foreach}
+    {/if}
+
     {assign var=ContentField value=$Product->getField(6)}
+
+    {assign var=productDescSuffix value=$BricksManager->getBricksByArea('productDescSuffix', $Site)}
+    {if $productDescSuffix}
+        {foreach $productDescSuffix as $Brick}
+
+        {assign var=brickNoPadding value=""}
+        {if $Brick->getSetting('general.noSpacing')}
+            {assign var=brickNoPadding value="brick-no-spacing"}
+        {/if}
+        <section class="template-brick-container template-brick-productDescSuffix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row {$brickNoPadding}">
+                {if $Brick->getAttribute('frontendTitle')}
+                <header class="left-sidebar-filter-header">
+                    <h1>{$Brick->getAttribute('frontendTitle')}</h1>
+                </header>
+                {/if}
+
+                {assign var=t value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
+        {/foreach}
+    {/if}
 
     <div class="product-data-more">
         <div class="product-data-more-prev">
@@ -189,9 +236,9 @@
     {if isset($VisitedProducts)}
     <section class="product-similar-products">
         <header>
-            <h3>
+            <h1>
                 {locale group="quiqqer/products" var="brick.control.VisitedProducts.title"}
-            </h3>
+            </h1>
         </header>
         {assign var=t value=$VisitedProducts->getSlider()->setAttribute('data-qui-options-usemobile', true)}
         {$VisitedProducts->create()}

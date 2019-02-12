@@ -133,21 +133,39 @@
             <en><![CDATA[Brick area of the footer]]></en>
         </locale>
 
-        <!-- product sidebar prefix-->
+        <!-- product sidebar prefix -->
         <locale name="area.productSidebarPrefix.title">
-            <de><![CDATA[Bausteinzone vor den Produkt-Filtern]]></de>
+            <de><![CDATA[Produkte: Zone vor den Filtern]]></de>
             <en><![CDATA[Brick area before the product filters]]></en>
         </locale>
         <locale name="area.productSidebarPrefix.description">
             <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden vor den Filtern platziert.]]></de>
             <en><![CDATA[Brick area that only appears on the product side. The bricks are placed before the filters.]]></en>
         </locale>
-        <!-- product sidebar suffix-->
+        <!-- product sidebar suffix -->
         <locale name="area.productSidebarSuffix.title">
-            <de><![CDATA[Bausteinzone nach den Produkt-Filtern]]></de>
+            <de><![CDATA[Produkte: Zone nach den Filtern]]></de>
             <en><![CDATA[Brick area after the product filters]]></en>
         </locale>
         <locale name="area.productSidebarSuffix.description">
+            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach den Filtern platziert.]]></de>
+            <en><![CDATA[Brick area that only appears on the product side. The bricks are placed after the filters.]]></en>
+        </locale>
+        <!-- product before description -->
+        <locale name="area.productDescPrefix.title">
+            <de><![CDATA[Produkte: vor der Produktbeschreibung]]></de>
+            <en><![CDATA[Brick area after the product filters]]></en>
+        </locale>
+        <locale name="area.productDescPrefix.description">
+            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach den Filtern platziert.]]></de>
+            <en><![CDATA[Brick area that only appears on the product side. The bricks are placed after the filters.]]></en>
+        </locale>
+        <!-- product after description -->
+        <locale name="area.productDescSuffix.title">
+            <de><![CDATA[Produkte: nach der Produktbeschreibung]]></de>
+            <en><![CDATA[Brick area after the product filters]]></en>
+        </locale>
+        <locale name="area.productDescSuffix.description">
             <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach den Filtern platziert.]]></de>
             <en><![CDATA[Brick area that only appears on the product side. The bricks are placed after the filters.]]></en>
         </locale>

@@ -22,9 +22,9 @@
             <!-- global areas -->
             <areas>
 
-                <!-- product sidebar prefix-->
+                <!-- product sidebar prefix -->
                 <area name="productSidebarPrefix" site-type="products/category"
-                      inheritance="1" priority="1">
+                      inheritance="1" priority="10">
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.productSidebarPrefix.title"
@@ -37,9 +37,9 @@
                     </description>
                 </area>
 
-                <!-- product sidebar suffix-->
+                <!-- product sidebar suffix -->
                 <area name="productSidebarSuffix" site-type="products/category"
-                      inheritance="1" priority="1">
+                      inheritance="1" priority="11">
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.productSidebarSuffix.title"
@@ -48,6 +48,36 @@
                     <description>
                         <locale group="quiqqer/template-cologne"
                                 var="area.productSidebarSuffix.description"
+                        />
+                    </description>
+                </area>
+
+                <!-- product description prefix -->
+                <area name="productDescPrefix" site-type="products/category"
+                      inheritance="1" priority="12">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productDescPrefix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productDescPrefix.description"
+                        />
+                    </description>
+                </area>
+
+                <!-- product description suffix -->
+                <area name="productDescSuffix" site-type="products/category"
+                      inheritance="1" priority="13">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productDescSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productDescSuffix.description"
                         />
                     </description>
                 </area>
