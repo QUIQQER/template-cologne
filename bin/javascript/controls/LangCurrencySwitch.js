@@ -32,11 +32,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
         initialize: function (options) {
             this.parent(options);
 
-            this.Button = null;
-            this.Currency = null;
-            this.Menu = null;
-            this.Loader = null;
-            this.isOpen = false;
+            this.Button                  = null;
+            this.Currency                = null;
+            this.Menu                    = null;
+            this.Loader                  = null;
+            this.isOpen                  = false;
             this.closeAnimationIsRunning = false;
 
             this.addEvents({
@@ -51,7 +51,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             var self = this;
 
             this.MenuWrapper = this.$Elm.getElement('.lcs-menu-wrapper');
-            this.Button = this.$Elm.getElement('.lcs-button');
+            this.Button      = this.$Elm.getElement('.lcs-button');
+
+            if (typeof window.DEFAULT_USER_CURRENCY !== 'undefined') {
+                self.$changeDisplayCurrency(window.DEFAULT_USER_CURRENCY);
+            }
 
             this.Button.addEvent('click', function () {
                 if (self.isOpen) {
@@ -95,7 +99,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 return;
             }
 
-            var self = this;
+            var self                     = this;
             this.closeAnimationIsRunning = true;
 
             QUI.removeEvent('scroll', this.hide);
@@ -107,11 +111,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 duration: 300,
                 callback: function () {
                     self.Menu.destroy();
-                    self.Menu = null;
-                    self.isOpen = false;
+                    self.Menu                    = null;
+                    self.isOpen                  = false;
                     self.closeAnimationIsRunning = false;
                 }
-            })
+            });
         },
 
         /**
@@ -156,6 +160,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     }
                 }).inject(self.Menu);
 
+                if (typeof window.DEFAULT_USER_CURRENCY !== 'undefined') {
+                    self.$changeDisplayCurrency(window.DEFAULT_USER_CURRENCY);
+                }
+
                 QUIAjax.get('package_quiqqer_template-cologne_ajax_getLangList', function (html) {
                     new Element('div', {
                         'class': 'huh',
@@ -167,7 +175,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     'package'     : 'quiqqer/template-cologne',
                     flagFolderPath: self.$Elm.getAttribute('data-qui-options-flag-folder')
                 });
-            })
+            });
         },
 
         /**
@@ -177,8 +185,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
          * @param Data
          */
         $changeDisplayCurrency: function (CurrencySwitch, Data) {
-            var Display = this.$Elm.getElement('.lcs-button-currency'),
-                text    = '';
+            var Display = this.$Elm.getElement('.lcs-button-currency');
+
+            if (!Data) {
+                return;
+            }
 
             if (Data.text) {
                 Display.set({
@@ -186,17 +197,16 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 });
             }
 
-
             if (Data.sign) {
                 Display.getElement('.lcs-button-currency-sign').set({
                     html: Data.sign
-                })
+                });
             }
 
             if (Data.code) {
                 Display.getElement('.lcs-button-currency-code').set({
                     html: Data.code
-                })
+                });
             }
         }
     });

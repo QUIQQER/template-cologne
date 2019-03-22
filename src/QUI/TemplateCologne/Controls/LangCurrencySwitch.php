@@ -23,10 +23,10 @@ class LangCurrencySwitch extends QUI\Control
         $this->setAttributes([
             'class'      => 'lang-currency-switch',
             'data-qui'   => 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
-            'flagFolder' => URL_BIN_DIR . '16x16/flags/',
+            'flagFolder' => URL_BIN_DIR.'16x16/flags/',
         ]);
 
-        $this->addCSSFile(dirname(__FILE__) . '/LangCurrencySwitch.css');
+        $this->addCSSFile(dirname(__FILE__).'/LangCurrencySwitch.css');
 
         parent::__construct($attributes);
     }
@@ -51,19 +51,25 @@ class LangCurrencySwitch extends QUI\Control
         $flagFolder = $this->getAttribute('flagFolder');
 
         if (!is_dir($flagFolder)) {
-            $flagFolder = URL_BIN_DIR . '16x16/flags/';
+            $flagFolder = URL_BIN_DIR.'16x16/flags/';
         }
 
         $this->setJavaScriptControlOption('flag-folder', $flagFolder);
 
+        $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
+
+        if (QUI\ERP\Currency\Handler::getUserCurrency()) {
+            $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
+        }
+
         $Engine->assign([
             'this'            => $this,
             'projectLang'     => $Project->getLang(),
-            'DefaultCurrency' => QUI\ERP\Currency\Handler::getDefaultCurrency(),
+            'DefaultCurrency' => $Currency,
             'flagFolderPath'  => $flagFolder
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/LangCurrencySwitch.html');
+        return $Engine->fetch(dirname(__FILE__).'/LangCurrencySwitch.html');
     }
 
     /**
