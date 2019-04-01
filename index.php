@@ -4,8 +4,8 @@
  * Emotion
  */
 
-QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
-QUI\Utils\Site::setRecursivAttribute($Site, 'layout');
+QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
+QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 
 /**
  * Header

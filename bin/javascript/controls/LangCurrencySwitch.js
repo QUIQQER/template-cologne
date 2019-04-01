@@ -99,7 +99,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 return;
             }
 
-            var self                     = this;
+            var self = this;
+
             this.closeAnimationIsRunning = true;
 
             QUI.removeEvent('scroll', this.hide);
@@ -110,9 +111,15 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             }, {
                 duration: 300,
                 callback: function () {
+                    if (self.CurrencySwitch) {
+                        self.CurrencySwitch.destroy();
+                    }
+
                     self.Menu.destroy();
-                    self.Menu                    = null;
-                    self.isOpen                  = false;
+
+                    self.Menu   = null;
+                    self.isOpen = false;
+
                     self.closeAnimationIsRunning = false;
                 }
             });
@@ -130,6 +137,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
          * Create dropdown menu with currency switch and language list
          */
         createMenu: function () {
+            if (this.Menu) {
+                return Promise.resolve();
+            }
+
             var self = this;
 
             return new Promise(function (resolve) {
