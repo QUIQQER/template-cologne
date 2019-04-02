@@ -43,11 +43,15 @@
 
     {if !$hidePrice}
     <div class="quiqqer-productList-product-list-price font-weight-medium">
-        {locale
-            group="quiqqer/erp"
-            var="price.starting.from"
-            price=$Product->getPrice()->getDisplayPrice()
-        }
+        {if $Product->getAttribute('hasVariablePrice')}
+            {locale
+                group="quiqqer/erp"
+                var="price.starting.from"
+                price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+            }
+        {else}
+            {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+        {/if}
     </div>
     {/if}
 </article>

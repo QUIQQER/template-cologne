@@ -17,11 +17,15 @@
 
         {if !$hidePrice}
         <div class="cologne-productList-product-details-content-price">
-            {locale
-                group="quiqqer/erp"
-                var="price.starting.from"
-                price=$Product->getMinimumPrice()->getDisplayPrice()
-            }
+            {if $Product->getAttribute('hasVariablePrice')}
+                {locale
+                    group="quiqqer/erp"
+                    var="price.starting.from"
+                    price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+                }
+            {else}
+                {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+            {/if}
         </div>
         {/if}
 

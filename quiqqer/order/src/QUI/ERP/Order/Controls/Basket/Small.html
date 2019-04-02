@@ -8,6 +8,9 @@
         </div>
 
         <div class="quiqqer-order-basket-small-articles-article-content">
+            <span class="quiqqer-order-basket-small-articles-article-delete fa fa-fw fa-trash"
+                  title="{locale group='quiqqer/template-cologne' var='template.basket.removeProductFromBasket'}"></span>
+
             <h2>{$product.title}</h2>
             <div class="quiqqer-order-basket-small-articles-article-price-wrapper">
                 {if !isset($product.displayPrice) || $product.displayPrice}
@@ -26,9 +29,6 @@
                     {/if}
                 </span>
             </div>
-
-            <span class="quiqqer-order-basket-small-articles-article-delete fa fa-fw fa-trash"
-                  title="{locale group='quiqqer/template-cologne' var='template.basket.removeProductFromBasket'}"></span>
         </div>
 
     </div>

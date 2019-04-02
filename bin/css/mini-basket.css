@@ -42,7 +42,6 @@ body.header-fixed .quiqqer-order-basket-small-container {
 }
 
 .quiqqer-order-basket-small-articles-article-content {
-    margin-right: 1.3em;
     width: 100%
 }
 
@@ -65,10 +64,9 @@ body.header-fixed .quiqqer-order-basket-small-container {
 .quiqqer-order-basket-small-articles-article-content .fa {
     color: #ababab;
     cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
     transition: color 0.15s ease-in-out;
+    float: right;
+    margin-left: 10px;
 }
 
 .quiqqer-order-basket-small-articles-article-content .fa:hover {

@@ -483,6 +483,10 @@
     margin: 1em 0;
 }
 
+.cologne-products-productGallery-products-product-price .qui-products-price-display {
+    display: inline;
+}
+
 .product-buttons {
     margin-top: auto;
 }
@@ -570,6 +574,11 @@
     padding-bottom: 10px;
 }
 
+.cologne-productList-product-details-content-price .qui-products-price-display {
+    display: inline;
+}
+
+
 .cologne-productList-product-details-content-buttons {
     margin-top: 1em;
 }
@@ -610,6 +619,10 @@
 .quiqqer-productList-product-list .quiqqer-productList-product-list-artno,
 .quiqqer-productList-product-list .quiqqer-productList-product-list-price {
     padding: 0 10px;
+}
+
+.quiqqer-productList-product-list-price .qui-products-price-display {
+    display: inline;
 }
 
 @media screen and (max-width: 767px) {

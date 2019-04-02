@@ -8,3 +8,16 @@
 .featuredProducts-list-box-entries-entry-content-title {
     color: inherit;
 }
+
+/**************************************/
+/* Product children slider (vertical) */
+/**************************************/
+
+.quiqqer-products-control-product-childrenslider-entry .product-retailPrice {
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+.quiqqer-products-control-product-childrenslider-entry .product-price {
+    font-size: 1.1rem;
+}
