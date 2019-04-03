@@ -344,6 +344,7 @@ a.toTop:before {
 }
 
 .main-left-sidebar .page-multiple-left {
+    padding-left: 0;
     order: 1;
     width: 30%;
 }
@@ -351,6 +352,7 @@ a.toTop:before {
 .main-left-sidebar .page-multiple-right {
     order: 2;
     width: 70%;
+    padding-right: 0;
 }
 
 /* right sidebar */
@@ -997,6 +999,10 @@ input[type="password"]:focus {
 
 /** Product Children Slider (horizontal)
  ===================================== */
+.quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-container,
+.quiqqer-bricks-children-slider-container-inner {
+    height: calc(100% + 22px);
+}
 ul.quiqqer-bricks-children-slider-container-slide {
     /*padding: 10px 0 !important;*/
 }
@@ -1101,9 +1107,9 @@ ul.quiqqer-bricks-children-slider-container-slide {
 }
 
 /* product data */
-.product-data {
+.quiqqer-products-product .product-data {
     margin: 2rem 0;
-    padding-left: 20px !important;
+    padding-left: 20px;
 }
 
 .product-data .page-content-header h1 {
@@ -1268,6 +1274,16 @@ li.product-data-more-tabs-tab.active {
 
 .product-data-more .product-data-more-sheets {
     border-top: none;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-products-product .product-data {
+        padding-left: 0;
+    }
+
+    .product-data .quiqqer-order-button-add {
+        width: 100%;
+    }
 }
 
 /************************/
