@@ -11,18 +11,18 @@
     {fontawesome}
     {unsemantic}
 
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/buttons.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/form.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/products.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/frontend-users.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/order.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/user-orders.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/controls.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/mini-basket.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/product-bricks.css"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/style.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/buttons.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/form.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/products.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/frontend-users.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/order.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/user-orders.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/controls.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/mini-basket.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/product-bricks.css')}"/>
 
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/cologne.blue.css"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/cologne.blue.css')}"/>
 
     {$settingsCSS}
 
@@ -104,6 +104,6 @@
 {* to top icon *}
 {fetch template="template/toTop.html"}
 
-<script src="{$URL_TPL_DIR}bin/javascript/init.js"></script>
+<script src="{$Template->getTemplateUrl('bin/javascript/init.js')}"></script>
 </body>
 </html>
