@@ -133,6 +133,7 @@ window.addEvent('domready', function () {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function (Basket) {
                 new Basket({
+                    open : basketOpen.toInt(),
                     styles: {
                         float: 'right'
                     },

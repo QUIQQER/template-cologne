@@ -302,6 +302,24 @@
                 <en><![CDATA[Compact (only icon)]]></en>
             </locale>
 
+        <!-- basket open -->
+        <locale name="settings.shop.basketOpen">
+            <de><![CDATA[Aktion, die nach dem Klick auf den Warenkorb passieren soll]]></de>
+            <en><![CDATA[Action that should happen after user clicks on the shopping cart]]></en>
+        </locale>
+            <locale name="settings.shop.basketOpen.nothing">
+                <de><![CDATA[Bestellprozes nicht öffnen]]></de>
+                <en><![CDATA[Do not open order process]]></en>
+            </locale>
+            <locale name="settings.shop.basketOpen.window">
+                <de><![CDATA[Bestellprozes in einem Fenster (popup) öffnen]]></de>
+                <en><![CDATA[Open order process in a window (popup)]]></en>
+            </locale>
+            <locale name="settings.shop.basketOpen.page">
+                <de><![CDATA[Bestellprozes in einer Seite öffnen]]></de>
+                <en><![CDATA[Open order process in a page]]></en>
+            </locale>
+
         <!-- header settings -->
         <locale name="settings.header.title">
             <de><![CDATA[Header Einstellungen]]></de>

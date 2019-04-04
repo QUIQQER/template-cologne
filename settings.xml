@@ -14,6 +14,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>full</defaultvalue>
                     </conf>
+                    <conf name="basketOpen">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>2</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -120,6 +124,31 @@
                                 <option value="compact">
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.shop.basketStyle.compact"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- basket open (nothing order window, order page)-->
+                            <select conf="templateCologne.settings.basketOpen">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketOpen"
+                                    />
+                                </text>
+
+                                <option value="0">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketOpen.nothing"
+                                    />
+                                </option>
+                                <option value="1">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketOpen.window"
+                                    />
+                                </option>
+                                <option value="2">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketOpen.page"
                                     />
                                 </option>
                             </select>

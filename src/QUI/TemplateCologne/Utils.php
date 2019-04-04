@@ -17,9 +17,9 @@ class Utils
      * Get user avatar. If no avatar available return false.
      *
      * @param $User QUI\Interfaces\Users\User
+     * @return QUI\Projects\Media\Image|false
      * @throws QUI\Exception
      *
-     * @return QUI\Projects\Media\Image|false
      */
     public static function getAvatar($User)
     {
@@ -55,6 +55,8 @@ class Utils
     }
 
     /**
+     * Returns config. If a cache exists, it will be returned.
+     *
      * @param $params
      * @return array|bool|object|string
      * @throws QUI\Exception
@@ -130,10 +132,19 @@ class Utils
                 $header = $Site->getAttribute('templateCologne.header');
         }
 
-        /* basket style */
+        // basket style
         $basketStyle = 'full';
         if ($Project->getConfig('templateCologne.settings.basketStyle')) {
             $basketStyle = $Project->getConfig('templateCologne.settings.basketStyle');
+        }
+
+        // basket open
+        $basketOpen = 2;
+        switch ($Project->getConfig('templateCologne.settings.basketOpen')) {
+            case '0':
+            case '1':
+            case '2':
+            $basketOpen = $Project->getConfig('templateCologne.settings.basketOpen');
         }
 
         $settingsCSS = include 'settings.css.php';
@@ -144,7 +155,8 @@ class Utils
             'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
             'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'siteType'       => $siteType,
-            'basketStyle'    => $basketStyle
+            'basketStyle'    => $basketStyle,
+            'basketOpen'     => $basketOpen
         ];
 
         // set cache

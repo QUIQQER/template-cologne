@@ -774,6 +774,7 @@ a.toTop:before {
 .tpl-btn.quiqqer-order-basketButton.basket-style-compact {
     border: none;
     padding: 10px;
+    outline: none;
 }
 
 .basket-style-compact .quiqqer-order-basketButton-quantity {
