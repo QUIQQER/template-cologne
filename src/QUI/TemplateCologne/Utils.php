@@ -144,7 +144,7 @@ class Utils
             case '0':
             case '1':
             case '2':
-            $basketOpen = $Project->getConfig('templateCologne.settings.basketOpen');
+                $basketOpen = $Project->getConfig('templateCologne.settings.basketOpen');
         }
 
         $settingsCSS = include 'settings.css.php';
