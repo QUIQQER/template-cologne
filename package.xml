@@ -1,0 +1,31 @@
+<quiqqer>
+    <package>
+        <title>
+            <locale group="quiqqer/template-cologne" var="package.title"/>
+        </title>
+
+        <description>
+            <locale group="quiqqer/template-cologne" var="package.description"/>
+        </description>
+
+        <image src="URL_OPT_DIR/quiqqer/template-cologne/bin/img/Logo.png"/>
+
+        <preview>
+<!--            <image src="URL_OPT_DIR/quiqqer/template-cologne/bin/img/preview/Template_BusinessPro.jpg"/>-->
+<!--            <image src="URL_OPT_DIR/quiqqer/template-cologne/bin/img/preview/Template_BusinessPro_2.jpg"/>-->
+        </preview>
+
+        <support>
+            <email><![CDATA[support@pcsg.de]]></email>
+            <forum><![CDATA[https://community.quiqqer.com]]></forum>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/template-cologne]]></source>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/template-cologne/issues]]></issues>
+            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/template-cologne/wikis/home]]></wiki>
+        </support>
+
+        <copyright>
+            <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
+            <license><![CDATA[GPL-3.0+]]></license>
+        </copyright>
+    </package>
+</quiqqer>
