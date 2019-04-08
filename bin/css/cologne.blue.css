@@ -69,3 +69,17 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:checked:after {
     color: #3986dd;
 }
+
+input[type="radio"] {
+    background-color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+}
+
+input[type="radio"]:checked:after {
+    background: #3986dd;
+}
+
+input[type="radio"]:checked {
+    background-color: #d0e2f7;
+    border: 1px solid #d0e2f7;
+}

@@ -1,5 +1,12 @@
 /** Order Process
  =================================================== */
+.quiqqer-order-ordering .quiqqer-order-ordering-timeline {
+    border-bottom: none;
+}
+
+.quiqqer-order-ordering-timeline a {
+    color: inherit;
+}
 
 .type-quiqqer-order-types-orderingProcess .content-template {
     padding: 0;
@@ -9,7 +16,15 @@
     padding: 20px;
 }
 
+.quiqqer-order-ordering-step h1 {
+    /*margin-bottom: 3rem;*/
+}
+
+/****************/
+/* step: basket */
+/****************/
 .quiqqer-order-basket-articles {
+    border-spacing: 0;
     width: 100%;
 }
 
@@ -18,23 +33,45 @@
     vertical-align: top;
 }
 
+.quiqqer-order-basket-articles th {
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 5px 10px;
+    width: 10px;
+}
+
+.quiqqer-order-basket-articles-header-pos {
+    border-left: 1px solid #ddd;
+    text-align: left;
+}
+
+.quiqqer-order-basket-articles-header-quantity {
+    text-align: right;
+}
+
+.quiqqer-order-basket-articles-header-price {
+    border-right: 1px solid #ddd;
+}
+
+
 .quiqqer-order-basket-articles-header {
-    color: #999999;
     font-size: 12px;
     line-height: 30px;
 }
 
+.quiqqer-order-basket-articles td {
+    padding: 10px 10px;
+    vertical-align: top;
+}
+
 .quiqqer-order-basket-articles-article-pos {
-    text-align: center;
-    width: 100px;
+    text-align: left;
+    width: 60px;
 }
 
 .quiqqer-order-basket-articles-header-information {
     text-align: left;
-}
-
-.quiqqer-order-basket-articles-article-quantity {
-    text-align: center;
 }
 
 .quiqqer-order-basket-end {
@@ -49,7 +86,9 @@
     width: 100%;
 }
 
+.quiqqer-order-basket-articles-header-quantity,
 .quiqqer-order-basket-articles-header-price,
+.quiqqer-order-basket-articles-article-quantity,
 .quiqqer-order-basket-articles-unitPrice,
 .quiqqer-order-basket-articles-article-price,
 .quiqqer-order-basket-articles-article-sum {
@@ -58,8 +97,16 @@
 
 .quiqqer-order-basket-total {
     float: right;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: right;
+}
+
+.quiqqer-order-basket-total td {
+    padding-bottom: 5px;
+}
+
+.quiqqer-order-basket-total-sum {
+    font-weight: bold;
 }
 
 .type-quiqqer-order-types-orderingProcess .content-header {
@@ -71,8 +118,58 @@
     margin-bottom: 20px;
 }
 
-.quiqqer-order-ordering-buttons-backToShop {
-    margin-right: 10px;
+/***********************/
+/* step: customer data */
+/***********************/
+.quiqqer-order-customerData header h1 button {
+    margin-left: auto;
+}
+
+.quiqqer-order-customerData header h1 button > .fa, .btn > .fa {
+    margin: 0;
+}
+
+.quiqqer-order-customerData .quiqqer-order-customerData-display {
+    max-width: initial;
+    padding-right: 0;
+    margin-top: 2rem;
+}
+
+.quiqqer-order-customerData-display-customerNo,
+.quiqqer-order-customerData-display-eMail,
+.quiqqer-order-customerData-display-tel {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.quiqqer-order-customerData-display-customerNo span:first-child,
+.quiqqer-order-customerData-display-eMail span:first-child,
+.quiqqer-order-customerData-display-tel span:first-child {
+    opacity: 0.75;
+    width: 160px;
+}
+
+.quiqqer-order-customerData-display .quiqqer-order-customerData-display-address {
+    margin-top: 2rem;
+}
+
+.quiqqer-order-customerData-edit {
+    margin-top: 2rem;
+}
+
+/******************/
+/* step: payments */
+/******************/
+.quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry {
+    border-bottom: none;
+}
+
+.quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry:hover .quiqqer-order-step-payments-list-entry-select {
+    background: none;
+}
+
+.quiqqer-order-step-payments-list-entry-select input[type="radio"] {
+    margin: 0;
 }
 
 /** article content
@@ -91,6 +188,10 @@
         font-size: 2em;
     }
 
+    .quiqqer-order-basket-articles {
+        border: 1px solid #ddd;
+    }
+
     .quiqqer-order-basket-articles table,
     .quiqqer-order-basket-articles tbody,
     .quiqqer-order-basket-articles th,
@@ -101,9 +202,9 @@
     }
 
     .quiqqer-order-basket-articles thead tr {
+        left: -9999px;
         position: absolute;
         top: -9999px;
-        left: -9999px;
     }
 
     .quiqqer-order-basket-articles td:before {
@@ -116,10 +217,10 @@
     }
 
     .quiqqer-order-basket-articles td {
-        text-align: left;
         padding-bottom: 5px;
         padding-left: 100px;
         position: relative;
+        text-align: left;
         width: initial;
     }
 
@@ -142,8 +243,14 @@
         margin-bottom: 10px;
     }
 
-    .quiqqer-order-ordering-buttons-backToShop {
+    .quiqqer-order-ordering-buttons-backToShop,
+    .quiqqer-order-ordering-buttons-previous {
         margin-bottom: 20px;
+    }
+
+    .quiqqer-order-ordering-buttons-next,
+    .quiqqer-order-ordering-buttons a {
+        width: 100%;
     }
 
     .quiqqer-order-basket-end {
@@ -176,8 +283,8 @@
     .quiqqer-coupons-couponcodeinput label span {
         background: #f8f8f8;
         border-left: 1px solid #c9c8c5;
-        border-top: 1px solid #c9c8c5;
         border-radius: 0.25rem 0 0 0;
+        border-top: 1px solid #c9c8c5;
         display: inline-block;
         padding: 5px;
         width: 100%
