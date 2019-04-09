@@ -16,14 +16,6 @@
     padding: 20px;
 }
 
-.quiqqer-order-ordering-step h1 {
-    /*margin-bottom: 3rem;*/
-}
-
-.quiqqer-order-ordering .quiqqer-order-ordering-buttons {
-    margin-top: 2rem;
-}
-
 /****************/
 /* step: basket */
 /****************/
@@ -103,6 +95,7 @@
     float: right;
     margin-top: 40px;
     text-align: right;
+    width: 300px;
 }
 
 .quiqqer-order-basket-total td {
@@ -122,9 +115,36 @@
     margin-bottom: 20px;
 }
 
+.quiqqer-order-basket-total-subSum-text,
+.quiqqer-order-basket-total-subSum-value {
+    border-bottom: 1px solid #999999;
+}
+
+.quiqqer-order-basket-total-sum-text,
+.quiqqer-order-basket-total-sum-value {
+    border-bottom: 3px double #999999;
+}
+
 /***********************/
 /* step: customer data */
 /***********************/
+.quiqqer-order-customerData-container {
+    display: flex;
+}
+
+.quiqqer-order-customerData {
+    margin-right: 20px;
+}
+
+.quiqqer-order-ordering-step .quiqqer-order-customerData-comment {
+    align-self: flex-start;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    margin-left: 20px;
+    margin-top: 0;
+    padding: 1rem;
+}
+
 .quiqqer-order-customerData header h1 button {
     margin-left: 1rem;
 }
@@ -159,6 +179,20 @@
 
 .quiqqer-order-customerData-edit {
     margin-top: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-order-customerData-container {
+        display: block;
+    }
+
+    .quiqqer-order-customerData {
+        margin-right: 0;
+    }
+
+    .quiqqer-order-ordering-step .quiqqer-order-customerData-comment {
+        margin-left: 0;
+    }
 }
 
 /******************/
@@ -338,11 +372,19 @@
 /******************/
 /* step: checkout */
 /******************/
+.quiqqer-order-step-checkout-attention {
+    margin-bottom: 20px;
+}
+
+.quiqqer-order-step-checkout-payments {
+    margin-top: 20px;
+}
+
 table.articles-article {
-    padding-bottom: 0 !important;
-    border-spacing: 0;
-    width: 100%;
     border-bottom: none;
+    border-spacing: 0;
+    padding-bottom: 0 !important;
+    width: 100%;
 }
 
 .articles-article td {
@@ -382,4 +424,40 @@ table.articles-article {
 
 .quiqqer-order-step-checkout-notice label {
     display: flex;
+}
+
+.articles-sum-row-subsum td {
+    padding-bottom: 5px;
+}
+
+/*****************/
+/* step: gateway */
+/*****************/
+.quiqqer-order-ordering-step .quiqqer-order-step-processing {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+/**********************/
+/* step: order (last) */
+/**********************/
+.quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-total td {
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.quiqqer-order-control-order-information-orderData-subSum-text,
+.quiqqer-order-control-order-information-orderData-subSum-value {
+    border-bottom: 1px solid #999999;
+}
+
+.quiqqer-order-control-order-information-orderData-sum-text,
+.quiqqer-order-control-order-information-orderData-value {
+    border-bottom: 3px double #999999;
 }
