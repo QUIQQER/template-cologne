@@ -8,9 +8,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
     'qui/controls/Control',
     'Ajax',
     'qui/controls/loader/Loader',
-    'package/quiqqer/currency/bin/controls/Switch'
+    'package/quiqqer/currency/bin/controls/Switch',
+    'package/quiqqer/currency/bin/Currency'
 
-], function (QUI, QUIControl, QUIAjax, QUILoader, CurrencySwitch) {
+], function (QUI, QUIControl, QUIAjax, QUILoader, CurrencySwitch, Currencies) {
     "use strict";
 
     return new Class({
@@ -27,7 +28,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             'hide'
         ],
 
-        options: {},
+        options: {
+            langSwitch    : true,
+            currencySwitch: true
+        },
 
         initialize: function (options) {
             this.parent(options);
@@ -38,6 +42,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             this.Loader                  = null;
             this.isOpen                  = false;
             this.closeAnimationIsRunning = false;
+            this.langSwitch              = true;
+            this.currencySwitch          = true;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -57,14 +63,67 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 self.$changeDisplayCurrency(window.DEFAULT_USER_CURRENCY);
             }
 
-            this.Button.addEvent('click', function () {
-                if (self.isOpen) {
-                    self.close();
+            Promise.all([
+                self.$checkLang(),
+                self.$checkCurrencies()
+            ]).then(function () {
+
+                if (!self.langSwitch && !self.currencySwitch) {
+                    self.Button.setStyle('cursor', 'default');
                     return;
                 }
 
-                self.open();
-            });
+
+                self.Button.addEvent('click', function () {
+                    if (self.isOpen) {
+                        self.close();
+                        return;
+                    }
+
+                    self.open();
+                });
+            })
+        },
+
+        $checkLang: function () {
+            var self = this;
+
+            return new Promise(function (resolve) {
+                if (!self.getAttribute('langSwitch')) {
+                    self.langSwitch = false;
+                    resolve();
+                    return;
+                }
+
+                QUIAjax.get('package_quiqqer_template-cologne_ajax_countLang', function (langTotal) {
+                    if (langTotal <= 1) {
+                        self.langSwitch = false;
+                    }
+                    resolve();
+                }, {
+                    'package': 'quiqqer/template-cologne'
+                });
+            })
+        },
+
+        $checkCurrencies: function () {
+            var self = this;
+
+            return new Promise(function (resolve) {
+                if (!self.getAttribute('currencySwitch')) {
+                    self.currencySwitch = false;
+                    resolve();
+                    return;
+                }
+
+                // todo vllt direkt über ajax
+                Currencies.getCurrencies().then(function (currencies) {
+                    if (currencies.length <= 1) {
+                        self.currencySwitch = false;
+                    }
+                    resolve();
+                });
+            })
         },
 
         /**
@@ -87,7 +146,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 self.Menu.inject(self.MenuWrapper);
                 self.Loader.hide();
                 self.isOpen = true;
-                document.body.addEvent('click', self.close);
+                
+                (function () {
+                    document.body.addEvent('click', self.close);
+                }).delay(1000)
             });
         },
 
@@ -143,41 +205,72 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
             var self = this;
 
-            return new Promise(function (resolve) {
-                self.Menu = new Element('div', {
-                    'class': 'lcs-menu',
-                    events : {
-                        click: function (event) {
-                            var Target = event.target;
+            this.Menu = new Element('div', {
+                'class': 'lcs-menu',
+                events : {
+                    click: function (event) {
+                        var Target = event.target;
 
-                            if (Target.nodeName !== 'A') {
-                                Target = Target.getParent('a');
-                            }
+                        if (Target.nodeName !== 'A') {
+                            Target = Target.getParent('a');
+                        }
 
-                            if (Target === null) {
-                                event.stop();
-                            }
+                        if (Target === null) {
+                            event.stop();
                         }
                     }
-                });
+                }
+            });
+
+            return new Promise(function (resolve) {
+                Promise.all([
+                    self.$createCurrencySwitch(),
+                    self.$createLangSwitch()
+                ]).then(resolve)
+            });
+        },
+
+        $createCurrencySwitch: function () {
+            var self = this;
+
+            return new Promise(function (resolve) {
+                if (!self.currencySwitch) {
+                    resolve();
+                    return;
+                }
 
                 self.CurrencySwitch = new CurrencySwitch({
                     events: {
+                        onInject        : resolve,
                         onChangeCurrency: function (Switch, Data) {
                             self.$changeDisplayCurrency(Switch.$Elm, Data);
                             // close menu after each click
                             Switch.$Elm.blur();
                         }
                     }
-                }).inject(self.Menu);
+                });
 
                 if (typeof window.DEFAULT_USER_CURRENCY !== 'undefined') {
                     self.$changeDisplayCurrency(window.DEFAULT_USER_CURRENCY);
                 }
 
+                self.CurrencySwitch.inject(self.Menu);
+            })
+        },
+
+        $createLangSwitch: function () {
+            var self = this;
+
+            return new Promise(function (resolve) {
+
+                if (!self.langSwitch) {
+                    resolve();
+                    return;
+                }
+
                 QUIAjax.get('package_quiqqer_template-cologne_ajax_getLangList', function (html) {
                     new Element('div', {
-                        'class': 'huh',
+                        'class': 'lcs-language-list',
                         html   : html
                     }).inject(self.Menu);
 
@@ -186,7 +279,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     'package'     : 'quiqqer/template-cologne',
                     flagFolderPath: self.$Elm.getAttribute('data-qui-options-flag-folder')
                 });
-            });
+            })
         },
 
         /**
