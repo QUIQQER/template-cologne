@@ -98,7 +98,7 @@ window.addEvent('domready', function () {
                         }
 
                         if (!QUIQQER_USER.id) {
-                            createLoginWindow(Logo, QUILocale);
+                            createLoginWindow();
                         }
                     }
                 });
@@ -356,39 +356,19 @@ function createLogoutWindow (LogoutWindow) {
 
 /**
  * Create and open login popup
- *
- * @param {HTMLElement} Logo
- * @param QUILocale
  */
-function createLoginWindow (Logo, QUILocale) {
+function createLoginWindow () {
     require([
-        'controls/users/LoginWindow'
+        'package/quiqqer/frontend-users/bin/frontend/controls/login/Window'
     ], function (LoginWindow) {
         new LoginWindow({
             class       : 'cologne-login-dialog',
             title       : false,
             maxHeight   : 500,
             maxWidth    : 400,
-            icon        : false,
-            social      : false,
-            registration: false,
-            logo        : Logo.src,
             events      : {
                 onSuccess: function () {
                     window.location.reload();
-                },
-                onOpen   : function (Popup) {
-                    var Content = Popup.getElm().getElement('.quiqqer-loginWindow-content');
-
-                    Content.setStyle('opacity', 0);
-                    new Element('h2', {
-                        'class': 'quiqqer-loginWindow-content-title',
-                        html   : QUILocale.get(lg, 'frontend.popup.login.title')
-                    }).inject(Content.getElement('img'), 'after');
-
-                    moofx(Content).animate({
-                        opacity: 1
-                    });
                 }
             }
         }).open();

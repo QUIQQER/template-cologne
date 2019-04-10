@@ -65,3 +65,17 @@
 .loginAndRegister-register .qui-select {
     width: 100%;
 }
+
+@media screen and (max-width: 767px) {
+    .loginAndRegister-wrapper {
+        display: block;
+    }
+
+    .loginAndRegister-login,
+    .loginAndRegister-register {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}

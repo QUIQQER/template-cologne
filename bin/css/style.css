@@ -344,15 +344,15 @@ a.toTop:before {
 }
 
 .main-left-sidebar .page-multiple-left {
-    padding-left: 0;
     order: 1;
+    padding-left: 0;
     width: 30%;
 }
 
 .main-left-sidebar .page-multiple-right {
     order: 2;
-    width: 70%;
     padding-right: 0;
+    width: 70%;
 }
 
 /* right sidebar */
@@ -773,8 +773,8 @@ a.toTop:before {
 /* style: compact */
 .tpl-btn.quiqqer-order-basketButton.basket-style-compact {
     border: none;
-    padding: 10px;
     outline: none;
+    padding: 10px;
 }
 
 .basket-style-compact .quiqqer-order-basketButton-quantity {
@@ -894,16 +894,55 @@ a.toTop:before {
 /** Login / logout popup
  ===================================== */
 /* login */
-/* show close button */
-.cologne-logout-dialog .qui-window-popup-title,
 .cologne-login-dialog .qui-window-popup-title {
+    background: none;
+    padding: 0;
+}
+
+.cologne-login-dialog .quiqqer-frontendUsers-loginWindow-close {
+    border-radius: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+}
+
+.cologne-login-dialog .quiqqer-frontendUsers-loginWindow-logo {
+    margin: 2rem auto;
+    max-height: 100px;
+    max-width: calc(100% - 100px);
+}
+
+.cologne-login-dialog .qui-window-popup-content {
+    height: auto !important;
+    padding: 20px 40px;
+}
+
+/* disable ugly autofill background */
+.quiqqer-auth-login-container input,
+.quiqqer-fu-login-email input {
+    box-shadow: 0 0 0 30px #fff inset;
+}
+
+/*
+ because of disabling autofill background
+ :focus is simulated by box.shadow
+ */
+.quiqqer-auth-login-container input[type="text"]:focus,
+.quiqqer-auth-login-container input[type="password"]:focus,
+.quiqqer-fu-login-email input[type="text"]:focus,
+.quiqqer-fu-login-email input[type="password"]:focus {
+    box-shadow: 0 0 0 30px #f5f5f5 inset;
+}
+
+/* logout */
+/* show close button */
+.cologne-logout-dialog .qui-window-popup-title {
     background: none !important;
     display: block !important;
     padding: 0 !important;
 }
 
-.cologne-logout-dialog .qui-window-popup-title-close,
-.cologne-login-dialog .qui-window-popup-title-close {
+.cologne-logout-dialog .qui-window-popup-title-close {
     align-items: center;
     border-radius: 0;
     color: inherit;
@@ -915,64 +954,6 @@ a.toTop:before {
     position: relative !important;
 }
 
-/* logo image */
-.quiqqer-login-logo {
-    margin-bottom: 2em !important;
-    margin-top: 0.5em !important;
-    max-height: 100px;
-    max-width: calc(100% - 100px);
-}
-
-.quiqqer-login {
-    padding: 20px 40px !important;
-}
-
-/* label */
-.quiqqer-login-auth label {
-    margin-bottom: 20px !important;
-}
-
-/* disable ugly autofill background */
-.quiqqer-login-auth input {
-    box-shadow: 0 0 0 30px #fff inset;
-}
-
-/*
- because of disabling autofill background
- :focus is simulated by box.shadow
- */
-input[type="text"]:focus,
-input[type="password"]:focus {
-    box-shadow: 0 0 0 30px #f5f5f5 inset;
-}
-
-/* submit button */
-.quiqqer-login-auth [type="submit"] {
-    float: right;
-    min-width: 100px;
-}
-
-/* custom title */
-.quiqqer-loginWindow-content-title,
-.qui-window-popup h2 {
-    margin-bottom: 1em;
-    margin-top: 0;
-    position: relative;
-    text-align: center;
-}
-
-.quiqqer-loginWindow-content-title:after,
-.qui-window-popup h2:after {
-    background: #3986dd;
-    bottom: -10px;
-    content: '';
-    height: 2px;
-    left: calc(50% - 40px);
-    position: absolute;
-    width: 80px;
-}
-
-/* logout */
 .cologne-logout-dialog .qui-window-popup {
     display: flex;
     flex-direction: column;
@@ -1004,6 +985,7 @@ input[type="password"]:focus {
 .quiqqer-bricks-children-slider-container-inner {
     height: calc(100% + 22px);
 }
+
 ul.quiqqer-bricks-children-slider-container-slide {
     /*padding: 10px 0 !important;*/
 }
@@ -1030,13 +1012,13 @@ ul.quiqqer-bricks-children-slider-container-slide {
 /* nav arrows */
 .quiqqer-bricks-children-slider-mobile .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-prev,
 .quiqqer-bricks-children-slider-mobile .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-next {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    color: #666;
-    height: calc(100% - 2px);
-    border-radius: 0;
     border-color: rgba(51, 51, 51, 0.2);
+    border-radius: 0;
+    color: #666;
+    display: flex;
+    height: calc(100% - 2px);
+    justify-content: center;
 }
 
 .quiqqer-bricks-children-slider-mobile .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-prev:hover,

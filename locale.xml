@@ -403,11 +403,6 @@
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
-        <locale name="frontend.popup.login.title">
-            <de><![CDATA[Anmelden]]></de>
-            <en><![CDATA[Login]]></en>
-        </locale>
-
         <locale name="frontend.usericon.menuentry.logout.label">
             <de><![CDATA[Abmelden]]></de>
             <en><![CDATA[Logout]]></en>
