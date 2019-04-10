@@ -3,7 +3,6 @@
 /**
  * Emotion
  */
-
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 

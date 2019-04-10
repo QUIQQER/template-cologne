@@ -21,12 +21,13 @@ class LangCurrencySwitch extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'      => 'lang-currency-switch',
-            'data-qui'   => 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
-            'flagFolder' => URL_BIN_DIR.'16x16/flags/',
+            'class'               => 'lang-currency-switch',
+            'data-qui'            => 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
+            'userRelatedCurrency' => 1, // 1 / 0 -> is user allowed to change currency?
+            'flagFolder'          => URL_BIN_DIR . '16x16/flags/',
         ]);
 
-        $this->addCSSFile(dirname(__FILE__).'/LangCurrencySwitch.css');
+        $this->addCSSFile(dirname(__FILE__) . '/LangCurrencySwitch.css');
 
         parent::__construct($attributes);
     }
@@ -34,15 +35,28 @@ class LangCurrencySwitch extends QUI\Control
     /**
      * (non-PHPdoc)
      *
+     * @throws QUI\Exception
      * @see \QUI\Control::create()
      *
-     * @throws QUI\Exception
      */
     public function getBody()
     {
         $Engine  = QUI::getTemplateManager()->getEngine();
         $Site    = $this->getSite();
         $Project = $Site->getProject();
+
+        // is user allowed to change currency?
+        try {
+            $Package = QUI::getPackage('quiqqer/erp');
+            $Config  = $Package->getConfig();
+
+            if (!$Config->getValue('general', 'userRelatedCurrency')) {
+                $this->setJavaScriptControlOption('userrelatedcurrency', '0');
+            }
+
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+        }
 
         if (!$Site) {
             return '';
@@ -51,7 +65,7 @@ class LangCurrencySwitch extends QUI\Control
         $flagFolder = $this->getAttribute('flagFolder');
 
         if (!is_dir($flagFolder)) {
-            $flagFolder = URL_BIN_DIR.'16x16/flags/';
+            $flagFolder = URL_BIN_DIR . '16x16/flags/';
         }
 
         $this->setJavaScriptControlOption('flag-folder', $flagFolder);
@@ -69,7 +83,7 @@ class LangCurrencySwitch extends QUI\Control
             'flagFolderPath'  => $flagFolder
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/LangCurrencySwitch.html');
+        return $Engine->fetch(dirname(__FILE__) . '/LangCurrencySwitch.html');
     }
 
     /**

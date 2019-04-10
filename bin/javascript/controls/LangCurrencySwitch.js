@@ -29,8 +29,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
         ],
 
         options: {
-            langSwitch    : true,
-            currencySwitch: true
+            langSwitch         : true,
+            currencySwitch     : true,
+            userrelatedcurrency: true
         },
 
         initialize: function (options) {
@@ -69,7 +70,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             ]).then(function () {
 
                 if (!self.langSwitch && !self.currencySwitch) {
-                    self.Button.setStyle('cursor', 'default');
+                    self.Button.addClass('lcs-button__no-hover');
                     return;
                 }
 
@@ -110,7 +111,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             var self = this;
 
             return new Promise(function (resolve) {
-                if (!self.getAttribute('currencySwitch')) {
+                if (!self.getAttribute('currencySwitch') ||
+                    !self.getAttribute('userrelatedcurrency')) {
                     self.currencySwitch = false;
                     resolve();
                     return;
@@ -143,10 +145,14 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             this.Loader.show();
 
             this.createMenu().then(function () {
+                if (!self.currencySwitch || !self.langSwitch) {
+                    self.Menu.addClass('single-control')
+                }
+
                 self.Menu.inject(self.MenuWrapper);
                 self.Loader.hide();
                 self.isOpen = true;
-                
+
                 (function () {
                     document.body.addEvent('click', self.close);
                 }).delay(1000)
