@@ -15,6 +15,16 @@ $Menu = new QUI\Menu\MegaMenu([
     'Project'                     => $Site->getProject()
 ]);
 
+// header logo
+$EngineForMenu = QUI::getTemplateManager()->getEngine();
+
+$EngineForMenu->assign([
+    'Logo' => $Project->getMedia()->getLogoImage()
+]);
+
+$Menu->prependHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuPrefix.html'));
+$Menu->appendHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuSuffix.html'));
+
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
     'showLogout' => false, // template cologne use own logout popup (see bin/javascript/init.js)

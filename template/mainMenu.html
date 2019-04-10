@@ -1,4 +1,10 @@
 <header class="cologne-header cologne-header-menu template-columns">
+    <div class="template-column cologne-header-nav">
+        {$Menu->create()}
+    </div>
+</header>
+
+{*<header class="cologne-header cologne-header-menu template-columns">
     <div class="template-column cologne-header-logo hide-on-mobile">
         <a href="/" class="cologne-header-logo-link">
             {image image=$Project->getMedia()->getLogoImage() class="logo"}
@@ -14,4 +20,4 @@
     <div class="cologne-header-control">
         <div class="template-column cologne-header-control-basket"></div>
     </div>
-</header>
+</header>*}

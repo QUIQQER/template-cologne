@@ -191,7 +191,7 @@ window.addEvent('domready', function () {
                             height.y = 0;
 
                             Basket.$BasketContainer.setStyles({
-                                right: 20 // right margin from .cologne-header-control-basket
+                                right: 0 // right margin from .cologne-header-control-basket
                             });
 
                             // Do not scroll the page
