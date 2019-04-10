@@ -53,7 +53,6 @@ class LangCurrencySwitch extends QUI\Control
             if (!$Config->getValue('general', 'userRelatedCurrency')) {
                 $this->setJavaScriptControlOption('userrelatedcurrency', '0');
             }
-
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
         }
