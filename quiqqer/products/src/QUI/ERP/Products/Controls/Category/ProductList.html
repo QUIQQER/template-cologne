@@ -1,3 +1,28 @@
+{assign var=BricksManager value=QUI\Bricks\Manager::init()}
+{*<!-- Brick area before product list -->*}
+{assign var=productDescPrefix value=$BricksManager->getBricksByArea('productDescPrefix', $Site)}
+{if $productDescPrefix}
+    {foreach $productDescPrefix as $Brick}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-productDescPrefix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-row {$brickNoPadding}">
+            {if $Brick->getAttribute('frontendTitle')}
+            <header class="left-sidebar-filter-header">
+                <h1>{$Brick->getAttribute('frontendTitle')}</h1>
+            </header>
+            {/if}
+
+            {assign var=t value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </div>
+    </section>
+    {/foreach}
+{/if}
+
 {if count($children)}
 <div class="quiqqer-products-productList-categories">
     {$this->renderCategories($children, $categoryFile)}
@@ -103,3 +128,27 @@
     </noscript>
 
 </section>
+
+{*<!-- Brick area after product list -->*}
+{assign var=productDescSuffix value=$BricksManager->getBricksByArea('productDescSuffix', $Site)}
+{if $productDescSuffix}
+    {foreach $productDescSuffix as $Brick}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-productDescSuffix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-row {$brickNoPadding}">
+            {if $Brick->getAttribute('frontendTitle')}
+            <header class="left-sidebar-filter-header">
+                <h1>{$Brick->getAttribute('frontendTitle')}</h1>
+            </header>
+            {/if}
+
+            {assign var=t value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </div>
+    </section>
+    {/foreach}
+{/if}
