@@ -611,8 +611,8 @@ a.toTop:before {
 /** main
  ===================================== */
 
-/* das ist von hen, @ micheal wenn du willst kannst du das weg tun, habe nur abstände gebraucht */
 .cologne-main {
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -1102,7 +1102,7 @@ ul.quiqqer-bricks-children-slider-container-slide {
 
 /* product data */
 .quiqqer-products-product .product-data {
-    margin: 2rem 0;
+    margin: 0 0 2rem;
     padding-left: 20px;
 }
 
@@ -1160,7 +1160,12 @@ ul.quiqqer-bricks-children-slider-container-slide {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
-    width: auto;
+    width: calc(50% - 10px);
+    flex-grow: 1;
+}
+
+.product-data .product-data-fieldlist .quiqqer-product-field:nth-child(2n) {
+    margin-right: 0;
 }
 
 .product-data-fieldlist .quiqqer-product-field-title {
@@ -1171,6 +1176,12 @@ ul.quiqqer-bricks-children-slider-container-slide {
 
 .quiqqer-product-field-value {
     min-width: 140px;
+}
+
+.product-data-fieldlist .quiqqer-product-field-title,
+.product-data-fieldlist .quiqqer-product-field-value {
+    float: left !important;
+    width: 100% !important;
 }
 
 /* product bricks */
@@ -1184,6 +1195,11 @@ ul.quiqqer-bricks-children-slider-container-slide {
 /* product data fields */
 .product-data .product-data-fields {
     border-top: none;
+    display: flex;
+}
+
+.product-data-fields-value {
+    margin-left: 20px;
 }
 
 /* button add to basket */
@@ -1197,11 +1213,18 @@ ul.quiqqer-bricks-children-slider-container-slide {
     align-items: flex-end;
     display: flex;
     padding: 0;
+    width: 100%;
 }
 
 .quiqqer-order-button-add-quantity-wrapper {
     display: flex;
     flex-direction: column;
+    width: 50%;
+}
+
+.quiqqer-order-button-add-quantity-wrapper .quiqqer-order-button-add-quantity {
+    display: flex;
+    justify-content: space-between;
 }
 
 .quiqqer-order-button-add-quantity {
@@ -1213,6 +1236,10 @@ ul.quiqqer-bricks-children-slider-container-slide {
     font-size: 0.9rem;
     margin-bottom: 5px;
     padding: 0 10px;
+}
+
+.product-data .quiqqer-order-button-add .btn-primary {
+    width: 50%;
 }
 
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
