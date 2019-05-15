@@ -8,12 +8,12 @@
     background: #ffffff;
     border: 1px solid #ddd;
     box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+    left: auto !important;
     margin: 0 auto; /* test */
+    max-height: calc(100vh - 130px); /* header height + top bar height */
+    overflow-y: auto;
     padding: 15px !important;
     width: 350px;
-    overflow-y: auto;
-    max-height: calc(100vh - 130px); /* header height + top bar height */
-    left: auto !important;
 }
 
 body.header-fixed .quiqqer-order-basket-small-container {
@@ -27,6 +27,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
     margin-bottom: 15px;
     padding-bottom: 15px;
     position: relative;
+    text-align: left;
 }
 
 .quiqqer-order-basket-small-articles-article-image {
@@ -64,9 +65,9 @@ body.header-fixed .quiqqer-order-basket-small-container {
 .quiqqer-order-basket-small-articles-article-content .fa {
     color: #ababab;
     cursor: pointer;
-    transition: color 0.15s ease-in-out;
     float: right;
     margin-left: 10px;
+    transition: color 0.15s ease-in-out;
 }
 
 .quiqqer-order-basket-small-articles-article-content .fa:hover {
@@ -86,6 +87,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
 
 .quiqqer-order-basket-small-total td:first-child {
     color: #999;
+    text-align: left;
 }
 
 .quiqqer-order-basket-small-total-sum td:first-child {

@@ -949,7 +949,7 @@ article .product-data-more {
 }
 
 .product-data-more-tabs {
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #ddd;
 }
 
 li.product-data-more-tabs-tab {
@@ -960,8 +960,9 @@ li.product-data-more-tabs-tab {
 }
 
 li.product-data-more-tabs-tab.active {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #ddd;
     border-bottom-color: #fff;
+    color: inherit;
 }
 
 .product-data-more-tabs-tab a {
@@ -969,6 +970,7 @@ li.product-data-more-tabs-tab.active {
 }
 
 .product-data-more .product-data-more-sheets {
+    border-color: #ddd;
     border-top: none;
 }
 
