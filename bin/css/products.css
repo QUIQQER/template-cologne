@@ -860,18 +860,25 @@
 
 .product-data .quiqqer-order-button-add {
     align-items: flex-end;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     display: flex;
-    padding: 0;
+    flex-wrap: wrap;
+    padding: 20px 20px 20px 0;
     width: 100%;
 }
 
 .quiqqer-order-button-add-quantity-wrapper {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-right: 0 !important;
 }
 
 .quiqqer-order-button-add-quantity-wrapper .quiqqer-order-button-add-quantity {
+    background: #fff;
     display: flex;
     justify-content: space-between;
 }
@@ -888,7 +895,8 @@
 }
 
 .product-data .quiqqer-order-button-add .btn-primary {
-    width: 50%;
+    flex-grow: 1;
+    margin: 20px 0 0 20px;
 }
 
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
