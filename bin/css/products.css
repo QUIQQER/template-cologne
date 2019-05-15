@@ -912,7 +912,7 @@
     padding: 0 10px;
 }
 
-.product-data .quiqqer-order-button-add .btn-primary {
+.quiqqer-order-button-add .add-to-basket {
     flex-grow: 1;
     margin: 20px 0 0 20px;
 }
@@ -937,10 +937,6 @@
 .quiqqer-order-button-add-quantity-increase:hover {
     background: #eee;
     color: inherit;
-}
-
-.quiqqer-order-button-add-loader {
-    font-size: 2rem !important;
 }
 
 /* product data more */
