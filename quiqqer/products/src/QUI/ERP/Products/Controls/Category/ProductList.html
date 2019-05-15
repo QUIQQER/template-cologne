@@ -1,14 +1,14 @@
 {assign var=BricksManager value=QUI\Bricks\Manager::init()}
-{*<!-- Brick area before product list -->*}
-{assign var=productDescPrefix value=$BricksManager->getBricksByArea('productDescPrefix', $Site)}
-{if $productDescPrefix}
-    {foreach $productDescPrefix as $Brick}
+{*<!-- product category prefix (area before product list) -->*}
+{assign var=productCategoryPrefix value=$BricksManager->getBricksByArea('productCategoryPrefix', $Site)}
+{if $productCategoryPrefix}
+    {foreach $productCategoryPrefix as $Brick}
 
     {assign var=brickNoPadding value=""}
     {if $Brick->getSetting('general.noSpacing')}
         {assign var=brickNoPadding value="brick-no-spacing"}
     {/if}
-    <section class="template-brick-container template-brick-productDescPrefix brick-id-{$Brick->getAttribute('id')}">
+    <section class="template-brick-container template-brick-productCategoryPrefix brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-row {$brickNoPadding}">
             {if $Brick->getAttribute('frontendTitle')}
             <header class="left-sidebar-filter-header">
@@ -129,16 +129,16 @@
 
 </section>
 
-{*<!-- Brick area after product list -->*}
-{assign var=productDescSuffix value=$BricksManager->getBricksByArea('productDescSuffix', $Site)}
-{if $productDescSuffix}
-    {foreach $productDescSuffix as $Brick}
+{*<!-- product category suffix (area after product list) -->*}
+{assign var=productCategorySuffix value=$BricksManager->getBricksByArea('productCategorySuffix', $Site)}
+{if $productCategorySuffix}
+    {foreach $productCategorySuffix as $Brick}
 
     {assign var=brickNoPadding value=""}
     {if $Brick->getSetting('general.noSpacing')}
         {assign var=brickNoPadding value="brick-no-spacing"}
     {/if}
-    <section class="template-brick-container template-brick-productDescSuffix brick-id-{$Brick->getAttribute('id')}">
+    <section class="template-brick-container template-brick-productCategorySuffix brick-id-{$Brick->getAttribute('id')}">
         <div class="template-grid-row {$brickNoPadding}">
             {if $Brick->getAttribute('frontendTitle')}
             <header class="left-sidebar-filter-header">

@@ -52,32 +52,32 @@
                     </description>
                 </area>
 
-                <!-- product description prefix -->
-                <area name="productDescPrefix" site-type="products/category"
+                <!-- product category prefix (area before product list) -->
+                <area name="productCategoryPrefix" site-type="products/category"
                       inheritance="1" priority="12">
                     <title>
                         <locale group="quiqqer/template-cologne"
-                                var="area.productDescPrefix.title"
+                                var="area.productCategoryPrefix.title"
                         />
                     </title>
                     <description>
                         <locale group="quiqqer/template-cologne"
-                                var="area.productDescPrefix.description"
+                                var="area.productCategoryPrefix.description"
                         />
                     </description>
                 </area>
 
-                <!-- product description suffix -->
-                <area name="productDescSuffix" site-type="products/category"
+                <!-- product category suffix (area after product list) -->
+                <area name="productCategorySuffix" site-type="products/category"
                       inheritance="1" priority="13">
                     <title>
                         <locale group="quiqqer/template-cologne"
-                                var="area.productDescSuffix.title"
+                                var="area.productCategorySuffix.title"
                         />
                     </title>
                     <description>
                         <locale group="quiqqer/template-cologne"
-                                var="area.productDescSuffix.description"
+                                var="area.productCategorySuffix.description"
                         />
                     </description>
                 </area>

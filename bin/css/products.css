@@ -852,8 +852,8 @@
 }
 
 /* product bricks */
-.template-brick-productDescPrefix,
-.template-brick-productDescSuffix {
+.template-brick-productCategoryPrefix,
+.template-brick-productCategorySuffix {
     clear: both;
     float: none;
     margin: 2rem 0;
