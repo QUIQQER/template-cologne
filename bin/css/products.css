@@ -799,19 +799,37 @@
     text-align: left;
 }
 
-/* product field (Auswahllisten) */
+/******************/
+/* Product field  */
+/******************/
 .product-data .product-data-fieldlist {
     border-top: none;
     display: flex;
     flex-wrap: wrap;
+
+    margin-left: -20px; /* workaround to keep spacing  */
+    width: calc(100% + 20px); /* after entry auto jumping in the next row */
+}
+
+/* workaround to set width of the last element to 50% */
+/* it works only with 2 elements pro row */
+.product-data-fieldlist:after {
+    content: '1';
+    flex-grow: 1;
+    height: 0;
+    margin-left: 20px;
+    visibility: hidden;
+    width: calc(50% - 20px);
+    min-width: 160px;
 }
 
 .product-data .product-data-fieldlist .quiqqer-product-field {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-right: 20px;
-    width: calc(50% - 10px);
+    margin-left: 20px;
+    width: calc(50% - 20px);
+    min-width: 160px;
 }
 
 .product-data .product-data-fieldlist .quiqqer-product-field:nth-child(2n) {
