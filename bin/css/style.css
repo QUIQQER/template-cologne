@@ -178,6 +178,15 @@ small {
     margin-top: 1em;
 }
 
+.clear-fix:after {
+    content: '';
+    display: block;
+    clear: both;
+    float: none;
+    font-size: 0;
+    line-height: 0;
+}
+
 /**********/
 /* Header */
 /**********/
@@ -636,6 +645,10 @@ a.toTop:before {
 }
 
 /* bricks */
+.template-footer-bricks-entry {
+    margin: 1rem 0;
+}
+
 .template-footer-bricks-entry .control-header {
     margin-bottom: 3rem;
 }
