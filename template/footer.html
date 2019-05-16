@@ -1,8 +1,17 @@
 {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
 {if !empty($footer)}
 <div class="template-grid-container cologne-bg-container clearfix">
-    <div class="template-children-container">
+    <div class="template-children-container template-footer-bricks">
         {foreach from=$footer item=Brick}
+            {if !$Brick->hasCSSClass('grid-*')}
+                {$Brick->addCSSClass('grid-100')}
+            {/if}
+
+            {*<!-- showTitle for simple content brick must be set explicitly -->*}
+            {if $Brick->getType() === 'QUI\Bricks\Brick'}
+                {assign var=t value=$Brick->setAttribute('showTitle', 'true')}
+            {/if}
+            {$Brick->addCSSClass('template-footer-bricks-entry clear-fix')}
             {$Brick->create()}
         {/foreach}
     </div>

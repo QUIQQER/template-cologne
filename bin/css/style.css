@@ -635,6 +635,23 @@ a.toTop:before {
     padding: 2em 0;
 }
 
+/* bricks */
+.template-footer-bricks-entry .control-header {
+    margin-bottom: 3rem;
+}
+
+.template-footer-bricks-entry .control-header h1 {
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+/* copyright */
+.cologne-footer-copyright {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
 /** Mega Menu
  ===================================== */
 .quiqqer-menu-megaMenu nav {
@@ -1055,4 +1072,26 @@ ul.quiqqer-bricks-children-slider-container-slide {
 .lcs-menu-list-entry-link.current-lang {
     opacity: 0.5;
     pointer-events: none;
+}
+
+/*************/
+/* font icon */
+/*************/
+a.font-icon {
+    text-align: center;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+    color: inherit;
+}
+
+a.font-icon .fa {
+    font-size: 0;
+}
+
+a.font-icon .fa:before {
+    font-size: 1rem;
 }
