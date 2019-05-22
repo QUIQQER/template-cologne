@@ -813,7 +813,7 @@
 
 /* workaround to set width of the last element to 50% */
 /* it works only with 2 elements pro row */
-.product-data-fieldlist:after {
+.product-data-fieldlist__product-data-fieldlist__multiple:after {
     content: '1';
     flex-grow: 1;
     height: 0;
@@ -916,6 +916,17 @@
     flex-grow: 1;
     margin: 20px 0 0 20px;
 }
+
+.quiqqer-order-button-add .add-to-basket:disabled label {
+    cursor: not-allowed;
+}
+
+.quiqqer-order-button-add.disabled .quiqqer-order-button-add-quantity {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
     height: auto;

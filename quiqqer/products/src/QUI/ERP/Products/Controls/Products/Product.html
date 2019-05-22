@@ -33,8 +33,9 @@
             {$PriceDisplay->create()}
         </div>
 
+        {assign var=counter value=count($detailFields)}
         {if count($productAttributeList)}
-        <div class="product-data-fieldlist">
+        <div class="product-data-fieldlist {if $counter > 1}product-data-fieldlist__multiple{/if}">
             {foreach $productAttributeList as $Field}
             {$Field->getView()->create()}
             {/foreach}
