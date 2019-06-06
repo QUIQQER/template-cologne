@@ -10,25 +10,27 @@
 {if count($children)}
 <ul class="page-navigation-level-{$level}">
     {foreach from=$children item=Child}
-    <li>
-        <a href="{url site=$Child}" class="left-menu-a">
-            {if $ActiveSite->getId() == $Child->getId()}
-            <span class="fa fa-chevron-right"></span>
-            {else}
-            <span class="fa fa-angle-right"></span>
-            {/if}
+        {if $Child->getAttribute('type') == 'quiqqer/products:types/category'}
+        <li>
+            <a href="{url site=$Child}" class="">
+                {if $ActiveSite->getId() == $Child->getId()}
+                <span class="fa fa-chevron-right"></span>
+                {else}
+                <span class="fa fa-angle-right"></span>
+                {/if}
 
-            <span class="left-menu-text">
-                {$Child->getAttribute('title')}
-            </span>
-        </a>
+                <span class="left-menu-text">
+                    {$Child->getAttribute('title')}
+                </span>
+            </a>
 
-        {include file="`$menuFile`"
-            Site=$Child
-            ActiveSite=$ActiveSite
-            level=$level
-        }
-    </li>
+            {include file="`$menuFile`"
+                Site=$Child
+                ActiveSite=$ActiveSite
+                level=$level
+            }
+        </li>
+        {/if}
     {/foreach}
 </ul>
 {/if}

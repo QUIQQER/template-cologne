@@ -3,8 +3,15 @@
 /**
  * Emotion
  */
+
+
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
+
+/**
+ * Categories Menu
+ */
+$CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories();
 
 /**
  * Header
@@ -19,7 +26,7 @@ $Menu = new QUI\Menu\MegaMenu([
 $EngineForMenu = QUI::getTemplateManager()->getEngine();
 
 $EngineForMenu->assign([
-    'Logo' => $Project->getMedia()->getLogoImage()
+    'Logo'           => $Project->getMedia()->getLogoImage()
 ]);
 
 $Menu->prependHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuPrefix.html'));
@@ -39,11 +46,6 @@ switch ($Site->getAttribute('type')) {
         $productPage = true;
         break;
 };
-
-/**
- * Categories Menu
- */
-$CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories();
 
 /**
  * Flags
@@ -74,6 +76,6 @@ $templateSettings['Avatar']             = $Avatar;
 $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
-$templateSettings['CategoriesMenu']     = $CategoriesMenu;
+$templateSettings['CategoriesMenu'] = $CategoriesMenu;
 
 $Engine->assign($templateSettings);

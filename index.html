@@ -43,10 +43,15 @@
 <div>
     {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu}
 </div>
+
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
     {fetch template="template/pageHeader.html" Site=$Site}
 {/if}
 
+<div class="shop-category-menu-wrapper">
+    {* shop category menu *}
+    {$CategoriesMenu->create()}
+</div>
 <!-- breadcrumb -->
 {if $showBreadcrumb}
     {fetch template="template/breadcrumb.html" Site=$Site}

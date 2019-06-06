@@ -9,7 +9,8 @@ a:hover,
 .lcs-button:hover,
 .lcs-button:hover .lcs-button-currency-code,
 .lcs-button:active .lcs-button-currency-code,
-.lcs-button:active {
+.lcs-button:active,
+.shop-category-menu-button:hover {
     color: #3986dd;
 }
 

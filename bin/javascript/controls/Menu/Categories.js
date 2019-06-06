@@ -1,5 +1,5 @@
 /**
- * @module package/quiqqer/product-bricks/bin/controls/Menu/Categories
+ * @module package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
  *
  * This modul provides the functionality for slide out menu of product categories.
  *
@@ -18,12 +18,12 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
     return new Class({
 
         Extends: SlideOut,
-        Type   : 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
+        Type   : 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
 
         Binds: [],
 
         options: {
-            top: 50
+            'menu-button' : false
         },
 
         initialize: function (options) {
@@ -33,7 +33,30 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             this.addEvents({
                 onImport: this.$onImport
             });
+        },
+
+        /**
+         * event : on import
+         */
+        $onImport: function () {
+            this.parent();
+
+            var self = this;
+
+            this.Slideout.on('beforeopen', function () {
+                self.getElm().getElement('nav').setStyle('display', null);
+
+            });
+
+            var openButtons = document.getElements('.shop-category-menu-button');
+
+            if (openButtons) {
+                openButtons.each(function (Button) {
+                    Button.addEvent('click', self.toggle);
+                });
+            }
+
         }
-    });
+    })
 });
 
