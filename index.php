@@ -41,6 +41,11 @@ switch ($Site->getAttribute('type')) {
 };
 
 /**
+ * Categories Menu
+ */
+$CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories();
+
+/**
  * Flags
  */
 $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
@@ -69,5 +74,6 @@ $templateSettings['Avatar']             = $Avatar;
 $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
+$templateSettings['CategoriesMenu']     = $CategoriesMenu;
 
 $Engine->assign($templateSettings);

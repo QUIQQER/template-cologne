@@ -1,0 +1,34 @@
+
+{assign var=children value=$Site->getNavigation()}
+
+{if !isset($level)}
+    {assign var=level value=1}
+{else}
+    {assign var=level value=$level+1}
+{/if}
+
+{if count($children)}
+<ul class="page-navigation-level-{$level}">
+    {foreach from=$children item=Child}
+    <li>
+        <a href="{url site=$Child}" class="left-menu-a">
+            {if $ActiveSite->getId() == $Child->getId()}
+            <span class="fa fa-chevron-right"></span>
+            {else}
+            <span class="fa fa-angle-right"></span>
+            {/if}
+
+            <span class="left-menu-text">
+                {$Child->getAttribute('title')}
+            </span>
+        </a>
+
+        {include file="`$menuFile`"
+            Site=$Child
+            ActiveSite=$ActiveSite
+            level=$level
+        }
+    </li>
+    {/foreach}
+</ul>
+{/if}

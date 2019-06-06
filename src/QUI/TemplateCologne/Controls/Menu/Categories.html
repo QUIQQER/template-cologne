@@ -1,0 +1,15 @@
+<nav class="page-menu TEST"  style="display: none">
+
+    <div class="page-navigation">
+
+        <a href="{url site=$Project->firstChild()}" class="page-navigation-home">
+            <span class="fa fa-home"></span>
+            {$Project->firstChild()->getAttribute('title')}
+        </a>
+
+        {include file="`$menuFile`"
+        Site=$Project->firstChild()
+        ActiveSite=$Site
+        }
+    </div>
+</nav>

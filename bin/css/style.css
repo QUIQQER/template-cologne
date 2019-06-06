@@ -922,6 +922,10 @@ a.toTop:before {
 /** Login / logout popup
  ===================================== */
 /* login */
+.cologne-login-dialog {
+    outline: none;
+}
+
 .cologne-login-dialog .qui-window-popup-title {
     background: none;
     padding: 0;
