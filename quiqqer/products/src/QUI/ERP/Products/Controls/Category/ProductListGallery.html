@@ -2,7 +2,7 @@
          data-pid="{$Product->getId()}"
 >
     {strip}
-    <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:' html'}"
+    <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}"
        class="cologne-products-productGallery-products-product-image">
         {image image=$Product->getImage() title=$Product->getTitle() width=400}
     </a>
@@ -26,6 +26,14 @@
     <div class="product-buttons">
         {template_event name="quiqqer::product-event::slider::buttonAddToCart" Product=$Product}
         <!--<a href="" class="btn btn-link add-to-card">Add to wish list</a>-->
+        {if QUI\ERP\Products\Utils\Products::isVariant($Product)}
+        <a href="{$Product->getUrl()}"
+           title="{$Product->getTitle()|escape:'html'}"
+           class="btn btn-primary btn-outline"
+        >
+            {locale group="quiqqer/order" var="control.basket.buttonVariantAdd.text"}
+        </a>
+        {else}
         <a href="{$Product->getUrl()}"
            class="btn btn-primary btn-outline add-to-basket"
            data-product-id="{$Product->getId()}"
@@ -36,6 +44,7 @@
                 {locale group="quiqqer/product-bricks" var="brick.control.product.addToCart"}
             </label>
         </a>
+        {/if}
     </div>
     {/strip}
 </article>
