@@ -775,8 +775,12 @@
     width: 30px;
 }
 
+.product-data-price .qui-products-price-display {
+    text-align: left;
+}
+
 /* retail price */
-.product-data-price-retail .qui-products-price-display {
+.product-data-price .product-data-price-retail .qui-products-price-display-value {
     font-size: 1.3em;
     text-decoration: line-through;
 }
@@ -797,6 +801,11 @@
 
 .product-data-price .qui-products-price-display-vat {
     text-align: left;
+}
+
+.qui-products-price-display-prefix {
+    display: inline-block;
+    padding-right: 5px;
 }
 
 /******************/
