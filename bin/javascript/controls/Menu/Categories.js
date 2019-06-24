@@ -20,14 +20,20 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         Extends: SlideOut,
         Type   : 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
 
-        Binds: [],
+        Binds: [
+            '$onImport',
+            '$onResize'
+        ],
 
         options: {
-            'menu-button' : false
+            'menu-button' : false,
+            'menu-width' : 500
         },
 
         initialize: function (options) {
             this.parent(options);
+
+            this.menuWidht = 400;
 
 
             this.addEvents({
@@ -42,6 +48,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             this.parent();
 
             var self = this;
+            this.menuWidht = this.getAttribute('menu-width');
 
             this.Slideout.on('beforeopen', function () {
                 self.getElm().getElement('nav').setStyle('display', null);
@@ -56,6 +63,20 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 });
             }
 
+        },
+
+        /**
+         * event : on resize
+         */
+        $onResize: function ()
+        {
+            if (QUI.getWindowSize().x > this.menuWidht) {
+                this.setAttribute('menu-width', this.menuWidht);
+
+                return;
+            }
+
+            this.setAttribute('menu-width', QUI.getWindowSize().x);
         }
     })
 });
