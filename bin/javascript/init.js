@@ -374,3 +374,21 @@ function createLoginWindow () {
         }).open();
     })
 }
+
+/* auto open category menu */
+/* todo löschen wenn fertig */
+require([
+'utils/Controls'
+], function (QUIControlUtils) {
+    (function () {
+        console.warn('Auto open category menu. Entwicklung - wenn fertig, muss gelöscht werden.');
+        var CatNav = document.getElement(
+            '[data-qui="package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories"]'
+        );
+
+        QUIControlUtils.getControlByElement(CatNav).then(function (CatNavControl) {
+            CatNavControl.toggle();
+        })
+
+    }).delay(1000)
+});

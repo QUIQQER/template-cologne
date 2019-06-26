@@ -26,14 +26,14 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         ],
 
         options: {
-            'menu-button' : false,
-            'menu-width' : 500
+            'menu-button': false,
+            'menu-width' : 400
         },
 
         initialize: function (options) {
             this.parent(options);
 
-            this.menuWidht = 400;
+            this.menuWidht = null;
 
 
             this.addEvents({
@@ -45,14 +45,15 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
          * event : on import
          */
         $onImport: function () {
+            this.menuWidht = this.getAttribute('menu-width');
+
             this.parent();
 
             var self = this;
-            this.menuWidht = this.getAttribute('menu-width');
+
 
             this.Slideout.on('beforeopen', function () {
                 self.getElm().getElement('nav').setStyle('display', null);
-
             });
 
             var openButtons = document.getElements('.shop-category-menu-button');
@@ -62,14 +63,12 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                     Button.addEvent('click', self.toggle);
                 });
             }
-
         },
 
         /**
          * event : on resize
          */
-        $onResize: function ()
-        {
+        $onResize: function () {
             if (QUI.getWindowSize().x > this.menuWidht) {
                 this.setAttribute('menu-width', this.menuWidht);
 

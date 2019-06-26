@@ -25,6 +25,7 @@ class Categories extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
+            'class'    => 'quiqqer-categories-menu',
             'template' => dirname(__FILE__) . '/Categories.html', // nav wrapper
             'menuFile' => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
             'data-qui' => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',

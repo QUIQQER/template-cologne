@@ -1,13 +1,7 @@
-<nav class="page-menu" style="display: none">
-    <h2>Bitte...</h2>
-    <p>Design kommt noch</p>
-    <div class="page-navigationnn">
+<nav style="display: none">
+    <header class="categories-menu-header">Kategorien</header>
 
-        <a href="{url site=$Project->firstChild()}" class="page-navigation-home">
-            <span class="fa fa-home"></span>
-            {$Project->firstChild()->getAttribute('title')}
-        </a>
-
+    <div class="categories-menu-container">
         {include file="`$menuFile`"
         Site=$Project->firstChild()
         ActiveSite=$Site
