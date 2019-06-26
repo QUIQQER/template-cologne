@@ -1,13 +1,14 @@
 .quiqqer-categories-menu {
+    background: #1e2c33;
+    color: #eee;
     height: 100%;
-     background: #1e2c33;
-     color: #eee;
+    overflow: hidden;
 }
 
 .categories-menu-header {
-    padding: 2rem;
     font-size: 1.25rem;
     opacity: 0.5;
+    padding: 2rem;
 }
 
 .categories-menu-container {
@@ -15,59 +16,64 @@
 }
 
 .categories-menu-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: absolute;
     left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
     top: 0;
-    width: 100%;
     transform: translateX(100%);
-    transition: 0.3s all ease-out;
+    width: 100%;
+    display: none;
 }
 
 .categories-menu-list-level-1 {
     display: block;
-    transform: translateX(0%);
     position: initial;
+    transform: translateX(0%);
 }
 
 .categories-menu-list-entry {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
 }
 
 .categories-menu-list-entry:last-child {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .categories-menu-list-entry a,
-.categories-menu-list-entry .categories-menu-list-entry-backButton {
+.categories-menu-list-entry-backButton {
     color: #eee;
-    padding: 1rem 1rem 1rem 2rem;
     display: block;
     flex-grow: 1;
+    padding: 1rem 1rem 1rem 2rem;
     transition: 0.2s color, 0.2s background-color;
 }
 
 .categories-menu-list-entry-next {
-    display: flex;
     align-items: center;
-    padding: 0 1.5rem;
-    margin-left: auto;
-    border-left: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    color: rgba(255,255,255,0.5);
+    display: flex;
+    margin-left: auto;
+    padding: 0 1.5rem;
     transition: 0.2s color, 0.2s background-color;
 }
 
 .categories-menu-list-entry a:hover,
-.categories-menu-list-entry > .fa:hover {
-    background: rgba(255,255,255,0.05);
+.categories-menu-list-entry > .categories-menu-list-entry-next:hover,
+.categories-menu-list-entry-backButton:hover {
+    background: rgba(255, 255, 255, 0.05);
 
 }
 
 /* back button */
+.categories-menu-list-entry-backButton {
+    cursor: pointer;
+}
+
 .categories-menu-list-entry-backButton-icon {
     margin-right: 10px;
 }

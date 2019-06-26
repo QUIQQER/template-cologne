@@ -22,7 +22,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
         Binds: [
             '$onImport',
-            '$onResize'
+            '$onResize',
+            '$openNextLevel',
+            '$closeCurrentLevel'
         ],
 
         options: {
@@ -33,8 +35,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         initialize: function (options) {
             this.parent(options);
 
-            this.menuWidht = null;
-
+            this.menuWidht      = null;
+            this.animate        = false; // is the animation is still going on?
+            this.FirstLevel     = null;
+            this.openNextLevels = null; // button to open next menu level (depth)
+            this.menuDepth      = 0; // how depth is menu opened
 
             this.addEvents({
                 onImport: this.$onImport
@@ -49,7 +54,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             this.parent();
 
-            var self = this;
+            var Elm  = this.getElm(),
+                self = this;
 
 
             this.Slideout.on('beforeopen', function () {
@@ -62,6 +68,38 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 openButtons.each(function (Button) {
                     Button.addEvent('click', self.toggle);
                 });
+            }
+
+            // first level menu
+            this.FirstLevel = Elm.getElement('.categories-menu-list-level-1');
+
+
+            // next level menu button
+            this.openNextLevels = Elm.getElements('.categories-menu-list-entry-next');
+
+            if (this.openNextLevels.length !== 0) {
+                this.openNextLevels.each(function (OpenNextLevelButton) {
+
+                    if (this.animate) {
+                        return;
+                    }
+
+                    OpenNextLevelButton.addEvent('click', this.$openNextLevel);
+                }.bind(this));
+            }
+
+            // go back button
+            this.goBackButtons = Elm.getElements('.categories-menu-list-entry-backButton');
+
+            if (this.goBackButtons.length !== 0) {
+                this.goBackButtons.each(function (GoBackButton) {
+
+                    if (this.animate) {
+                        return;
+                    }
+
+                    GoBackButton.addEvent('click', this.$closeCurrentLevel);
+                }.bind(this));
             }
         },
 
@@ -76,6 +114,61 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             }
 
             this.setAttribute('menu-width', QUI.getWindowSize().x);
+        },
+
+        /**
+         * Open next level menu (slide)
+         *
+         * @param Button
+         */
+        $openNextLevel: function (Button) {
+            this.animate   = true;
+            this.menuDepth = this.menuDepth + 1;
+
+            var self      = this,
+                NextLevel = Button.target.getParent().getElement('ul'),
+                offset    = 'translateX(-' + this.menuDepth * 100 + '%)';
+
+            NextLevel.setStyle('display', 'block');
+
+            moofx(this.FirstLevel).animate({
+                transform: offset
+            }, {
+                duration: 300,
+                equation: 'ease-in',
+                callback: function () {
+                    self.animate = false;
+                }
+            });
+        },
+
+        /**
+         * Close current level menu (slide)
+         *
+         * @param Button
+         */
+        $closeCurrentLevel: function (Button) {
+            this.animate   = true;
+            this.menuDepth = this.menuDepth - 1;
+
+            if (this.menuDepth < 0) {
+                this.menuDepth = 0;
+            }
+
+            var self         = this,
+                CurrentLevel = Button.target.getParent('ul'),
+                offset       = 'translateX(-' + this.menuDepth * 100 + '%)';
+
+            moofx(this.FirstLevel).animate({
+                transform: offset
+            }, {
+                duration: 300,
+                equation: 'ease-in',
+                callback: function () {
+                    CurrentLevel.setStyle('display', '');
+                    self.animate = false;
+                }
+            });
         }
     })
 });
