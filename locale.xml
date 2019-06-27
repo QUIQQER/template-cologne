@@ -410,6 +410,10 @@
                 <de><![CDATA[Gar nicht anzeigen]]></de>
                 <en><![CDATA[Do not display at all]]></en>
             </locale>
+        <locale name="categoryMenu.openButton.title">
+            <de><![CDATA[Shop-Kategorien öffnen]]></de>
+            <en><![CDATA[Open shop category]]></en>
+        </locale>
         <locale name="categoryMenu.title">
             <de><![CDATA[Shop-Kategorien]]></de>
             <en><![CDATA[Shop category]]></en>
