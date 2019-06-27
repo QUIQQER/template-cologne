@@ -11,7 +11,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
     'qui/controls/Control',
     'package/quiqqer/menu/bin/SlideOut'
 
-
 ], function (QUI, QUIControl, SlideOut) {
     "use strict";
 
@@ -24,7 +23,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             '$onImport',
             '$onResize',
             '$openNextLevel',
-            '$closeCurrentLevel'
+            '$closeCurrentLevel',
+            'resetMenu'
         ],
 
         options: {
@@ -35,6 +35,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         initialize: function (options) {
             this.parent(options);
 
+            this.Wrapper        = null; // Control wrapper
             this.menuWidht      = null;
             this.animate        = false; // is the animation is still going on?
             this.FirstLevel     = null;
@@ -57,7 +58,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             var Elm  = this.getElm(),
                 self = this;
 
-
             this.Slideout.on('beforeopen', function () {
                 self.getElm().getElement('nav').setStyle('display', null);
             });
@@ -70,9 +70,13 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 });
             }
 
-            // first level menu
-            this.FirstLevel = Elm.getElement('.categories-menu-list-level-1');
+            this.Slideout.on('close', this.resetMenu);
 
+            // control wrapper
+            this.Wrapper = Elm.getParent('.slideout-menu');
+
+            // first level menu
+            this.FirstLevel = this.getElm().getElement('.categories-menu-list-level-1');
 
             // next level menu button
             this.openNextLevels = Elm.getElements('.categories-menu-list-entry-next');
@@ -130,6 +134,19 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             NextLevel.setStyle('display', 'block');
 
+            // required to animate the scroll bar
+            moofx(this.FirstLevel).animate({
+                height: NextLevel.getSize().y
+            }, {
+                duration: 500
+            });
+
+            // scroll menu to top if needed
+            if (this.getElm().getPosition(this.Wrapper).y !== 0) {
+                var myFx = new Fx.Scroll(this.Wrapper).toTop();
+            }
+
+            // slide to show next level
             moofx(this.FirstLevel).animate({
                 transform: offset
             }, {
@@ -156,8 +173,29 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             var self         = this,
                 CurrentLevel = Button.target.getParent('ul'),
+                ParentLevel  = Button.target.getParent('ul').getParent('ul'),
                 offset       = 'translateX(-' + this.menuDepth * 100 + '%)';
 
+            // Workaround to get the original height of parent level menu
+            //
+            // cache current height of (invisible) parent menu
+            var currentHeight = ParentLevel.getSize().y;
+            // remove height...
+            ParentLevel.setStyle('height', '');
+            // ...to get height, that the parent menu need
+            var originalHeight = ParentLevel.getSize().y;
+            // restore the current height
+            ParentLevel.setStyle('height', currentHeight);
+            // end workaround
+
+            // required to animate the scroll bar
+            moofx(this.FirstLevel).animate({
+                height: originalHeight
+            }, {
+                duration: 500
+            });
+
+            // slide to show previous level
             moofx(this.FirstLevel).animate({
                 transform: offset
             }, {
@@ -167,6 +205,24 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                     CurrentLevel.setStyle('display', '');
                     self.animate = false;
                 }
+            });
+        },
+
+        /**
+         * Restore menu to the initial state
+         */
+        resetMenu: function () {
+            this.menuDepth = 0;
+
+            this.getElm().getElements('ul').each(function (Menu) {
+                if (Menu.hasClass('categories-menu-list-level-1')) {
+                    Menu.setStyles({
+                        transform: 'translateX(0)',
+                        height   : ''
+                    });
+                    return;
+                }
+                Menu.hide();
             });
         }
     })

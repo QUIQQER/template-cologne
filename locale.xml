@@ -410,6 +410,22 @@
                 <de><![CDATA[Gar nicht anzeigen]]></de>
                 <en><![CDATA[Do not display at all]]></en>
             </locale>
+        <locale name="categoryMenu.title">
+            <de><![CDATA[Shop-Kategorien]]></de>
+            <en><![CDATA[Shop category]]></en>
+        </locale>
+        <locale name="categoryMenu.button.back">
+            <de><![CDATA[Zurück]]></de>
+            <en><![CDATA[Back]]></en>
+        </locale>
+        <locale name="categoryMenu.button.back.title">
+            <de><![CDATA[Eine Ebene zurück gehen]]></de>
+            <en><![CDATA[Go back one level up]]></en>
+        </locale>
+        <locale name="categoryMenu.button.nextCat.title" html="true">
+            <de><![CDATA[Kategorien von [title] anzeigen]]></de>
+            <en><![CDATA[Show categories from [title]]]></en>
+        </locale>
 
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">

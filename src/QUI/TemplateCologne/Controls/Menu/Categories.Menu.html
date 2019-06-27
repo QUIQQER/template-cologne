@@ -19,10 +19,11 @@
 <ul class="categories-menu-list categories-menu-list-level-{$level}">
     {if $level > 1}
         <li class="categories-menu-list-entry">
-            <div class="categories-menu-list-entry-backButton">
+            <div class="categories-menu-list-entry-backButton"
+                 title="{locale group='quiqqer/template-cologne' var='categoryMenu.button.back.title'}">
                 <span class="fa fa-angle-left categories-menu-list-entry-backButton-icon"></span>
                 <span class="categories-menu-list-entry-backButton-text">
-                    {locale group="quiqqer/template-cologne" var=""}
+                    {locale group="quiqqer/template-cologne" var="categoryMenu.button.back"}
                 </span>
             </div>
         </li>
@@ -34,7 +35,8 @@
         <li class="categories-menu-list-entry">
             <a href="{url site=$Child}"
                class="categories-menu-list-entry-link
-                      {if count($subChildren)}categories-menu-list-entry-link__hasChildren{/if}">
+                      {if count($subChildren)}categories-menu-list-entry-link__hasChildren{/if}"
+                title="{$Child->getAttribute('title')}">
                 <span class="categories-menu-list-entry-title">
                     {$Child->getAttribute('title')}
                 </span>
@@ -46,7 +48,8 @@
             </a>
 
             {if count($subChildren)}
-                <span class="fa fa-angle-right categories-menu-list-entry-next"></span>
+                <span class="fa fa-angle-right categories-menu-list-entry-next"
+                    title="{locale group='quiqqer/template-cologne' var='categoryMenu.button.nextCat.title' title=$Child->getAttribute('title')}"></span>
                 {include file="`$menuFile`"
                     Site=$Child
                     ActiveSite=$ActiveSite
@@ -56,5 +59,6 @@
         </li>
         {/if}
     {/foreach}
+
 </ul>
 {/if}
