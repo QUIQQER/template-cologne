@@ -386,6 +386,10 @@ require([
             '[data-qui="package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories"]'
         );
 
+        if (!CatNav)  {
+            return;
+        }
+
         QUIControlUtils.getControlByElement(CatNav).then(function (CatNavControl) {
             CatNavControl.toggle();
         })

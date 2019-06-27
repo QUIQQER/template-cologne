@@ -352,7 +352,7 @@
 
         <!-- header settings: size -->
         <locale name="settings.header.height.text">
-            <de><![CDATA[Höhe des Headers einstellen. Das ist die minimale Höhe. Wenn der Text (Titel und Kurzbeschreibung) mehr platz brauchen, wird der Header höher.]]></de>
+            <de><![CDATA[Höhe des Headers einstellen. Das ist die minimale Höhe. Wenn der Text (Titel und Kurzbeschreibung) mehr platz brauchen, wird der Header größer.]]></de>
             <en><![CDATA[Adjust the height of the header. This is the minimum height. If the text (title and short description) needs more space, the header gets higher.]]></en>
         </locale>
         <locale name="settings.header.height.value">
@@ -377,6 +377,39 @@
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
         </locale>
+
+        <!-- category menu -->
+        <locale name="settings.categoryMenu.title">
+            <de><![CDATA[Shop-Kategorie Navigation]]></de>
+            <en><![CDATA[Shop category menu]]></en>
+        </locale>
+        <locale name="settings.categoryMenu.text">
+            <de><![CDATA[Dieses Menü zeigt nur die Shop-Kategorien an.]]></de>
+            <en><![CDATA[This menu shows only the shop categories.]]></en>
+        </locale>
+        <!-- category menu: show -->
+        <locale name="settings.categoryMenu.show">
+            <de><![CDATA[Shop-Kategorie Navigation anzeigen]]></de>
+            <en><![CDATA[Show shop category menu]]></en>
+        </locale>
+
+        <!-- category menu: show short desc of category for... -->
+        <locale name="settings.categoryMenu.showDescFor">
+            <de><![CDATA[Die Kurzbeschreibung der Kategorien]]></de>
+            <en><![CDATA[Category short descriptions]]></en>
+        </locale>
+            <locale name="settings.categoryMenu.showDescFor.all">
+                <de><![CDATA[Für alle Kategorien anzeigen]]></de>
+                <en><![CDATA[Show for all categories]]></en>
+            </locale>
+            <locale name="settings.categoryMenu.showDescFor.firstLevel">
+                <de><![CDATA[Nur für die Hauptkategorien anzeigen (erste Menü-Tiefe)]]></de>
+                <en><![CDATA[Show only for main categories (first menu level)]]></en>
+            </locale>
+            <locale name="settings.categoryMenu.showDescFor.none">
+                <de><![CDATA[Gar nicht anzeigen]]></de>
+                <en><![CDATA[Do not display at all]]></en>
+            </locale>
 
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">

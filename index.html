@@ -41,17 +41,20 @@
 
 {* main navigation / menu *}
 <div>
-    {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu}
+    {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu showCategoryMenu=$showCategoryMenu}
 </div>
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
     {fetch template="template/pageHeader.html" Site=$Site}
 {/if}
 
+{* <!--Shop category menu--> *}
+{if $showCategoryMenu}
 <div class="shop-category-menu-wrapper">
-    {* shop category menu *}
     {$CategoriesMenu->create()}
 </div>
+{/if}
+
 <!-- breadcrumb -->
 {if $showBreadcrumb}
     {fetch template="template/breadcrumb.html" Site=$Site}

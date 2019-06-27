@@ -8,10 +8,6 @@
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 
-/**
- * Categories Menu
- */
-$CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories();
 
 /**
  * Header
@@ -76,6 +72,5 @@ $templateSettings['Avatar']             = $Avatar;
 $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
-$templateSettings['CategoriesMenu'] = $CategoriesMenu;
 
 $Engine->assign($templateSettings);

@@ -149,14 +149,35 @@ class Utils
 
         $settingsCSS = include 'settings.css.php';
 
+
+        /**
+         * Categories Menu
+         */
+        $showCategoryMenu = false;
+        if ($Project->getConfig('templateCologne.settings.showCategoryMenu')) {
+            $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
+            QUI\System\Log::writeRecursive('<-------------------------------------->');
+        }
+
+        if ($showCategoryMenu) {
+            $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
+                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor')
+            ]);
+
+            $config += [
+                'CategoriesMenu' => $CategoriesMenu,
+            ];
+        }
+
         $config += [
-            'header'         => $header,
-            'showBreadcrumb' => $showBreadcrumb,
-            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'siteType'       => $siteType,
-            'basketStyle'    => $basketStyle,
-            'basketOpen'     => $basketOpen
+            'header'           => $header,
+            'showBreadcrumb'   => $showBreadcrumb,
+            'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
+            'typeClass'        => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'siteType'         => $siteType,
+            'basketStyle'      => $basketStyle,
+            'basketOpen'       => $basketOpen,
+            'showCategoryMenu' => $showCategoryMenu
         ];
 
         // set cache

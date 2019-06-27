@@ -29,7 +29,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
         options: {
             'menu-button': false,
-            'menu-width' : 400
+            'menu-width' : 450
         },
 
         initialize: function (options) {
@@ -109,7 +109,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         $onResize: function () {
             if (QUI.getWindowSize().x > this.menuWidht) {
                 this.setAttribute('menu-width', this.menuWidht);
-
                 return;
             }
 
@@ -134,8 +133,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             moofx(this.FirstLevel).animate({
                 transform: offset
             }, {
-                duration: 300,
-                equation: 'ease-in',
+                duration: 500,
+                equation: 'cubic-bezier(0.77, 0, 0.175, 1)',
                 callback: function () {
                     self.animate = false;
                 }
@@ -162,8 +161,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             moofx(this.FirstLevel).animate({
                 transform: offset
             }, {
-                duration: 300,
-                equation: 'ease-in',
+                duration: 500,
+                equation: 'cubic-bezier(0.77, 0, 0.175, 1)',
                 callback: function () {
                     CurrentLevel.setStyle('display', '');
                     self.animate = false;

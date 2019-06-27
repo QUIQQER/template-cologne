@@ -25,11 +25,11 @@ class Categories extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'    => 'quiqqer-categories-menu',
-            'template' => dirname(__FILE__) . '/Categories.html', // nav wrapper
-            'menuFile' => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
-            'data-qui' => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
-
+            'class'       => 'quiqqer-categories-menu',
+            'template'    => dirname(__FILE__) . '/Categories.html', // nav wrapper
+            'menuFile'    => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
+            'data-qui'    => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
+            'showDescFor' => 'all' // Show category description: all / firstLevel / none
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/Categories.css');
@@ -46,10 +46,11 @@ class Categories extends QUI\Control
         $Engine = QUI::getTemplateManager()->getEngine();
 
         $Engine->assign([
-            'menuFile' => $this->getAttribute('menuFile'),
-            'this'     => $this,
-            'Site'     => $this->getSite(),
-            'Project'  => $this->getProject()
+            'menuFile'    => $this->getAttribute('menuFile'),
+            'this'        => $this,
+            'showDescFor' => $this->getAttribute('showDescFor'),
+            'Site'        => $this->getSite(),
+            'Project'     => $this->getProject(),
         ]);
 
         return $Engine->fetch($this->getAttribute('template'));

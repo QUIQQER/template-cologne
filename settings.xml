@@ -51,6 +51,16 @@
                         <defaultvalue>center</defaultvalue>
                     </conf>
 
+                    <!-- category menu -->
+                    <conf name="showCategoryMenu">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showCategoryShortFor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>all</defaultvalue>
+                    </conf>
+
                     <!-- show breadcrumb -->
                     <conf name="showBreadcrumbStartPage">
                         <type><![CDATA[bool]]></type>
@@ -331,6 +341,55 @@
                                 <option value="flex-end">
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.header.imagePosition.bottom"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- category menu -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.categoryMenu.settings">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.categoryMenu.title"
+                                />
+                            </title>
+
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.categoryMenu.text" />
+                            </text>
+
+                            <input conf="templateCologne.settings.showCategoryMenu"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.categoryMenu.show"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- show short desc of categories for...  -->
+                            <select conf="templateCologne.settings.showCategoryShortFor">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.categoryMenu.showDescFor"
+                                    />
+                                </text>
+
+                                <option value="all">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.categoryMenu.showDescFor.all"
+                                    />
+                                </option>
+                                <option value="firstLevel">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.categoryMenu.showDescFor.firstLevel"
+                                    />
+                                </option>
+                                <option value="none">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.categoryMenu.showDescFor.none"
                                     />
                                 </option>
                             </select>
