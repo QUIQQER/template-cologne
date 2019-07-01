@@ -122,8 +122,7 @@ class Utils
                 $siteType       = 'layout-left-sidebar';
                 break;
         }
-
-
+        
         /* site own show header */
         switch ($Site->getAttribute('templateCologne.header')) {
             case 'afterNav':
@@ -149,14 +148,12 @@ class Utils
 
         $settingsCSS = include 'settings.css.php';
 
-
         /**
          * Categories Menu
          */
         $showCategoryMenu = false;
         if ($Project->getConfig('templateCologne.settings.showCategoryMenu')) {
             $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
-            QUI\System\Log::writeRecursive('<-------------------------------------->');
         }
 
         if ($showCategoryMenu) {
