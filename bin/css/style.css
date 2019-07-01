@@ -97,8 +97,8 @@ h1, h2, h3, h4 {
 h1,
 .product-data .page-content-header h1 {
     font-size: 2.369em;
-    margin-top: 0;
     line-height: 1.2;
+    margin-top: 0;
 }
 
 h2 {
@@ -179,9 +179,9 @@ small {
 }
 
 .clear-fix:after {
+    clear: both;
     content: '';
     display: block;
-    clear: both;
     float: none;
     font-size: 0;
     line-height: 0;
@@ -635,13 +635,12 @@ a.toTop:before {
 
 /** footer
  ===================================== */
-
 .template-footer {
     background: #f8f8f8;
     border-top: 1px solid #ddd;
     clear: both;
     float: none;
-    padding: 2em 0;
+    padding-top: 2em;
 }
 
 /* bricks */
@@ -654,15 +653,18 @@ a.toTop:before {
 }
 
 .template-footer-bricks-entry .control-header h1 {
-    text-align: left;
     font-size: 1.25rem;
+    text-align: left;
 }
 
 /* copyright */
 .cologne-footer-copyright {
+    background: #fff;
+    border-top: 1px solid #ddd;
     font-size: 0.85rem;
-    text-align: center;
     margin-top: 2rem;
+    padding: 2rem 0;
+    text-align: center;
 }
 
 /**********************/
@@ -674,13 +676,13 @@ a.toTop:before {
 }
 
 .shop-category-menu-button {
-    padding: 0 30px;
-    height: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
+    display: flex;
     font-size: 1.2rem;
+    height: 100%;
+    justify-content: center;
+    padding: 0 30px;
 }
 
 /** Mega Menu
@@ -696,8 +698,8 @@ a.toTop:before {
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 1;
     width: 100%;
+    z-index: 1;
 }
 
 .cologne-header-nav .quiqqer-menu-megaMenu {
@@ -1113,14 +1115,14 @@ ul.quiqqer-bricks-children-slider-container-slide {
 /* font icon */
 /*************/
 a.font-icon {
-    text-align: center;
-    width: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    color: inherit;
+    display: inline-block;
     line-height: 2.5rem;
     margin-right: 10px;
-    display: inline-block;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
-    color: inherit;
+    text-align: center;
+    width: 2.5rem;
 }
 
 a.font-icon .fa {
