@@ -291,6 +291,11 @@ a.toTop:before {
     margin-top: 2em;
 }
 
+.control-header:last-child,
+.control-content:last-child {
+    margin-bottom: 0;
+}
+
 /* more spacing on start page */
 .layout-start-page .page-content-header,
 .layout-start-page .content-body,
@@ -422,6 +427,10 @@ a.toTop:before {
 
 .control-content {
     margin: 0 0 3rem;
+}
+
+.control-content p:last-child {
+    margin-bottom: 0;
 }
 
 /** topbar
