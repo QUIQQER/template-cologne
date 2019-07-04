@@ -172,7 +172,6 @@ class Utils
          */
         $paymentsData = false;
         if ($Project->getConfig('templateCologne.settings.footer.payments')) {
-
             $paymentsData['PaymentsControl'] = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.footer.payments.layout')
             ]);
