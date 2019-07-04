@@ -1,0 +1,39 @@
+.quiqqer-control-payments-list-entry {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.quiqqer-control-payments-list-entry-image {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    max-height: 50px;
+    max-width: 150px;
+    padding: 5px;
+    text-align: center;
+}
+
+.quiqqer-control-payments-list-entry-data {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    width: 190px;
+}
+
+.quiqqer-control-payments-list-entry-data-title {
+    font-weight: bolder;
+}
+
+.quiqqer-control-payments-list-entry-data-desc {
+    font-size: 0.9em;
+}
+
+.quiqqer-control-payments-list-entry-data-desc p:last-child {
+    margin-bottom: 0;
+}

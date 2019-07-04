@@ -1,0 +1,19 @@
+<div class="cologne-footer-predefined template-grid-container">
+    <div class="template-children-container clearfix">
+
+        {* <!--payments--> *}
+        {if $paymentsData}
+        <div class="footer-payments grid-50">
+            {if $paymentsData['title']}
+            <header class="control-header">
+                <h2>{$paymentsData['title']}</h2>
+            </header>
+            {/if}
+
+            <div class="footer-payments-control">
+                {$paymentsData['PaymentsControl']->create()}
+            </div>
+        </div>
+        {/if}
+    </div>
+</div>

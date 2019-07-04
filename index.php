@@ -8,7 +8,6 @@
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 
-
 /**
  * Header
  */
@@ -22,7 +21,7 @@ $Menu = new QUI\Menu\MegaMenu([
 $EngineForMenu = QUI::getTemplateManager()->getEngine();
 
 $EngineForMenu->assign([
-    'Logo'           => $Project->getMedia()->getLogoImage()
+    'Logo' => $Project->getMedia()->getLogoImage()
 ]);
 
 $Menu->prependHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuPrefix.html'));
@@ -63,6 +62,7 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
 ]);
 
 $LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
+
 
 // array to assign
 $templateSettings['BricksManager']      = QUI\Bricks\Manager::init();

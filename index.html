@@ -106,8 +106,14 @@
     {* footer brick area *}
     {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site}
 
+    {* pre-defined footer *}
+    {fetch template="template/footer.predefined.html"
+        Site=$Site
+        paymentsData=$paymentsData
+    }
+
     {* footer copyright *}
-    {fetch template="template/footerCopyright.html"}
+    {fetch template="template/footer.copyright.html"}
 </footer>
 
 {* to top icon *}

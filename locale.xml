@@ -441,6 +441,16 @@
             <en><![CDATA[Display breadcrumb? <br/>For each page type, specify if you want the breadcrumb navigation to be displayed.]]></en>
         </locale>
 
+        <!-- custom pre-defined footer -->
+        <locale name="settings.footer.title">
+            <de><![CDATA[Vorgefertigte Footer]]></de>
+            <en><![CDATA[Pre-defined footer]]></en>
+        </locale>
+        <locale name="settings.footer.text">
+            <de><![CDATA[Vorgefertigte Fußzeile (Footer)]]></de>
+            <en><![CDATA[Pre-defined footer]]></en>
+        </locale>
+
         <!-- exceptions -->
         <locale name="exception.user.required">
             <de><![CDATA[User Objekt (QUI\Interfaces\Users\User) wird benötigt.]]></de>

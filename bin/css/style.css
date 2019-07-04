@@ -661,7 +661,8 @@ a.toTop:before {
     margin-bottom: 3rem;
 }
 
-.template-footer-bricks-entry .control-header h1 {
+.template-footer-bricks-entry .control-header h1,
+.cologne-footer-predefined .control-header h2 {
     font-size: 1.25rem;
     text-align: left;
 }
@@ -674,6 +675,13 @@ a.toTop:before {
     margin-top: 2rem;
     padding: 2rem 0;
     text-align: center;
+}
+
+/***************************/
+/* Footer: custom template */
+/***************************/
+.quiqqer-control-payments-list-entry-data .quiqqer-control-payments-list-entry-data-title {
+    font-weight: 500;
 }
 
 /**********************/

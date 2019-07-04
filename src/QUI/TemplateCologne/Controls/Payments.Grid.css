@@ -1,0 +1,15 @@
+.quiqqer-control-payments-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.quiqqer-control-payments-grid-entry {
+    max-width: 170px;
+    padding: 5px;
+    background: #fff;
+    margin: 0 20px 20px 0;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

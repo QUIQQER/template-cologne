@@ -1,0 +1,24 @@
+<div class="quiqqer-control-payments-list">
+{foreach $payments as $Payment}
+    {* <!-- Show all or only active? --> *}
+    {if $showInactive || $Payment->isActive()}
+        <div class="quiqqer-control-payments-list-entry">
+            <div class="quiqqer-control-payments-list-entry-image">
+                <img src="{$Payment->getIcon()}"
+                     alt="{$Payment->getTitle()}"
+                     title="{$Payment->getTitle()}"/>
+            </div>
+            <div class="quiqqer-control-payments-list-entry-data">
+                <header class="quiqqer-control-payments-list-entry-data-title">
+                    {$Payment->getTitle()}
+                </header>
+                {if $Payment->getDescription()}
+                <div class="quiqqer-control-payments-list-entry-data-desc">
+                    {$Payment->getDescription()}
+                </div>
+                {/if}
+            </div>
+        </div>
+    {/if}
+{/foreach}
+</div>

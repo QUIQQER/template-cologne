@@ -79,6 +79,7 @@ class Utils
         /* @var $Template QUI\Template() */
         $Project  = $params['Project'];
         $Template = $params['Template'];
+        $lang     = $Project->getLang();
 
         /**
          * no header?
@@ -122,7 +123,7 @@ class Utils
                 $siteType       = 'layout-left-sidebar';
                 break;
         }
-        
+
         /* site own show header */
         switch ($Site->getAttribute('templateCologne.header')) {
             case 'afterNav':
@@ -166,6 +167,28 @@ class Utils
             ];
         }
 
+        /**
+         * Payments Control
+         */
+        $paymentsData = false;
+        if ($Project->getConfig('templateCologne.settings.footer.payments')) {
+
+            $paymentsData['PaymentsControl'] = new \QUI\TemplateCologne\Controls\Payments([
+                'template' => $Project->getConfig('templateCologne.settings.footer.payments.layout')
+            ]);
+
+            $titles = json_decode($Project->getConfig(
+                'templateCologne.settings.footer.payments.title'
+            ), true);
+
+            $title = false;
+
+            if (isset($titles[$lang])) {
+                $title = $titles[$lang];
+            }
+            $paymentsData['title'] = $title;
+        }
+
         $config += [
             'header'           => $header,
             'showBreadcrumb'   => $showBreadcrumb,
@@ -174,7 +197,8 @@ class Utils
             'siteType'         => $siteType,
             'basketStyle'      => $basketStyle,
             'basketOpen'       => $basketOpen,
-            'showCategoryMenu' => $showCategoryMenu
+            'showCategoryMenu' => $showCategoryMenu,
+            'paymentsData'     => $paymentsData
         ];
 
         // set cache
