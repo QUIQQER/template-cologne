@@ -63,6 +63,10 @@ class Payments extends QUI\Control
             return $Engine->fetch($this->getAttribute('customTemplate'));
         }
 
+        echo "<pre>";
+        var_dump($this->getAttribute('template'));
+        echo "</pre>";
+
         // control template (if custom template not set)
         switch ($this->getAttribute('template')) {
             case 'list':

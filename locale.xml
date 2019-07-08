@@ -282,11 +282,11 @@
             <de><![CDATA[
             <br />Aktiviert das Anzeigen von UVP (unverbindliche Preisempfehlung der Herstellers) neben dem aktuellen Preis.
             Die UVP wird nur dann angezeigt, wenn die sie in Produkt-Eigenschaften eingetragen ist.
-            <br /><strong>Die Einstellung hat Auswirkung nur auf das Template. Externe Bausteine können das selbst über ihre Einstellunge regeln.</strong>]]></de>
+            <br /><strong>Die Einstellung hat Auswirkung nur auf das Template. Externe Bausteine können das anders regeln.</strong>]]></de>
             <en><![CDATA[
             <br />Display the recommended retail price next to the current price.
             The retail price field in product properties must be filled.
-            <br /><strong>The setting only affects the template. External bricks can control this themselves via their settings.</strong>]]></en>
+            <br /><strong>The setting only affects the template. External bricks can regulate this differently.</strong>]]></en>
         </locale>
 
         <!-- basket style -->

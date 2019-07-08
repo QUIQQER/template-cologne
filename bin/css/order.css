@@ -93,13 +93,20 @@
 
 .quiqqer-order-basket-total {
     float: right;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: right;
-    width: 300px;
+    width: 100%;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
 }
 
 .quiqqer-order-basket-total td {
     padding-bottom: 5px;
+}
+
+.quiqqer-order-basket-total td:last-child {
+    width: 150px;
 }
 
 .quiqqer-order-basket-total-sum {
@@ -134,6 +141,10 @@
 
 .quiqqer-order-customerData {
     margin-right: 20px;
+}
+
+.quiqqer-order-customerData-edit .quiqqer-order-customerData-edit-salutation {
+    margin-top: 0;
 }
 
 .quiqqer-order-ordering-step .quiqqer-order-customerData-comment {
