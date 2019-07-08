@@ -171,13 +171,13 @@ class Utils
          * Payments Control
          */
         $paymentsData = false;
-        if ($Project->getConfig('templateCologne.settings.footer.payments')) {
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')) {
             $paymentsData['PaymentsControl'] = new \QUI\TemplateCologne\Controls\Payments([
-                'template' => $Project->getConfig('templateCologne.settings.footer.payments.layout')
+                'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
             ]);
 
             $titles = json_decode($Project->getConfig(
-                'templateCologne.settings.footer.payments.title'
+                'templateCologne.settings.predefinedFooter.payments.title'
             ), true);
 
             $title = false;

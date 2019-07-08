@@ -83,22 +83,15 @@
                         <defaultvalue>1</defaultvalue>
                     </conf>
 
-                    <!-- custom footer -->
-                    <!-- custom footer: shop info -->
-                    <conf name="footer.payments">
+                    <!-- predefined footer: payments -->
+                    <conf name="predefinedFooter.payments">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
-
-                    <!-- custom footer: payments -->
-                    <conf name="customFooter.payments">
-                        <type><![CDATA[bool]]></type>
-                        <defaultvalue>1</defaultvalue>
-                    </conf>
-                    <conf name="customFooter.payments.title">
+                    <conf name="predefinedFooter.payments.title">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="customFooter.payments.layout">
+                    <conf name="predefinedFooter.payments.layout">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>grid</defaultvalue>
                     </conf>
@@ -473,54 +466,49 @@
 
                         <!-- template custom footer -->
                         <settings title="templateCologne.settings"
-                                  name="templateCologne.settings.customFooter">
+                                  name="templateCologne.settings.predefinedFooter">
                             <title>
                                 <locale group="quiqqer/template-cologne"
-                                        var="settings.customFooter.title"
+                                        var="settings.predefinedFooter.title"
                                 />
                             </title>
 
-                            <text>
-                                <locale group="quiqqer/template-cologne"
-                                        var="settings.footer.text" />
-                            </text>
-
                             <!-- footer: payments -->
-                            <input conf="templateCologne.settings.customFooter.payments"
+                            <input conf="templateCologne.settings.predefinedFooter.payments"
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.customFooter.payments"
+                                            var="settings.predefinedFooter.payments"
                                     />
                                 </text>
                             </input>
 
                             <!-- footer: payments title (label) -->
-                            <input  conf="templateCologne.settings.customFooter.payments.title"
+                            <input  conf="templateCologne.settings.predefinedFooter.payments.title"
                                     type="text" data-qui="controls/lang/InputMultiLang">
                                 <text>
-                                    <locale group="quiqqer/template-avadaagency"
-                                            var="settings.customFooter.payments.title"
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.payments.title"
                                     />
                                 </text>
                             </input>
 
                             <!-- footer: payments layout -->
-                            <select conf="templateCologne.settings.footer.payments.layout">
+                            <select conf="templateCologne.settings.predefinedFooter.payments.layout">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.footer.payments.layout"
+                                            var="settings.predefinedFooter.payments.layout"
                                     />
                                 </text>
 
                                 <option value="grid">
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.footer.payments.layout.grid"
+                                            var="settings.footer.predefinedFooter.layout.grid"
                                     />
                                 </option>
                                 <option value="list">
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.footer.payments.layout.list"
+                                            var="settings.footer.predefinedFooter.layout.list"
                                     />
                                 </option>
                             </select>

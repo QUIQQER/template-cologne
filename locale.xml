@@ -441,15 +441,31 @@
             <en><![CDATA[Display breadcrumb? <br/>For each page type, specify if you want the breadcrumb navigation to be displayed.]]></en>
         </locale>
 
-        <!-- custom pre-defined footer -->
-        <locale name="settings.footer.title">
-            <de><![CDATA[Vorgefertigte Footer]]></de>
-            <en><![CDATA[Pre-defined footer]]></en>
+        <!-- predefined footer -->
+        <locale name="settings.predefinedFooter.title">
+            <de><![CDATA[Template vorgefertigtes Footer: Zahlungsmöglichkeiten]]></de>
+            <en><![CDATA[Template pre-defined footer: Payments methods]]></en>
         </locale>
-        <locale name="settings.footer.text">
-            <de><![CDATA[Vorgefertigte Fußzeile (Footer)]]></de>
-            <en><![CDATA[Pre-defined footer]]></en>
+        <locale name="settings.predefinedFooter.payments">
+            <de><![CDATA[Anzeigen]]></de>
+            <en><![CDATA[Enable]]></en>
         </locale>
+        <locale name="settings.predefinedFooter.payments.title">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.payments.layout">
+            <de><![CDATA[Layout]]></de>
+            <en><![CDATA[Layout]]></en>
+        </locale>
+            <locale name="settings.footer.predefinedFooter.layout.grid">
+                <de><![CDATA[Grid (Boxen)]]></de>
+                <en><![CDATA[Grid (boxes)]]></en>
+            </locale>
+            <locale name="settings.footer.predefinedFooter.layout.list">
+                <de><![CDATA[Liste]]></de>
+                <en><![CDATA[List]]></en>
+            </locale>
 
         <!-- exceptions -->
         <locale name="exception.user.required">

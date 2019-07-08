@@ -27,7 +27,7 @@ class Payments extends QUI\Control
     {
         $this->setAttributes([
             'class'          => 'quiqqer-payments-control',
-            'showInactive'   => true,
+            'showInactive'   => false,
             'template'       => 'list',
             // Custom children template (path to html file); overwrites "template".
             'customTemplate' => false,
@@ -50,6 +50,11 @@ class Payments extends QUI\Control
         $Engine   = QUI::getTemplateManager()->getEngine();
         $Payments = \QUI\ERP\Accounting\Payments\Payments::getInstance();
 
+        $Engine->assign([
+            'payments'     => $Payments->getpayments(),
+            'showInactive' => $this->getAttribute('showInactive')
+        ]);
+
         // load custom template (if set)
         if ($this->getAttribute('customTemplate')
             && \file_exists($this->getAttribute('customTemplate'))
@@ -63,10 +68,6 @@ class Payments extends QUI\Control
             return $Engine->fetch($this->getAttribute('customTemplate'));
         }
 
-        echo "<pre>";
-        var_dump($this->getAttribute('template'));
-        echo "</pre>";
-
         // control template (if custom template not set)
         switch ($this->getAttribute('template')) {
             case 'list':
@@ -78,11 +79,6 @@ class Payments extends QUI\Control
                 $template = dirname(__FILE__) . '/Payments.Grid.html';
                 $css      = dirname(__FILE__) . '/Payments.Grid.css';
         }
-
-        $Engine->assign([
-            'payments'     => $Payments->getpayments(),
-            'showInactive' => $this->getAttribute('showInactive')
-        ]);
 
         $this->addCSSFile($css);
 
