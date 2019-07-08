@@ -680,6 +680,17 @@ a.toTop:before {
 /***************************/
 /* Footer: custom template */
 /***************************/
+.cologne-footer-predefined-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cologne-footer-predefined-entry {
+    padding: 0 20px;
+    width: 260px;
+    flex-grow: 1;
+}
+
 .quiqqer-control-payments-list-entry-data .quiqqer-control-payments-list-entry-data-title {
     font-weight: 500;
 }

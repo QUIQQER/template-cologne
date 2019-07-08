@@ -168,7 +168,27 @@ class Utils
         }
 
         /**
-         * Payments Control
+         * Predefined footer: short text
+         */
+        $shortText = false;
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.shortText')) {
+            $shortText = [];
+
+            $titles = json_decode($Project->getConfig(
+                'templateCologne.settings.predefinedFooter.shortText.title'
+            ), true);
+
+            $title = false;
+
+            if (isset($titles[$lang])) {
+                $title = $titles[$lang];
+            }
+
+            $shortText['title'] = $title;
+        }
+
+        /**
+         * Predefined footer: Payments Control
          */
         $paymentsData = false;
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')) {
@@ -185,6 +205,7 @@ class Utils
             if (isset($titles[$lang])) {
                 $title = $titles[$lang];
             }
+
             $paymentsData['title'] = $title;
         }
 
@@ -197,6 +218,7 @@ class Utils
             'basketStyle'      => $basketStyle,
             'basketOpen'       => $basketOpen,
             'showCategoryMenu' => $showCategoryMenu,
+            'shortText'        => $shortText,
             'paymentsData'     => $paymentsData
         ];
 

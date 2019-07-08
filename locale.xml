@@ -441,7 +441,49 @@
             <en><![CDATA[Display breadcrumb? <br/>For each page type, specify if you want the breadcrumb navigation to be displayed.]]></en>
         </locale>
 
-        <!-- predefined footer -->
+        <!-- predefined footer: short text -->
+        <locale name="settings.predefinedFooter.shortText">
+            <de><![CDATA[Template vorgefertigtes Footer: kurzer Text]]></de>
+            <en><![CDATA[Template pre-defined footer: short text]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.info">
+            <de>
+                <![CDATA[Wenn Sie den Text ändern wollen, bearbeiten Sie die Sprachvariable <strong>settings.predefinedFooter.shortText.content</strong> (zu finden in Menü: Verwaltung -> Sprachvariablen).]]></de>
+            <en>
+                <![CDATA[If you want to change the text, edit the language variable <strong>settings.predefinedFooter.shortText.content</strong> (to find in the menu: Administration -> Translator).]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.content" html="true">
+            <de><![CDATA[
+            <p>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+
+            <p><span class="fa fa-envelope-o" style="margin-right: 10px;">&nbsp;</span>&nbsp;<a href="mailto:support@test-domain.de">support@test-domain.de</a></p>
+
+            <p>&nbsp;</p>
+
+            <p><a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a></p>
+            ]]>
+            </de>
+            <en><![CDATA[
+            <p>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+
+            <p><span class="fa fa-envelope-o" style="margin-right: 10px;">&nbsp;</span>&nbsp;<a href="mailto:support@test-domain.de">support@test-domain.de</a></p>
+
+            <p>&nbsp;</p>
+
+            <p><a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a></p>
+            ]]>
+            </en>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.show">
+            <de><![CDATA[Anzeigen]]></de>
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.title">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+
+        <!-- predefined footer: payments -->
         <locale name="settings.predefinedFooter.title">
             <de><![CDATA[Template vorgefertigtes Footer: Zahlungsmöglichkeiten]]></de>
             <en><![CDATA[Template pre-defined footer: Payments methods]]></en>
@@ -466,6 +508,7 @@
                 <de><![CDATA[Liste]]></de>
                 <en><![CDATA[List]]></en>
             </locale>
+
 
         <!-- exceptions -->
         <locale name="exception.user.required">

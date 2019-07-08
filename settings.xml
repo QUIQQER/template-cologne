@@ -95,6 +95,16 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>grid</defaultvalue>
                     </conf>
+
+                    <!-- predefined footer: short text -->
+                    <conf name="predefinedFooter.shortText">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="predefinedFooter.shortText.title">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+
                 </section>
             </config>
 
@@ -464,7 +474,40 @@
                             </input>
                         </settings>
 
-                        <!-- template custom footer -->
+                        <!-- Footer template: Short text -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.settings.predefinedFooter">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.predefinedFooter.shortText"
+                                />
+                            </title>
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.predefinedFooter.shortText.info"
+                                />
+                            </text>
+                            <!-- show -->
+                            <input conf="templateCologne.settings.predefinedFooter.shortText"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.shortText.show"
+                                    />
+                                </text>
+                            </input>
+                            <!-- title -->
+                            <input conf="templateCologne.settings.predefinedFooter.shortText.title"
+                                    type="text" data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.shortText.title"
+                                    />
+                                </text>
+                            </input>
+                        </settings>
+
+                        <!-- template predefined footer -->
                         <settings title="templateCologne.settings"
                                   name="templateCologne.settings.predefinedFooter">
                             <title>
@@ -484,7 +527,7 @@
                             </input>
 
                             <!-- footer: payments title (label) -->
-                            <input  conf="templateCologne.settings.predefinedFooter.payments.title"
+                            <input conf="templateCologne.settings.predefinedFooter.payments.title"
                                     type="text" data-qui="controls/lang/InputMultiLang">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
