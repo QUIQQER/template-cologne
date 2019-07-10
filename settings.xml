@@ -96,6 +96,41 @@
                         <defaultvalue>grid</defaultvalue>
                     </conf>
 
+                    <!-- predefined footer: url list -->
+                    <conf name="predefinedFooter.urlList">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="predefinedFooter.urlList.title">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="predefinedFooter.urlList.sites">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="predefinedFooter.urlList.sites.order">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="predefinedFooter.urlList.showStandardSites">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+
+                    <!-- predefined footer: featured products -->
+                    <conf name="predefinedFooter.featuredProducts">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="predefinedFooter.featuredProducts.title">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="predefinedFooter.featuredProducts.category">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="predefinedFooter.featuredProducts.order">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>c_date ASC</defaultvalue>
+                    </conf>
+
                     <!-- predefined footer: short text -->
                     <conf name="predefinedFooter.shortText">
                         <type><![CDATA[bool]]></type>
@@ -114,7 +149,7 @@
                         <text>
                             <locale group="quiqqer/template-cologne"
                                     var="settings.menu.title"
-                                    />
+                            />
                         </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
@@ -123,7 +158,7 @@
                             <title>
                                 <locale group="quiqqer/template-cologne"
                                         var="settings.shop.title"
-                                        />
+                                />
                             </title>
 
 
@@ -200,7 +235,7 @@
                             <!-- header: after nav, before content or hide? -->
                             <text>
                                 <locale group="quiqqer/template-cologne"
-                                        var="settings.header.text" />
+                                        var="settings.header.text"/>
                             </text>
 
                             <!-- header: start page -->
@@ -380,7 +415,7 @@
 
                             <text>
                                 <locale group="quiqqer/template-cologne"
-                                        var="settings.categoryMenu.text" />
+                                        var="settings.categoryMenu.text"/>
                             </text>
 
                             <input conf="templateCologne.settings.showCategoryMenu"
@@ -430,7 +465,7 @@
                             <!-- no breadcrumb? -->
                             <text>
                                 <locale group="quiqqer/template-cologne"
-                                        var="settings.breadcrumb.text" />
+                                        var="settings.breadcrumb.text"/>
                             </text>
                             <input conf="templateCologne.settings.showBreadcrumbStartPage"
                                    type="checkbox">
@@ -474,7 +509,10 @@
                             </input>
                         </settings>
 
-                        <!-- Footer template: Short text -->
+                        <!--...................-->
+                        <!-- Predefined footer -->
+                        <!--...................-->
+                        <!-- predefined footer: Short text -->
                         <settings title="templateCologne.settings"
                                   name="templateCologne.settings.predefinedFooter">
                             <title>
@@ -498,7 +536,7 @@
                             </input>
                             <!-- title -->
                             <input conf="templateCologne.settings.predefinedFooter.shortText.title"
-                                    type="text" data-qui="controls/lang/InputMultiLang">
+                                   type="text" data-qui="controls/lang/InputMultiLang">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.predefinedFooter.shortText.title"
@@ -507,7 +545,175 @@
                             </input>
                         </settings>
 
-                        <!-- template predefined footer -->
+                        <!-- predefined footer: url list -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.settings.predefinedFooter">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.predefinedFooter.urlList"
+                                />
+                            </title>
+
+                            <!-- show -->
+                            <input conf="templateCologne.settings.predefinedFooter.urlList"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.urlList.show"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- title -->
+                            <input conf="templateCologne.settings.predefinedFooter.urlList.title"
+                                   type="text" data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.urlList.title"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- sites -->
+                            <input conf="templateCologne.settings.predefinedFooter.urlList.sites"
+                                   type="text" data-qui="controls/projects/project/site/Select">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.urlList.sites"
+                                    />
+                                </text>
+                            </input>
+                            <!-- site order -->
+                            <select conf="templateCologne.settings.predefinedFooter.urlList.sites.order">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.urlList.sites.order"
+                                    />
+                                </text>
+
+                                <option value=""/>
+                                <option value="name ASC" selected="selected">
+                                    <locale group="quiqqer/system" var="name_asc"/>
+                                </option>
+                                <option value="name DESC">
+                                    <locale group="quiqqer/system" var="name_desc"/>
+                                </option>
+                                <option value="title ASC">
+                                    <locale group="quiqqer/system" var="title_asc"/>
+                                </option>
+                                <option value="title DESC">
+                                    <locale group="quiqqer/system" var="title_desc"/>
+                                </option>
+                                <option value="c_date ASC">
+                                    <locale group="quiqqer/system" var="c_date_asc"/>
+                                </option>
+                                <option value="c_date DESC">
+                                    <locale group="quiqqer/system" var="c_date_desc"/>
+                                </option>
+                                <option value="e_date ASC">
+                                    <locale group="quiqqer/system" var="e_date_asc"/>
+                                </option>
+                                <option value="e_date DESC">
+                                    <locale group="quiqqer/system" var="e_date_desc"/>
+                                </option>
+                                <option value="release_from ASC">
+                                    <locale group="quiqqer/system" var="release_from_asc"/>
+                                </option>
+                                <option value="release_from DESC">
+                                    <locale group="quiqqer/system" var="release_from_desc"/>
+                                </option>
+                                <option value="order_field ASC">
+                                    <locale group="quiqqer/quiqqer" var="order_field_asc"/>
+                                </option>
+                                <option value="order_field DESC">
+                                    <locale group="quiqqer/quiqqer" var="order_field_desc"/>
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- predefined footer: featured products -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.settings.predefinedFooter">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.predefinedFooter.featuredProducts"
+                                />
+                            </title>
+
+                            <!-- show -->
+                            <input conf="templateCologne.settings.predefinedFooter.featuredProducts"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.featuredProducts.show"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- title -->
+                            <input conf="templateCologne.settings.predefinedFooter.featuredProducts.title"
+                                   type="text" data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.featuredProducts.title"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- category id -->
+                            <input conf="templateCologne.settings.predefinedFooter.featuredProducts.category"
+                                   type="hidden"
+                                   data-qui="package/quiqqer/products/bin/controls/categories/Select"
+                                   data-qui-options-max="1">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.featuredProducts.category"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- order -->
+                            <select conf="templateCologne.settings.predefinedFooter.featuredProducts.order">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.predefinedFooter.featuredProducts.order"
+                                    />
+                                </text>
+
+                                <option value="priority">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.sorting"/>
+                                </option>
+                                <option value="c_date ASC">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.cdate.ASC"/>
+                                </option>
+                                <option value="c_date DESC">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.cdate.DESC"/>
+                                </option>
+
+                                <option value="title ASC">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.title.ASC"/>
+                                </option>
+                                <option value="title DESC">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.title.DESC"/>
+                                </option>
+
+                                <option value="productNo ASC">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.productNo.ASC"/>
+                                </option>
+                                <option value="productNo DESC">
+                                    <locale group="quiqqer/product-bricks"
+                                            var="sort.productNo.DESC"/>
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- predefined footer: payments -->
                         <settings title="templateCologne.settings"
                                   name="templateCologne.settings.predefinedFooter">
                             <title>
@@ -516,7 +722,7 @@
                                 />
                             </title>
 
-                            <!-- footer: payments -->
+                            <!-- show -->
                             <input conf="templateCologne.settings.predefinedFooter.payments"
                                    type="checkbox">
                                 <text>
@@ -526,9 +732,9 @@
                                 </text>
                             </input>
 
-                            <!-- footer: payments title (label) -->
+                            <!-- title -->
                             <input conf="templateCologne.settings.predefinedFooter.payments.title"
-                                    type="text" data-qui="controls/lang/InputMultiLang">
+                                   type="text" data-qui="controls/lang/InputMultiLang">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.predefinedFooter.payments.title"
@@ -536,7 +742,7 @@
                                 </text>
                             </input>
 
-                            <!-- footer: payments layout -->
+                            <!-- layout -->
                             <select conf="templateCologne.settings.predefinedFooter.payments.layout">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
@@ -594,8 +800,6 @@
                             </select>
 
                         </settings>-->
-
-
 
 
                     </category>

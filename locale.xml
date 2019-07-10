@@ -198,7 +198,7 @@
 
                     <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play"></span></a>
                     <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
                 ]]>
             </de>
@@ -215,7 +215,7 @@
 
                     <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-google-plus"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play"></span></a>
                     <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
                 ]]>
             </en>
@@ -443,8 +443,8 @@
 
         <!-- predefined footer: short text -->
         <locale name="settings.predefinedFooter.shortText">
-            <de><![CDATA[Template vorgefertigtes Footer: kurzer Text]]></de>
-            <en><![CDATA[Template pre-defined footer: short text]]></en>
+            <de><![CDATA[Predefiniertes Footer: kurzer Text]]></de>
+            <en><![CDATA[Pre-defined footer: short text]]></en>
         </locale>
         <locale name="settings.predefinedFooter.shortText.info">
             <de>
@@ -460,7 +460,12 @@
 
             <p>&nbsp;</p>
 
-            <p><a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a></p>
+            <p>
+            <a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-instagram">&nbsp;</span></a>
+            </p>
             ]]>
             </de>
             <en><![CDATA[
@@ -470,7 +475,12 @@
 
             <p>&nbsp;</p>
 
-            <p><a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a><a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a></p>
+            <p>
+            <a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-instagram">&nbsp;</span></a>
+            </p>
             ]]>
             </en>
         </locale>
@@ -478,15 +488,60 @@
             <de><![CDATA[Anzeigen]]></de>
             <en><![CDATA[Enable]]></en>
         </locale>
-        <locale name="settings.predefinedFooter.shortText.title">
+
+
+        <!-- predefined footer: url list -->
+        <locale name="settings.predefinedFooter.urlList">
+            <de><![CDATA[Predefiniertes Footer: Url-Liste]]></de>
+            <en><![CDATA[Pre-defined footer: url list]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.show">
+            <de><![CDATA[Anzeigen]]></de>
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.title">
             <de><![CDATA[Überschrift]]></de>
             <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.sites">
+            <de><![CDATA[Seiten]]></de>
+            <en><![CDATA[Sites]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.sites.order">
+            <de><![CDATA[Reihenfolge]]></de>
+            <en><![CDATA[Order]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.showStandardSites">
+            <de><![CDATA[Standardseiten anzeigen (AGB, Impressum, etc.). Es werden nur die Seiten angezeigt, die im System angelegt und aktiv sind.]]></de>
+            <en><![CDATA[Show standard pages (Terms and conditions, etc.). Only the pages that are created and active in the system are displayed.]]></en>
+        </locale>
+
+        <!-- predefined footer: url list -->
+        <locale name="settings.predefinedFooter.featuredProducts">
+            <de><![CDATA[Predefiniertes Footer: Produktliste]]></de>
+            <en><![CDATA[Pre-defined footer: product list]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.show">
+            <de><![CDATA[Anzeigen]]></de>
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.title">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.category">
+            <de><![CDATA[Kategorie]]></de>
+            <en><![CDATA[dategory]]></en>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.order">
+            <de><![CDATA[Reihenfolge]]></de>
+            <en><![CDATA[Order]]></en>
         </locale>
 
         <!-- predefined footer: payments -->
         <locale name="settings.predefinedFooter.title">
-            <de><![CDATA[Template vorgefertigtes Footer: Zahlungsmöglichkeiten]]></de>
-            <en><![CDATA[Template pre-defined footer: Payments methods]]></en>
+            <de><![CDATA[Predefiniertes Footer: Zahlungsmöglichkeiten]]></de>
+            <en><![CDATA[Pre-defined footer: Payments methods]]></en>
         </locale>
         <locale name="settings.predefinedFooter.payments">
             <de><![CDATA[Anzeigen]]></de>

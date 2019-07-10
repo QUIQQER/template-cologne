@@ -188,6 +188,131 @@ class Utils
         }
 
         /**
+         * Predefined footer: url list
+         */
+        $urlList = false;
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList')) {
+            $urlList = [];
+
+            $titles = json_decode($Project->getConfig(
+                'templateCologne.settings.predefinedFooter.urlList.title'
+            ), true);
+
+            $title = false;
+
+            if (isset($titles[$lang])) {
+                $title = $titles[$lang];
+            }
+
+            $siteIds = $Project->getConfig('templateCologne.settings.predefinedFooter.urlList.sites');
+            $sites   = [];
+
+            if ($siteIds) {
+                $sites = QUI\Projects\Site\Utils::getSitesByInputList($Project, $siteIds, [
+                    'where' => [
+                        'active' => 1
+                    ],
+                    'limit' => 10,
+                    'order' => $Project->getConfig('templateCologne.settings.predefinedFooter.urlList.sites.order')
+                ]);
+            }
+
+            $urlList['title']                     = $title;
+            $urlList['sites']                     = $sites;
+            $urlList['productSearch']             = false;
+            $urlList['legalNotes']                = false;
+            $urlList['privacyPolicy']             = false;
+            $urlList['generalTermsAndConditions'] = false;
+
+            if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList.showStandardSites')) {
+
+                /** productSearch */
+                $productSearch = $Project->getSites([
+                    'where' => [
+                        'type' => [
+                            'type'  => 'IN',
+                            'value' => 'quiqqer/products:types/search'
+                        ]
+                    ],
+                    'limit' => 1
+                ]);
+
+                if (count($productSearch)) {
+                    $urlList['productSearch'] = $productSearch[0];
+                }
+
+                /** legal notes (Impressum) */
+                $legalNotes = $Project->getSites([
+                    'where' => [
+                        'type' => [
+                            'type'  => 'IN',
+                            'value' => 'quiqqer/sitetypes:types/legalnotes'
+                        ]
+                    ],
+                    'limit' => 1
+                ]);
+
+                if (count($legalNotes)) {
+                    $urlList['legalNotes'] = $legalNotes[0];
+                }
+
+                /** privacy policy (Datenschutzerklärung) */
+                $privacyPolicy = $Project->getSites([
+                    'where' => [
+                        'type' => [
+                            'type'  => 'IN',
+                            'value' => 'quiqqer/sitetypes:types/privacypolicy'
+                        ]
+                    ],
+                    'limit' => 1
+                ]);
+
+                if (count($privacyPolicy)) {
+                    $urlList['privacyPolicy'] = $privacyPolicy[0];
+                }
+
+                /** privacy policy (Datenschutzerklärung) */
+                $generalTermsAndConditions = $Project->getSites([
+                    'where' => [
+                        'type' => [
+                            'type'  => 'IN',
+                            'value' => 'quiqqer/sitetypes:types/generalTermsAndConditions'
+                        ]
+                    ],
+                    'limit' => 1
+                ]);
+
+                if (count($generalTermsAndConditions)) {
+                    $urlList['generalTermsAndConditions'] = $generalTermsAndConditions[0];
+                }
+            }
+        }
+
+        /**
+         * Featured products
+         */
+        $featuredProducts = false;
+        if (true) {
+            $featuredProducts['Control'] = new QUI\ProductBricks\Controls\FeaturedProducts([
+                'featured1.categoryId' => $Project->getConfig(
+                    'templateCologne.settings.predefinedFooter.featuredProducts.category'
+                )
+            ]);
+
+            $titles = json_decode($Project->getConfig(
+                'templateCologne.settings.predefinedFooter.featuredProducts.title'
+            ), true);
+
+            $title = false;
+
+            if (isset($titles[$lang])) {
+                $title = $titles[$lang];
+            }
+
+            $featuredProducts['title'] = $title;
+        }
+
+        /**
          * Predefined footer: Payments Control
          */
         $paymentsData = false;
@@ -219,6 +344,8 @@ class Utils
             'basketOpen'       => $basketOpen,
             'showCategoryMenu' => $showCategoryMenu,
             'shortText'        => $shortText,
+            'urlList'          => $urlList,
+            'featuredProducts' => $featuredProducts,
             'paymentsData'     => $paymentsData
         ];
 
