@@ -133,7 +133,7 @@ window.addEvent('domready', function () {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function (Basket) {
                 new Basket({
-                    open : basketOpen.toInt(),
+                    open  : basketOpen.toInt(),
                     styles: {
                         float: 'right'
                     },
@@ -324,19 +324,20 @@ function createLogoutWindow (LogoutWindow) {
         events   : {
             onOpen: function (Popup) {
 
-                var Content = Popup.getElm();
-
-                var ContentElms = [
-                    Content.getElement('.qui-window-popup-content'),
-                    Content.getElement('.qui-window-popup-buttons')
-                ];
+                var Content     = Popup.getElm(),
+                    ContentElms = [
+                        Content.getElement('.qui-window-popup-content'),
+                        Content.getElement('.qui-window-popup-buttons')
+                    ];
 
                 ContentElms.each(function (ContentElm) {
                     ContentElm.setStyle('opacity', 0);
                 });
 
                 var CancelButton = Content.getElement('button[name="cancel"]');
+
                 if (CancelButton) {
+//                    CancelButton.removeClass('btn-light');
                     CancelButton.addClass('btn-secondary btn-outline');
                 }
 
@@ -362,11 +363,11 @@ function createLoginWindow () {
         'package/quiqqer/frontend-users/bin/frontend/controls/login/Window'
     ], function (LoginWindow) {
         new LoginWindow({
-            class       : 'cologne-login-dialog',
-            title       : false,
-            maxHeight   : 500,
-            maxWidth    : 400,
-            events      : {
+            class    : 'cologne-login-dialog',
+            title    : false,
+            maxHeight: 500,
+            maxWidth : 400,
+            events   : {
                 onSuccess: function () {
                     window.location.reload();
                 }

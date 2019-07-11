@@ -26,9 +26,10 @@
             {/if}
 
             <div class="footer-urlList-container">
-                <ul>
+                <ul class="fa-ul">
                     {foreach $urlList['sites'] as $UrlSite}
                     <li>
+                        <span class="fa-li fa fa-angle-right"></span>
                         <a href="{url site=$UrlSite}"
                            title="{$UrlSite->getAttribute('title')|escape:'html'}"
                         >
@@ -40,6 +41,7 @@
                     {* <!-- product search --> *}
                     {if $urlList['productSearch']}
                     <li>
+                        <span class="fa-li fa fa-angle-right"></span>
                         <a href="{url site=$urlList['productSearch']}"
                            title="{$urlList['productSearch']->getAttribute('title')|escape:'html'}"
                         >
@@ -51,6 +53,7 @@
                     {* <!-- legal notes --> *}
                     {if $urlList['legalNotes']}
                     <li>
+                        <span class="fa-li fa fa-angle-right"></span>
                         <a href="{url site=$urlList['legalNotes']}"
                         title="{$urlList['legalNotes']->getAttribute('title')|escape:'html'}"
                            >
@@ -62,6 +65,7 @@
                     {* <!-- privacy policy --> *}
                     {if $urlList['privacyPolicy']}
                     <li>
+                        <span class="fa-li fa fa-angle-right"></span>
                         <a href="{url site=$urlList['privacyPolicy']}"
                            title="{$urlList['privacyPolicy']->getAttribute('title')|escape:'html'}"
                         >
@@ -73,6 +77,7 @@
                     {* <!-- general terms and conditions --> *}
                     {if $urlList['generalTermsAndConditions']}
                     <li>
+                        <span class="fa-li fa fa-angle-right"></span>
                         <a href="{url site=$urlList['generalTermsAndConditions']}"
                            title="{$urlList['generalTermsAndConditions']->getAttribute('title')|escape:'html'}"
                         >

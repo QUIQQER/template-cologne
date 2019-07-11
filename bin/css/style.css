@@ -120,6 +120,10 @@ ul, ol {
     padding-left: 18px;
 }
 
+.fa-li {
+    line-height: inherit;
+}
+
 small, .font_small, .font-small {
     font-size: 0.75em;
 }
