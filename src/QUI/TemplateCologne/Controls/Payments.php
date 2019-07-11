@@ -51,13 +51,10 @@ class Payments extends QUI\Control
         $Payments = \QUI\ERP\Accounting\Payments\Payments::getInstance();
         $payments = $Payments->getpayments();
 
-        echo "<pre>";
-        var_dump(count($payments));
-        echo "</pre>";
-
         if (count($payments) < 1) {
             QUI\System\Log::addWarning(
-                "No payment methods were found in the system.\nControl: QUI\TemplateCologne\Controls\Payments");
+                "No payment methods were found in the system.\nControl: QUI\TemplateCologne\Controls\Payments"
+            );
         }
 
         $Engine->assign([
