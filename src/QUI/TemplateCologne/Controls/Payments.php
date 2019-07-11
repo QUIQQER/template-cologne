@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file contains QUI\TemplateCologne\Controls\SimpleUserInfo
+ * This file contains QUI\TemplateCologne\Controls\Payments
  *
  * This control creates a list of payments that are configured in system.
  * You can show it a list or grid.
@@ -49,9 +49,19 @@ class Payments extends QUI\Control
     {
         $Engine   = QUI::getTemplateManager()->getEngine();
         $Payments = \QUI\ERP\Accounting\Payments\Payments::getInstance();
+        $payments = $Payments->getpayments();
+
+        echo "<pre>";
+        var_dump(count($payments));
+        echo "</pre>";
+
+        if (count($payments) < 1) {
+            QUI\System\Log::addWarning(
+                "No payment methods were found in the system.\nControl: QUI\TemplateCologne\Controls\Payments");
+        }
 
         $Engine->assign([
-            'payments'     => $Payments->getpayments(),
+            'payments'     => $payments,
             'showInactive' => $this->getAttribute('showInactive')
         ]);
 
