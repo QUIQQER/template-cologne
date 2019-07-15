@@ -472,3 +472,15 @@ table.articles-article {
 .quiqqer-order-control-order-information-orderData-value {
     border-bottom: 3px double #999999;
 }
+
+/*****************************/
+/* shopping cart (site type) */
+/*****************************/
+.type-quiqqer-order-types-shoppingCart .content-header,
+.type-quiqqer-order-types-shoppingCart .quiqqer-order-step-basket > header {
+    display: none;
+}
+
+.type-quiqqer-order-types-shoppingCart .content-template {
+    padding: 0;
+}
