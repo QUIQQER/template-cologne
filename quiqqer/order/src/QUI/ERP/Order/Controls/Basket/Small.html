@@ -91,7 +91,11 @@
 </table>
 
 <div class="quiqqer-order-basket-small-buttons">
-    <a href="{$checkoutUrl}" class="to-the-checkout btn btn-primary">
+    <a href="{$shoppingCartUrl}" class="open-shopping-cart btn btn-light">
+        {locale group="quiqqer/order" var="control.basket.small.shoppingCart.button"}
+    </a>
+
+    <a href="{$checkoutUrl}" class="open-checkout btn btn-success">
         {locale group="quiqqer/order" var="control.basket.small.buy.button"}
     </a>
 </div>

@@ -14,7 +14,7 @@ a:hover,
     color: #3986dd;
 }
 
-.cologne-header-nav a:hover,
+.quiqqer-menu-megaMenu-list-item > a:hover,
 .cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a {
     color: #3986dd;
 }

@@ -98,12 +98,16 @@ body.header-fixed .quiqqer-order-basket-small-container {
     text-align: right;
 }
 
+.quiqqer-order-basket-small-total-sum td {
+    border-top: 1px dashed #ddd;
+    font-weight: 500;
+}
+
 .quiqqer-order-basket-small-buttons {
     margin-top: 15px;
     text-align: right;
 }
 
-.quiqqer-order-basket-small-total-sum td {
-    border-top: 1px dashed #ddd;
-    font-weight: 500;
+.quiqqer-order-basket-small-buttons .open-shopping-cart {
+    margin-right: 1rem;
 }
