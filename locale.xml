@@ -388,8 +388,8 @@
             <en><![CDATA[Specify where the page title is displayed.]]></en>
         </locale>
         <locale name="settings.pageTitle.header">
-            <de><![CDATA[Im Header]]></de>
-            <en><![CDATA[In header]]></en>
+            <de><![CDATA[Im Header bzw. Seiteninhalt]]></de>
+            <en><![CDATA[In header or page content]]></en>
         </locale>
         <locale name="settings.pageTitle.breadcrumb">
             <de><![CDATA[In der Brotkrümnavigation (breadcrumb)]]></de>
