@@ -41,6 +41,28 @@
                         <defaultvalue>hide</defaultvalue>
                     </conf>
 
+                    <!-- page title -->
+                    <conf name="pageTitleStartPage">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>breadcrumb</defaultvalue>
+                    </conf>
+                    <conf name="pageTitleNoSidebar">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>breadcrumb</defaultvalue>
+                    </conf>
+                    <conf name="pageTitleNoSidebarThin">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>breadcrumb</defaultvalue>
+                    </conf>
+                    <conf name="pageTitleLeftSidebar">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>breadcrumb</defaultvalue>
+                    </conf>
+                    <conf name="pageTitleRightSidebar">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>breadcrumb</defaultvalue>
+                    </conf>
+
                     <!-- header img height position  -->
                     <conf name="headerHeight">
                         <type><![CDATA[integer]]></type>
@@ -399,6 +421,147 @@
                                 <option value="flex-end">
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.header.imagePosition.bottom"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- page title -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.pageTitle.settings">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.pageTitle.title"
+                                />
+                            </title>
+
+
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.pageTitle.text"/>
+                            </text>
+
+                            <!-- page title: start page -->
+                            <select conf="templateCologne.settings.pageTitleStartPage">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="admin.layout.startpage"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.header"
+                                    />
+                                </option>
+                                <option value="breadcrumb">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.breadcrumb"
+                                    />
+                                </option>
+                                <option value="both">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.both"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- page title: no sidebar -->
+                            <select conf="templateCologne.settings.pageTitleNoSidebar">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="admin.layout.noSidebar"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.header"
+                                    />
+                                </option>
+                                <option value="breadcrumb">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.breadcrumb"
+                                    />
+                                </option>
+                                <option value="both">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.both"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- page title: no sidebar (thin) -->
+                            <select conf="templateCologne.settings.pageTitleNoSidebarThin">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="admin.layout.noSidebarThin"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.header"
+                                    />
+                                </option>
+                                <option value="breadcrumb">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.breadcrumb"
+                                    />
+                                </option>
+                                <option value="both">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.both"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- page title: left sidebar -->
+                            <select conf="templateCologne.settings.pageTitleLeftSidebar">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="admin.layout.leftSidebar"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.header"
+                                    />
+                                </option>
+                                <option value="breadcrumb">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.breadcrumb"
+                                    />
+                                </option>
+                                <option value="both">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.both"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- page title: right sidebar -->
+                            <select conf="templateCologne.settings.pageTitleRightSidebar">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="admin.layout.rightSidebar"
+                                    />
+                                </text>
+
+                                <option value="header">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.header"
+                                    />
+                                </option>
+                                <option value="breadcrumb">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.breadcrumb"
+                                    />
+                                </option>
+                                <option value="both">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.both"
                                     />
                                 </option>
                             </select>

@@ -378,6 +378,28 @@
             <en><![CDATA[Bottom]]></en>
         </locale>
 
+        <!-- page title settings -->
+        <locale name="settings.pageTitle.title">
+            <de><![CDATA[Seitentitel]]></de>
+            <en><![CDATA[Page title]]></en>
+        </locale>
+        <locale name="settings.pageTitle.text">
+            <de><![CDATA[Bestimmen Sie, wo der Seitentitel angezeigt wird.]]></de>
+            <en><![CDATA[Specify where the page title is displayed.]]></en>
+        </locale>
+        <locale name="settings.pageTitle.header">
+            <de><![CDATA[Im Header]]></de>
+            <en><![CDATA[In header]]></en>
+        </locale>
+        <locale name="settings.pageTitle.breadcrumb">
+            <de><![CDATA[In der Brotkrümnavigation (breadcrumb)]]></de>
+            <en><![CDATA[In breadcrumb]]></en>
+        </locale>
+        <locale name="settings.pageTitle.both">
+            <de><![CDATA[Im Header und in der Brotkrümnavigation]]></de>
+            <en><![CDATA[Both: in header and breadcrumb]]></en>
+        </locale>
+
         <!-- category menu -->
         <locale name="settings.categoryMenu.title">
             <de><![CDATA[Shop-Kategorie Navigation]]></de>
@@ -531,7 +553,7 @@
         </locale>
         <locale name="settings.predefinedFooter.featuredProducts.category">
             <de><![CDATA[Kategorie]]></de>
-            <en><![CDATA[dategory]]></en>
+            <en><![CDATA[Category]]></en>
         </locale>
         <locale name="settings.predefinedFooter.featuredProducts.order">
             <de><![CDATA[Reihenfolge]]></de>
