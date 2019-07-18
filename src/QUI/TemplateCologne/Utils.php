@@ -89,36 +89,42 @@ class Utils
          * own site type
          */
         $header         = 'hide';
+        $pageTitle      = 'breadcrumb'; // where to show page title: in header, in breadcrumb or both?
         $showBreadcrumb = false;
         $siteType       = 'no-sidebar';
 
         switch ($Template->getLayoutType()) {
             case 'layout/startPage':
                 $header         = $Project->getConfig('templateCologne.settings.headerStartPage');
+                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleStartPage');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbStartPage');
                 $siteType       = 'layout-start-page';
                 break;
 
             case 'layout/noSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerNoSidebar');
+                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleNoSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebar');
                 $siteType       = 'layout-no-sidebar';
                 break;
 
             case 'layout/noSidebarThin':
                 $header         = $Project->getConfig('templateCologne.settings.headerNoSidebarThin');
+                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleNoSidebarThin');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebarThin');
                 $siteType       = 'layout-no-sidebar';
                 break;
 
             case 'layout/rightSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerRightSidebar');
+                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbRightSidebar');
                 $siteType       = 'layout-right-sidebar';
                 break;
 
             case 'layout/leftSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerLeftSidebar');
+                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleLeftSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbLeftSidebar');
                 $siteType       = 'layout-left-sidebar';
                 break;
@@ -336,6 +342,7 @@ class Utils
 
         $config += [
             'header'           => $header,
+            'pageTitle'        => $pageTitle,
             'showBreadcrumb'   => $showBreadcrumb,
             'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
             'typeClass'        => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),

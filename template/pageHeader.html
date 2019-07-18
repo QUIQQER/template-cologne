@@ -3,9 +3,12 @@
 >
     <div class="page-header-container">
         <div class="template-grid-container">
-            <h1>{$Site->getAttribute('title')}</h1>
+            {if $pageTitle == 'header' || $pageTitle == 'both'}
+                <h1>{$Site->getAttribute('title')|nl2br}</h1>
+            {/if}
+
             <div class="page-content-emotion-short">
-                {$Site->getAttribute('short')}
+                {$Site->getAttribute('short')|nl2br}
             </div>
         </div>
     </div>

@@ -45,7 +45,7 @@
 </div>
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-    {fetch template="template/pageHeader.html" Site=$Site}
+    {fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
 {/if}
 
 {* <!--Shop category menu--> *}
@@ -57,7 +57,7 @@
 
 <!-- breadcrumb -->
 {if $showBreadcrumb}
-    {fetch template="template/breadcrumb.html" Site=$Site}
+    {fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
 {/if}
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
