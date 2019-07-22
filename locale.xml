@@ -170,6 +170,11 @@
             <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach der Produktliste platziert.]]></de>
             <en><![CDATA[Brick area that only appears on the product side. The bricks are placed after product list.]]></en>
         </locale>
+
+        <locale name="label.language">
+            <de><![CDATA[Sprache]]></de>
+            <en><![CDATA[Language]]></en>
+        </locale>
     </groups>
 
 

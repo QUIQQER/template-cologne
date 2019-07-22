@@ -44,6 +44,7 @@ class LangCurrencySwitch extends QUI\Control
         $Engine  = QUI::getTemplateManager()->getEngine();
         $Site    = $this->getSite();
         $Project = $Site->getProject();
+        $Locale  = QUI::getLocale();
 
         // is user allowed to change currency?
         try {
@@ -75,11 +76,18 @@ class LangCurrencySwitch extends QUI\Control
             $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
         }
 
+        if ($Locale->exists('quiqqer/quiqqer', 'language.' . 'huh')) {
+            $imgAltText = $Locale->get('quiqqer/quiqqer', 'language.' . $Project->getLang());
+        } else {
+            $imgAltText = $Locale->get('quiqqer/template-cologne', 'label.language');
+        };
+
         $Engine->assign([
             'this'            => $this,
             'projectLang'     => $Project->getLang(),
             'DefaultCurrency' => $Currency,
-            'flagFolderPath'  => $flagFolder
+            'flagFolderPath'  => $flagFolder,
+            'imgAltText'      => $imgAltText
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/LangCurrencySwitch.html');
