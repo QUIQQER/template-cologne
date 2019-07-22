@@ -164,23 +164,49 @@ small {
     font-weight: 700;
 }
 
-/* input range */
+/***************************/
+/* noUi Slider input range */
+/***************************/
 .qui-control-input-range {
     margin-top: 1em;
 }
 
 .qui-control-input-range .noUi-horizontal {
-    height: 12px;
+    background: #ddd;
+    border: none;
+    box-shadow: none;
+    height: 4px;
 }
 
 .qui-control-input-range .noUi-horizontal .noUi-handle {
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
     height: 26px;
+    outline: none;
     top: -8px;
 }
 
 .qui-control-input-range-text {
     margin-top: 1em;
 }
+
+.qui-control-input-range .noUi-handle:after,
+.qui-control-input-range  .noUi-handle:before {
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid;
+    height: 14px;
+    left: 7px;
+    top: 1px;
+    width: 13px;
+}
+
+.noUi-handle:after {
+    display: none !important;
+}
+
 
 .clear-fix:after {
     clear: both;

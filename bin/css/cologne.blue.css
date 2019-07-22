@@ -10,7 +10,7 @@ a:hover,
 .lcs-button:hover .lcs-button-currency-code,
 .lcs-button:active .lcs-button-currency-code,
 .lcs-button:active,
-.shop-category-menu-button:hover  {
+.shop-category-menu-button:hover {
     color: #3986dd;
 }
 
@@ -50,6 +50,10 @@ a:hover,
     color: #3986dd;
 }
 
+.qui-control-input-range .noUi-horizontal .noUi-handle:before {
+    border-color: #3986dd;
+}
+
 .quiqqer-products-productList-sort .quiqqer-products-productList-sort-display .button:hover {
     border-color: #e5effb;
 }
@@ -60,7 +64,7 @@ a:hover,
 }
 
 .quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy:hover {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 input[type="checkbox"]:checked {

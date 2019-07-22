@@ -101,9 +101,13 @@
 /**********/
 /* Filter */
 /**********/
+.quiqqer-products-productList-filter-container .quiqqer-products-productList-filter-entry {
+    margin-bottom: 1rem;
+}
+
 .quiqqer-products-productList-filter-entry-title {
     font-size: 0.9rem !important;
-    margin-bottom: 5px;
+    margin: 1rem 0 0.75rem;
     padding: 0 10px;
 }
 
