@@ -226,7 +226,7 @@
 .cologne-products-categoryGallery-category-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex-grow: 1;
 }
 
 .cologne-products-categoryGallery-category-content-header {
