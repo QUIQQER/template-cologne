@@ -1,0 +1,142 @@
+.lang-currency-switch {
+    align-items: center;
+    display: inline-flex;
+    height: 100%;
+    position: relative;
+}
+
+.quiqqer-currency-switch {
+    z-index: auto !important;
+}
+
+.lcs-button {
+    cursor: pointer;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.lcs-button.lcs-button__no-hover {
+    cursor: default;
+}
+
+.lcs-button.lcs-button__no-hover:hover {
+    color: inherit;
+}
+
+.lcs-button.lcs-button__no-hover:hover .lcs-button-currency-code.text-muted {
+    color: #9ba3ad;
+}
+
+.lcs-button-flag {
+    border-right: 1px solid #ddd;
+    padding: 0 1rem;
+}
+
+.lcs-button-currency {
+    font-weight: 300;
+    margin: 0 1rem;
+}
+
+.lcs-button-currency-sign {
+
+}
+
+/* loader */
+.qui-loader-inner > div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.qui-loader-inner .qui-loader-inner-fa-circle-o-notch .fa-spin,
+.qui-loader-inner .qui-loader-inner-fa-gear .fa-spin,
+.qui-loader-inner .qui-loader-inner-fa-refresh .fa-spin,
+.qui-loader-inner .qui-loader-inner-fa-spinner .fa-spin {
+    font-size: 1.5rem;
+    position: initial;
+    top: 0;
+}
+
+/********/
+/* menu */
+/********/
+.lcs-menu-wrapper {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+
+.lcs-menu {
+    background: #fff;
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+    min-width: 200px;
+    padding: 16px 20px;
+    position: absolute;
+    right: 0;
+    z-index: 1001;
+}
+
+.lcs-menu:focus {
+    border: 1px solid red !important;
+}
+
+/* currency */
+.lcs-menu .quiqqer-currency-switch {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    display: flex;
+    float: none;
+    position: relative;
+    /*line-height: 40px;*/
+    /*height: 40px;*/
+}
+
+.quiqqer-currency-switch.button {
+    align-items: center;
+    display: flex;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.quiqqer-currency-switch .quiqqer-currency-switch-arrow {
+    margin-left: auto;
+    position: initial;
+}
+
+/* lang menu */
+.lcs-language-list {
+    margin-top: 10px;
+}
+
+.lcs-menu.single-control .lcs-language-list {
+    margin-top: 0;
+}
+
+.lcs-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.lcs-menu-list-entry-link {
+    color: inherit;
+    display: block;
+    padding: 5px 0;
+}
+
+.lcs-menu-list-entry-link-icon {
+    margin-right: 1rem;
+}
+
+/* currency  */
+.quiqqer-currency-switch-dd {
+    border: 1px solid rgb(221, 221, 221) !important;
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2) !important;
+    display: none;
+}
+
+.quiqqer-currency-switch-dd:after {
+    display: none;
+}

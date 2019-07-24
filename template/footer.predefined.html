@@ -1,0 +1,123 @@
+<div class="cologne-footer-predefined template-grid-container">
+    <div class="template-children-container cologne-footer-predefined-container">
+
+        {* <!-- short text --> *}
+        {if $shortText}
+        <div class="cologne-footer-predefined-entry cologne-footer-predefined-entry__shortText">
+            {if $shortText['title']}
+            <header class="control-header">
+                <h2>{$shortText['title']}</h2>
+            </header>
+            {/if}
+
+            <div class="footer-shortText-content">
+                {locale group="quiqqer/template-cologne" var="settings.predefinedFooter.shortText.content"}
+            </div>
+        </div>
+        {/if}
+
+        {* <!-- url list --> *}
+        {if $urlList}
+        <div class="cologne-footer-predefined-entry cologne-footer-predefined-entry__urlList">
+            {if $urlList['title']}
+            <header class="control-header">
+                <h2>{$urlList['title']}</h2>
+            </header>
+            {/if}
+
+            <div class="footer-urlList-container">
+                <ul class="fa-ul">
+                    {foreach $urlList['sites'] as $UrlSite}
+                    <li>
+                        <span class="fa-li fa fa-angle-right"></span>
+                        <a href="{url site=$UrlSite}"
+                           title="{$UrlSite->getAttribute('title')|escape:'html'}"
+                        >
+                            {$UrlSite->getAttribute('title')|escape:'html'}
+                        </a>
+                    </li>
+                    {/foreach}
+
+                    {* <!-- product search --> *}
+                    {if $urlList['productSearch']}
+                    <li>
+                        <span class="fa-li fa fa-angle-right"></span>
+                        <a href="{url site=$urlList['productSearch']}"
+                           title="{$urlList['productSearch']->getAttribute('title')|escape:'html'}"
+                        >
+                            {$urlList['productSearch']->getAttribute('title')|escape:'html'}
+                        </a>
+                    </li>
+                    {/if}
+
+                    {* <!-- legal notes --> *}
+                    {if $urlList['legalNotes']}
+                    <li>
+                        <span class="fa-li fa fa-angle-right"></span>
+                        <a href="{url site=$urlList['legalNotes']}"
+                        title="{$urlList['legalNotes']->getAttribute('title')|escape:'html'}"
+                           >
+                            {$urlList['legalNotes']->getAttribute('title')|escape:'html'}
+                        </a>
+                    </li>
+                    {/if}
+
+                    {* <!-- privacy policy --> *}
+                    {if $urlList['privacyPolicy']}
+                    <li>
+                        <span class="fa-li fa fa-angle-right"></span>
+                        <a href="{url site=$urlList['privacyPolicy']}"
+                           title="{$urlList['privacyPolicy']->getAttribute('title')|escape:'html'}"
+                        >
+                            {$urlList['privacyPolicy']->getAttribute('title')|escape:'html'}
+                        </a>
+                    </li>
+                    {/if}
+
+                    {* <!-- general terms and conditions --> *}
+                    {if $urlList['generalTermsAndConditions']}
+                    <li>
+                        <span class="fa-li fa fa-angle-right"></span>
+                        <a href="{url site=$urlList['generalTermsAndConditions']}"
+                           title="{$urlList['generalTermsAndConditions']->getAttribute('title')|escape:'html'}"
+                        >
+                            {$urlList['generalTermsAndConditions']->getAttribute('title')|escape:'html'}
+                        </a>
+                    </li>
+                    {/if}
+                </ul>
+            </div>
+        </div>
+        {/if}
+
+        {* <!-- featured products --> *}
+        {if $featuredProducts}
+        <div class="cologne-footer-predefined-entry cologne-footer-predefined-entry__featuredProducts">
+            {if $featuredProducts['title']}
+            <header class="control-header">
+                <h2>{$featuredProducts['title']}</h2>
+            </header>
+            {/if}
+
+            <div class="footer-featuredProducts-control">
+                {$featuredProducts['Control']->create()}
+            </div>
+        </div>
+        {/if}
+
+        {* <!-- payments --> *}
+        {if $paymentsData}
+        <div class="cologne-footer-predefined-entry cologne-footer-predefined-entry__payments">
+            {if $paymentsData['title']}
+            <header class="control-header">
+                <h2>{$paymentsData['title']}</h2>
+            </header>
+            {/if}
+
+            <div class="footer-payments-control">
+                {$paymentsData['PaymentsControl']->create()}
+            </div>
+        </div>
+        {/if}
+    </div>
+</div>

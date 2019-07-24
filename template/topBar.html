@@ -1,0 +1,26 @@
+<div class="topbar template-columns">
+    {*<!--<a href="/" class="topbar-mobile-logo hide-on-desktop">
+        {image image=$Project->getMedia()->getLogoImage() class="logo"}
+    </a>-->*}
+
+    <div class="template-column topbar-left hide-on-mobile">
+        {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
+    </div>
+
+    <div class="topbar-right template-column">
+
+        {$LangCurrencySwitch->create()}
+
+        <span class="cologne-header-control-user">
+            {if $User->getId()}
+                {$Avatar->create()}
+            {else}
+                <span class="fa fa-user-o" title="{locale group='quiqqer/template-cologne' var='template.login'}"></span>
+            {/if}
+            <span class="cologne-header-control-user-loader">
+                <span class="fa fa-pulse fa-spinner"></span>
+            </span>
+        </span>
+
+    </div>
+</div>

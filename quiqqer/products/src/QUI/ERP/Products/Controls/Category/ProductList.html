@@ -1,0 +1,154 @@
+{assign var=BricksManager value=QUI\Bricks\Manager::init()}
+{*<!-- product category prefix (area before product list) -->*}
+{assign var=productCategoryPrefix value=$BricksManager->getBricksByArea('productCategoryPrefix', $Site)}
+{if $productCategoryPrefix}
+    {foreach $productCategoryPrefix as $Brick}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-productCategoryPrefix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-row {$brickNoPadding}">
+            {if $Brick->getAttribute('frontendTitle')}
+            <header class="left-sidebar-filter-header">
+                <h1>{$Brick->getAttribute('frontendTitle')}</h1>
+            </header>
+            {/if}
+
+            {assign var=t value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </div>
+    </section>
+    {/foreach}
+{/if}
+
+{if count($children)}
+<div class="quiqqer-products-productList-categories">
+    {$this->renderCategories($children, $categoryFile)}
+</div>
+{/if}
+
+<section class="quiqqer-products-productList-products">
+
+    <div class="quiqqer-products-productList-sort" {if !$count}style="display: none;"{/if}>
+        <noscript>
+            {locale group="quiqqer/products" var="category.control.productlist.javascript"}
+        </noscript>
+
+        {if $this->getAttribute('showFilter') && !empty($filter)}
+        <div class="quiqqer-products-productList-sort-filter" style="display: none">
+            <div class="button">
+                <span class="fa fa-filter"></span>
+                <span>{locale group="quiqqer/products" var="category.control.productlist.filter"}</span>
+                <span class="fa fa-angle-down quiqqer-products-productList-sort-filter-opener"></span>
+            </div>
+        </div>
+        {/if}
+        {if !empty($filter) || $this->getAttribute('forceMobileFilter')}
+        <div class="quiqqer-products-productList-sort-filter-mobile button">
+            <span class="fa fa-filter"></span>
+        </div>
+        {/if}
+        <div class="quiqqer-products-productList-sort-sorting" style="display: none">
+            <label>
+                {locale group="quiqqer/products" var="category.control.productlist.sortby"}
+                <select name="sort" style="display: none">
+                    {foreach $sorts as $sort}
+                    <option value="{$sort.value}">{$sort.title}</option>
+                    {/foreach}
+                </select>
+            </label>
+        </div>
+        <div class="quiqqer-products-productList-sort-display" style="display: none">
+            <span class="fa fa-th button quiqqer-products-productList-sort-display-gallery"
+                  data-tooltip="{locale group="quiqqer/products" var="category.control.productlist.view.gallery"}"
+            ></span>
+            <span class="fa fa-list-ul button quiqqer-products-productList-sort-display-details"
+                  data-tooltip="{locale group="quiqqer/products" var="category.control.productlist.view.details"}"
+            ></span>
+            <span class="fa fa-align-justify button quiqqer-products-productList-sort-display-list"
+                  data-tooltip="{locale group="quiqqer/products" var="category.control.productlist.view.list"}"
+            ></span>
+        </div>
+    </div>
+
+    {if !empty($filter) && $this->getAttribute('showFilter')}
+        {$this->createFilter()}
+    {/if}
+
+    {if $this->getAttribute('showFilterInfo')}
+    <div class="quiqqer-products-productList-fl">
+        <div class="quiqqer-products-productList-filterList">
+            <span class="quiqqer-products-productList-filterList-title text-muted">
+                {locale group="quiqqer/products" var="category.control.productlist.selectionTitle"}
+            </span>
+            <div class="quiqqer-products-productList-filterList-fields"></div>
+            <div class="quiqqer-products-productList-filterList-list"></div>
+        </div>
+        <div class="quiqqer-products-productList-resultInfo">
+            <div class="quiqqer-products-productList-resultInfo-text text-muted"></div>
+            <div class="button quiqqer-products-productList-resultInfo-clearbtn"
+                 style="opacity: 0; display: none"
+            >
+                <span class="fa fa-remove"></span>
+                <span>
+                    {locale group="quiqqer/products" var="category.control.productlist.clearFilter"}
+                </span>
+            </div>
+        </div>
+    </div>
+    {else}
+    <div class="quiqqer-products-productList-resultInfo-text"></div>
+    {/if}
+
+    <div class="quiqqer-products-productList-products-container">
+        <div class="quiqqer-products-productList-products-container-real
+            {if !$count}quiqqer-products-productList-products-container-real__noProducts{/if}">
+            {if $count}
+            {$products}
+            {else}
+            <div class="quiqqer-products-productList-sort__noProducts">
+                {locale group="quiqqer/products" var="message.product.search.empty"}
+            </div>
+            {/if}
+        </div>
+    </div>
+
+    {if $count}
+    <div class="quiqqer-products-productList-products-more" {if $more == false}style="opacity: 0;"{/if}>
+        <div class="button btn btn-secondary btn-outline disabled">
+            {locale group="quiqqer/products" var="category.control.productlist.button.more"}
+        </div>
+    </div>
+    {/if}
+
+    <noscript>
+        {$Pagination->create()}
+    </noscript>
+
+</section>
+
+{*<!-- product category suffix (area after product list) -->*}
+{assign var=productCategorySuffix value=$BricksManager->getBricksByArea('productCategorySuffix', $Site)}
+{if $productCategorySuffix}
+    {foreach $productCategorySuffix as $Brick}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-productCategorySuffix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-row {$brickNoPadding}">
+            {if $Brick->getAttribute('frontendTitle')}
+            <header class="left-sidebar-filter-header">
+                <h1>{$Brick->getAttribute('frontendTitle')}</h1>
+            </header>
+            {/if}
+
+            {assign var=t value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </div>
+    </section>
+    {/foreach}
+{/if}

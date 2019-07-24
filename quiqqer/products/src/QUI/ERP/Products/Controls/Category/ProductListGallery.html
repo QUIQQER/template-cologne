@@ -1,0 +1,50 @@
+<article class="cologne-products-productGallery-products-product"
+         data-pid="{$Product->getId()}"
+>
+    {strip}
+    <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}"
+       class="cologne-products-productGallery-products-product-image">
+        {image image=$Product->getImage() title=$Product->getTitle() width=400}
+    </a>
+
+    <header class="cologne-products-productGallery-products-product-title" title="{$Product->getTitle()}">
+        {$Product->getTitle()}
+    </header>
+
+    <span class="cologne-products-productGallery-products-product-price">
+        {if $Product->getAttribute('hasVariablePrice')}
+            {locale
+                group="quiqqer/erp"
+                var="price.starting.from"
+                price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+            }
+        {else}
+            {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+        {/if}
+    </span>
+
+    <div class="product-buttons">
+        {template_event name="quiqqer::product-event::slider::buttonAddToCart" Product=$Product}
+        <!--<a href="" class="btn btn-link add-to-card">Add to wish list</a>-->
+        {if QUI\ERP\Products\Utils\Products::isVariant($Product)}
+        <a href="{$Product->getUrl()}"
+           title="{$Product->getTitle()|escape:'html'}"
+           class="btn btn-primary btn-outline"
+        >
+            {locale group="quiqqer/order" var="control.basket.buttonVariantAdd.text"}
+        </a>
+        {else}
+        <a href="{$Product->getUrl()}"
+           class="btn btn-primary btn-outline add-to-basket"
+           data-product-id="{$Product->getId()}"
+           data-product-animatable="1"
+           data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+        >
+            <label>
+                {locale group="quiqqer/product-bricks" var="brick.control.product.addToCart"}
+            </label>
+        </a>
+        {/if}
+    </div>
+    {/strip}
+</article>

@@ -1,0 +1,203 @@
+<article>
+    {template_event name="quiqqer::products::product::begin" Product=$Product}
+
+    <div class="grid-50 mobile-grid-100 grid-parent product-gallery">
+        {control control="QUI\TemplateCologne\Controls\ProductGallery" Product=$Product}
+    </div>
+
+    <div class="grid-50 mobile-grid-100 grid-parent product-data">
+        <header class="page-content-header">
+            <h1>{$Product->getTitle()}</h1>
+            <p class="product-data-sku text-muted">{$Product->getFieldValue("FIELD_PRODUCT_NO")}</p>
+        </header>
+
+        <div class="page-content-header-description">
+            {$Product->getDescription()}
+        </div>
+
+        <div class="product-data-price">
+            {if $Site->getProject()->getConfig('templateCologne.settings.showRetailPrice')}
+                {if $Product->hasOfferPrice()}
+                    {*<!-- Offer price (Angebotspreis) -->*}
+                    <div class="product-data-price-retail text-muted">
+                        {$PriceOldDisplay->create()}
+                    </div>
+                {elseif $PriceRetailDisplay && $Price->getPrice() < $priceRetailValue}
+                    {*<!-- Retail price (UVP) -->*}
+                    <div class="product-data-price-retail text-muted">
+                        {$PriceRetailDisplay->create()}
+                    </div>
+                {/if}
+            {/if}
+
+            {$PriceDisplay->create()}
+        </div>
+
+        {assign var=counter value=count($detailFields)}
+        {if count($productAttributeList)}
+        <div class="product-data-fieldlist {if $counter > 1}product-data-fieldlist__multiple{/if}">
+            {foreach $productAttributeList as $Field}
+            {$Field->getView()->create()}
+            {/foreach}
+        </div>
+        {/if}
+
+        <div class="product-data-fields">
+            {foreach $fields as $Field}
+            <div class="grid-50 mobile-grid-50 grid-parent product-data-fields-title">
+                {$Field->getTitle()}:
+            </div>
+            <div class="grid-50 mobile-grid-50 grid-parent product-data-fields-value">
+                {$Field->getValue()}
+            </div>
+            {/foreach}
+        </div>
+
+        <div class="product-data-actionButtons">
+            {template_event name="quiqqer::products::product::buttons::begin" Product=$Product}
+            {$buttonsHtml}
+            {template_event name="quiqqer::products::product::buttons::end" Product=$Product}
+        </div>
+
+    </div>
+
+    {assign var=ContentField value=$Product->getField(6)}
+
+    <div class="product-data-more">
+        <div class="product-data-more-prev">
+            <span class="fa fa-angle-left"></span>
+        </div>
+        <div class="product-data-more-tabsContainer">
+            <ul class="product-data-more-tabs" role="tablist">
+                {if $ContentField}
+                <li class="product-data-more-tabs-tab active"
+                    aria-controls="panelDescription" role="tab" tabindex="0" aria-selected="true"
+                >
+                    <a href="#panelDescription">
+                        {$ContentField->getTitle()}
+                    </a>
+                </li>
+                {/if}
+
+                <li class="product-data-more-tabs-tab" aria-controls="panelDetails" role="tab" tabindex="-1">
+                    <a href="#panelDetails">
+                        {locale group="quiqqer/products" var="control.product.fields.details"}
+                    </a>
+                </li>
+
+                {if $Files}
+                <li class="product-data-more-tabs-tab" aria-controls="panelFiles" role="tab" tabindex="-1">
+                    <a href="#panelFiles">
+                        {locale group="quiqqer/products" var="control.product.fields.files"}
+                    </a>
+                </li>
+                {/if}
+
+                {foreach $detailFields as $Field}
+                <li class="product-data-more-tabs-tab"
+                    aria-controls="panelF{$Field->getId()}"
+                    role="tab"
+                    tabindex="-1"
+                >
+                    <a href="#panelF{$Field->getId()}">
+                        {$Field->getTitle()}
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="product-data-more-next">
+            <span class="fa fa-angle-right"></span>
+        </div>
+
+        <div class="product-data-more-sheets">
+            {if $ContentField}
+            <section class="product-data-more-sheet" id="panelDescription" role="tabpanel"
+                     aria-labelledby="panelDescription" tabindex="0"
+            >
+                {$Product->getContent()}
+            </section>
+            {/if}
+
+            <section class="product-data-more-sheet hide" id="panelDetails" role="tabpanel"
+                     aria-labelledby="panelDetails" tabindex="0" aria-hidden="true"
+            >
+                <div class="product-data-more-details-description">
+                    {$Product->getDescription()}
+                </div>
+
+                {if count($details)}
+                <table class="product-data-more-details-table">
+                    {foreach $details as $Field}
+                    {if !empty($Field->getValue()) || is_numeric($Field->getValue())}
+                    <tr>
+                        <td>
+                            {$Field->getView()->create()}
+                        </td>
+                    </tr>
+                    {else}
+                    <tr>
+                        <td>
+                            <div class="quiqqer-product-field-title">
+                                {$Field->getTitle()}
+                            </div>
+                            <div class="quiqqer-product-field-value">
+                                ---
+                            </div>
+                        </td>
+                    </tr>
+                    {/if}
+                    {/foreach}
+                </table>
+                {/if}
+            </section>
+
+            {if $Files}
+            <section class="product-data-more-sheet hide" id="panelFiles" role="tabpanel"
+                     aria-labelledby="panelFiles" tabindex="0" aria-hidden="true"
+            >
+                {$Files->create()}
+            </section>
+            {/if}
+
+            {foreach $detailFields as $Field}
+            <section class="product-data-more-sheet hide" id="panelF{$Field->getId()}" role="tabpanel"
+                     aria-labelledby="panelF{$Field->getId()}" tabindex="0" aria-hidden="true"
+            >
+                {control control="QUI\ERP\Products\Controls\Products\ProductFieldDetails" Field=$Field Product=$Product}
+            </section>
+            {/foreach}
+        </div>
+    </div>
+
+    {template_event name="quiqqer::products::product::middle" Product=$Product}
+
+    {* Product Fields *}
+    {foreach $productFields as $fieldData}
+    <section class="product-fields-products">
+        <header>
+            <h3>
+                {$fieldData.Field->getTitle()}
+            </h3>
+        </header>
+        {assign var=t value=$fieldData.Slider->setAttribute('data-qui-options-usemobile', true)}
+        {$fieldData.Slider->create()}
+    </section>
+    {/foreach}
+
+    {template_event name="quiqqer::products::product::middle-2" Product=$Product}
+
+    {if isset($VisitedProducts)}
+    <section class="product-similar-products">
+        <header>
+            <h1>
+                {locale group="quiqqer/products" var="brick.control.VisitedProducts.title"}
+            </h1>
+        </header>
+        {assign var=t value=$VisitedProducts->getSlider()->setAttribute('data-qui-options-usemobile', true)}
+        {$VisitedProducts->create()}
+    </section>
+    {/if}
+
+    {template_event name="quiqqer::products::product::end" Product=$Product}
+</article>

@@ -1,0 +1,118 @@
+<section class="quiqqer-products-wrapper"
+     data-qui="package/quiqqer/products/bin/types/Search"
+>
+    {if $Site->getAttribute('quiqqer.products.settings.showFilterLeft')}
+    <div class="quiqqer-product-sidebar content-headerpage-multible-left template-column hide-on-mobile">
+
+        {assign var=productSidebarPrefix value=$BricksManager->getBricksByArea('productSidebarPrefix', $Site)}
+        {if $productSidebarPrefix}
+        <div class="product-sidebar-container product-sidebar-prefix template-grid-row">
+            {foreach $productSidebarPrefix as $Brick}
+                <section class="template-brick-container template-brick-productSidebarSuffix brick-id-{$Brick->getAttribute('id')}">
+                    <div class="template-grid-row">
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <header class="left-sidebar-filter-header">
+                            <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                        </header>
+                        {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                        {$Brick->create()}
+                    </div>
+                </section>
+            {/foreach}
+        </div>
+        {/if}
+
+        <div class="product-sidebar-container template-grid-row clearfix">
+            <header class="left-sidebar-filter-header">
+                <h2>{locale group="quiqqer/products" var="type.search.searchTitle"}</h2>
+            </header>
+            <form action="{url site=$Site}" method="GET" class="quiqqer-products-search-form quiqqer-products-category-freetextSearch">
+                <input type="search" name="search" value="" autocomplete="off"
+                       placeholder="{locale group="quiqqer/products" var="type.search.searchPlaceholder"}"
+                />
+                <button class="quiqqer-products-search-form-button button--callToAction button">
+                    <span class="fa fa-search quiqqer-products-search-suggest-form-button-icon"></span>
+                </button>
+            </form>
+        </div>
+
+        {if isset($ProductList) && $ProductList->count() && !empty($filter)}
+        <div class="product-sidebar-container product-sidebar-filter template-grid-row clearfix">
+            <header class="left-sidebar-filter-header">
+                <h2>{locale group="quiqqer/products" var="type.search.filterTitle"}</h2>
+            </header>
+            {$ProductList->createFilter()}
+        </div>
+        {/if}
+
+        {assign var=productSidebarSuffix value=$BricksManager->getBricksByArea('productSidebarSuffix', $Site)}
+        {if $productSidebarSuffix}
+        <div class="product-sidebar-container product-sidebar-suffix template-grid-row">
+            {foreach $productSidebarSuffix as $Brick}
+                <section class="template-brick-container template-brick-productSidebarPrefix brick-id-{$Brick->getAttribute('id')}">
+                    <div class="template-grid-row">
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <header class="left-sidebar-filter-header">
+                            <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                        </header>
+                        {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                        {$Brick->create()}
+                    </div>
+                </section>
+            {/foreach}
+        </div>
+        {/if}
+    </div>
+    {/if}
+
+
+    {if $Site->getAttribute('quiqqer.products.settings.showFilterLeft')}
+        <div class="quiqqer-products-productsearch page-multible-right template-column">
+    {else}
+        <div class="quiqqer-products-productsearch page-multible-right template-column full-width">
+    {/if}
+
+        {if $Template->getAttribute('content-header')}
+            {if $Site->getAttribute('image_emotion')}
+            <header class="page-content-header page-content-header-emotion"
+                    style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1200 onlysrc=1 rewrited=1}')"
+            >
+                <div class="page-content-header-emotion-container">
+                    <h1>{$Site->getAttribute('title')}</h1>
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
+                </div>
+            </header>
+            {else}
+            <header class="page-content-header">
+                <h1>{$Site->getAttribute('title')}</h1>
+                <div class="page-content-emotion-short">
+                    {$Site->getAttribute('short')|nl2br}
+                </div>
+            </header>
+            {/if}
+        {/if}
+
+        {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+        <section class="content-body quiqqer-category-content">
+            {$Site->getAttribute('content')}
+        </section>
+        {/if}
+
+        {if !$Site->getAttribute('quiqqer.products.settings.showFilterLeft')}
+        <form action="{url site=$Site}" method="GET" class="quiqqer-products-search-form">
+            <input type="search" name="search" value="" autocomplete="off"
+                   placeholder="{locale group="quiqqer/products" var="type.search.searchPlaceholder"}"
+            />
+            <button class="quiqqer-products-search-form-button button--callToAction button">
+                <span class="fa fa-search quiqqer-products-search-suggest-form-button-icon"></span>
+            </button>
+        </form>
+        {/if}
+
+        {$ProductList->create()}
+    </div>
+</div>

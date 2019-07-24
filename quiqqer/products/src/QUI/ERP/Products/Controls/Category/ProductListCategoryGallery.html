@@ -1,0 +1,53 @@
+{if $categoryStartNumber === '' || (int)$categoryStartNumber !== 0}
+    <div class="cologne-products-categoryGallery-categories">
+        {assign var=c value=0}
+        {foreach from=$children item=Category}
+        {assign var=cssClass value=""}
+        {if $categoryStartNumber && $categoryStartNumber <= $c}
+            {assign var=cssClass value=" quiqqer-products-category__hide"} <!--@todo michael-->
+        {/if}
+        <section class="cologne-products-categoryGallery-category {$cssClass}"
+                 data-pid="{$Category->getId()}"
+        >
+        {strip}
+                <div class="cologne-products-categoryGallery-category-image">
+                    <a href="{url site=$Category}" title="{$Category->getAttribute('title')|escape:'html'}"
+                        class="cologne-products-categoryGallery-category-image-link">
+                    {if $Category->getAttribute('image_site')}
+                        {image src=$Category->getAttribute('image_site') title=$Category->getAttribute('title') width=400 class="cologne-products-categoryGallery-category-image-link-img"}
+                    {else}
+                        <img src="{$placeholder}" title="{$Category->getAttribute('title')}"
+                            class="cologne-products-categoryGallery-category-image-link-img"/>
+                    {/if}
+                    </a>
+                </div>
+                <div class="cologne-products-categoryGallery-category-content">
+                    <header class="cologne-products-categoryGallery-category-content-header">
+                        <h3 class="cologne-products-categoryGallery-category-content-header-title">
+                        {$Category->getAttribute('title')}
+                        </h3>
+                    </header>
+
+                    <div class="cologne-products-categoryGallery-category-content-short">
+                        {$Category->getAttribute('short')}
+                    </div>
+                    <div class="cologne-products-categoryGallery-category-content-buttonContainer">
+                        <a href="{url site=$Category}" title="{$Category->getAttribute('title')|escape:'html'}"
+                           class="btn btn-primary cologne-products-categoryGallery-category-content-button">
+                            {locale group='quiqqer/product-bricks' var='brick.control.categoryBox.viewProduct'}
+                        </a>
+                    </div>
+                </div>
+            </a>
+        {/strip}
+        {assign var=c value=$c+1}
+        </section>
+        {/foreach}
+    </div>
+
+    {if $categoryStartNumber && $categoryStartNumber < count($children)}
+        <div class="quiqqer-products-categoryGallery-category-more btn btn-outline btn-secondary">
+            {locale group="quiqqer/products" var="category.control.productlist.button.more"}
+        </div>
+    {/if}
+{/if}

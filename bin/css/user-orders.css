@@ -1,0 +1,184 @@
+section.quiqqer-order-profile-orders-order {
+    margin-bottom: 2em;
+}
+
+.quiqqer-order-profile-orders-order-header-orderId {
+    float: left;
+    position: relative;
+    width: 25%;
+}
+
+.quiqqer-order-profile-orders-order-header-date,
+.quiqqer-order-profile-orders-order-header-total,
+.quiqqer-order-profile-orders-order-header-addressInvoice,
+.quiqqer-order-profile-orders-order-header-addressDelivery,
+.quiqqer-order-profile-orders-order-header-orderId {
+    padding: 0 10px;
+}
+
+.quiqqer-order-profile-orders-order-header-date {
+    padding-left: 0;
+}
+
+.quiqqer-order-profile-orders-order-header-orderId {
+    padding-right: 0;
+}
+
+.quiqqer-order-profile-orders-order-header-date > span:first-child,
+.quiqqer-order-profile-orders-order-header-total > span:first-child,
+.quiqqer-order-profile-orders-order-header-addressInvoice > span:first-child,
+.quiqqer-order-profile-orders-order-header-addressDelivery > span:first-child,
+.quiqqer-order-profile-orders-order-header-orderId > span:first-child {
+    display: block;
+}
+
+.quiqqer-order-profile-orders-order-header-addressInvoice address {
+    top: 48px !important;
+}
+
+.quiqqer-order-profile-orders-order-header-addressInvoice span {
+    align-items: center;
+    display: flex;
+    max-width: 100%;
+}
+
+.quiqqer-order-profile-orders-order-header-addressInvoice > span > span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.quiqqer-order-profile-orders-order-header-addressInvoice .fa {
+    margin-left: 5px;
+}
+
+
+.quiqqer-order-profile-orders-order-articles-article {
+    border-bottom: 1px dashed #ddd;
+    padding: 2em 0;
+}
+
+.quiqqer-order-profile-orders-order-articles-article:last-child {
+    border-bottom: none;
+}
+
+.quiqqer-order-profile-orders-order-articles-article {
+    align-items: start;
+    border-bottom: 1px dashed #ddd;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 25% auto;
+    grid-template-rows: auto;
+    justify-items: start;
+    padding: 2em 0;
+}
+
+.quiqqer-order-profile-orders-order-articles-image {
+    align-items: flex-start;
+    align-self: start;
+    border-right: 1px dashed #ddd;
+    display: flex;
+    grid-row: 1 / 5;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.quiqqer-order-profile-orders-order-articles-information {
+    padding-top: 0 !important;
+}
+
+.quiqqer-order-profile-orders-order-articles-title {
+    color: inherit;
+    font-size: 1.75em;
+}
+
+.quiqqer-order-profile-orders-order-articles-description {
+    margin: 5px 0;
+    color: #9ba3ad;
+}
+
+.quiqqer-order-profile-orders-order-articles-price {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.quiqqer-order-profile-orders-order-articles-rebuy {
+    align-self: end;
+}
+
+/**********/
+/* footer */
+/**********/
+.quiqqer-order-profile-orders-order footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-paymentType {
+    margin-top: 0;
+}
+
+.quiqqer-order-profile-orders-order-footer-rightWrapper {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    /***********************/
+    /* article list header */
+    /***********************/
+    .quiqqer-order-profile-orders-order-header-date, .quiqqer-order-profile-orders-order-header-total, .quiqqer-order-profile-orders-order-header-addressInvoice, .quiqqer-order-profile-orders-order-header-addressDelivery, .quiqqer-order-profile-orders-order-header-orderId {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .quiqqer-order-profile-orders-order-header-orderId {
+        margin: 0 !important;
+    }
+
+    .quiqqer-order-profile-orders-order-header-date > span:first-child, .quiqqer-order-profile-orders-order-header-total > span:first-child, .quiqqer-order-profile-orders-order-header-addressInvoice > span:first-child, .quiqqer-order-profile-orders-order-header-addressDelivery > span:first-child, .quiqqer-order-profile-orders-order-header-orderId > span:first-child {
+        padding-right: 5px;
+    }
+
+    /****************/
+    /* article list */
+    /****************/
+    .quiqqer-order-profile-orders-order-articles-article {
+        display: block;
+        padding: 3em 0;
+    }
+
+    .quiqqer-order-profile-orders-order-articles-image {
+        border-bottom: 1px dashed #ddd;
+        border-right: none;
+        float: none !important;
+        margin: 0 0 20px 0;
+    }
+
+    .quiqqer-order-profile-orders-order-articles-price {
+        padding-top: 10px;
+    }
+
+    .quiqqer-order-profile-orders-order-articles-rebuy{
+        display: block;
+        margin: 0 auto;
+        max-width: 340px;
+        width: 100%;
+    }
+
+    /**********/
+    /* footer */
+    /**********/
+    .quiqqer-order-profile-orders-order footer {
+        display: block;
+    }
+
+    .quiqqer-order-profile-orders-order footer .quiqqer-order-profile-orders-order-footer-rightWrapper .btn {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}

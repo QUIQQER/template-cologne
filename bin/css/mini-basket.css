@@ -3,49 +3,59 @@
 .wrapper {
     padding-top: 10em;
 }
+
 .quiqqer-order-basket-small-container {
-    width: 350px;
-    margin: 0 auto; /* test */
-    padding: 15px !important;
-    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
     background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+    left: auto !important;
+    margin: 0 auto; /* test */
+    max-height: calc(100vh - 130px); /* header height + top bar height */
+    overflow-y: auto;
+    padding: 15px !important;
+    width: 350px;
+}
+
+body.header-fixed .quiqqer-order-basket-small-container {
+    max-height: calc(100vh - 80px); /* only header height */
 }
 
 .quiqqer-order-basket-small-articles-article {
-    display: flex;
     align-items: flex-start;
+    border-bottom: 1px dashed #ddd;
+    display: flex;
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px dashed #ddd;
     position: relative;
+    text-align: left;
 }
 
 .quiqqer-order-basket-small-articles-article-image {
-    margin-right: 15px;
-    width: 60px;
     height: 60px;
+    margin-right: 15px;
     text-align: center;
+    width: 60px;
 }
 
 .quiqqer-order-basket-small-articles-article-image img {
-    max-width: 60px;
     max-height: 60px;
+    max-width: 60px;
 }
 
 .quiqqer-order-basket-small-articles-article-content {
-    margin-right: 1.3em;
     width: 100%
 }
+
 .quiqqer-order-basket-small-articles-article-content h2 {
-    margin: 0;
     font-size: 1.1em;
     font-weight: 500;
     line-height: 100%;
+    margin: 0;
 }
 
 .quiqqer-order-basket-small-articles-article-price-wrapper {
+    color: #999;
     margin-top: 6px;
-    color: #999
 }
 
 .quiqqer-order-basket-small-articles-article-price-sum {
@@ -53,32 +63,31 @@
 }
 
 .quiqqer-order-basket-small-articles-article-content .fa {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #f14428;
+    color: #ababab;
     cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
+    float: right;
+    margin-left: 10px;
+    transition: color 0.15s ease-in-out;
 }
 
 .quiqqer-order-basket-small-articles-article-content .fa:hover {
-    background: #eee;
+    color: #f14428;
 }
-
 
 /* basket summary */
 .quiqqer-order-basket-small-total {
-    width: 100%;
     margin-top: 1em;
+    width: 100%;
 }
 
 .quiqqer-order-basket-small-total td {
-    padding-top: 4px;
     padding-bottom: 4px;
+    padding-top: 4px;
 }
 
 .quiqqer-order-basket-small-total td:first-child {
     color: #999;
+    text-align: left;
 }
 
 .quiqqer-order-basket-small-total-sum td:first-child {
@@ -89,12 +98,16 @@
     text-align: right;
 }
 
-.quiqqer-order-basket-small-buttons {
-    text-align: right;
-    margin-top: 15px;
-}
-
 .quiqqer-order-basket-small-total-sum td {
     border-top: 1px dashed #ddd;
     font-weight: 500;
+}
+
+.quiqqer-order-basket-small-buttons {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.quiqqer-order-basket-small-buttons .open-shopping-cart {
+    margin-right: 1rem;
 }

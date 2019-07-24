@@ -1,0 +1,90 @@
+a {
+    color: #3986dd;
+    text-decoration: none;
+}
+
+a:hover,
+.quiqqer-order-basketButton.basket-style-compact:hover .quiqqer-order-basketButton-icon-custom,
+.quiqqer-order-basketButton.basket-style-compact:active .quiqqer-order-basketButton-icon-custom,
+.lcs-button:hover,
+.lcs-button:hover .lcs-button-currency-code,
+.lcs-button:active .lcs-button-currency-code,
+.lcs-button:active,
+.shop-category-menu-button:hover {
+    color: #3986dd;
+}
+
+.quiqqer-menu-megaMenu-list-item > a:hover,
+.cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a {
+    color: #3986dd;
+}
+
+/*.product-gallery .quiqqer-gallery-slider-active-preview {
+    opacity: 1;
+    border-color: #92bcec;
+    border-color: #3986dd;
+}*/
+
+.product-data-more-tabs-tab.active,
+.qui-contextitem-container .qui-contextitem-icon {
+    color: #3986dd;
+}
+
+.quiqqer-fupc-category-items-item--active span:nth-child(2),
+.quiqqer-fupc-category-items-item--active {
+    color: #3986dd;
+}
+
+.quiqqer-fupc-category-items-item:before {
+    background: #3986dd;
+}
+
+.noUi-connect {
+    background: #3986dd !important;
+}
+
+
+.quiqqer-products-productList-sort-display .button.active {
+    background: #e5effb;
+    border-color: #e5effb;
+    color: #3986dd;
+}
+
+.qui-control-input-range .noUi-horizontal .noUi-handle:before {
+    border-color: #3986dd;
+}
+
+.quiqqer-products-productList-sort .quiqqer-products-productList-sort-display .button:hover {
+    border-color: #e5effb;
+}
+
+/* products filter */
+.quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter {
+    background: #e5effb;
+}
+
+.quiqqer-products-productList-filter .quiqqer-products-productList-filter-destroy:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+input[type="checkbox"]:checked {
+    background: #d0e2f7;
+}
+
+input[type="checkbox"]:checked:after {
+    color: #3986dd;
+}
+
+input[type="radio"] {
+    background-color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+}
+
+input[type="radio"]:checked:after {
+    background: #3986dd;
+}
+
+input[type="radio"]:checked {
+    background-color: #d0e2f7;
+    border: 1px solid #d0e2f7;
+}

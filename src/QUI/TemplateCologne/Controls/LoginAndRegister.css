@@ -1,0 +1,81 @@
+.loginAndRegister-wrapper {
+    display: flex;
+}
+
+.loginAndRegister-column {
+    width: 50%;
+}
+
+.loginAndRegister-login {
+    margin-right: 1em;
+}
+
+.loginAndRegister-register {
+    margin-left: 1em;
+}
+
+/* login */
+.loginAndRegister .quiqqer-login {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    margin: 3em auto 0;
+    max-width: 360px;
+}
+
+
+/* register */
+/* demo */
+
+.loginAndRegister-register label {
+    display: block;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.loginAndRegister-register .form-row label {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.loginAndRegister-register .form-row label:first-child {
+    padding-left: 0;
+}
+
+.loginAndRegister-register .form-row label:last-child {
+    padding-right: 0;
+}
+
+.loginAndRegister-register input,
+.loginAndRegister-register select {
+    width: 100%;
+}
+
+
+.loginAndRegister-register label span {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.loginAndRegister-register input[type="submit"] {
+    float: right;
+    width: auto;
+}
+
+.loginAndRegister-register .qui-select {
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .loginAndRegister-wrapper {
+        display: block;
+    }
+
+    .loginAndRegister-login,
+    .loginAndRegister-register {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}

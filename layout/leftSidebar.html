@@ -1,0 +1,86 @@
+
+{assign var=leftSideBar value=$BricksManager->getBricksByArea('leftSidebar', $Site)}
+{assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContent', $Site)}
+{assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContent', $Site)}
+
+<div class="main-left-sidebar">
+    <div class="page-multiple-right template-column" role="main">
+
+        {if !empty( $prefixContentBricks )}
+        {foreach from=$prefixContentBricks item=Brick}
+        <section class="template-brick-container template-brick-contentPrefix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
+        {/foreach}
+        {/if}
+
+        {if $header == 'beforeContent' && !$productPage}
+            {if $Site->getAttribute('image_emotion')}
+            <header class="page-content-header page-content-header-emotion"
+                    style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"
+            >
+                <div class="page-content-header-emotion-container">
+                    {if $pageTitle == 'header' || $pageTitle == 'both'}
+                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                    {/if}
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
+                </div>
+            </header>
+            {else}
+            <header class="page-content-header">
+                {if $pageTitle == 'header' || $pageTitle == 'both'}
+                <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                {/if}
+                <div class="page-content-emotion-short">
+                    {$Site->getAttribute('short')|nl2br}
+                </div>
+            </header>
+            {/if}
+        {/if}
+
+
+        {$Template->getBody()}
+
+
+        {if !empty( $suffixContentBricks )}
+        {foreach from=$suffixContentBricks item=Brick}
+        <section class="template-brick-container template-brick-contentSuffix brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
+        </section>
+        {/foreach}
+        {/if}
+
+    </div>
+
+    <div class="page-multiple-left template-column">
+        {foreach from=$leftSideBar item=Brick}
+        <section class="template-brick-container template-brick-leftSidebar brick-id-{$Brick->getAttribute('id')}">
+            <div class="template-grid-row">
+                {if $Brick->getAttribute('frontendTitle') &&
+                    $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
+                }
+                    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+                {/if}
+                {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
+                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {/if}
+                {$Brick->create()}
+            </div>
+        </section>
+        {/foreach}
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<article class="cologne-productList-product-details" data-pid="{$Product->getId()}">
+    <div class="cologne-productList-product-details-image">
+        <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
+        {image image=$Product->getImage() title=$Product->getTitle() width=200}
+        </a>
+    </div>
+
+    <div class="cologne-productList-product-details-content">
+        <header class="cologne-productList-product-details-content-title">
+            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}">
+                {$Product->getTitle()}
+            </a>
+        </header>
+        <div class="cologne-productList-product-details-content-description text-muted">
+            {$Product->getDescription()}
+        </div>
+
+        {if !$hidePrice}
+        <div class="cologne-productList-product-details-content-price">
+            {if $Product->getAttribute('hasVariablePrice')}
+                {locale
+                    group="quiqqer/erp"
+                    var="price.starting.from"
+                    price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+                }
+            {else}
+                {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+            {/if}
+        </div>
+        {/if}
+
+        <div class="cologne-productList-product-details-content-buttons">
+            <!--<span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>-->
+            <!--<span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>-->
+            <a href="{$Product->getUrl()}"
+               class="btn btn-primary btn-outline add-to-basket"
+               data-product-id="{$Product->getId()}"
+               data-product-animatable="1"
+               data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+            >
+                <label>
+                    {locale group="quiqqer/product-bricks" var="brick.control.product.addToCart"}
+                </label>
+            </a>
+        </div>
+    </div>
+</article>

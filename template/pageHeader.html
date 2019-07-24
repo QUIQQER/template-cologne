@@ -1,0 +1,15 @@
+<header class="page-header"
+        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1920 onlysrc=1 rewrited=1}')"
+>
+    <div class="page-header-container">
+        <div class="template-grid-container">
+            {if $pageTitle == 'header' || $pageTitle == 'both'}
+                <h1>{$Site->getAttribute('title')|nl2br}</h1>
+            {/if}
+
+            <div class="page-content-emotion-short">
+                {$Site->getAttribute('short')|nl2br}
+            </div>
+        </div>
+    </div>
+</header>

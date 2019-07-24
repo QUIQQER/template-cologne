@@ -1,0 +1,12 @@
+<div class="quiqqer-control-payments-grid">
+{foreach $payments as $Payment}
+    {* <!-- Show all or only active? --> *}
+    {if $showInactive || $Payment->isActive()}
+        <div class="quiqqer-control-payments-grid-entry">
+            <img src="{$Payment->getIcon()}"
+                 alt="{$Payment->getTitle()}"
+                 title="{$Payment->getTitle()}"/>
+        </div>
+    {/if}
+{/foreach}
+</div>

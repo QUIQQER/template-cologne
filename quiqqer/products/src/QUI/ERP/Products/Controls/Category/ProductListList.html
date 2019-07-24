@@ -1,0 +1,57 @@
+<article class="quiqqer-productList-product-list"
+         data-pid="{$Product->getId()}"
+>
+    <div class="quiqqer-productList-product-list-text">
+        <header>
+            <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}"
+               class="quiqqer-productList-product-list-text-link">
+                {$Product->getTitle()}
+            </a>
+        </header>
+
+        <div class="quiqqer-productList-product-list-text-description text-muted">
+            {$Product->getDescription()}
+        </div>
+    </div>
+
+    <div class="quiqqer-productList-product-list-artno">
+        <!--<span class="quiqqer-productList-product-list-artno-title text-mutedd">
+            {locale group="quiqqer/products" var="productNo"}:
+        </span>
+        <br />-->
+        <span class="quiqqer-productList-product-list-artno-value">
+            {$Product->getFieldValue(3)}
+        </span>
+    </div>
+
+    <div class="quiqqer-productList-product-list-buttons">
+        <!--<span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>-->
+        <!--<span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>-->
+
+        <a href="{$Product->getUrl()}"
+           title="{locale group='quiqqer/product-bricks' var='brick.control.product.addToCart'}"
+           class="btn btn-primary btn-outline add-to-basket"
+           data-product-id="{$Product->getId()}"
+           data-product-animatable="1"
+           data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+        >
+            <label>
+                <span class="fa fa-shopping-cart"></span>
+            </label>
+        </a>
+    </div>
+
+    {if !$hidePrice}
+    <div class="quiqqer-productList-product-list-price font-weight-medium">
+        {if $Product->getAttribute('hasVariablePrice')}
+            {locale
+                group="quiqqer/erp"
+                var="price.starting.from"
+                price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+            }
+        {else}
+            {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+        {/if}
+    </div>
+    {/if}
+</article>

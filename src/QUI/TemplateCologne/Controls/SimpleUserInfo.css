@@ -1,0 +1,101 @@
+/********************/
+/* simple user info */
+/********************/
+.sui-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sui-top {
+    background: #eee;
+    height: 100px;
+    width: 100%;
+}
+
+.sui-badge {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+    cursor: help;
+    display: block;
+    float: right;
+    font-size: 0.9em;
+    height: 26px;
+    margin: 20px;
+    padding: 5px 10px;
+}
+
+.sui-badge .fa {
+    margin-left: 2px;
+    margin-right: 7px;
+}
+
+.sui-image {
+    height: 100px;
+    position: relative;
+    width: 100px;
+}
+
+.sui-image img {
+    background: #fff;
+    border: 8px solid #fff;
+    border-radius: 50px;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+    top: -40%;
+    width: 100px;
+}
+
+.sui-data {
+    padding: 5px 20px;
+    width: calc(100% - 100px);
+}
+
+.sui-data-name {
+    display: block;
+    font-size: 1.3em;
+}
+
+.sui-data-joined {
+    opacity: 0.5;
+}
+
+@media (max-width: 999px) {
+    .sui-image {
+        height: 80px;
+        width: 80px;
+    }
+
+    .sui-image img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .sui-data {
+        padding: 5px 10px;
+        width: calc(100% - 80px);
+    }
+}
+
+@media (max-width: 768px) {
+    .quiqqer-frontendUsers-controls-profile-categories {
+        display: block !important;
+        margin-bottom: 1em;
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .quiqqer-frontendUsers-controls-profile-categories > div {
+        display: none;
+    }
+
+    .quiqqer-frontendUsers-controls-profile-categories > div.quiqqer-fupc-userinfo {
+        display: block;
+    }
+
+    .sui-top {
+        height: 70px;
+    }
+}

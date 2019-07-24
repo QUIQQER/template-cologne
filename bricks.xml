@@ -2,16 +2,16 @@
 <quiqqer>
     <bricks>
 
-        <!-- for all bricks -->
+        <!-- generall settings for all bricks -->
         <brick control="*">
             <settings>
-                <setting name="brickFullWidth" type="checkbox">
+                <setting name="general.fullWidth" type="checkbox">
                     <locale group="quiqqer/template-cologne"
-                            var="brickFullWidth"/>
+                            var="brick.general.fullWidth"/>
                 </setting>
-                <setting name="noPadding" type="checkbox">
+                <setting name="general.noSpacing" type="checkbox">
                     <locale group="quiqqer/template-cologne"
-                            var="noPadding"/>
+                            var="brick.general.noSpacing"/>
                 </setting>
             </settings>
         </brick>
@@ -21,6 +21,66 @@
 
             <!-- global areas -->
             <areas>
+
+                <!-- product sidebar prefix -->
+                <area name="productSidebarPrefix" site-type="products/category"
+                      inheritance="1" priority="10">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarPrefix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarPrefix.description"
+                        />
+                    </description>
+                </area>
+
+                <!-- product sidebar suffix -->
+                <area name="productSidebarSuffix" site-type="products/category"
+                      inheritance="1" priority="11">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarSuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productSidebarSuffix.description"
+                        />
+                    </description>
+                </area>
+
+                <!-- product category prefix (area before product list) -->
+                <area name="productCategoryPrefix" site-type="products/category"
+                      inheritance="1" priority="12">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productCategoryPrefix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productCategoryPrefix.description"
+                        />
+                    </description>
+                </area>
+
+                <!-- product category suffix (area after product list) -->
+                <area name="productCategorySuffix" site-type="products/category"
+                      inheritance="1" priority="13">
+                    <title>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productCategorySuffix.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="area.productCategorySuffix.description"
+                        />
+                    </description>
+                </area>
 
                 <area name="headerSuffix" inheritance="1" priority="1">
                     <title>
@@ -35,28 +95,15 @@
                     </description>
                 </area>
 
-                <area name="contentPrefix" inheritance="1" priority="3">
+                <area name="footerPrefix" inheritance="1" priority="6">
                     <title>
                         <locale group="quiqqer/template-cologne"
-                                var="area.contentPrefix.title"
-                                />
-                    </title>
-                    <description>
-                        <locale group="quiqqer/template-cologne"
-                                var="area.contentPrefix.description"
-                                />
-                    </description>
-                </area>
-
-                <area name="contentSuffix" inheritance="1" priority="4">
-                    <title>
-                        <locale group="quiqqer/template-cologne"
-                                var="area.contentSuffix.title"
+                                var="area.footerPrefix.title"
                         />
                     </title>
                     <description>
                         <locale group="quiqqer/template-cologne"
-                                var="area.contentSuffix.description"
+                                var="area.footerPrefix.description"
                         />
                     </description>
                 </area>
@@ -65,18 +112,157 @@
                     <title>
                         <locale group="quiqqer/template-cologne"
                                 var="area.footer.title"
-                                />
+                        />
                     </title>
                     <description>
                         <locale group="quiqqer/template-cologne"
                                 var="area.footer.description"
-                                />
+                        />
                     </description>
                 </area>
             </areas>
 
+            <!-- specific type areas -->
+            <layouts>
 
+                <layout layout="layout/startPage">
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/noSidebar">
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/leftSidebar">
+                    <area name="leftSidebar" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.leftSidebar.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.leftSidebar.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/rightSidebar">
+                    <area name="rightSidebar" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.rightSidebar.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.rightSidebar.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+            </layouts>
         </templateAreas>
     </bricks>
-
 </quiqqer>

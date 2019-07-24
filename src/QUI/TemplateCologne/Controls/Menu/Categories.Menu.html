@@ -1,0 +1,64 @@
+{assign var=children value=$Site->getNavigation()}
+
+{* <!-- menu level (depth) --> *}
+{if !isset($level)}
+    {assign var=level value=1}
+{else}
+    {assign var=level value=$level+1}
+{/if}
+
+{* <!-- show / hide category description --> *}
+{assign var=showDesc value=0}
+{if $showDescFor === 'all' ||
+    ($showDescFor === 'firstLevel' && $level == 1)
+}
+    {assign var=showDesc value=1}
+{/if}
+
+{if count($children)}
+<ul class="categories-menu-list categories-menu-list-level-{$level}">
+    {if $level > 1}
+        <li class="categories-menu-list-entry">
+            <div class="categories-menu-list-entry-backButton"
+                 title="{locale group='quiqqer/template-cologne' var='categoryMenu.button.back.title'}">
+                <span class="fa fa-angle-left categories-menu-list-entry-backButton-icon"></span>
+                <span class="categories-menu-list-entry-backButton-text">
+                    {locale group="quiqqer/template-cologne" var="categoryMenu.button.back"}
+                </span>
+            </div>
+        </li>
+    {/if}
+    {foreach from=$children item=Child}
+        {if $Child->getAttribute('type') == 'quiqqer/products:types/category'}
+        {assign var=subChildren value=$Child->getNavigation()}
+
+        <li class="categories-menu-list-entry">
+            <a href="{url site=$Child}"
+               class="categories-menu-list-entry-link
+                      {if count($subChildren)}categories-menu-list-entry-link__hasChildren{/if}"
+                title="{$Child->getAttribute('title')}">
+                <span class="categories-menu-list-entry-title">
+                    {$Child->getAttribute('title')}
+                </span>
+                {if $Child->getAttribute('short') && $showDesc}
+                <p class="categories-menu-list-entry-short">
+                    {$Child->getAttribute('short')}
+                </p>
+                {/if}
+            </a>
+
+            {if count($subChildren)}
+                <span class="fa fa-angle-right categories-menu-list-entry-next"
+                    title="{locale group='quiqqer/template-cologne' var='categoryMenu.button.nextCat.title' title=$Child->getAttribute('title')}"></span>
+                {include file="`$menuFile`"
+                    Site=$Child
+                    ActiveSite=$ActiveSite
+                    level=$level
+                }
+            {/if}
+        </li>
+        {/if}
+    {/foreach}
+
+</ul>
+{/if}

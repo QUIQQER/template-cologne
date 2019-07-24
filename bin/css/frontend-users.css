@@ -1,9 +1,73 @@
+.templateCologne-frontendUsers-profile-container-login {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.quiqqer-frontend-users-address-description-button {
+     max-width: 100% !important;
+}
+
+/********************/
+/* simple user info */
+/********************/
+.quiqqer-fupc-userinfo {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.quiqqer-fupc-userinfo .sui-top {
+    background: url("../images/brushed_alu.png");
+}
+
+.quiqqer-frontendUsers-profile-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categories {
+    padding-right: 20px;
+}
+
+.quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categoryContent {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categories {
+        padding: 0;
+    }
+
+    .quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categoryContent {
+        padding-left: 0;
+    }
+}
+
+/*****************/
+/* category menu */
+/*****************/
 .quiqqer-frontendUsers-controls-profile-categoryContent h2 {
     font-weight: normal;
     line-height: 40px;
 }
 
+.quiqqer-fupc-category {
+    margin-bottom: 2em;
+}
+
+.quiqqer-fupc-category:last-child {
+    margin-bottom: 0;
+}
+
 .quiqqer-fupc-category-header {
+    line-height: 30px;
+}
+
+.quiqqer-fupc-category .quiqqer-fupc-category-header {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 1.5em;
     line-height: 30px;
 }
 
@@ -14,20 +78,60 @@
 }
 
 .quiqqer-fupc-category-items-item {
+    border: 1px solid #ddd;
+    border-bottom: none;
     clear: both;
     color: #333;
+    display: flex;
     float: left;
     line-height: 40px;
+    overflow: hidden;
+    padding: 5px 0;
+    position: relative;
     text-decoration: none;
     width: 100%;
+}
+
+.quiqqer-fupc-category.quiqqer-fupc-category--open .quiqqer-fupc-category-header {
+    border-bottom: none !important;
+}
+
+.quiqqer-fupc-category--open .quiqqer-fupc-category-items-item:last-child {
+    border-bottom: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.quiqqer-fupc-category--open .quiqqer-fupc-category-items-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.quiqqer-fupc-category-items-item:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item--active,
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item:hover {
+    background: none;
+}
+
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item--active:before,
+.quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item:hover:before {
+    width: 4px;
 }
 
 .quiqqer-fupc-category-items-item .fa {
     line-height: 40px;
 }
 
-.quiqqer-frontendUsers-userdata-section {
-    max-width: 600px;
+.quiqqer-frontendUsers-userdata-section, .quiqqer-frontendUsers-userdata-address, .quiqqer-frontendUsers-userdata-address-additional {
+     max-width: 100% !important;
 }
 
 .quiqqer-frontend-users-address header,
@@ -38,6 +142,20 @@
 .quiqqer-frontend-users-address header h2,
 .quiqqer-frontendUsers-userdata-section header h2 {
     padding-bottom: 0;
+}
+
+.quiqqer-frontend-users-address-edit select,
+.quiqqer-frontend-users-address-edit .qui-select {
+    width: 50% !important;
+}
+
+.quiqqer-frontend-users-address-edit .qui-select,
+.quiqqer-frontend-users-address-edit .qui-select .drop-icon {
+    height: 40px;
+}
+
+.quiqqer-frontend-users-address-edit .qui-select .text {
+    line-height: 40px;
 }
 
 .quiqqer-frontendUsers-userdata-invoiceaddress {
@@ -74,3 +192,17 @@
 .cologne-main .quiqqer-order-customerData-edit-businessType [name="businessType"] {
     width: 70%;
 }
+
+@media (max-width: 768px) {
+    .quiqqer-frontendUsers-controls-profile-categories-mobile {
+        margin-bottom: 2em;
+    }
+}
+
+/******************/
+/* profile orders */
+/******************/
+.quiqqer-order-profile-orders .quiqqer-order-profile-orders-pagination:first-child {
+    display: none;
+}
+

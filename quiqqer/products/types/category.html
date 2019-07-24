@@ -1,0 +1,154 @@
+<section class="quiqqer-products-wrapper">
+
+    {assign var=fullWidth value="-fullWidth"}
+
+    {if $showFilter}
+
+    {assign var=fullWidth value=""}
+    <div class="quiqqer-product-sidebar content-headerpage-multible-left template-column hide-on-mobile">
+
+        {assign var=productSidebarPrefix value=$BricksManager->getBricksByArea('productSidebarPrefix', $Site)}
+        {if $productSidebarPrefix}
+        <div class="product-sidebar-container product-sidebar-prefix template-grid-row">
+            {foreach $productSidebarPrefix as $Brick}
+                <section class="template-brick-container template-brick-productSidebarPrefix brick-id-{$Brick->getAttribute('id')}">
+                    <div class="template-grid-row">
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <header class="left-sidebar-filter-header">
+                            <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                        </header>
+                        {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                        {$Brick->create()}
+                    </div>
+                </section>
+            {/foreach}
+        </div>
+        {/if}
+
+        {if $CategoryMenu->countChildren()}
+            <div class="product-sidebar-container template-grid-row clearfix">
+                <header class="left-sidebar-filter-header">
+                    <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
+                </header>
+                {$CategoryMenu->create()}
+            </div>
+        {/if}
+
+        {if !isset($Product) && $Site->getAttribute('quiqqer.products.settings.showFreeTextSearch')}
+        <div class="product-sidebar-container product-sidebar-freeTextSearch template-grid-row clearfix">
+
+            <header class="left-sidebar-filter-header">
+                <h2>{locale group="quiqqer/products" var="type.category.freetextTitle"}</h2>
+            </header>
+            <label class="quiqqer-products-category-freetextSearch">
+                <input type="search" name="search"
+                       placeholder="{locale group="quiqqer/products" var="control.search.placeholder"}"
+                />
+                <input type="submit" name="submit" class="button"
+                       value="{locale group="quiqqer/products" var="type.category.freetextButtonText"}"
+                />
+                <noscript>
+                    <style>
+                        .quiqqer-products-category-freetextSearch [type="submit"] {
+                            display: inline;
+                        }
+                    </style>
+                </noscript>
+            </label>
+        </div>
+        {/if}
+
+        {if isset($ProductList) && $ProductList->count() && !empty($filter)}
+        <div class="product-sidebar-container product-sidebar-filter template-grid-row clearfix">
+            <header class="left-sidebar-filter-header">
+                <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
+            </header>
+            {$ProductList->createFilter()}
+        </div>
+        {/if}
+
+        {assign var=productSidebarSuffix value=$BricksManager->getBricksByArea('productSidebarSuffix', $Site)}
+        {if $productSidebarSuffix}
+        <div class="product-sidebar-container product-sidebar-suffix template-grid-row">
+            {foreach $productSidebarSuffix as $Brick}
+                <section class="template-brick-container template-brick-productSidebarSuffix brick-id-{$Brick->getAttribute('id')}">
+                    <div class="template-grid-row">
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <header class="left-sidebar-filter-header">
+                            <h2>{$Brick->getAttribute('frontendTitle')}</h2>
+                        </header>
+                        {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                        {$Brick->create()}
+                    </div>
+                </section>
+            {/foreach}
+        </div>
+        {/if}
+
+    </div>
+    {/if}
+
+    {if isset($Product)}
+        {assign var=cssClasses value="quiqqer-products-product page-multible-right template-column full-width"}
+        {if $showFilter}
+            {assign var=cssClasses value="quiqqer-products-product page-multible-right template-column"}
+        {/if}
+
+        <div class="{$cssClasses}">
+            {$Product->create()}
+        </div>
+        <script>
+            var QUIQQER_PRODUCT_ID = '{$Product->getAttribute('data-productid')}';
+        </script>
+    {else}
+        {assign var=cssClasses value="quiqqer-products-category page-multible-right template-column full-width"}
+
+        {if $showFilter}
+            {assign var=cssClasses value="quiqqer-products-category page-multible-right template-column"}
+        {/if}
+
+        <div class="{$cssClasses}">
+            {if $header == 'beforeContent'}
+                {if $Site->getAttribute('image_emotion')}
+                <header class="page-content-header page-content-header-emotion"
+                        style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"
+                >
+                    <div class="page-content-header-emotion-container">
+                        <h1>{$Site->getAttribute('title')}</h1>
+                        <div class="page-content-emotion-short">
+                            {$Site->getAttribute('short')}
+                        </div>
+                    </div>
+                </header>
+                {else}
+                <header class="page-content-header">
+                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
+                </header>
+                {/if}
+            {/if}
+
+            {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+            <section class="content-body quiqqer-category-content">
+                {$Site->getAttribute('content')}
+            </section>
+            {/if}
+
+            {$ProductList->create()}
+        </div>
+
+        <script>
+            var _paq = _paq || [];
+            _paq.push([
+                'setEcommerceView',
+                false, // productSku
+                false, // productName
+                document.title // Category Page
+            ]);
+        </script>
+    {/if}
+</section>

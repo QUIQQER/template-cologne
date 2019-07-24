@@ -1,0 +1,16 @@
+<header class="cologne-header cologne-header-menu template-columns">
+
+    {* <!--Shop category menu--> *}
+    {if $showCategoryMenu}
+    <div class="shop-category-menu-button-wrapper"
+         title="{locale group='quiqqer/template-cologne' var='categoryMenu.openButton.title'}">
+        <span class="shop-category-menu-button">
+            <span class="fa fa-bars"></span>
+        </span>
+    </div>
+    {/if}
+
+    <div class="template-column cologne-header-nav">
+        {$Menu->create()}
+    </div>
+</header>

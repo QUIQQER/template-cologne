@@ -1,0 +1,13 @@
+<div class="cologne-breadcrumb">
+    <div class="cologne-breadcrumb-wrapper">
+        <div class="cologne-grid-container">
+            {if $pageTitle == 'breadcrumb' || $pageTitle == 'both'}
+            <h1 class="page-title">
+                {$Site->getAttribute('title')}
+            </h1>
+            {/if}
+
+            {control control="\QUI\Controls\Breadcrumb"}
+        </div>
+    </div>
+</div>

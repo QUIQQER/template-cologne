@@ -4,166 +4,124 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
 
+    {pace}
+
     {$Template->getHeader()}
 
     {fontawesome}
+    {unsemantic}
 
-    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/style.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/buttons.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/form.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/products.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/frontend-users.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/order.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/user-orders.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/controls.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/mini-basket.css')}"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/product-bricks.css')}"/>
 
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/style.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/buttons.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/form.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/products.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/frontend-users.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/order.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/controls.css"/>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/mini-basket.css"/>
+    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/cologne.blue.css')}"/>
 
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">-->
+    {$settingsCSS}
+
+    <script>
+        var basketStyle = "{$basketStyle}";
+        var basketOpen  = "{$basketOpen}";
+    </script>
 
 </head>
-<body class="page-{$Site->getId()} {$typeClass}">
+<body class="page-{$Site->getId()} {$typeClass} {$siteType}">
 
-<div class="topbar template-columns">
-    <div class="template-column topbar-left">
-        {locale group="quiqqer/template-cologne" var="template.topbar.content.left"}
-    </div>
-    <div class="template-column topbar-right">
 
-        <span class="template-column cologne-header-control-user">
-            <a href="#login" class="login btn btn-primary btn-outline">
-                <span class="fa fa-spinner fa-spin"></span>
-                {if $User->getId()}
-                {locale group="quiqqer/template-cologne" var="template.loged.in" username=$User->getName()}
-                {else}
-                {locale group="quiqqer/template-cologne" var="template.login"}
-                {/if}
-            </a>
-        </span>
+{* small top bar *}
+{fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
+    Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch}
 
-        <span class="template-column cologne-header-control-currencies"></span>
-
-        DE EN <span class="fa fa-angle-down"></span>
-    </div>
+{* main navigation / menu *}
+<div>
+    {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu showCategoryMenu=$showCategoryMenu}
 </div>
 
-<header class="cologne-header cologne-header-menu template-columns">
-    <div class="template-column cologne-header-logo">
-        <a href="/" class="cologne-header-logo-link">
-            {image image=$Project->getMedia()->getLogoImage() class="logo"}
-        </a>
-    </div>
+{if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
+    {fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
+{/if}
 
-    <div class="template-column cologne-header-nav">
-        {$Menu->create()}
-    </div>
-
-    <div class="cologne-header-control">
-
-        <div class="template-column cologne-header-control-basket"></div>
-
-    </div>
-</header>
-
-
-<div class="cologne-header-menu cologne-bg-container">
-    <div class="cologne-grid-container">
-
-    </div>
+{* <!--Shop category menu--> *}
+{if $showCategoryMenu}
+<div class="shop-category-menu-wrapper">
+    {$CategoriesMenu->create()}
 </div>
+{/if}
 
+<!-- breadcrumb -->
+{if $showBreadcrumb}
+    {fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
+{/if}
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
 
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('noPadding')}
-{assign var=brickNoPadding value="brick-no-padding"}
-{/if}
-<section class="template-header-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickNoPadding value=""}
+        {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
 
-
-{if $Site->getId() !== 1}
-<div class="cologne-breadcrumb">
+<main class="cologne-main">
     <div class="cologne-grid-container">
-        <h1 class="page-title">{$Site->getAttribute('title')}</h1>
-        {control control="\QUI\Controls\Breadcrumb"}
-    </div>
-</div>
-{/if}
-
-{assign var=contentPrefix value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
-{foreach $contentPrefix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
-
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('noPadding')}
-{assign var=brickNoPadding value="brick-no-padding"}
-{/if}
-<section class="template-content-prefix section-divider brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
-{/foreach}
-
-
-<main class="cologne-main section-divider">
-    <div class="cologne-grid-container template-column">
         {$Template->getLayout()}
     </div>
 </main>
 
-{assign var=contentSuffix value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
-{foreach $contentSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'brickFullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
-
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('noPadding')}
-{assign var=brickNoPadding value="brick-no-padding"}
-{/if}
-<section class="template-content-suffix section-divider brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
-{/foreach}
-
-
-<footer class="template-footer">
-    {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-    {if !empty($footer)}
-    <div class="template-grid-container cologne-bg-container">
-        <div class="cologne-grid-container">
-            {foreach from=$footer item=Brick}
-            {$Brick->create()}
-            {/foreach}
-        </div>
-    </div>
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+{foreach $footerPrefix as $Brick}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
     {/if}
 
-    <div class="cologne-footer-copyright">
-        <div class="cologne-grid-container">
-            Copyright {$smarty.now|date_format:"Y"}
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
         </div>
-    </div>
+    </section>
+{/foreach}
+
+<footer class="template-footer">
+    {* footer brick area *}
+    {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site}
+
+    {* pre-defined footer *}
+    {fetch template="template/footer.predefined.html"
+        Site=$Site
+        paymentsData=$paymentsData
+        shortText=$shortText
+        urlList=$urlList
+        featuredProducts=$featuredProducts
+    }
+
+    {* footer copyright *}
+    {fetch template="template/footer.copyright.html"}
 </footer>
 
-<script src="{$URL_TPL_DIR}bin/javascript/init.js"></script>
+{* to top icon *}
+{fetch template="template/toTop.html"}
+
+<script src="{$Template->getTemplateUrl('bin/javascript/init.js')}"></script>
 </body>
 </html>
