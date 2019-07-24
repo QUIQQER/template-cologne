@@ -301,6 +301,19 @@
     padding: 0 !important;
 }
 
+.quiqqer-products-productList-resultInfo .quiqqer-products-productList-resultInfo-text {
+    margin-left: 1rem;
+}
+
+.quiqqer-products-productList-resultInfo .quiqqer-products-productList-resultInfo-clearbtn {
+    cursor: pointer;
+    font-size: 14px !important;
+}
+
+.quiqqer-products-productList-resultInfo-clearbtn:hover .fa {
+    color: red;
+}
+
 .quiqqer-products-productList-fl .quiqqer-products-productList-filterList {
     display: flex;
     flex-direction: column;

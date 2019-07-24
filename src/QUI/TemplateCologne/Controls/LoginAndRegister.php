@@ -22,7 +22,7 @@ class LoginAndRegister extends QUI\Control
     {
         $this->setAttributes([
             'nodeName' => 'section',
-            'class' => 'loginAndRegister'
+            'class'    => 'loginAndRegister'
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/LoginAndRegister.css');
@@ -33,18 +33,20 @@ class LoginAndRegister extends QUI\Control
     /**
      * (non-PHPdoc)
      *
+     * @throws QUI\Exception
      * @see \QUI\Control::create()
      *
-     * @throws QUI\Exception
      */
     public function getBody()
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $LoginControl = new QUI\Users\Controls\Login();
+        $Login = new QUI\FrontendUsers\Controls\Login([
+            'header'        => false
+        ]);
 
         $Engine->assign([
-            'LoginControl' => $LoginControl
+            'Login' => $Login
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/LoginAndRegister.html');
