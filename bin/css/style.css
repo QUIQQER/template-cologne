@@ -169,6 +169,7 @@ small {
 /***************************/
 .qui-control-input-range {
     margin-top: 1em;
+    cursor: pointer;
 }
 
 .qui-control-input-range .noUi-horizontal {
@@ -193,18 +194,24 @@ small {
 }
 
 .qui-control-input-range .noUi-handle:after,
-.qui-control-input-range  .noUi-handle:before {
+.qui-control-input-range .noUi-handle:before {
     background: #fff;
-    border-radius: 50%;
     border: 2px solid;
+    border-radius: 50%;
     height: 14px;
     left: 7px;
     top: 1px;
     width: 13px;
+    transition: 0.2s transform;
 }
 
 .noUi-handle:after {
     display: none !important;
+}
+
+.noUi-handle:hover:before,
+.noUi-handle:active:before {
+    transform: scale(1.2);
 }
 
 

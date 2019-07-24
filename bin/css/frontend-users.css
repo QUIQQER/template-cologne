@@ -2,6 +2,11 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+.quiqqer-frontend-users-address-description-button {
+     max-width: 100% !important;
+}
+
 /********************/
 /* simple user info */
 /********************/

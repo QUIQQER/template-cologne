@@ -14,7 +14,7 @@
                 <section class="template-brick-container template-brick-productSidebarPrefix brick-id-{$Brick->getAttribute('id')}">
                     <div class="template-grid-row">
                         {if $Brick->getAttribute('frontendTitle')}
-                        <header class="left-sidebar-filter-header text-muted">
+                        <header class="left-sidebar-filter-header">
                             <h2>{$Brick->getAttribute('frontendTitle')}</h2>
                         </header>
                         {/if}
@@ -28,7 +28,7 @@
 
         {if $CategoryMenu->countChildren()}
             <div class="product-sidebar-container template-grid-row clearfix">
-                <header class="left-sidebar-filter-header text-muted">
+                <header class="left-sidebar-filter-header">
                     <h2>{locale group="quiqqer/products" var="type.category.categoryTitle"}</h2>
                 </header>
                 {$CategoryMenu->create()}
@@ -38,7 +38,7 @@
         {if !isset($Product) && $Site->getAttribute('quiqqer.products.settings.showFreeTextSearch')}
         <div class="product-sidebar-container product-sidebar-freeTextSearch template-grid-row clearfix">
 
-            <header class="left-sidebar-filter-header text-muted">
+            <header class="left-sidebar-filter-header">
                 <h2>{locale group="quiqqer/products" var="type.category.freetextTitle"}</h2>
             </header>
             <label class="quiqqer-products-category-freetextSearch">
@@ -61,7 +61,7 @@
 
         {if isset($ProductList) && $ProductList->count() && !empty($filter)}
         <div class="product-sidebar-container product-sidebar-filter template-grid-row clearfix">
-            <header class="left-sidebar-filter-header text-muted">
+            <header class="left-sidebar-filter-header">
                 <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
             </header>
             {$ProductList->createFilter()}
@@ -75,7 +75,7 @@
                 <section class="template-brick-container template-brick-productSidebarSuffix brick-id-{$Brick->getAttribute('id')}">
                     <div class="template-grid-row">
                         {if $Brick->getAttribute('frontendTitle')}
-                        <header class="left-sidebar-filter-header text-muted">
+                        <header class="left-sidebar-filter-header">
                             <h2>{$Brick->getAttribute('frontendTitle')}</h2>
                         </header>
                         {/if}

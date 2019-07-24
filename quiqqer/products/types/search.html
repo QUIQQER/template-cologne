@@ -11,7 +11,7 @@
                 <section class="template-brick-container template-brick-productSidebarSuffix brick-id-{$Brick->getAttribute('id')}">
                     <div class="template-grid-row">
                         {if $Brick->getAttribute('frontendTitle')}
-                        <header class="left-sidebar-filter-header text-muted">
+                        <header class="left-sidebar-filter-header">
                             <h2>{$Brick->getAttribute('frontendTitle')}</h2>
                         </header>
                         {/if}
@@ -24,7 +24,7 @@
         {/if}
 
         <div class="product-sidebar-container template-grid-row clearfix">
-            <header class="left-sidebar-filter-header text-muted">
+            <header class="left-sidebar-filter-header">
                 <h2>{locale group="quiqqer/products" var="type.search.searchTitle"}</h2>
             </header>
             <form action="{url site=$Site}" method="GET" class="quiqqer-products-search-form quiqqer-products-category-freetextSearch">
@@ -39,7 +39,7 @@
 
         {if isset($ProductList) && $ProductList->count() && !empty($filter)}
         <div class="product-sidebar-container product-sidebar-filter template-grid-row clearfix">
-            <header class="left-sidebar-filter-header text-muted">
+            <header class="left-sidebar-filter-header">
                 <h2>{locale group="quiqqer/products" var="type.search.filterTitle"}</h2>
             </header>
             {$ProductList->createFilter()}
@@ -53,7 +53,7 @@
                 <section class="template-brick-container template-brick-productSidebarPrefix brick-id-{$Brick->getAttribute('id')}">
                     <div class="template-grid-row">
                         {if $Brick->getAttribute('frontendTitle')}
-                        <header class="left-sidebar-filter-header text-muted">
+                        <header class="left-sidebar-filter-header">
                             <h2>{$Brick->getAttribute('frontendTitle')}</h2>
                         </header>
                         {/if}
