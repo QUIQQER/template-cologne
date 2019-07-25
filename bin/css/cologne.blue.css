@@ -39,7 +39,9 @@ a:hover,
     background: #3986dd;
 }
 
-.noUi-connect {
+.noUi-connect,
+.quiqqer-fu-login-container h2:first-child:after,
+.quiqqer-fu-registrationSignUp-registration-content h2:first-child:after {
     background: #3986dd !important;
 }
 

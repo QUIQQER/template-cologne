@@ -1035,6 +1035,22 @@ a.toTop:before {
     padding: 20px 40px;
 }
 
+.quiqqer-fu-login-container h2:first-child,
+.quiqqer-fu-registrationSignUp-registration-content h2:first-child {
+    text-align: center;
+    position: relative;
+}
+
+.quiqqer-fu-login-container h2:first-child:after,
+.quiqqer-fu-registrationSignUp-registration-content h2:first-child:after {
+    bottom: -10px;
+    content: '';
+    height: 2px;
+    left: calc(50% - 40px);
+    position: absolute;
+    width: 80px;
+}
+
 /* disable ugly autofill background */
 .quiqqer-auth-login-container input,
 .quiqqer-fu-login-email input {
