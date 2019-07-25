@@ -87,7 +87,9 @@
             <div class="quiqqer-products-productList-filterList-list"></div>
         </div>
         <div class="quiqqer-products-productList-resultInfo">
-            <div class="quiqqer-products-productList-resultInfo-text text-muted"></div>
+            <div class="quiqqer-products-productList-resultInfo-text text-muted">
+                {locale group="quiqqer/products" var="product.list.result.count" count=$count}
+            </div>
             <div class="button quiqqer-products-productList-resultInfo-clearbtn"
                  style="opacity: 0; display: none"
             >
@@ -99,7 +101,9 @@
         </div>
     </div>
     {else}
-    <div class="quiqqer-products-productList-resultInfo-text"></div>
+    <div class="quiqqer-products-productList-resultInfo-text">
+        {locale group="quiqqer/products" var="product.list.result.count" count=$count}
+    </div>
     {/if}
 
     <div class="quiqqer-products-productList-products-container">
