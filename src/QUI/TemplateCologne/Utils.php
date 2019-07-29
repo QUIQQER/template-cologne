@@ -65,12 +65,14 @@ class Utils
     {
         /** @var $Site \QUI\Projects\Site */
         $Site = $params['Site'];
+
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/' . $Site->getId()
+                'quiqqer/templateCologne/'.$Site->getId()
             );
         } catch (QUI\Exception $Exception) {
         }
+        
 
         $config = [];
 
@@ -140,12 +142,14 @@ class Utils
 
         // basket style
         $basketStyle = 'full';
+
         if ($Project->getConfig('templateCologne.settings.basketStyle')) {
             $basketStyle = $Project->getConfig('templateCologne.settings.basketStyle');
         }
 
         // basket open
         $basketOpen = 2;
+
         switch ($Project->getConfig('templateCologne.settings.basketOpen')) {
             case '0':
             case '1':
@@ -159,6 +163,7 @@ class Utils
          * Categories Menu
          */
         $showCategoryMenu = false;
+
         if ($Project->getConfig('templateCologne.settings.showCategoryMenu')) {
             $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
         }
@@ -168,15 +173,14 @@ class Utils
                 'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor')
             ]);
 
-            $config += [
-                'CategoriesMenu' => $CategoriesMenu,
-            ];
+            $config['categoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
         }
 
         /**
          * Predefined footer: short text
          */
         $shortText = false;
+
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.shortText')) {
             $shortText = [];
 
@@ -197,6 +201,7 @@ class Utils
          * Predefined footer: url list
          */
         $urlList = false;
+
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList')) {
             $urlList = [];
 
@@ -231,7 +236,6 @@ class Utils
             $urlList['generalTermsAndConditions'] = false;
 
             if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList.showStandardSites')) {
-
                 /** productSearch */
                 $productSearch = $Project->getSites([
                     'where' => [
@@ -298,6 +302,7 @@ class Utils
          * Featured products
          */
         $featuredProducts = false;
+
         if (true) {
             $featuredProducts['Control'] = new QUI\ProductBricks\Controls\FeaturedProducts([
                 'featured1.categoryId' => $Project->getConfig(
@@ -322,6 +327,7 @@ class Utils
          * Predefined footer: Payments Control
          */
         $paymentsData = false;
+
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')) {
             $paymentsData['PaymentsControl'] = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
@@ -344,8 +350,8 @@ class Utils
             'header'           => $header,
             'pageTitle'        => $pageTitle,
             'showBreadcrumb'   => $showBreadcrumb,
-            'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
-            'typeClass'        => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'settingsCSS'      => '<style>'.$settingsCSS.'</style>',
+            'typeClass'        => 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'siteType'         => $siteType,
             'basketStyle'      => $basketStyle,
             'basketOpen'       => $basketOpen,
@@ -358,7 +364,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/' . $Site->getId(),
+            'quiqqer/templateCologne/'.$Site->getId(),
             $config
         );
 
