@@ -178,7 +178,6 @@ class Utils
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
-
         $config += [
             'header'           => $header,
             'pageTitle'        => $pageTitle,
@@ -200,13 +199,17 @@ class Utils
         return $config;
     }
 
+    /**
+     * Returns data for predefined footer if enabled.
+     *
+     * @param \QUI\Projects\Project $Project
+     * @return array - data for predefined footer
+     */
     private static function getPredefinedFooter($Project)
     {
         $lang = $Project->getLang();
 
-        /**
-         * Predefined footer: short text
-         */
+        /** Predefined footer: short text */
         $shortText = false;
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.shortText')) {
@@ -225,9 +228,7 @@ class Utils
             $shortText['title'] = $title;
         }
 
-        /**
-         * Predefined footer: url list
-         */
+        /** Predefined footer: url list */
         $urlList = false;
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList')) {
@@ -261,7 +262,7 @@ class Utils
             foreach ($sites as $Site) {
                 $sitesData[] = [
                     'title' => $Site->getAttribute('title'),
-                    'url' => $Site->getUrlRewritten()
+                    'url'   => $Site->getUrlRewritten()
                 ];
             }
 
@@ -347,17 +348,17 @@ class Utils
             }
         }
 
-        /**
-         * Featured products
-         */
+        /** Featured products */
         $featuredProducts = false;
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.featuredProducts')) {
-            $featuredProducts['Control'] = new QUI\ProductBricks\Controls\FeaturedProducts([
+            $FeaturedProduct = new QUI\ProductBricks\Controls\FeaturedProducts([
                 'featured1.categoryId' => $Project->getConfig(
                     'templateCologne.settings.predefinedFooter.featuredProducts.category'
                 )
             ]);
+
+            $featuredProducts['controlParsed'] = QUI\ControlUtils::parse($FeaturedProduct);
 
             $titles = json_decode($Project->getConfig(
                 'templateCologne.settings.predefinedFooter.featuredProducts.title'
@@ -372,15 +373,15 @@ class Utils
             $featuredProducts['title'] = $title;
         }
 
-        /**
-         * Predefined footer: Payments Control
-         */
+        /** Predefined footer: Payments Control */
         $paymentsData = false;
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')) {
-            $paymentsData['PaymentsControl'] = new \QUI\TemplateCologne\Controls\Payments([
+            $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
             ]);
+
+            $paymentsData['controlParsed'] = QUI\ControlUtils::parse($PaymentsControl);
 
             $titles = json_decode($Project->getConfig(
                 'templateCologne.settings.predefinedFooter.payments.title'
