@@ -68,11 +68,11 @@ class Utils
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/'.$Site->getId()
+                'quiqqer/templateCologne/' . $Site->getId()
             );
         } catch (QUI\Exception $Exception) {
         }
-        
+
 
         $config = [];
 
@@ -81,7 +81,6 @@ class Utils
         /* @var $Template QUI\Template() */
         $Project  = $params['Project'];
         $Template = $params['Template'];
-        $lang     = $Project->getLang();
 
         /**
          * no header?
@@ -176,6 +175,35 @@ class Utils
             $config['categoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
         }
 
+        // predefined footer
+        $config += self::getPredefinedFooter($Project);
+
+
+        $config += [
+            'header'           => $header,
+            'pageTitle'        => $pageTitle,
+            'showBreadcrumb'   => $showBreadcrumb,
+            'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
+            'typeClass'        => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'siteType'         => $siteType,
+            'basketStyle'      => $basketStyle,
+            'basketOpen'       => $basketOpen,
+            'showCategoryMenu' => $showCategoryMenu
+        ];
+
+        // set cache
+        QUI\Cache\Manager::set(
+            'quiqqer/templateCologne/' . $Site->getId(),
+            $config
+        );
+
+        return $config;
+    }
+
+    private static function getPredefinedFooter($Project)
+    {
+        $lang = $Project->getLang();
+
         /**
          * Predefined footer: short text
          */
@@ -228,8 +256,17 @@ class Utils
                 ]);
             }
 
+            $sitesData = [];
+
+            foreach ($sites as $Site) {
+                $sitesData[] = [
+                    'title' => $Site->getAttribute('title'),
+                    'url' => $Site->getUrlRewritten()
+                ];
+            }
+
             $urlList['title']                     = $title;
-            $urlList['sites']                     = $sites;
+            $urlList['sites']                     = $sitesData;
             $urlList['productSearch']             = false;
             $urlList['legalNotes']                = false;
             $urlList['privacyPolicy']             = false;
@@ -248,7 +285,10 @@ class Utils
                 ]);
 
                 if (count($productSearch)) {
-                    $urlList['productSearch'] = $productSearch[0];
+                    $urlList['productSearch'] = [
+                        'title' => $productSearch[0]->getAttribute('title'),
+                        'url'   => $productSearch[0]->getUrlRewritten()
+                    ];
                 }
 
                 /** legal notes (Impressum) */
@@ -263,7 +303,10 @@ class Utils
                 ]);
 
                 if (count($legalNotes)) {
-                    $urlList['legalNotes'] = $legalNotes[0];
+                    $urlList['legalNotes'] = [
+                        'title' => $legalNotes[0]->getAttribute('title'),
+                        'url'   => $legalNotes[0]->getUrlRewritten()
+                    ];
                 }
 
                 /** privacy policy (Datenschutzerklärung) */
@@ -278,10 +321,13 @@ class Utils
                 ]);
 
                 if (count($privacyPolicy)) {
-                    $urlList['privacyPolicy'] = $privacyPolicy[0];
+                    $urlList['privacyPolicy'] = [
+                        'title' => $privacyPolicy[0]->getAttribute('title'),
+                        'url'   => $privacyPolicy[0]->getUrlRewritten()
+                    ];
                 }
 
-                /** privacy policy (Datenschutzerklärung) */
+                /** general terms and conditinos (AGB) */
                 $generalTermsAndConditions = $Project->getSites([
                     'where' => [
                         'type' => [
@@ -293,7 +339,10 @@ class Utils
                 ]);
 
                 if (count($generalTermsAndConditions)) {
-                    $urlList['generalTermsAndConditions'] = $generalTermsAndConditions[0];
+                    $urlList['generalTermsAndConditions'] = [
+                        'title' => $generalTermsAndConditions[0]->getAttribute('title'),
+                        'url'   => $generalTermsAndConditions[0]->getUrlRewritten()
+                    ];
                 }
             }
         }
@@ -303,7 +352,7 @@ class Utils
          */
         $featuredProducts = false;
 
-        if (true) {
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.featuredProducts')) {
             $featuredProducts['Control'] = new QUI\ProductBricks\Controls\FeaturedProducts([
                 'featured1.categoryId' => $Project->getConfig(
                     'templateCologne.settings.predefinedFooter.featuredProducts.category'
@@ -346,28 +395,11 @@ class Utils
             $paymentsData['title'] = $title;
         }
 
-        $config += [
-            'header'           => $header,
-            'pageTitle'        => $pageTitle,
-            'showBreadcrumb'   => $showBreadcrumb,
-            'settingsCSS'      => '<style>'.$settingsCSS.'</style>',
-            'typeClass'        => 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'siteType'         => $siteType,
-            'basketStyle'      => $basketStyle,
-            'basketOpen'       => $basketOpen,
-            'showCategoryMenu' => $showCategoryMenu,
+        return [
             'shortText'        => $shortText,
             'urlList'          => $urlList,
             'featuredProducts' => $featuredProducts,
             'paymentsData'     => $paymentsData
         ];
-
-        // set cache
-        QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/'.$Site->getId(),
-            $config
-        );
-
-        return $config;
     }
 }

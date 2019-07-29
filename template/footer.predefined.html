@@ -27,13 +27,13 @@
 
             <div class="footer-urlList-container">
                 <ul class="fa-ul">
-                    {foreach $urlList['sites'] as $UrlSite}
+                    {foreach $urlList['sites'] as $siteData}
                     <li>
                         <span class="fa-li fa fa-angle-right"></span>
-                        <a href="{url site=$UrlSite}"
-                           title="{$UrlSite->getAttribute('title')|escape:'html'}"
+                        <a href="{$siteData['url']}"
+                           title="{$siteData['title']}"
                         >
-                            {$UrlSite->getAttribute('title')|escape:'html'}
+                            {$siteData['title']}
                         </a>
                     </li>
                     {/foreach}
@@ -42,10 +42,10 @@
                     {if $urlList['productSearch']}
                     <li>
                         <span class="fa-li fa fa-angle-right"></span>
-                        <a href="{url site=$urlList['productSearch']}"
-                           title="{$urlList['productSearch']->getAttribute('title')|escape:'html'}"
+                        <a href="{$urlList['productSearch']['url']}"
+                           title="{$urlList['productSearch']['title']}"
                         >
-                            {$urlList['productSearch']->getAttribute('title')|escape:'html'}
+                            {$urlList['productSearch']['title']}
                         </a>
                     </li>
                     {/if}
@@ -54,10 +54,10 @@
                     {if $urlList['legalNotes']}
                     <li>
                         <span class="fa-li fa fa-angle-right"></span>
-                        <a href="{url site=$urlList['legalNotes']}"
-                        title="{$urlList['legalNotes']->getAttribute('title')|escape:'html'}"
+                        <a href="{$urlList['legalNotes']['url']}"
+                        title="{$urlList['legalNotes']['title']}"
                            >
-                            {$urlList['legalNotes']->getAttribute('title')|escape:'html'}
+                            {$urlList['legalNotes']['title']}
                         </a>
                     </li>
                     {/if}
@@ -66,10 +66,10 @@
                     {if $urlList['privacyPolicy']}
                     <li>
                         <span class="fa-li fa fa-angle-right"></span>
-                        <a href="{url site=$urlList['privacyPolicy']}"
-                           title="{$urlList['privacyPolicy']->getAttribute('title')|escape:'html'}"
+                        <a href="{$urlList['privacyPolicy']['url']}"
+                           title="{$urlList['privacyPolicy']['title']}"
                         >
-                            {$urlList['privacyPolicy']->getAttribute('title')|escape:'html'}
+                            {$urlList['privacyPolicy']['title']}
                         </a>
                     </li>
                     {/if}
@@ -78,10 +78,10 @@
                     {if $urlList['generalTermsAndConditions']}
                     <li>
                         <span class="fa-li fa fa-angle-right"></span>
-                        <a href="{url site=$urlList['generalTermsAndConditions']}"
-                           title="{$urlList['generalTermsAndConditions']->getAttribute('title')|escape:'html'}"
+                        <a href="{$urlList['generalTermsAndConditions']['url']}"
+                           title="{$urlList['generalTermsAndConditions']['title']}"
                         >
-                            {$urlList['generalTermsAndConditions']->getAttribute('title')|escape:'html'}
+                            {$urlList['generalTermsAndConditions']['title']}
                         </a>
                     </li>
                     {/if}
