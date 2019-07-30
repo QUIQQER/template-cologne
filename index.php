@@ -23,8 +23,8 @@ $EngineForMenu->assign([
     'Logo' => $Project->getMedia()->getLogoImage()
 ]);
 
-$Menu->prependHTML($EngineForMenu->fetch(dirname(__FILE__).'/template/menu/menuPrefix.html'));
-$Menu->appendHTML($EngineForMenu->fetch(dirname(__FILE__).'/template/menu/menuSuffix.html'));
+$Menu->prependHTML($EngineForMenu->fetch(\dirname(__FILE__).'/template/menu/menuPrefix.html'));
+$Menu->appendHTML($EngineForMenu->fetch(\dirname(__FILE__).'/template/menu/menuSuffix.html'));
 
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
