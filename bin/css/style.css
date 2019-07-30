@@ -142,7 +142,8 @@ img {
     font-weight: 500;
 }
 
-.text-muted {
+.text-muted,
+.qui-products-price-display-vat {
     color: #9ba3ad;
 }
 
