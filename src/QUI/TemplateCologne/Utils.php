@@ -68,7 +68,7 @@ class Utils
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/' . $Site->getId()
+                'quiqqer/templateCologne/'.$Site->getId()
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -94,7 +94,7 @@ class Utils
         $showBreadcrumb = false;
         $siteType       = 'no-sidebar';
 
-        switch ($Template->getLayoutType()) {
+        switch ($Site->getAttribute('layout')) {
             case 'layout/startPage':
                 $header         = $Project->getConfig('templateCologne.settings.headerStartPage');
                 $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleStartPage');
@@ -182,8 +182,8 @@ class Utils
             'header'           => $header,
             'pageTitle'        => $pageTitle,
             'showBreadcrumb'   => $showBreadcrumb,
-            'settingsCSS'      => '<style>' . $settingsCSS . '</style>',
-            'typeClass'        => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'settingsCSS'      => '<style>'.$settingsCSS.'</style>',
+            'typeClass'        => 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'siteType'         => $siteType,
             'basketStyle'      => $basketStyle,
             'basketOpen'       => $basketOpen,
@@ -192,7 +192,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/' . $Site->getId(),
+            'quiqqer/templateCologne/'.$Site->getId(),
             $config
         );
 
