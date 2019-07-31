@@ -90,6 +90,14 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
             var self = this;
 
             return new Promise(function (resolve) {
+
+                // save ajax request if the variable is set
+                if (COUNT_LANGUAGES && COUNT_LANGUAGES <=1) {
+                    self.langSwitch = false;
+                    resolve();
+                    return;
+                }
+
                 if (!self.getAttribute('langSwitch')) {
                     self.langSwitch = false;
                     resolve();

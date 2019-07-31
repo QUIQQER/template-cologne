@@ -23,8 +23,8 @@ $EngineForMenu->assign([
     'Logo' => $Project->getMedia()->getLogoImage()
 ]);
 
-$Menu->prependHTML($EngineForMenu->fetch(\dirname(__FILE__).'/template/menu/menuPrefix.html'));
-$Menu->appendHTML($EngineForMenu->fetch(\dirname(__FILE__).'/template/menu/menuSuffix.html'));
+$Menu->prependHTML($EngineForMenu->fetch(\dirname(__FILE__) . '/template/menu/menuPrefix.html'));
+$Menu->appendHTML($EngineForMenu->fetch(\dirname(__FILE__) . '/template/menu/menuSuffix.html'));
 
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
@@ -60,6 +60,10 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
     'Template' => $Template
 ]);
 
+
+/**
+ * Lang currency swtich control
+ */
 $LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
 
 
@@ -71,5 +75,6 @@ $templateSettings['Avatar']             = $Avatar;
 $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
+$templateSettings['countLanguages']     = \count($Project->getLanguages());
 
 $Engine->assign($templateSettings);
