@@ -8,6 +8,14 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 
 /**
+ * Template config
+ */
+$templateSettings = QUI\TemplateCologne\Utils::getConfig([
+    'Project' => $Project,
+    'Site'    => $Site,
+]);
+
+/**
  * Header
  */
 $Menu = new QUI\Menu\MegaMenu([
@@ -16,12 +24,26 @@ $Menu = new QUI\Menu\MegaMenu([
     'Project'                     => $Site->getProject()
 ]);
 
-// header logo
+/**
+ * Basket button
+ */
 $EngineForMenu = QUI::getTemplateManager()->getEngine();
 
+$Currency = QUI\ERP\Currency\Handler::getUserCurrency();
+
+if (!$Currency) {
+    $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
+}
+
+$InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
+
 $EngineForMenu->assign([
-    'Logo' => $Project->getMedia()->getLogoImage()
+    'Logo'               => $Project->getMedia()->getLogoImage(),
+    'basketStyle'        => $templateSettings['basketStyle'],
+    'InitialBasketPrice' => $InitialBasketPrice
 ]);
+
+$templateSettings['initialBasketPrice'] = $InitialBasketPrice->getDisplayPrice();
 
 $Menu->prependHTML($EngineForMenu->fetch(\dirname(__FILE__) . '/template/menu/menuPrefix.html'));
 $Menu->appendHTML($EngineForMenu->fetch(\dirname(__FILE__) . '/template/menu/menuSuffix.html'));
@@ -49,15 +71,6 @@ $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
     'showFlags' => true,
     'showText'  => true,
     'all'       => true
-]);
-
-/**
- * Template config
- */
-$templateSettings = QUI\TemplateCologne\Utils::getConfig([
-    'Project'  => $Project,
-    'Site'     => $Site,
-    'Template' => $Template
 ]);
 
 

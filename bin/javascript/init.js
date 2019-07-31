@@ -133,7 +133,7 @@ window.addEvent('domready', function () {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function (Basket) {
                 new Basket({
-                    open  : basketOpen.toInt(),
+                    open  : BASKET_OPEN.toInt(),
                     styles: {
                         float: 'right'
                     },
@@ -142,8 +142,8 @@ window.addEvent('domready', function () {
                             var BasketNode     = Basket.getElm(),
                                 basketStyleCss = '';
 
-                            if (basketStyle) {
-                                basketStyleCss = 'basket-style-' + basketStyle;
+                            if (BASKET_STYLE) {
+                                basketStyleCss = 'basket-style-' + BASKET_STYLE;
                             }
 
                             // clear default content
@@ -160,13 +160,14 @@ window.addEvent('domready', function () {
                                 html   : '0'
                             }).inject(BasketNode);
 
-                            if (basketStyle && basketStyle === 'full') {
+                            if (BASKET_STYLE && BASKET_STYLE === 'full') {
                                 new Element('span', {
                                     'class': 'quiqqer-order-basketButton-sum',
-                                    html   : '---',
-                                    styles : {}
+                                    html   : INITAL_BASKET_PRICE
                                 }).inject(BasketNode);
                             }
+
+                            document.getElement('.cologne-header-control-basket').set('html', '');
                         },
                         /**
                          * onShowBasketBegin event

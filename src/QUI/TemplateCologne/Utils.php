@@ -68,19 +68,15 @@ class Utils
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/'.$Site->getId()
+                'quiqqer/templateCologne/' . $Site->getId()
             );
         } catch (QUI\Exception $Exception) {
         }
 
-
         $config = [];
 
         /* @var $Project QUI\Projects\Project */
-        /* @var $Template QUI\Template() */
-        /* @var $Template QUI\Template() */
-        $Project  = $params['Project'];
-        $Template = $params['Template'];
+        $Project = $params['Project'];
 
         /**
          * no header?
@@ -178,21 +174,19 @@ class Utils
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
-        $config += [
-            'header'           => $header,
-            'pageTitle'        => $pageTitle,
-            'showBreadcrumb'   => $showBreadcrumb,
-            'settingsCSS'      => '<style>'.$settingsCSS.'</style>',
-            'typeClass'        => 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'siteType'         => $siteType,
-            'basketStyle'      => $basketStyle,
-            'basketOpen'       => $basketOpen,
-            'showCategoryMenu' => $showCategoryMenu
-        ];
+        $config['header']           = $header;
+        $config['pageTitle']        = $pageTitle;
+        $config['showBreadcrumb']   = $showBreadcrumb;
+        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
+        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['siteType']         = $siteType;
+        $config['basketStyle']      = $basketStyle;
+        $config['basketOpen']       = $basketOpen;
+        $config['showCategoryMenu'] = $showCategoryMenu;
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/'.$Site->getId(),
+            'quiqqer/templateCologne/' . $Site->getId(),
             $config
         );
 

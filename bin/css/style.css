@@ -855,7 +855,6 @@ a.toTop:before {
 }
 
 /* user & basket container */
-
 .cologne-header-control {
     align-items: center;
     display: flex;
@@ -867,6 +866,21 @@ a.toTop:before {
 .cologne-header-control-basket {
     width: 200px;
 }
+
+.quiqqer-order-basketButton {
+    cursor: pointer;
+    padding-right: 5px;
+    position: relative;
+}
+
+/* fix: without it jumping effect */
+/* todo bei Gelegenheit das fixen. Oder Basket Button wird php-seitig erstellt */
+/* dann wird das unnötigt */
+.tpl-btn.quiqqer-order-basketButton {
+     display: flex;
+     align-items: center;
+}
+/* end fix */
 
 .tpl-btn.quiqqer-order-basketButton {
     background: none;
@@ -894,6 +908,11 @@ a.toTop:before {
 .basket-style-full .quiqqer-order-basketButton-sum {
     border-left: 1px solid #ddd;
     padding-left: 10px;
+    min-width: 80px;
+}
+
+.tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {
+    margin-right: 20px;
 }
 
 /* style: compact */
