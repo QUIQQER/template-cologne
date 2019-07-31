@@ -14,7 +14,7 @@ QUI::$Ajax->registerFunction(
     function () {
         $Site    = QUI::getRewrite()->getSite();
         $Project = $Site->getProject();
-
+        QUI\System\Log::writeRecursive('<-------------------------------------->');
         return \count($Project->getLanguages());
     }
 );
