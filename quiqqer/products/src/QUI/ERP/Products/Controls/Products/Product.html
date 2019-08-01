@@ -29,8 +29,9 @@
                     </div>
                 {/if}
             {/if}
-
-            {$PriceDisplay->create()}
+            <div class="product-data-price-main">
+                {$PriceDisplay->create()}
+            </div>
         </div>
 
         {assign var=counter value=count($detailFields)}
