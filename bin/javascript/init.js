@@ -3,6 +3,8 @@ var lg = 'quiqqer/template-cologne';
 window.addEvent('domready', function () {
     "use strict";
 
+    initMobileMenu();
+
     require([
         'qui/QUI'
     ], function (QUI) {
@@ -375,4 +377,17 @@ function createLoginWindow () {
             }
         }).open();
     })
+}
+
+/**
+ * Menu mobile
+ */
+function initMobileMenu() {
+
+    var OpenMenuBtn = document.getElement('.shop-category-menu-button');
+    console.log(OpenMenuBtn)
+    console.log(1)
+    if (OpenMenuBtn) {
+        console.log(OpenMenuBtn)
+    }
 }

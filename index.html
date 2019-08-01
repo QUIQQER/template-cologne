@@ -43,7 +43,10 @@
 
 {* main navigation / menu *}
 <div>
-    {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu showCategoryMenu=$showCategoryMenu}
+    {fetch template="template/mainMenu.html"
+    Project=$Project
+    Menu=$Menu
+    showCategoryMenu=$showCategoryMenu}
 </div>
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}

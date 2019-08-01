@@ -169,8 +169,8 @@ small {
 /* noUi Slider input range */
 /***************************/
 .qui-control-input-range {
-    margin-top: 1em;
     cursor: pointer;
+    margin-top: 1em;
 }
 
 .qui-control-input-range .noUi-horizontal {
@@ -202,8 +202,8 @@ small {
     height: 14px;
     left: 7px;
     top: 1px;
-    width: 13px;
     transition: 0.2s transform;
+    width: 13px;
 }
 
 .noUi-handle:after {
@@ -283,9 +283,9 @@ small {
 }
 
 .toTop__show {
+    background: #fff;
     bottom: 1rem;
     opacity: 1;
-    background: #fff;
 }
 
 a.toTop:before {
@@ -661,7 +661,18 @@ a.toTop:before {
     .cologne-breadcrumb h1 {
         flex: 1 auto;
         line-height: 1em;
-        padding-top: 10px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .quiqqer-breadcrumb {
+        text-align: center !important;
+    }
+
+    .quiqqer-breadcrumb ul {
+        margin-left: 0 !important;
         width: 100%;
     }
 }
@@ -854,6 +865,10 @@ a.toTop:before {
     border-bottom: none !important;
 }
 
+.quiqqer-menu-megaMenu .quiqqer-menu-megaMenu-mobile {
+    display: none;
+}
+
 /* user & basket container */
 .cologne-header-control {
     align-items: center;
@@ -877,9 +892,10 @@ a.toTop:before {
 /* todo bei Gelegenheit das fixen. Oder Basket Button wird php-seitig erstellt */
 /* dann wird das unnötigt */
 .tpl-btn.quiqqer-order-basketButton {
-     display: flex;
-     align-items: center;
+    align-items: center;
+    display: flex;
 }
+
 /* end fix */
 
 .tpl-btn.quiqqer-order-basketButton {
@@ -907,12 +923,12 @@ a.toTop:before {
 
 .basket-style-full .quiqqer-order-basketButton-sum {
     border-left: 1px solid #ddd;
-    padding-left: 10px;
     min-width: 80px;
+    padding-left: 10px;
     text-align: right;
 }
 
-.tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {
+.basket-style-full .quiqqer-order-basketButton-quantity {
     margin-right: 20px;
 }
 
@@ -933,6 +949,34 @@ a.toTop:before {
     right: 0;
     top: 0;
     width: 17px;
+}
+
+@media screen and (max-width: 767px) {
+    .cologne-header-control {
+        margin-left: auto;
+    }
+
+    .quiqqer-menu-megaMenu .hide-on-desktop {
+        display: flex;
+        height: 100%;
+    }
+
+    .tpl-btn.quiqqer-order-basketButton {
+        padding: 10px;
+    }
+
+    .tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {
+        margin-right: 0;
+    }
+
+    .cologne-header-control-basket {
+        margin-left: 10px;
+        width: auto;
+    }
+
+    .basket-style-full .quiqqer-order-basketButton-sum {
+        display: none;
+    }
 }
 
 /****************/
@@ -1059,8 +1103,8 @@ a.toTop:before {
 
 .quiqqer-fu-login-container h2:first-child,
 .quiqqer-fu-registrationSignUp-registration-content h2:first-child {
-    text-align: center;
     position: relative;
+    text-align: center;
 }
 
 .quiqqer-fu-login-container h2:first-child:after,
