@@ -909,6 +909,7 @@ a.toTop:before {
     border-left: 1px solid #ddd;
     padding-left: 10px;
     min-width: 80px;
+    text-align: right;
 }
 
 .tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {

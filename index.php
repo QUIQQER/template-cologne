@@ -35,10 +35,18 @@ if (!$Currency) {
     $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
 }
 
+$createBasketButton = true;
+
+if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
+    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart') {
+    $createBasketButton = false;
+}
+
 $InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
 
 $EngineForMenu->assign([
     'Logo'               => $Project->getMedia()->getLogoImage(),
+    'createBasketButton' => $createBasketButton,
     'basketStyle'        => $templateSettings['basketStyle'],
     'InitialBasketPrice' => $InitialBasketPrice
 ]);
