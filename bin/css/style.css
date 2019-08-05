@@ -225,6 +225,14 @@ small {
     line-height: 0;
 }
 
+.round-icon {
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px #aaa;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+}
+
 /**********/
 /* Header */
 /**********/
@@ -480,8 +488,6 @@ a.toTop:before {
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
     height: 50px;
-    /*padding-bottom: 10px;*/
-    /*padding-top: 10px;*/
 }
 
 .header-fixed .topbar {
@@ -517,7 +523,9 @@ a.toTop:before {
 .topbar-right {
     align-items: center;
     display: flex;
+    flex-grow: 1;
     height: 100%;
+    justify-content: flex-end;
     margin-left: auto;
 }
 
@@ -545,6 +553,75 @@ a.toTop:before {
 @media (max-width: 767px) {
     .topbar {
         border-bottom: none;
+    }
+}
+
+/***************************/
+/* template product search */
+/***************************/
+.template-search {
+    flex-basis: 400px;
+    margin-right: 2rem;
+    min-width: 200px;
+}
+
+.quiqqer-products-search-suggest-form .input-search-icon {
+    color: #aaa;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+}
+
+.quiqqer-products-search-suggest-form:hover .input-search-icon {
+    color: inherit;
+}
+
+.quiqqer-products-search-suggest-form-input:focus ~ .input-search-icon,
+.quiqqer-products-search-suggest-form-input:active ~ .input-search-icon {
+    color: inherit !important;
+
+}
+
+.template-search .quiqqer-products-search-suggest-form-input {
+    border-radius: 0;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.template-search .quiqqer-products-search-suggest-form-button {
+    display: none;
+}
+
+.template-search .quiqqer-products-search-suggest-form-button {
+    background: none;
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px #bbb;
+    color: inherit;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 30px;
+}
+
+.template-search .quiqqer-products-search-suggest-form-button .fa {
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .template-search {
+        min-width: auto;
+    }
+
+    .quiqqer-products-search-suggest-form .input-search-icon {
+        display: none;
+    }
+
+    .template-search .quiqqer-products-search-suggest-form-button {
+        display: inline;
     }
 }
 
@@ -1026,15 +1103,6 @@ a.toTop:before {
     top: 0;
     width: 100%;
 }
-
-.cologne-header-control-user .fa-user-o {
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px;
-    line-height: 30px;
-    text-align: center;
-    width: 30px;
-}
-
 
 /*********/
 /* Popup */
