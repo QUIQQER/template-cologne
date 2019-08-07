@@ -1017,7 +1017,7 @@ a.toTop:before {
 }
 
 .basket-style-compact .quiqqer-order-basketButton-quantity {
-    background: #3986dd;
+    background: #333;
     border-radius: 50px;
     color: #fff;
     font-size: 10px;

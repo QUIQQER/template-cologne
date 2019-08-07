@@ -10,32 +10,18 @@ a:hover,
 .lcs-button:hover .lcs-button-currency-code,
 .lcs-button:active .lcs-button-currency-code,
 .lcs-button:active,
-.shop-category-menu-button:hover {
-    color: #3986dd;
-}
-
+.shop-category-menu-button:hover,
 .quiqqer-menu-megaMenu-list-item > a:hover,
-.cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a {
-    color: #3986dd;
-}
-
-/*.product-gallery .quiqqer-gallery-slider-active-preview {
-    opacity: 1;
-    border-color: #92bcec;
-    border-color: #3986dd;
-}*/
-
+.cologne-header-nav .quiqqer-menu-megaMenu-list-item.quiqqer-menu-megaMenu-list-item--current a,
 .product-data-more-tabs-tab.active,
-.qui-contextitem-container .qui-contextitem-icon {
-    color: #3986dd;
-}
-
+.qui-contextitem-container .qui-contextitem-icon,
 .quiqqer-fupc-category-items-item--active span:nth-child(2),
 .quiqqer-fupc-category-items-item--active {
     color: #3986dd;
 }
 
-.quiqqer-fupc-category-items-item:before {
+.quiqqer-fupc-category-items-item:before,
+.basket-style-compact .quiqqer-order-basketButton-quantity {
     background: #3986dd;
 }
 
