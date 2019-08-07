@@ -82,6 +82,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>all</defaultvalue>
                     </conf>
+                    <conf name="categoryStartId">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
 
                     <!-- show breadcrumb -->
                     <conf name="showBreadcrumbStartPage">
@@ -614,6 +618,18 @@
                                     />
                                 </option>
                             </select>
+
+                            <!-- start by page -->
+                            <input conf="templateCologne.settings.categoryStartId"
+                                   type="text" class="project-site">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.categoryMenu.startId"
+                                    />
+                                </text>
+                            </input>
+
+
                         </settings>
 
                         <!-- breadrcumb -->

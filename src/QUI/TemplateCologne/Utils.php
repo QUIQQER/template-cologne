@@ -165,7 +165,8 @@ class Utils
 
         if ($showCategoryMenu) {
             $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
-                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor')
+                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
+                'startId'     => $Project->getConfig('templateCologne.settings.categoryStartId')
             ]);
 
             $config['categoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);

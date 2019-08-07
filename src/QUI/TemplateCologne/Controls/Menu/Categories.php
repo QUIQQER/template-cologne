@@ -11,6 +11,7 @@
 namespace QUI\TemplateCologne\Controls\Menu;
 
 use QUI;
+use QUI\Projects\Site\Utils;
 
 /**
  * Class Categories
@@ -26,6 +27,7 @@ class Categories extends QUI\Control
     {
         $this->setAttributes([
             'class'       => 'quiqqer-categories-menu',
+            'startId'     => 1, // site id or site link where menu starts by. 1 is start page (first project page)
             'template'    => dirname(__FILE__) . '/Categories.html', // nav wrapper
             'menuFile'    => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
             'data-qui'    => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
@@ -43,14 +45,31 @@ class Categories extends QUI\Control
      */
     public function getBody()
     {
-        $Engine = QUI::getTemplateManager()->getEngine();
+        $Engine  = QUI::getTemplateManager()->getEngine();
+        $Project = $this->getProject();
+
+        // start
+        try {
+            $startId = $this->getAttribute('startId');
+
+            if (Utils::isSiteLink($startId)) {
+                $Site = Utils::getSiteByLink($startId);
+            } else {
+                $Site = $Project->get((int)$startId);
+            }
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addWarning($Exception->getMessage());
+
+            return '';
+        }
+
 
         $Engine->assign([
             'menuFile'    => $this->getAttribute('menuFile'),
             'this'        => $this,
             'showDescFor' => $this->getAttribute('showDescFor'),
-            'Site'        => $this->getSite(),
-            'Project'     => $this->getProject(),
+            'Site'        => $Site,
+            'Project'     => $Project
         ]);
 
         return $Engine->fetch($this->getAttribute('template'));

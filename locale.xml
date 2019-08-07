@@ -437,6 +437,11 @@
                 <de><![CDATA[Gar nicht anzeigen]]></de>
                 <en><![CDATA[Do not display at all]]></en>
             </locale>
+        <!-- category menu: start id -->
+        <locale name="settings.categoryMenu.startId">
+            <de><![CDATA[Erste Seite der Kategorie (standardmäßig ist das die Startseite)]]></de>
+            <en><![CDATA[First page of the category (by default this is the home page)]]></en>
+        </locale>
         <locale name="categoryMenu.openButton.title">
             <de><![CDATA[Shop-Kategorien öffnen]]></de>
             <en><![CDATA[Open shop category]]></en>
