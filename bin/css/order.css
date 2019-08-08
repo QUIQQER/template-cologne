@@ -143,6 +143,11 @@
     margin-right: 20px;
 }
 
+.quiqqer-order-customerData-container .quiqqer-order-customerData,
+.quiqqer-order-customerData-container .quiqqer-order-customerData-comment {
+    width: calc(50% - 20px);
+}
+
 .quiqqer-order-customerData-edit .quiqqer-order-customerData-edit-salutation {
     margin-top: 0;
 }
@@ -195,6 +200,12 @@
 @media screen and (max-width: 767px) {
     .quiqqer-order-customerData-container {
         display: block;
+    }
+
+    .quiqqer-order-customerData-container .quiqqer-order-customerData,
+    .quiqqer-order-customerData-container .quiqqer-order-customerData-comment {
+        width: 100%;
+        max-width: 100%;
     }
 
     .quiqqer-order-customerData {
