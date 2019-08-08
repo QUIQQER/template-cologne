@@ -59,7 +59,12 @@ input[type="checkbox"]:checked {
     background: #d0e2f7;
 }
 
-input[type="checkbox"]:checked:after {
+label:hover input[type="checkbox"] {
+    background: #d0e2f7;
+    color: #26558a;
+}
+
+input[type="checkbox"]:checked {
     color: #3986dd;
 }
 
