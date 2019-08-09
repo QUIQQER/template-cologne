@@ -27,6 +27,10 @@
     color: #9ba3ad;
 }
 
+.lcs-button.lcs-button__no-hover .fa {
+    display: none;
+}
+
 .lcs-button-flag {
     border-right: 1px solid #ddd;
     padding: 0 1rem;

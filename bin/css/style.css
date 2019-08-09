@@ -499,6 +499,10 @@ a.toTop:before {
     display: flex;
 }
 
+.topbar-left > p {
+    margin-bottom: 0;
+}
+
 .topbar-contact-mail,
 .topbar-phone {
     margin-right: 20px;
@@ -614,6 +618,7 @@ a.toTop:before {
 @media screen and (max-width: 767px) {
     .template-search {
         min-width: auto;
+        flex-grow: 1;
     }
 
     .quiqqer-products-search-suggest-form .input-search-icon {

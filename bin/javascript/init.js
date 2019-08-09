@@ -3,11 +3,14 @@ var lg = 'quiqqer/template-cologne';
 window.addEvent('domready', function () {
     "use strict";
 
-    initMobileMenu();
 
     require([
         'qui/QUI'
     ], function (QUI) {
+
+        if (SHOW_CATEGORY_MENU) {
+            initMobileMenu();
+        }
 
         /**
          * toTop button
@@ -351,8 +354,8 @@ function createLogoutWindow (LogoutWindow) {
                         moofx(ContentElm).animate({
                             opacity: 1
                         });
-                    })
-                }).delay(50)
+                    });
+                }).delay(50);
             }
         }
     }).open();
@@ -376,18 +379,32 @@ function createLoginWindow () {
                 }
             }
         }).open();
-    })
+    });
 }
 
 /**
  * Menu mobile
  */
-function initMobileMenu() {
+function initMobileMenu () {
+    var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
+        MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
-    var OpenMenuBtn = document.getElement('.shop-category-menu-button');
-    console.log(OpenMenuBtn)
-    console.log(1)
-    if (OpenMenuBtn) {
-        console.log(OpenMenuBtn)
+    if (!OpenCategoryBtn) {
+        console.error('Open Category Button not found.');
+        return;
     }
+
+
+    require(['utils/Controls'], function (Controls) {
+        Controls.getControlByElement(MenuElm).then(function (MenuControl) {
+            /*console.log(OpenCategoryBtn)
+
+            OpenCategoryBtn.removeEvents('click');
+            console.log(OpenCategoryBtn)
+
+            console.log(MenuControl);*/
+        });
+    });
+
+
 }

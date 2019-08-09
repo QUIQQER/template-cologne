@@ -192,12 +192,12 @@
         <locale name="template.topbar.content.left" html="true">
             <de><![CDATA[
                     <span class="topbar-contact-mail">
-                        <span class="fa fa-envelope-o"></span>
+                        <span class="fa fa-envelope-o">&nbsp;</span>
                         <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
                     </span>
 
                     <span class="topbar-phone">
-                        <span class="fa fa-phone"></span>
+                        <span class="fa fa-phone">&nbsp;</span>
                         0202 2454545
                     </span>
 
@@ -209,12 +209,12 @@
             </de>
             <en><![CDATA[
                     <span class="topbar-contact-mail">
-                        <span class="fa fa-envelope-o"></span>
+                        <span class="fa fa-envelope-o">&nbsp;</span>
                         <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
                     </span>
 
                     <span class="topbar-phone">
-                        <span class="fa fa-phone"></span>
+                        <span class="fa fa-phone">&nbsp;</span>
                         0202 2454545
                     </span>
 
@@ -469,7 +469,7 @@
             <en><![CDATA[Breadcrumb settings]]></en>
         </locale>
         <locale name="settings.breadcrumb.text" html="true">
-            <de><![CDATA[Brotkrumennavigation anzeigen? <br/>Bestimmen Sie für jeden Seitentyp, ob die Brotkrumennavigation angezeigt werden soll.]]></de>
+            <pl><![CDATA[Brotkrumennavigation anzeigen? <br/>Bestimmen Sie für jeden Seitentyp, ob die Brotkrumennavigation angezeigt werden soll.]]></pl>
             <en><![CDATA[Display breadcrumb? <br/>For each page type, specify if you want the breadcrumb navigation to be displayed.]]></en>
         </locale>
 

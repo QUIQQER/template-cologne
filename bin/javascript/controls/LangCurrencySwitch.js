@@ -83,7 +83,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
                     self.open();
                 });
-            })
+            });
         },
 
         $checkLang: function () {
@@ -115,11 +115,14 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 }, {
                     'package': 'quiqqer/template-cologne'
                 });
-            })
+            });
         },
 
         $checkCurrencies: function () {
             var self = this;
+
+            console.log(self.getAttribute('currencySwitch'));
+            console.log(self.getAttribute('userrelatedcurrency'));
 
             return new Promise(function (resolve) {
                 if (!self.getAttribute('currencySwitch') ||
@@ -136,7 +139,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     }
                     resolve();
                 });
-            })
+            });
         },
 
         /**
@@ -157,7 +160,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
             this.createMenu().then(function () {
                 if (!self.currencySwitch || !self.langSwitch) {
-                    self.Menu.addClass('single-control')
+                    self.Menu.addClass('single-control');
                 }
 
                 self.Menu.inject(self.MenuWrapper);
