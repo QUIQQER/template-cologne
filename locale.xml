@@ -310,8 +310,8 @@
 
         <!-- basket open -->
         <locale name="settings.shop.basketOpen">
-            <de><![CDATA[Aktion, die nach dem Klick auf den Warenkorb passieren soll]]></de>
-            <en><![CDATA[Action that should happen after user clicks on the shopping cart]]></en>
+            <de><![CDATA[Was soll passiern, wenn man den Warenkorb anklickt?]]></de>
+            <en><![CDATA[What should happen when the user clicks on the shopping cart?]]></en>
         </locale>
             <locale name="settings.shop.basketOpen.nothing">
                 <de><![CDATA[Bestellprozes nicht öffnen]]></de>
