@@ -617,8 +617,8 @@ a.toTop:before {
 
 @media screen and (max-width: 767px) {
     .template-search {
-        min-width: auto;
         flex-grow: 1;
+        min-width: auto;
     }
 
     .quiqqer-products-search-suggest-form .input-search-icon {
@@ -1060,6 +1060,68 @@ a.toTop:before {
         display: none;
     }
 }
+
+/**************************/
+/* mobile menu  / slideout*/
+/**************************/
+.slideout-menu .page-menu {
+    background: #2c3e47;
+    color: #eee;
+}
+
+.page-menu ul {
+    margin-left: 30px;
+}
+
+.page-menu .page-navigation-level-1 {
+    margin-left: 0;
+}
+
+.page-menu .page-navigation-level-3,
+.page-menu .page-navigation-level-4,
+.page-menu .page-navigation-level-5,
+.page-menu .page-navigation-level-6,
+.page-menu .page-navigation-level-7,
+.page-menu .page-navigation-level-8 {
+    margin-left: 20px;
+}
+
+.page-menu .page-navigation {
+    padding: 3rem 0 0 0;
+}
+
+.page-menu .page-navigation li {
+    float: none;
+}
+
+.page-menu .page-navigation a {
+    display: flex;
+    align-items: center;
+}
+
+.page-menu .page-navigation-home {
+    padding: 10px 0 !important;
+    font-size: inherit;
+}
+
+.page-menu ul a {
+    font-size: inherit;
+}
+
+.page-menu .page-navigation-level-1 > li > a > .fa,
+.page-menu .page-navigation-home .fa {
+    margin-left: 20px !important;
+}
+
+.page-menu ul .fa,
+.page-menu .page-navigation-home .fa {
+    font-size: inherit;
+    width: 20px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
 
 /****************/
 /* basket popup */

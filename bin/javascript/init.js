@@ -386,6 +386,10 @@ function createLoginWindow () {
  * Menu mobile
  */
 function initMobileMenu () {
+    if (QUI.getWindowSize().x >= 768) {
+        return;
+    }
+
     var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
         MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
@@ -394,17 +398,12 @@ function initMobileMenu () {
         return;
     }
 
-
     require(['utils/Controls'], function (Controls) {
         Controls.getControlByElement(MenuElm).then(function (MenuControl) {
-            /*console.log(OpenCategoryBtn)
-
             OpenCategoryBtn.removeEvents('click');
-            console.log(OpenCategoryBtn)
-
-            console.log(MenuControl);*/
+            OpenCategoryBtn.addEvent('click', function () {
+                MenuControl.toggle();
+            });
         });
     });
-
-
 }
