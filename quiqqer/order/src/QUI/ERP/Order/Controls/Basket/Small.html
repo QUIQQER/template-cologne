@@ -12,7 +12,7 @@
                   title="{locale group='quiqqer/template-cologne' var='template.basket.removeProductFromBasket'}"></span>
 
             <h2 class="quiqqer-order-basket-small-articles-article-content-header">
-                <a href="{QUI\ERP\Products\Handler\Products::getProduct($product.id)}"
+                <a href="{QUI\ERP\Products\Handler\Products::getProduct($product.id)->getUrl()}"
                    class="quiqqer-order-basket-small-articles-article-content-header-url">
                     {$product.title}
                 </a>
