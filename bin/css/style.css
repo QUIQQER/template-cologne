@@ -655,6 +655,8 @@ a.toTop:before {
 .cologne-header-logo {
     align-items: center;
     display: flex;
+    flex-basis: 200px;
+    flex-grow: 1;
     height: 100%;
     position: relative;
     z-index: 2;
@@ -855,17 +857,22 @@ a.toTop:before {
 }
 
 .cologne-header-nav {
+    flex-grow: 10;
     height: 100%;
     left: 0;
     right: 0;
     text-align: center;
-    width: 100%;
     z-index: 1;
+}
+
+.quiqqer-menu-megaMenu-list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .cologne-header-nav .quiqqer-menu-megaMenu {
     font-weight: 500;
-    position: initial;
 }
 
 .quiqqer-menu-megaMenu-list a,
@@ -955,13 +962,15 @@ a.toTop:before {
 .cologne-header-control {
     align-items: center;
     display: flex;
+    flex-basis: 200px;
+    flex-grow: 1;
     height: 100%;
     position: relative;
     z-index: 2;
 }
 
 .cologne-header-control-basket {
-    width: 200px;
+    width: 100%;
 }
 
 .quiqqer-order-basketButton {
@@ -1035,7 +1044,13 @@ a.toTop:before {
 
 @media screen and (max-width: 767px) {
     .cologne-header-control {
+        flex-basis: auto;
         margin-left: auto;
+        flex-grow: 0;
+    }
+
+    .cologne-header-nav {
+        display: none;
     }
 
     .quiqqer-menu-megaMenu .hide-on-desktop {
@@ -1053,7 +1068,6 @@ a.toTop:before {
 
     .cologne-header-control-basket {
         margin-left: 10px;
-        width: auto;
     }
 
     .basket-style-full .quiqqer-order-basketButton-sum {
@@ -1095,13 +1109,13 @@ a.toTop:before {
 }
 
 .page-menu .page-navigation a {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 .page-menu .page-navigation-home {
-    padding: 10px 0 !important;
     font-size: inherit;
+    padding: 10px 0 !important;
 }
 
 .page-menu ul a {
@@ -1116,10 +1130,10 @@ a.toTop:before {
 .page-menu ul .fa,
 .page-menu .page-navigation-home .fa {
     font-size: inherit;
-    width: 20px;
-    text-align: left;
     margin-left: 10px;
     margin-right: 0;
+    text-align: left;
+    width: 20px;
 }
 
 
@@ -1128,6 +1142,19 @@ a.toTop:before {
 /****************/
 .quiqqer-order-basket-small-container {
     width: 260px;
+}
+
+.qui-contextmenu-container .qui-contextitem {
+    border-bottom: none;
+}
+
+/*********************/
+/* user icon top bar */
+/*********************/
+.cologne-header-control-user {
+    cursor: pointer;
+    margin-left: 20px;
+    position: relative;
 }
 
 .quiqqer-frontendUsers-userIcon {
@@ -1142,19 +1169,20 @@ a.toTop:before {
 .quiqqer-frontendUsers-userIcon-icon {
     height: 100% !important;
     width: 100% !important;
+    font-size: 16px !important;
 }
 
-.qui-contextmenu-container .qui-contextitem {
-    border-bottom: none;
+.quiqqer-frontendUsers-userIcon-letter {
+    height: 30px !important;
+    width: 30px !important;
+    line-height: 30px !important;
+    font-size: 0;
 }
 
-/*********************/
-/* user icon top bar */
-/*********************/
-.cologne-header-control-user {
-    cursor: pointer;
-    margin-left: 20px;
-    position: relative;
+.quiqqer-frontendUsers-userIcon-letter:before {
+    content: "\f007";
+    font-size: 16px;
+    font-family: 'FontAwesome';
 }
 
 .cologne-header-control-user-loader {

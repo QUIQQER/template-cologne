@@ -27,8 +27,6 @@ $Menu = new QUI\Menu\MegaMenu([
 /**
  * Basket button
  */
-$EngineForMenu = QUI::getTemplateManager()->getEngine();
-
 $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
 
 if (!$Currency) {
@@ -44,17 +42,9 @@ if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
 
 $InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
 
-$EngineForMenu->assign([
-    'Logo'               => $Project->getMedia()->getLogoImage(),
-    'createBasketButton' => $createBasketButton,
-    'basketStyle'        => $templateSettings['basketStyle'],
-    'InitialBasketPrice' => $InitialBasketPrice
-]);
-
+$templateSettings['Logo']               = $Project->getMedia()->getLogoImage();
 $templateSettings['initialBasketPrice'] = $InitialBasketPrice->getDisplayPrice();
-
-$Menu->prependHTML($EngineForMenu->fetch(\dirname(__FILE__) . '/template/menu/menuPrefix.html'));
-$Menu->appendHTML($EngineForMenu->fetch(\dirname(__FILE__) . '/template/menu/menuSuffix.html'));
+$templateSettings['createBasketButton'] = $createBasketButton;
 
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
@@ -97,8 +87,8 @@ $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
 $templateSettings['countLanguages']     = \count($Project->getLanguages());
-$templateSettings['Search']     = new QUI\ERP\Products\Controls\Search\Suggest([
-    'globalsearch'        => true
+$templateSettings['Search']             = new QUI\ERP\Products\Controls\Search\Suggest([
+    'globalsearch' => true
 ]);
 
 $Engine->assign($templateSettings);

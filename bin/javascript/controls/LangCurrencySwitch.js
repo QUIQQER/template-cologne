@@ -74,7 +74,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     return;
                 }
 
-
                 self.Button.addEvent('click', function () {
                     if (self.isOpen) {
                         self.close();
@@ -120,9 +119,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
         $checkCurrencies: function () {
             var self = this;
-
-            console.log(self.getAttribute('currencySwitch'));
-            console.log(self.getAttribute('userrelatedcurrency'));
 
             return new Promise(function (resolve) {
                 if (!self.getAttribute('currencySwitch') ||

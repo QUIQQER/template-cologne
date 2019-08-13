@@ -1,4 +1,15 @@
-<div class="cologne-header-logo">
+{* <!-- Shop category menu--> *}
+{if $showCategoryMenu}
+<div class="shop-category-menu-button-wrapper"
+     title="{locale group='quiqqer/template-cologne' var='categoryMenu.openButton.title'}">
+    <span class="shop-category-menu-button">
+        <span class="fa fa-bars"></span>
+    </span>
+</div>
+{/if}
+
+{* <!-- Logo --> *}
+<div class="cologne-header-logo template-column">
     <a href="/" class="cologne-header-logo-link">
         {image image=$Logo class="logo"}
     </a>

@@ -384,6 +384,9 @@ function createLoginWindow () {
 
 /**
  * Menu mobile
+ *
+ * In mobile resolution (less than 767px) opens category menu button
+ * the mobile navigation instead category navigation.
  */
 function initMobileMenu () {
     if (QUI.getWindowSize().x >= 768) {

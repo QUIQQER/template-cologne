@@ -1,16 +1,12 @@
 <header class="cologne-header cologne-header-menu template-columns">
 
-    {* <!--Shop category menu--> *}
-    {if $showCategoryMenu}
-    <div class="shop-category-menu-button-wrapper"
-         title="{locale group='quiqqer/template-cologne' var='categoryMenu.openButton.title'}">
-        <span class="shop-category-menu-button">
-            <span class="fa fa-bars"></span>
-        </span>
-    </div>
-    {/if}
+    {* <!-- Menu prefix: shop category menu and logo --> *}
+    {fetch template="template/menu/menuPrefix.html" Logo=$Logo showCategoryMenu=$showCategoryMenu}
 
-    <div class="template-column cologne-header-nav">
+    <div class="cologne-header-nav">
         {$Menu->create()}
     </div>
+
+    {* <!-- Menu suffix: user login --> *}
+    {fetch template="template/menu/menuSuffix.html" createBasketButton=$createBasketButton basketStyle=$basketStyle initialBasketPrice=$initialBasketPrice}
 </header>

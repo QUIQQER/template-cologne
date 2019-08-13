@@ -46,8 +46,12 @@ Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search}
 <div>
     {fetch template="template/mainMenu.html"
     Project=$Project
+    Logo=$Logo
     Menu=$Menu
-    showCategoryMenu=$showCategoryMenu}
+    showCategoryMenu=$showCategoryMenu
+    createBasketButton=$createBasketButton
+    basketStyle=$basketStyle
+    initialBasketPrice=$initialBasketPrice}
 </div>
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
