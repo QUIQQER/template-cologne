@@ -117,10 +117,4 @@ class LangCurrencySwitch extends QUI\Control
 
         return QUI::getRewrite()->getSite();
     }
-
-    protected function enableSwitch()
-    {
-
-
-    }
 }
