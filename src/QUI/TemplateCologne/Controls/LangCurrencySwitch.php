@@ -41,34 +41,44 @@ class LangCurrencySwitch extends QUI\Control
      */
     public function getBody()
     {
-        $Engine  = QUI::getTemplateManager()->getEngine();
-        $Site    = $this->getSite();
-        $Project = $Site->getProject();
-        $Locale  = QUI::getLocale();
+        $Engine       = QUI::getTemplateManager()->getEngine();
+        $Site         = $this->getSite();
+        $Project      = $Site->getProject();
+        $Locale       = QUI::getLocale();
+        $flagFolder   = $this->getAttribute('flagFolder');
+        $enableChange = false;
+
+        if (!$Site) {
+            return '';
+        }
+
+        if (!is_dir($flagFolder)) {
+            $flagFolder = URL_BIN_DIR . '16x16/flags/';
+        }
 
         // is user allowed to change currency?
+        $currencySwitch = true;
         try {
             $Package = QUI::getPackage('quiqqer/erp');
             $Config  = $Package->getConfig();
 
             if (!$Config->getValue('general', 'userRelatedCurrency')) {
                 $this->setJavaScriptControlOption('userrelatedcurrency', '0');
+                $currencySwitch = false;
             }
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
         }
 
-        if (!$Site) {
-            return '';
+        $langSwitch = false;
+        if (\count($Project->getLanguages()) > 1) {
+            $langSwitch = true;
         }
 
-        $flagFolder = $this->getAttribute('flagFolder');
-
-        if (!is_dir($flagFolder)) {
-            $flagFolder = URL_BIN_DIR . '16x16/flags/';
+        if ($currencySwitch || $langSwitch) {
+            $this->setJavaScriptControlOption('flag-folder', $flagFolder);
+            $enableChange = true;
         }
-
-        $this->setJavaScriptControlOption('flag-folder', $flagFolder);
 
         $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
 
@@ -76,7 +86,7 @@ class LangCurrencySwitch extends QUI\Control
             $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
         }
 
-        if ($Locale->exists('quiqqer/quiqqer', 'language.' . 'huh')) {
+        if ($Locale->exists('quiqqer/quiqqer', 'language.' . $Project->getLang())) {
             $imgAltText = $Locale->get('quiqqer/quiqqer', 'language.' . $Project->getLang());
         } else {
             $imgAltText = $Locale->get('quiqqer/template-cologne', 'label.language');
@@ -87,7 +97,8 @@ class LangCurrencySwitch extends QUI\Control
             'projectLang'     => $Project->getLang(),
             'DefaultCurrency' => $Currency,
             'flagFolderPath'  => $flagFolder,
-            'imgAltText'      => $imgAltText
+            'imgAltText'      => $imgAltText,
+            'enableChange'    => $enableChange
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/LangCurrencySwitch.html');
@@ -105,5 +116,11 @@ class LangCurrencySwitch extends QUI\Control
         }
 
         return QUI::getRewrite()->getSite();
+    }
+
+    protected function enableSwitch()
+    {
+
+
     }
 }
