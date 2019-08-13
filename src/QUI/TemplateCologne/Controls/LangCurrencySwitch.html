@@ -6,7 +6,9 @@
         <span class="lcs-button-currency-sign">{$DefaultCurrency->getSign()}</span>
         <span class="lcs-button-currency-code text-muted">{$DefaultCurrency->getCode()}</span>
     </span>
+    {if $enableChange}
     <span class="fa fa-caret-down"></span>
+    {/if}
 </div>
 
 <div class="lcs-menu-wrapper"></div>
