@@ -655,7 +655,7 @@ a.toTop:before {
 .cologne-header-logo {
     align-items: center;
     display: flex;
-    flex-basis: 200px;
+    flex-basis: 300px;
     flex-grow: 1;
     height: 100%;
     position: relative;
@@ -962,7 +962,7 @@ a.toTop:before {
 .cologne-header-control {
     align-items: center;
     display: flex;
-    flex-basis: 200px;
+    flex-basis: 300px;
     flex-grow: 1;
     height: 100%;
     position: relative;
