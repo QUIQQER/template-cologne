@@ -74,7 +74,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     return;
                 }
 
-
                 self.Button.addEvent('click', function () {
                     if (self.isOpen) {
                         self.close();
@@ -83,13 +82,24 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
                     self.open();
                 });
-            })
+            });
         },
 
         $checkLang: function () {
             var self = this;
 
             return new Promise(function (resolve) {
+
+                // save ajax request if the variable is set
+                if (COUNT_LANGUAGES) {
+                    if (COUNT_LANGUAGES <= 1) {
+                        self.langSwitch = false;
+                    }
+
+                    resolve();
+                    return;
+                }
+
                 if (!self.getAttribute('langSwitch')) {
                     self.langSwitch = false;
                     resolve();
@@ -104,7 +114,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                 }, {
                     'package': 'quiqqer/template-cologne'
                 });
-            })
+            });
         },
 
         $checkCurrencies: function () {
@@ -125,7 +135,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     }
                     resolve();
                 });
-            })
+            });
         },
 
         /**
@@ -146,7 +156,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
 
             this.createMenu().then(function () {
                 if (!self.currencySwitch || !self.langSwitch) {
-                    self.Menu.addClass('single-control')
+                    self.Menu.addClass('single-control');
                 }
 
                 self.Menu.inject(self.MenuWrapper);

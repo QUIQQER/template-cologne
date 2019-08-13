@@ -206,3 +206,24 @@
     display: none;
 }
 
+/*****************/
+/* Login control */
+/*****************/
+.quiqqer-fu-login-container,
+.quiqqer-order-ordering-nobody-registration {
+    padding: 1.5rem 2rem;
+}
+
+.quiqqer-fu-login-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-order-ordering-nobody-registration {
+        padding: 0;
+    }
+}

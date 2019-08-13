@@ -142,7 +142,8 @@ img {
     font-weight: 500;
 }
 
-.text-muted {
+.text-muted,
+.qui-products-price-display-vat {
     color: #9ba3ad;
 }
 
@@ -168,8 +169,8 @@ small {
 /* noUi Slider input range */
 /***************************/
 .qui-control-input-range {
-    margin-top: 1em;
     cursor: pointer;
+    margin-top: 1em;
 }
 
 .qui-control-input-range .noUi-horizontal {
@@ -201,8 +202,8 @@ small {
     height: 14px;
     left: 7px;
     top: 1px;
-    width: 13px;
     transition: 0.2s transform;
+    width: 13px;
 }
 
 .noUi-handle:after {
@@ -222,6 +223,14 @@ small {
     float: none;
     font-size: 0;
     line-height: 0;
+}
+
+.round-icon {
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px #aaa;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
 }
 
 /**********/
@@ -282,8 +291,9 @@ small {
 }
 
 .toTop__show {
+    background: #fff;
     bottom: 1rem;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 a.toTop:before {
@@ -478,8 +488,6 @@ a.toTop:before {
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
     height: 50px;
-    /*padding-bottom: 10px;*/
-    /*padding-top: 10px;*/
 }
 
 .header-fixed .topbar {
@@ -489,6 +497,10 @@ a.toTop:before {
 .topbar-left {
     align-items: center;
     display: flex;
+}
+
+.topbar-left > p {
+    margin-bottom: 0;
 }
 
 .topbar-contact-mail,
@@ -515,7 +527,9 @@ a.toTop:before {
 .topbar-right {
     align-items: center;
     display: flex;
+    flex-grow: 1;
     height: 100%;
+    justify-content: flex-end;
     margin-left: auto;
 }
 
@@ -546,6 +560,76 @@ a.toTop:before {
     }
 }
 
+/***************************/
+/* template product search */
+/***************************/
+.template-search {
+    flex-basis: 400px;
+    margin-right: 2rem;
+    min-width: 200px;
+}
+
+.quiqqer-products-search-suggest-form .input-search-icon {
+    color: #aaa;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+}
+
+.quiqqer-products-search-suggest-form:hover .input-search-icon {
+    color: inherit;
+}
+
+.quiqqer-products-search-suggest-form-input:focus ~ .input-search-icon,
+.quiqqer-products-search-suggest-form-input:active ~ .input-search-icon {
+    color: inherit !important;
+
+}
+
+.template-search .quiqqer-products-search-suggest-form-input {
+    border-radius: 0;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.template-search .quiqqer-products-search-suggest-form-button {
+    display: none;
+}
+
+.template-search .quiqqer-products-search-suggest-form-button {
+    background: none;
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px #bbb;
+    color: inherit;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 30px;
+}
+
+.template-search .quiqqer-products-search-suggest-form-button .fa {
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .template-search {
+        flex-grow: 1;
+        min-width: auto;
+    }
+
+    .quiqqer-products-search-suggest-form .input-search-icon {
+        display: none;
+    }
+
+    .template-search .quiqqer-products-search-suggest-form-button {
+        display: inline;
+    }
+}
+
 /** header
  ===================================== */
 
@@ -571,6 +655,8 @@ a.toTop:before {
 .cologne-header-logo {
     align-items: center;
     display: flex;
+    flex-basis: 300px;
+    flex-grow: 1;
     height: 100%;
     position: relative;
     z-index: 2;
@@ -659,7 +745,18 @@ a.toTop:before {
     .cologne-breadcrumb h1 {
         flex: 1 auto;
         line-height: 1em;
-        padding-top: 10px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .quiqqer-breadcrumb {
+        text-align: center !important;
+    }
+
+    .quiqqer-breadcrumb ul {
+        margin-left: 0 !important;
         width: 100%;
     }
 }
@@ -760,17 +857,22 @@ a.toTop:before {
 }
 
 .cologne-header-nav {
+    flex-grow: 10;
     height: 100%;
     left: 0;
     right: 0;
     text-align: center;
-    width: 100%;
     z-index: 1;
+}
+
+.quiqqer-menu-megaMenu-list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .cologne-header-nav .quiqqer-menu-megaMenu {
     font-weight: 500;
-    position: initial;
 }
 
 .quiqqer-menu-megaMenu-list a,
@@ -852,19 +954,40 @@ a.toTop:before {
     border-bottom: none !important;
 }
 
-/* user & basket container */
+.quiqqer-menu-megaMenu .quiqqer-menu-megaMenu-mobile {
+    display: none;
+}
 
+/* user & basket container */
 .cologne-header-control {
     align-items: center;
     display: flex;
+    flex-basis: 300px;
+    flex-grow: 1;
     height: 100%;
     position: relative;
     z-index: 2;
 }
 
 .cologne-header-control-basket {
-    width: 200px;
+    width: 100%;
 }
+
+.quiqqer-order-basketButton {
+    cursor: pointer;
+    padding-right: 5px;
+    position: relative;
+}
+
+/* fix: without it jumping effect */
+/* todo bei Gelegenheit das fixen. Oder Basket Button wird php-seitig erstellt */
+/* dann wird das unnötigt */
+.tpl-btn.quiqqer-order-basketButton {
+    align-items: center;
+    display: flex;
+}
+
+/* end fix */
 
 .tpl-btn.quiqqer-order-basketButton {
     background: none;
@@ -891,7 +1014,13 @@ a.toTop:before {
 
 .basket-style-full .quiqqer-order-basketButton-sum {
     border-left: 1px solid #ddd;
+    min-width: 80px;
     padding-left: 10px;
+    text-align: right;
+}
+
+.basket-style-full .quiqqer-order-basketButton-quantity {
+    margin-right: 20px;
 }
 
 /* style: compact */
@@ -902,7 +1031,7 @@ a.toTop:before {
 }
 
 .basket-style-compact .quiqqer-order-basketButton-quantity {
-    background: #3986dd;
+    background: #333;
     border-radius: 50px;
     color: #fff;
     font-size: 10px;
@@ -913,25 +1042,106 @@ a.toTop:before {
     width: 17px;
 }
 
+@media screen and (max-width: 767px) {
+    .cologne-header-control {
+        flex-basis: auto;
+        margin-left: auto;
+        flex-grow: 0;
+    }
+
+    .cologne-header-nav {
+        display: none;
+    }
+
+    .quiqqer-menu-megaMenu .hide-on-desktop {
+        display: flex;
+        height: 100%;
+    }
+
+    .tpl-btn.quiqqer-order-basketButton {
+        padding: 10px;
+    }
+
+    .tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {
+        margin-right: 0;
+    }
+
+    .cologne-header-control-basket {
+        margin-left: 10px;
+    }
+
+    .basket-style-full .quiqqer-order-basketButton-sum {
+        display: none;
+    }
+}
+
+/**************************/
+/* mobile menu  / slideout*/
+/**************************/
+.slideout-menu .page-menu {
+    background: #2c3e47;
+    color: #eee;
+}
+
+.page-menu ul {
+    margin-left: 30px;
+}
+
+.page-menu .page-navigation-level-1 {
+    margin-left: 0;
+}
+
+.page-menu .page-navigation-level-3,
+.page-menu .page-navigation-level-4,
+.page-menu .page-navigation-level-5,
+.page-menu .page-navigation-level-6,
+.page-menu .page-navigation-level-7,
+.page-menu .page-navigation-level-8 {
+    margin-left: 20px;
+}
+
+.page-menu .page-navigation {
+    padding: 3rem 0 0 0;
+}
+
+.page-menu .page-navigation li {
+    float: none;
+}
+
+.page-menu .page-navigation a {
+    align-items: center;
+    display: flex;
+}
+
+.page-menu .page-navigation-home {
+    font-size: inherit;
+    padding: 10px 0 !important;
+}
+
+.page-menu ul a {
+    font-size: inherit;
+}
+
+.page-menu .page-navigation-level-1 > li > a > .fa,
+.page-menu .page-navigation-home .fa {
+    margin-left: 20px !important;
+}
+
+.page-menu ul .fa,
+.page-menu .page-navigation-home .fa {
+    font-size: inherit;
+    margin-left: 10px;
+    margin-right: 0;
+    text-align: left;
+    width: 20px;
+}
+
+
 /****************/
 /* basket popup */
 /****************/
 .quiqqer-order-basket-small-container {
     width: 260px;
-}
-
-.quiqqer-frontendUsers-userIcon {
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    width: 30px;
-}
-
-.quiqqer-frontendUsers-userIcon-icon {
-    height: 100% !important;
-    width: 100% !important;
 }
 
 .qui-contextmenu-container .qui-contextitem {
@@ -947,6 +1157,34 @@ a.toTop:before {
     position: relative;
 }
 
+.quiqqer-frontendUsers-userIcon {
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+}
+
+.quiqqer-frontendUsers-userIcon-icon {
+    height: 100% !important;
+    width: 100% !important;
+    font-size: 16px !important;
+}
+
+.quiqqer-frontendUsers-userIcon-letter {
+    height: 30px !important;
+    width: 30px !important;
+    line-height: 30px !important;
+    font-size: 0;
+}
+
+.quiqqer-frontendUsers-userIcon-letter:before {
+    content: "\f007";
+    font-size: 16px;
+    font-family: 'FontAwesome';
+}
+
 .cologne-header-control-user-loader {
     align-items: center;
     background: #fff;
@@ -960,15 +1198,6 @@ a.toTop:before {
     top: 0;
     width: 100%;
 }
-
-.cologne-header-control-user .fa-user-o {
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px;
-    line-height: 30px;
-    text-align: center;
-    width: 30px;
-}
-
 
 /*********/
 /* Popup */
@@ -1033,6 +1262,22 @@ a.toTop:before {
 .cologne-login-dialog .qui-window-popup-content {
     height: auto !important;
     padding: 20px 40px;
+}
+
+.quiqqer-fu-login-container h2:first-child,
+.quiqqer-fu-registrationSignUp-registration-content h2:first-child {
+    position: relative;
+    text-align: center;
+}
+
+.quiqqer-fu-login-container h2:first-child:after,
+.quiqqer-fu-registrationSignUp-registration-content h2:first-child:after {
+    bottom: -10px;
+    content: '';
+    height: 2px;
+    left: calc(50% - 40px);
+    position: absolute;
+    width: 80px;
 }
 
 /* disable ugly autofill background */

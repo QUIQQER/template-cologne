@@ -27,8 +27,11 @@
     {$settingsCSS}
 
     <script>
-        var basketStyle = "{$basketStyle}";
-        var basketOpen  = "{$basketOpen}";
+        var BASKET_STYLE        = "{$basketStyle}";
+        var BASKET_OPEN         = "{$basketOpen}";
+        var INITAL_BASKET_PRICE = "{$initialBasketPrice}";
+        var COUNT_LANGUAGES     = "{$countLanguages}";
+        var SHOW_CATEGORY_MENU  = "{$showCategoryMenu}";
     </script>
 
 </head>
@@ -37,45 +40,52 @@
 
 {* small top bar *}
 {fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
-    Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch}
+Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search}
 
 {* main navigation / menu *}
 <div>
-    {fetch template="template/mainMenu.html" Project=$Project Menu=$Menu showCategoryMenu=$showCategoryMenu}
+    {fetch template="template/mainMenu.html"
+    Project=$Project
+    Logo=$Logo
+    Menu=$Menu
+    showCategoryMenu=$showCategoryMenu
+    createBasketButton=$createBasketButton
+    basketStyle=$basketStyle
+    initialBasketPrice=$initialBasketPrice}
 </div>
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-    {fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
+{fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
 {/if}
 
 {* <!--Shop category menu--> *}
 {if $showCategoryMenu}
 <div class="shop-category-menu-wrapper">
-    {$CategoriesMenu->create()}
+    {$categoriesMenu}
 </div>
 {/if}
 
 <!-- breadcrumb -->
 {if $showBreadcrumb}
-    {fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
+{fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
 {/if}
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'general.fullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
+{assign var=brickFullWidth value=''}
+{if $Brick->getSetting( 'general.fullWidth' )}
+{assign var=brickFullWidth value='brick-full-width'}
+{/if}
 
-    {assign var=brickNoPadding value=""}
-        {if $Brick->getSetting('general.noSpacing')}
-        {assign var=brickNoPadding value="brick-no-spacing"}
-    {/if}
-    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
+{assign var=brickNoPadding value=""}
+{if $Brick->getSetting('general.noSpacing')}
+{assign var=brickNoPadding value="brick-no-spacing"}
+{/if}
+<section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
+    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+        {$Brick->create()}
+    </div>
+</section>
 {/foreach}
 
 <main class="cologne-main">
@@ -86,20 +96,20 @@
 
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 {foreach $footerPrefix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'general.fullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
+{assign var=brickFullWidth value=''}
+{if $Brick->getSetting( 'general.fullWidth' )}
+{assign var=brickFullWidth value='brick-full-width'}
+{/if}
 
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('general.noSpacing')}
-        {assign var=brickNoPadding value="brick-no-spacing"}
-    {/if}
-    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
+{assign var=brickNoPadding value=""}
+{if $Brick->getSetting('general.noSpacing')}
+{assign var=brickNoPadding value="brick-no-spacing"}
+{/if}
+<section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
+    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+        {$Brick->create()}
+    </div>
+</section>
 {/foreach}
 
 <footer class="template-footer">
@@ -108,11 +118,11 @@
 
     {* pre-defined footer *}
     {fetch template="template/footer.predefined.html"
-        Site=$Site
-        paymentsData=$paymentsData
-        shortText=$shortText
-        urlList=$urlList
-        featuredProducts=$featuredProducts
+    Site=$Site
+    paymentsData=$paymentsData
+    shortText=$shortText
+    urlList=$urlList
+    featuredProducts=$featuredProducts
     }
 
     {* footer copyright *}

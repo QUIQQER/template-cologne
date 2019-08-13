@@ -46,11 +46,15 @@ body.header-fixed .quiqqer-order-basket-small-container {
     width: 100%
 }
 
-.quiqqer-order-basket-small-articles-article-content h2 {
+.quiqqer-order-basket-small-articles-article-content-header {
     font-size: 1.1em;
     font-weight: 500;
     line-height: 100%;
     margin: 0;
+}
+
+.quiqqer-order-basket-small-articles-article-content-header-url {
+    color: inherit;
 }
 
 .quiqqer-order-basket-small-articles-article-price-wrapper {

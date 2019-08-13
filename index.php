@@ -4,9 +4,16 @@
  * Emotion
  */
 
-
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
+
+/**
+ * Template config
+ */
+$templateSettings = QUI\TemplateCologne\Utils::getConfig([
+    'Project' => $Project,
+    'Site'    => $Site,
+]);
 
 /**
  * Header
@@ -17,15 +24,27 @@ $Menu = new QUI\Menu\MegaMenu([
     'Project'                     => $Site->getProject()
 ]);
 
-// header logo
-$EngineForMenu = QUI::getTemplateManager()->getEngine();
+/**
+ * Basket button
+ */
+$Currency = QUI\ERP\Currency\Handler::getUserCurrency();
 
-$EngineForMenu->assign([
-    'Logo' => $Project->getMedia()->getLogoImage()
-]);
+if (!$Currency) {
+    $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
+}
 
-$Menu->prependHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuPrefix.html'));
-$Menu->appendHTML($EngineForMenu->fetch(dirname(__FILE__) . '/template/menu/menuSuffix.html'));
+$createBasketButton = true;
+
+if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
+    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart') {
+    $createBasketButton = false;
+}
+
+$InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
+
+$templateSettings['Logo']               = $Project->getMedia()->getLogoImage();
+$templateSettings['initialBasketPrice'] = $InitialBasketPrice->getDisplayPrice();
+$templateSettings['createBasketButton'] = $createBasketButton;
 
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
@@ -52,15 +71,10 @@ $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
     'all'       => true
 ]);
 
-/**
- * Template config
- */
-$templateSettings = QUI\TemplateCologne\Utils::getConfig([
-    'Project'  => $Project,
-    'Site'     => $Site,
-    'Template' => $Template
-]);
 
+/**
+ * Lang currency swtich control
+ */
 $LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
 
 
@@ -72,5 +86,9 @@ $templateSettings['Avatar']             = $Avatar;
 $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
+$templateSettings['countLanguages']     = \count($Project->getLanguages());
+$templateSettings['Search']             = new QUI\ERP\Products\Controls\Search\Suggest([
+    'globalsearch' => true
+]);
 
 $Engine->assign($templateSettings);

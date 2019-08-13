@@ -3,9 +3,14 @@ var lg = 'quiqqer/template-cologne';
 window.addEvent('domready', function () {
     "use strict";
 
+
     require([
         'qui/QUI'
     ], function (QUI) {
+
+        if (SHOW_CATEGORY_MENU) {
+            initMobileMenu();
+        }
 
         /**
          * toTop button
@@ -133,7 +138,7 @@ window.addEvent('domready', function () {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function (Basket) {
                 new Basket({
-                    open  : basketOpen.toInt(),
+                    open  : BASKET_OPEN.toInt(),
                     styles: {
                         float: 'right'
                     },
@@ -142,8 +147,8 @@ window.addEvent('domready', function () {
                             var BasketNode     = Basket.getElm(),
                                 basketStyleCss = '';
 
-                            if (basketStyle) {
-                                basketStyleCss = 'basket-style-' + basketStyle;
+                            if (BASKET_STYLE) {
+                                basketStyleCss = 'basket-style-' + BASKET_STYLE;
                             }
 
                             // clear default content
@@ -160,13 +165,14 @@ window.addEvent('domready', function () {
                                 html   : '0'
                             }).inject(BasketNode);
 
-                            if (basketStyle && basketStyle === 'full') {
+                            if (BASKET_STYLE && BASKET_STYLE === 'full') {
                                 new Element('span', {
                                     'class': 'quiqqer-order-basketButton-sum',
-                                    html   : '---',
-                                    styles : {}
+                                    html   : INITAL_BASKET_PRICE
                                 }).inject(BasketNode);
                             }
+
+                            document.getElement('.cologne-header-control-basket').set('html', '');
                         },
                         /**
                          * onShowBasketBegin event
@@ -348,8 +354,8 @@ function createLogoutWindow (LogoutWindow) {
                         moofx(ContentElm).animate({
                             opacity: 1
                         });
-                    })
-                }).delay(50)
+                    });
+                }).delay(50);
             }
         }
     }).open();
@@ -373,5 +379,34 @@ function createLoginWindow () {
                 }
             }
         }).open();
-    })
+    });
+}
+
+/**
+ * Menu mobile
+ *
+ * In mobile resolution (less than 767px) opens category menu button
+ * the mobile navigation instead category navigation.
+ */
+function initMobileMenu () {
+    if (QUI.getWindowSize().x >= 768) {
+        return;
+    }
+
+    var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
+        MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
+
+    if (!OpenCategoryBtn) {
+        console.error('Open Category Button not found.');
+        return;
+    }
+
+    require(['utils/Controls'], function (Controls) {
+        Controls.getControlByElement(MenuElm).then(function (MenuControl) {
+            OpenCategoryBtn.removeEvents('click');
+            OpenCategoryBtn.addEvent('click', function () {
+                MenuControl.toggle();
+            });
+        });
+    });
 }

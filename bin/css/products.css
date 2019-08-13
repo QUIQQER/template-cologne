@@ -226,7 +226,8 @@
 .cologne-products-categoryGallery-category-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex-grow: 1;
+    margin-top: 1rem;
 }
 
 .cologne-products-categoryGallery-category-content-header {
@@ -299,6 +300,19 @@
 .quiqqer-products-productList-resultInfo .quiqqer-products-productList-resultInfo-text,
 .quiqqer-products-productList-resultInfo .quiqqer-products-productList-resultInfo-clearbtn {
     padding: 0 !important;
+}
+
+.quiqqer-products-productList-resultInfo .quiqqer-products-productList-resultInfo-text {
+    margin-left: 1rem;
+}
+
+.quiqqer-products-productList-resultInfo .quiqqer-products-productList-resultInfo-clearbtn {
+    cursor: pointer;
+    font-size: 14px !important;
+}
+
+.quiqqer-products-productList-resultInfo-clearbtn:hover .fa {
+    color: red;
 }
 
 .quiqqer-products-productList-fl .quiqqer-products-productList-filterList {
@@ -413,11 +427,6 @@
     padding: 0 !important;
     text-align: center;
     width: 40px;
-}
-
-
-.quiqqer-products-productList-products {
-    float: none !important;
 }
 
 .quiqqer-product-list {
@@ -831,9 +840,9 @@
     flex-grow: 1;
     height: 0;
     margin-left: 20px;
+    min-width: 160px;
     visibility: hidden;
     width: calc(50% - 20px);
-    min-width: 160px;
 }
 
 .product-data .product-data-fieldlist .quiqqer-product-field {
@@ -841,8 +850,8 @@
     flex-direction: column;
     flex-grow: 1;
     margin-left: 20px;
-    width: calc(50% - 20px);
     min-width: 160px;
+    width: calc(50% - 20px);
 }
 
 .product-data .product-data-fieldlist .quiqqer-product-field:nth-child(2n) {
@@ -935,9 +944,9 @@
 }
 
 .quiqqer-order-button-add.disabled .quiqqer-order-button-add-quantity {
+    cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none;
-    cursor: not-allowed;
 }
 
 
@@ -1002,4 +1011,22 @@ li.product-data-more-tabs-tab.active {
     .product-data .quiqqer-order-button-add {
         width: 100%;
     }
+}
+
+/****************/
+/* Product list */
+/****************/
+.quiqqer-product-card {
+    border-color: #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    transition: 0.2s all;
+}
+
+.quiqqer-product-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiqqer-product-card-content-data,
+.qui-products-price-display-vat {
+    font-size: 0.9rem;
 }

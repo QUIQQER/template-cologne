@@ -225,6 +225,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 Menu.hide();
             });
         }
-    })
+    });
 });
 
