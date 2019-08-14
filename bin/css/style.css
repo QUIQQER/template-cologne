@@ -1264,6 +1264,12 @@ a.toTop:before {
     padding: 20px 40px;
 }
 
+.cologne-login-dialog .quiqqer-frontendUsers-login .quiqqer-fu-login-container {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
 .quiqqer-fu-login-container h2:first-child,
 .quiqqer-fu-registrationSignUp-registration-content h2:first-child {
     position: relative;

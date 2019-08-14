@@ -42,7 +42,8 @@ class LoginAndRegister extends QUI\Control
         $Engine = QUI::getTemplateManager()->getEngine();
 
         $Login = new QUI\FrontendUsers\Controls\Login([
-            'header' => true
+            'header'        => true,
+            'passwordReset' => true
         ]);
 
         $Registration = new QUI\FrontendUsers\Controls\RegistrationSignUp([
