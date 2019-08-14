@@ -4,6 +4,12 @@
 </div>
 {else}
 <div class="templateCologne-frontendUsers-profile-container-login">
+    {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+    <section class="content-body quiqqer-content grid-100 mobile-grid-100 grid-parent">
+        {$Site->getAttribute('content')}
+    </section>
+    {/if}
+
     {control control="QUI\TemplateCologne\Controls\LoginAndRegister"}
 </div>
 {/if}

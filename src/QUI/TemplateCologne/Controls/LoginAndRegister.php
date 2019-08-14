@@ -42,11 +42,16 @@ class LoginAndRegister extends QUI\Control
         $Engine = QUI::getTemplateManager()->getEngine();
 
         $Login = new QUI\FrontendUsers\Controls\Login([
-            'header'        => false
+            'header' => true
+        ]);
+
+        $Registration = new QUI\FrontendUsers\Controls\RegistrationSignUp([
+            'content' => false
         ]);
 
         $Engine->assign([
-            'Login' => $Login
+            'Login'        => $Login,
+            'Registration' => $Registration
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/LoginAndRegister.html');
