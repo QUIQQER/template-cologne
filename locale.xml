@@ -325,6 +325,11 @@
                 <de><![CDATA[Bestellprozes in einer Seite öffnen]]></de>
                 <en><![CDATA[Open order process in a page]]></en>
             </locale>
+        <!-- hide empty fields -->
+        <locale name="settings.shop.hideEmptyFields">
+            <de><![CDATA[Leere Produktfelder als Tab in Produktdetails ausblenden?]]></de>
+            <en><![CDATA[Hide empty product fields as tab in product details?]]></en>
+        </locale>
 
         <!-- header settings -->
         <locale name="settings.header.title">
