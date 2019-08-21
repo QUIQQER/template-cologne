@@ -1,3 +1,6 @@
+{* template settings *}
+{assign var=hideEmptyFields value=QUI::getRewrite()->getProject()->getConfig('templateCologne.settings.hideEmptyFields')}
+
 <article>
     {template_event name="quiqqer::products::product::begin" Product=$Product}
 
@@ -80,11 +83,13 @@
                 </li>
                 {/if}
 
+                {if count($details)}
                 <li class="product-data-more-tabs-tab" aria-controls="panelDetails" role="tab" tabindex="-1">
                     <a href="#panelDetails">
                         {locale group="quiqqer/products" var="control.product.fields.details"}
                     </a>
                 </li>
+                {/if}
 
                 {if $Files}
                 <li class="product-data-more-tabs-tab" aria-controls="panelFiles" role="tab" tabindex="-1">
@@ -95,6 +100,13 @@
                 {/if}
 
                 {foreach $detailFields as $Field}
+
+                {* hide empty fields *}
+                {assign var=fieldValue value=$Field->getValue()}
+                {if $hideEmptyFields && empty($fieldValue)}
+                    {continue}
+                {/if}
+
                 <li class="product-data-more-tabs-tab"
                     aria-controls="panelF{$Field->getId()}"
                     role="tab"
@@ -120,6 +132,7 @@
             </section>
             {/if}
 
+            {if count($details)}
             <section class="product-data-more-sheet hide" id="panelDetails" role="tabpanel"
                      aria-labelledby="panelDetails" tabindex="0" aria-hidden="true"
             >
@@ -152,6 +165,7 @@
                 </table>
                 {/if}
             </section>
+            {/if}
 
             {if $Files}
             <section class="product-data-more-sheet hide" id="panelFiles" role="tabpanel"
@@ -161,7 +175,15 @@
             </section>
             {/if}
 
+
             {foreach $detailFields as $Field}
+
+            {* hide empty fields *}
+            {assign var=fieldValue value=$Field->getValue()}
+            {if $hideEmptyFields && empty($fieldValue)}
+                {continue}
+            {/if}
+
             <section class="product-data-more-sheet hide" id="panelF{$Field->getId()}" role="tabpanel"
                      aria-labelledby="panelF{$Field->getId()}" tabindex="0" aria-hidden="true"
             >

@@ -191,6 +191,7 @@
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .cologne-products-categoryGallery-category {
@@ -220,6 +221,7 @@
 }
 
 .cologne-products-categoryGallery-category-image-link-img {
+    font-size: initial;
     max-height: 100%;
 }
 
@@ -234,6 +236,10 @@
     text-align: center;
 }
 
+.cologne-products-categoryGallery-category-content-header-title {
+    font-size: 1.25rem;
+}
+
 .cologne-products-categoryGallery-category-content-short {
     margin-bottom: 1em;
 }
@@ -244,6 +250,12 @@
 }
 
 /* categories: list */
+.quiqqer-products-productList-categories__bottom > .quiqqer-products-productList-categories-header {
+    border-bottom: 1px solid #ddd;
+    line-height: inherit;
+    margin-bottom: 2rem;
+}
+
 .quiqqer-products-productList-categories .quiqqer-products-categoryList {
     margin-bottom: 20px;
 }
@@ -456,6 +468,7 @@
     align-items: center;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -540,6 +553,7 @@
 .cologne-productList-product-details {
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    cursor: pointer;
     display: flex;
     margin-bottom: 20px;
     padding: 20px;
@@ -619,6 +633,10 @@
 }
 
 /* product list: list */
+.quiqqer-productList-product-list {
+    cursor: pointer;
+}
+
 .quiqqer-productList-product-list:last-child {
     border-bottom: none;
 }

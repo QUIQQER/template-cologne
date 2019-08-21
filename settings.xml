@@ -18,6 +18,10 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>2</defaultvalue>
                     </conf>
+                    <conf name="hideEmptyFields">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -247,6 +251,14 @@
                                 </option>
                             </select>
 
+                            <!-- hide empty fields -->
+                            <input conf="templateCologne.settings.hideEmptyFields" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.hideEmptyFields"
+                                    />
+                                </text>
+                            </input>
                         </settings>
 
                         <!-- header -->
