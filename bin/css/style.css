@@ -1274,8 +1274,11 @@ a.toTop:before {
 }
 
 .cologne-login-dialog .qui-window-popup-content {
-    height: auto !important;
     padding: 20px 40px;
+}
+
+.quiqqer-frontendUsers-loginWindow .quiqqer-frontendUsers-login {
+    height: auto !important;
 }
 
 .cologne-login-dialog .quiqqer-frontendUsers-login .quiqqer-fu-login-container {
