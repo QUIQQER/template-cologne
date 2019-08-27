@@ -1190,13 +1190,6 @@ a.toTop:before {
     height: 30px !important;
     width: 30px !important;
     line-height: 30px !important;
-    font-size: 0;
-}
-
-.quiqqer-frontendUsers-userIcon-letter:before {
-    content: "\f007";
-    font-size: 16px;
-    font-family: 'FontAwesome';
 }
 
 .cologne-header-control-user-loader {
