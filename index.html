@@ -43,16 +43,14 @@
 Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search}
 
 {* main navigation / menu *}
-<div>
-    {fetch template="template/mainMenu.html"
-    Project=$Project
-    Logo=$Logo
-    Menu=$Menu
-    showCategoryMenu=$showCategoryMenu
-    createBasketButton=$createBasketButton
-    basketStyle=$basketStyle
-    initialBasketPrice=$initialBasketPrice}
-</div>
+{fetch template="template/mainMenu.html"
+Project=$Project
+Logo=$Logo
+Menu=$Menu
+showCategoryMenu=$showCategoryMenu
+createBasketButton=$createBasketButton
+basketStyle=$basketStyle
+initialBasketPrice=$initialBasketPrice}
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
 {fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
