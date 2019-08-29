@@ -1190,13 +1190,6 @@ a.toTop:before {
     height: 30px !important;
     width: 30px !important;
     line-height: 30px !important;
-    font-size: 0;
-}
-
-.quiqqer-frontendUsers-userIcon-letter:before {
-    content: "\f007";
-    font-size: 16px;
-    font-family: 'FontAwesome';
 }
 
 .cologne-header-control-user-loader {
@@ -1274,8 +1267,11 @@ a.toTop:before {
 }
 
 .cologne-login-dialog .qui-window-popup-content {
-    height: auto !important;
     padding: 20px 40px;
+}
+
+.quiqqer-frontendUsers-loginWindow .quiqqer-frontendUsers-login {
+    height: auto !important;
 }
 
 .cologne-login-dialog .quiqqer-frontendUsers-login .quiqqer-fu-login-container {

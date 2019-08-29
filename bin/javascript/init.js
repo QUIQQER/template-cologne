@@ -93,7 +93,7 @@ window.addEvent('domready', function () {
                         UserIconControl.addEvent('load', function () {
                             userIconLoadEvent(UserIconControl, QUILocale);
                         });
-                    })
+                    });
                 }
 
                 UserButton.addEvents({
@@ -244,8 +244,7 @@ window.addEvent('domready', function () {
                     (function () {
                         moofx(Menu).animate({
                             transform: 'translateY(0)'
-                        })
-
+                        });
                     }).delay(100);
                 }
 
@@ -272,7 +271,7 @@ window.addEvent('domready', function () {
                     }
 
                     removeMenuFixed();
-                })
+                });
             }
         });
     });

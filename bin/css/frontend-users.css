@@ -227,3 +227,19 @@
         padding: 0;
     }
 }
+
+/******************/
+/* reset password */
+/******************/
+.quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [name="cancel"] {
+    color: inherit;
+    border: none;
+    padding: 0;
+    background: none;
+    position: initial;
+    float: right;
+    margin-top: 1rem;
+}
+.quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [type="submit"] {
+    margin-top: 1rem;
+}
