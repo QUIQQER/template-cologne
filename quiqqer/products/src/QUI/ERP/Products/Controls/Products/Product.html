@@ -25,7 +25,7 @@
                     <div class="product-data-price-retail text-muted">
                         {$PriceOldDisplay->create()}
                     </div>
-                {elseif $PriceRetailDisplay && $Price->getPrice() < $priceRetailValue}
+                {elseif $PriceRetailDisplay && $Product->getFieldValue(\QUI\ERP\Products\Handler\Fields::FIELD_PRICE) < $priceRetailValue}
                     {*<!-- Retail price (UVP) -->*}
                     <div class="product-data-price-retail text-muted">
                         {$PriceRetailDisplay->create()}
