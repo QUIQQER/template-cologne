@@ -74,6 +74,7 @@
     height: 30px;
     line-height: 30px;
     width: 100px;
+    text-align: right;
 }
 
 .quiqqer-order-basket-articles-unitPrice {
