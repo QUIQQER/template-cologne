@@ -46,7 +46,7 @@
     text-align: right;
 }
 
-.quiqqer-order-basket-articles-header-price {
+.quiqqer-order-basket-articles-header th:last-child {
     border-right: 1px solid #ddd;
 }
 
@@ -70,13 +70,31 @@
     width: 100px;
 }
 
+.quiqqer-order-basket-articles-article-quantity input {
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+}
+
 .quiqqer-order-basket-articles-unitPrice {
     width: 200px;
 }
 
-.quiqqer-order-basket-articles-article-remove {
-    text-align: left;
+td.quiqqer-order-basket-articles-article-remove {
+    text-align: right;
     width: 60px;
+    padding-right: 0;
+}
+
+.quiqqer-order-basket-articles-article-remove button {
+    color: inherit;
+    background: none;
+    border-color: transparent;
+    padding: 0 10px;
+}
+
+td.quiqqer-order-basket-articles-article-remove button:hover {
+    color: red;
 }
 
 .quiqqer-order-basket-articles-article-remove .fa {
@@ -287,10 +305,6 @@
 
 /** article content
  =========================================== */
-.quiqqer-order-basket-articles-article-title {
-    font-weight: bold;
-}
-
 .quiqqer-order-basket-articles-article-data ul {
     margin-left: 20px;
 }
@@ -425,11 +439,22 @@ table.articles-article {
     border-spacing: 0;
     padding-bottom: 0 !important;
     width: 100%;
+    margin: 4rem 0;
 }
 
 .articles-article td {
     padding: 10px;
     vertical-align: top;
+    text-align: right;
+}
+
+.articles-article-information-title {
+    text-align: left;
+}
+
+.articles-article-header {
+    font-size: 12px;
+    line-height: 30px;
 }
 
 .articles-article-header th {
@@ -438,6 +463,11 @@ table.articles-article {
     border-top: 1px solid #ddd;
     padding: 5px 10px;
     width: 10px;
+    text-align: right;
+}
+
+th.articles-article-header-information {
+    text-align: left;
 }
 
 .articles-article-header .articles-article-header-pos {
@@ -466,8 +496,27 @@ table.articles-article {
     display: flex;
 }
 
+.articles-sum {
+    float: right;
+    margin-top: 20px;
+    text-align: right;
+    width: 100%;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+table.articles-sum td {
+    font-size: inherit;
+    padding-bottom: 5px;
+}
+
 .articles-sum-row-subsum td {
     padding-bottom: 5px;
+}
+
+.articles-sum-row-sum {
+    font-weight: bold;
 }
 
 /*****************/
