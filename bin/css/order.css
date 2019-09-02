@@ -66,6 +66,24 @@
     width: 60px;
 }
 
+.quiqqer-order-basket-articles-article-quantity {
+    width: 100px;
+}
+
+.quiqqer-order-basket-articles-unitPrice {
+    width: 200px;
+}
+
+.quiqqer-order-basket-articles-article-remove {
+    text-align: left;
+    width: 60px;
+}
+
+.quiqqer-order-basket-articles-article-remove .fa {
+    margin: 0;
+    padding: 0;
+}
+
 .quiqqer-order-basket-articles-header-information {
     text-align: left;
 }
