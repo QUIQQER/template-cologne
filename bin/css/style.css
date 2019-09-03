@@ -972,6 +972,15 @@ a.toTop:before {
     display: none;
 }
 
+/* menu: suffix */
+.tpl-btn.search-button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    outline: none;
+}
+
 /* user & basket container */
 .cologne-header-control {
     align-items: center;
@@ -979,12 +988,9 @@ a.toTop:before {
     flex-basis: 300px;
     flex-grow: 1;
     height: 100%;
+    justify-content: flex-end;
     position: relative;
     z-index: 2;
-}
-
-.cologne-header-control-basket {
-    width: 100%;
 }
 
 .quiqqer-order-basketButton {
@@ -1059,8 +1065,8 @@ a.toTop:before {
 @media screen and (max-width: 767px) {
     .cologne-header-control {
         flex-basis: auto;
-        margin-left: auto;
         flex-grow: 0;
+        margin-left: auto;
     }
 
     .cologne-header-nav {
@@ -1181,15 +1187,15 @@ a.toTop:before {
 }
 
 .quiqqer-frontendUsers-userIcon-icon {
+    font-size: 16px !important;
     height: 100% !important;
     width: 100% !important;
-    font-size: 16px !important;
 }
 
 .quiqqer-frontendUsers-userIcon-letter {
     height: 30px !important;
-    width: 30px !important;
     line-height: 30px !important;
+    width: 30px !important;
 }
 
 .cologne-header-control-user-loader {
@@ -1275,8 +1281,8 @@ a.toTop:before {
 }
 
 .cologne-login-dialog .quiqqer-frontendUsers-login .quiqqer-fu-login-container {
-    border: none;
     background: none;
+    border: none;
     padding: 0;
 }
 

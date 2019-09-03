@@ -621,6 +621,10 @@
             <de><![CDATA[Nach oben]]></de>
             <en><![CDATA[To top]]></en>
         </locale>
+        <locale name="template.button.search">
+            <de><![CDATA[Produkte durchsuchen]]></de>
+            <en><![CDATA[Search products]]></en>
+        </locale>
 
     </groups>
 
