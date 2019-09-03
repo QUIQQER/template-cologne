@@ -217,20 +217,29 @@ window.addEvent('domready', function () {
              * Sticky menu
              * @type {boolean}
              */
-            var Menu          = document.getElement('.cologne-header'),
-                topBarHeight  = document.getElement('.topbar').getSize().y,
-                isMenuSticked = false,
-                SearchBtn     = document.getElement('.cologne-header .search-button'),
-                SearchInput   = document.getElement('.template-search input[type="search"]');
+            var Menu         = document.getElement('.cologne-header'),
+                topBarHeight = document.getElement('.topbar').getSize().y,
+                isMenuSticky = false,
+                SearchBtn    = document.getElement('.cologne-header .search-button'),
+                SearchInput  = document.getElement('.template-search input[type="search"]');
 
             if (SearchBtn && SearchInput) {
-                SearchBtn.addEvent('click', function () {
+
+                var clickEvent = function () {
                     new Fx.Scroll(window, {
                         onComplete: function () {
                             SearchInput.focus();
                         }
                     }).toTop();
-                });
+                };
+
+                if (QUI.getWindowSize().x < 767) {
+                    clickEvent = function () {
+                        document.getElement('.quiqqer-products-search-suggest-form-button').click();
+                    };
+                }
+
+                SearchBtn.addEvent('click', clickEvent);
             }
 
             /**
@@ -255,7 +264,7 @@ window.addEvent('domready', function () {
 
                 Menu.addClass('cologne-header-fixed');
                 document.body.addClass('header-fixed');
-                isMenuSticked = true;
+                isMenuSticky = true;
             };
 
             var showSearchBtn = function () {
@@ -281,13 +290,13 @@ window.addEvent('domready', function () {
                 Menu.removeClass('cologne-header-fixed');
                 Menu.setStyle('position', null);
                 document.body.removeClass('header-fixed');
-                isMenuSticked = false;
+                isMenuSticky = false;
             };
 
             if (Menu) {
                 // check on page load if menu should be sticked to the top
                 if (QUI.getScroll().y >= topBarHeight) {
-                    if (isMenuSticked) {
+                    if (isMenuSticky) {
                         return;
                     }
 
@@ -297,7 +306,7 @@ window.addEvent('domready', function () {
 
                 QUI.addEvent('scroll', function () {
                     if (QUI.getScroll().y >= topBarHeight) {
-                        if (isMenuSticked) {
+                        if (isMenuSticky) {
                             return;
                         }
 
@@ -306,7 +315,7 @@ window.addEvent('domready', function () {
                         return;
                     }
 
-                    if (!isMenuSticked) {
+                    if (!isMenuSticky) {
                         return;
                     }
 

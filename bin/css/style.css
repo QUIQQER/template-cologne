@@ -644,6 +644,16 @@ a.toTop:before {
     }
 }
 
+/* mobile search */
+.quiqqer-products-mobileSuggest-results ul {
+    padding: 0;
+}
+
+.quiqqer-products-mobileSuggest-container input[type="search"]:focus,
+.quiqqer-products-mobileSuggest-container input[type="text"]:focus {
+    background: #303134;
+}
+
 /** header
  ===================================== */
 
