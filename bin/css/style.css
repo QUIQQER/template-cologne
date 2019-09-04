@@ -721,6 +721,10 @@ a.toTop:before {
     .cologne-header {
         border-top: 1px solid #ddd;
     }
+
+    .cologne-header-logo {
+        padding-right: 0;
+    }
 }
 
 /** Page title & breadcrumb
@@ -1094,10 +1098,6 @@ a.toTop:before {
 
     .tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {
         margin-right: 0;
-    }
-
-    .cologne-header-control-basket {
-        margin-left: 10px;
     }
 
     .basket-style-full .quiqqer-order-basketButton-sum {

@@ -169,6 +169,30 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     border-bottom: 3px double #999999;
 }
 
+/* coupons */
+.quiqqer-coupons-couponcodeinput-title {
+    display: none;
+}
+
+input.quiqqer-coupons-couponcodeinput-input:hover,
+input.quiqqer-coupons-couponcodeinput-input:focus,
+input.quiqqer-coupons-couponcodeinput-input:active {
+    border-color: #28a745;
+    background: #fff;
+}
+
+.btn.quiqqer-coupons-couponcodeinput-btn {
+    border-color: #28a745;
+    background: #fff;
+    color: #28a745;
+}
+
+.btn.quiqqer-coupons-couponcodeinput-btn:hover,
+.btn.quiqqer-coupons-couponcodeinput-btn:active {
+    background: #28a745;
+    color: #fff;
+}
+
 /***********************/
 /* step: customer data */
 /***********************/
@@ -495,6 +519,10 @@ th.articles-article-header-information {
 
 .quiqqer-order-step-checkout-notice label {
     display: flex;
+    padding: 10px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    cursor: pointer;
 }
 
 .articles-sum {
