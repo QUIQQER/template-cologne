@@ -1506,3 +1506,66 @@ table tr:last-child td {
 table tr:last-child th {
     background: #f8f8f8;
 }
+
+/*********************/
+/* messages / alerts */
+/*********************/
+.content-message-error, .content-message-attention, .content-message-success, .content-message-information {
+    clear: both;
+    float: none !important;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 1rem 1rem 50px !important;
+}
+
+.content-message-attention:before,
+.content-message-error:before,
+.content-message-success:before,
+.content-message-information:before {
+    color: inherit;
+    font-size: 22px;
+}
+
+/* attention */
+.content-message-attention {
+    background: #fef4e5;
+    border: 1px solid #fce0b8;
+    color: #f28f09;
+}
+
+.content-message-attention:before {
+    content: "\f12a";
+}
+
+/* error */
+.content-message-error {
+    background-color: #feeded;
+    border: 1px solid #fccfcf;
+    color: #f65555;
+}
+
+.content-message-error:before {
+    content: "\f05e";
+}
+
+/* success */
+.content-message-success {
+    background-color: rgba(45, 195, 142, 0.10);
+    border: 1px solid rgba(45, 195, 142, 0.20);
+    color: #2dc38e;
+}
+
+.content-message-success:before {
+
+}
+
+/* info */
+.content-message-information {
+    background: #e5f5fd;
+    border: 1px solid #b8e4f9;
+    color: #059fe4;
+}
+
+.content-message-information:before {
+    content: "\f0e5";
+}
