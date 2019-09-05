@@ -46,6 +46,10 @@
 
 
 /* menu */
+.quiqqer-products-category-menu-navigation ul {
+    width: auto !important;
+}
+
 .type-quiqqer-products-types-category .quiqqer-products-category-menu-navigation-li-label-icon,
 .type-quiqqer-products-types-category .quiqqer-products-category-menu-navigation-li-label-checkbox {
     margin-right: 15px;
