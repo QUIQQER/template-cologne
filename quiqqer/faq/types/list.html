@@ -1,0 +1,71 @@
+{if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+<section class="content-body">
+    {$Site->getAttribute('content')}
+</section>
+{/if}
+
+<div class="content-template content-template-faq-list cologne-faq-list">
+    <div class="grid-children-container">
+        <div class="grid-children">
+            {foreach from=$categories item=Category}
+
+            {assign var=nextCategoryLevel value=false}
+            {if $Category->getAttribute('type') == 'quiqqer/faq:types/list'}
+            {assign var=nextCategoryLevel value=true}
+            {/if}
+
+            <section class="content-template-faq-list-category cologne-faq-list-category
+                            {if !$nextCategoryLevel} lastCategoryLevel{/if}"
+                     itemscope itemtype="http://schema.org/ItemList"
+            >
+                <h2 class="control-color">
+                    <a itemprop="mainEntityOfPage" href="{url site=$Category}">
+                        <span itemprop="name">{$Category->getAttribute('title')}</span>
+                    </a>
+                </h2>
+
+                <div class="content-short">
+                    {$Category->getAttribute('short')}
+                </div>
+
+                {if !$nextCategoryLevel}
+                    <a itemprop="url" href="{url site=$Category}" class="btn btn-link">
+                        {locale group="quiqqer/faq" value="more"}
+                    </a>
+                {/if}
+
+                {if $nextCategoryLevel}
+                    {assign var=faqList value=$Category->getChildren()}
+                    {if count($faqList)}
+                    <ul itemscope itemtype="http://schema.org/ItemList">
+                        {assign var=position value=1}
+                        {foreach $faqList as $Faq}
+                        <li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+
+                            {if $Faq->getAttribute('type') == 'quiqqer/faq:types/entry'}
+                            <a itemprop="url" href="{url site=$Category}#faq{$Faq->getId()}">
+                            {else}
+                            <a itemprop="url" href="{url site=$Faq}">
+                            {/if}
+                                <span class="fa fa-file-text-o"></span>
+                                <span itemprop="name">{$Faq->getAttribute('title')}</span>
+                                <meta itemprop="position" content="{$position}" />
+                                {assign var=position value=$position+1}
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                    {/if}
+                {/if}
+
+            </section>
+            {/foreach}
+
+            {* <!-- Bad code, but necessary: flexbox equal width if there is no exactly 3 boxes per row --> *}
+            <section class="content-template-faq-list-category cologne-faq-list-category cologne-faq-list-category__empty"></section>
+            <section class="content-template-faq-list-category cologne-faq-list-category cologne-faq-list-category__empty"></section>
+            {* <!-- end bad code -->*}
+
+        </div>
+    </div>
+</div>
