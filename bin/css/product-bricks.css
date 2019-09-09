@@ -12,6 +12,9 @@
 /**************************************/
 /* Product children slider (vertical) */
 /**************************************/
+.quiqqer-products-control-product-childrenslider-entry-image {
+    height: 40% !important;
+}
 
 .quiqqer-products-control-product-childrenslider-entry .product-retailPrice {
     opacity: 0.6;

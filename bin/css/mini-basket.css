@@ -81,6 +81,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
 }
 
 .quiqqer-order-basket-small-total td {
+    border: none;
     padding-bottom: 4px;
     padding-top: 4px;
 }
