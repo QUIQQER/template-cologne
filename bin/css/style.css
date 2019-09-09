@@ -1166,6 +1166,16 @@ a.toTop:before {
     width: 20px;
 }
 
+/****************/
+/* sidebar menu */
+/***************/
+.quiqqer-sidebar-dropdown-navigation .control-content {
+    margin-bottom: 1rem;
+}
+
+.quiqqer-navigation-link {
+    color: inherit;
+}
 
 /****************/
 /* basket popup */
