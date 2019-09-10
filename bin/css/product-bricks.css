@@ -12,12 +12,14 @@
 /**************************************/
 /* Product children slider (vertical) */
 /**************************************/
-
-.quiqqer-products-control-product-childrenslider-entry .product-retailPrice {
-    opacity: 0.6;
-    font-size: 0.9rem;
+.quiqqer-products-control-product-childrenslider-entry-image {
+    height: 40% !important;
 }
 
-.quiqqer-products-control-product-childrenslider-entry .product-price {
-    font-size: 1.1rem;
+.quiqqer-products-control-product-childrenslider-entry .quiqqer-products-control-product-childrenslider-entry-price-retailPrice {
+    opacity: 0.6;
+}
+
+.quiqqer-products-control-product-childrenslider-entry .quiqqer-products-control-product-childrenslider-entry-price-regularPrice {
+    font-size: 1.2rem;
 }

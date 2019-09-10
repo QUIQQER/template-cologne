@@ -1,9 +1,5 @@
 /** mini basket
  ===================================== */
-.wrapper {
-    padding-top: 10em;
-}
-
 .quiqqer-order-basket-small-container {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -85,6 +81,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
 }
 
 .quiqqer-order-basket-small-total td {
+    border: none;
     padding-bottom: 4px;
     padding-top: 4px;
 }

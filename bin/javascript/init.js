@@ -214,19 +214,33 @@ window.addEvent('domready', function () {
             });
 
             /**
-             * Currencies
-             */
-            /*require(['package/quiqqer/currency/bin/controls/Switch'], function (Switch) {
-                new Switch().inject(document.getElement('.cologne-header-control-currencies'));
-            });*/
-
-
-            /**
              * Sticky menu
              * @type {boolean}
              */
             var Menu         = document.getElement('.cologne-header'),
-                topBarHeight = document.getElement('.topbar').getSize().y;
+                topBarHeight = document.getElement('.topbar').getSize().y,
+                isMenuSticky = false,
+                SearchBtn    = document.getElement('.cologne-header .search-button'),
+                SearchInput  = document.getElement('.template-search input[type="search"]');
+
+            if (SearchBtn && SearchInput) {
+
+                var clickEvent = function () {
+                    new Fx.Scroll(window, {
+                        onComplete: function () {
+                            SearchInput.focus();
+                        }
+                    }).toTop();
+                };
+
+                if (QUI.getWindowSize().x < 767) {
+                    clickEvent = function () {
+                        document.getElement('.quiqqer-products-search-suggest-form-button').click();
+                    };
+                }
+
+                SearchBtn.addEvent('click', clickEvent);
+            }
 
             /**
              *
@@ -245,32 +259,68 @@ window.addEvent('domready', function () {
                         moofx(Menu).animate({
                             transform: 'translateY(0)'
                         });
-                    }).delay(100);
+                    }).delay(500);
                 }
 
                 Menu.addClass('cologne-header-fixed');
                 document.body.addClass('header-fixed');
+                isMenuSticky = true;
+            };
+
+            var showSearchBtn = function () {
+                moofx(SearchBtn).animate({
+                    opacity  : 1,
+                    transform: 'scale(1)'
+                }, {
+                    duration: 300,
+                    equation: 'cubic-bezier(0.6, -0.4, 0.2, 2.11)'
+                });
+            };
+
+            var hideSearchBtn = function () {
+                moofx(SearchBtn).animate({
+                    opacity  : 0,
+                    transform: 'scale(0)'
+                }, {
+                    duration: 300
+                });
             };
 
             var removeMenuFixed = function () {
                 Menu.removeClass('cologne-header-fixed');
                 Menu.setStyle('position', null);
                 document.body.removeClass('header-fixed');
+                isMenuSticky = false;
             };
 
             if (Menu) {
                 // check on page load if menu should be sticked to the top
                 if (QUI.getScroll().y >= topBarHeight) {
+                    if (isMenuSticky) {
+                        return;
+                    }
+
                     setMenuFixed(true);
+                    showSearchBtn();
                 }
 
                 QUI.addEvent('scroll', function () {
                     if (QUI.getScroll().y >= topBarHeight) {
+                        if (isMenuSticky) {
+                            return;
+                        }
+
                         setMenuFixed(false);
+                        showSearchBtn();
+                        return;
+                    }
+
+                    if (!isMenuSticky) {
                         return;
                     }
 
                     removeMenuFixed();
+                    hideSearchBtn();
                 });
             }
         });

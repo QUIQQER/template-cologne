@@ -27,6 +27,7 @@
 .quiqqer-order-basket-articles td {
     padding-bottom: 10px;
     vertical-align: top;
+    border: none;
 }
 
 .quiqqer-order-basket-articles th {
@@ -35,9 +36,10 @@
     border-top: 1px solid #ddd;
     padding: 5px 10px;
     width: 10px;
+    border-left: none;
 }
 
-.quiqqer-order-basket-articles-header-pos {
+th.quiqqer-order-basket-articles-header-pos {
     border-left: 1px solid #ddd;
     text-align: left;
 }
@@ -46,7 +48,7 @@
     text-align: right;
 }
 
-.quiqqer-order-basket-articles-header-price {
+.quiqqer-order-basket-articles-header th:last-child {
     border-right: 1px solid #ddd;
 }
 
@@ -64,6 +66,43 @@
 .quiqqer-order-basket-articles-article-pos {
     text-align: left;
     width: 60px;
+}
+
+.quiqqer-order-basket-articles-article-quantity {
+    width: 100px;
+}
+
+.quiqqer-order-basket-articles-article-quantity input {
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    text-align: right;
+}
+
+.quiqqer-order-basket-articles-unitPrice {
+    width: 200px;
+}
+
+td.quiqqer-order-basket-articles-article-remove {
+    text-align: right;
+    width: 60px;
+    padding-right: 0;
+}
+
+.quiqqer-order-basket-articles-article-remove button {
+    color: inherit;
+    background: none;
+    border-color: transparent;
+    padding: 0 10px;
+}
+
+td.quiqqer-order-basket-articles-article-remove button:hover {
+    color: red;
+}
+
+.quiqqer-order-basket-articles-article-remove .fa {
+    margin: 0;
+    padding: 0;
 }
 
 .quiqqer-order-basket-articles-header-information {
@@ -102,6 +141,7 @@
 }
 
 .quiqqer-order-basket-total td {
+    border: none;
     padding-bottom: 5px;
 }
 
@@ -130,6 +170,36 @@
 .quiqqer-order-basket-total-sum-text,
 .quiqqer-order-basket-total-sum-value {
     border-bottom: 3px double #999999;
+}
+
+/* coupons */
+.quiqqer-coupons-couponcodeinput-title {
+    display: none;
+}
+
+input.quiqqer-coupons-couponcodeinput-input:hover,
+input.quiqqer-coupons-couponcodeinput-input:focus,
+input.quiqqer-coupons-couponcodeinput-input:active {
+    border-color: #28a745;
+    background: #fff;
+}
+
+.btn.quiqqer-coupons-couponcodeinput-btn {
+    border-color: #28a745;
+    background: #fff;
+    color: #28a745;
+}
+
+.btn.quiqqer-coupons-couponcodeinput-btn:hover,
+.btn.quiqqer-coupons-couponcodeinput-btn:active {
+    background: #28a745;
+    color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-order-basket-articles-article td:before {
+        font-weight: bold;
+    }
 }
 
 /***********************/
@@ -269,10 +339,6 @@
 
 /** article content
  =========================================== */
-.quiqqer-order-basket-articles-article-title {
-    font-weight: bold;
-}
-
 .quiqqer-order-basket-articles-article-data ul {
     margin-left: 20px;
 }
@@ -322,7 +388,7 @@
         padding: 10px 10px 10px 10px;
     }
 
-    .quiqqer-order-basket-articles-article + .quiqqer-order-basket-articles-article {
+    .quiqqer-order-basket-articles-article:nth-child(2n) {
         background: #f8f8f8;
         margin-top: 20px;
         padding-top: 20px;
@@ -349,7 +415,7 @@
 
     .quiqqer-order-basket-end {
         height: inherit;
-        padding: 10px;
+        padding: 1rem;
         text-align: center;
     }
 
@@ -364,24 +430,24 @@
         margin-top: 20px !important;
     }
 
+    .quiqqer-payment-paypal-express {
+        padding: 1rem 0;
+    }
+
     .quiqqer-order-basket-end .quiqqer-coupons-couponcodeinput {
         padding: 0;
         text-align: left;
+        flex-direction: column;
     }
 
     .quiqqer-order-basket-end .quiqqer-coupons-couponcodeinput input {
-        border-radius: 0 0 0 0.25rem !important;
         width: 100%;
+        margin-bottom: 1rem;
     }
 
     .quiqqer-coupons-couponcodeinput label span {
-        background: #f8f8f8;
-        border-left: 1px solid #c9c8c5;
-        border-radius: 0.25rem 0 0 0;
-        border-top: 1px solid #c9c8c5;
-        display: inline-block;
-        padding: 5px;
-        width: 100%
+        display: block;
+        padding: 5px 10px;
     }
 }
 
@@ -407,11 +473,23 @@ table.articles-article {
     border-spacing: 0;
     padding-bottom: 0 !important;
     width: 100%;
+    margin: 4rem 0 0;
 }
 
 .articles-article td {
     padding: 10px;
     vertical-align: top;
+    text-align: right;
+    border: none;
+}
+
+.articles-article-information-title {
+    text-align: left;
+}
+
+.articles-article-header {
+    font-size: 12px;
+    line-height: 30px;
 }
 
 .articles-article-header th {
@@ -420,6 +498,12 @@ table.articles-article {
     border-top: 1px solid #ddd;
     padding: 5px 10px;
     width: 10px;
+    text-align: right;
+    border-left: none;
+}
+
+th.articles-article-header-information {
+    text-align: left;
 }
 
 .articles-article-header .articles-article-header-pos {
@@ -446,10 +530,34 @@ table.articles-article {
 
 .quiqqer-order-step-checkout-notice label {
     display: flex;
+    padding: 10px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.articles-sum {
+    float: right;
+    margin-top: 20px;
+    text-align: right;
+    width: 100%;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+table.articles-sum td {
+    border: none;
+    font-size: inherit;
+    padding-bottom: 5px;
 }
 
 .articles-sum-row-subsum td {
     padding-bottom: 5px;
+}
+
+.articles-sum-row-sum {
+    font-weight: bold;
 }
 
 /*****************/

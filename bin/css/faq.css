@@ -1,0 +1,115 @@
+/**************/
+/* FAQ - list */
+/**************/
+.cologne-faq-list .grid-children {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cologne-faq-list .content-template-faq-list-category {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    flex-grow: 1;
+    margin: 20px;
+    min-width: 250px;
+    padding: 20px;
+    width: calc(33.333333% - 40px);
+}
+
+.cologne-faq-list-category.cologne-faq-list-category__empty {
+    border-bottom: 0;
+    border-top: 0;
+    height: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    visibility: hidden;
+}
+
+.cologne-faq-list .content-template-faq-list-category:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cologne-faq-list-category h2:after {
+    display: none;
+}
+
+.cologne-faq-list-category.lastCategoryLevel .btn {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+/* list  */
+.content-template-faq-list-category ul li:before {
+    display: none;
+}
+
+.content-template-faq-list-category ul li:hover {
+    background: none;
+}
+
+.content-template-faq-list-category ul li .fa {
+    margin-right: 0.75rem;
+    opacity: 0.75;
+}
+
+
+.content-template-faq-list-category ul li:hover .fa {
+    color: #203d58;
+    opacity: 1;
+}
+
+.cologne-faq-list ul li span {
+    display: initial;
+    margin: 0;
+}
+
+/******************/
+/* FAQ - category */
+/******************/
+.quiqqer-faq-list {
+    margin-bottom: 4rem;
+}
+
+.quiqqer-faq-list li {
+    margin-bottom: 0;
+}
+
+.quiqqer-faq-list li:hover {
+    background: none;
+}
+
+.quiqqer-faq-list li:before {
+    display: none;
+}
+
+.cologne-quiqqer-faq li a {
+    margin-left: 0;
+    padding: 5px 0;
+}
+
+.quiqqer-faq-list .fa {
+    margin-right: 0.75rem;
+    opacity: 0.75;
+}
+
+.quiqqer-faq-list li:hover .fa {
+    color: #203d58;
+    opacity: 1;
+}
+
+/* article */
+.cologne-quiqqer-faq article {
+    margin-bottom: 2rem;
+}
+
+.cologne-quiqqer-faq article header .fa {
+    color: #203d58;
+    margin-right: 1rem;
+}
+
+.cologne-quiqqer-faq .quiqqer-faq-list-linkToTop {
+    margin-top: 0;
+}
