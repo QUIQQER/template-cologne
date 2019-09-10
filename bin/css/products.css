@@ -518,16 +518,16 @@
     display: inline;
 }
 
-.product-buttons {
+.quiqqer-products-control-product-childrenslider-entry-productButtons {
     margin-top: auto;
 }
 
 @media screen and (max-width: 767px) {
-    .product-buttons {
+    .quiqqer-products-control-product-childrenslider-entry-productButtons {
         width: 100%;
     }
 
-    .product-buttons .btn {
+    .quiqqer-products-control-product-childrenslider-entry-productButtons .btn {
         display: block;
     }
 
@@ -1056,5 +1056,5 @@ li.product-data-more-tabs-tab.active {
 
 .quiqqer-product-card-content-data,
 .qui-products-price-display-vat {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
