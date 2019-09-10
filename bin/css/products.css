@@ -511,15 +511,11 @@
 
 .cologne-products-productGallery-products-product-price {
     font-weight: bold;
-    margin: 1em 0;
+    margin: auto 0 1em;
 }
 
 .cologne-products-productGallery-products-product-price .qui-products-price-display {
     display: inline;
-}
-
-.quiqqer-products-control-product-childrenslider-entry-productButtons {
-    margin-top: auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -629,6 +625,11 @@
 
     .cologne-productList-product-details-content-buttons .btn {
         display: block;
+        margin-bottom: 1rem;
+    }
+
+    .cologne-productList-product-details-content-buttons .btn:last-child {
+        margin-bottom: 0;
     }
 }
 
