@@ -193,7 +193,7 @@
 .cologne-products-categoryGallery-categories {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     margin-bottom: 40px;
     width: 100%;
 }
@@ -460,7 +460,7 @@
 .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     width: 100%;
 }
 
@@ -541,16 +541,6 @@
     .cologne-products-productGallery-products-product-title {
         text-overflow: initial;
         white-space: initial;
-    }
-
-    .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
-        grid-template-columns: auto;
     }
 }
 
