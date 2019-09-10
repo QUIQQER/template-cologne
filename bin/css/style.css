@@ -644,14 +644,65 @@ a.toTop:before {
     }
 }
 
-/* mobile search */
+/**************************/
+/* Mobile producgt search */
+/**************************/
 .quiqqer-products-mobileSuggest-results ul {
     padding: 0;
 }
 
-.quiqqer-products-mobileSuggest-container input[type="search"]:focus,
-.quiqqer-products-mobileSuggest-container input[type="text"]:focus {
-    background: #303134;
+.quiqqer-products-mobileSuggest {
+    background: #fff;
+    color: #606975;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-container {
+    margin: 80px auto 0;
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-title {
+    color: inherit;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-close {
+    color: inherit;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-search {
+    height: 60px;
+    display: block;
+    padding: 0 20px;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-container input {
+    background: #fff;
+    color: inherit;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results-container {
+    margin-top: 0;
+    height: calc(100% - 60px);
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results {
+    height: 100%;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results ul {
+    margin: 0;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li {
+    background: none;
+    color: #606975;
+    border-color: #ddd;
+    padding: 20px 20px 40px 20px;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li:first-child {
+    border-top: none;
 }
 
 /** header
