@@ -1,3 +1,8 @@
+.qui-products-price-display-vat {
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
 .quiqqer-products-wrapper {
     align-items: flex-start;
     display: flex;
@@ -512,6 +517,7 @@
 .cologne-products-productGallery-products-product-price {
     font-weight: bold;
     margin: auto 0 1em;
+    text-align: center;
 }
 
 .cologne-products-productGallery-products-product-price .qui-products-price-display {
@@ -599,6 +605,9 @@
     display: inline;
 }
 
+.cologne-productList-product-details-content-price  .candyman-qui-products-price-display {
+    display: inline;
+}
 
 .cologne-productList-product-details-content-buttons {
     border-top: 1px solid #ddd;
@@ -1045,7 +1054,7 @@ li.product-data-more-tabs-tab.active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.quiqqer-product-card-content-data,
-.qui-products-price-display-vat {
+.quiqqer-product-card-content-data {
     font-size: 0.75rem;
+    font-weight: normal;
 }
