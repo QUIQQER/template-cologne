@@ -631,6 +631,10 @@
         </locale>
 
         <!-- site types -->
+        <locale name="admin.types.registration">
+            <de><![CDATA[Registrierung]]></de>
+            <en><![CDATA[Registration]]></en>
+        </locale>
         <locale name="admin.types.setting.registration">
             <de><![CDATA[Registrierung]]></de>
             <en><![CDATA[Registration]]></en>
