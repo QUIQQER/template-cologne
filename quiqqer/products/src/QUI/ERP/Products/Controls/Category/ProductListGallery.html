@@ -19,7 +19,7 @@
                 price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
             }
         {else}
-            {control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+            {$Product->getPriceDisplay()->create()}
         {/if}
     </span>
 
