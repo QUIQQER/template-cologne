@@ -1,0 +1,11 @@
+{if $Site->getAttribute('quiqqer.settings.registration.contentPos') == 'beforeRegistrationForm'
+    && $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+<section class="content-body grid-100 mobile-grid-100 grid-parent">
+    {$Site->getAttribute('content')}
+</section>
+{/if}
+
+<div class="content-template" style="min-height: 350px;">
+    {$Registration->create()}
+</div>
+

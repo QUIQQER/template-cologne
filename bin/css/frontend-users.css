@@ -1,10 +1,10 @@
 .templateCologne-frontendUsers-profile-container-login {
-    margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .quiqqer-frontend-users-address-description-button {
-     max-width: 100% !important;
+    max-width: 100% !important;
 }
 
 /********************/
@@ -21,9 +21,9 @@
 }
 
 .quiqqer-frontendUsers-profile-container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     display: flex;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categories {
@@ -131,7 +131,7 @@
 }
 
 .quiqqer-frontendUsers-userdata-section, .quiqqer-frontendUsers-userdata-address, .quiqqer-frontendUsers-userdata-address-additional {
-     max-width: 100% !important;
+    max-width: 100% !important;
 }
 
 .quiqqer-frontend-users-address header,
@@ -215,11 +215,11 @@
 }
 
 .quiqqer-fu-login-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
     background: #f8f8f8;
     border: 1px solid #ddd;
+    max-width: 400px;
+    position: relative;
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -232,14 +232,41 @@
 /* reset password */
 /******************/
 .quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [name="cancel"] {
-    color: inherit;
-    border: none;
-    padding: 0;
     background: none;
-    position: initial;
+    border: none;
+    color: inherit;
     float: right;
     margin-top: 1rem;
+    padding: 0;
+    position: initial;
 }
+
 .quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [type="submit"] {
     margin-top: 1rem;
+}
+
+/*******************/
+/* Login site type */
+/*******************/
+
+.loginAndRegister .quiqqer-fu-login-forget-password-link {
+    margin-bottom: 1rem;
+}
+
+.loginAndRegister-register .quiqqer-fu-registrationSignUp-registration-content {
+    align-items: center;
+    border: 1px solid #ddd;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.loginAndRegister .quiqqer-fu-login-forget-password-reset {
+    padding: 1.5rem 2rem;
+    background: #f8f8f8;
+}
+
+.quiqqer-fu-registrationSignUp-terms-text [name="decline"] {
+    right: 0 !important;
 }

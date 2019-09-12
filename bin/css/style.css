@@ -1435,6 +1435,15 @@ a.toTop:before {
     margin: 0 auto 30px !important;
 }
 
+/* sing up / registration in link */
+.login-popup-create-account-wrapper {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
 /** Product Children Slider (horizontal)
  ===================================== */
 .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-container,

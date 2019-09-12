@@ -112,3 +112,13 @@ body.header-fixed .quiqqer-order-basket-small-container {
 .quiqqer-order-basket-small-buttons .open-shopping-cart {
     margin-right: 1rem;
 }
+
+/*********************/
+/* payments - paypal */
+/*********************/
+.quiqqer-order-basket-small-container .quiqqer-payment-paypal-express {
+    margin-top: 15px;
+    text-align: right;
+    width: 100%;
+    height: auto;
+}
