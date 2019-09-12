@@ -655,6 +655,11 @@
             <de><![CDATA[Abmelden]]></de>
             <en><![CDATA[Logout]]></en>
         </locale>
+
+        <locale name="template.popup.login.registration.button">
+            <de><![CDATA[Kundenkonto anlegen]]></de>
+            <en><![CDATA[Create account]]></en>
+        </locale>
     </groups>
 
 </locales>
