@@ -22,7 +22,6 @@ if (QUI::getUserBySession()->getId()) {
                 exit;
             }
         }
-
     } catch (QUI\Exception $Exception) {
         QUI\System\Log::writeDebugException($Exception);
     }
