@@ -625,6 +625,10 @@
             <de><![CDATA[Produkte durchsuchen]]></de>
             <en><![CDATA[Search products]]></en>
         </locale>
+        <locale name="template.basket.small.otherPaymentMethodsSpacer" html="true">
+            <de><![CDATA[- oder -]]></de>
+            <en><![CDATA[- or -]]></en>
+        </locale>
 
         <!-- site types -->
         <locale name="admin.types.setting.registration">

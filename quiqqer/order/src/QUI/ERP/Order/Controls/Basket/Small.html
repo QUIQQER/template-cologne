@@ -112,4 +112,11 @@
     </a>
 </div>
 
+<style>
+    .quiqqer-order-basket-small-buttons[data-spacer] + *:before {
+        content: '{locale group="quiqqer/template-cologne" var="template.basket.small.otherPaymentMethodsSpacer"}';
+        margin: 0 0 15px;
+        display: block;
+    }
+</style>
 {template_event name="quiqqer::order::basketSmall::end" Basket=$Basket}
