@@ -59,52 +59,91 @@
         <layout type="layout/startPage"
                 image="bin/layouts/startPage.png">
             <title>
-                <locale group="quiqqer/template-cologne" var="admin.layout.startpage" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.startpage"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.startpage.desc" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.startpage.desc"/>
             </description>
         </layout>
 
         <layout type="layout/noSidebar"
                 image="bin/layouts/noSidebar.png">
             <title>
-                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar.desc" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar.desc"/>
             </description>
         </layout>
 
         <layout type="layout/noSidebarThin"
                 image="bin/layouts/noSidebarThin.png">
             <title>
-                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin.desc" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin.desc"/>
             </description>
         </layout>
 
         <layout type="layout/leftSidebar"
                 image="bin/layouts/leftSidebar.png">
             <title>
-                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar.desc" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar.desc"/>
             </description>
         </layout>
 
         <layout type="layout/rightSidebar"
                 image="bin/layouts/rightSidebar.png">
             <title>
-                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar.desc" />
+                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar.desc"/>
             </description>
         </layout>
     </layouts>
 
+    <!-- types -->
+    <types>
+        <!-- user register -->
+        <type type="types/registration" icon="fa fa-user-plus">
+            <locale group="quiqqer/template-cologne" var="admin.types.registration"/>
+
+            <!-- extra attributes -->
+            <attributes>
+                <attribute default="nextToRegistrationForm">quiqqer.settings.registration.contentPos</attribute>
+            </attributes>
+
+            <settings>
+                <category name="registration-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/template-cologne" var="admin.types.setting.registration"/>
+                        </title>
+
+                        <select conf="quiqqer.settings.registration.contentPos">
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="quiqqer.settings.registration.contentPos"/>
+                            </text>
+                            <option value="nextToRegistrationForm">
+                                <locale group="quiqqer/template-cologne"
+                                        var="quiqqer.settings.registration.contentPos.nextToRegistrationForm"
+                                />
+                            </option>
+                            <option value="beforeRegistrationForm">
+                                <locale group="quiqqer/template-cologne"
+                                        var="quiqqer.settings.registration.contentPos.beforeRegistrationForm"
+                                />
+                            </option>
+                        </select>
+                    </settings>
+                </category>
+            </settings>
+        </type>
+    </types>
 </site>

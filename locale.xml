@@ -626,6 +626,24 @@
             <en><![CDATA[Search products]]></en>
         </locale>
 
+        <!-- site types -->
+        <locale name="admin.types.setting.registration">
+            <de><![CDATA[Registrierung]]></de>
+            <en><![CDATA[Registration]]></en>
+        </locale>
+        <locale name="quiqqer.settings.registration.contentPos">
+            <de><![CDATA[Wo soll der Seiteninhalt angezeigt werden?]]></de>
+            <en><![CDATA[Where should the page content be displayed?]]></en>
+        </locale>
+            <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
+                <de><![CDATA[Neben dem Registrierungsformular]]></de>
+                <en><![CDATA[Next to the registration form]]></en>
+            </locale>
+            <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
+                <de><![CDATA[Vor dem Registrierungsformular]]></de>
+                <en><![CDATA[Before the registration form]]></en>
+            </locale>
+
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
