@@ -8,9 +8,9 @@ textarea {
     border-radius: 0.25rem;
     font-family: 'Maven Pro', Verdana, sans-serif;
     line-height: 40px;
+    margin-bottom: 1rem;
     outline: none;
     padding: 0 10px;
-    margin-bottom: 1rem;
 }
 
 input[type="text"]:hover,
@@ -191,4 +191,41 @@ input[type="radio"]:checked:active {
 .form-group {
     margin-bottom: 1rem;
     width: 100%;
+}
+
+/*******************/
+/* quiqqer/contact */
+/*******************/
+fieldset {
+    border: none;
+}
+
+.qui-formfield {
+    margin-bottom: 1.5rem;
+}
+
+.qui-form legend {
+    background: none;
+    font-size: 1rem;
+}
+
+.qui-formfield-body {
+    padding: 0;
+}
+
+.qui-formfield-body label > * {
+    vertical-align: middle;
+}
+
+.qui-formfield-body > input {
+    margin-bottom: 0;
+}
+
+.qui-formfield-body label {
+    margin-right: 1rem;
+}
+
+.qui-form input[type="submit"] {
+    margin: 1rem 0 0 0;
+    width: auto;
 }
