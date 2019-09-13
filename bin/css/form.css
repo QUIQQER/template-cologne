@@ -8,7 +8,6 @@ textarea {
     border-radius: 0.25rem;
     font-family: 'Maven Pro', Verdana, sans-serif;
     line-height: 40px;
-    margin-bottom: 1rem;
     outline: none;
     padding: 0 10px;
 }
@@ -17,11 +16,10 @@ input[type="text"]:hover,
 input[type="text"]:focus,
 input[type="password"]:hover,
 input[type="password"]:focus {
-    /*background: #f5f5f5;*/
     border-color: #a9a8a5;
 }
 
-form label {
+.quiqqer-simple-contact label {
     margin: 10px 0;
 }
 
@@ -34,8 +32,7 @@ form label {
     vertical-align: middle;
 }
 
-form button,
-form input[type="submit"] {
+.quiqqer-simple-contact button {
     margin-top: 1rem;
 }
 
