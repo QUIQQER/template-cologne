@@ -930,13 +930,20 @@
 .product-data-actionButtons-buyNow {
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 20px 20px 20px 0;
     position: relative;
 }
 
 .product-data-actionButtons-buyNow button {
+    flex-grow: 1;
+    margin: 0 0 0 20px;
     position: relative;
-    width: calc(50% - 10px);
+}
+
+.product-data-actionButtons-buyNow-placeholder {
+    float: left;
+    margin: 0 0 0 20px;
+    width: 45%;
 }
 
 .product-data .quiqqer-order-button-add {
@@ -953,9 +960,9 @@
 .quiqqer-order-button-add-quantity-wrapper {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     margin-left: 20px;
     margin-right: 0 !important;
+    width: 45%;
 }
 
 .quiqqer-order-button-add-quantity-wrapper .quiqqer-order-button-add-quantity {

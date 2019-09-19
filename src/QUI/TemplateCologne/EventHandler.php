@@ -91,6 +91,7 @@ class EventHandler
 
         $Collector->append(
             '<div class="product-data-actionButtons-buyNow">
+                <div class="product-data-actionButtons-buyNow-placeholder"></div>
                 <button disabled data-qui="package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton">
                     <span class="add-to-basket-text">'.$text.'</span>
                 </button>
