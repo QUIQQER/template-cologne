@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiqqer>
     <project>
-
         <settings>
             <config>
                 <section name="templateCologne.settings">
@@ -21,6 +20,10 @@
                     <conf name="hideEmptyFields">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showBuyNowButton">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
 
                     <!-- header -->
@@ -169,7 +172,6 @@
                     <conf name="predefinedFooter.shortText.title">
                         <type><![CDATA[string]]></type>
                     </conf>
-
                 </section>
             </config>
 
@@ -256,6 +258,15 @@
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.shop.hideEmptyFields"
+                                    />
+                                </text>
+                            </input>
+
+
+                            <input conf="templateCologne.settings.showBuyNowButton" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showBuyNowButton"
                                     />
                                 </text>
                             </input>

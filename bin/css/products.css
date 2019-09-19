@@ -605,7 +605,7 @@
     display: inline;
 }
 
-.cologne-productList-product-details-content-price  .candyman-qui-products-price-display {
+.cologne-productList-product-details-content-price .candyman-qui-products-price-display {
     display: inline;
 }
 
@@ -923,7 +923,20 @@
 .product-data-actionButtons {
     border-top: 1px solid #f1f1f1;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+}
+
+.product-data-actionButtons-buyNow {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    position: relative;
+}
+
+.product-data-actionButtons-buyNow button {
+    position: relative;
+    width: calc(50% - 10px);
 }
 
 .product-data .quiqqer-order-button-add {

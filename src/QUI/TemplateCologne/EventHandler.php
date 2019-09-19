@@ -67,11 +67,34 @@ class EventHandler
     public static function fetch($params, $Smarty)
     {
         $template = $params['template'];
-        $path     = OPT_DIR . 'quiqqer/template-cologne/';
+        $path     = OPT_DIR.'quiqqer/template-cologne/';
 
         $Engine = QUI::getTemplateManager()->getEngine();
         $Engine->assign($params);
 
-        return $Engine->fetch($path . $template);
+        return $Engine->fetch($path.$template);
+    }
+
+    /**
+     * @param \Quiqqer\Engine\Collector $Collector
+     */
+    public static function onQuiqqerProductsProductButtonsEnd(\Quiqqer\Engine\Collector $Collector)
+    {
+        // setting
+        $Project = QUI::getRewrite()->getProject();
+
+        if (!(int)$Project->getConfig('templateCologne.settings.showBuyNowButton')) {
+            return;
+        }
+
+        $text = QUI::getLocale()->get('quiqqer/template-cologne', 'control.product.buy.know.button');
+
+        $Collector->append(
+            '<div class="product-data-actionButtons-buyNow">
+                <button disabled data-qui="package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton">
+                    <span class="add-to-basket-text">'.$text.'</span>
+                </button>
+            </div>'
+        );
     }
 }
