@@ -202,6 +202,11 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     }
 }
 
+.quiqqer-order-basket-articles-article-productno {
+    color: #adadad;
+    font-size: 12px;
+}
+
 /***********************/
 /* step: customer data */
 /***********************/
