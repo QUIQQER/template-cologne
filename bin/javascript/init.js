@@ -415,14 +415,34 @@ function createLogoutWindow (LogoutWindow) {
  */
 function createLoginWindow () {
     require([
+        'Locale',
+        'utils/Controls',
         'package/quiqqer/frontend-users/bin/frontend/controls/login/Window'
-    ], function (LoginWindow) {
+    ], function (QUILocale, QUIControlUtils, LoginWindow) {
         new LoginWindow({
             class    : 'cologne-login-dialog',
             title    : false,
-            maxHeight: 500,
+            maxHeight: 550,
             maxWidth : 400,
             events   : {
+                onOpen   : function (LoginWindow) {
+                    if (!REGISTER_URL) {
+                        return;
+                    }
+
+                    var Elm = LoginWindow.getElm();
+
+                    var CreateAccountWrapper = new Element('div', {
+                        'class': 'login-popup-create-account-wrapper'
+                    });
+
+                    new Element('a', {
+                        href: REGISTER_URL,
+                        html: QUILocale.get('quiqqer/template-cologne', 'template.popup.login.registration.button'),
+                    }).inject(CreateAccountWrapper);
+
+                    CreateAccountWrapper.inject(Elm.getElement('.qui-window-popup-content'));
+                },
                 onSuccess: function () {
                     window.location.reload();
                 }

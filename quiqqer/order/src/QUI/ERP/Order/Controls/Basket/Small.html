@@ -1,3 +1,5 @@
+{template_event name="quiqqer::order::basketSmall::begin" Basket=$Basket}
+
 <div class="quiqqer-order-basket-small-articles">
     {assign var=pos value=1}
     {foreach $products as $product}
@@ -41,6 +43,8 @@
     {assign var=pos value=$pos+1}
     {/foreach}
 </div>
+
+{template_event name="quiqqer::order::basketSmall::middle" Basket=$Basket}
 
 <table class="quiqqer-order-basket-small-total">
     <tr class="quiqqer-order-basket-small-total-subSum">
@@ -96,6 +100,8 @@
     </tr>
 </table>
 
+{template_event name="quiqqer::order::basketSmall::beforeCheckoutButton" Basket=$Basket}
+
 <div class="quiqqer-order-basket-small-buttons">
     <a href="{$shoppingCartUrl}" class="open-shopping-cart btn btn-light">
         {locale group="quiqqer/order" var="control.basket.small.shoppingCart.button"}
@@ -105,3 +111,13 @@
         {locale group="quiqqer/order" var="control.basket.small.buy.button"}
     </a>
 </div>
+
+{template_event name="quiqqer::order::basketSmall::end" Basket=$Basket}
+
+<style>
+    .quiqqer-order-basket-small-buttons + *:before {
+        content: '{locale group="quiqqer/template-cologne" var="template.basket.small.otherPaymentMethodsSpacer"}';
+        margin: 0 0 15px;
+        display: block;
+    }
+</style>

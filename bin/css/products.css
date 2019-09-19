@@ -1,3 +1,8 @@
+.qui-products-price-display-vat {
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
 .quiqqer-products-wrapper {
     align-items: flex-start;
     display: flex;
@@ -193,7 +198,7 @@
 .cologne-products-categoryGallery-categories {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     margin-bottom: 40px;
     width: 100%;
 }
@@ -460,7 +465,7 @@
 .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     width: 100%;
 }
 
@@ -511,15 +516,12 @@
 
 .cologne-products-productGallery-products-product-price {
     font-weight: bold;
-    margin: 1em 0;
+    margin: auto 0 1em;
+    text-align: center;
 }
 
 .cologne-products-productGallery-products-product-price .qui-products-price-display {
     display: inline;
-}
-
-.quiqqer-products-control-product-childrenslider-entry-productButtons {
-    margin-top: auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -541,16 +543,6 @@
     .cologne-products-productGallery-products-product-title {
         text-overflow: initial;
         white-space: initial;
-    }
-
-    .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
-        grid-template-columns: auto;
     }
 }
 
@@ -613,6 +605,9 @@
     display: inline;
 }
 
+.cologne-productList-product-details-content-price  .candyman-qui-products-price-display {
+    display: inline;
+}
 
 .cologne-productList-product-details-content-buttons {
     border-top: 1px solid #ddd;
@@ -639,6 +634,11 @@
 
     .cologne-productList-product-details-content-buttons .btn {
         display: block;
+        margin-bottom: 1rem;
+    }
+
+    .cologne-productList-product-details-content-buttons .btn:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -1054,7 +1054,7 @@ li.product-data-more-tabs-tab.active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.quiqqer-product-card-content-data,
-.qui-products-price-display-vat {
+.quiqqer-product-card-content-data {
     font-size: 0.75rem;
+    font-weight: normal;
 }

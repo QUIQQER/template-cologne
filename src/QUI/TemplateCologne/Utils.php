@@ -68,7 +68,7 @@ class Utils
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/' . $Site->getId()
+                'quiqqer/templateCologne/'.$Site->getId()
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -127,6 +127,10 @@ class Utils
                 break;
         }
 
+        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess') {
+            $showBreadcrumb = false;
+        }
+
         /* site own show header */
         switch ($Site->getAttribute('templateCologne.header')) {
             case 'afterNav':
@@ -178,8 +182,8 @@ class Utils
         $config['header']           = $header;
         $config['pageTitle']        = $pageTitle;
         $config['showBreadcrumb']   = $showBreadcrumb;
-        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
-        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['settingsCSS']      = '<style>'.$settingsCSS.'</style>';
+        $config['typeClass']        = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['siteType']         = $siteType;
         $config['basketStyle']      = $basketStyle;
         $config['basketOpen']       = $basketOpen;
@@ -187,7 +191,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/' . $Site->getId(),
+            'quiqqer/templateCologne/'.$Site->getId(),
             $config
         );
 

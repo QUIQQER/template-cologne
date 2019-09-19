@@ -625,6 +625,32 @@
             <de><![CDATA[Produkte durchsuchen]]></de>
             <en><![CDATA[Search products]]></en>
         </locale>
+        <locale name="template.basket.small.otherPaymentMethodsSpacer" html="true">
+            <de><![CDATA[- oder -]]></de>
+            <en><![CDATA[- or -]]></en>
+        </locale>
+
+        <!-- site types -->
+        <locale name="admin.types.registration">
+            <de><![CDATA[Registrierung]]></de>
+            <en><![CDATA[Registration]]></en>
+        </locale>
+        <locale name="admin.types.setting.registration">
+            <de><![CDATA[Registrierung]]></de>
+            <en><![CDATA[Registration]]></en>
+        </locale>
+        <locale name="quiqqer.settings.registration.contentPos">
+            <de><![CDATA[Wo soll der Seiteninhalt angezeigt werden?]]></de>
+            <en><![CDATA[Where should the page content be displayed?]]></en>
+        </locale>
+            <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
+                <de><![CDATA[Neben dem Registrierungsformular]]></de>
+                <en><![CDATA[Next to the registration form]]></en>
+            </locale>
+            <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
+                <de><![CDATA[Vor dem Registrierungsformular]]></de>
+                <en><![CDATA[Before the registration form]]></en>
+            </locale>
 
     </groups>
 
@@ -632,6 +658,11 @@
         <locale name="frontend.usericon.menuentry.logout.label">
             <de><![CDATA[Abmelden]]></de>
             <en><![CDATA[Logout]]></en>
+        </locale>
+
+        <locale name="template.popup.login.registration.button">
+            <de><![CDATA[Kundenkonto anlegen]]></de>
+            <en><![CDATA[Create account]]></en>
         </locale>
     </groups>
 

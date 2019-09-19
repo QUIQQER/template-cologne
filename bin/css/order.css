@@ -25,18 +25,18 @@
 }
 
 .quiqqer-order-basket-articles td {
+    border: none;
     padding-bottom: 10px;
     vertical-align: top;
-    border: none;
 }
 
 .quiqqer-order-basket-articles th {
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
+    border-left: none;
     border-top: 1px solid #ddd;
     padding: 5px 10px;
     width: 10px;
-    border-left: none;
 }
 
 th.quiqqer-order-basket-articles-header-pos {
@@ -75,8 +75,8 @@ th.quiqqer-order-basket-articles-header-pos {
 .quiqqer-order-basket-articles-article-quantity input {
     height: 30px;
     line-height: 30px;
-    width: 100px;
     text-align: right;
+    width: 100px;
 }
 
 .quiqqer-order-basket-articles-unitPrice {
@@ -84,15 +84,15 @@ th.quiqqer-order-basket-articles-header-pos {
 }
 
 td.quiqqer-order-basket-articles-article-remove {
+    padding-right: 0;
     text-align: right;
     width: 60px;
-    padding-right: 0;
 }
 
 .quiqqer-order-basket-articles-article-remove button {
-    color: inherit;
     background: none;
     border-color: transparent;
+    color: inherit;
     padding: 0 10px;
 }
 
@@ -131,13 +131,13 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
 }
 
 .quiqqer-order-basket-total {
-    float: right;
-    margin-top: 20px;
-    text-align: right;
-    width: 100%;
     background: #f8f8f8;
     border: 1px solid #ddd;
+    float: right;
+    margin-top: 20px;
     padding: 5px 10px;
+    text-align: right;
+    width: 100%;
 }
 
 .quiqqer-order-basket-total td {
@@ -180,13 +180,13 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
 input.quiqqer-coupons-couponcodeinput-input:hover,
 input.quiqqer-coupons-couponcodeinput-input:focus,
 input.quiqqer-coupons-couponcodeinput-input:active {
-    border-color: #28a745;
     background: #fff;
+    border-color: #28a745;
 }
 
 .btn.quiqqer-coupons-couponcodeinput-btn {
-    border-color: #28a745;
     background: #fff;
+    border-color: #28a745;
     color: #28a745;
 }
 
@@ -200,6 +200,11 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     .quiqqer-order-basket-articles-article td:before {
         font-weight: bold;
     }
+}
+
+.quiqqer-order-basket-articles-article-productno {
+    color: #adadad;
+    font-size: 12px;
 }
 
 /***********************/
@@ -274,8 +279,8 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
     .quiqqer-order-customerData-container .quiqqer-order-customerData,
     .quiqqer-order-customerData-container .quiqqer-order-customerData-comment {
-        width: 100%;
         max-width: 100%;
+        width: 100%;
     }
 
     .quiqqer-order-customerData {
@@ -435,14 +440,14 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     }
 
     .quiqqer-order-basket-end .quiqqer-coupons-couponcodeinput {
+        flex-direction: column;
         padding: 0;
         text-align: left;
-        flex-direction: column;
     }
 
     .quiqqer-order-basket-end .quiqqer-coupons-couponcodeinput input {
-        width: 100%;
         margin-bottom: 1rem;
+        width: 100%;
     }
 
     .quiqqer-coupons-couponcodeinput label span {
@@ -471,19 +476,19 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 table.articles-article {
     border-bottom: none;
     border-spacing: 0;
+    margin: 4rem 0 0;
     padding-bottom: 0 !important;
     width: 100%;
-    margin: 4rem 0 0;
 }
 
 .articles-article td {
-    padding: 10px;
-    vertical-align: top;
-    text-align: right;
     border: none;
+    padding: 10px;
+    text-align: right;
+    vertical-align: top;
 }
 
-.articles-article-information-title {
+td.articles-article-information {
     text-align: left;
 }
 
@@ -495,11 +500,11 @@ table.articles-article {
 .articles-article-header th {
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
+    border-left: none;
     border-top: 1px solid #ddd;
     padding: 5px 10px;
-    width: 10px;
     text-align: right;
-    border-left: none;
+    width: 10px;
 }
 
 th.articles-article-header-information {
@@ -529,21 +534,21 @@ th.articles-article-header-information {
 }
 
 .quiqqer-order-step-checkout-notice label {
-    display: flex;
-    padding: 10px;
     background: #f8f8f8;
     border: 1px solid #ddd;
     cursor: pointer;
+    display: flex;
+    padding: 10px;
 }
 
 .articles-sum {
-    float: right;
-    margin-top: 20px;
-    text-align: right;
-    width: 100%;
     background: #f8f8f8;
     border: 1px solid #ddd;
+    float: right;
+    margin-top: 20px;
     padding: 5px 10px;
+    text-align: right;
+    width: 100%;
 }
 
 table.articles-sum td {
@@ -577,9 +582,21 @@ table.articles-sum td {
 /**********************/
 /* step: order (last) */
 /**********************/
+.quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-information-orderData-table {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    width: 100% !important;
+}
+
 .quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-total td {
+    border: none;
     padding-bottom: 5px;
     text-align: right;
+}
+
+.quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-total td:last-child {
+    width: 150px;
 }
 
 .quiqqer-order-control-order-information-orderData-subSum-text,

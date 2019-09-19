@@ -77,6 +77,22 @@ $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
  */
 $LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
 
+/**
+ * Sign up / registration page
+ */
+$registerSiteUrl = false;
+$registerSite    = $Project->getSites([
+    'where' => [
+        'type' => [
+            'value' => 'quiqqer/template-cologne:types/registration'
+        ]
+    ],
+    'limit' => 1
+]);
+
+if (count($registerSite)) {
+    $registerSiteUrl = $registerSite[0]->getUrlRewritten();
+}
 
 // array to assign
 $templateSettings['BricksManager']      = QUI\Bricks\Manager::init();
@@ -90,5 +106,7 @@ $templateSettings['countLanguages']     = \count($Project->getLanguages());
 $templateSettings['Search']             = new QUI\ERP\Products\Controls\Search\Suggest([
     'globalsearch' => true
 ]);
+$templateSettings['registerSiteUrl']        = $registerSiteUrl;
+
 
 $Engine->assign($templateSettings);
