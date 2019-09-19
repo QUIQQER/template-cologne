@@ -149,6 +149,11 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     width: 150px;
 }
 
+.quiqqer-order-basket-total [colspan="2"] {
+    font-size: 1px;
+    padding: 0;
+}
+
 .quiqqer-order-basket-total-sum {
     font-weight: bold;
 }

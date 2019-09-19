@@ -330,6 +330,10 @@
             <de><![CDATA[Leere Produktfelder als Tab in Produktdetails ausblenden?]]></de>
             <en><![CDATA[Hide empty product fields as tab in product details?]]></en>
         </locale>
+        <locale name="settings.shop.showBuyNowButton">
+            <de><![CDATA[Sofort Kauf Button anzeigen]]></de>
+            <en><![CDATA[Show Buy Now Button]]></en>
+        </locale>
 
         <!-- header settings -->
         <locale name="settings.header.title">
@@ -652,6 +656,10 @@
                 <en><![CDATA[Before the registration form]]></en>
             </locale>
 
+        <locale name="control.product.buy.know.button">
+            <de><![CDATA[Jetzt kaufen]]></de>
+            <en><![CDATA[Buy now]]></en>
+        </locale>
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
