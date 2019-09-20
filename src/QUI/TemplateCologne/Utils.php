@@ -7,6 +7,7 @@
 namespace QUI\TemplateCologne;
 
 use QUI;
+use QUI\ERP\Shipping\Shipping;
 
 /**
  * Class Utils
@@ -401,5 +402,30 @@ class Utils
             'featuredProducts' => $featuredProducts,
             'paymentsData'     => $paymentsData
         ];
+    }
+
+    /**
+     * Get FrontendView of ShippingTime field
+     *
+     * requires quiqqer/shipping to be installed
+     *
+     * @param int $productId
+     * @return false|QUI\ERP\Products\Field\View
+     */
+    public static function getShippingTimeFrontendView(int $productId)
+    {
+        if (!QUI::getPackageManager()->isInstalled('quiqqer/shipping')) {
+            return false;
+        }
+
+        try {
+            $Product       = QUI\ERP\Products\Handler\Products::getProduct($productId);
+            $ShippingField = $Product->getField(Shipping::PRODUCT_FIELD_SHIPPING_TIME);
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+            return false;
+        }
+
+        return $ShippingField->getFrontendView();
     }
 }
