@@ -119,7 +119,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
 }
 
 .quiqqer-order-basket-small-buttons {
-    margin: 15px 15px 0 15px;
+    margin: 15px;
     text-align: right;
     width: calc(100% - 30px);
 }
@@ -132,7 +132,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
 /* payments - paypal */
 /*********************/
 .quiqqer-order-basket-small-container .quiqqer-payment-paypal-express {
-    margin: 15px 15px 0 15px;
+    margin: 0 15px;
     text-align: right;
     width: calc(100% - 30px);
     height: auto;
