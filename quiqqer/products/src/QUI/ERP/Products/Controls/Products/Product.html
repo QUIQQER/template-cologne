@@ -55,6 +55,11 @@
                 {$Field->getValue()}
             </div>
             {/foreach}
+
+            {assign var=ShippingTimeFrontendView value=\QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
+            {if $ShippingTimeFrontendView}
+                {$ShippingTimeFrontendView->create()}
+            {/if}
         </div>
 
         <div class="product-data-actionButtons">
