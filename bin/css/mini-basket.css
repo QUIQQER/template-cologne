@@ -24,7 +24,7 @@ body.header-fixed .quiqqer-order-basket-small-container {
 }
 
 .quiqqer-order-basket-small-articles {
-    height: calc(100vh - 400px);
+    max-height: calc(100vh - 400px);
     min-height: 0;
     overflow-y: auto;
     padding: 15px;
