@@ -69,6 +69,7 @@ th.quiqqer-order-basket-articles-header-pos {
 }
 
 .quiqqer-order-basket-articles-article-quantity {
+    text-align: center;
     width: 100px;
 }
 
