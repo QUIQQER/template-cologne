@@ -1325,6 +1325,10 @@ a.toTop:before {
     outline: none;
 }
 
+.cologne-login-dialog .message-information {
+    padding: 10px;
+}
+
 .cologne-login-dialog .qui-window-popup-title {
     background: none;
     padding: 0;
