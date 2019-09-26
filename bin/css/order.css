@@ -69,6 +69,7 @@ th.quiqqer-order-basket-articles-header-pos {
 }
 
 .quiqqer-order-basket-articles-article-quantity {
+    text-align: center;
     width: 100px;
 }
 
@@ -146,8 +147,13 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     padding-bottom: 5px;
 }
 
+.quiqqer-order-control-order-information-orderData-table td:last-child,
 .quiqqer-order-basket-total td:last-child {
     width: 150px;
+}
+
+.quiqqer-order-control-order-information-orderData-placeholder td {
+    width: initial !important;
 }
 
 .quiqqer-order-basket-total [colspan="2"] {
