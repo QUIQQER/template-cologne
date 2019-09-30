@@ -3,7 +3,6 @@ var lg = 'quiqqer/template-cologne';
 window.addEvent('domready', function () {
     "use strict";
 
-
     require([
         'qui/QUI'
     ], function (QUI) {
@@ -333,7 +332,7 @@ window.addEvent('domready', function () {
  * @param UserIconControl
  * @param QUILocale
  */
-function userIconLoadEvent (UserIconControl, QUILocale) {
+function userIconLoadEvent(UserIconControl, QUILocale) {
     var Menu = UserIconControl.$Menu;
 
     require([
@@ -369,7 +368,7 @@ function userIconLoadEvent (UserIconControl, QUILocale) {
  *
  * @param LogoutWindow
  */
-function createLogoutWindow (LogoutWindow) {
+function createLogoutWindow(LogoutWindow) {
     new LogoutWindow({
         class    : 'cologne-logout-dialog',
         title    : false,
@@ -413,7 +412,7 @@ function createLogoutWindow (LogoutWindow) {
 /**
  * Create and open login popup
  */
-function createLoginWindow () {
+function createLoginWindow() {
     require([
         'Locale',
         'utils/Controls',
@@ -457,7 +456,7 @@ function createLoginWindow () {
  * In mobile resolution (less than 767px) opens category menu button
  * the mobile navigation instead category navigation.
  */
-function initMobileMenu () {
+function initMobileMenu() {
     if (QUI.getWindowSize().x >= 768) {
         return;
     }
