@@ -106,7 +106,7 @@ $templateSettings['countLanguages']     = \count($Project->getLanguages());
 $templateSettings['Search']             = new QUI\ERP\Products\Controls\Search\Suggest([
     'globalsearch' => true
 ]);
-$templateSettings['registerSiteUrl']        = $registerSiteUrl;
+$templateSettings['registerSiteUrl']    = $registerSiteUrl;
 
 
 $Engine->assign($templateSettings);
