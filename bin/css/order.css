@@ -309,6 +309,18 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 }
 
 /******************/
+/* step: shipping */
+/******************/
+
+.quiqqer-order-step-shipping-list-entry {
+    border-bottom: 0 !important;
+}
+
+.quiqqer-order-step-shipping-list-entry:hover {
+    background: #f8f8f8 !important;
+}
+
+/******************/
 /* step: payments */
 /******************/
 .quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry {
@@ -321,6 +333,10 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
 .quiqqer-order-step-payments-list-entry-select input[type="radio"] {
     margin: 0;
+}
+
+.quiqqer-order-step-payments-list-entry:hover {
+    background: #f8f8f8 !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -489,6 +505,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     padding: 8px;
     width: 60% !important;
 }
+
 
 /******************/
 /* step: checkout */
