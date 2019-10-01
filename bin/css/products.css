@@ -913,6 +913,7 @@
 .product-data .product-data-fields {
     border-top: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .product-data-fields-value {
@@ -935,13 +936,13 @@
 }
 
 .product-data-actionButtons-buyNow button {
-    flex-grow: 1;
-    margin: 0 0 0 20px;
-    position: relative;
-
     background: #f28f09;
     border: 1px solid #f28f09;
     color: #fef4e5;
+
+    flex-grow: 1;
+    margin: 0 0 0 20px;
+    position: relative;
 }
 
 .product-data-actionButtons-buyNow button:hover {
