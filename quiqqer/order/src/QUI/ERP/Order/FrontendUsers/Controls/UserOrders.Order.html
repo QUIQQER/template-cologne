@@ -53,10 +53,10 @@
             </div>
             {/if}
 
-            {if isset($paymentStatus)}
-            <div class="quiqqer-order-profile-orders-order-footer-paymentStatus">
-                <span class="text-muted text-small">{locale group="quiqqer/order" var="control.profile.orders.order.paymentStatus"}:</span>
-                <span>{$paymentStatus}</span>
+            {if isset($orderStatus)}
+            <div class="quiqqer-order-profile-orders-order-footer-orderStatus">
+                <span>{locale group="quiqqer/order" var="control.profile.orders.order.orderStatus"}:</span>
+                <span>{$orderStatus}</span>
             </div>
             {/if}
         </div>
