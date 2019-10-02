@@ -374,6 +374,21 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     }
 }
 
+/******************/
+/* step: checkout */
+/******************/
+
+.quiqqer-order-step-checkout-invoiceAddress .postal-country {
+    float: left;
+}
+
+/******************/
+/* step: finish */
+/******************/
+.quiqqer-order-control-order-information .postal-country {
+    float: left;
+}
+
 /** article content
  =========================================== */
 .quiqqer-order-basket-articles-article-data ul {
