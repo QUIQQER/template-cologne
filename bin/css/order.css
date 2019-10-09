@@ -324,6 +324,42 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     background: rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry {
+        display: flex !important;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .quiqqer-order-step-shipping-list-entry:last-child {
+        margin-bottom: 0;
+    }
+
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry.selected {
+        background: none;
+    }
+
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry-select {
+        display: flex !important;
+        flex: initial;
+        width: 40px;
+    }
+
+    .quiqqer-order-step-shipping-list-entry-select input[type="radio"] {
+        margin: 0;
+    }
+
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry-icon {
+        padding: 0 !important;
+        width: calc(100% - 80px) !important;
+    }
+
+    .quiqqer-order-step-shipping-list-entry-text,
+    .quiqqer-order-step-shipping-list-entry-price {
+        padding: 10px 10px 10px 40px;
+    }
+}
+
 /******************/
 /* step: payments */
 /******************/
@@ -660,6 +696,7 @@ table.articles-sum td {
 @media screen and (max-width: 767px) {
     table.articles-article {
         border: 1px solid #ddd;
+        margin-top: 2rem;
     }
 
     .articles-article tr {
@@ -695,6 +732,10 @@ table.articles-sum td {
     max-width: 800px;
     overflow: hidden;
     padding: 1rem;
+}
+
+.quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-information-payment-title {
+    display: block;
 }
 
 @media screen and (max-width: 767px) {
