@@ -1587,8 +1587,8 @@ table tr:last-child th {
 .content-message-error, .content-message-attention, .content-message-success, .content-message-information {
     clear: both;
     float: none !important;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
     padding: 1rem 1rem 1rem 50px !important;
 }
 
@@ -1642,4 +1642,37 @@ table tr:last-child th {
 
 .content-message-information:before {
     content: "\f0e5";
+}
+
+/*****************/
+/* shipping info */
+/*****************/
+.shipping-info:before {
+    height: 8px;
+    width: 8px;
+    background: #bbb;
+    display: inline-block;
+    visibility: visible;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.shipping-info__timeperiod:before {
+    background: #ff9b00;
+}
+
+.shipping-info__immediately_available:before {
+    background: #00bc10;
+}
+
+.shipping-info__unavailable:before {
+    background: #d01414;
+}
+
+.shipping-info__on_request:before {
+    background: #22b6ff;
+}
+
+.shipping-info__available_soon:before {
+    background: #ff9b00;
 }

@@ -57,18 +57,23 @@ class LangCurrencySwitch extends QUI\Control
         }
 
         // is user allowed to change currency?
-        $currencySwitch = true;
-        try {
-            $Package = QUI::getPackage('quiqqer/erp');
-            $Config  = $Package->getConfig();
+        $currencySwitch = false;
+        $this->setJavaScriptControlOption('userrelatedcurrency', '0');
 
-            if (!$Config->getValue('general', 'userRelatedCurrency')) {
-                $this->setJavaScriptControlOption('userrelatedcurrency', '0');
-                $currencySwitch = false;
+        if ($this->isCurrencySwitchAllowed()) {
+            try {
+                $Package = QUI::getPackage('quiqqer/erp');
+                $Config  = $Package->getConfig();
+
+                if ($Config->getValue('general', 'userRelatedCurrency')) {
+                    $this->setJavaScriptControlOption('userrelatedcurrency', '1');
+                    $currencySwitch = true;
+                }
+            } catch (QUI\Exception $Exception) {
+                QUI\System\Log::writeException($Exception);
             }
-        } catch (QUI\Exception $Exception) {
-            QUI\System\Log::writeException($Exception);
         }
+
 
         $langSwitch = false;
         if (\count($Project->getLanguages()) > 1) {
@@ -95,6 +100,7 @@ class LangCurrencySwitch extends QUI\Control
         $Engine->assign([
             'this'            => $this,
             'projectLang'     => $Project->getLang(),
+            'currencySwitch'  => $currencySwitch,
             'DefaultCurrency' => $Currency,
             'flagFolderPath'  => $flagFolder,
             'imgAltText'      => $imgAltText,
@@ -107,7 +113,8 @@ class LangCurrencySwitch extends QUI\Control
     /**
      * Return the Project
      *
-     * @return QUI\Projects\Site
+     * @return mixed|QUI\Projects\Site
+     * @throws QUI\Exception
      */
     protected function getSite()
     {
@@ -116,5 +123,27 @@ class LangCurrencySwitch extends QUI\Control
         }
 
         return QUI::getRewrite()->getSite();
+    }
+
+    /**
+     * Is currency switch allowed? Setting has over currencies number.
+     *
+     * @return bool
+     * @throws QUI\Exception
+     */
+    protected function isCurrencySwitchAllowed()
+    {
+
+        if (!$this->getAttribute('userRelatedCurrency')) {
+            return false;
+        }
+
+        $currencies = QUI\ERP\Currency\Handler::getAllowedCurrencies();
+
+        if (count($currencies) > 1) {
+            return true;
+        }
+
+        return false;
     }
 }

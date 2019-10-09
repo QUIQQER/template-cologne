@@ -320,6 +320,46 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     background: #f8f8f8 !important;
 }
 
+.quiqqer-order-step-shipping-list-entry:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry {
+        display: flex !important;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .quiqqer-order-step-shipping-list-entry:last-child {
+        margin-bottom: 0;
+    }
+
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry.selected {
+        background: none;
+    }
+
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry-select {
+        display: flex !important;
+        flex: initial;
+        width: 40px;
+    }
+
+    .quiqqer-order-step-shipping-list-entry-select input[type="radio"] {
+        margin: 0;
+    }
+
+    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry-icon {
+        padding: 0 !important;
+        width: calc(100% - 80px) !important;
+    }
+
+    .quiqqer-order-step-shipping-list-entry-text,
+    .quiqqer-order-step-shipping-list-entry-price {
+        padding: 10px 10px 10px 40px;
+    }
+}
+
 /******************/
 /* step: payments */
 /******************/
@@ -360,7 +400,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-select {
         align-items: center;
         display: flex !important;
-        justify-content: flex-start;
+        justify-content: center;
         width: 40px;
     }
 
@@ -372,6 +412,21 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-text {
         margin-left: 40px;
     }
+}
+
+/******************/
+/* step: checkout */
+/******************/
+
+.quiqqer-order-step-checkout-invoiceAddress .postal-country {
+    float: left;
+}
+
+/******************/
+/* step: finish */
+/******************/
+.quiqqer-order-control-order-information .postal-country {
+    float: left;
 }
 
 /** article content
@@ -431,8 +486,6 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
     .quiqqer-order-basket-articles-article:nth-child(2n) {
         background: #f8f8f8;
-        margin-top: 20px;
-        padding-top: 20px;
     }
 
     .quiqqer-order-basket-articles-article-title {
@@ -514,8 +567,38 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     margin-bottom: 20px;
 }
 
-.quiqqer-order-step-checkout-payments {
-    margin-top: 20px;
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-invoiceAddress,
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-deliveryAddress,
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments {
+    margin: 20px 0;
+    overflow: auto;
+}
+
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-shipping,
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
+    padding-right: 10px;
+}
+
+.quiqqer-order-step-checkout .quiqqer-order-step-checkout-shipping {
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-order-step-checkout .quiqqer-order-step-checkout-shipping,
+    .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
+        padding: 0;
+    }
+
+    .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
+        margin-bottom: 20px;
+    }
 }
 
 table.articles-article {
@@ -610,6 +693,33 @@ table.articles-sum td {
     font-weight: bold;
 }
 
+@media screen and (max-width: 767px) {
+    table.articles-article {
+        border: 1px solid #ddd;
+        margin-top: 2rem;
+    }
+
+    .articles-article tr {
+        padding: 10px;
+    }
+
+    .articles-article tr:nth-child(2n) {
+        background: #f8f8f8;
+    }
+
+    .articles-article td:before {
+        font-weight: bold;
+    }
+
+    .articles-article .articles-article-quantity {
+        text-align: left;
+    }
+
+    .quiqqer-order-step-checkout .quiqqer-order-step-checkout-notice input[name="termsAndConditions"] {
+        margin-bottom: 0;
+    }
+}
+
 /*****************/
 /* step: gateway */
 /*****************/
@@ -622,6 +732,21 @@ table.articles-sum td {
     max-width: 800px;
     overflow: hidden;
     padding: 1rem;
+}
+
+.quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-information-payment-title {
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-order-control-order-information-payment,
+    .quiqqer-order-control-order-information-invoiceAddress,
+    .quiqqer-order-control-order-information-orderData,
+    .quiqqer-order-control-order-information-delivery-address,
+    .quiqqer-order-control-order-information-shipping,
+    .quiqqer-order-control-orderLikeBasket .quiqqer-order-control-order-information-payment {
+        width: 100% !important;
+    }
 }
 
 /**********************/
