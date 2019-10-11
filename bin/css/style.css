@@ -1669,10 +1669,6 @@ table tr:last-child th {
     background: #d01414;
 }
 
-.shipping-info__on_request:before {
-    background: #22b6ff;
-}
-
 .shipping-info__available_soon:before {
     background: #ff9b00;
 }
