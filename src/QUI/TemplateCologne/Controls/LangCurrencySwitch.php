@@ -51,12 +51,6 @@ class LangCurrencySwitch extends QUI\Control
         if (!$Site) {
             return '';
         }
-        
-        $isDir = @is_dir($flagFolder);
-
-        if (!$isDir) {
-            $flagFolder = URL_BIN_DIR . '16x16/flags/';
-        }
 
         // is user allowed to change currency?
         $currencySwitch = false;
