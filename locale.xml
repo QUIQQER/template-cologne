@@ -493,6 +493,11 @@
             <en>
                 <![CDATA[If you want to change the text, edit the language variable <strong>settings.predefinedFooter.shortText.content</strong> (to find in the menu: Administration -> Translator).]]></en>
         </locale>
+
+        <locale name="settings.predefinedFooter.shortText.title">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Überschrift]]></en>
+        </locale>
         <locale name="settings.predefinedFooter.shortText.content" html="true">
             <de><![CDATA[
             <p>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
@@ -557,7 +562,7 @@
             <en><![CDATA[Show standard pages (Terms and conditions, etc.). Only the pages that are created and active in the system are displayed.]]></en>
         </locale>
 
-        <!-- predefined footer: url list -->
+        <!-- predefined footer: featured products -->
         <locale name="settings.predefinedFooter.featuredProducts">
             <de><![CDATA[Predefiniertes Footer: Produktliste]]></de>
             <en><![CDATA[Pre-defined footer: product list]]></en>
