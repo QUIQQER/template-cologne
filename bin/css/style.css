@@ -731,6 +731,7 @@ a.toTop:before {
 .cologne-header-fixed {
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
     position: fixed;
+    z-index: 100; /* Because of the search dropdown */
 }
 
 .cologne-header-logo {
@@ -1618,6 +1619,7 @@ table tr:last-child th {
 }
 
 /* error */
+.quiqqer-frontendUsers-error,
 .content-message-error {
     background-color: #feeded;
     border: 1px solid #fccfcf;

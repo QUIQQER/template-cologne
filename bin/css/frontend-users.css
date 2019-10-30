@@ -199,6 +199,28 @@
     }
 }
 
+/* email */
+.quiqqer-frontendUsers-userdata-address-additional .quiqqer-frontendUsers-userdata-email input {
+    float: left;
+    width: calc(100% - 70px);
+    margin-right: 10px;
+}
+
+.quiqqer-frontendUsers-userdata-email .quiqqer-frontendUsers-userdata-email-edit {
+    line-height: 40px;
+    border-width: 1px;
+    border-radius: 0.25rem;
+}
+
+span.quiqqer-frontendUsers-error {
+    display: block;
+    width: 100%;
+}
+
+.quiqqer-frontendUsers-userdata-label {
+    line-height: 40px;
+}
+
 /******************/
 /* profile orders */
 /******************/
