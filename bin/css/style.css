@@ -583,6 +583,12 @@ a.toTop:before {
     min-width: 200px;
 }
 
+.quiqqer-products-search-suggest-dropdown .quiqqer-products-search-suggest-dropdown-noproducts {
+    font-size: 14px;
+    padding: 20px;
+    line-height: 16px;
+}
+
 .quiqqer-products-search-suggest-form .input-search-icon {
     color: #aaa;
     left: 0;
