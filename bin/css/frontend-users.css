@@ -292,3 +292,19 @@ span.quiqqer-frontendUsers-error {
 .quiqqer-fu-registrationSignUp-terms-text [name="decline"] {
     right: 0 !important;
 }
+
+/***********************/
+/* registration sign up */
+/***********************/
+.quiqqer-fu-registrationSignUp-terms-text [name="decline"] .fa {
+    margin-right: 0;
+}
+
+.quiqqer-fu-registrationSignUp-registration .quiqqer-fu-registrationSignUp-terms button[name="decline"]:hover {
+    opacity: 1 !important;
+    background: #f5f5f5;
+}
+
+/******************/
+/* delete account */
+/******************/
