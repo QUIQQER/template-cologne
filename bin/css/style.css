@@ -1609,7 +1609,7 @@ table tr:last-child th {
 
 /* attention */
 .content-message-attention {
-    background: #fef4e5;
+    background: #fff6e8;
     border: 1px solid #fce0b8;
     color: #f28f09;
 }
@@ -1619,7 +1619,6 @@ table tr:last-child th {
 }
 
 /* error */
-.quiqqer-frontendUsers-error,
 .content-message-error {
     background-color: #feeded;
     border: 1px solid #fccfcf;

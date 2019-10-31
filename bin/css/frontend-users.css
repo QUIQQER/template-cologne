@@ -212,11 +212,6 @@
     border-radius: 0.25rem;
 }
 
-span.quiqqer-frontendUsers-error {
-    display: block;
-    width: 100%;
-}
-
 .quiqqer-frontendUsers-userdata-label {
     line-height: 40px;
 }
@@ -277,7 +272,6 @@ span.quiqqer-frontendUsers-error {
 
 .loginAndRegister-register .quiqqer-fu-registrationSignUp-registration-content {
     align-items: center;
-    border: 1px solid #ddd;
     height: 100%;
     margin: 0 auto;
     max-width: 400px;
