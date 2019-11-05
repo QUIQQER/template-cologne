@@ -37,6 +37,7 @@
 @media (max-width: 768px) {
     .quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categories {
         padding: 0;
+        width: 100%;
     }
 
     .quiqqer-frontendUsers-controls-profile .quiqqer-frontendUsers-controls-profile-categoryContent {
@@ -50,6 +51,7 @@
 .quiqqer-frontendUsers-controls-profile-categoryContent h2 {
     font-weight: normal;
     line-height: 40px;
+    margin-bottom: 0;
 }
 
 .quiqqer-fupc-category {
@@ -166,6 +168,12 @@
     width: 100%;
 }
 
+.cologne-main .quiqqer-frontendUsers-userdata-invoiceaddress select,
+.cologne-main .quiqqer-shipping-user-address select {
+    width: calc(100% - 110px);
+    margin-right: 10px;
+}
+
 .quiqqer-frontendUsers-controls-profile-categoryContent [type="submit"] {
     margin: 0 auto 20px;
     max-width: 100%;
@@ -176,8 +184,13 @@
     width: 100px !important;
 }
 
-.quiqqer-frontend-users-address-list-entry-buttons button {
-    width: inherit !important;
+.quiqqer-frontend-users-address-list-entry {
+    border: 1px solid #ddd;
+}
+
+.quiqqer-frontendUsers-controls-profile-categoryContent .quiqqer-frontend-users-address-list-entry-buttons button {
+    width: inherit;
+    margin-bottom: 0;
 }
 
 .cologne-main .quiqqer-frontendUsers-userdata-address h2,
@@ -189,13 +202,21 @@
     padding-top: 0;
 }
 
-.cologne-main .quiqqer-order-customerData-edit-businessType [name="businessType"] {
-    width: 70%;
-}
-
 @media (max-width: 768px) {
     .quiqqer-frontendUsers-controls-profile-categories-mobile {
         margin-bottom: 2em;
+    }
+
+    .quiqqer-frontend-users-address-list .quiqqer-frontend-users-address-list-entry {
+        width: 100%;
+    }
+
+    .quiqqer-frontend-users-address-list .quiqqer-frontend-users-address-list-entry:nth-child(even) {
+        margin-left: 0;
+    }
+    
+    .quiqqer-frontend-users-address-list .quiqqer-frontend-users-address-list-entry:nth-child(odd) {
+        margin-right: 0;
     }
 }
 
@@ -214,6 +235,12 @@
 
 .quiqqer-frontendUsers-userdata-label {
     line-height: 40px;
+}
+
+@media screen and (max-width: 767px) {
+    .cologne-main .quiqqer-frontendUsers-controls-profile-control label {
+        margin-bottom: 10px;
+    }
 }
 
 /******************/

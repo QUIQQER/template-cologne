@@ -8,7 +8,7 @@
                         <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                             <tr>
                                 <td align="center" width="500" valign="middle" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666; padding: 10px 0;">
-                                    <a href="{url site=$Project->get(1)"}>
+                                    <a href="{url site=$Project->get(1)}">
                                         <img alt="Logo" src="{image image=$Project->getMedia()->getLogoImage() height=30 onlysrc='true' host=1}" height="30" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #666666; font-size: 16px;" border="0">
                                     </a>
                                 </td>
@@ -22,7 +22,7 @@
 
                             <tr>
                                 <td align="center" valign="middle" width="500" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666; padding: 10px 0;">
-                                    {locale group="quiqqer/quiqqer" var="templates.mail.body.footer.social"}
+                                    {locale group="quiqqer/quiqqer" var="templates.mail.body.footer.social" HOST=QUI::getRewrite()->getProject()->get(1)->getUrlRewrittenWithHost()}
                                 </td>
                             </tr>
                         </table>
