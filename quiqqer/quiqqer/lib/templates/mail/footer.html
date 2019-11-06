@@ -1,3 +1,6 @@
+{$Project = QUI::getRewrite()->getProject()}
+{$host=$Project->get(1)->getUrlRewrittenWithHost()}
+
 <!-- FOOTER -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
@@ -8,21 +11,64 @@
                         <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                             <tr>
                                 <td align="center" width="500" valign="middle" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666; padding: 10px 0;">
-                                    <a href="{url site=$Project->get(1)}">
-                                        <img alt="Logo" src="{image image=$Project->getMedia()->getLogoImage() height=30 onlysrc='true' host=1}" height="30" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #666666; font-size: 16px;" border="0">
+                                    <a href="{$Project->get(1)->getUrlRewrittenWithHost()}">
+                                        <img alt="Logo" src="{image image=$Project->getMedia()->getLogoImage() height=40 onlysrc='true' host=1}" height="30" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #666666; font-size: 16px;" border="0">
                                     </a>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td align="center" width="500" valign="middle" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666; padding: 10px 0;">
-                                    <a href="#">Impressum</a> | <a href="#">AGB</a> | <a href="#">Datenschutz</a> | <a href="#">Impressum</a>
+
+                                    {* legal notes (Impressum) *}
+                                    {$legalNotes = $Project->getSites([
+                                        'where' => [
+                                            'type' => [
+                                                'type'  => 'IN',
+                                                'value' => 'quiqqer/sitetypes:types/legalnotes'
+                                            ]
+                                        ],
+                                        'limit' => 1
+                                    ])}
+
+                                    {* privacy policy (Datenschutzerklärung) *}
+                                    {$privacyPolicy = $Project->getSites([
+                                        'where' => [
+                                            'type' => [
+                                            'type'  => 'IN',
+                                            'value' => 'quiqqer/sitetypes:types/privacypolicy'
+                                            ]
+                                        ],
+                                        'limit' => 1
+                                    ])}
+
+                                    {* general terms and conditinos (AGB) *}
+                                    {$generalTermsAndConditions = $Project->getSites([
+                                        'where' => [
+                                            'type' => [
+                                            'type'  => 'IN',
+                                            'value' => 'quiqqer/sitetypes:types/generalTermsAndConditions'
+                                            ]
+                                        ],
+                                        'limit' => 1
+                                    ])}
+
+                                    {if $legalNotes|count}
+                                        <a href="{$legalNotes[0]->getUrlRewrittenWithHost()}">{$legalNotes[0]->getAttribute('title')}</a>
+                                    {/if}
+                                    {if $privacyPolicy|count}
+                                        | <a href="{$privacyPolicy[0]->getUrlRewrittenWithHost()}">{$privacyPolicy[0]->getAttribute('title')}</a>
+                                    {/if}
+                                    {if $generalTermsAndConditions|count}
+                                        | <a href="{$generalTermsAndConditions[0]->getUrlRewrittenWithHost()}">{$generalTermsAndConditions[0]->getAttribute('title')}</a>
+                                    {/if}
+
                                 </td>
                             </tr>
 
                             <tr>
                                 <td align="center" valign="middle" width="500" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666; padding: 10px 0;">
-                                    {locale group="quiqqer/quiqqer" var="templates.mail.body.footer.social" HOST=QUI::getRewrite()->getProject()->get(1)->getUrlRewrittenWithHost()}
+                                    {locale group="quiqqer/quiqqer" var="templates.mail.body.footer.social" HOST=$host}
                                 </td>
                             </tr>
                         </table>
