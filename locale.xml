@@ -493,6 +493,11 @@
             <en>
                 <![CDATA[If you want to change the text, edit the language variable <strong>settings.predefinedFooter.shortText.content</strong> (to find in the menu: Administration -> Translator).]]></en>
         </locale>
+
+        <locale name="settings.predefinedFooter.shortText.title">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Überschrift]]></en>
+        </locale>
         <locale name="settings.predefinedFooter.shortText.content" html="true">
             <de><![CDATA[
             <p>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
@@ -557,7 +562,7 @@
             <en><![CDATA[Show standard pages (Terms and conditions, etc.). Only the pages that are created and active in the system are displayed.]]></en>
         </locale>
 
-        <!-- predefined footer: url list -->
+        <!-- predefined footer: featured products -->
         <locale name="settings.predefinedFooter.featuredProducts">
             <de><![CDATA[Predefiniertes Footer: Produktliste]]></de>
             <en><![CDATA[Pre-defined footer: product list]]></en>
@@ -671,6 +676,98 @@
         <locale name="template.popup.login.registration.button">
             <de><![CDATA[Kundenkonto anlegen]]></de>
             <en><![CDATA[Create account]]></en>
+        </locale>
+    </groups>
+
+    <!-- override locale -->
+    <groups name="quiqqer/quiqqer" datatype="php">
+        <locale name="templates.mail.body.header.social" priority="10">
+            <de>
+                <![CDATA[
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Folgen Sie uns auf Facebook">
+                    <img width="15" height="15"  src="[HOST]packages/quiqqer/template-cologne/bin/images/social/facebook.png"
+                        alt="Folgen Sie uns auf Facebook" />
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Folgen Sie uns auf Twitter">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/twitter.png"
+                        alt="Folgen Sie uns auf Twitter">
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Folgen Sie uns auf Instagram">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
+                          alt="Folgen Sie uns auf Instagram">
+                 </a>
+                 ]]>
+            </de>
+            <en>
+                <![CDATA[
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Follow us on Facebook">
+                    <img width="15" height="15"  src="[HOST]packages/quiqqer/template-cologne/bin/images/social/facebook.png"
+                        alt="Follow us on Facebook" />
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Follow us on Twitter">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/twitter.png"
+                        alt="Follow us on Twitter">
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Follow us on Instagram">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
+                          alt="Follow us on Instagram">
+                 </a>
+                 ]]>
+            </en>
+        </locale>
+        <locale name="templates.mail.body.footer.social" priority="10">
+            <de>
+                <![CDATA[
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Folgen Sie uns auf Facebook">
+                    <img width="15" height="15"  src="[HOST]packages/quiqqer/template-cologne/bin/images/social/facebook.png"
+                        alt="Folgen Sie uns auf Facebook" />
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Folgen Sie uns auf Twitter">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/twitter.png"
+                        alt="Folgen Sie uns auf Twitter">
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Folgen Sie uns auf Instagram">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
+                          alt="Folgen Sie uns auf Instagram">
+                 </a>
+                 ]]>
+            </de>
+            <en>
+                <![CDATA[
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Follow us on Facebook">
+                    <img width="15" height="15"  src="[HOST]packages/quiqqer/template-cologne/bin/images/social/facebook.png"
+                        alt="Follow us on Facebook" />
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Follow us on Twitter">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/twitter.png"
+                        alt="Follow us on Twitter">
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Follow us on Instagram">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
+                          alt="Follow us on Instagram">
+                 </a>
+                 ]]>
+            </en>
         </locale>
     </groups>
 

@@ -256,7 +256,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     margin-left: 1rem;
 }
 
-.quiqqer-order-customerData header h1 button > .fa, .btn > .fa {
+.quiqqer-order-customerData header h1 button > .fa {
     margin: 0;
 }
 
