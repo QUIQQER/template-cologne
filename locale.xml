@@ -681,7 +681,7 @@
 
     <!-- override locale -->
     <groups name="quiqqer/quiqqer" datatype="php">
-        <locale name="templates.mail.body.header.social">
+        <locale name="templates.mail.body.header.social" priority="10">
             <de>
                 <![CDATA[
                  <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
@@ -725,7 +725,7 @@
                  ]]>
             </en>
         </locale>
-        <locale name="templates.mail.body.footer.social">
+        <locale name="templates.mail.body.footer.social" priority="10">
             <de>
                 <![CDATA[
                  <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
