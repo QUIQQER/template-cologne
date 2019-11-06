@@ -1679,3 +1679,27 @@ table tr:last-child th {
 .shipping-info__available_soon:before {
     background: #ff9b00;
 }
+
+/****************/
+/* context menu */
+/****************/
+.qui-contextitem {
+    padding: 5px 10px;
+}
+
+.qui-contextitem-container .qui-contextitem-icon {
+    height: auto;
+    line-height: initial;
+    text-align: center;
+    width: 30px;
+    padding: 5px 0;
+}
+
+.qui-contextitem-icon input {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.qui-contextitem-container .qui-contextitem-text {
+    padding: 5px 0;
+}
