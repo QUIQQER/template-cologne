@@ -106,44 +106,5 @@
             </description>
         </layout>
     </layouts>
-
-    <!-- types -->
-    <types>
-        <!-- user register -->
-        <type type="types/registration" icon="fa fa-user-plus">
-            <locale group="quiqqer/template-cologne" var="admin.types.registration"/>
-
-            <!-- extra attributes -->
-            <attributes>
-                <attribute default="nextToRegistrationForm">quiqqer.settings.registration.contentPos</attribute>
-            </attributes>
-
-            <settings>
-                <category name="registration-settings">
-                    <settings>
-                        <title>
-                            <locale group="quiqqer/template-cologne" var="admin.types.setting.registration"/>
-                        </title>
-
-                        <select conf="quiqqer.settings.registration.contentPos">
-                            <text>
-                                <locale group="quiqqer/template-cologne"
-                                        var="quiqqer.settings.registration.contentPos"/>
-                            </text>
-                            <option value="nextToRegistrationForm">
-                                <locale group="quiqqer/template-cologne"
-                                        var="quiqqer.settings.registration.contentPos.nextToRegistrationForm"
-                                />
-                            </option>
-                            <option value="beforeRegistrationForm">
-                                <locale group="quiqqer/template-cologne"
-                                        var="quiqqer.settings.registration.contentPos.beforeRegistrationForm"
-                                />
-                            </option>
-                        </select>
-                    </settings>
-                </category>
-            </settings>
-        </type>
-    </types>
+    
 </site>
