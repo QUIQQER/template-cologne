@@ -920,8 +920,12 @@
     flex-wrap: wrap;
 }
 
-.product-data-fields-value {
-    margin-left: 20px;
+.product-data-fields .product-data-fields-title {
+    width: 30%;
+}
+
+.product-data-fields .product-data-fields-value {
+    padding-left: 20px;
 }
 
 /* button add to basket */
@@ -979,6 +983,8 @@
     margin-left: 20px;
     margin-right: 0 !important;
     width: 45%;
+    flex-grow: 1;
+    max-width: 320px;
 }
 
 .quiqqer-order-button-add-quantity-wrapper .quiqqer-order-button-add-quantity {
