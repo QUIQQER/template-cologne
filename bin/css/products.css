@@ -524,6 +524,10 @@
     display: inline;
 }
 
+.cologne-products-productGallery-products-product-price .qui-products-price-display-vat {
+    display: block;
+}
+
 @media screen and (max-width: 767px) {
     .quiqqer-products-control-product-childrenslider-entry-productButtons {
         width: 100%;
