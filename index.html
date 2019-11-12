@@ -8,25 +8,6 @@
 
     {$Template->getHeader()}
 
-    {fontawesome}
-    {unsemantic}
-
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/style.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/buttons.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/form.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/faq.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/products.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/frontend-users.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/order.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/user-orders.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/controls.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/mini-basket.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/product-bricks.css')}"/>
-
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/cologne.blue.css')}"/>
-
-    {$settingsCSS}
-
     <script>
         var BASKET_STYLE        = "{$basketStyle}";
         var BASKET_OPEN         = "{$basketOpen}";
@@ -36,26 +17,33 @@
         var REGISTER_URL        = "{$registerSiteUrl}";
     </script>
 
+    {fetch template="template/head/styles.html" Template=$Template}
+    {fetch template="template/head/childMeta.html" Template=$Template}
+
+    {$settingsCSS}
+
 </head>
 <body class="page-{$Site->getId()} {$typeClass} {$siteType}">
 
 
 {* small top bar *}
 {fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
-Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search}
+    Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
+}
 
 {* main navigation / menu *}
 {fetch template="template/mainMenu.html"
-Project=$Project
-Logo=$Logo
-Menu=$Menu
-showCategoryMenu=$showCategoryMenu
-createBasketButton=$createBasketButton
-basketStyle=$basketStyle
-initialBasketPrice=$initialBasketPrice}
+    Project=$Project
+    Logo=$Logo
+    Menu=$Menu
+    showCategoryMenu=$showCategoryMenu
+    createBasketButton=$createBasketButton
+    basketStyle=$basketStyle
+    initialBasketPrice=$initialBasketPrice
+}
 
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-{fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
+    {fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
 {/if}
 
 {* <!--Shop category menu--> *}
