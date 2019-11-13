@@ -308,6 +308,10 @@
     margin: 0;
 }
 
+.quiqqer-fu-registrationSignUp-registration h2 {
+    text-align: center;
+}
+
 .loginAndRegister .quiqqer-fu-login-forget-password-link {
     margin-bottom: 1rem;
 }
