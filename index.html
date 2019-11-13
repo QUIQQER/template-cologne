@@ -55,25 +55,25 @@
 
 <!-- breadcrumb -->
 {if $showBreadcrumb}
-{fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
+    {fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
 {/if}
 
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {foreach $headerSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'general.fullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
 
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('general.noSpacing')}
-{assign var=brickNoPadding value="brick-no-spacing"}
-{/if}
-<section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
 
 <main class="cologne-main">
@@ -84,42 +84,31 @@
 
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 {foreach $footerPrefix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'general.fullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
 
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('general.noSpacing')}
-{assign var=brickNoPadding value="brick-no-spacing"}
-{/if}
-<section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
 {/foreach}
 
-<footer class="template-footer">
-    {* footer brick area *}
-    {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site}
-
-    {* pre-defined footer *}
-    {fetch template="template/footer.predefined.html"
+{fetch template="template/footer/footer.html"
+    BricksManager=$BricksManager
     Site=$Site
     paymentsData=$paymentsData
     shortText=$shortText
     urlList=$urlList
     featuredProducts=$featuredProducts
-    }
+    Template=$Template
+}
 
-    {* footer copyright *}
-    {fetch template="template/footer.copyright.html"}
-</footer>
-
-{* to top icon *}
-{fetch template="template/toTop.html"}
-
-<script src="{$Template->getTemplateUrl('bin/javascript/init.js')}"></script>
 </body>
 </html>
