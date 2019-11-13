@@ -299,6 +299,14 @@
 /*******************/
 /* Login site type */
 /*******************/
+.type-quiqqer-frontend-users-types-registrationSignUp .registration-sign-in {
+    min-height: 200px;
+    margin: 3rem 0;
+}
+
+.type-quiqqer-frontend-users-types-registrationSignUp .quiqqer-fu-registrationSignUp {
+    margin: 0;
+}
 
 .loginAndRegister .quiqqer-fu-login-forget-password-link {
     margin-bottom: 1rem;
@@ -319,6 +327,11 @@
 
 .quiqqer-fu-registrationSignUp-terms-text [name="decline"] {
     right: 0 !important;
+}
+
+.registration-sign-in .quiqqer-fu-registrationSignUp-info,
+.registration-sign-in .quiqqer-fu-registrationSignUp-registration {
+    text-align: left;
 }
 
 /***********************/
