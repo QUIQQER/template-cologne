@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{$Project->getLang()}">
 <head>
+    {template_event name="quiqqer::template-cologne::header::begin" Template=$Template}
     <meta charset="utf-8"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,13 +19,15 @@
     </script>
 
     {fetch template="template/head/styles.html" Template=$Template}
-    {fetch template="template/head/childMeta.html" Template=$Template}
+    {template_event name="quiqqer::template-cologne::header::afterCSSStyles" Template=$Template}
 
     {$settingsCSS}
+    {template_event name="quiqqer::template-cologne::header::afterSettingsCSS" Template=$Template}
 
+    {template_event name="quiqqer::template-cologne::header::end" Template=$Template}
 </head>
 <body class="page-{$Site->getId()} {$typeClass} {$siteType}">
-
+{template_event name="quiqqer::template-cologne::body::begin"}
 
 {* small top bar *}
 {fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
@@ -110,5 +113,6 @@
     Template=$Template
 }
 
+{template_event name="quiqqer::template-cologne::body::end"}
 </body>
 </html>
