@@ -27,7 +27,7 @@
     {template_event name="quiqqer::template-cologne::header::end" Template=$Template}
 </head>
 <body class="page-{$Site->getId()} {$typeClass} {$siteType}">
-{template_event name="quiqqer::template-cologne::body::begin"}
+{template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
 
 {* small top bar *}
 {fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
@@ -113,6 +113,6 @@
     Template=$Template
 }
 
-{template_event name="quiqqer::template-cologne::body::end"}
+{template_event name="quiqqer::template-cologne::body::end" Template=$Template}
 </body>
 </html>
