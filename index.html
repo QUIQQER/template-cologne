@@ -34,6 +34,8 @@
     Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
 }
 
+{template_event name="quiqqer::template-cologne::body::afterTopBar" Template=$Template}
+
 {* main navigation / menu *}
 {fetch template="template/mainMenu.html"
     Project=$Project
@@ -45,65 +47,21 @@
     initialBasketPrice=$initialBasketPrice
 }
 
-{if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-    {fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
-{/if}
+{template_event name="quiqqer::template-cologne::body::afterMainMenu" Template=$Template}
 
 {* <!--Shop category menu--> *}
 {if $showCategoryMenu}
 <div class="shop-category-menu-wrapper">
-    {$categoriesMenu}
+    {$CategoriesMenu}
 </div>
 {/if}
 
-<!-- breadcrumb -->
-{if $showBreadcrumb}
-    {fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
-{/if}
+{template_event name="quiqqer::template-cologne::body::beforePage" Template=$Template}
 
-{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-{foreach $headerSuffix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'general.fullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
-
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('general.noSpacing')}
-        {assign var=brickNoPadding value="brick-no-spacing"}
-    {/if}
-    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
-{/foreach}
-
-<main class="cologne-main">
-    <div class="cologne-grid-container">
-        {$Template->getLayout()}
-    </div>
-</main>
-
-{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-{foreach $footerPrefix as $Brick}
-    {assign var=brickFullWidth value=''}
-    {if $Brick->getSetting( 'general.fullWidth' )}
-        {assign var=brickFullWidth value='brick-full-width'}
-    {/if}
-
-    {assign var=brickNoPadding value=""}
-    {if $Brick->getSetting('general.noSpacing')}
-        {assign var=brickNoPadding value="brick-no-spacing"}
-    {/if}
-    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
-        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-            {$Brick->create()}
-        </div>
-    </section>
-{/foreach}
-
-{fetch template="template/footer/footer.html"
+{fetch template="template/page.html"
+    showBreadcrumb=$showBreadcrumb
+    header=$header
+    pageTitle=$pageTitle
     BricksManager=$BricksManager
     Site=$Site
     paymentsData=$paymentsData
@@ -112,6 +70,8 @@
     featuredProducts=$featuredProducts
     Template=$Template
 }
+
+{template_event name="quiqqer::template-cologne::body::afterPage" Template=$Template}
 
 {template_event name="quiqqer::template-cologne::body::end" Template=$Template}
 </body>

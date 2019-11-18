@@ -174,7 +174,7 @@ class Utils
                 'startId'     => $Project->getConfig('templateCologne.settings.categoryStartId')
             ]);
 
-            $config['categoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
+            $config['CategoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
         }
 
         // predefined footer

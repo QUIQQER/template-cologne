@@ -9,6 +9,7 @@ Package name:
     
 Features
 --------
+
 - Responsive
 - Integrated QUIQQER breadcrumb
 - Page transition effects
@@ -18,14 +19,16 @@ Features
 Installation
 ------------
 
-The package name is: quiqqer/template-businesspro
+The package name is: quiqqer/template-cologne
 
 
 Contribute
 ----------
 
+- Project: https://dev.quiqqer.com/quiqqer/template-cologne
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/template-cologne/issues
-- Source Code: https://dev.quiqqer.com/quiqqer/template-cologne
+- Source Code: https://dev.quiqqer.com/quiqqer/template-cologne/tree/master
+- Wiki: https://dev.quiqqer.com/quiqqer/template-cologne/wikis/home
 
 
 Support
@@ -36,6 +39,7 @@ then you can write an e-mail to support@pcsg.de.
 
 For developers
 --------------
+
 
 ### Available template events
 For mor information go to
@@ -51,5 +55,14 @@ For mor information go to
 
 <!-- body -->
 {template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::afterTopBar" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::afterMainMenu" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::beforePage" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::afterHeader" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::afterBreadcrumb" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::beforeMain" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::afterMain" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::beforeFooter" Template=$Template}
+{template_event name="quiqqer::template-cologne::body::afterFooter" Template=$Template}
 {template_event name="quiqqer::template-cologne::body::end" Template=$Template}
 ```
