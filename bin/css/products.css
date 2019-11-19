@@ -524,6 +524,10 @@
     display: inline;
 }
 
+.cologne-products-productGallery-products-product-price .qui-products-price-display-vat {
+    display: block;
+}
+
 @media screen and (max-width: 767px) {
     .quiqqer-products-control-product-childrenslider-entry-productButtons {
         width: 100%;
@@ -914,15 +918,19 @@
     border-top: none;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 0;
 }
 
-.product-data-fields-value {
-    margin-left: 20px;
+.product-data-fields .product-data-fields-title {
+    width: 30%;
+}
+
+.product-data-fields .product-data-fields-value {
+    padding-left: 20px;
 }
 
 /* button add to basket */
 .product-data-actionButtons {
-    border-top: 1px solid #f1f1f1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -939,7 +947,7 @@
     background: #f28f09;
     border: 1px solid #f28f09;
     color: #fef4e5;
-
+    min-width: 150px;
     flex-grow: 1;
     margin: 0 0 0 20px;
     position: relative;
@@ -975,6 +983,7 @@
     margin-left: 20px;
     margin-right: 0 !important;
     width: 45%;
+    flex-grow: 1;
 }
 
 .quiqqer-order-button-add-quantity-wrapper .quiqqer-order-button-add-quantity {
@@ -997,6 +1006,7 @@
 .quiqqer-order-button-add .add-to-basket {
     flex-grow: 1;
     margin: 20px 0 0 20px;
+    min-width: 150px;
 }
 
 .quiqqer-order-button-add .add-to-basket:disabled label {

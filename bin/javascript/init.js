@@ -345,7 +345,7 @@ function userIconLoadEvent(UserIconControl, QUILocale) {
         Menu.appendChild(
             new Item({
                 icon  : 'fa fa-sign-out',
-                text  : QUILocale.get('quiqqer/template-cologne', 'frontend.usericon.menuentry.logout.label'),
+                text  : QUILocale.get(lg, 'frontend.usericon.menuentry.logout.label'),
                 events: {
                     click: function () {
                         createLogoutWindow(LogoutWindow);
@@ -437,7 +437,7 @@ function createLoginWindow() {
 
                     new Element('a', {
                         href: REGISTER_URL,
-                        html: QUILocale.get('quiqqer/template-cologne', 'template.popup.login.registration.button'),
+                        html: QUILocale.get(lg, 'template.popup.login.registration.button'),
                     }).inject(CreateAccountWrapper);
 
                     CreateAccountWrapper.inject(Elm.getElement('.qui-window-popup-content'));

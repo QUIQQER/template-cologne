@@ -201,10 +201,10 @@
                         0202 2454545
                     </span>
 
-                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram">&nbsp;</span></a>
                 ]]>
             </de>
             <en><![CDATA[
@@ -218,10 +218,10 @@
                         0202 2454545
                     </span>
 
-                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play"></span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram"></span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram">&nbsp;</span></a>
                 ]]>
             </en>
         </locale>
