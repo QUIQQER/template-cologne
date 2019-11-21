@@ -16,6 +16,9 @@
         var COUNT_LANGUAGES     = "{$countLanguages}";
         var SHOW_CATEGORY_MENU  = "{$showCategoryMenu}";
         var REGISTER_URL        = "{$registerSiteUrl}";
+        var SHOW_MENU_START_POS = 0; // The number of pixels from top which the menu will be displayed.
+                                     // 0 or false means start from the position of .topbar element.
+        var SHOW_MENU_SMOOTH    = false; // if true menu slides from top
     </script>
 
     {fetch template="template/head/styles.html" Template=$Template}
