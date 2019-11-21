@@ -217,10 +217,14 @@ window.addEvent('domready', function () {
              * @type {boolean}
              */
             var Menu         = document.getElement('.cologne-header'),
-                topBarHeight = document.getElement('.topbar').getSize().y,
+                showMenuFrom = document.getElement('.topbar').getSize().y,
                 isMenuSticky = false,
                 SearchBtn    = document.getElement('.cologne-header .search-button'),
                 SearchInput  = document.getElement('.template-search input[type="search"]');
+
+            if (SHOW_MENU_START_POS  && SHOW_MENU_START_POS.toInt() > 0) {
+                showMenuFrom = SHOW_MENU_START_POS.toInt();
+            }
 
             if (SearchBtn && SearchInput) {
 
@@ -294,7 +298,7 @@ window.addEvent('domready', function () {
 
             if (Menu) {
                 // check on page load if menu should be sticked to the top
-                if (QUI.getScroll().y >= topBarHeight) {
+                if (QUI.getScroll().y >= showMenuFrom) {
                     if (isMenuSticky) {
                         return;
                     }
@@ -304,12 +308,12 @@ window.addEvent('domready', function () {
                 }
 
                 QUI.addEvent('scroll', function () {
-                    if (QUI.getScroll().y >= topBarHeight) {
+                    if (QUI.getScroll().y >= showMenuFrom) {
                         if (isMenuSticky) {
                             return;
                         }
 
-                        setMenuFixed(false);
+                        setMenuFixed(SHOW_MENU_SMOOTH);
                         showSearchBtn();
                         return;
                     }

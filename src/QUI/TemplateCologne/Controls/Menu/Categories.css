@@ -1,8 +1,8 @@
-.quiqqer-categories-menu {
+.categories-menu-wrapper {
     background: #2c3e47;
     color: #eee;
     min-height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .categories-menu-header {
