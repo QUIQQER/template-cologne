@@ -26,11 +26,11 @@ class Categories extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'       => 'quiqqer-categories-menu uuuuuuu',
+            'class'       => 'quiqqer-categories-menu',
             'startId'     => 1, // site id or site link where menu starts by. 1 is start page (first project page)
             'template'    => dirname(__FILE__) . '/Categories.html', // nav wrapper
             'menuFile'    => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
-            'data-qui'    => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
+            'jsControl'   => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
             'showDescFor' => 'all' // Show category description: all / firstLevel / none
         ]);
 

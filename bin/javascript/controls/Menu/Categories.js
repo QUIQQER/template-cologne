@@ -59,7 +59,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 self = this;
 
             this.Slideout.on('beforeopen', function () {
-                self.getElm().getElement('nav').setStyle('display', null);
+                Elm.setStyle('display', null);
             });
 
             var openButtons = document.getElements('.shop-category-menu-button');
@@ -76,7 +76,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             this.Wrapper = Elm.getParent('.slideout-menu');
 
             // first level menu
-            this.FirstLevel = this.getElm().getElement('.categories-menu-list-level-1');
+            this.FirstLevel = Elm.getElement('.categories-menu-list-level-1');
 
             // next level menu button
             this.openNextLevels = Elm.getElements('.categories-menu-list-entry-next');
