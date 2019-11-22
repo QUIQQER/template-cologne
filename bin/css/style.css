@@ -508,7 +508,8 @@ a.toTop:before {
     /*margin-bottom: 80px;*/
 }
 
-.topbar-left {
+.topbar-left,
+.topbar-left > p {
     align-items: center;
     display: flex;
 }
