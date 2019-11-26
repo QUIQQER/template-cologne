@@ -1071,6 +1071,7 @@ li.product-data-more-tabs-tab.active {
 .product-data-more .product-data-more-sheets {
     border-color: #ddd;
     border-top: none;
+    background: #fff;
 }
 
 @media screen and (max-width: 767px) {
