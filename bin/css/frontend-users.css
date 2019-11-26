@@ -14,6 +14,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 1em;
+    background: #fff;
 }
 
 .quiqqer-fupc-userinfo .sui-top {
@@ -195,6 +196,7 @@
 
 .quiqqer-frontend-users-address-list-entry {
     border: 1px solid #ddd;
+    background: #fff;
 }
 
 .quiqqer-frontendUsers-controls-profile-categoryContent .quiqqer-frontend-users-address-list-entry-buttons button {
