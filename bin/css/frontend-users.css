@@ -98,6 +98,15 @@
     border-bottom: none !important;
 }
 
+.quiqqer-fupc-category--open .quiqqer-fupc-category-items-item {
+    background: #fff;
+}
+
+.quiqqer-fupc-category .quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item--active,
+.quiqqer-fupc-category .quiqqer-fu-profile-categories-category-items .quiqqer-fupc-category-items-item:hover {
+    background: #fff;
+}
+
 .quiqqer-fupc-category--open .quiqqer-fupc-category-items-item:last-child {
     border-bottom: 1px solid #ddd;
     border-bottom-left-radius: 5px;
