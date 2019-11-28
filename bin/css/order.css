@@ -120,11 +120,17 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     border: 1px solid #ddd;
     clear: both;
     float: left;
-    min-height: 90px;
     margin-top: 20px;
+    min-height: 90px;
     padding: 20px;
     position: relative;
     width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-shoppingCart-basket-end, .quiqqer-order-basket-end {
+        padding: 10px;
+    }
 }
 
 .quiqqer-order-basket-articles-header-quantity,
@@ -213,6 +219,20 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 }
 
 @media screen and (max-width: 767px) {
+    .quiqqer-coupons-couponcodeinput {
+        flex-wrap: wrap;
+    }
+
+    .quiqqer-coupons-couponcodeinput label {
+        margin: 0 0 1rem 0;
+        width: 100%;
+    }
+
+    .quiqqer-coupons-couponcodeinput input,
+    .btn.quiqqer-coupons-couponcodeinput-btn {
+        width: 100%;
+    }
+
     .quiqqer-order-basket-articles-article td:before {
         font-weight: bold;
     }
@@ -548,8 +568,8 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     }
 
     .quiqqer-order-next-mobile {
-        margin-top: 20px;
         margin-bottom: 20px;
+        margin-top: 20px;
     }
 }
 
@@ -576,10 +596,10 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-shipping,
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
-    display: flex;
-    margin: 0;
-    flex-direction: column;
     align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
@@ -785,4 +805,43 @@ table.articles-sum td {
 .type-quiqqer-order-types-shoppingCart .content-header,
 .type-quiqqer-order-types-shoppingCart .quiqqer-order-step-basket > header {
     display: none;
+}
+
+/****************/
+/* Order window */
+/****************/
+@media screen and (max-width: 767px) {
+    .quiqqer-order-window .quiqqer-order-window-header {
+        border-bottom-width: 1px;
+    }
+
+    .quiqqer-order-window .qui-window-popup-buttons {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        display: flex;
+        padding: 10px 0 !important;
+    }
+
+    .quiqqer-order-window .qui-window-popup-buttons button {
+        width: auto;
+    }
+
+    /* next step button */
+    .quiqqer-order-window .qui-window-popup-buttons .btn-success {
+        flex-grow: 1;
+        order: 2;
+    }
+
+    /* step back btn */
+    .quiqqer-order-window .qui-window-popup-buttons .btn-light {
+        min-width: 3rem !important;
+        order: 1;
+    }
+
+    .quiqqer-order-window .qui-window-popup-buttons .btn-light .qui-button-text-image {
+        margin-right: 0
+    }
+
+    .quiqqer-order-window .qui-window-popup-buttons .btn-light .qui-button-text {
+        display: none
+    }
 }
