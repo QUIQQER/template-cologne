@@ -812,36 +812,10 @@ table.articles-sum td {
 /****************/
 @media screen and (max-width: 767px) {
     .quiqqer-order-window .quiqqer-order-window-header {
-        border-bottom-width: 1px;
+        background: #f8f8f8;
     }
 
     .quiqqer-order-window .qui-window-popup-buttons {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        display: flex;
-        padding: 10px 0 !important;
-    }
-
-    .quiqqer-order-window .qui-window-popup-buttons button {
-        width: auto;
-    }
-
-    /* next step button */
-    .quiqqer-order-window .qui-window-popup-buttons .btn-success {
-        flex-grow: 1;
-        order: 2;
-    }
-
-    /* step back btn */
-    .quiqqer-order-window .qui-window-popup-buttons .btn-light {
-        min-width: 3rem !important;
-        order: 1;
-    }
-
-    .quiqqer-order-window .qui-window-popup-buttons .btn-light .qui-button-text-image {
-        margin-right: 0
-    }
-
-    .quiqqer-order-window .qui-window-popup-buttons .btn-light .qui-button-text {
-        display: none
+        background: #f8f8f8;
     }
 }

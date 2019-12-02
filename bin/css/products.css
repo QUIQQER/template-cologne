@@ -1047,8 +1047,10 @@ article .product-data-more {
     margin-top: 2rem;
 }
 
-.product-data-more-tabs {
+.product-data-more-tabsContainer .product-data-more-tabs {
     border-bottom: 1px solid #ddd;
+    min-width: 100%;
+    width: auto;
 }
 
 li.product-data-more-tabs-tab {
