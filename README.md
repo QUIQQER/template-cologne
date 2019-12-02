@@ -40,6 +40,10 @@ then you can write an e-mail to support@pcsg.de.
 For developers
 --------------
 
+### Testing of order confirmation mail template 
+
+https://dev.quiqqer.com/quiqqer/order/wikis/Home/Send-order-confirmation-mail-console-tool
+
 
 ### Available template events
 For mor information go to
