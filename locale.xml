@@ -203,8 +203,6 @@
 
                     <a href="#" class="topbar-social-link"><span class="fa fa-facebook">&nbsp;</span></a>
                     <a href="#" class="topbar-social-link"><span class="fa fa-twitter">&nbsp;</span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play">&nbsp;</span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram">&nbsp;</span></a>
                 ]]>
             </de>
             <en><![CDATA[
@@ -220,8 +218,6 @@
 
                     <a href="#" class="topbar-social-link"><span class="fa fa-facebook">&nbsp;</span></a>
                     <a href="#" class="topbar-social-link"><span class="fa fa-twitter">&nbsp;</span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-youtube-play">&nbsp;</span></a>
-                    <a href="#" class="topbar-social-link"><span class="fa fa-instagram">&nbsp;</span></a>
                 ]]>
             </en>
         </locale>
@@ -509,8 +505,6 @@
             <p>
             <a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a>
             <a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a>
-            <a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a>
-            <a class="font-icon" href="#"><span class="fa fa-instagram">&nbsp;</span></a>
             </p>
             ]]>
             </de>
@@ -524,8 +518,6 @@
             <p>
             <a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a>
             <a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a>
-            <a class="font-icon" href="#"><span class="fa fa-youtube-play">&nbsp;</span></a>
-            <a class="font-icon" href="#"><span class="fa fa-instagram">&nbsp;</span></a>
             </p>
             ]]>
             </en>
@@ -696,11 +688,6 @@
                         alt="Folgen Sie uns auf Twitter">
                  </a>
 
-                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
-                    title="Folgen Sie uns auf Instagram">
-                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
-                          alt="Folgen Sie uns auf Instagram">
-                 </a>
                  ]]>
             </de>
             <en>
@@ -717,11 +704,7 @@
                         alt="Follow us on Twitter">
                  </a>
 
-                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
-                    title="Follow us on Instagram">
-                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
-                          alt="Follow us on Instagram">
-                 </a>
+
                  ]]>
             </en>
         </locale>
@@ -740,11 +723,6 @@
                         alt="Folgen Sie uns auf Twitter">
                  </a>
 
-                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
-                    title="Folgen Sie uns auf Instagram">
-                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
-                          alt="Folgen Sie uns auf Instagram">
-                 </a>
                  ]]>
             </de>
             <en>
@@ -761,11 +739,6 @@
                         alt="Follow us on Twitter">
                  </a>
 
-                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
-                    title="Follow us on Instagram">
-                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/instagram.png"
-                          alt="Follow us on Instagram">
-                 </a>
                  ]]>
             </en>
         </locale>
