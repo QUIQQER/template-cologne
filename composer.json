@@ -1,38 +1,36 @@
 {
-  "name": "quiqqer\/template-cologne",
-  "type": "quiqqer-template",
-  "description": "The QUIQQER Cologne E-Commerce Template",
-  "version": "dev-dev",
-  "license": "GPLv3",
-  "authors": [
-    {
-      "name": "Henning Leutz",
-      "email": "support@pcsg.de",
-      "homepage": "http:\/\/www.pcsg.de",
-      "role": "Developer"
+    "name": "quiqqer\/template-cologne",
+    "type": "quiqqer-template",
+    "description": "The QUIQQER Cologne E-Commerce Template",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Henning Leutz",
+            "email": "support@pcsg.de",
+            "homepage": "http:\/\/www.pcsg.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pcsg.de",
+        "url": "http:\/\/www.pcsg.de"
+    },
+    "require": {
+        "php": ">=5.3",
+        "quiqqer\/quiqqer": "1.*|dev-master|dev-dev",
+        "quiqqer\/erp": "1.*|dev-master|dev-dev",
+        "quiqqer\/products": "1.*|dev-master|dev-dev",
+        "quiqqer\/product-bricks": "1.*|dev-master|dev-dev",
+        "quiqqer\/frontend-users": "1.*|dev-master|dev-dev",
+        "quiqqer\/menu": "1.*|dev-master|dev-dev",
+        "quiqqer\/sitetypes": "1.*|dev-master|dev-dev",
+        "quiqqer\/unsemantic": "1.*",
+        "npm-asset\/fastclick": "1.*",
+        "quiqqer\/tooltips": "1.*|dev-master|dev-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "QUI\\TemplateCologne\\": "src\/QUI\/TemplateCologne"
+        }
     }
-  ],
-  "support": {
-    "email": "support@pcsg.de",
-    "url": "http:\/\/www.pcsg.de"
-  },
-  "require": {
-    "php": ">=5.3",
-    "quiqqer\/quiqqer": "1.*|dev-master|dev-dev",
-    "quiqqer\/erp": "1.*|dev-master|dev-dev",
-    "quiqqer/products": "1.*|dev-master|dev-dev",
-    "quiqqer/product-bricks": "1.*|dev-master|dev-dev",
-    "quiqqer/frontend-users": "1.*|dev-master|dev-dev",
-    "quiqqer/menu": "1.*|dev-master|dev-dev",
-    "quiqqer/sitetypes": "1.*|dev-master|dev-dev",
-    "quiqqer/unsemantic": "1.*",
-    "npm-asset/fastclick": "1.*",
-    "quiqqer/tooltips": "1.*|dev-master|dev-dev"
-  },
-
-  "autoload": {
-    "psr-4" : {
-      "QUI\\TemplateCologne\\" : "src/QUI/TemplateCologne"
-    }
-  }
 }
