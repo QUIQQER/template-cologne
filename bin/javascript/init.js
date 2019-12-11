@@ -1,4 +1,5 @@
-var lg = 'quiqqer/template-cologne';
+var lg                  = 'quiqqer/template-cologne',
+    USER_BUTTON_CLICKED = false;
 
 window.addEvent('domready', function () {
     "use strict";
@@ -102,6 +103,12 @@ window.addEvent('domready', function () {
                         }
 
                         if (!QUIQQER_USER.id) {
+                            if (USER_BUTTON_CLICKED) {
+                                return;
+                            }
+
+                            USER_BUTTON_CLICKED = true;
+
                             createLoginWindow();
                         }
                     }
@@ -222,7 +229,7 @@ window.addEvent('domready', function () {
                 SearchBtn    = document.getElement('.cologne-header .search-button'),
                 SearchInput  = document.getElement('.template-search input[type="search"]');
 
-            if (SHOW_MENU_START_POS  && SHOW_MENU_START_POS.toInt() > 0) {
+            if (SHOW_MENU_START_POS && SHOW_MENU_START_POS.toInt() > 0) {
                 showMenuFrom = SHOW_MENU_START_POS.toInt();
             }
 
@@ -336,7 +343,7 @@ window.addEvent('domready', function () {
  * @param UserIconControl
  * @param QUILocale
  */
-function userIconLoadEvent(UserIconControl, QUILocale) {
+function userIconLoadEvent (UserIconControl, QUILocale) {
     var Menu = UserIconControl.$Menu;
 
     require([
@@ -372,7 +379,7 @@ function userIconLoadEvent(UserIconControl, QUILocale) {
  *
  * @param LogoutWindow
  */
-function createLogoutWindow(LogoutWindow) {
+function createLogoutWindow (LogoutWindow) {
     new LogoutWindow({
         class    : 'cologne-logout-dialog',
         title    : false,
@@ -416,7 +423,9 @@ function createLogoutWindow(LogoutWindow) {
 /**
  * Create and open login popup
  */
-function createLoginWindow() {
+function createLoginWindow () {
+    USER_BUTTON_CLICKED = false;
+
     require([
         'Locale',
         'utils/Controls',
@@ -460,7 +469,7 @@ function createLoginWindow() {
  * In mobile resolution (less than 767px) opens category menu button
  * the mobile navigation instead category navigation.
  */
-function initMobileMenu() {
+function initMobileMenu () {
     if (QUI.getWindowSize().x >= 768) {
         return;
     }
