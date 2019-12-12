@@ -2,6 +2,8 @@
  =================================================== */
 .quiqqer-order-ordering .quiqqer-order-ordering-timeline {
     border-bottom: none;
+    padding-top: 0;
+    margin-bottom: 0 !important;
 }
 
 .quiqqer-order-ordering-timeline a {
@@ -18,6 +20,16 @@
 
 .quiqqer-order-ordering-buttons-next {
     cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-order-ordering .quiqqer-order-ordering-timeline li {
+        width: 140px !important;
+    }
+
+    .quiqqer-order-ordering-timeline .quiqqer-order-ordering-timeline-container li .title {
+        font-size: 11px;
+    }
 }
 
 /****************/
@@ -120,11 +132,17 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     border: 1px solid #ddd;
     clear: both;
     float: left;
-    min-height: 90px;
     margin-top: 20px;
+    min-height: 90px;
     padding: 20px;
     position: relative;
     width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-shoppingCart-basket-end, .quiqqer-order-basket-end {
+        padding: 10px;
+    }
 }
 
 .quiqqer-order-basket-articles-header-quantity,
@@ -213,6 +231,20 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 }
 
 @media screen and (max-width: 767px) {
+    .quiqqer-coupons-couponcodeinput {
+        flex-wrap: wrap;
+    }
+
+    .quiqqer-coupons-couponcodeinput label {
+        margin: 0 0 1rem 0;
+        width: 100%;
+    }
+
+    .quiqqer-coupons-couponcodeinput input,
+    .btn.quiqqer-coupons-couponcodeinput-btn {
+        width: 100%;
+    }
+
     .quiqqer-order-basket-articles-article td:before {
         font-weight: bold;
     }
@@ -312,23 +344,29 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 /* step: shipping */
 /******************/
 
-.quiqqer-order-step-shipping-list-entry {
-    border-bottom: 0 !important;
+.quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry {
+    border-bottom: none;
 }
 
-.quiqqer-order-step-shipping-list-entry:hover {
+.quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry:hover {
     background: #f8f8f8 !important;
 }
 
-.quiqqer-order-step-shipping-list-entry:hover {
+.quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry:hover {
     background: rgba(0, 0, 0, 0.1);
+}
+
+.quiqqer-order-step-shipping-list-entry-price {
+    display: flex;
 }
 
 @media (max-width: 768px) {
     .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry {
         display: flex !important;
         flex-wrap: wrap;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
     }
 
     .quiqqer-order-step-shipping-list-entry:last-child {
@@ -358,6 +396,11 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     .quiqqer-order-step-shipping-list-entry-price {
         padding: 10px 10px 10px 40px;
     }
+
+    .quiqqer-order-step-shipping-list-entry-text,
+    .quiqqer-order-step-shipping-list-entry-price {
+        margin-left: 40px;
+    }
 }
 
 /******************/
@@ -383,6 +426,8 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     .quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry {
         display: flex !important;
         flex-wrap: wrap;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
     }
 
     .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-text {
@@ -548,8 +593,8 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     }
 
     .quiqqer-order-next-mobile {
-        margin-top: 20px;
         margin-bottom: 20px;
+        margin-top: 20px;
     }
 }
 
@@ -576,10 +621,10 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-shipping,
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
-    display: flex;
-    margin: 0;
-    flex-direction: column;
     align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments-payment {
@@ -785,4 +830,20 @@ table.articles-sum td {
 .type-quiqqer-order-types-shoppingCart .content-header,
 .type-quiqqer-order-types-shoppingCart .quiqqer-order-step-basket > header {
     display: none;
+}
+
+/****************/
+/* Order window */
+/****************/
+.quiqqer-order-window  .qui-window-popup-buttons {
+
+}
+@media screen and (max-width: 767px) {
+    .quiqqer-order-window .quiqqer-order-window-header {
+        background: #f8f8f8;
+    }
+
+    .quiqqer-order-window .qui-window-popup-buttons {
+        background: #f8f8f8;
+    }
 }
