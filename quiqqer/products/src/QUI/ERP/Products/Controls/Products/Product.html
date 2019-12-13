@@ -60,6 +60,11 @@
             {if $ShippingTimeFrontendView}
                 {$ShippingTimeFrontendView->create()}
             {/if}
+
+            {assign var=StockFrontendView value=\QUI\TemplateCologne\Utils::getStockFrontendView($Product->getId())}
+            {if $StockFrontendView}
+                {$StockFrontendView->create()}
+            {/if}
         </div>
 
         <div class="product-data-actionButtons">

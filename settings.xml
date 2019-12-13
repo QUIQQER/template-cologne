@@ -25,6 +25,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="showStock">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -267,6 +271,14 @@
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.shop.showBuyNowButton"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.showStock" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showStock"
                                     />
                                 </text>
                             </input>

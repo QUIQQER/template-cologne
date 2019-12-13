@@ -263,6 +263,10 @@
         </locale>
 
         <!-- template settings -->
+        <locale name="settings.shop.showStock">
+            <de><![CDATA[Lagerbestand bei Produkt-Details anzeigen]]></de>
+            <en><![CDATA[Show stock in product details]]></en>
+        </locale>
         <locale name="settings.menu.title">
             <de><![CDATA[Template Cologne Einstellungen]]></de>
             <en><![CDATA[Template Cologne Settings]]></en>
