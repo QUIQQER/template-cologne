@@ -836,14 +836,6 @@
     padding: 0 0 20px;
 }
 
-.product-data-price .qui-products-price-display-value {
-    color: inherit;
-    float: none;
-    font-size: 3rem;
-    font-weight: normal;
-    line-height: normal;
-}
-
 .product-data-price .qui-products-price-display-vat {
     text-align: left;
 }
