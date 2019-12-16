@@ -18,7 +18,8 @@ a:hover,
 .product-data-more-tabs-tab.active,
 .qui-contextitem-container .qui-contextitem-icon,
 .quiqqer-fupc-category-items-item--active span:nth-child(2),
-.quiqqer-fupc-category-items-item--active {
+.quiqqer-fupc-category-items-item--active,
+.quiqqer-products-search-suggest-form .input-search-icon:hover {
     color: #3986dd;
 }
 
