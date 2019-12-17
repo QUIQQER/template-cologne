@@ -592,12 +592,12 @@ a.toTop:before {
 
 .quiqqer-products-search-suggest-form .input-search-icon {
     color: #aaa;
+    cursor: pointer;
     left: 0;
     line-height: 30px;
     position: absolute;
     text-align: center;
     width: 40px;
-    cursor: pointer;
 }
 
 .quiqqer-products-search-suggest-form:hover .input-search-icon {
@@ -607,30 +607,29 @@ a.toTop:before {
 .quiqqer-products-search-suggest-form-input:focus ~ .input-search-icon,
 .quiqqer-products-search-suggest-form-input:active ~ .input-search-icon {
     color: inherit !important;
-
 }
 
 .template-search .quiqqer-products-search-suggest-form-input {
     border-radius: 0;
-    padding-left: 40px;
+    padding-right: 50px;
     width: 100%;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button {
-    display: none;
-}
-
-.template-search .quiqqer-products-search-suggest-form-button {
-    background: none;
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px #bbb;
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    background: transparent;
     color: inherit;
-    height: 30px;
-    line-height: 30px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 30px;
+    outline: none;
+    height: calc(100% - 2px);
+    margin: 1px 1px 1px 0;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button .fa {
@@ -648,7 +647,18 @@ a.toTop:before {
     }
 
     .template-search .quiqqer-products-search-suggest-form-button {
-        display: inline;
+        background: none;
+        border-radius: 100px;
+        box-shadow: 0 0 0 1px #bbb;
+        color: inherit;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 30px;
+        position: initial;
+        border-left: none;
     }
 }
 

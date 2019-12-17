@@ -84,3 +84,7 @@ input[type="radio"]:checked {
     background-color: #d0e2f7;
     border: 1px solid #d0e2f7;
 }
+
+.template-search .quiqqer-products-search-suggest-form-button:hover {
+    background: #f1f6fd;
+}
