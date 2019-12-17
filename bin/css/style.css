@@ -592,6 +592,7 @@ a.toTop:before {
 
 .quiqqer-products-search-suggest-form .input-search-icon {
     color: #aaa;
+    cursor: pointer;
     left: 0;
     line-height: 30px;
     position: absolute;
@@ -606,30 +607,32 @@ a.toTop:before {
 .quiqqer-products-search-suggest-form-input:focus ~ .input-search-icon,
 .quiqqer-products-search-suggest-form-input:active ~ .input-search-icon {
     color: inherit !important;
-
 }
 
 .template-search .quiqqer-products-search-suggest-form-input {
     border-radius: 0;
-    padding-left: 40px;
+    padding-right: 50px;
     width: 100%;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button {
-    display: none;
-}
-
-.template-search .quiqqer-products-search-suggest-form-button {
-    background: none;
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px #bbb;
+    align-items: center;
+    background: transparent;
+    border-bottom: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
     color: inherit;
-    height: 30px;
-    line-height: 30px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 30px;
+    display: flex;
+    height: calc(100% - 2px);
+    justify-content: center;
+    margin: 1px 1px 1px 0;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button .fa {
@@ -647,7 +650,18 @@ a.toTop:before {
     }
 
     .template-search .quiqqer-products-search-suggest-form-button {
-        display: inline;
+        background: none;
+        border-left: none;
+        border-radius: 100px;
+        box-shadow: 0 0 0 1px #bbb;
+        color: inherit;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        position: initial;
+        text-align: center;
+        width: 30px;
     }
 }
 
@@ -1494,6 +1508,7 @@ a.toTop:before {
 
 /** Product Children Slider (horizontal)
  ===================================== */
+/* @todo das muss noch geprüft werden - nicht alle Regeln werden benötigt */
 .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-container,
 .quiqqer-bricks-children-slider-container-inner {
     height: calc(100% + 22px);
@@ -1628,7 +1643,11 @@ table tr:last-child th {
 /*********************/
 /* messages / alerts */
 /*********************/
-.content-message-error, .content-message-attention, .content-message-success, .message-success .content-message-information {
+.content-message-error,
+.content-message-attention,
+.content-message-success,
+.message-success,
+.content-message-information {
     clear: both;
     float: none !important;
     margin-bottom: 2rem !important;
