@@ -617,19 +617,22 @@ a.toTop:before {
 
 .template-search .quiqqer-products-search-suggest-form-button {
     align-items: center;
+    background: transparent;
+    border-bottom: none;
     border-left: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0;
+    border-right: none;
+    border-top: none;
+    color: inherit;
     display: flex;
+    height: calc(100% - 2px);
     justify-content: center;
+    margin: 1px 1px 1px 0;
+    outline: none;
     position: absolute;
     right: 0;
     top: 0;
     width: 40px;
-    background: transparent;
-    color: inherit;
-    outline: none;
-    height: calc(100% - 2px);
-    margin: 1px 1px 1px 0;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button .fa {
@@ -648,6 +651,7 @@ a.toTop:before {
 
     .template-search .quiqqer-products-search-suggest-form-button {
         background: none;
+        border-left: none;
         border-radius: 100px;
         box-shadow: 0 0 0 1px #bbb;
         color: inherit;
@@ -655,10 +659,9 @@ a.toTop:before {
         line-height: 30px;
         margin: 0;
         padding: 0;
+        position: initial;
         text-align: center;
         width: 30px;
-        position: initial;
-        border-left: none;
     }
 }
 
