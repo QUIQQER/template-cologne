@@ -4,6 +4,8 @@
 <article>
     {template_event name="quiqqer::products::product::begin" Product=$Product}
 
+    {$jsonLd}
+
     <div class="grid-50 mobile-grid-100 grid-parent product-gallery">
         {control control="QUI\TemplateCologne\Controls\ProductGallery" Product=$Product}
     </div>
