@@ -221,12 +221,11 @@
 }
 
 .cologne-products-categoryGallery-category-image-link {
-    align-items: center;
     color: inherit;
-    display: flex;
+    display: block;
     font-size: 80px;
     height: 100%;
-    justify-content: center;
+    text-align: center;
 }
 
 .cologne-products-categoryGallery-category-image-link-img {
@@ -491,17 +490,17 @@
 }
 
 .cologne-products-productGallery-products-product-image {
-    align-items: center;
-    display: flex;
-    flex-grow: 0;
     height: 150px;
     justify-content: center;
     margin-bottom: 2em;
+    text-align: center;
     width: 100%;
 }
 
 .cologne-products-productGallery-products-product-image img {
+    height: auto;
     max-height: 100%;
+    width: auto;
 }
 
 .cologne-products-productGallery-products-product-title {
@@ -939,9 +938,9 @@
     background: #f28f09;
     border: 1px solid #f28f09;
     color: #fef4e5;
-    min-width: 150px;
     flex-grow: 1;
     margin: 0 0 0 20px;
+    min-width: 150px;
     position: relative;
 }
 
@@ -972,10 +971,10 @@
 .quiqqer-order-button-add-quantity-wrapper {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     margin-left: 20px;
     margin-right: 0 !important;
     width: 45%;
-    flex-grow: 1;
 }
 
 .quiqqer-order-button-add-quantity-wrapper .quiqqer-order-button-add-quantity {
@@ -1063,9 +1062,9 @@ li.product-data-more-tabs-tab.active {
 }
 
 .product-data-more .product-data-more-sheets {
+    background: #fff;
     border-color: #ddd;
     border-top: none;
-    background: #fff;
 }
 
 @media screen and (max-width: 767px) {

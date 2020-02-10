@@ -144,6 +144,8 @@ small, .font_small, .font-small {
 
 img {
     max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
 .html5tooltip-box {
@@ -760,9 +762,11 @@ a.toTop:before {
 }
 
 .cologne-header-logo-link {
-    align-items: center;
-    display: flex;
     height: 100%;
+}
+
+.cologne-header-logo-link picture {
+    width: auto !important;
 }
 
 .cologne-header-logo-link img {
