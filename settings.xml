@@ -29,6 +29,18 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="showVisitedProducts">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showSimilarProducts">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showEquipment">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -279,6 +291,30 @@
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.shop.showStock"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.showVisitedProducts" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showVisitedProducts"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.showSimilarProducts" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showSimilarProducts"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.showEquipment" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showEquipment"
                                     />
                                 </text>
                             </input>

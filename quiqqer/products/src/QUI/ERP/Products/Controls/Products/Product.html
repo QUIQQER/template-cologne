@@ -221,8 +221,10 @@
 
     {template_event name="quiqqer::products::product::middle-2" Product=$Product}
 
-    {if isset($VisitedProducts)}
-    <section class="product-similar-products">
+    {* <!-- Visited products --> *}
+    {if isset($VisitedProducts) &&
+        $Project->getConfig('templateCologne.settings.showVisitedProducts')}
+    <section class="product-productsList product-visited-products">
         <header>
             <h1>
                 {locale group="quiqqer/products" var="brick.control.VisitedProducts.title"}
@@ -230,6 +232,44 @@
         </header>
         {assign var=t value=$VisitedProducts->getSlider()->setAttribute('data-qui-options-usemobile', true)}
         {$VisitedProducts->create()}
+    </section>
+    {/if}
+
+    {* <!-- Similar products --> *}
+    {if $Project->getConfig('templateCologne.settings.showSimilarProducts') &&
+        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()}
+    <section class="product-productsList product-similar-products">
+        <header>
+            <h1>
+                {locale group="quiqqer/template-cologne" var="shop.product.showSimilarProducts.title"}
+            </h1>
+        </header>
+
+        {if $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)}
+            {control control='QUI\ERP\Products\Controls\Products\ProductList'
+                    currentProductId=$Product->getId()
+                    productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()
+            }
+        {/if}
+    </section>
+    {/if}
+
+    {* <!-- Equipments products --> *}
+    {if $Project->getConfig('templateCologne.settings.showEquipment') &&
+        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()}
+    <section class="product-productsList product-equipment-products">
+        <header>
+            <h1>
+                {locale group="quiqqer/template-cologne" var="shop.product.showEquipment.title"}
+            </h1>
+        </header>
+
+        {if $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)}
+        {control control='QUI\ERP\Products\Controls\Products\ProductList'
+                currentProductId=$Product->getId()
+                productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()
+        }
+        {/if}
     </section>
     {/if}
 

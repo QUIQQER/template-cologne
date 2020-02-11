@@ -33,7 +33,7 @@
 {template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
 
 {* small top bar *}
-{fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
+{fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar
     Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
 }
 
@@ -41,7 +41,6 @@
 
 {* main navigation / menu *}
 {fetch template="template/mainMenu.html"
-    Project=$Project
     Logo=$Logo
     Menu=$Menu
     showCategoryMenu=$showCategoryMenu

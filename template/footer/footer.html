@@ -1,10 +1,9 @@
 <footer class="template-footer">
     {* footer brick area *}
-    {fetch template="template/footer/bricks.html" BricksManager=$BricksManager Site=$Site}
+    {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
 
     {* pre-defined footer *}
     {fetch template="template/footer/predefinedFooter.html"
-        Site=$Site
         paymentsData=$paymentsData
         shortText=$shortText
         urlList=$urlList

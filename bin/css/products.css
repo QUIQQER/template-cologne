@@ -819,7 +819,7 @@
     width: 30px;
 }
 
-.product-data-price .qui-products-price-display {
+.product-data .product-data-price .qui-products-price-display {
     text-align: left;
 }
 
@@ -1036,6 +1036,7 @@
 /* product data more */
 article .product-data-more {
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .product-data-more-tabsContainer .product-data-more-tabs {
@@ -1093,4 +1094,17 @@ li.product-data-more-tabs-tab.active {
 .quiqqer-product-card-content-data {
     font-size: 0.75rem;
     font-weight: normal;
+}
+
+.product-productsList {
+    clear: both;
+    margin: 20px 0;
+}
+
+.product-productsList header {
+    padding-bottom: 20px;
+}
+
+.product-productsList header h1 {
+    font-size: 2rem;
 }
