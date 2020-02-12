@@ -112,6 +112,22 @@
 
                 {foreach $detailFields as $Field}
 
+                {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT &&
+                    $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
+                    {continue}
+                {/if}
+
+                {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS &&
+                    $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
+                    {continue}
+                {/if}
+
+                {* hide empty fields *}
+                {assign var=fieldValue value=$Field->getValue()}
+                {if $hideEmptyFields && empty($fieldValue)}
+                {continue}
+                {/if}
+
                 {* hide empty fields *}
                 {assign var=fieldValue value=$Field->getValue()}
                 {if $hideEmptyFields && empty($fieldValue)}
@@ -186,8 +202,19 @@
             </section>
             {/if}
 
+            {$counter = 1}
 
             {foreach $detailFields as $Field}
+
+            {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT &&
+                $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
+                {continue}
+            {/if}
+
+            {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS &&
+                $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
+                {continue}
+            {/if}
 
             {* hide empty fields *}
             {assign var=fieldValue value=$Field->getValue()}
@@ -236,7 +263,8 @@
     {/if}
 
     {* <!-- Similar products --> *}
-    {if $Project->getConfig('templateCologne.settings.showSimilarProducts') &&
+    {if $Project->getConfig('templateCologne.settings.showSimilarProducts') == 'afterDesc' &&
+        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS) &&
         $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()}
     <section class="product-productsList product-similar-products">
         <header>
@@ -245,17 +273,16 @@
             </h1>
         </header>
 
-        {if $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)}
-            {control control='QUI\ERP\Products\Controls\Products\ProductList'
-                    currentProductId=$Product->getId()
-                    productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()
-            }
-        {/if}
+        {control control='QUI\ERP\Products\Controls\Products\ProductList'
+                currentProductId=$Product->getId()
+                productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()
+        }
     </section>
     {/if}
 
     {* <!-- Equipments products --> *}
-    {if $Project->getConfig('templateCologne.settings.showEquipment') &&
+    {if $Project->getConfig('templateCologne.settings.showEquipment') == 'afterDesc' &&
+    $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT) &&
         $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()}
     <section class="product-productsList product-equipment-products">
         <header>
@@ -264,12 +291,10 @@
             </h1>
         </header>
 
-        {if $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)}
         {control control='QUI\ERP\Products\Controls\Products\ProductList'
                 currentProductId=$Product->getId()
                 productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()
         }
-        {/if}
     </section>
     {/if}
 
