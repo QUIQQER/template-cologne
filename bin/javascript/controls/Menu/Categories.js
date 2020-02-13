@@ -9,9 +9,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
     'qui/QUI',
     'qui/controls/Control',
-    'package/quiqqer/menu/bin/SlideOut'
+    'package/quiqqer/menu/bin/SlideOut',
+    'package/quiqqer/order/bin/frontend/controls/basket/Button'
 
-], function (QUI, QUIControl, SlideOut) {
+], function (QUI, QUIControl, SlideOut, BasketBtn) {
     "use strict";
 
     return new Class({
@@ -28,8 +29,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         ],
 
         options: {
-            'menu-button': false,
-            'menu-width' : 450
+            'menu-button'     : false,
+            'menu-width'      : 450,
+            'showbasketbutton': false
         },
 
         initialize: function (options) {
@@ -60,6 +62,23 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             this.Slideout.on('beforeopen', function () {
                 Elm.setStyle('display', null);
+
+                if (self.getAttribute('showbasketbutton')) {
+                    self.BasketBtnContainer = new Element('div', {
+                        'class': 'categories-menu-basketButtonContainer'
+                    });
+
+                    self.BasketBtnContainer.inject(self.Wrapper);
+                    var BasketButton = self.createBasketButton();
+
+                    BasketButton.inject(self.BasketBtnContainer);
+
+                    self.BasketBtnContainer.addEvent('click', function () {
+                        BasketButton.getElm().click();
+                    });
+
+                    self.Wrapper.setStyle('height', 'calc(100vh - ' + self.BasketBtnContainer.getSize().y + 'px)');
+                }
             });
 
             var openButtons = document.getElements('.shop-category-menu-button');
@@ -223,6 +242,42 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                     return;
                 }
                 Menu.hide();
+            });
+        },
+
+        createBasketButton: function () {
+            return new BasketBtn({
+                open                     : 2,
+                showMiniBasketOnMouseOver: 0,
+                events                   : {
+                    onCreate: function (Basket) {
+                        var BasketNode = Basket.getElm();
+
+                        // clear default content
+                        BasketNode.set('html', '');
+                        BasketNode.addClass('category-menu-basketButton');
+
+                        new Element('span', {
+                            'class': 'category-menu-basketButton-label',
+                            html   : 'Warenkorb'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'category-basketButton-menu-label-icon',
+                            html   : '<span class="fa fa-shopping-basket"></span>'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basketButton-quantity category-menu-basketButton-quantity',
+                            html   : '0'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basketButton-sum category-menu-basketButton-sum'
+                        }).inject(BasketNode);
+
+                    }
+                }
             });
         }
     });
