@@ -12,6 +12,10 @@ textarea {
     padding: 0 10px;
 }
 
+textarea {
+    line-height: 1.6em;
+}
+
 input[type="text"]:hover,
 input[type="text"]:focus,
 input[type="email"]:hover,

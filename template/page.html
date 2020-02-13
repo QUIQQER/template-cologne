@@ -1,11 +1,11 @@
 {if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-    {fetch template="template/page/pageHeader.html" Site=$Site pageTitle=$pageTitle}
+    {fetch template="template/page/pageHeader.html" pageTitle=$pageTitle}
 {/if}
 
 {template_event name="quiqqer::template-cologne::body::afterHeader" Template=$Template}
 
 {if $showBreadcrumb}
-    {fetch template="template/page/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
+    {fetch template="template/page/breadcrumb.html" pageTitle=$pageTitle}
 {/if}
 
 {template_event name="quiqqer::template-cologne::body::afterBreadcrumb" Template=$Template}
@@ -58,7 +58,6 @@
 
 {fetch template="template/footer/footer.html"
     BricksManager=$BricksManager
-    Site=$Site
     paymentsData=$paymentsData
     shortText=$shortText
     urlList=$urlList

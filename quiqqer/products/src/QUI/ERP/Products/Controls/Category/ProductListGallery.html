@@ -1,6 +1,7 @@
 <article class="cologne-products-productGallery-products-product"
          data-pid="{$Product->getId()}"
 >
+    {$JsonLd->getJsonLd($Product)}
     {strip}
     <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}"
        class="cologne-products-productGallery-products-product-image">

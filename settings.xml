@@ -29,6 +29,18 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="showVisitedProducts">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="showEquipment">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="showSimilarProducts">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>afterDesc</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -282,6 +294,62 @@
                                     />
                                 </text>
                             </input>
+
+                            <input conf="templateCologne.settings.showVisitedProducts" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showVisitedProducts"
+                                    />
+                                </text>
+                            </input>
+
+                            <select conf="templateCologne.settings.showEquipment">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showEquipment"
+                                    />
+                                </text>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showEquipment.hide"
+                                    />
+                                </option>
+                                <option value="asTab">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showEquipment.asTab"
+                                    />
+                                </option>
+                                <option value="afterDesc">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showEquipment.afterDesc"
+                                    />
+                                </option>
+                            </select>
+
+                            <select conf="templateCologne.settings.showSimilarProducts">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showSimilarProducts"
+                                    />
+                                </text>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showSimilarProducts.hide"
+                                    />
+                                </option>
+                                <option value="asTab">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showSimilarProducts.asTab"
+                                    />
+                                </option>
+                                <option value="afterDesc">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showSimilarProducts.afterDesc"
+                                    />
+                                </option>
+                            </select>
                         </settings>
 
                         <!-- header -->

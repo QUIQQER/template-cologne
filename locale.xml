@@ -263,10 +263,6 @@
         </locale>
 
         <!-- template settings -->
-        <locale name="settings.shop.showStock">
-            <de><![CDATA[Lagerbestand bei Produkt-Details anzeigen]]></de>
-            <en><![CDATA[Show stock in product details]]></en>
-        </locale>
         <locale name="settings.menu.title">
             <de><![CDATA[Template Cologne Einstellungen]]></de>
             <en><![CDATA[Template Cologne Settings]]></en>
@@ -292,6 +288,47 @@
             <br />Display the recommended retail price next to the current price.
             The retail price field in product properties must be filled.
             <br /><strong>The setting only affects the template. External bricks can regulate this differently.</strong>]]></en>
+        </locale>
+        <locale name="settings.shop.showStock">
+            <de><![CDATA[Lagerbestand bei Produkt-Details anzeigen]]></de>
+            <en><![CDATA[Show stock in product details]]></en>
+        </locale>
+        <locale name="settings.shop.showVisitedProducts">
+            <de><![CDATA[Besuchte Produkte auf Produktseite anzeigen]]></de>
+            <en><![CDATA[Show visited products on product page.]]></en>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts">
+            <de><![CDATA[Ähnliche Produkte auf Produktseite]]></de>
+            <en><![CDATA[Similar products on product page]]></en>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts.hide">
+            <de><![CDATA[Nicht anzeigen]]></de>
+            <en><![CDATA[Hide]]></en>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts.asTab">
+            <de><![CDATA[Als Reiter (Tab-Navigation) anzeigen]]></de>
+            <en><![CDATA[Show as tab navigation]]></en>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts.afterDesc">
+            <de><![CDATA[Nach der Produktbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show after product description]]></en>
+        </locale>
+
+        <locale name="settings.shop.showEquipment">
+            <de><![CDATA[Zubehör auf Produktseite]]></de>
+            <en><![CDATA[Show equipments on product]]></en>
+        </locale>
+        <locale name="settings.shop.showEquipment.hide">
+            <de><![CDATA[Nicht anzeigen]]></de>
+            <en><![CDATA[Hide]]></en>
+        </locale>
+        <locale name="settings.shop.showEquipment.asTab">
+            <de><![CDATA[Als Reiter (Tab-Navigation) anzeigen]]></de>
+            <en><![CDATA[Show as tab navigation]]></en>
+        </locale>
+        <locale name="settings.shop.showEquipment.afterDesc">
+            <de><![CDATA[Nach der Produktbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show after product description]]></en>
         </locale>
 
         <!-- basket style -->
@@ -661,6 +698,17 @@
             <de><![CDATA[Jetzt kaufen]]></de>
             <en><![CDATA[Buy now]]></en>
         </locale>
+
+        <locale name="shop.product.showSimilarProducts.title">
+            <de><![CDATA[Ähnliche Produkte]]></de>
+            <en><![CDATA[Similar products]]></en>
+        </locale>
+        <locale name="shop.product.showEquipment.title">
+            <de><![CDATA[Zubehör]]></de>
+            <en><![CDATA[Equipment]]></en>
+        </locale>
+
+
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
@@ -673,6 +721,8 @@
             <de><![CDATA[Kundenkonto anlegen]]></de>
             <en><![CDATA[Create account]]></en>
         </locale>
+
+
     </groups>
 
     <!-- override locale -->
