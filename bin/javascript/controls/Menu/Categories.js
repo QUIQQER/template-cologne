@@ -57,28 +57,36 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             this.parent();
 
-            var Elm  = this.getElm(),
-                self = this;
+            var Elm               = this.getElm(),
+                self              = this,
+                basketButtonExist = false;
 
             this.Slideout.on('beforeopen', function () {
-                Elm.setStyle('display', null);
-
-                if (self.getAttribute('showbasketbutton')) {
-                    self.BasketBtnContainer = new Element('div', {
-                        'class': 'categories-menu-basketButtonContainer'
-                    });
-
-                    self.BasketBtnContainer.inject(self.Wrapper);
-                    var BasketButton = self.createBasketButton();
-
-                    BasketButton.inject(self.BasketBtnContainer);
-
-                    self.BasketBtnContainer.addEvent('click', function () {
-                        BasketButton.getElm().click();
-                    });
-
-                    self.Wrapper.setStyle('height', 'calc(100vh - ' + self.BasketBtnContainer.getSize().y + 'px)');
+                if (!self.getAttribute('showbasketbutton') && basketButtonExist) {
+                    return;
                 }
+
+                var BasketButton = self.createBasketButton();
+
+                if (!BasketButton.mayBeDisplayed()) {
+                    return;
+                }
+
+                self.BasketBtnContainer = new Element('div', {
+                    'class': 'categories-menu-basketButtonContainer'
+                });
+
+                self.BasketBtnContainer.inject(self.Wrapper);
+
+                BasketButton.inject(self.BasketBtnContainer);
+
+                self.BasketBtnContainer.addEvent('click', function () {
+                    BasketButton.getElm().click();
+                });
+
+                self.Wrapper.setStyle('height', 'calc(100vh - ' + self.BasketBtnContainer.getSize().y + 'px)');
+
+                basketButtonExist = true;
             });
 
             var openButtons = document.getElements('.shop-category-menu-button');
@@ -251,6 +259,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 showMiniBasketOnMouseOver: 0,
                 events                   : {
                     onCreate: function (Basket) {
+                        console.log(1)
                         var BasketNode = Basket.getElm();
 
                         // clear default content
