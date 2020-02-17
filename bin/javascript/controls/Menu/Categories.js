@@ -29,9 +29,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         ],
 
         options: {
-            'menu-button'     : false,
-            'menu-width'      : 450,
-            'showbasketbutton': false
+            'menu-button'       : false, // html element(s) to open the menu
+            'menu-width'        : 450,
+            'show-basket-button': false
         },
 
         initialize: function (options) {
@@ -59,12 +59,18 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             var Elm               = this.getElm(),
                 self              = this,
-                basketButtonExist = false;
+                basketButtonExist = false,
+                showBasket        = this.getAttribute('show-basket-button') ? this.getAttribute(
+                    'show-basket-button') : false;
+
+            console.log(showBasket)
 
             this.Slideout.on('beforeopen', function () {
-                if (!self.getAttribute('showbasketbutton') && basketButtonExist) {
+                if (!showBasket || basketButtonExist) {
+                    console.log(1)
                     return;
                 }
+                console.log(2)
 
                 var BasketButton = self.createBasketButton();
 
@@ -73,7 +79,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 }
 
                 self.BasketBtnContainer = new Element('div', {
-                    'class': 'categories-menu-basketButtonContainer'
+                    'class': 'categories-menu-basketButtonContainer',
+                    title  : 'Zum Bestellprozess'
                 });
 
                 self.BasketBtnContainer.inject(self.Wrapper);
@@ -259,7 +266,6 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 showMiniBasketOnMouseOver: 0,
                 events                   : {
                     onCreate: function (Basket) {
-                        console.log(1)
                         var BasketNode = Basket.getElm();
 
                         // clear default content

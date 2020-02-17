@@ -32,7 +32,7 @@ class Categories extends QUI\Control
             'menuFile'         => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
             'jsControl'        => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
             'showDescFor'      => 'all', // Show category description: all / firstLevel / none
-            'showBasketButton' => true
+            'showBasketButton' => false
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/Categories.css');

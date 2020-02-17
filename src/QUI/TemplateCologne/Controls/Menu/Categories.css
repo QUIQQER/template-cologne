@@ -102,6 +102,11 @@
     bottom: 0;
     width: 450px;
     cursor: pointer;
+    transition: 0.2s color, 0.2s background-color;
+}
+
+.categories-menu-basketButtonContainer:hover {
+    background: rgba(44, 62, 71, 0.95);
 }
 
 .categories-menu-basketButtonContainer .category-menu-basketButton {
@@ -113,11 +118,11 @@
     width: 100%;
     color: inherit;
     align-items: center;
+    padding-left: 0;
 }
 
 .categories-menu-basketButtonContainer .category-menu-basketButton-label {
     width: 100%;
-    font-weight: bold;
     margin-bottom: 10px;
     color: #868d8a;
 }
@@ -125,7 +130,7 @@
 .categories-menu-basketButtonContainer .category-menu-basketButton-icon,
 .categories-menu-basketButtonContainer .category-menu-basketButton-quantity,
 .categories-menu-basketButtonContainer .category-menu-basketButton-sum {
-    font-size: 1.25em;
+    font-size: 1.2em;
 }
 
 .categories-menu-basketButtonContainer .category-menu-basketButton-quantity {

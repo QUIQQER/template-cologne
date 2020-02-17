@@ -171,10 +171,14 @@ class Utils
             $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
         }
 
+        QUI\System\Log::writeRecursive('xxxxxx');
+        QUI\System\Log::writeRecursive($Project->getConfig('templateCologne.settings.showBasketButton'));
+
         if ($showCategoryMenu) {
             $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
-                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
-                'startId'     => $Project->getConfig('templateCologne.settings.categoryStartId')
+                'showDescFor'      => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
+                'startId'          => $Project->getConfig('templateCologne.settings.categoryStartId'),
+                'showBasketButton' => $Project->getConfig('templateCologne.settings.showBasketButton')
             ]);
 
             $config['CategoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);

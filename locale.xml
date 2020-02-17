@@ -488,6 +488,12 @@
             <de><![CDATA[Erste Seite der Kategorie (standardmäßig ist das die Startseite)]]></de>
             <en><![CDATA[First page of the category (by default this is the home page)]]></en>
         </locale>
+        <!-- category menu: show basket button -->
+        <locale name="settings.showBasketButton">
+            <de><![CDATA[Warenkorb und Gesamtpreis in Shop-Kategorie Navigation anzeigen]]></de>
+            <en><![CDATA[Show shopping cart and total price in shop category menu]]></en>
+        </locale>
+
         <locale name="categoryMenu.openButton.title">
             <de><![CDATA[Shop-Kategorien öffnen]]></de>
             <en><![CDATA[Open shop category]]></en>
@@ -507,6 +513,10 @@
         <locale name="categoryMenu.button.nextCat.title" html="true">
             <de><![CDATA[Kategorien von [title] anzeigen]]></de>
             <en><![CDATA[Show categories from [title]]]></en>
+        </locale>
+        <locale name="categoryMenu.basketButton.title">
+            <de><![CDATA[Zum Bestellprozess]]></de>
+            <en><![CDATA[Go to the order process]]></en>
         </locale>
 
         <!-- breadcrumb settings -->
@@ -707,8 +717,6 @@
             <de><![CDATA[Zubehör]]></de>
             <en><![CDATA[Equipment]]></en>
         </locale>
-
-
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
@@ -721,8 +729,6 @@
             <de><![CDATA[Kundenkonto anlegen]]></de>
             <en><![CDATA[Create account]]></en>
         </locale>
-
-
     </groups>
 
     <!-- override locale -->
