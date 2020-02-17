@@ -68,17 +68,19 @@ class Utils
         /** @var $Site \QUI\Projects\Site */
         $Site = $params['Site'];
 
+        /* @var $Project QUI\Projects\Project */
+        $Project = $params['Project'];
+
+        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
+
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/'.$Site->getId()
+                'quiqqer/templateCologne/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
 
         $config = [];
-
-        /* @var $Project QUI\Projects\Project */
-        $Project = $params['Project'];
 
         /**
          * no header?
@@ -169,10 +171,14 @@ class Utils
             $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
         }
 
+        QUI\System\Log::writeRecursive('xxxxxx');
+        QUI\System\Log::writeRecursive($Project->getConfig('templateCologne.settings.showBasketButton'));
+
         if ($showCategoryMenu) {
             $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
-                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
-                'startId'     => $Project->getConfig('templateCologne.settings.categoryStartId')
+                'showDescFor'      => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
+                'startId'          => $Project->getConfig('templateCologne.settings.categoryStartId'),
+                'showBasketButton' => $Project->getConfig('templateCologne.settings.showBasketButton')
             ]);
 
             $config['CategoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
@@ -184,8 +190,8 @@ class Utils
         $config['header']           = $header;
         $config['pageTitle']        = $pageTitle;
         $config['showBreadcrumb']   = $showBreadcrumb;
-        $config['settingsCSS']      = '<style>'.$settingsCSS.'</style>';
-        $config['typeClass']        = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
+        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['siteType']         = $siteType;
         $config['basketStyle']      = $basketStyle;
         $config['basketOpen']       = $basketOpen;
@@ -193,7 +199,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/'.$Site->getId(),
+            'quiqqer/templateCologne/' . $cacheName,
             $config
         );
 
@@ -419,6 +425,7 @@ class Utils
             $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
+
             return false;
         }
 
@@ -434,6 +441,7 @@ class Utils
             $ShippingField = $Product->getField(Shipping::PRODUCT_FIELD_SHIPPING_TIME);
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
+
             return false;
         }
 
@@ -459,6 +467,7 @@ class Utils
             }
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
+
             return false;
         }
 
@@ -471,6 +480,7 @@ class Utils
             $StockField = $Product->getField(StockManager::PRODUCT_FIELD_STOCK);
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
+
             return false;
         }
 

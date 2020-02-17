@@ -109,6 +109,10 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="showBasketButton">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
 
                     <!-- show breadcrumb -->
                     <conf name="showBreadcrumbStartPage">
@@ -728,6 +732,15 @@
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.categoryMenu.startId"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.showBasketButton"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.showBasketButton"
                                     />
                                 </text>
                             </input>
