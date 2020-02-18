@@ -1,0 +1,21 @@
+<footer class="template-footer">
+    {* footer brick area *}
+    {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
+
+    {* pre-defined footer *}
+    {fetch template="template/footer/predefinedFooter.html"
+        paymentsData=$paymentsData
+        shortText=$shortText
+        urlList=$urlList
+        featuredProducts=$featuredProducts
+    }
+
+    {* footer copyright *}
+    {fetch template="template/footer/copyright.html"}
+</footer>
+
+{* to top icon *}
+{fetch template="template/footer/toTop.html"}
+
+{* scripts *}
+{fetch template="template/footer/scripts.html" Template=$Template}

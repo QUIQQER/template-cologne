@@ -2,10 +2,14 @@
     <span class="lcs-button-flag">
         <img alt="{$imgAltText}" src="{$flagFolderPath}{$projectLang}.png"/>
     </span>
+
+    {if $currencySwitch}
     <span class="lcs-button-currency" title="{$DefaultCurrency->getText()}">
         <span class="lcs-button-currency-sign">{$DefaultCurrency->getSign()}</span>
         <span class="lcs-button-currency-code text-muted">{$DefaultCurrency->getCode()}</span>
     </span>
+    {/if}
+
     {if $enableChange}
     <span class="fa fa-caret-down"></span>
     {/if}

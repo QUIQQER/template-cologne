@@ -144,6 +144,8 @@ small, .font_small, .font-small {
 
 img {
     max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
 .html5tooltip-box {
@@ -508,7 +510,8 @@ a.toTop:before {
     /*margin-bottom: 80px;*/
 }
 
-.topbar-left {
+.topbar-left,
+.topbar-left > p {
     align-items: center;
     display: flex;
 }
@@ -583,8 +586,15 @@ a.toTop:before {
     min-width: 200px;
 }
 
+.quiqqer-products-search-suggest-dropdown .quiqqer-products-search-suggest-dropdown-noproducts {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 20px;
+}
+
 .quiqqer-products-search-suggest-form .input-search-icon {
     color: #aaa;
+    cursor: pointer;
     left: 0;
     line-height: 30px;
     position: absolute;
@@ -599,30 +609,32 @@ a.toTop:before {
 .quiqqer-products-search-suggest-form-input:focus ~ .input-search-icon,
 .quiqqer-products-search-suggest-form-input:active ~ .input-search-icon {
     color: inherit !important;
-
 }
 
 .template-search .quiqqer-products-search-suggest-form-input {
     border-radius: 0;
-    padding-left: 40px;
+    padding-right: 50px;
     width: 100%;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button {
-    display: none;
-}
-
-.template-search .quiqqer-products-search-suggest-form-button {
-    background: none;
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px #bbb;
+    align-items: center;
+    background: transparent;
+    border-bottom: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
     color: inherit;
-    height: 30px;
-    line-height: 30px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 30px;
+    display: flex;
+    height: calc(100% - 2px);
+    justify-content: center;
+    margin: 1px 1px 1px 0;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
 }
 
 .template-search .quiqqer-products-search-suggest-form-button .fa {
@@ -640,7 +652,18 @@ a.toTop:before {
     }
 
     .template-search .quiqqer-products-search-suggest-form-button {
-        display: inline;
+        background: none;
+        border-left: none;
+        border-radius: 100px;
+        box-shadow: 0 0 0 1px #bbb;
+        color: inherit;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        position: initial;
+        text-align: center;
+        width: 30px;
     }
 }
 
@@ -657,8 +680,8 @@ a.toTop:before {
 }
 
 .quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-container {
-    margin: 80px auto 0;
     height: calc(100% - 80px);
+    margin: 80px auto 0;
     width: 100%;
 }
 
@@ -671,8 +694,8 @@ a.toTop:before {
 }
 
 .quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-search {
-    height: 60px;
     display: block;
+    height: 60px;
     padding: 0 20px;
 }
 
@@ -682,8 +705,8 @@ a.toTop:before {
 }
 
 .quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results-container {
-    margin-top: 0;
     height: calc(100% - 60px);
+    margin-top: 0;
 }
 
 .quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results {
@@ -696,8 +719,8 @@ a.toTop:before {
 
 .quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li {
     background: none;
-    color: #606975;
     border-color: #ddd;
+    color: #606975;
     padding: 20px 20px 40px 20px;
 }
 
@@ -725,6 +748,7 @@ a.toTop:before {
 .cologne-header-fixed {
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
     position: fixed;
+    z-index: 100; /* Because of the search dropdown */
 }
 
 .cologne-header-logo {
@@ -738,9 +762,13 @@ a.toTop:before {
 }
 
 .cologne-header-logo-link {
-    align-items: center;
-    display: flex;
     height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cologne-header-logo-link picture {
+    width: auto !important;
 }
 
 .cologne-header-logo-link img {
@@ -1283,6 +1311,42 @@ a.toTop:before {
     width: 100%;
 }
 
+/* user drop down */
+.cologne-header-control-user .qui-contextmenu {
+    right: 0 !important;
+}
+
+.cologne-header-control-user .qui-contextmenu-container {
+    border: 1px solid #e1e7ec;
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+    padding: 0;
+}
+
+.cologne-header-control-user .qui-contextitem {
+    padding: 0;
+}
+
+.cologne-header-control-user .qui-contextitem,
+.cologne-header-control-user .qui-contextitem-container {
+    font-size: inherit;
+}
+
+.cologne-header-control-user .qui-contextitem-container .qui-contextitem-icon {
+    line-height: inherit;
+    width: 40px;
+}
+
+.cologne-header-control-user .qui-contextitem-container .qui-contextitem-text {
+    color: #606975;
+    font-weight: 500;
+    line-height: inherit;
+    width: calc(100% - 40px);
+}
+
+.cologne-header-control-user .qui-contextmenu:after {
+    display: none;
+}
+
 /*********/
 /* Popup */
 /*********/
@@ -1441,15 +1505,16 @@ a.toTop:before {
 
 /* sing up / registration in link */
 .login-popup-create-account-wrapper {
-    position: absolute;
     bottom: 10px;
-    width: 100%;
     left: 0;
+    position: absolute;
     text-align: center;
+    width: 100%;
 }
 
 /** Product Children Slider (horizontal)
  ===================================== */
+/* @todo das muss noch geprüft werden - nicht alle Regeln werden benötigt */
 .quiqqer-bricks-children-slider-container-wrapper .quiqqer-bricks-children-slider-container,
 .quiqqer-bricks-children-slider-container-inner {
     height: calc(100% + 22px);
@@ -1584,17 +1649,22 @@ table tr:last-child th {
 /*********************/
 /* messages / alerts */
 /*********************/
-.content-message-error, .content-message-attention, .content-message-success, .content-message-information {
+.content-message-error,
+.content-message-attention,
+.content-message-success,
+.message-success,
+.content-message-information {
     clear: both;
     float: none !important;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
     padding: 1rem 1rem 1rem 50px !important;
 }
 
 .content-message-attention:before,
 .content-message-error:before,
 .content-message-success:before,
+.message-success:before,
 .content-message-information:before {
     color: inherit;
     font-size: 22px;
@@ -1602,7 +1672,7 @@ table tr:last-child th {
 
 /* attention */
 .content-message-attention {
-    background: #fef4e5;
+    background: #fff6e8;
     border: 1px solid #fce0b8;
     color: #f28f09;
 }
@@ -1623,7 +1693,8 @@ table tr:last-child th {
 }
 
 /* success */
-.content-message-success {
+.content-message-success,
+.message-success {
     background-color: rgba(45, 195, 142, 0.10);
     border: 1px solid rgba(45, 195, 142, 0.20);
     color: #2dc38e;
@@ -1642,4 +1713,57 @@ table tr:last-child th {
 
 .content-message-information:before {
     content: "\f0e5";
+}
+
+/*****************/
+/* shipping info */
+/*****************/
+.shipping-info:before {
+    background: #bbb;
+    border-radius: 10px;
+    display: inline-block;
+    height: 8px;
+    margin-right: 5px;
+    visibility: visible;
+    width: 8px;
+}
+
+.shipping-info__timeperiod:before {
+    background: #ff9b00;
+}
+
+.shipping-info__immediately_available:before {
+    background: #00bc10;
+}
+
+.shipping-info__unavailable:before {
+    background: #d01414;
+}
+
+.shipping-info__available_soon:before {
+    background: #ff9b00;
+}
+
+/****************/
+/* context menu */
+/****************/
+.qui-contextitem {
+    padding: 5px 10px;
+}
+
+.qui-contextitem-container .qui-contextitem-icon {
+    height: auto;
+    line-height: initial;
+    padding: 5px 0;
+    text-align: center;
+    width: 30px;
+}
+
+.qui-contextitem-icon input {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.qui-contextitem-container .qui-contextitem-text {
+    padding: 5px 0;
 }

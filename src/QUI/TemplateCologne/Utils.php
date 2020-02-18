@@ -8,6 +8,7 @@ namespace QUI\TemplateCologne;
 
 use QUI;
 use QUI\ERP\Shipping\Shipping;
+use QUI\ERP\StockManagement\StockManager;
 
 /**
  * Class Utils
@@ -67,17 +68,19 @@ class Utils
         /** @var $Site \QUI\Projects\Site */
         $Site = $params['Site'];
 
+        /* @var $Project QUI\Projects\Project */
+        $Project = $params['Project'];
+
+        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
+
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/'.$Site->getId()
+                'quiqqer/templateCologne/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
 
         $config = [];
-
-        /* @var $Project QUI\Projects\Project */
-        $Project = $params['Project'];
 
         /**
          * no header?
@@ -170,11 +173,12 @@ class Utils
 
         if ($showCategoryMenu) {
             $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
-                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
-                'startId'     => $Project->getConfig('templateCologne.settings.categoryStartId')
+                'showDescFor'      => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
+                'startId'          => $Project->getConfig('templateCologne.settings.categoryStartId'),
+                'showBasketButton' => $Project->getConfig('templateCologne.settings.showBasketButton')
             ]);
 
-            $config['categoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
+            $config['CategoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
         }
 
         // predefined footer
@@ -183,8 +187,8 @@ class Utils
         $config['header']           = $header;
         $config['pageTitle']        = $pageTitle;
         $config['showBreadcrumb']   = $showBreadcrumb;
-        $config['settingsCSS']      = '<style>'.$settingsCSS.'</style>';
-        $config['typeClass']        = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
+        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['siteType']         = $siteType;
         $config['basketStyle']      = $basketStyle;
         $config['basketOpen']       = $basketOpen;
@@ -192,7 +196,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/'.$Site->getId(),
+            'quiqqer/templateCologne/' . $cacheName,
             $config
         );
 
@@ -414,18 +418,73 @@ class Utils
      */
     public static function getShippingTimeFrontendView(int $productId)
     {
+        try {
+            $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+
+            return false;
+        }
+
+        if (QUI::getPackageManager()->isInstalled('quiqqer/stock-management')) {
+            return StockManager::getShippingTimeFrontendViewByProduct($Product);
+        }
+
         if (!QUI::getPackageManager()->isInstalled('quiqqer/shipping')) {
             return false;
         }
 
         try {
-            $Product       = QUI\ERP\Products\Handler\Products::getProduct($productId);
             $ShippingField = $Product->getField(Shipping::PRODUCT_FIELD_SHIPPING_TIME);
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
+
             return false;
         }
 
         return $ShippingField->getFrontendView();
+    }
+
+    /**
+     * Get FrontendView of DeliveryTime field
+     *
+     * requires quiqqer/stock-management to be installed
+     *
+     * @param int $productId
+     * @return false|QUI\ERP\Products\Field\View
+     */
+    public static function getStockFrontendView(int $productId)
+    {
+        try {
+            $Project   = QUI::getRewrite()->getProject();
+            $showStock = $Project->getConfig('templateCologne.settings.showStock');
+
+            if (empty($showStock)) {
+                return false;
+            }
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+
+            return false;
+        }
+
+        if (!QUI::getPackageManager()->isInstalled('quiqqer/stock-management')) {
+            return false;
+        }
+
+        try {
+            $Product    = QUI\ERP\Products\Handler\Products::getProduct($productId);
+            $StockField = $Product->getField(StockManager::PRODUCT_FIELD_STOCK);
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+
+            return false;
+        }
+
+        /** @var QUI\ERP\StockManagement\Products\Fields\StockView $StockView */
+        $StockView = $StockField->getFrontendView();
+        $StockView->setProduct($Product);
+
+        return $StockView;
     }
 }

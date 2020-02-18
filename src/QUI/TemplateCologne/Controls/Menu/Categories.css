@@ -1,8 +1,10 @@
-.quiqqer-categories-menu {
+.categories-menu-wrapper {
     background: #2c3e47;
     color: #eee;
-    min-height: 100%;
-    overflow: hidden;
+    overflow: hidden auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh
 }
 
 .categories-menu-header {
@@ -13,6 +15,7 @@
 
 .categories-menu-container {
     position: relative;
+    overflow: hidden;
 }
 
 .categories-menu-list {
@@ -86,4 +89,54 @@
 
 .categories-menu-list-entry-backButton-icon {
     margin-right: 10px;
+}
+
+/* basket button */
+.categories-menu-basketButtonContainer {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 2rem;
+    background: rgb(44, 62, 71);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 450px;
+    cursor: pointer;
+    transition: 0.2s color, 0.2s background-color;
+}
+
+.categories-menu-basketButtonContainer:hover {
+    background: rgba(44, 62, 71, 0.95);
+}
+
+.categories-menu-basketButtonContainer .category-menu-basketButton {
+    background: none;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 100%;
+    color: inherit;
+    align-items: center;
+    padding-left: 0;
+}
+
+.categories-menu-basketButtonContainer .category-menu-basketButton-label {
+    width: 100%;
+    margin-bottom: 10px;
+    color: #868d8a;
+}
+
+.categories-menu-basketButtonContainer .category-menu-basketButton-icon,
+.categories-menu-basketButtonContainer .category-menu-basketButton-quantity,
+.categories-menu-basketButtonContainer .category-menu-basketButton-sum {
+    font-size: 1.2em;
+}
+
+.categories-menu-basketButtonContainer .category-menu-basketButton-quantity {
+    margin: 0 10px;
+}
+
+.categories-menu-basketButtonContainer .category-menu-basketButton-sum {
+    margin-left: auto;
 }

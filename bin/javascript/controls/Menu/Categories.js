@@ -9,9 +9,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
     'qui/QUI',
     'qui/controls/Control',
-    'package/quiqqer/menu/bin/SlideOut'
+    'package/quiqqer/menu/bin/SlideOut',
+    'package/quiqqer/order/bin/frontend/controls/basket/Button'
 
-], function (QUI, QUIControl, SlideOut) {
+], function (QUI, QUIControl, SlideOut, BasketBtn) {
     "use strict";
 
     return new Class({
@@ -28,8 +29,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
         ],
 
         options: {
-            'menu-button': false,
-            'menu-width' : 450
+            'menu-button'       : false, // html element(s) to open the menu
+            'menu-width'        : 450,
+            'show-basket-button': false
         },
 
         initialize: function (options) {
@@ -55,11 +57,39 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
             this.parent();
 
-            var Elm  = this.getElm(),
-                self = this;
+            var Elm               = this.getElm(),
+                self              = this,
+                basketButtonExist = false,
+                showBasket        = this.getAttribute('show-basket-button') ? this.getAttribute(
+                    'show-basket-button') : false;
 
             this.Slideout.on('beforeopen', function () {
-                self.getElm().getElement('nav').setStyle('display', null);
+                if (!showBasket || basketButtonExist) {
+                    return;
+                }
+
+                var BasketButton = self.createBasketButton();
+
+                if (!BasketButton.mayBeDisplayed()) {
+                    return;
+                }
+
+                self.BasketBtnContainer = new Element('div', {
+                    'class': 'categories-menu-basketButtonContainer',
+                    title  : 'Zum Bestellprozess'
+                });
+
+                self.BasketBtnContainer.inject(self.Wrapper);
+
+                BasketButton.inject(self.BasketBtnContainer);
+
+                self.BasketBtnContainer.addEvent('click', function () {
+                    BasketButton.getElm().click();
+                });
+
+                self.Wrapper.setStyle('height', 'calc(100vh - ' + self.BasketBtnContainer.getSize().y + 'px)');
+
+                basketButtonExist = true;
             });
 
             var openButtons = document.getElements('.shop-category-menu-button');
@@ -76,7 +106,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             this.Wrapper = Elm.getParent('.slideout-menu');
 
             // first level menu
-            this.FirstLevel = this.getElm().getElement('.categories-menu-list-level-1');
+            this.FirstLevel = Elm.getElement('.categories-menu-list-level-1');
 
             // next level menu button
             this.openNextLevels = Elm.getElements('.categories-menu-list-entry-next');
@@ -223,6 +253,42 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                     return;
                 }
                 Menu.hide();
+            });
+        },
+
+        createBasketButton: function () {
+            return new BasketBtn({
+                open                     : 2,
+                showMiniBasketOnMouseOver: 0,
+                events                   : {
+                    onCreate: function (Basket) {
+                        var BasketNode = Basket.getElm();
+
+                        // clear default content
+                        BasketNode.set('html', '');
+                        BasketNode.addClass('category-menu-basketButton');
+
+                        new Element('span', {
+                            'class': 'category-menu-basketButton-label',
+                            html   : 'Warenkorb'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'category-basketButton-menu-label-icon',
+                            html   : '<span class="fa fa-shopping-basket"></span>'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basketButton-quantity category-menu-basketButton-quantity',
+                            html   : '0'
+                        }).inject(BasketNode);
+
+                        new Element('span', {
+                            'class': 'quiqqer-order-basketButton-sum category-menu-basketButton-sum'
+                        }).inject(BasketNode);
+
+                    }
+                }
             });
         }
     });

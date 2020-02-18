@@ -1,0 +1,68 @@
+{if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
+    {fetch template="template/page/pageHeader.html" pageTitle=$pageTitle}
+{/if}
+
+{template_event name="quiqqer::template-cologne::body::afterHeader" Template=$Template}
+
+{if $showBreadcrumb}
+    {fetch template="template/page/breadcrumb.html" pageTitle=$pageTitle}
+{/if}
+
+{template_event name="quiqqer::template-cologne::body::afterBreadcrumb" Template=$Template}
+
+{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+{foreach $headerSuffix as $Brick}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
+{/foreach}
+
+{template_event name="quiqqer::template-cologne::body::beforeMain" Template=$Template}
+<main class="cologne-main">
+    <div class="cologne-grid-container">
+        {$Template->getLayout()}
+    </div>
+</main>
+{template_event name="quiqqer::template-cologne::body::afterMain" Template=$Template}
+
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+{foreach $footerPrefix as $Brick}
+    {assign var=brickFullWidth value=''}
+    {if $Brick->getSetting( 'general.fullWidth' )}
+        {assign var=brickFullWidth value='brick-full-width'}
+    {/if}
+
+    {assign var=brickNoPadding value=""}
+    {if $Brick->getSetting('general.noSpacing')}
+        {assign var=brickNoPadding value="brick-no-spacing"}
+    {/if}
+    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
+        <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
+            {$Brick->create()}
+        </div>
+    </section>
+{/foreach}
+
+{template_event name="quiqqer::template-cologne::body::beforeFooter" Template=$Template}
+
+{fetch template="template/footer/footer.html"
+    BricksManager=$BricksManager
+    paymentsData=$paymentsData
+    shortText=$shortText
+    urlList=$urlList
+    featuredProducts=$featuredProducts
+    Template=$Template
+}
+
+{template_event name="quiqqer::template-cologne::body::afterFooter" Template=$Template}

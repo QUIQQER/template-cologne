@@ -54,6 +54,9 @@ section.quiqqer-order-profile-orders-order {
     margin-left: 5px;
 }
 
+.quiqqer-order-profile-orders-order-articles {
+    background: #fff;
+}
 
 .quiqqer-order-profile-orders-order-articles-article {
     border-bottom: 1px dashed #ddd;
@@ -181,4 +184,11 @@ section.quiqqer-order-profile-orders-order {
         padding-left: 3px;
         padding-right: 3px;
     }
+}
+
+/****************/
+/* Invoice list */
+/****************/
+.quiqqer-invoice-profile-invoices-table-invoice {
+    background: #fff;
 }

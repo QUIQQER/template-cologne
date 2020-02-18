@@ -1,6 +1,8 @@
 <article class="quiqqer-productList-product-list"
          data-pid="{$Product->getId()}"
 >
+    {$JsonLd->getJsonLd($Product)}
+
     <div class="quiqqer-productList-product-list-text">
         <header>
             <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}"

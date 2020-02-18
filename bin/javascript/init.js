@@ -1,4 +1,5 @@
-var lg = 'quiqqer/template-cologne';
+var lg                  = 'quiqqer/template-cologne',
+    USER_BUTTON_CLICKED = false;
 
 window.addEvent('domready', function () {
     "use strict";
@@ -7,9 +8,7 @@ window.addEvent('domready', function () {
         'qui/QUI'
     ], function (QUI) {
 
-        if (SHOW_CATEGORY_MENU) {
-            initMobileMenu();
-        }
+        initMobileMenu();
 
         /**
          * toTop button
@@ -102,6 +101,12 @@ window.addEvent('domready', function () {
                         }
 
                         if (!QUIQQER_USER.id) {
+                            if (USER_BUTTON_CLICKED) {
+                                return;
+                            }
+
+                            USER_BUTTON_CLICKED = true;
+
                             createLoginWindow();
                         }
                     }
@@ -217,10 +222,14 @@ window.addEvent('domready', function () {
              * @type {boolean}
              */
             var Menu         = document.getElement('.cologne-header'),
-                topBarHeight = document.getElement('.topbar').getSize().y,
+                showMenuFrom = document.getElement('.topbar').getSize().y,
                 isMenuSticky = false,
                 SearchBtn    = document.getElement('.cologne-header .search-button'),
                 SearchInput  = document.getElement('.template-search input[type="search"]');
+
+            if (SHOW_MENU_START_POS && SHOW_MENU_START_POS.toInt() > 0) {
+                showMenuFrom = SHOW_MENU_START_POS.toInt();
+            }
 
             if (SearchBtn && SearchInput) {
 
@@ -294,7 +303,7 @@ window.addEvent('domready', function () {
 
             if (Menu) {
                 // check on page load if menu should be sticked to the top
-                if (QUI.getScroll().y >= topBarHeight) {
+                if (QUI.getScroll().y >= showMenuFrom) {
                     if (isMenuSticky) {
                         return;
                     }
@@ -304,12 +313,12 @@ window.addEvent('domready', function () {
                 }
 
                 QUI.addEvent('scroll', function () {
-                    if (QUI.getScroll().y >= topBarHeight) {
+                    if (QUI.getScroll().y >= showMenuFrom) {
                         if (isMenuSticky) {
                             return;
                         }
 
-                        setMenuFixed(false);
+                        setMenuFixed(SHOW_MENU_SMOOTH);
                         showSearchBtn();
                         return;
                     }
@@ -332,7 +341,7 @@ window.addEvent('domready', function () {
  * @param UserIconControl
  * @param QUILocale
  */
-function userIconLoadEvent(UserIconControl, QUILocale) {
+function userIconLoadEvent (UserIconControl, QUILocale) {
     var Menu = UserIconControl.$Menu;
 
     require([
@@ -345,7 +354,7 @@ function userIconLoadEvent(UserIconControl, QUILocale) {
         Menu.appendChild(
             new Item({
                 icon  : 'fa fa-sign-out',
-                text  : QUILocale.get('quiqqer/template-cologne', 'frontend.usericon.menuentry.logout.label'),
+                text  : QUILocale.get(lg, 'frontend.usericon.menuentry.logout.label'),
                 events: {
                     click: function () {
                         createLogoutWindow(LogoutWindow);
@@ -368,7 +377,7 @@ function userIconLoadEvent(UserIconControl, QUILocale) {
  *
  * @param LogoutWindow
  */
-function createLogoutWindow(LogoutWindow) {
+function createLogoutWindow (LogoutWindow) {
     new LogoutWindow({
         class    : 'cologne-logout-dialog',
         title    : false,
@@ -412,7 +421,9 @@ function createLogoutWindow(LogoutWindow) {
 /**
  * Create and open login popup
  */
-function createLoginWindow() {
+function createLoginWindow () {
+    USER_BUTTON_CLICKED = false;
+
     require([
         'Locale',
         'utils/Controls',
@@ -437,7 +448,7 @@ function createLoginWindow() {
 
                     new Element('a', {
                         href: REGISTER_URL,
-                        html: QUILocale.get('quiqqer/template-cologne', 'template.popup.login.registration.button'),
+                        html: QUILocale.get(lg, 'template.popup.login.registration.button'),
                     }).inject(CreateAccountWrapper);
 
                     CreateAccountWrapper.inject(Elm.getElement('.qui-window-popup-content'));
@@ -456,7 +467,7 @@ function createLoginWindow() {
  * In mobile resolution (less than 767px) opens category menu button
  * the mobile navigation instead category navigation.
  */
-function initMobileMenu() {
+function initMobileMenu () {
     if (QUI.getWindowSize().x >= 768) {
         return;
     }
@@ -465,7 +476,7 @@ function initMobileMenu() {
         MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
     if (!OpenCategoryBtn) {
-        console.error('Open Category Button not found.');
+        console.error('Open Category Button ".shop-category-menu-button" not found.');
         return;
     }
 

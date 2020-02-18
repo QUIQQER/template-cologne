@@ -1,12 +1,14 @@
-<nav style="display: none">
-    <header class="categories-menu-header">
-        {locale group="quiqqer/template-cologne" var="categoryMenu.title"}
-    </header>
+<div class="categories-menu-wrapper" style="display: none;" >
+    <nav data-qui="{$this->getAttribute('jsControl')}" data-qui-options-show-basket-button="{$showBasketButton}">
+        <header class="categories-menu-header">
+            {locale group="quiqqer/template-cologne" var="categoryMenu.title"}
+        </header>
 
-    <div class="categories-menu-container">
-        {include file="`$menuFile`"
-        Site=$Site
-        ActiveSite=$Site
-        }
-    </div>
-</nav>
+        <div class="categories-menu-container">
+            {include file="`$menuFile`"
+            Site=$Site
+            ActiveSite=$Site
+            }
+        </div>
+    </nav>
+</div>

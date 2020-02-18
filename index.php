@@ -81,14 +81,22 @@ $LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
  * Sign up / registration page
  */
 $registerSiteUrl = false;
-$registerSite    = $Project->getSites([
+
+$types = [
+    'quiqqer/frontend-users:types/registrationSignUp',
+    'quiqqer/frontend-users:types/registration',
+];
+
+$registerSite = $Project->getSites([
     'where' => [
         'type' => [
-            'value' => 'quiqqer/template-cologne:types/registration'
+            'type'  => 'IN',
+            'value' => $types
         ]
     ],
     'limit' => 1
 ]);
+
 
 if (count($registerSite)) {
     $registerSiteUrl = $registerSite[0]->getUrlRewritten();

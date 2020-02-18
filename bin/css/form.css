@@ -12,10 +12,20 @@ textarea {
     padding: 0 10px;
 }
 
+textarea {
+    line-height: 1.6em;
+}
+
 input[type="text"]:hover,
 input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus,
 input[type="password"]:hover,
-input[type="password"]:focus {
+input[type="password"]:focus,
+select:hover,
+select:focus,
+textarea:hover,
+textarea:focus {
     border-color: #a9a8a5;
 }
 
@@ -107,11 +117,11 @@ input[type="checkbox"]:checked:active {
 }
 
 input[type="checkbox"]:checked:after {
-    content: '\2714';
+    content: '\2713';
     font-size: 14px;
-    left: 4px;
+    left: 5px;
     position: absolute;
-    top: -0;
+    top: -1px;
 }
 
 @supports (-ms-ime-align:auto) {

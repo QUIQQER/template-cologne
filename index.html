@@ -1,31 +1,13 @@
 <!doctype html>
 <html lang="{$Project->getLang()}">
 <head>
+    {template_event name="quiqqer::template-cologne::header::begin" Template=$Template}
     <meta charset="utf-8"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
 
     {pace}
 
     {$Template->getHeader()}
-
-    {fontawesome}
-    {unsemantic}
-
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/style.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/buttons.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/form.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/faq.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/products.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/frontend-users.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/order.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/user-orders.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/controls.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/mini-basket.css')}"/>
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/product-bricks.css')}"/>
-
-    <link rel="stylesheet" href="{$Template->getTemplateUrl('bin/css/cologne.blue.css')}"/>
-
-    {$settingsCSS}
 
     <script>
         var BASKET_STYLE        = "{$basketStyle}";
@@ -34,104 +16,63 @@
         var COUNT_LANGUAGES     = "{$countLanguages}";
         var SHOW_CATEGORY_MENU  = "{$showCategoryMenu}";
         var REGISTER_URL        = "{$registerSiteUrl}";
+        var SHOW_MENU_START_POS = 0; // The number of pixels from top which the menu will be displayed.
+                                     // 0 or false means start from the position of .topbar element.
+        var SHOW_MENU_SMOOTH    = false; // if true menu slides from top
     </script>
 
+    {fetch template="template/head/styles.html" Template=$Template}
+    {template_event name="quiqqer::template-cologne::header::afterCSSStyles" Template=$Template}
+
+    {$settingsCSS}
+    {template_event name="quiqqer::template-cologne::header::afterSettingsCSS" Template=$Template}
+
+    {template_event name="quiqqer::template-cologne::header::end" Template=$Template}
 </head>
 <body class="page-{$Site->getId()} {$typeClass} {$siteType}">
-
+{template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
 
 {* small top bar *}
-{fetch template="template/topBar.html" Project=$Project Menu=$Menu User=$User Avatar=$Avatar
-Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search}
+{fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar
+    Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
+}
+
+{template_event name="quiqqer::template-cologne::body::afterTopBar" Template=$Template}
 
 {* main navigation / menu *}
 {fetch template="template/mainMenu.html"
-Project=$Project
-Logo=$Logo
-Menu=$Menu
-showCategoryMenu=$showCategoryMenu
-createBasketButton=$createBasketButton
-basketStyle=$basketStyle
-initialBasketPrice=$initialBasketPrice}
+    Logo=$Logo
+    Menu=$Menu
+    showCategoryMenu=$showCategoryMenu
+    createBasketButton=$createBasketButton
+    basketStyle=$basketStyle
+    initialBasketPrice=$initialBasketPrice
+}
 
-{if $header == 'afterNav' && $Site->getAttribute('image_emotion')}
-{fetch template="template/pageHeader.html" Site=$Site pageTitle=$pageTitle}
-{/if}
+{template_event name="quiqqer::template-cologne::body::afterMainMenu" Template=$Template}
 
 {* <!--Shop category menu--> *}
 {if $showCategoryMenu}
-<div class="shop-category-menu-wrapper">
-    {$categoriesMenu}
-</div>
+    {$CategoriesMenu}
 {/if}
 
-<!-- breadcrumb -->
-{if $showBreadcrumb}
-{fetch template="template/breadcrumb.html" Site=$Site pageTitle=$pageTitle}
-{/if}
+{template_event name="quiqqer::template-cologne::body::beforePage" Template=$Template}
 
-{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-{foreach $headerSuffix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'general.fullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
-
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('general.noSpacing')}
-{assign var=brickNoPadding value="brick-no-spacing"}
-{/if}
-<section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
-{/foreach}
-
-<main class="cologne-main">
-    <div class="cologne-grid-container">
-        {$Template->getLayout()}
-    </div>
-</main>
-
-{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-{foreach $footerPrefix as $Brick}
-{assign var=brickFullWidth value=''}
-{if $Brick->getSetting( 'general.fullWidth' )}
-{assign var=brickFullWidth value='brick-full-width'}
-{/if}
-
-{assign var=brickNoPadding value=""}
-{if $Brick->getSetting('general.noSpacing')}
-{assign var=brickNoPadding value="brick-no-spacing"}
-{/if}
-<section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
-    <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
-        {$Brick->create()}
-    </div>
-</section>
-{/foreach}
-
-<footer class="template-footer">
-    {* footer brick area *}
-    {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site}
-
-    {* pre-defined footer *}
-    {fetch template="template/footer.predefined.html"
+{fetch template="template/page.html"
+    showBreadcrumb=$showBreadcrumb
+    header=$header
+    pageTitle=$pageTitle
+    BricksManager=$BricksManager
     Site=$Site
     paymentsData=$paymentsData
     shortText=$shortText
     urlList=$urlList
     featuredProducts=$featuredProducts
-    }
+    Template=$Template
+}
 
-    {* footer copyright *}
-    {fetch template="template/footer.copyright.html"}
-</footer>
+{template_event name="quiqqer::template-cologne::body::afterPage" Template=$Template}
 
-{* to top icon *}
-{fetch template="template/toTop.html"}
-
-<script src="{$Template->getTemplateUrl('bin/javascript/init.js')}"></script>
+{template_event name="quiqqer::template-cologne::body::end" Template=$Template}
 </body>
 </html>
