@@ -170,7 +170,7 @@ class Utils
         if ($Project->getConfig('templateCologne.settings.showCategoryMenu')) {
             $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
         }
-        
+
         if ($showCategoryMenu) {
             $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
                 'showDescFor'      => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),

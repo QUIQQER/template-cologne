@@ -63,14 +63,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
                 showBasket        = this.getAttribute('show-basket-button') ? this.getAttribute(
                     'show-basket-button') : false;
 
-            console.log(showBasket)
-
             this.Slideout.on('beforeopen', function () {
                 if (!showBasket || basketButtonExist) {
-                    console.log(1)
                     return;
                 }
-                console.log(2)
 
                 var BasketButton = self.createBasketButton();
 
