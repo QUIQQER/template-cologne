@@ -8,9 +8,7 @@ window.addEvent('domready', function () {
         'qui/QUI'
     ], function (QUI) {
 
-        if (SHOW_CATEGORY_MENU) {
-            initMobileMenu();
-        }
+        initMobileMenu();
 
         /**
          * toTop button
@@ -478,7 +476,7 @@ function initMobileMenu () {
         MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
     if (!OpenCategoryBtn) {
-        console.error('Open Category Button not found.');
+        console.error('Open Category Button ".shop-category-menu-button" not found.');
         return;
     }
 
