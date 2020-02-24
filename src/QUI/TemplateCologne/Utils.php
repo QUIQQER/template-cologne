@@ -131,7 +131,8 @@ class Utils
                 break;
         }
 
-        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess') {
+        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
+            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart') {
             $showBreadcrumb = false;
         }
 
