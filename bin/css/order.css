@@ -96,6 +96,13 @@ th.quiqqer-order-basket-articles-header-pos {
     width: 100px;
 }
 
+.quiqqer-order-basket-articles-article-quantity button {
+    display: inline-block;
+    height: 30px;
+    line-height: 20px;
+}
+
+
 .quiqqer-order-basket-articles-unitPrice {
     width: 200px;
 }
@@ -835,9 +842,10 @@ table.articles-sum td {
 /****************/
 /* Order window */
 /****************/
-.quiqqer-order-window  .qui-window-popup-buttons {
+.quiqqer-order-window .qui-window-popup-buttons {
 
 }
+
 @media screen and (max-width: 767px) {
     .quiqqer-order-window .quiqqer-order-window-header {
         background: #f8f8f8;
