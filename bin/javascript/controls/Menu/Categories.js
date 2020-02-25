@@ -60,10 +60,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
             var Elm               = this.getElm(),
                 self              = this,
                 basketButtonExist = false,
-                showBasket        = this.getAttribute('show-basket-button') ? this.getAttribute(
-                    'show-basket-button') : false;
+                showBasket        = !!this.getAttribute('show-basket-button');
 
             this.Slideout.on('beforeopen', function () {
+
                 if (!showBasket || basketButtonExist) {
                     return;
                 }
