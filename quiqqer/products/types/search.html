@@ -71,7 +71,7 @@
         <div class="quiqqer-products-productsearch page-multible-right template-column full-width">
     {/if}
 
-        {if $Template->getAttribute('content-header')}
+        {if $header == 'beforeContent'}
             {if $Site->getAttribute('image_emotion')}
             <header class="page-content-header page-content-header-emotion"
                     style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1200 onlysrc=1 rewrited=1}')"

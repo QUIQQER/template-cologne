@@ -346,6 +346,11 @@ a.toTop:before {
     padding-right: 20px;
 }
 
+.template-column.full-width {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .page-content-header,
 .content-body,
 .content-template,
