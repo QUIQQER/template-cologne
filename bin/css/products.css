@@ -452,7 +452,7 @@
 .quiqqer-product-list {
     margin: 2em 0;
     position: relative;
-    width: auto !important;
+    width: 100% !important;
 }
 
 .quiqqer-product-list,
