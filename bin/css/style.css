@@ -747,7 +747,7 @@ a.toTop:before {
     position: relative;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 99;
 }
 
 .cologne-header-fixed {
@@ -774,6 +774,10 @@ a.toTop:before {
 
 .cologne-header-logo-link picture {
     width: auto !important;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .cologne-header-logo-link img {
