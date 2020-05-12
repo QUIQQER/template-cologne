@@ -12,8 +12,8 @@
 /**************************************/
 /* Product children slider (carousel) */
 /**************************************/
-.quiqqer-products-control-product-childrenslider-entry-image {
-    height: 40% !important;
+.quiqqer-bricks-children-slider-child-display .quiqqer-products-control-product-childrenslider-entry-image {
+    height: 40%;
 }
 
 .quiqqer-products-control-product-childrenslider-entry .quiqqer-products-control-product-childrenslider-entry-price-retailPrice {
