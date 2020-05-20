@@ -769,7 +769,7 @@
                  ]]>
             </en>
         </locale>
-        <locale name="templates.mail.body.footer.social" priority="10">
+        <locale name="templates.mail.body.footer.social" priority="10" html="true">
             <de>
                 <![CDATA[
                  <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
