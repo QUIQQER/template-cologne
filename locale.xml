@@ -717,6 +717,7 @@
             <de><![CDATA[Zubehör]]></de>
             <en><![CDATA[Equipment]]></en>
         </locale>
+
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
@@ -733,7 +734,7 @@
 
     <!-- override locale -->
     <groups name="quiqqer/quiqqer" datatype="php">
-        <locale name="templates.mail.body.header.social" priority="10">
+        <locale name="templates.mail.body.header.social" priority="10" html="true">
             <de>
                 <![CDATA[
                  <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
