@@ -30,13 +30,13 @@
         {if QUI\ERP\Products\Utils\Products::isVariant($Product)}
         <a href="{$Product->getUrl()}"
            title="{$Product->getTitle()|escape:'html'}"
-           class="btn btn-primary btn-outline"
+           class="btn btn-primary"
         >
             {locale group="quiqqer/order" var="control.basket.buttonVariantAdd.text"}
         </a>
         {else}
         <a href="{$Product->getUrl()}"
-           class="btn btn-primary btn-outline add-to-basket"
+           class="btn btn-primary add-to-basket"
            data-product-id="{$Product->getId()}"
            data-product-animatable="1"
            data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
