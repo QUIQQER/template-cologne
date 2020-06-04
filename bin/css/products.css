@@ -515,9 +515,17 @@
 }
 
 .cologne-products-productGallery-products-product-price {
-    font-weight: bold;
     margin: auto 0 1em;
     text-align: center;
+}
+
+.cologne-products-productGallery-products-product-price-old {
+    font-size: 0.85rem;
+    text-decoration: line-through;
+}
+
+.cologne-products-productGallery-products-product-price-regular {
+    font-weight: bold;
 }
 
 .cologne-products-productGallery-products-product-price .qui-products-price-display {
@@ -527,6 +535,24 @@
 .cologne-products-productGallery-products-product-price .qui-products-price-display-vat {
     display: block;
 }
+
+.cologne-products-productGallery-products-product-price-shippingTime {
+    display: flex;
+    margin: auto 0 1em;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cologne-products-productGallery-products-product-price-shippingTime .product-data-fields-title {
+    width: auto;
+    margin-right: 10px;
+}
+
+.cologne-products-productGallery-products-product-price-shippingTime .product-data-fields-value {
+    width: 100%;
+}
+
 
 @media screen and (max-width: 767px) {
     .quiqqer-products-control-product-childrenslider-entry-productButtons {
@@ -601,6 +627,14 @@
 }
 
 .cologne-productList-product-details-content-price {
+    margin-top: 1rem;
+}
+
+.cologne-productList-product-details-content-old {
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+.cologne-productList-product-details-content-regular {
     font-size: 1.2em;
     font-weight: 500;
 }
@@ -611,6 +645,21 @@
 
 .cologne-productList-product-details-content-price .candyman-qui-products-price-display {
     display: inline;
+}
+
+.cologne-productList-product-details-content-shippingTime {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.cologne-productList-product-details-content-shippingTime .product-data-fields-title {
+    width: auto;
+    margin-right: 10px;
+}
+
+.cologne-productList-product-details-content-stock .product-data-fields-value {
+    width: 100%;
 }
 
 .cologne-productList-product-details-content-buttons {
@@ -661,6 +710,12 @@
     font-size: 1.2em;
 }
 
+.quiqqer-productList-product-list-price-old {
+    font-weight: normal;
+    font-size: 0.85rem;
+    text-decoration: line-through;
+}
+
 .quiqqer-productList-product-list .quiqqer-productList-product-list-artno,
 .quiqqer-productList-product-list .quiqqer-productList-product-list-price {
     padding: 0 10px;
@@ -668,6 +723,21 @@
 
 .quiqqer-productList-product-list-price .qui-products-price-display {
     display: inline;
+}
+
+.quiqqer-productList-product-list-text-shippingTime {
+    display: flex;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.quiqqer-productList-product-list-text-shippingTime .product-data-fields-title {
+    width: auto;
+    margin-right: 10px;
+}
+
+.quiqqer-productList-product-list-text-shippingTime .product-data-fields-value {
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {

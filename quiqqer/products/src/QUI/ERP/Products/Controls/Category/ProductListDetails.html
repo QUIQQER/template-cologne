@@ -19,15 +19,35 @@
         {if !$hidePrice}
         <div class="cologne-productList-product-details-content-price">
             {if $Product->getAttribute('hasVariablePrice')}
-                {locale
-                    group="quiqqer/erp"
-                    var="price.starting.from"
-                    price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
-                }
+                <div class="cologne-productList-product-details-content-regular">
+                    {locale
+                        group="quiqqer/erp"
+                        var="price.starting.from"
+                        price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+                    }
+                </div>
             {else}
-                {$Product->getPriceDisplay()->create()}
+                {assign var=OfferPrice value=$this->getProductOldPriceDisplay($Product)}
+                {if $OfferPrice}
+                <div class="cologne-productList-product-details-content-old">
+                    {$OfferPrice->create()}
+                </div>
+                {/if}
+
+                <div class="cologne-productList-product-details-content-regular">
+                    {$Product->getPriceDisplay()->create()}
+                </div>
             {/if}
         </div>
+        {/if}
+
+        {if $Project->getConfig('templateCologne.settings.categoryShowStock')}
+            {assign var=ShippingTimeFrontendView value=\QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
+            {if $ShippingTimeFrontendView}
+            <div class="cologne-productList-product-details-content-shippingTime">
+                {$ShippingTimeFrontendView->create()}
+            </div>
+            {/if}
         {/if}
 
         <div class="cologne-productList-product-details-content-buttons">

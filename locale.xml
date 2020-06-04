@@ -293,6 +293,10 @@
             <de><![CDATA[Lagerbestand bei Produkt-Details anzeigen]]></de>
             <en><![CDATA[Show stock in product details]]></en>
         </locale>
+        <locale name="settings.shop.categoryShowStock">
+            <de><![CDATA[Lagerbestand in der Produktliste anzeigen]]></de>
+            <en><![CDATA[Show stock in product list]]></en>
+        </locale>
         <locale name="settings.shop.showVisitedProducts">
             <de><![CDATA[Besuchte Produkte auf Produktseite anzeigen]]></de>
             <en><![CDATA[Show visited products on product page.]]></en>
