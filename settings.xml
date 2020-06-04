@@ -29,6 +29,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="categoryShowStock">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
                     <conf name="showVisitedProducts">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -295,6 +299,14 @@
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.shop.showStock"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.categoryShowStock" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.categoryShowStock"
                                     />
                                 </text>
                             </input>

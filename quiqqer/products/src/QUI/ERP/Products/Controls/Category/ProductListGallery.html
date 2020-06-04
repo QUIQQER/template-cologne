@@ -12,17 +12,37 @@
         {$Product->getTitle()}
     </header>
 
-    <span class="cologne-products-productGallery-products-product-price">
+    <div class="cologne-products-productGallery-products-product-price">
         {if $Product->getAttribute('hasVariablePrice')}
-            {locale
-                group="quiqqer/erp"
-                var="price.starting.from"
-                price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
-            }
+            <div class="cologne-products-productGallery-products-product-price-regular">
+                {locale
+                    group="quiqqer/erp"
+                    var="price.starting.from"
+                    price={control control="QUI\ERP\Products\Controls\Price" Price=$Product->getPrice()}
+                }
+            </div>
         {else}
-            {$Product->getPriceDisplay()->create()}
+            {assign var=OfferPrice value=$this->getProductOldPriceDisplay($Product)}
+            {if $OfferPrice}
+                <div class="cologne-products-productGallery-products-product-price-old">
+                    {$OfferPrice->create()}
+                </div>
+            {/if}
+
+            <div class="cologne-products-productGallery-products-product-price-regular">
+                {$Product->getPriceDisplay()->create()}
+            </div>
         {/if}
-    </span>
+    </div>
+
+    {if $Project->getConfig('templateCologne.settings.categoryShowStock')}
+        {assign var=ShippingTimeFrontendView value=\QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
+        {if $ShippingTimeFrontendView}
+        <div class="cologne-products-productGallery-products-product-price-shippingTime">
+            {$ShippingTimeFrontendView->create()}
+        </div>
+        {/if}
+    {/if}
 
     <div class="cologne-products-productGallery-products-product-buttons">
         {template_event name="quiqqer::product-event::slider::buttonAddToCart" Product=$Product}
@@ -42,7 +62,7 @@
            data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
         >
             <label>
-                {locale group="quiqqer/product-bricks" var="brick.control.product.addToCart"}
+                {locale group="quiqqer/product-bricks" var="button.product.addToCart"}
             </label>
         </a>
         {/if}
