@@ -71,11 +71,11 @@ class Utils
         /* @var $Project QUI\Projects\Project */
         $Project = $params['Project'];
 
-        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
+        $cacheName = md5($params['Site']->getId().$Project->getName().$Project->getLang());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/' . $cacheName
+                'quiqqer/templateCologne/'.$cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -188,8 +188,8 @@ class Utils
         $config['header']           = $header;
         $config['pageTitle']        = $pageTitle;
         $config['showBreadcrumb']   = $showBreadcrumb;
-        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
-        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['settingsCSS']      = '<style>'.$settingsCSS.'</style>';
+        $config['typeClass']        = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['siteType']         = $siteType;
         $config['basketStyle']      = $basketStyle;
         $config['basketOpen']       = $basketOpen;
@@ -197,7 +197,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/' . $cacheName,
+            'quiqqer/templateCologne/'.$cacheName,
             $config
         );
 
@@ -484,7 +484,10 @@ class Utils
 
         /** @var QUI\ERP\StockManagement\Products\Fields\StockView $StockView */
         $StockView = $StockField->getFrontendView();
-        $StockView->setProduct($Product);
+
+        if (\method_exists($StockView, 'setProduct')) {
+            $StockView->setProduct($Product);
+        }
 
         return $StockView;
     }
