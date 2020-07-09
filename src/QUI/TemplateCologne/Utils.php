@@ -71,16 +71,18 @@ class Utils
         /* @var $Project QUI\Projects\Project */
         $Project = $params['Project'];
 
-        $cacheName = md5($params['Site']->getId().$Project->getName().$Project->getLang());
+        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/'.$cacheName
+                'quiqqer/templateCologne/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
 
         $config = [];
+
+        $lang = $Project->getLang();
 
         /**
          * no header?
@@ -182,22 +184,42 @@ class Utils
             $config['CategoriesMenu'] = QUI\ControlUtils::parse($CategoriesMenu);
         }
 
+        /***
+         * Mega menu settings
+         */
+        $homeLink     = false;
+        $homeLinkText = '';
+
+        if ($Project->getConfig('templateCologne.settings.homeLink')) {
+            $homeLink = $Project->getConfig('templateCologne.settings.homeLink');
+        }
+
+        if ($Project->getConfig('templateCologne.settings.homeLinkText')) {
+            $text = json_decode($Project->getConfig('templateCologne.settings.homeLinkText'), true);
+
+            if (isset($text[$lang]) && $text[$lang] !== '') {
+                $homeLinkText = $text[$lang];
+            }
+        }
+
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
         $config['header']           = $header;
         $config['pageTitle']        = $pageTitle;
         $config['showBreadcrumb']   = $showBreadcrumb;
-        $config['settingsCSS']      = '<style>'.$settingsCSS.'</style>';
-        $config['typeClass']        = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
+        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['siteType']         = $siteType;
         $config['basketStyle']      = $basketStyle;
         $config['basketOpen']       = $basketOpen;
         $config['showCategoryMenu'] = $showCategoryMenu;
+        $config['homeLink']         = $homeLink;
+        $config['homeLinkText']     = $homeLinkText;
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/'.$cacheName,
+            'quiqqer/templateCologne/' . $cacheName,
             $config
         );
 

@@ -16,10 +16,22 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
 ]);
 
 /**
- * Header
+ * Menu
  */
+$homeLink     = false;
+$homeLinkText = false;
+
+if (isset($templateSettings['homeLink']) && $templateSettings['homeLink']) {
+    $homeLink = true;
+}
+
+if (isset($templateSettings['homeLinkText']) && $templateSettings['homeLinkText'] !== '') {
+    $homeLinkText = $templateSettings['homeLinkText'];
+}
+
 $Menu = new QUI\Menu\MegaMenu([
-    'showStart'                   => false,
+    'showStart'                   => $homeLink,
+    'startText'                   => $homeLinkText,
     'data-show-button-on-desktop' => 1,
     'Project'                     => $Site->getProject()
 ]);
