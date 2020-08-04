@@ -34,6 +34,11 @@ button > .fa,
     margin-right: .75rem;
 }
 
+button.loading > .fa,
+.btn.loading > .fa {
+    margin-right: .75rem;
+}
+
 /*****************************/
 /* button primary & standard */
 /*****************************/

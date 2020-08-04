@@ -367,7 +367,7 @@
 
         <!-- basket open -->
         <locale name="settings.shop.basketOpen">
-            <de><![CDATA[Was soll passiern, wenn man den Warenkorb anklickt?]]></de>
+            <de><![CDATA[Aktion bei Klick auf Warenkorb]]></de>
             <en><![CDATA[What should happen when the user clicks on the shopping cart?]]></en>
         </locale>
             <locale name="settings.shop.basketOpen.nothing">
@@ -375,12 +375,12 @@
                 <en><![CDATA[Do not open order process]]></en>
             </locale>
             <locale name="settings.shop.basketOpen.window">
-                <de><![CDATA[Bestellprozes in einem Fenster (popup) öffnen]]></de>
-                <en><![CDATA[Open order process in a window (popup)]]></en>
+                <de><![CDATA[Bestellprozes in einem Fenster öffnen]]></de>
+                <en><![CDATA[Open order process in a popup]]></en>
             </locale>
             <locale name="settings.shop.basketOpen.page">
-                <de><![CDATA[Bestellprozes in einer Seite öffnen]]></de>
-                <en><![CDATA[Open order process in a page]]></en>
+                <de><![CDATA[Zu Bestellprozess-Seite leiten]]></de>
+                <en><![CDATA[Go to order page]]></en>
             </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
