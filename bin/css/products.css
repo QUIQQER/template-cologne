@@ -199,7 +199,7 @@
 .cologne-products-categoryGallery-categories {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     margin-bottom: 40px;
     width: 100%;
 }
@@ -465,7 +465,7 @@
 .quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     width: 100%;
 }
 
