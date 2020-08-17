@@ -1,0 +1,33 @@
+{foreach $manufacturerUsers as $userId}
+<article class="cologne-products-manufacturerList-entry"
+         data-mid="{$userId}"
+>
+    {assign var=title value=\QUI\ERP\Products\Handler\Manufacturers::getManufacturerTitle($userId)}
+
+    {strip}
+    <div class="cologne-products-manufacturerList-entry-image">
+        <a href="{\QUI\ERP\Products\Handler\Manufacturers::getManufacturerUrl($userId)}" title="{$title|escape:'html'}"
+           class="cologne-products-manufacturerList-entry-image-link">
+            {image image=\QUI\ERP\Products\Handler\Manufacturers::getManufacturerImage($userId) title=$title width=400}
+        </a>
+    </div>
+    <div class="cologne-products-manufacturerList-entry-content">
+        <header class="cologne-products-manufacturerList-entry-content-header">
+            <h3 class="cologne-products-manufacturerList-entry-content-header-title">
+                {$title}
+            </h3>
+        </header>
+
+        <div class="cologne-products-manufacturerList-entry-content-short"></div>
+
+        <div class="cologne-products-manufacturerList-entry-content-buttonContainer">
+            <a href="{\QUI\ERP\Products\Handler\Manufacturers::getManufacturerUrl($userId)}" title="{$title|escape:'html'}"
+               class="btn btn-primary btn-outline cologne-products-manufacturerList-entry-content-button">
+                {locale group='quiqqer/product-bricks' var='brick.control.categoryBox.viewProduct'}
+            </a>
+        </div>
+    </div>
+    </a>
+    {/strip}
+</article>
+{/foreach}
