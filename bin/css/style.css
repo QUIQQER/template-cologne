@@ -1782,3 +1782,28 @@ table tr:last-child th {
 .qui-contextitem-container .qui-contextitem-text {
     padding: 5px 0;
 }
+
+/***************/
+/* Search site */
+/***************/
+.qui-search-result form {
+    display: flex;
+}
+
+.qui-search-result form input[type="text"] {
+    flex-grow: 1;
+    width: 300px;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .qui-search-result form {
+        flex-direction: column;
+    }
+
+    .qui-search-result form input[type="text"] {
+        width: initial;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
