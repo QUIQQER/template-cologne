@@ -23,3 +23,15 @@
 .quiqqer-products-control-product-childrenslider-entry .quiqqer-products-control-product-childrenslider-entry-price-regularPrice {
     font-size: 1.2rem;
 }
+
+/**********************/
+/* Manufacture slider */
+/**********************/
+.quiqqer-bricks-children-slider-container-slide .quiqqer-product-bricks-control-manufactureSlider-entry {
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+    transition: 0.2s all;
+}
+
+.quiqqer-bricks-children-slider-container-slide .quiqqer-product-bricks-control-manufactureSlider-entry:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
