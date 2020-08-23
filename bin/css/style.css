@@ -143,9 +143,9 @@ small, .font_small, .font-small {
 }
 
 img {
+    height: auto;
     max-width: 100%;
     width: auto;
-    height: auto;
 }
 
 .html5tooltip-box {
@@ -746,15 +746,15 @@ a.toTop:before {
     left: 0;
     position: relative;
     top: 0;
+    transition: 0.25s height;
     width: 100%;
     z-index: 99;
-    transition: 0.25s height;
 }
 
 .cologne-header-fixed {
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
-    position: fixed;
     height: 60px;
+    position: fixed;
     z-index: 100; /* Because of the search dropdown */
 }
 
@@ -769,17 +769,17 @@ a.toTop:before {
 }
 
 .cologne-header-logo-link {
-    height: 100%;
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 100%;
     padding: 10px 0;
 }
 
 .cologne-header-logo-link picture {
+    align-items: center;
+    display: flex;
     height: 100%;
     width: auto;
-    display: flex;
-    align-items: center;
 }
 
 .cologne-header-logo-link img {
@@ -967,6 +967,10 @@ a.toTop:before {
 
 /** Mega Menu
  ===================================== */
+.cologne-header-nav .quiqqer-menu-megaMenu {
+    position: initial;
+}
+
 .quiqqer-menu-megaMenu nav {
     align-items: center;
     display: flex;
@@ -1033,10 +1037,11 @@ a.toTop:before {
     background: #fff;
     border: 1px solid #e1e7ec;
     box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2) !important;
+    left: 50% !important;
     line-height: 1.5;
-    max-width: 100% !important;
     min-width: 200px;
     text-align: left;
+    transform: translateX(-50%);
     z-index: 100;
 }
 
@@ -1776,4 +1781,29 @@ table tr:last-child th {
 
 .qui-contextitem-container .qui-contextitem-text {
     padding: 5px 0;
+}
+
+/***************/
+/* Search site */
+/***************/
+.qui-search-result form {
+    display: flex;
+}
+
+.qui-search-result form input[type="text"] {
+    flex-grow: 1;
+    width: 300px;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .qui-search-result form {
+        flex-direction: column;
+    }
+
+    .qui-search-result form input[type="text"] {
+        width: initial;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
 }

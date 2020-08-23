@@ -13,8 +13,8 @@ QUI::$Ajax->registerFunction(
     'package_quiqqer_template-cologne_ajax_getLangList',
     function ($flagFolderPath) {
 
-        $Engine = QUI::getTemplateManager()->getEngine();
-        $Site   = QUI::getRewrite()->getSite();
+        $Engine  = QUI::getTemplateManager()->getEngine();
+        $Site    = QUI::getRewrite()->getSite();
         $Project = $Site->getProject();
         $langs   = $Project->getLanguages();
 
@@ -30,7 +30,7 @@ QUI::$Ajax->registerFunction(
             'path'            => $flagFolderPath
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/template/LangList.html');
+        return QUI\Output::getInstance()->parse($Engine->fetch(dirname(__FILE__) . '/template/LangList.html'));
     },
     ['flagFolderPath']
 );
