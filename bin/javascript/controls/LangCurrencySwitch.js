@@ -293,7 +293,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwi
                     resolve();
                 }, {
                     'package'     : 'quiqqer/template-cologne',
-                    flagFolderPath: self.$Elm.getAttribute('data-qui-options-flag-folder')
+                    flagFolderPath: self.$Elm.getAttribute('data-qui-options-flag-folder'),
+                    siteId        : QUIQQER_SITE.id
                 });
             })
         },
