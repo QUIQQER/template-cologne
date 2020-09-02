@@ -68,7 +68,7 @@ $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
 $productPage = false;
 switch ($Site->getAttribute('type')) {
     case 'quiqqer/products:types/category':
-    case 'quiqqer/products:types/search':
+    case 'quiqqer/productsearch:types/search':
         $productPage = true;
         break;
 };
