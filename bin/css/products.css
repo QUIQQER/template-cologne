@@ -1010,6 +1010,7 @@
 
 .product-data-fields .product-data-fields-value {
     padding-left: 20px;
+    flex-grow: 1;
 }
 
 /* button add to basket */
