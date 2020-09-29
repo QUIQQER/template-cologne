@@ -31,6 +31,11 @@ textarea:focus {
     border-color: #a9a8a5;
 }
 
+/* iOs input search fix */
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
 .quiqqer-simple-contact label {
     margin: 10px 0;
 }
