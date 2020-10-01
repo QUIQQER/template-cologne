@@ -1749,6 +1749,7 @@ table tr:last-child th {
     margin-right: 5px;
     visibility: visible;
     width: 8px;
+    vertical-align: middle;
 }
 
 .shipping-info__timeperiod:before {
