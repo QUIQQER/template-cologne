@@ -23,7 +23,7 @@
     {/foreach}
 {/if}
 
-{if $this->getAttribute('categoryPos') == 'top' && count($children)}
+{if $showCategories && $this->getAttribute('categoryPos') == 'top' && count($children)}
 <div class="quiqqer-products-productList-categories quiqqer-products-productList-categories__top grid-container grid-parent">
     {$this->renderCategories($children, $categoryFile)}
 </div>
@@ -133,11 +133,11 @@
 
 </section>
 
-{if $this->getAttribute('categoryPos') == 'bottom' && count($children)}
+{if $showCategories && $this->getAttribute('categoryPos') == 'bottom' && count($children)}
 <div class="quiqqer-products-productList-categories quiqqer-products-productList-categories__bottom grid-container grid-parent">
 
     <header class="text-muted quiqqer-products-productList-categories-header">
-        Kategorien
+        {locale group="quiqqer/template-cologne" var="ERP.Products.Controls.Category.ProductList.categoryLabel"}
     </header>
 
     {$this->renderCategories($children, $categoryFile)}
