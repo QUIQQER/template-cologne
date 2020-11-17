@@ -334,6 +334,10 @@ a.toTop:before {
     transform: scale(1.1);
 }
 
+.header-fixed .slideout-panel {
+    padding-top: 40px;
+}
+
 /** grid
  ===================================== */
 
@@ -512,7 +516,7 @@ a.toTop:before {
 }
 
 .header-fixed .topbar {
-    /*margin-bottom: 80px;*/
+    visibility: hidden; /* jumping fix */
 }
 
 .topbar-left,
@@ -746,7 +750,6 @@ a.toTop:before {
     left: 0;
     position: relative;
     top: 0;
-    transition: 0.25s height;
     width: 100%;
     z-index: 99;
 }
@@ -755,6 +758,7 @@ a.toTop:before {
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
     height: 60px;
     position: fixed;
+    transition: 0.25s height;
     z-index: 100; /* Because of the search dropdown */
 }
 

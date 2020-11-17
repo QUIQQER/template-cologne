@@ -738,6 +738,11 @@
             <en><![CDATA[Equipment]]></en>
         </locale>
 
+        <locale name="ERP.Products.Controls.Category.ProductList.categoryLabel">
+            <de><![CDATA[Kategorien]]></de>
+            <en><![CDATA[Categories]]></en>
+        </locale>
+
     </groups>
 
     <groups name="quiqqer/template-cologne" datatype="js">
