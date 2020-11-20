@@ -44,8 +44,11 @@ class EventHandler
 
     /**
      * @param \Quiqqer\Engine\Collector $Collector
+     * @param QUI\ERP\Products\Product\ViewFrontend $Product
+     *
+     * @throws QUI\Exception
      */
-    public static function onQuiqqerProductsProductButtonsEnd(\Quiqqer\Engine\Collector $Collector)
+    public static function onQuiqqerProductsProductButtonsEnd(\Quiqqer\Engine\Collector $Collector, \QUI\ERP\Products\Product\ViewFrontend $Product)
     {
         // setting
         $Project = QUI::getRewrite()->getProject();
@@ -54,12 +57,18 @@ class EventHandler
             return;
         }
 
-        $text = QUI::getLocale()->get('quiqqer/template-cologne', 'control.product.buy.know.button');
+        $text     = QUI::getLocale()->get('quiqqer/template-cologne', 'control.product.buy.know.button');
+        $disabled = 0;
+
+        if (!$Product->getMaximumQuantity()) {
+            $disabled = 1;
+        }
 
         $Collector->append(
-            '<div class="product-data-actionButtons-buyNow">
+            '<div class="product-data-actionButtons-buyNow" data-qui-options-disabled="'.$disabled.'">
                 <div class="product-data-actionButtons-buyNow-placeholder"></div>
-                <button disabled data-qui="package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton">
+                <button disabled data-qui="package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton"
+                        data-qui-options-disabled="'.$disabled.'">
                     <span class="add-to-basket-text">'.$text.'</span>
                 </button>
             </div>'
