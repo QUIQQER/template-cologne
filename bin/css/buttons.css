@@ -83,6 +83,7 @@ button:active,
     background: #2976cd;
     color: #fff;
     outline: none;
+    cursor: not-allowed;
 }
 
 /* outline */

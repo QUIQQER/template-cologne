@@ -1050,6 +1050,10 @@
     width: 45%;
 }
 
+.product-data-actionButtons-buyNow button[disabled]:hover .add-to-basket-text {
+    cursor: not-allowed;
+}
+
 .product-data .quiqqer-order-button-add {
     align-items: flex-end;
     background: #f8f8f8;
