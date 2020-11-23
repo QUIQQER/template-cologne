@@ -610,18 +610,36 @@ button.btn-outline:active,
     color: #fff;
 }
 
-/**********************************/
-/* button disabled standard design*/
-/**********************************/
+/***********************************/
+/* button disabled standard design */
+/***********************************/
 input[type="submit"]:disabled,
 input[type="button"]:disabled,
 input[type="reset"]:disabled,
 button.qui-button:disabled,
 button:disabled,
+.btn[disabled],
+.btn:disabled,
 a.qui-button.btn-disabled,
 a.btn.btn-disabled,
 .btn-disabled {
     opacity: 0.6;
+}
+
+[disabled]:hover,
+:disabled:hover,
+[disabled]:active,
+:disabled:active,
+[disabled]:hover > *,
+:disabled:hover > * {
+    cursor: not-allowed;
+}
+
+[disabled]:hover,
+:disabled:hover,
+[disabled]:active,
+:disabled:active {
+    opacity: 0.3;
 }
 
 input[type="submit"].btn-outline:disabled:hover,
@@ -635,10 +653,9 @@ button.qui-button.btn-outline:disabled:active,
 button.btn-outline:disabled:hover,
 button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:hover,
-.btn-outline.btn-disabled:active {
+.btn-outline.btn-disabled:active
+{
     background: transparent;
-    opacity: 0.3;
-    cursor: not-allowed;
 }
 
 /****************/
