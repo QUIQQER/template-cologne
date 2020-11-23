@@ -27,9 +27,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
         initialize: function (options) {
             this.parent(options);
 
-            this.$Input = null;
-            this.$Label = null;
-
+            this.$Input    = null;
+            this.$Label    = null;
             this.$disabled = false;
 
             this.addEvents({
@@ -41,10 +40,10 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
          * event: on import
          */
         $onImport: function () {
-            this.$Label = this.getElm().getElement('.add-to-basket-text');
+            this.$Label    = this.getElm().getElement('.add-to-basket-text');
+            this.$disabled = this.getAttribute('disabled');
 
-            console.log(this.getAttribute('disabled'))
-            if (this.getAttribute('disabled')) {
+            if (this.$disabled) {
                 return;
             }
 
