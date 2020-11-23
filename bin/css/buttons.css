@@ -83,7 +83,6 @@ button:active,
     background: #2976cd;
     color: #fff;
     outline: none;
-    cursor: not-allowed;
 }
 
 /* outline */
@@ -621,8 +620,7 @@ button.qui-button:disabled,
 button:disabled,
 a.qui-button.btn-disabled,
 a.btn.btn-disabled,
-.bt-disabled {
-    cursor: not-allowed;
+.btn-disabled {
     opacity: 0.6;
 }
 
@@ -640,6 +638,7 @@ button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:active {
     background: transparent;
     opacity: 0.3;
+    cursor: not-allowed;
 }
 
 /****************/
