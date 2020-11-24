@@ -20,12 +20,15 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
             '$addProductToBasket'
         ],
 
+        options: {
+            disabled: false
+        },
+
         initialize: function (options) {
             this.parent(options);
 
-            this.$Input = null;
-            this.$Label = null;
-
+            this.$Input    = null;
+            this.$Label    = null;
             this.$disabled = false;
 
             this.addEvents({
@@ -37,10 +40,15 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
          * event: on import
          */
         $onImport: function () {
+            this.$Label    = this.getElm().getElement('.add-to-basket-text');
+            this.$disabled = this.getAttribute('disabled');
+
+            if (this.$disabled) {
+                return;
+            }
+
             this.getElm().addEvent('click', this.$addProductToBasket);
             this.getElm().set('disabled', false);
-
-            this.$Label = this.getElm().getElement('.add-to-basket-text');
         },
 
         /**
