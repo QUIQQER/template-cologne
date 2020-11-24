@@ -635,13 +635,6 @@ a.btn.btn-disabled,
     cursor: not-allowed;
 }
 
-[disabled]:hover,
-:disabled:hover,
-[disabled]:active,
-:disabled:active {
-    opacity: 0.3;
-}
-
 input[type="submit"].btn-outline:disabled:hover,
 input[type="submit"].btn-outline:disabled:active,
 input[type="button"].btn-outline:disabled:hover,
@@ -653,9 +646,8 @@ button.qui-button.btn-outline:disabled:active,
 button.btn-outline:disabled:hover,
 button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:hover,
-.btn-outline.btn-disabled:active
-{
-    background: transparent;
+.btn-outline.btn-disabled:active {
+    opacity: 0.3;
 }
 
 /****************/
