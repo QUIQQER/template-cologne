@@ -607,7 +607,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
 .quiqqer-order-customerData-edit [name="businessType"] {
     line-height: 40px;
-    padding: 8px;
+    padding: 0 8px;
     width: 60% !important;
 }
 
