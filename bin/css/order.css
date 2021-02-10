@@ -688,9 +688,10 @@ td.articles-article-information {
     text-align: left;
 }
 
-.articles-article-header {
+.articles-article .articles-article-header {
     font-size: 12px;
     line-height: 30px;
+    color: inherit;
 }
 
 .articles-article-header th {
@@ -709,19 +710,41 @@ th.articles-article-header-information {
 .articles-article-header .articles-article-header-pos {
     border-left: 1px solid #ddd;
     text-align: left;
+    width: 60px;
 }
 
 .articles-article-header .articles-article-header-quantity {
     text-align: right;
 }
 
+.articles-article .articles-article-header-vat {
+    width: 100px;
+}
+
+.articles-article .articles-article-header-quantity {
+    width: 130px;
+}
+
+.articles-article .articles-article-header-unitprice {
+    width: 130px;
+}
+
 .articles-article-header .articles-article-header-price {
     border-right: 1px solid #ddd;
+    width: 130px;
 }
 
 .articles-article .articles-article-pos {
     text-align: left;
-    width: 60px;
+}
+
+.articles-article .articles-article-header-articleNo {
+    text-align: left;
+    width: 150px;
+}
+
+.articles-article .articles-article-articleNo {
+    text-align: left;
 }
 
 .articles-article .articles-article-quantity {
