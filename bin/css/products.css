@@ -1225,3 +1225,20 @@ li.product-data-more-tabs-tab.active {
 .product-equipment-products .quiqqer-bricks-children-slider-child {
     width: calc(100% / 3 + 3px);
 }
+
+@media screen and (max-width: 1000px) {
+    .quiqqer-products-control-visitedProducts .quiqqer-bricks-children-slider-child,
+    .product-similar-products .quiqqer-bricks-children-slider-child,
+    .product-equipment-products .quiqqer-bricks-children-slider-child {
+        width: calc(100% / 2 + 2px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .quiqqer-products-control-visitedProducts .quiqqer-bricks-children-slider-child,
+    .product-similar-products .quiqqer-bricks-children-slider-child,
+    .product-equipment-products .quiqqer-bricks-children-slider-child {
+        width: 50%;
+        max-width: 270px;
+    }
+}
