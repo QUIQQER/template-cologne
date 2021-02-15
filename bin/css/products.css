@@ -904,11 +904,15 @@
 }
 
 .quiqqer-products-product .product-close-button {
-    font-size: 1.8em;
-    line-height: 30px;
-    margin-top: 2rem;
+    font-size: 24px;
+    line-height: 24px;
     text-align: right;
     width: 30px;
+}
+
+.quiqqer-products-product .product-close-button .fa {
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .product-data .product-data-price .qui-products-price-display {
@@ -1204,4 +1208,13 @@ li.product-data-more-tabs-tab.active {
 
 .product-productsList header h1 {
     font-size: 2rem;
+}
+
+/********************/
+/* Visited Products */
+/********************/
+.quiqqer-products-control-visitedProducts .quiqqer-bricks-children-slider-child,
+.product-similar-products .quiqqer-bricks-children-slider-child,
+.product-equipment-products .quiqqer-bricks-children-slider-child {
+    width: calc(100% / 3 + 3px);
 }
