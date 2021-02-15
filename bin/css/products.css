@@ -904,15 +904,11 @@
 }
 
 .quiqqer-products-product .product-close-button {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 2rem;
+    line-height: 1;
     text-align: right;
     width: 30px;
-}
-
-.quiqqer-products-product .product-close-button .fa {
-    font-size: inherit;
-    line-height: inherit;
+    margin-top: 2rem;
 }
 
 .product-data .product-data-price .qui-products-price-display {
@@ -987,6 +983,10 @@
     min-width: 140px;
 }
 
+.quiqqer-product-field-value input {
+    margin-top: 1rem;
+}
+
 .product-data-fieldlist .quiqqer-product-field-title,
 .product-data-fieldlist .quiqqer-product-field-value {
     width: 100% !important;
@@ -1015,6 +1015,13 @@
 .product-data-fields .product-data-fields-value {
     padding-left: 20px;
     flex-grow: 1;
+}
+
+.product-data-fieldlist .product-data-fieldlist-reset {
+    width: 100%;
+    margin-left: 20px;
+    padding: 10px 0;
+    text-align: center;
 }
 
 /* button add to basket */
