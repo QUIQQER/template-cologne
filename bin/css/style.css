@@ -1823,3 +1823,10 @@ table tr:last-child th {
         margin-bottom: 1rem;
     }
 }
+
+/***********/
+/* Contact */
+/***********/
+.quiqqer-simple-contact textarea {
+    min-height: 160px;
+}
