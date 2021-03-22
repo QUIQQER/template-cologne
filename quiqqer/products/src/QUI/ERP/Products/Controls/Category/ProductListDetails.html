@@ -1,7 +1,7 @@
 <article class="cologne-productList-product-details" data-pid="{$Product->getId()}">
     {$JsonLd->getJsonLd($Product)}
     <div class="cologne-productList-product-details-image">
-        <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:" html"}">
+        <a href="{$Product->getUrl()}" title="{$Product->getTitle()|escape:'html'}">
         {image image=$Product->getImage() title=$Product->getTitle() width=200}
         </a>
     </div>
