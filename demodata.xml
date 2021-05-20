@@ -11,7 +11,7 @@
 
             <!-- template settings: general -->
             <setting name="templateCologne.settings.homeLink" value="1"/>
-            <setting name="templateCologne.settings.homeLinkText" value="<![CDATA[{\"de\":\"HOME\"}]]>"/>
+            <setting name="templateCologne.settings.homeLinkText" value="<![CDATA[{\"de\":\"Home\"}]]>"/>
 
             <!-- template settings: ecommerce -->
             <setting name="templateCologne.settings.showRetailPrice" value="1"/>
@@ -74,57 +74,34 @@
             <!-- home -->
             <site identifier="home">
                 <attributes>
-                    <attribute name="name">Start</attribute>
+                    <attribute name="name">Home</attribute>
                     <attribute name="title">Acme Company Ltd.</attribute>
                     <attribute name="short">Something big is happening here. Discover a new, great project.</attribute>
                     <attribute name="type">standard</attribute>
                     <attribute name="layout">layout/startPage</attribute>
-                    <attribute name="image_emotion">${media:pageBackground}</attribute>
+<!--                    <attribute name="image_emotion">${media:pageBackground}</attribute>-->
                     <attribute name="content">
                         <![CDATA[]]>
                     </attribute>
                 </attributes>
                 <children>
 
-                    <!-- home/About us -->
-                    <site identifier="aboutUs">
+                    <!-- home/products -->
+                    <site identifier="products">
                         <attributes>
-                            <attribute name="name">Ueber-uns</attribute>
-                            <attribute name="title">Über uns</attribute>
-                            <attribute name="short">Curabitur nisi. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Fusce egestas elit eget lorem. Sed mollis, eros et ultrices tempus.</attribute>
-                            <attribute name="type">standard</attribute>
+                            <attribute name="name">Produkte</attribute>
+                            <attribute name="title">Produkte</attribute>
+                            <attribute name="type">quiqqer/products:types/category</attribute>
                             <attribute name="layout">layout/noSidebar</attribute>
-                            <attribute name="content"><![CDATA[
-                                <h1>Suspendisse non nisl sit amet</h1>
-                                <p>ID der Seite HOME ${site:home}</p>
-                                <p>ID der Seite Über Uns ${site:aboutUs}</p>
-
-                                <p>Aenean massa. Fusce convallis metus id felis luctus adipiscing. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur suscipit suscipit tellus. Vivamus elementum semper nisi.</p>
-                                <ul>
-                                    <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
-                                    <li>Fusce vel dui.</li>
-                                    <li>In hac habitasse platea dictumst.</li>
-                                    <li>Nullam vel sem.</li>
-                                    <li>Praesent ut ligula non mi varius sagittis.</li>
-                                </ul>
-                                <p>Phasellus dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus accumsan cursus velit. Morbi mollis tellus ac sapien.</p>
-
-                                <p>&nbsp;</p>
-
-                                <p style="text-align: center;"><span style="font-size:72px;"><span class="fa fa-users">&nbsp;</span></span></p>
-
-                                <p>&nbsp;</p>
-
-                                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-
-                                <h2>In hac habitasse platea dictumst</h2>
-
-                                <p>Sed aliquam ultrices mauris. Fusce ac felis sit amet ligula pharetra condimentum. Ut id nisl quis enim dignissim sagittis. Sed libero. Donec vitae orci sed dolor rutrum auctor.</p>
-
-                                <p>Proin magna. Duis leo. Proin magna. Praesent adipiscing. Duis lobortis massa imperdiet quam.</p>
-
-                                <p>Nunc nec neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Praesent blandit laoreet nibh. In ut quam vitae odio lacinia tincidunt.</p>
-                            ]]></attribute>
+                            <attribute name="content">
+                                <![CDATA[
+                                <h2>Lassen Sie sich inspierieren</h2>
+                                <p>Etiam sit amet orci eget eros faucibus tincidunt. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.</p>
+                                ]]>
+                            </attribute>
+                            <attribute name="extra">
+                                <![CDATA["quiqqer.megamenu.settings.type":"Standard","quiqqer.products.settings.categoryId":"0","quiqqer.products.settings.showFilterLeft":1,"quiqqer.products.settings.showFreeTextSearch":1,"quiqqer.products.settings.productLoadNumber":"12","quiqqer.products.settings.showCategories":"1","quiqqer.products.settings.categoryDisplay":"gallery"]]>
+                            </attribute>
                         </attributes>
                     </site>
                     
@@ -210,7 +187,7 @@
                     <!-- home/General-terms-and-conditions -->
                     <site identifier="terms">
                         <attributes>
-                            <attribute name="name">General-terms-and-conditions</attribute>
+                            <attribute name="name">ABG</attribute>
                             <attribute name="title">General terms and conditions</attribute>
                             <attribute name="short">Praesent congue erat at massa. Vestibulum fringilla pede sit amet augue. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent nec nisl a purus blandit viverra.</attribute>
                             <attribute name="type">quiqqer/sitetypes:types/generalTermsAndConditions</attribute>
@@ -239,9 +216,6 @@
                         <brick identifier="brick.startpageHeader"></brick>
                     </area>
                     <area type="startpageContent">
-                        <brick identifier="brick.advantages"></brick>
-                        <brick identifier="brick.contact"></brick>
-                        <brick identifier="brick.googleMap"></brick>
                     </area>
                     <area type="footer">
                         <brick identifier="brick.footer.logoAndSocial">
@@ -279,88 +253,22 @@
 
         <!-- MEDIA -->
         <media>
+            <!-- general -->
             <file path="acme-logo.svg" identifier="logo">
                 <name>acme-logo</name>
                 <description><![CDATA[{"de":"<p>ACME project logo.<\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"ACME - QUIQQER demo"}]]></title>
+                <title><![CDATA[{"de":"ACME - QUIQQER eCommerce Demo"}]]></title>
                 <priority>0</priority>
-                <alt><![CDATA[{"de":"ACME - QUIQQER demo"}]]></alt>
-            </file>
-            <file path="background/page-background.svg" identifier="pageBackground">
-                <name>page-background</name>
-                <description><![CDATA[{"de":"<p>A beautiful abstract wallpaper for a web page.<\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Page wallpaper"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"A beautiful abstract wallpaper for a web page"}]]></alt>
+                <alt><![CDATA[{"de":"ACME - QUIQQER eCommerce Demo"}]]></alt>
             </file>
 
-            <!-- Gallery -->
-            <file path="gallery/" identifier="galleryFolder">
-                <name>Galerie</name>
-            </file>
-            <file path="gallery/pexels-cowomen-2041627.jpg" identifier="gallery1">
-                <name>Foto von CoWomen von Pexels</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@cowomen-1058097?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">CoWomen<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/arbeiten-arbeitsplatz-blondes-haar-buro-2041627\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a>&nbsp;-&nbsp;<\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von CoWomen von Pexels"}]]></title>
+            <!-- categories -->
+            <file path="category/category-main.svg" identifier="categoryMain">
+                <name>category-main</name>
+                <description><![CDATA[{"de":"<p>A beautiful abstract wallpaper for a web page.<\/p>\n"}]]></description>
+                <title><![CDATA[{"de":"Main product category"}]]></title>
                 <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von CoWomen von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-pixabay-273238.jpg" identifier="gallery2">
-                <name>Foto von Pixabay von Pexels</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@pixabay?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pixabay<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/arbeit-arbeitsplatz-bildschirm-buro-273238\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von Pixabay von Pexels"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Pixabay von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-andrea-piacquadio-927022.jpg" identifier="gallery3">
-                <name>Foto von Andrea Piacquadio von Pexels</name>
-                <description><![CDATA[{"de":"{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@olly?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Andrea Piacquadio<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/arbeit-arbeitsplatz-bart-buch-927022\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von Andrea Piacquadio von Pexels"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Andrea Piacquadio von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-proxyclick-visitor-management-system-2451566.jpg" identifier="gallery4">
-                <name>Foto von Proxyclick Visitor Management System von Pexels</name>
-                <description><![CDATA[{"de":"{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@proxyclick?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Proxyclick Visitor Management System<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/beleuchtung-boden-buro-decke-2451566\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von Proxyclick Visitor Management System von Pexels"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Proxyclick Visitor Management System von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-emma-pollard-1534924.jpg" identifier="gallery5">
-                <name>Foto von Emma Pollard von Pexels</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@emma-pollard-676280?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Emma Pollard<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/bilderrahmen-blatter-buro-dekorationen-1534924\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <description><![CDATA[]]></description>
-                <title><![CDATA[{"de":"Foto von Emma Pollard von Pexels"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Emma Pollard von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-burst-374006.jpg" identifier="gallery6">
-                <name>Foto von Burst von Pexels</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@burst?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Burst<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/arbeit-arbeiten-arbeitsplatz-buro-374006\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von Burst von Pexels"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Burst von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-burst-373883.jpg" identifier="gallery7">
-                <name>Foto von Burst von Pexels2</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@burst?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Burst<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/bildschirm-computer-drinnen-innenarchitektur-373883\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von Burst von Pexels2"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Burst von Pexels2"}]]></alt>
-            </file>
-            <file path="gallery/pexels-olia-danilevich-4974914.jpg" identifier="gallery8">
-                <name>Foto von olia danilevich von Pexels</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@olia-danilevich?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">olia danilevich<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/mann-laptop-internet-macbook-4974914\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von olia danilevich von Pexels"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von olia danilevich von Pexels"}]]></alt>
-            </file>
-            <file path="gallery/pexels-pixabay-461064.jpg" identifier="gallery9">
-                <name>Foto von Pixabay von Pexels2</name>
-                <description><![CDATA[{"de":"<p>Foto von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/@pixabay?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pixabay<\/a><\/strong>&nbsp;von&nbsp;<strong><a href=\"https:\/\/www.pexels.com\/de-de\/foto\/apfel-apple-arbeit-arbeiten-461064\/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels\">Pexels<\/a><\/strong><\/p>\n"}]]></description>
-                <title><![CDATA[{"de":"Foto von Pixabay von Pexels2"}]]></title>
-                <priority>0</priority>
-                <alt><![CDATA[{"de":"Foto von Pixabay von Pexels2"}]]></alt>
+                <alt><![CDATA[{"de":"Main product category"}]]></alt>
             </file>
 
         </media>
