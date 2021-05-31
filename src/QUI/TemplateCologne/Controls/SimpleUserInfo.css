@@ -54,7 +54,10 @@
 
 .sui-data-name {
     display: block;
-    font-size: 1.3em;
+    font-size: 1.25em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sui-data-joined {
@@ -84,7 +87,6 @@
         margin-bottom: 1em;
         padding: 0;
         width: 100%;
-
     }
 
     .quiqqer-frontendUsers-controls-profile-categories > div {
