@@ -385,6 +385,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
 .quiqqer-order-step-shipping-list-entry-price {
     display: flex;
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
