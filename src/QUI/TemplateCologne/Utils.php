@@ -403,7 +403,8 @@ class Utils
         /** Predefined footer: Payments Control */
         $paymentsData = false;
 
-        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')) {
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
+            \class_exists('\QUI\ERP\Accounting\Payments\Payments')) {
             $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
             ]);

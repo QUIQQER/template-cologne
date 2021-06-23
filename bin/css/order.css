@@ -22,6 +22,10 @@
     cursor: pointer;
 }
 
+.quiqqer-order-ordering-timeline li {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 767px) {
     .quiqqer-order-ordering .quiqqer-order-ordering-timeline li {
         width: 140px !important;
@@ -381,6 +385,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 
 .quiqqer-order-step-shipping-list-entry-price {
     display: flex;
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,525 @@
+<data>
+    <project>
+
+        <!-- SETTINGS -->
+        <settings>
+
+            <!-- general settings -->
+            <setting name="logo" value="${media:logo}"/>
+            <setting name="template" value="quiqqer/template-cologne"/>
+            <setting name="layout" value="layout/noSidebar"/>
+
+            <!-- template settings: general -->
+            <setting name="templateCologne.settings.homeLink" value="1"/>
+            <setting name="templateCologne.settings.homeLinkText" value="<![CDATA[{\"de\":\"Home\"}]]>"/>
+
+            <!-- template settings: ecommerce -->
+            <setting name="templateCologne.settings.showRetailPrice" value="1"/>
+            <setting name="templateCologne.settings.basketStyle" value="compact"/>
+            <setting name="templateCologne.settings.basketOpen" value="1"/>
+            <setting name="templateCologne.settings.hideEmptyFields" value="1"/>
+            <setting name="templateCologne.settings.showBuyNowButton" value="0"/>
+            <setting name="templateCologne.settings.showStock" value="1"/>
+            <setting name="templateCologne.settings.showStock" value="1"/>
+            <setting name="templateCologne.settings.categoryShowStock" value="0"/>
+            <setting name="templateCologne.settings.showVisitedProducts" value="1"/>
+            <setting name="templateCologne.settings.showEquipment" value="hide"/>
+            <setting name="templateCologne.settings.showSimilarProducts" value="afterDesc"/>
+
+            <!-- template settings: header -->
+            <setting name="templateCologne.settings.headerStartPage" value="hide"/>
+            <setting name="templateCologne.settings.headerNoSidebar" value="beforeContent"/>
+            <setting name="templateCologne.settings.headerNoSidebarThin" value="beforeContent"/>
+            <setting name="templateCologne.settings.headerLeftSidebar" value="beforeContent"/>
+            <setting name="templateCologne.settings.headerRightSidebar" value="beforeContent"/>
+            <setting name="templateCologne.settings.headerHeight" value="250"/>
+            <setting name="templateCologne.settings.headerImagePosition" value="center"/>
+
+            <!-- template settings: page title -->
+            <setting name="templateCologne.settings.pageTitleStartPage" value="breadcrumb"/>
+            <setting name="templateCologne.settings.pageTitleNoSidebar" value="breadcrumb"/>
+            <setting name="templateCologne.settings.pageTitleNoSidebarThin" value="breadcrumb"/>
+            <setting name="templateCologne.settings.pageTitleLeftSidebar" value="breadcrumb"/>
+            <setting name="templateCologne.settings.pageTitleRightSidebar" value="breadcrumb"/>
+
+            <setting name="templateCologne.settings.showCategoryMenu" value="1"/>
+            <setting name="templateCologne.settings.showCategoryShortFor" value="all"/>
+            <setting name="templateCologne.settings.showBasketButton" value=""/>
+
+            <!-- template settings: breadcrumb -->
+            <setting name="templateCologne.settings.showBreadcrumbStartPage" value=""/>
+            <setting name="templateCologne.settings.showBreadcrumbNoSidebar" value="1"/>
+            <setting name="templateCologne.settings.showBreadcrumbNoSidebarThin" value="1"/>
+            <setting name="templateCologne.settings.showBreadcrumbLeftSidebar" value="1"/>
+            <setting name="templateCologne.settings.showBreadcrumbRightSidebar" value="1"/>
+
+            <!-- template settings: predefined footer -->
+            <setting name="templateCologne.settings.predefinedFooter.shortText.title" value="<![CDATA[{\"de\":\"Über uns\"}]]>"/>
+            <setting name="templateCologne.settings.predefinedFooter.payments" value="0"/>
+            <setting name="templateCologne.settings.predefinedFooter.payments.layout" value="grid"/>
+            <setting name="templateCologne.settings.predefinedFooter.urlList" value="1"/>
+            <setting name="templateCologne.settings.predefinedFooter.urlList.title" value="<![CDATA[{\"de\":\"Informationen\"}]]>"/>
+            <setting name="templateCologne.settings.predefinedFooter.urlList.sites" value=""/>
+            <setting name="templateCologne.settings.predefinedFooter.urlList.sites.order" value=""/>
+            <setting name="templateCologne.settings.predefinedFooter.urlList.sites.showStandardSites" value="1"/>
+            <setting name="templateCologne.settings.predefinedFooter.featuredProducts" value="1"/>
+            <setting name="templateCologne.settings.predefinedFooter.featuredProducts.title" value="<![CDATA[{\"de\":\"Neueste Produkte\"}]]>"/>
+            <setting name="templateCologne.settings.predefinedFooter.featuredProducts.category" value="0"/>
+            <setting name="templateCologne.settings.predefinedFooter.featuredProducts.order" value="c_date ASC"/>
+            <setting name="templateCologne.settings.predefinedFooter.shortText" value="1"/>
+        </settings>
+
+        <!-- SITES -->
+        <sites>
+            <!-- home -->
+            <site identifier="home">
+                <attributes>
+                    <attribute name="name">Home</attribute>
+                    <attribute name="title">Acme Company Ltd.</attribute>
+                    <attribute name="short">Something big is happening here. Discover a new, great project.</attribute>
+                    <attribute name="type">standard</attribute>
+                    <attribute name="layout">layout/startPage</attribute>
+<!--                    <attribute name="image_emotion">${media:pageBackground}</attribute>-->
+                    <attribute name="content">
+                        <![CDATA[]]>
+                    </attribute>
+                </attributes>
+                <children>
+
+                    <!-- home/products -->
+                    <site identifier="products">
+                        <attributes>
+                            <attribute name="name">Produkte</attribute>
+                            <attribute name="title">Produkte</attribute>
+                            <attribute name="type">quiqqer/products:types/category</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="content">
+                                <![CDATA[
+                                <h2>Lassen Sie sich inspierieren</h2>
+                                <p>Etiam sit amet orci eget eros faucibus tincidunt. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.</p>
+                                ]]>
+                            </attribute>
+                            <attribute name="extra">
+                                <![CDATA["quiqqer.megamenu.settings.type":"Standard","quiqqer.products.settings.categoryId":"0","quiqqer.products.settings.showFilterLeft":1,"quiqqer.products.settings.showFreeTextSearch":1,"quiqqer.products.settings.productLoadNumber":"12","quiqqer.products.settings.showCategories":"1","quiqqer.products.settings.categoryDisplay":"gallery"]]>
+                            </attribute>
+                        </attributes>
+                    </site>
+                    
+                    <!-- home/contact  -->
+                    <site identifier="contact">
+                        <attributes>
+                            <attribute name="name">Kontakt</attribute>
+                            <attribute name="title">Kontakt</attribute>
+                            <attribute name="short">Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Praesent nec nisl a purus blandit viverra. Duis arcu tortor.</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/contact</attribute>
+                            <attribute name="layout">layout/noSidebarSlim</attribute>
+                            <attribute name="content"><![CDATA[
+                                <p>Haben Sie Fragen, Anregungen oder m&ouml;chten Sie uns einfach eine nette Nachricht schicken? Kein Problem! Benutzen Sie den unten stehenden Kontaktformular oder setzen Sie sich mit uns in direkter Verbindungn. Nutzen Sie dazu unsere Telefonnumer oder E-Mail Adresse.</p>
+
+                                <p>&nbsp;</p>
+
+                                <p><strong>ACME Company GmbH</strong><br />
+                                Beispiel Str. 146<br />
+                                43210 Berlin</p>
+
+                                <p><span class="fa fa-phone">&nbsp;</span> <a href="tel:+492122263078">49 (0)212 - 226 30 78</a><br />
+                                <span class="fa fa-fax">&nbsp;</span> <a href="tel:+492122263079">49 (0)212 - 226 30 79</a><br />
+                                <span class="fa fa-envelope-o">&nbsp;</span> <a href="support@acme-domain.com">support@acme-domain.com</a></p>
+
+                                <p>&nbsp;</p>
+                            ]]></attribute>
+                        </attributes>
+                    </site>
+
+                    <!-- home/Legal-notice -->
+                    <site identifier="legal">
+                        <attributes>
+                            <attribute name="name">Legal-notice</attribute>
+                            <attribute name="title">Legal notice</attribute>
+                            <attribute name="short">Vivamus in erat ut urna cursus vestibulum. Donec vitae orci sed dolor rutrum auctor. Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus.</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/legalnotes</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="content"><![CDATA[
+                                <h1>Nulla sit amet ccurabitur a felis in nunc</h1>
+                                <p>Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Fusce vel dui. Aenean massa. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. In hac habitasse platea dictumst.</p>
+
+                                <p>Vivamus laoreet. In hac habitasse platea dictumst. Fusce pharetra convallis urna. Duis leo. Quisque id mi.</p>
+
+                                <h2>Etiam iaculis nunc ac metus</h2>
+
+                                <p>Sed fringilla mauris sit amet nibh. Aenean commodo ligula eget dolor. Ut id nisl quis enim dignissim sagittis. Fusce fermentum. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+
+                                <p>Fusce fermentum odio nec arcu. Aliquam erat volutpat. Cras varius. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Proin magna.</p>
+
+                                <p>Curabitur ullamcorper ultricies nisi. Duis lobortis massa imperdiet quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Vivamus euismod mauris.</p>
+                            ]]></attribute>
+                        </attributes>
+                    </site>
+
+                    <!-- home/Privacy -->
+                    <site identifier="privacy">
+                        <attributes>
+                            <attribute name="name">Privacy-policy</attribute>
+                            <attribute name="title">Privacy policy</attribute>
+                            <attribute name="short">Curabitur a felis in nunc fringilla tristique.</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/privacypolicy</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="content"><![CDATA[
+                                <h2>Fusce fermentum odio nec arcu</h2>
+                                <p>Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Pellentesque commodo eros a enim. Vestibulum dapibus nunc ac augue. Praesent nonummy mi in odio. Nam adipiscing.</p>
+                                <p>Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Nullam tincidunt adipiscing enim. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. In ut quam vitae odio lacinia tincidunt. Ut leo.</p>
+                                <p>Aliquam eu nunc. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Fusce fermentum odio nec arcu. Praesent adipiscing. Ut id nisl quis enim dignissim sagittis.</p>
+                                <p>Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Etiam feugiat lorem non metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce vulputate eleifend sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <p>Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Praesent egestas tristique nibh. Curabitur suscipit suscipit tellus. Fusce egestas elit eget lorem.</p>
+
+                                <h2>Sed fringilla mauris sit amet nibh&nbsp;vestibulum aliquam leo.</h2>
+                                <p>Fusce fermentum. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Pellentesque auctor neque nec urna. Cras varius. Cras non dolor.</p>
+                                <p>Nullam sagittis. Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Quisque rutrum.</p>
+                                <p>Duis leo. Cras dapibus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Aenean ut eros et nisl sagittis vestibulum.</p>
+
+                                <h2>Aenean commodo ligula eget dolor</h2>
+                                <p>Fusce vel dui. Curabitur a felis in nunc fringilla tristique. Praesent vestibulum dapibus nibh. Phasellus magna. Maecenas nec odio et ante tincidunt tempus.</p>
+                            ]]></attribute>
+                        </attributes>
+
+                    </site>
+
+                    <!-- home/General-terms-and-conditions -->
+                    <site identifier="terms">
+                        <attributes>
+                            <attribute name="name">ABG</attribute>
+                            <attribute name="title">General terms and conditions</attribute>
+                            <attribute name="short">Praesent congue erat at massa. Vestibulum fringilla pede sit amet augue. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent nec nisl a purus blandit viverra.</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/generalTermsAndConditions</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="active">0</attribute>
+                            <attribute name="content"><![CDATA[
+                                <h2>Curabitur at lacus ac velit</h2>
+                                <p>Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Fusce commodo aliquam arcu. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Proin pretium, leo ac pellentesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo. Sed aliquam ultrices mauris.</p>
+
+                                <h2>Sed fringilla mauris sit amet nibh&nbsp;vestibulum aliquam leo.</h2>
+                                <p>Fusce fermentum. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Pellentesque auctor neque nec urna. Cras varius. Cras non dolor.</p>
+                                <p>Nullam sagittis. Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Quisque rutrum.</p>
+
+                                <h2>Fusce fermentum odio nec arcu</h2>
+                                <p>Duis leo. Cras dapibus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Aenean ut eros et nisl sagittis vestibulum.</p>
+
+                                <h2>Aenean commodo ligula eget dolor</h2>
+                                <p>Fusce vel dui. Curabitur a felis in nunc fringilla tristique. Praesent vestibulum dapibus nibh. Phasellus magna. Maecenas nec odio et ante tincidunt tempus.</p>
+
+                            ]]></attribute>
+                        </attributes>
+                    </site>
+                </children>
+                <bricks>
+                    <area type="startpageHeader">
+                        <brick identifier="brick.startpageHeader"></brick>
+                    </area>
+                    <area type="startpageContent">
+                    </area>
+                    <area type="footer">
+                        <brick identifier="brick.footer.logoAndSocial">
+                            <attributes>
+                                <attribute name="settings">
+                                    <![CDATA[{"inheritance":true}]]>
+                                </attribute>
+                            </attributes>
+                        </brick>
+                        <brick identifier="brick.footer.aboutUs">
+                            <attributes>
+                                <attribute name="settings">
+                                    <![CDATA[{"inheritance":true}]]>
+                                </attribute>
+                            </attributes>
+                        </brick>
+                        <brick identifier="brick.footer.urlList">
+                            <attributes>
+                                <attribute name="settings">
+                                    <![CDATA[{"inheritance":true}]]>
+                                </attribute>
+                            </attributes>
+                        </brick>
+                        <brick identifier="brick.footer.contact">
+                            <attributes>
+                                <attribute name="settings">
+                                    <![CDATA[{"inheritance":true}]]>
+                                </attribute>
+                            </attributes>
+                        </brick>
+                    </area>
+                </bricks>
+            </site>
+        </sites>
+
+        <!-- MEDIA -->
+        <media>
+            <!-- general -->
+            <file path="acme-logo.svg" identifier="logo">
+                <name>acme-logo</name>
+                <description><![CDATA[{"de":"<p>ACME project logo.<\/p>\n"}]]></description>
+                <title><![CDATA[{"de":"ACME - QUIQQER eCommerce Demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"ACME - QUIQQER eCommerce Demo"}]]></alt>
+            </file>
+
+            <!-- categories -->
+            <file path="category/category-main.svg" identifier="categoryMain">
+                <name>category-main</name>
+                <description><![CDATA[{"de":"<p>A beautiful abstract wallpaper for a web page.<\/p>\n"}]]></description>
+                <title><![CDATA[{"de":"Main product category"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Main product category"}]]></alt>
+            </file>
+
+        </media>
+    </project>
+    <bricks>
+        <brick identifier="brick.dummyContent">
+            <attributes>
+                <attribute name="title">Dummy content3</attribute>
+                <attribute name="type">content</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"width":"","height":"","classes":[],"brickFullWidth":false}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,startpageHeader,startpageContent,headerSuffix,footerPrefix,footer,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <h1>Inhalt-Baustein</h1>
+
+                    <p>Das ist nur ein Test. Mehr nicht.</p>
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Your advantages -->
+        <brick identifier="brick.advantages">
+            <attributes>
+                <attribute name="title">Startseite  - Unsere Vorteile</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\BoxContentAdvanced</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","template":"standard","centerText":true,"entriesPerLine":"3","entries":"[{\"entryTitle\":\"Einfach zum Managen\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-area-chart\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Etiam imperdiet imperdiet orci. Sed fringilla mauris sit amet nibh. Vestibulum fringilla pede sit amet augue. Proin faucibus arcu quis ante. Maecenas malesuada.<\/p>\\n\"},{\"entryTitle\":\"Sparen Sie Zeit\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-clock-o\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Cras id dui. Suspendisse feugiat. Phasellus accumsan cursus velit. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Pellentesque commodo eros a enim.<\/p>\\n\"},{\"entryTitle\":\"Entdecken Sie neues\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-map-o\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Maecenas malesuada. Phasellus dolor. Aenean vulputate eleifend tellus. Curabitur at lacus ac velit ornare lobortis. Curabitur nisi.<\/p>\\n\"}]","brickFullWidth":false,"navText":"Ihre Vorteile","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,startpageContent,]]>
+                </attribute>
+                <attribute name="classes">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Contact -->
+        <brick identifier="brick.contact">
+            <attributes>
+                <attribute name="title">Startseite - Kontaktformular</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\SimpleContact</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["max-w-full","mx-auto"],"width":"700","height":"","mailTo":"","showPrivacyPolicyCheckbox":true,"useCaptcha":false,"brickFullWidth":false,"navText":"Kontakt","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,startpageContent,]]>
+                </attribute>
+                <attribute name="classes">
+                    <![CDATA[["max-w-full","mx-auto"]]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <h2 style="text-align: center;">Kontaktieren Sie uns</h2>
+
+                    <p style="text-align: center;">Etiam ultricies nisi vel augue. Nulla porta dolor. Duis lobortis massa imperdiet quam. Cras varius.&nbsp;Aliquam lobortis. Morbi vestibulum volutpat enim. Nunc nonummy metus.</p>
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Google map -->
+        <brick identifier="brick.googleMap">
+            <attributes>
+                <attribute name="title">Startseite - Google Map</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\SimpleGoogleMaps</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","preventLoadMap":true,"template":"standard","place":"","street":"","zip":"","city":"","zoom":"15","api":"","brickFullWidth":false,"navText":"Anfahrt","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,startpageContent,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <brick identifier="brick.startpageHeader">
+            <attributes>
+                <attribute name="title">Startpage header</attribute>
+                <attribute name="type">\QUI\PresentationBricks\Controls\WallpaperText</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"70vh","image-background":"${media:pageBackground}","image-background-fixed":false,"bg-color":"#f5f5f5","content-position":"flex-start","brickFullWidth":true,"navText":"Home","navTarget":false}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,startpageHeader,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <h1>Fusce risus nisl, viverra et rempor et&nbsp;pret</h1>
+
+                    <p>Fusce fermentum. Sed fringilla mauris sit amet nibh. Nullam tincidunt adipiscing enim. Proin faucibus arcu quis ante. Vivamus elementum semper nisi.&nbsp;Nullam cursus lacinia erat. Aenean massa. Nunc nec neque. Cras non dolor.</p>
+
+                    <p><a class="btn btn-large" href="#">Kontakt <span class="fa fa-envelope-o">&nbsp;</span></a></p>
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Site listing -->
+        <brick identifier="brick.siteListing">
+            <attributes>
+                <attribute name="title">Seitenliste</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\Children\Listing</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","site":"p${site:home}","order":"c_date DESC","template":"childrenList","max":"","showImages":true,"showShort":true,"showCreator":false,"showDate":false,"showTime":false,"showSheets":false,"brickFullWidth":false,"navText":"","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,startpageContent,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Footer: logo & social -->
+        <brick identifier="brick.footer.logoAndSocial">
+            <attributes>
+                <attribute name="title">Footer - logo and social</attribute>
+                <attribute name="type">content</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"width":"","height":"","classes":[],"brickFullWidth":false,"navText":"","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,footer,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <p style="text-align: center; margin-bottom: 3rem;"><a href="/"><img src="${media:logo}" style="height: 50px; width: 150px;" /></a></p>
+                    <p style="text-align: center; margin-bottom: 4rem;"><a href="http://www.facebook.com"><span class="fa fa-facebook" style="font-size: 1.125rem; width: 3rem; opacity: 0.5;">&nbsp;</span> </a> <a href="http://www.twitter.com"> <span class="fa fa-twitter" style="font-size: 1.125rem; width: 3rem; opacity: 0.5;">&nbsp; </span></a> <a href="http://www.instagram.com"> <span class="fa fa-instagram" style="font-size: 1.125rem; width: 3rem; opacity: 0.5;">&nbsp;</span> </a></p>
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Footer: about us -->
+        <brick identifier="brick.footer.aboutUs">
+            <attributes>
+                <attribute name="title">Footer - Über uns</attribute>
+                <attribute name="type">content</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"width":"","height":"","classes":["grid-30","mobile-grid-100"],"brickFullWidth":false,"navText":"","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,footer,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <h2>ACME Company Ltd.</h2>
+
+                    <p>
+                        In consectetuer turpis ut velit. Ut tincidunt tincidunt erat. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl.
+                    </p>
+
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Footer: url list -->
+        <brick identifier="brick.footer.urlList">
+            <attributes>
+                <attribute name="title">Footer - Support (url list)</attribute>
+                <attribute name="type">content</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"width":"","height":"","classes":["grid-30","mobile-grid-100"],"brickFullWidth":false,"navText":"","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,footer,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <h2>Support</h2>
+
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa fa-caret-right">&nbsp;</span><a href="${siteurl:aboutUs}">Über uns</a></li>
+                        <li><span class="fa-li fa fa-caret-right">&nbsp;</span><a href="${siteurl:gallery}">Galerie</a></li>
+                        <li><span class="fa-li fa fa-caret-right">&nbsp;</span><a href="${siteurl:contact}">Kontakt</a></li>
+                        <li><span class="fa-li fa fa-caret-right">&nbsp;</span><a href="#">Leistungen</a></li>
+                    </ul>
+
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Footer: contact -->
+        <brick identifier="brick.footer.contact">
+            <attributes>
+                <attribute name="title">Footer - Kontakt</attribute>
+                <attribute name="type">content</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"width":"","height":"","classes":["grid-30","mobile-grid-100"],"brickFullWidth":false,"navText":"","navTarget":""}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    <![CDATA[,footer,]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[
+                    <h2>Kontakt</h2>
+
+                    <ul style="margin-left: 0; padding-left: 0; list-style: none;">
+                        <li><span class="fa fa-phone">&nbsp;</span> <a href=tel:+492122263078">49 (0)212 - 226 30 78</a></li>
+                        <li><span class="fa fa-fax">&nbsp;</span> <a href=tel:+492122263079">49 (0)212 - 226 30 79</a></li>
+                        <li><span class="fa fa-envelope-o">&nbsp;</span> <a href="support@acme-domain.com">support@acme-domain.com</a></li>
+                    </ul>
+
+                    ]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+    </bricks>
+</data>
