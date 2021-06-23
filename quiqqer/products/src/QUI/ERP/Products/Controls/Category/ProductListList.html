@@ -42,6 +42,18 @@
         {if $Product->getMaximumQuantity() < 1}
             {assign var=disabled value=1}
         {/if}
+        {if $Product->hasRequiredUserInputFields()}
+        <a href="{$Product->getUrl()}"
+           title="{locale group='quiqqer/product-bricks' var='button.product.viewProduct'}"
+           class="btn btn-primary"
+           {if $disabled}disabled="disabled"{/if}
+        data-qui-options-disabled="{$disabled}"
+        >
+        <label>
+            <span class="fa fa-search"></span>
+        </label>
+        </a>
+        {else}
         <a href="{$Product->getUrl()}"
            title="{locale group='quiqqer/product-bricks' var='button.product.addToCart'}"
            class="btn btn-primary add-to-basket"
@@ -49,12 +61,13 @@
            data-product-animatable="1"
            data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
            {if $disabled}disabled="disabled"{/if}
-           data-qui-options-disabled="{$disabled}"
+        data-qui-options-disabled="{$disabled}"
         >
-            <label>
-                <span class="fa fa-shopping-cart"></span>
-            </label>
+        <label>
+            <span class="fa fa-shopping-cart"></span>
+        </label>
         </a>
+        {/if}
     </div>
 
     {if !$hidePrice}

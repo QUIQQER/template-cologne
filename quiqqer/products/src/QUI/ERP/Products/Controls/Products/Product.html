@@ -48,6 +48,14 @@
         </div>
         {/if}
 
+        {if count($userInputFields)}
+        <div class="product-data-fieldlist {if $counter > 1}product-data-fieldlist__multiple{/if}">
+            {foreach $userInputFields as $Field}
+            {$Field->getView()->create()}
+            {/foreach}
+        </div>
+        {/if}
+
         <div class="product-data-fields">
             {foreach $fields as $Field}
             <div class="grid-50 mobile-grid-50 grid-parent product-data-fields-title">
