@@ -57,6 +57,7 @@
             {if $Product->getMaximumQuantity() < 1}
                 {assign var=disabled value=1}
             {/if}
+            {if !$Product->hasRequiredUserInputFields()}
             <a href="{$Product->getUrl()}"
                class="btn btn-primary add-to-basket"
                data-product-id="{$Product->getId()}"
@@ -69,6 +70,7 @@
                     {locale group="quiqqer/product-bricks" var="button.product.addToCart"}
                 </label>
             </a>
+            {/if}
 
             <a href="{$Product->getUrl()}" class="btn btn-secondary btn-outline">
                 {locale group="quiqqer/template-cologne" var="template.button.openProduct"}
