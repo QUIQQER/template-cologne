@@ -70,7 +70,6 @@ class LangCurrencySwitch extends QUI\Control
             }
         }
 
-
         $langSwitch = false;
         if (\count($Project->getLanguages()) > 1) {
             $langSwitch = true;

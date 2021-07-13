@@ -47,6 +47,10 @@ class Payments extends QUI\Control
      */
     public function getBody()
     {
+        if (!\class_exists('\QUI\ERP\Accounting\Payments\Payments')) {
+            return '';
+        }
+
         $Engine   = QUI::getTemplateManager()->getEngine();
         $Payments = \QUI\ERP\Accounting\Payments\Payments::getInstance();
         $payments = $Payments->getpayments();

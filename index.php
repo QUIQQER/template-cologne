@@ -16,10 +16,22 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
 ]);
 
 /**
- * Header
+ * Menu
  */
+$homeLink     = false;
+$homeLinkText = false;
+
+if (isset($templateSettings['homeLink']) && $templateSettings['homeLink']) {
+    $homeLink = true;
+}
+
+if (isset($templateSettings['homeLinkText']) && $templateSettings['homeLinkText'] !== '') {
+    $homeLinkText = $templateSettings['homeLinkText'];
+}
+
 $Menu = new QUI\Menu\MegaMenu([
-    'showStart'                   => false,
+    'showStart'                   => $homeLink,
+    'startText'                   => $homeLinkText,
     'data-show-button-on-desktop' => 1,
     'Project'                     => $Site->getProject()
 ]);
@@ -56,7 +68,7 @@ $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
 $productPage = false;
 switch ($Site->getAttribute('type')) {
     case 'quiqqer/products:types/category':
-    case 'quiqqer/products:types/search':
+    case 'quiqqer/productsearch:types/search':
         $productPage = true;
         break;
 };

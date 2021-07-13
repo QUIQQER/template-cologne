@@ -267,9 +267,25 @@
             <de><![CDATA[Template Cologne Einstellungen]]></de>
             <en><![CDATA[Template Cologne Settings]]></en>
         </locale>
+        <locale name="settings.general.title">
+            <de><![CDATA[Allgemeine-Einstellungen]]></de>
+            <en><![CDATA[General settings]]></en>
+        </locale>
         <locale name="settings.shop.title">
             <de><![CDATA[Shop-Einstellungen]]></de>
             <en><![CDATA[Shop settings]]></en>
+        </locale>
+        <locale name="settings.general.homeLink">
+            <de><![CDATA[Startseite in der Navigation anzeigen]]></de>
+            <en><![CDATA[Show home link in the navigation]]></en>>
+        </locale>
+        <locale name="settings.general.homeLinkText">
+            <de><![CDATA[Link-Text]]></de>
+            <en><![CDATA[Link text]]></en>
+        </locale>
+        <locale name="settings.general.homeLinkText.desc">
+            <de><![CDATA[Wenn es leer ist, als Link-Text wird der Titel der Startseite verwendet.]]></de>
+            <en><![CDATA[If it is empty, the title of the start page is used as link text.]]></en>
         </locale>
         <locale name="settings.shop.title">
             <de><![CDATA[Shop-Einstellungen]]></de>
@@ -351,7 +367,7 @@
 
         <!-- basket open -->
         <locale name="settings.shop.basketOpen">
-            <de><![CDATA[Was soll passiern, wenn man den Warenkorb anklickt?]]></de>
+            <de><![CDATA[Aktion bei Klick auf Warenkorb]]></de>
             <en><![CDATA[What should happen when the user clicks on the shopping cart?]]></en>
         </locale>
             <locale name="settings.shop.basketOpen.nothing">
@@ -359,12 +375,12 @@
                 <en><![CDATA[Do not open order process]]></en>
             </locale>
             <locale name="settings.shop.basketOpen.window">
-                <de><![CDATA[Bestellprozes in einem Fenster (popup) öffnen]]></de>
-                <en><![CDATA[Open order process in a window (popup)]]></en>
+                <de><![CDATA[Bestellprozes in einem Fenster öffnen]]></de>
+                <en><![CDATA[Open order process in a popup]]></en>
             </locale>
             <locale name="settings.shop.basketOpen.page">
-                <de><![CDATA[Bestellprozes in einer Seite öffnen]]></de>
-                <en><![CDATA[Open order process in a page]]></en>
+                <de><![CDATA[Zu Bestellprozess-Seite leiten]]></de>
+                <en><![CDATA[Go to order page]]></en>
             </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
@@ -720,6 +736,11 @@
         <locale name="shop.product.showEquipment.title">
             <de><![CDATA[Zubehör]]></de>
             <en><![CDATA[Equipment]]></en>
+        </locale>
+
+        <locale name="ERP.Products.Controls.Category.ProductList.categoryLabel">
+            <de><![CDATA[Kategorien]]></de>
+            <en><![CDATA[Categories]]></en>
         </locale>
 
     </groups>

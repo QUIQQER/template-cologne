@@ -51,9 +51,8 @@ window.addEvent('domready', function () {
 
         require.config({
             paths: {
-                Hammer   : URL_OPT_DIR + 'bin/hammerjs/hammer.min',
-                FastClick: URL_OPT_DIR + 'bin/fastclick/lib/fastclick',
-                Mustache : URL_OPT_DIR + 'bin/mustache/mustache'
+                Hammer   : URL_OPT_DIR + 'bin/quiqqer-asset/hammerjs/hammerjs/hammer.min',
+                FastClick: URL_OPT_DIR + 'bin/quiqqer-asset/fastclick/fastclick/lib/fastclick'
             }
         });
 
@@ -135,87 +134,94 @@ window.addEvent('domready', function () {
                 }
             });
 
+
             /**
              * Basket
              */
-            require([
-                'package/quiqqer/order/bin/frontend/controls/basket/Button'
-            ], function (Basket) {
-                new Basket({
-                    open  : BASKET_OPEN.toInt(),
-                    styles: {
-                        float: 'right'
-                    },
-                    events: {
-                        onCreate       : function (Basket) {
-                            var BasketNode     = Basket.getElm(),
-                                basketStyleCss = '';
-
-                            if (BASKET_STYLE) {
-                                basketStyleCss = 'basket-style-' + BASKET_STYLE;
-                            }
-
-                            // clear default content
-                            BasketNode.set('html', '');
-                            BasketNode.addClass('tpl-btn ' + basketStyleCss);
-
-                            new Element('span', {
-                                'class': 'quiqqer-order-basketButton-icon-custom',
-                                html   : '<span class="fa fa-shopping-basket"></span>'
-                            }).inject(BasketNode);
-
-                            new Element('span', {
-                                'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
-                                html   : '0'
-                            }).inject(BasketNode);
-
-                            if (BASKET_STYLE && BASKET_STYLE === 'full') {
-                                new Element('span', {
-                                    'class': 'quiqqer-order-basketButton-sum',
-                                    html   : INITAL_BASKET_PRICE
-                                }).inject(BasketNode);
-                            }
-
-                            document.getElement('.cologne-header-control-basket').set('html', '');
+            var initBasket = function () {
+                require([
+                    'package/quiqqer/order/bin/frontend/controls/basket/Button'
+                ], function (Basket) {
+                    new Basket({
+                        open  : BASKET_OPEN.toInt(),
+                        styles: {
+                            float: 'right'
                         },
-                        /**
-                         * onShowBasketBegin event
-                         *
-                         * @param Basket
-                         * @param pos - position of popup basket
-                         * @param height - height of basket button
-                         */
-                        showBasketBegin: function (Basket, pos, height) {
+                        events: {
+                            onCreate: function (Basket) {
+                                var BasketNode     = Basket.getElm(),
+                                    basketStyleCss = '';
 
-                            // move basket popup from bottom of the page to header
-                            // it's better to manage for sticky header
-                            Header.getElement('.cologne-header-control').adopt(Basket.$BasketContainer);
+                                if (BASKET_STYLE) {
+                                    basketStyleCss = 'basket-style-' + BASKET_STYLE;
+                                }
 
-                            var headerHeight = Header.getSize().y;
+                                // clear default content
+                                BasketNode.set('html', '');
+                                BasketNode.addClass('tpl-btn ' + basketStyleCss);
 
-                            // -1px because of header bottom border
-                            pos.y = headerHeight - 1;
+                                new Element('span', {
+                                    'class': 'quiqqer-order-basketButton-icon-custom',
+                                    html   : '<span class="fa fa-shopping-basket"></span>'
+                                }).inject(BasketNode);
 
-                            // reset button height
-                            // see package/quiqqer/order/bin/frontend/controls/basket/Button.showSmallBasket()
-                            height.y = 0;
+                                new Element('span', {
+                                    'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
+                                    html   : '0'
+                                }).inject(BasketNode);
 
-                            Basket.$BasketContainer.setStyles({
-                                right: 0 // right margin from .cologne-header-control-basket
-                            });
+                                if (BASKET_STYLE && BASKET_STYLE === 'full') {
+                                    new Element('span', {
+                                        'class': 'quiqqer-order-basketButton-sum',
+                                        html   : INITAL_BASKET_PRICE
+                                    }).inject(BasketNode);
+                                }
 
-                            // Do not scroll the page
-                            Basket.$BasketContainer.addEvent('focus', function (event) {
-                                event.preventDefault();
-                            });
+                                document.getElement('.cologne-header-control-basket').set('html', '');
+                            },
+                            /**
+                             * onShowBasketBegin event
+                             *
+                             * @param Basket
+                             * @param pos - position of popup basket
+                             * @param height - height of basket button
+                             */
+                            showBasketBegin: function (Basket, pos, height) {
 
-                            Basket.$BasketContainer.setStyles({
-                                border: '1px solid #ddd'
-                            });
+                                // move basket popup from bottom of the page to header
+                                // it's better to manage for sticky header
+                                Header.getElement('.cologne-header-control').adopt(Basket.$BasketContainer);
+
+                                var headerHeight = Header.getSize().y;
+
+                                // -1px because of header bottom border
+                                pos.y = headerHeight - 1;
+
+                                // reset button height
+                                // see package/quiqqer/order/bin/frontend/controls/basket/Button.showSmallBasket()
+                                height.y = 0;
+
+                                Basket.$BasketContainer.setStyles({
+                                    right: 0 // right margin from .cologne-header-control-basket
+                                });
+
+                                // Do not scroll the page
+                                Basket.$BasketContainer.addEvent('focus', function (event) {
+                                    event.preventDefault();
+                                });
+
+                                Basket.$BasketContainer.setStyles({
+                                    border: '1px solid #ddd'
+                                });
+                            }
                         }
-                    }
-                }).inject(document.getElement('.cologne-header-control-basket'));
-            });
+                    }).inject(document.getElement('.cologne-header-control-basket'));
+                });
+            }
+
+            if (document.getElement('.cologne-header-control-basket')) {
+                initBasket();
+            }
 
             /**
              * Sticky menu
@@ -232,7 +238,6 @@ window.addEvent('domready', function () {
             }
 
             if (SearchBtn && SearchInput) {
-
                 var clickEvent = function () {
                     new Fx.Scroll(window, {
                         onComplete: function () {
@@ -276,6 +281,10 @@ window.addEvent('domready', function () {
             };
 
             var showSearchBtn = function () {
+                if (!SearchBtn) {
+                    return;
+                }
+
                 moofx(SearchBtn).animate({
                     opacity  : 1,
                     transform: 'scale(1)'
@@ -286,6 +295,10 @@ window.addEvent('domready', function () {
             };
 
             var hideSearchBtn = function () {
+                if (!SearchBtn) {
+                    return;
+                }
+
                 moofx(SearchBtn).animate({
                     opacity  : 0,
                     transform: 'scale(0)'
@@ -341,7 +354,7 @@ window.addEvent('domready', function () {
  * @param UserIconControl
  * @param QUILocale
  */
-function userIconLoadEvent (UserIconControl, QUILocale) {
+function userIconLoadEvent(UserIconControl, QUILocale) {
     var Menu = UserIconControl.$Menu;
 
     require([
@@ -377,7 +390,7 @@ function userIconLoadEvent (UserIconControl, QUILocale) {
  *
  * @param LogoutWindow
  */
-function createLogoutWindow (LogoutWindow) {
+function createLogoutWindow(LogoutWindow) {
     new LogoutWindow({
         class    : 'cologne-logout-dialog',
         title    : false,
@@ -421,7 +434,7 @@ function createLogoutWindow (LogoutWindow) {
 /**
  * Create and open login popup
  */
-function createLoginWindow () {
+function createLoginWindow() {
     USER_BUTTON_CLICKED = false;
 
     require([
@@ -467,7 +480,7 @@ function createLoginWindow () {
  * In mobile resolution (less than 767px) opens category menu button
  * the mobile navigation instead category navigation.
  */
-function initMobileMenu () {
+function initMobileMenu() {
     if (QUI.getWindowSize().x >= 768) {
         return;
     }

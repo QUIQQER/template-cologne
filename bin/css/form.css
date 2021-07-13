@@ -12,8 +12,31 @@ textarea {
     padding: 0 10px;
 }
 
+select {
+    background-color: #fff;
+    background-image: url("../images/arrow-select.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 20px auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 28px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-size: 8px;
+}
+
+
 textarea {
     line-height: 1.6em;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 input[type="text"]:hover,
@@ -27,6 +50,11 @@ select:focus,
 textarea:hover,
 textarea:focus {
     border-color: #a9a8a5;
+}
+
+/* iOs input search fix */
+input[type="search"] {
+    -webkit-appearance: textfield;
 }
 
 .quiqqer-simple-contact label {
@@ -75,19 +103,12 @@ div.qui-select {
 div.qui-select .text {
     height: inherit;
     line-height: inherit;
-}
-
-div.qui-select .text {
-    height: inherit;
-    line-height: inherit;
+    width: calc(100% - 28px);
 }
 
 div.qui-select .drop-icon {
     height: inherit;
-}
-
-select {
-    padding: 10px;
+    width: 28px;
 }
 
 /** checkbox

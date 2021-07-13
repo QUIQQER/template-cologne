@@ -20,12 +20,15 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
             '$addProductToBasket'
         ],
 
+        options: {
+            disabled: false
+        },
+
         initialize: function (options) {
             this.parent(options);
 
-            this.$Input = null;
-            this.$Label = null;
-
+            this.$Input    = null;
+            this.$Label    = null;
             this.$disabled = false;
 
             this.addEvents({
@@ -37,10 +40,15 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
          * event: on import
          */
         $onImport: function () {
+            this.$Label    = this.getElm().getElement('.add-to-basket-text');
+            this.$disabled = this.getAttribute('disabled');
+
+            if (this.$disabled) {
+                return;
+            }
+
             this.getElm().addEvent('click', this.$addProductToBasket);
             this.getElm().set('disabled', false);
-
-            this.$Label = this.getElm().getElement('.add-to-basket-text');
         },
 
         /**
@@ -86,6 +94,33 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
             var fields         = {},
                 ProductElm     = this.getElm().getParent('[data-productid]'),
                 ProductControl = QUI.Controls.getById(ProductElm.get('data-quiid'));
+
+            if (ProductElm) {
+                // check require fields
+                var required = ProductElm.getElements('.product-data-fieldlist [required]');
+
+                if (required) {
+                    for (var i = 0, len = required.length; i < len; i++) {
+                        if (!required[i].checkValidity()) {
+                            //self.enableQuantityButton();
+                            self.$Label.setStyle('visibility', 'visible');
+                            self.addingInProcess = false;
+
+                            Loader.destroy();
+                            this.getElm().set('disabled', false);
+                            this.$Label.setStyle('visibility', 'visible');
+
+                            required[i].focus();
+
+                            // chrome validate message
+                            if ("reportValidity" in required[i]) {
+                                required[i].reportValidity();
+                            }
+                            return;
+                        }
+                    }
+                }
+            }
 
             if ("getFieldControls" in ProductControl) {
                 ProductControl.getFieldControls().each(function (Field) {

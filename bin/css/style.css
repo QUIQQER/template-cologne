@@ -12,6 +12,7 @@
     font-family: 'Maven Pro';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('../fonts/maven-pro-v11-latin-regular.eot'); /* IE9 Compat Modes */
     src: local('Maven Pro Regular'), local('MavenPro-Regular'),
     url('../fonts/maven-pro-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/maven-pro-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/maven-pro-v11-latin-regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/maven-pro-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/maven-pro-v11-latin-regular.svg#MavenPro') format('svg'); /* Legacy iOS */
@@ -22,6 +23,7 @@
     font-family: 'Maven Pro';
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: url('../fonts/maven-pro-v11-latin-700.eot'); /* IE9 Compat Modes */
     src: local('Maven Pro Bold'), local('MavenPro-Bold'),
     url('../fonts/maven-pro-v11-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/maven-pro-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/maven-pro-v11-latin-700.woff') format('woff'), /* Modern Browsers */ url('../fonts/maven-pro-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/maven-pro-v11-latin-700.svg#MavenPro') format('svg'); /* Legacy iOS */
@@ -32,6 +34,7 @@
     font-family: 'Maven Pro';
     font-style: normal;
     font-weight: 500;
+    font-display: swap;
     src: url('../fonts/maven-pro-v11-latin-500.eot'); /* IE9 Compat Modes */
     src: local('Maven Pro Medium'), local('MavenPro-Medium'),
     url('../fonts/maven-pro-v11-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/maven-pro-v11-latin-500.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/maven-pro-v11-latin-500.woff') format('woff'), /* Modern Browsers */ url('../fonts/maven-pro-v11-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/maven-pro-v11-latin-500.svg#MavenPro') format('svg'); /* Legacy iOS */
@@ -81,11 +84,11 @@ body {
 }
 
 body.header-fixed {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 p {
-    margin-bottom: 1.3em;
+    margin-bottom: 1.3rem;
 }
 
 h1, h2, h3, h4 {
@@ -143,9 +146,9 @@ small, .font_small, .font-small {
 }
 
 img {
+    height: auto;
     max-width: 100%;
     width: auto;
-    height: auto;
 }
 
 .html5tooltip-box {
@@ -334,6 +337,10 @@ a.toTop:before {
     transform: scale(1.1);
 }
 
+.header-fixed .slideout-panel {
+    padding-top: 40px;
+}
+
 /** grid
  ===================================== */
 
@@ -512,7 +519,7 @@ a.toTop:before {
 }
 
 .header-fixed .topbar {
-    /*margin-bottom: 80px;*/
+    visibility: hidden; /* jumping fix */
 }
 
 .topbar-left,
@@ -741,7 +748,7 @@ a.toTop:before {
     border-bottom: 1px solid #ddd;
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0);
     display: flex;
-    height: 80px;
+    height: 100px;
     justify-content: space-between;
     left: 0;
     position: relative;
@@ -752,7 +759,9 @@ a.toTop:before {
 
 .cologne-header-fixed {
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
+    height: 60px;
     position: fixed;
+    transition: 0.25s height;
     z-index: 100; /* Because of the search dropdown */
 }
 
@@ -767,18 +776,17 @@ a.toTop:before {
 }
 
 .cologne-header-logo-link {
-    height: 100%;
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 10px 0;
 }
 
 .cologne-header-logo-link picture {
-    width: auto !important;
-    max-height: 100%;
-    display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10px 0;
+    display: flex;
+    height: 100%;
+    width: auto;
 }
 
 .cologne-header-logo-link img {
@@ -1029,14 +1037,27 @@ a.toTop:before {
 }
 
 .quiqqer-menu-megaMenu-list-item-menu {
-    background: #fff;
-    border: 1px solid #e1e7ec;
-    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2) !important;
     line-height: 1.5;
-    max-width: 100% !important;
-    min-width: 200px;
     text-align: left;
     z-index: 100;
+}
+
+.quiqqer-menu-megaMenu-children-simple {
+    background: #fff;
+}
+
+.quiqqer-menu-megaMenu-children-standard,
+.quiqqer-menu-megaMenu-children-icons-list,
+.quiqqer-menu-megaMenu-children-iconsDesc,
+.quiqqer-menu-megaMenu-children-image {
+    position: fixed;
+    background: #fff;
+    max-width: 100vw !important;
+    width: 1200px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2) !important;
+    border: 1px solid #e1e7ec;
 }
 
 .quiqqer-menu-megaMenu-list-item-menu li {
@@ -1735,6 +1756,7 @@ table tr:last-child th {
     margin-right: 5px;
     visibility: visible;
     width: 8px;
+    vertical-align: middle;
 }
 
 .shipping-info__timeperiod:before {
@@ -1775,4 +1797,36 @@ table tr:last-child th {
 
 .qui-contextitem-container .qui-contextitem-text {
     padding: 5px 0;
+}
+
+/***************/
+/* Search site */
+/***************/
+.qui-search-result form {
+    display: flex;
+}
+
+.qui-search-result form input[type="text"] {
+    flex-grow: 1;
+    width: 300px;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .qui-search-result form {
+        flex-direction: column;
+    }
+
+    .qui-search-result form input[type="text"] {
+        width: initial;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/***********/
+/* Contact */
+/***********/
+.quiqqer-simple-contact textarea {
+    min-height: 160px;
 }

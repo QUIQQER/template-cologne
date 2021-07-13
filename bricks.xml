@@ -181,6 +181,34 @@
                     </area>
                 </layout>
 
+                <layout layout="layout/noSidebarThin">
+                    <area name="contentPrefix" inheritance="1" priority="3">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentPrefix.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="contentSuffix" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-cologne"
+                                    var="area.contentSuffix.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
                 <layout layout="layout/leftSidebar">
                     <area name="leftSidebar" inheritance="1" priority="3">
                         <title>
