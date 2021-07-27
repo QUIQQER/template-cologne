@@ -17,7 +17,9 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
         Type   : 'package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton',
 
         Binds: [
-            '$addProductToBasket'
+            '$addProductToBasket',
+            '$getProductControl',
+            '$onQuiqqerProductVariantRefresh'
         ],
 
         options: {
@@ -27,9 +29,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
         initialize: function (options) {
             this.parent(options);
 
-            this.$Input    = null;
-            this.$Label    = null;
-            this.$disabled = false;
+            this.$Input          = null;
+            this.$Label          = null;
+            this.$disabled       = false;
+            this.$ProductControl = false;
+            this.$Button         = false;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -47,8 +51,31 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
                 return;
             }
 
-            this.getElm().addEvent('click', this.$addProductToBasket);
-            this.getElm().set('disabled', false);
+            var ProductElm       = this.getElm().getParent('[data-productid]');
+            this.$ProductControl = QUI.Controls.getById(ProductElm.get('data-quiid'));
+
+            this.$ProductControl.removeEvent('onQuiqqerProductVariantRefresh', this.$onQuiqqerProductVariantRefresh);
+            this.$ProductControl.addEvent('onQuiqqerProductVariantRefresh', this.$onQuiqqerProductVariantRefresh);
+
+            this.$Button = this.getElm();
+
+            this.$Button.addEvent('click', this.$addProductToBasket);
+            this.$Button.set('disabled', false);
+        },
+
+        /**
+         * Get control of the Product
+         *
+         * @return {Object}
+         */
+        $onQuiqqerProductVariantRefresh: function () {
+            if (this.$ProductControl.isBuyable()) {
+                this.$Button.set('disabled', false);
+                this.$disabled = false;
+            } else {
+                this.$Button.set('disabled', true);
+                this.$disabled = true;
+            }
         },
 
         /**
@@ -62,8 +89,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
             this.getElm().set('disabled', true);
 
             var self  = this,
-                count = null,
-                size  = this.getElm().getSize();
+                count = null;
 
             if (this.$Input) {
                 count = parseInt(this.$Input.value);
@@ -91,9 +117,8 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
             }).inject(this.getElm());
 
             // is the button in a product?
-            var fields         = {},
-                ProductElm     = this.getElm().getParent('[data-productid]'),
-                ProductControl = QUI.Controls.getById(ProductElm.get('data-quiid'));
+            var fields     = {},
+                ProductElm = this.getElm().getParent('[data-productid]');
 
             if (ProductElm) {
                 // check require fields
@@ -122,14 +147,14 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
                 }
             }
 
-            if ("getFieldControls" in ProductControl) {
-                ProductControl.getFieldControls().each(function (Field) {
+            if ("getFieldControls" in this.$ProductControl) {
+                this.$ProductControl.getFieldControls().each(function (Field) {
                     fields[Field.getFieldId()] = Field.getValue();
                 });
             }
 
             var Product = new BasketProduct({
-                id: ProductControl.getAttribute('productId')
+                id: this.$ProductControl.getProductId()
             });
 
             Product.setFieldValues(fields).then(function () {
