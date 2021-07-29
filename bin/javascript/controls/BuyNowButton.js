@@ -60,7 +60,7 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/BuyNowButton', 
             this.$Button = this.getElm();
 
             this.$Button.addEvent('click', this.$addProductToBasket);
-            this.$Button.set('disabled', false);
+            this.$Button.set('disabled', !this.$ProductControl.isBuyable());
         },
 
         /**
