@@ -91,11 +91,13 @@
                 </li>
                 {/if}
 
+                {if count($details)}
                 <li class="product-data-more-tabs-tab" aria-controls="panelDetails" role="tab" tabindex="-1">
                     <a href="#panelDetails">
                         {locale group="quiqqer/products" var="control.product.fields.details"}
                     </a>
                 </li>
+                {/if}
 
                 {if $Files}
                 <li class="product-data-more-tabs-tab" aria-controls="panelFiles" role="tab" tabindex="-1">
@@ -106,6 +108,29 @@
                 {/if}
 
                 {foreach $detailFields as $Field}
+
+                {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT &&
+                    $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
+                    {continue}
+                {/if}
+
+                {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS &&
+                    $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
+                    {continue}
+                {/if}
+
+                {* hide empty fields *}
+                {assign var=fieldValue value=$Field->getValue()}
+                {if $hideEmptyFields && empty($fieldValue)}
+                {continue}
+                {/if}
+
+                {* hide empty fields *}
+                {assign var=fieldValue value=$Field->getValue()}
+                {if $hideEmptyFields && empty($fieldValue)}
+                    {continue}
+                {/if}
+
                 <li class="product-data-more-tabs-tab"
                     aria-controls="panelF{$Field->getId()}"
                     role="tab"
@@ -131,6 +156,7 @@
             </section>
             {/if}
 
+            {if count($details)}
             <section class="product-data-more-sheet hide" id="panelDetails" role="tabpanel"
                      aria-labelledby="panelDetails" tabindex="0" aria-hidden="true"
             >
@@ -163,6 +189,7 @@
                 </table>
                 {/if}
             </section>
+            {/if}
 
             {if $Files}
             <section class="product-data-more-sheet hide" id="panelFiles" role="tabpanel"
@@ -173,6 +200,23 @@
             {/if}
 
             {foreach $detailFields as $Field}
+
+            {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT &&
+                $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
+                {continue}
+            {/if}
+
+            {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS &&
+                $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
+                {continue}
+            {/if}
+
+            {* hide empty fields *}
+            {assign var=fieldValue value=$Field->getValue()}
+            {if $hideEmptyFields && empty($fieldValue)}
+                {continue}
+            {/if}
+
             <section class="product-data-more-sheet hide" id="panelF{$Field->getId()}" role="tabpanel"
                      aria-labelledby="panelF{$Field->getId()}" tabindex="0" aria-hidden="true"
             >
@@ -199,15 +243,53 @@
 
     {template_event name="quiqqer::products::product::middle-2" Product=$Product}
 
-    {if isset($VisitedProducts)}
-    <section class="product-similar-products">
+    {* <!-- Visited products --> *}
+    {if isset($VisitedProducts) &&
+        $Project->getConfig('templateCologne.settings.showVisitedProducts')}
+    <section class="product-productsList product-visited-products">
         <header>
-            <h3>
+            <h1>
                 {locale group="quiqqer/products" var="brick.control.VisitedProducts.title"}
-            </h3>
+            </h1>
         </header>
         {assign var=t value=$VisitedProducts->getSlider()->setAttribute('data-qui-options-usemobile', true)}
         {$VisitedProducts->create()}
+    </section>
+    {/if}
+
+    {* <!-- Similar products --> *}
+    {if $Project->getConfig('templateCologne.settings.showSimilarProducts') == 'afterDesc' &&
+        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS) &&
+        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()}
+    <section class="product-productsList product-similar-products">
+        <header>
+            <h1>
+                {locale group="quiqqer/template-cologne" var="shop.product.showSimilarProducts.title"}
+            </h1>
+        </header>
+
+        {control control='QUI\ERP\Products\Controls\Products\ProductList'
+                currentProductId=$Product->getId()
+                productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()
+        }
+    </section>
+    {/if}
+
+    {* <!-- Equipments products --> *}
+    {if $Project->getConfig('templateCologne.settings.showEquipment') == 'afterDesc' &&
+    $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT) &&
+        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()}
+    <section class="product-productsList product-equipment-products">
+        <header>
+            <h1>
+                {locale group="quiqqer/template-cologne" var="shop.product.showEquipment.title"}
+            </h1>
+        </header>
+
+        {control control='QUI\ERP\Products\Controls\Products\ProductList'
+                currentProductId=$Product->getId()
+                productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()
+        }
     </section>
     {/if}
 
