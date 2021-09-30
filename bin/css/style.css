@@ -83,10 +83,6 @@ body {
     width: 100%;
 }
 
-body.header-fixed {
-    padding-top: 60px;
-}
-
 p {
     margin-bottom: 1.3rem;
 }
@@ -244,14 +240,6 @@ small {
     line-height: 0;
 }
 
-.round-icon {
-    border-radius: 100px;
-    box-shadow: 0 0 0 1px #aaa;
-    line-height: 30px;
-    text-align: center;
-    width: 30px;
-}
-
 /**********/
 /* Header */
 /**********/
@@ -335,10 +323,6 @@ a.toTop:before {
 
 .toTop:hover:before {
     transform: scale(1.1);
-}
-
-.header-fixed .slideout-panel {
-    padding-top: 40px;
 }
 
 /** grid
@@ -763,6 +747,11 @@ a.toTop:before {
     position: fixed;
     transition: 0.25s height;
     z-index: 100; /* Because of the search dropdown */
+}
+
+.cologne-header-menu-wrapper {
+    position: relative;
+    height: 100px;
 }
 
 .cologne-header-logo {
@@ -1304,6 +1293,14 @@ a.toTop:before {
     cursor: pointer;
     margin-left: 20px;
     position: relative;
+}
+
+.cologne-header-control-user > .fa {
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px #aaa;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
 }
 
 .quiqqer-frontendUsers-userIcon {

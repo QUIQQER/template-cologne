@@ -1,12 +1,14 @@
-<header class="cologne-header cologne-header-menu template-columns">
+<div class="cologne-header-menu-wrapper">
+    <header class="cologne-header cologne-header-menu template-columns">
 
-    {* <!-- Menu prefix: shop category menu and logo --> *}
-    {fetch template="template/menu/menuPrefix.html" Logo=$Logo showCategoryMenu=$showCategoryMenu}
+        {* <!-- Menu prefix: shop category menu and logo --> *}
+        {fetch template="template/menu/menuPrefix.html" Logo=$Logo showCategoryMenu=$showCategoryMenu}
 
-    <div class="cologne-header-nav">
-        {$Menu->create()}
-    </div>
+        <div class="cologne-header-nav">
+            {$Menu->create()}
+        </div>
 
-    {* <!-- Menu suffix: user login --> *}
-    {fetch template="template/menu/menuSuffix.html" createBasketButton=$createBasketButton basketStyle=$basketStyle initialBasketPrice=$initialBasketPrice}
-</header>
+        {* <!-- Menu suffix: user login --> *}
+        {fetch template="template/menu/menuSuffix.html" createBasketButton=$createBasketButton basketStyle=$basketStyle initialBasketPrice=$initialBasketPrice}
+    </header>
+</div>
