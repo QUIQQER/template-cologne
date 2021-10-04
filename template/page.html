@@ -5,7 +5,10 @@
 {template_event name="quiqqer::template-cologne::body::afterHeader" Template=$Template}
 
 {if $showBreadcrumb}
-    {fetch template="template/page/breadcrumb.html" pageTitle=$pageTitle}
+    {fetch template="template/page/breadcrumb.html" pageTitle=$pageTitle Template=$Template}
+{/if}
+{if $Template->getAttribute('minimalDesign')}
+    {fetch template="template/page/titleBar.html" pageTitle=$pageTitle Template=$Template}
 {/if}
 
 {template_event name="quiqqer::template-cologne::body::afterBreadcrumb" Template=$Template}

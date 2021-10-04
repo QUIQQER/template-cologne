@@ -291,6 +291,26 @@
             <de><![CDATA[Shop-Einstellungen]]></de>
             <en><![CDATA[Shop settings]]></en>
         </locale>
+        <locale name="settings.shop.checkoutAppearance">
+            <de><![CDATA[Design von Bestellung und Warenkorb Seiten]]></de>
+            <en><![CDATA[Checkout and basket page design]]></en>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.desc" html="true">
+            <de><![CDATA[Bestimmt wie die Bestellprozess und Warenkorb Seiten aussehen.]]></de>
+            <en><![CDATA[Determines how the order process and shopping cart pages look like.]]></en>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.minimal">
+            <de><![CDATA[Minimal: übliche Elemente der Seite sind deaktiviert.]]></de>
+            <en><![CDATA[Minimal: common elements of the page are deactivated.]]></en>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.compact">
+            <de><![CDATA[Kompakt: Obere Leiste, Menü und Footer sind aktiv.]]></de>
+            <en><![CDATA[Compact: top bar, navigation and footer are active]]></en>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.full">
+            <de><![CDATA[Komplett: zusätzlich zum "Kompakt" wird auch Seitentitel und Brotkrümelnavigation angezeigt.]]></de>
+            <en><![CDATA[Full: in addition to the "compact", the page title and breadcrumb navigation are also displayed.]]></en>
+        </locale>
         <locale name="settings.shop.retailPrice">
             <de><![CDATA[UVP anzeigen]]></de>
             <en><![CDATA[Show retail price ]]></en>
