@@ -55,7 +55,7 @@ if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
 $InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
 
 $Logo       = $Project->getMedia()->getLogoImage();
-$logoHeight = 60;
+$logoHeight = $templateSettings['logoHeight'];
 $logoWidth  = false;
 
 try {

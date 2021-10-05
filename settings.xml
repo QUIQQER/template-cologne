@@ -12,6 +12,10 @@
                     <conf name="homeLinkText">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="logoHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>60</defaultvalue>
+                    </conf>
 
                     <conf name="checkoutAppearance">
                         <type><![CDATA[string]]></type>
@@ -243,6 +247,20 @@
                                             var="settings.general.homeLinkText"
                                     />
                                 </text>
+                            </input>
+
+                            <!-- logo height -->
+                            <input conf="templateCologne.settings.logoHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.general.logoHeight"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.general.logoHeight.desc"
+                                    />
+                                </description>
                             </input>
                         </settings>
 

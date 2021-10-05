@@ -287,6 +287,14 @@
             <de><![CDATA[Wenn es leer ist, als Link-Text wird der Titel der Startseite verwendet.]]></de>
             <en><![CDATA[If it is empty, the title of the start page is used as link text.]]></en>
         </locale>
+        <locale name="settings.general.logoHeight">
+            <de><![CDATA[Logo Höhe]]></de>
+            <en><![CDATA[Loog height]]></en>
+        </locale>
+        <locale name="settings.general.logoHeight.desc">
+            <de><![CDATA[Maximale Logo Höhe. Bitte beachte das Logo wird nie größer als das Menü.]]></de>
+            <en><![CDATA[Maximum logo height. Please note the logo will never be higher than the menu height.]]></en>
+        </locale>
         <locale name="settings.shop.title">
             <de><![CDATA[Shop-Einstellungen]]></de>
             <en><![CDATA[Shop settings]]></en>

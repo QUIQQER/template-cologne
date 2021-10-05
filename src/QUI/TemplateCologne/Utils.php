@@ -85,6 +85,16 @@ class Utils
         $lang = $Project->getLang();
 
         /**
+         * Logo height
+         */
+
+        $logoHeight = 60;
+
+        if (intval($Project->getConfig('templateCologne.settings.logoHeight'))) {
+            $logoHeight = intval($Project->getConfig('templateCologne.settings.logoHeight'));
+        }
+
+        /**
          * no header?
          * no breadcrumb?
          * Body Class
@@ -139,7 +149,6 @@ class Utils
 
         if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
             $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart') {
-
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
                 case 'compact':
                     $showBreadcrumb = false;
@@ -228,6 +237,7 @@ class Utils
         $config += self::getPredefinedFooter($Project);
 
         $config['header']             = $header;
+        $config['logoHeight']         = $logoHeight;
         $config['pageTitle']          = $pageTitle;
         $config['showBreadcrumb']     = $showBreadcrumb;
         $config['minimalDesign']      = $minimalDesign;
