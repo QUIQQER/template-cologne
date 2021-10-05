@@ -1772,13 +1772,9 @@ table tr:last-child th {
 /* success */
 .content-message-success,
 .message-success {
-    background-color: rgba(45, 195, 142, 0.10);
-    border: 1px solid rgba(45, 195, 142, 0.20);
+    background-color: #eaf9f3;
+    border: 1px solid #c4eede;
     color: #2dc38e;
-}
-
-.content-message-success:before {
-
 }
 
 /* info */
