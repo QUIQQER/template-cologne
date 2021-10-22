@@ -28,18 +28,22 @@
 
     {template_event name="quiqqer::template-cologne::header::end" Template=$Template}
 </head>
-<body class="page-{$Site->getId()} {$typeClass} {$siteType}">
+<body class="page-{$Site->getId()} {$typeClass} {$siteType} {$minimalDesignClass}">
 {template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
 
 {* small top bar *}
-{fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar
-    Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
-}
+{if $Template->getAttribute('showTopBar')}
+    {fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar
+        Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
+    }
+{/if}
 
 {template_event name="quiqqer::template-cologne::body::afterTopBar" Template=$Template}
 
+{if $Template->getAttribute('showNav')}
 {* main navigation / menu *}
 {fetch template="template/mainMenu.html"
+    Template=$Template
     Logo=$Logo
     Menu=$Menu
     showCategoryMenu=$showCategoryMenu
@@ -47,6 +51,7 @@
     basketStyle=$basketStyle
     initialBasketPrice=$initialBasketPrice
 }
+{/if}
 
 {template_event name="quiqqer::template-cologne::body::afterMainMenu" Template=$Template}
 

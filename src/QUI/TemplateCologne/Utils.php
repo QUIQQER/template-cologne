@@ -71,11 +71,11 @@ class Utils
         /* @var $Project QUI\Projects\Project */
         $Project = $params['Project'];
 
-        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
+        $cacheName = md5($params['Site']->getId().$Project->getName().$Project->getLang());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/' . $cacheName
+                'quiqqer/templateCologne/'.$cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -83,6 +83,16 @@ class Utils
         $config = [];
 
         $lang = $Project->getLang();
+
+        /**
+         * Logo height
+         */
+
+        $logoHeight = 60;
+
+        if (intval($Project->getConfig('templateCologne.settings.logoHeight'))) {
+            $logoHeight = intval($Project->getConfig('templateCologne.settings.logoHeight'));
+        }
 
         /**
          * no header?
@@ -94,6 +104,10 @@ class Utils
         $header         = 'hide';
         $pageTitle      = 'breadcrumb'; // where to show page title: in header, in breadcrumb or both?
         $showBreadcrumb = false;
+        $showTopBar     = true;
+        $showNav        = true;
+        $showFooter     = true;
+        $minimalDesign  = false;
         $siteType       = 'no-sidebar';
 
         switch ($Site->getAttribute('layout')) {
@@ -135,7 +149,24 @@ class Utils
 
         if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
             $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart') {
-            $showBreadcrumb = false;
+            switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
+                case 'compact':
+                    $showBreadcrumb = false;
+                    break;
+
+                case 'full':
+                    $showBreadcrumb = true;
+                    break;
+
+                case 'minimal':
+                default:
+                    $showTopBar     = false;
+                    $showNav        = false;
+                    $showFooter     = false;
+                    $showBreadcrumb = false;
+                    $minimalDesign  = true;
+                    break;
+            }
         }
 
         /* site own show header */
@@ -170,7 +201,7 @@ class Utils
          */
         $showCategoryMenu = false;
 
-        if ($Project->getConfig('templateCologne.settings.showCategoryMenu')) {
+        if (!$minimalDesign && $Project->getConfig('templateCologne.settings.showCategoryMenu')) {
             $showCategoryMenu = $Project->getConfig('templateCologne.settings.showCategoryMenu');
         }
 
@@ -205,21 +236,27 @@ class Utils
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
-        $config['header']           = $header;
-        $config['pageTitle']        = $pageTitle;
-        $config['showBreadcrumb']   = $showBreadcrumb;
-        $config['settingsCSS']      = '<style>' . $settingsCSS . '</style>';
-        $config['typeClass']        = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
-        $config['siteType']         = $siteType;
-        $config['basketStyle']      = $basketStyle;
-        $config['basketOpen']       = $basketOpen;
-        $config['showCategoryMenu'] = $showCategoryMenu;
-        $config['homeLink']         = $homeLink;
-        $config['homeLinkText']     = $homeLinkText;
+        $config['header']             = $header;
+        $config['logoHeight']         = $logoHeight;
+        $config['pageTitle']          = $pageTitle;
+        $config['showBreadcrumb']     = $showBreadcrumb;
+        $config['minimalDesign']      = $minimalDesign;
+        $config['showTopBar']         = $showTopBar;
+        $config['showNav']            = $showNav;
+        $config['showFooter']         = $showFooter;
+        $config['settingsCSS']        = '<style>'.$settingsCSS.'</style>';
+        $config['typeClass']          = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['minimalDesignClass'] = $minimalDesign ? 'type-minimal-design' : '';
+        $config['siteType']           = $siteType;
+        $config['basketStyle']        = $basketStyle;
+        $config['basketOpen']         = $basketOpen;
+        $config['showCategoryMenu']   = $showCategoryMenu;
+        $config['homeLink']           = $homeLink;
+        $config['homeLinkText']       = $homeLinkText;
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/' . $cacheName,
+            'quiqqer/templateCologne/'.$cacheName,
             $config
         );
 

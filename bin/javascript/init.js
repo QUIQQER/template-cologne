@@ -60,178 +60,120 @@ window.addEvent('domready', function () {
             FastClick.attach(document.body);
         });
 
-        require([
-            'Locale',
-            'package/quiqqer/tooltips/bin/html5tooltips'
-        ], function (QUILocale, html5tooltips) {
-            QUI.setAttribute('control-loader-type', 'fa-spinner');
-            QUI.setAttribute('control-loader-color', '#999999');
+        /**
+         * Sticky menu
+         * @type {boolean}
+         */
+        var Menu   = document.getElement('.cologne-header'),
+            TopBar = document.getElement('.topbar');
 
-            var Logo             = document.getElement('header .logo'),
-                UserButton       = document.getElements('.cologne-header-control-user'),
-                UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
+        if (Menu) {
+            initMenu(Menu, TopBar);
+        }
 
-            window.addEvent('load', function () {
-                document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
-            });
+        /**
+         * Init basket
+         */
+        if (document.getElement('.cologne-header-control-basket')) {
+            initBasket();
+        }
 
-            /**
-             * Login
-             */
+        /**
+         * User icon
+         */
+        if (Menu && TopBar) {
             require([
-                'utils/Controls'
-            ], function (QUIControlUtils) {
-                if (QUIQQER_USER.id) {
-                    var UserIcon = document.getElement(
-                        '[data-qui="package/quiqqer/frontend-users/bin/frontend/controls/UserIcon"]'
-                    );
+                'Locale',
+                'package/quiqqer/tooltips/bin/html5tooltips'
+            ], function (QUILocale, html5tooltips) {
+                QUI.setAttribute('control-loader-type', 'fa-spinner');
+                QUI.setAttribute('control-loader-color', '#999999');
 
-                    QUIControlUtils.getControlByElement(UserIcon).then(function (UserIconControl) {
-                        UserIconControl.addEvent('load', function () {
-                            userIconLoadEvent(UserIconControl, QUILocale);
-                        });
-                    });
+                var Logo       = Menu.getElement('.logo'),
+                    UserButton = document.getElement('.cologne-header-control-user');
+
+                if (!UserButton) {
+                    return;
                 }
 
-                UserButton.addEvents({
-                    click: function (event) {
-                        if (event) {
-                            event.stop();
-                        }
+                var UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
 
-                        if (!QUIQQER_USER.id) {
-                            if (USER_BUTTON_CLICKED) {
-                                return;
-                            }
-
-                            USER_BUTTON_CLICKED = true;
-
-                            createLoginWindow();
-                        }
-                    }
+                window.addEvent('load', function () {
+                    document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
                 });
 
-                moofx(UserButtonLoader).animate({
-                    opacity: 0
-                }, {
-                    callback: function () {
-                        UserButtonLoader.destroy();
-                    }
-                });
-
-                if ("QUIQQER_LOGIN_FAILED" in window && window.QUIQQER_LOGIN_FAILED) {
-                    new LoginWindow({
-                        maxHeight   : 380,
-                        social      : false,
-                        registration: false,
-                        logo        : Logo.src,
-                        events      : {
-                            onSuccess: function () {
-                                window.location.reload();
-                            }
-                        }
-                    }).open();
-                }
-            });
-
-
-            /**
-             * Basket
-             */
-            var initBasket = function () {
+                /**
+                 * Login
+                 */
                 require([
-                    'package/quiqqer/order/bin/frontend/controls/basket/Button'
-                ], function (Basket) {
-                    new Basket({
-                        open  : BASKET_OPEN.toInt(),
-                        styles: {
-                            float: 'right'
-                        },
-                        events: {
-                            onCreate: function (Basket) {
-                                var BasketNode     = Basket.getElm(),
-                                    basketStyleCss = '';
+                    'utils/Controls'
+                ], function (QUIControlUtils) {
+                    if (QUIQQER_USER.id) {
+                        var UserIcon = document.getElement(
+                            '[data-qui="package/quiqqer/frontend-users/bin/frontend/controls/UserIcon"]'
+                        );
 
-                                if (BASKET_STYLE) {
-                                    basketStyleCss = 'basket-style-' + BASKET_STYLE;
+                        QUIControlUtils.getControlByElement(UserIcon).then(function (UserIconControl) {
+                            UserIconControl.addEvent('load', function () {
+                                userIconLoadEvent(UserIconControl, QUILocale);
+                            });
+                        });
+                    }
+
+                    UserButton.addEvents({
+                        click: function (event) {
+                            if (event) {
+                                event.stop();
+                            }
+
+                            if (!QUIQQER_USER.id) {
+                                if (USER_BUTTON_CLICKED) {
+                                    return;
                                 }
 
-                                // clear default content
-                                BasketNode.set('html', '');
-                                BasketNode.addClass('tpl-btn ' + basketStyleCss);
-
-                                new Element('span', {
-                                    'class': 'quiqqer-order-basketButton-icon-custom',
-                                    html   : '<span class="fa fa-shopping-basket"></span>'
-                                }).inject(BasketNode);
-
-                                new Element('span', {
-                                    'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
-                                    html   : '0'
-                                }).inject(BasketNode);
-
-                                if (BASKET_STYLE && BASKET_STYLE === 'full') {
-                                    new Element('span', {
-                                        'class': 'quiqqer-order-basketButton-sum',
-                                        html   : INITAL_BASKET_PRICE
-                                    }).inject(BasketNode);
-                                }
-
-                                document.getElement('.cologne-header-control-basket').set('html', '');
-                            },
-                            /**
-                             * onShowBasketBegin event
-                             *
-                             * @param Basket
-                             * @param pos - position of popup basket
-                             * @param height - height of basket button
-                             */
-                            showBasketBegin: function (Basket, pos, height) {
-
-                                // move basket popup from bottom of the page to header
-                                // it's better to manage for sticky header
-                                Header.getElement('.cologne-header-control').adopt(Basket.$BasketContainer);
-
-                                var headerHeight = Header.getSize().y;
-
-                                // -1px because of header bottom border
-                                pos.y = headerHeight - 1;
-
-                                // reset button height
-                                // see package/quiqqer/order/bin/frontend/controls/basket/Button.showSmallBasket()
-                                height.y = 0;
-
-                                Basket.$BasketContainer.setStyles({
-                                    right: 0 // right margin from .cologne-header-control-basket
-                                });
-
-                                // Do not scroll the page
-                                Basket.$BasketContainer.addEvent('focus', function (event) {
-                                    event.preventDefault();
-                                });
-
-                                Basket.$BasketContainer.setStyles({
-                                    border: '1px solid #ddd'
-                                });
+                                USER_BUTTON_CLICKED = true;
+                                createLoginWindow();
                             }
                         }
-                    }).inject(document.getElement('.cologne-header-control-basket'));
+                    });
+
+                    if (UserButtonLoader) {
+                        moofx(UserButtonLoader).animate({
+                            opacity: 0
+                        }, {
+                            callback: function () {
+                                UserButtonLoader.destroy();
+                            }
+                        });
+                    }
+
+                    if ("QUIQQER_LOGIN_FAILED" in window && window.QUIQQER_LOGIN_FAILED) {
+                        new LoginWindow({
+                            maxHeight   : 380,
+                            social      : false,
+                            registration: false,
+                            logo        : Logo ? Logo.src : '',
+                            events      : {
+                                onSuccess: function () {
+                                    window.location.reload();
+                                }
+                            }
+                        }).open();
+                    }
                 });
-            }
+            });
+        }
 
-            if (document.getElement('.cologne-header-control-basket')) {
-                initBasket();
-            }
+        // region functions
 
-            /**
-             * Sticky menu
-             * @type {boolean}
-             */
-            var Menu         = document.getElement('.cologne-header'),
-                showMenuFrom = document.getElement('.topbar').getSize().y,
+        /**
+         * Init menu
+         */
+        function initMenu (Menu, TopBar) {
+            var showMenuFrom = TopBar ? TopBar.getSize().y : 0,
                 isMenuSticky = false,
-                SearchBtn    = document.getElement('.cologne-header .search-button'),
-                SearchInput  = document.getElement('.template-search input[type="search"]');
+                SearchBtn    = Menu.getElement('.search-button'),
+                SearchInput  = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null;
 
             if (SHOW_MENU_START_POS && SHOW_MENU_START_POS.toInt() > 0) {
                 showMenuFrom = SHOW_MENU_START_POS.toInt();
@@ -256,11 +198,11 @@ window.addEvent('domready', function () {
             }
 
             /**
+             * Stick menu to the top
              *
              * @param smooth {bool} - helpful on page reload when the page is already scrolled
              */
-            var setMenuFixed = function (smooth) {
-
+            function setMenuFixed (smooth) {
                 if (smooth === true) {
                     Menu.setStyles({
                         position : 'fixed',
@@ -278,8 +220,11 @@ window.addEvent('domready', function () {
                 Menu.addClass('cologne-header-fixed');
                 document.body.addClass('header-fixed');
                 isMenuSticky = true;
-            };
+            }
 
+            /**
+             * Show search button
+             */
             var showSearchBtn = function () {
                 if (!SearchBtn) {
                     return;
@@ -294,6 +239,9 @@ window.addEvent('domready', function () {
                 });
             };
 
+            /**
+             * Hide search button
+             */
             var hideSearchBtn = function () {
                 if (!SearchBtn) {
                     return;
@@ -307,6 +255,9 @@ window.addEvent('domready', function () {
                 });
             };
 
+            /**
+             * Set menu position to initial
+             */
             var removeMenuFixed = function () {
                 Menu.removeClass('cologne-header-fixed');
                 Menu.setStyle('position', null);
@@ -314,191 +265,282 @@ window.addEvent('domready', function () {
                 isMenuSticky = false;
             };
 
-            if (Menu) {
-                // check on page load if menu should be sticked to the top
+            // check on page load if menu should stick to the top
+            if (QUI.getScroll().y >= showMenuFrom) {
+                if (isMenuSticky) {
+                    return;
+                }
+
+                setMenuFixed(true);
+                showSearchBtn();
+            }
+
+            QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y >= showMenuFrom) {
                     if (isMenuSticky) {
                         return;
                     }
 
-                    setMenuFixed(true);
+                    setMenuFixed(SHOW_MENU_SMOOTH);
                     showSearchBtn();
+                    return;
                 }
 
-                QUI.addEvent('scroll', function () {
-                    if (QUI.getScroll().y >= showMenuFrom) {
-                        if (isMenuSticky) {
-                            return;
+                if (!isMenuSticky) {
+                    return;
+                }
+
+                removeMenuFixed();
+                hideSearchBtn();
+            });
+        }
+
+        /**
+         * Basket
+         */
+        function initBasket () {
+            require([
+                'package/quiqqer/order/bin/frontend/controls/basket/Button'
+            ], function (Basket) {
+                new Basket({
+                    open  : BASKET_OPEN.toInt(),
+                    styles: {
+                        float: 'right'
+                    },
+                    events: {
+                        onCreate: function (Basket) {
+                            var BasketNode     = Basket.getElm(),
+                                basketStyleCss = '';
+
+                            if (BASKET_STYLE) {
+                                basketStyleCss = 'basket-style-' + BASKET_STYLE;
+                            }
+
+                            // clear default content
+                            BasketNode.set('html', '');
+                            BasketNode.addClass('tpl-btn ' + basketStyleCss);
+
+                            new Element('span', {
+                                'class': 'quiqqer-order-basketButton-icon-custom',
+                                html   : '<span class="fa fa-shopping-basket"></span>'
+                            }).inject(BasketNode);
+
+                            new Element('span', {
+                                'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
+                                html   : '0'
+                            }).inject(BasketNode);
+
+                            if (BASKET_STYLE && BASKET_STYLE === 'full') {
+                                new Element('span', {
+                                    'class': 'quiqqer-order-basketButton-sum',
+                                    html   : INITAL_BASKET_PRICE
+                                }).inject(BasketNode);
+                            }
+
+                            document.getElement('.cologne-header-control-basket').set('html', '');
+                        },
+                        /**
+                         * onShowBasketBegin event
+                         *
+                         * @param Basket
+                         * @param pos - position of popup basket
+                         * @param height - height of basket button
+                         */
+                        showBasketBegin: function (Basket, pos, height) {
+
+                            // move basket popup from bottom of the page to header
+                            // it's better to manage for sticky header
+                            Header.getElement('.cologne-header-control').adopt(Basket.$BasketContainer);
+
+                            var headerHeight = Header.getSize().y;
+
+                            // -1px because of header bottom border
+                            pos.y = headerHeight - 1;
+
+                            // reset button height
+                            // see package/quiqqer/order/bin/frontend/controls/basket/Button.showSmallBasket()
+                            height.y = 0;
+
+                            Basket.$BasketContainer.setStyles({
+                                right: 0 // right margin from .cologne-header-control-basket
+                            });
+
+                            // Do not scroll the page
+                            Basket.$BasketContainer.addEvent('focus', function (event) {
+                                event.preventDefault();
+                            });
+
+                            Basket.$BasketContainer.setStyles({
+                                border: '1px solid #ddd'
+                            });
+                        }
+                    }
+                }).inject(document.getElement('.cologne-header-control-basket'));
+            });
+        }
+
+        /**
+         * UserIcon load event
+         *
+         * @param UserIconControl
+         * @param QUILocale
+         */
+        function userIconLoadEvent (UserIconControl, QUILocale) {
+            var Menu = UserIconControl.$Menu;
+
+            require([
+                'controls/users/LogoutWindow',
+                'qui/controls/contextmenu/Item',
+                'qui/controls/contextmenu/Separator'
+            ], function (LogoutWindow, Item, Separator) {
+                Menu.appendChild(new Separator());
+                // own logout entry
+                Menu.appendChild(
+                    new Item({
+                        icon  : 'fa fa-sign-out',
+                        text  : QUILocale.get(lg, 'frontend.usericon.menuentry.logout.label'),
+                        events: {
+                            click: function () {
+                                createLogoutWindow(LogoutWindow);
+                            }
+                        }
+                    })
+                );
+            });
+
+            UserIconControl.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
+                MenuNode.setStyles({
+                    left : null,
+                    right: -25
+                });
+            });
+        }
+
+        /**
+         * Create and open logout window
+         *
+         * @param LogoutWindow
+         */
+        function createLogoutWindow (LogoutWindow) {
+            new LogoutWindow({
+                class    : 'cologne-logout-dialog',
+                title    : false,
+                icon     : false,
+                maxHeight: 350,
+                maxWidth : 400,
+                events   : {
+                    onOpen: function (Popup) {
+
+                        var Content     = Popup.getElm(),
+                            ContentElms = [
+                                Content.getElement('.qui-window-popup-content'),
+                                Content.getElement('.qui-window-popup-buttons')
+                            ];
+
+                        ContentElms.each(function (ContentElm) {
+                            ContentElm.setStyle('opacity', 0);
+                        });
+
+                        var CancelButton = Content.getElement('button[name="cancel"]');
+
+                        if (CancelButton) {
+//                    CancelButton.removeClass('btn-light');
+                            CancelButton.addClass('btn-secondary btn-outline');
                         }
 
-                        setMenuFixed(SHOW_MENU_SMOOTH);
-                        showSearchBtn();
-                        return;
+                        // workaround due to the CancelButton.addClass
+                        // to avoid the "flash" effect
+                        (function () {
+                            ContentElms.each(function (ContentElm) {
+                                moofx(ContentElm).animate({
+                                    opacity: 1
+                                });
+                            });
+                        }).delay(50);
                     }
+                }
+            }).open();
+        }
 
-                    if (!isMenuSticky) {
-                        return;
+        /**
+         * Create and open login popup
+         */
+        function createLoginWindow (onlyLogin = false) {
+            USER_BUTTON_CLICKED = false;
+
+            console.log("huhu")
+
+            require([
+                'Locale',
+                'utils/Controls',
+                'package/quiqqer/frontend-users/bin/frontend/controls/login/Window'
+            ], function (QUILocale, QUIControlUtils, LoginWindow) {
+                new LoginWindow({
+                    class    : 'cologne-login-dialog',
+                    title    : false,
+                    maxHeight: 550,
+                    maxWidth : 400,
+                    events   : {
+                        onOpen   : function (LoginWindow) {
+                            if (!REGISTER_URL && !onlyLogin) {
+                                return;
+                            }
+
+                            if (onlyLogin) {
+                                return;
+                            }
+
+                            var Elm = LoginWindow.getElm();
+
+                            var CreateAccountWrapper = new Element('div', {
+                                'class': 'login-popup-create-account-wrapper'
+                            });
+
+                            new Element('a', {
+                                href: REGISTER_URL,
+                                html: QUILocale.get(lg, 'template.popup.login.registration.button'),
+                            }).inject(CreateAccountWrapper);
+
+                            CreateAccountWrapper.inject(Elm.getElement('.qui-window-popup-content'));
+                        },
+                        onSuccess: function () {
+                            window.location.reload();
+                        }
                     }
+                }).open();
+            });
+        }
 
-                    removeMenuFixed();
-                    hideSearchBtn();
-                });
+        /**
+         * Menu mobile
+         *
+         * In mobile resolution (less than 767px) opens category menu button
+         * the mobile navigation instead category navigation.
+         */
+        function initMobileMenu () {
+            if (QUI.getWindowSize().x >= 768) {
+                return;
             }
-        });
+
+            var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
+                MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
+
+            if (!OpenCategoryBtn) {
+                console.error('Open Category Button ".shop-category-menu-button" not found.');
+                return;
+            }
+
+            require(['utils/Controls'], function (Controls) {
+                Controls.getControlByElement(MenuElm).then(function (MenuControl) {
+                    OpenCategoryBtn.removeEvents('click');
+                    OpenCategoryBtn.addEvent('click', function () {
+                        MenuControl.toggle();
+                    });
+                });
+            });
+        }
+
+        // end region functions
+
     });
 });
-
-/**
- * UserIcon load event
- *
- * @param UserIconControl
- * @param QUILocale
- */
-function userIconLoadEvent(UserIconControl, QUILocale) {
-    var Menu = UserIconControl.$Menu;
-
-    require([
-        'controls/users/LogoutWindow',
-        'qui/controls/contextmenu/Item',
-        'qui/controls/contextmenu/Separator'
-    ], function (LogoutWindow, Item, Separator) {
-        Menu.appendChild(new Separator());
-        // own logout entry
-        Menu.appendChild(
-            new Item({
-                icon  : 'fa fa-sign-out',
-                text  : QUILocale.get(lg, 'frontend.usericon.menuentry.logout.label'),
-                events: {
-                    click: function () {
-                        createLogoutWindow(LogoutWindow);
-                    }
-                }
-            })
-        );
-    });
-
-    UserIconControl.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
-        MenuNode.setStyles({
-            left : null,
-            right: -25
-        });
-    });
-}
-
-/**
- * Create and open logout window
- *
- * @param LogoutWindow
- */
-function createLogoutWindow(LogoutWindow) {
-    new LogoutWindow({
-        class    : 'cologne-logout-dialog',
-        title    : false,
-        icon     : false,
-        maxHeight: 350,
-        maxWidth : 400,
-        events   : {
-            onOpen: function (Popup) {
-
-                var Content     = Popup.getElm(),
-                    ContentElms = [
-                        Content.getElement('.qui-window-popup-content'),
-                        Content.getElement('.qui-window-popup-buttons')
-                    ];
-
-                ContentElms.each(function (ContentElm) {
-                    ContentElm.setStyle('opacity', 0);
-                });
-
-                var CancelButton = Content.getElement('button[name="cancel"]');
-
-                if (CancelButton) {
-//                    CancelButton.removeClass('btn-light');
-                    CancelButton.addClass('btn-secondary btn-outline');
-                }
-
-                // workaround due to the CancelButton.addClass
-                // to avoid the "flash" effect
-                (function () {
-                    ContentElms.each(function (ContentElm) {
-                        moofx(ContentElm).animate({
-                            opacity: 1
-                        });
-                    });
-                }).delay(50);
-            }
-        }
-    }).open();
-}
-
-/**
- * Create and open login popup
- */
-function createLoginWindow() {
-    USER_BUTTON_CLICKED = false;
-
-    require([
-        'Locale',
-        'utils/Controls',
-        'package/quiqqer/frontend-users/bin/frontend/controls/login/Window'
-    ], function (QUILocale, QUIControlUtils, LoginWindow) {
-        new LoginWindow({
-            class    : 'cologne-login-dialog',
-            title    : false,
-            maxHeight: 550,
-            maxWidth : 400,
-            events   : {
-                onOpen   : function (LoginWindow) {
-                    if (!REGISTER_URL) {
-                        return;
-                    }
-
-                    var Elm = LoginWindow.getElm();
-
-                    var CreateAccountWrapper = new Element('div', {
-                        'class': 'login-popup-create-account-wrapper'
-                    });
-
-                    new Element('a', {
-                        href: REGISTER_URL,
-                        html: QUILocale.get(lg, 'template.popup.login.registration.button'),
-                    }).inject(CreateAccountWrapper);
-
-                    CreateAccountWrapper.inject(Elm.getElement('.qui-window-popup-content'));
-                },
-                onSuccess: function () {
-                    window.location.reload();
-                }
-            }
-        }).open();
-    });
-}
-
-/**
- * Menu mobile
- *
- * In mobile resolution (less than 767px) opens category menu button
- * the mobile navigation instead category navigation.
- */
-function initMobileMenu() {
-    if (QUI.getWindowSize().x >= 768) {
-        return;
-    }
-
-    var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
-        MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
-
-    if (!OpenCategoryBtn) {
-        console.error('Open Category Button ".shop-category-menu-button" not found.');
-        return;
-    }
-
-    require(['utils/Controls'], function (Controls) {
-        Controls.getControlByElement(MenuElm).then(function (MenuControl) {
-            OpenCategoryBtn.removeEvents('click');
-            OpenCategoryBtn.addEvent('click', function () {
-                MenuControl.toggle();
-            });
-        });
-    });
-}

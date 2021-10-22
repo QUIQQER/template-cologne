@@ -54,7 +54,19 @@ if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
 
 $InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
 
-$templateSettings['Logo']               = $Project->getMedia()->getLogoImage();
+$Logo       = $Project->getMedia()->getLogoImage();
+$logoHeight = $templateSettings['logoHeight'];
+$logoWidth  = false;
+
+try {
+    $logoWidth = $Logo->getResizeSize(false, $logoHeight)['width'];
+} catch (QUI\Exception $Exception) {
+    QUI\System\Log::addNotice($Exception->getMessage());
+}
+
+$templateSettings['Logo']               = $Logo;
+$templateSettings['logoHeight']         = $logoHeight;
+$templateSettings['logoWidth']          = $logoWidth;
 $templateSettings['initialBasketPrice'] = $InitialBasketPrice->getDisplayPrice();
 $templateSettings['createBasketButton'] = $createBasketButton;
 
@@ -128,5 +140,6 @@ $templateSettings['Search']             = new QUI\ERP\Products\Controls\Search\S
 ]);
 $templateSettings['registerSiteUrl']    = $registerSiteUrl;
 
+$Template->setAttributes($templateSettings);
 
 $Engine->assign($templateSettings);

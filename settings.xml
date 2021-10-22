@@ -12,7 +12,15 @@
                     <conf name="homeLinkText">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="logoHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>60</defaultvalue>
+                    </conf>
 
+                    <conf name="checkoutAppearance">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>minimal</defaultvalue>
+                    </conf>
                     <conf name="showRetailPrice">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -240,6 +248,20 @@
                                     />
                                 </text>
                             </input>
+
+                            <!-- logo height -->
+                            <input conf="templateCologne.settings.logoHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.general.logoHeight"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.general.logoHeight.desc"
+                                    />
+                                </description>
+                            </input>
                         </settings>
 
                         <settings title="templateCologne.settings"
@@ -250,6 +272,36 @@
                                 />
                             </title>
 
+                            <!-- checkout and basket page design -->
+                            <select conf="templateCologne.settings.checkoutAppearance">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.checkoutAppearance"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.checkoutAppearance.desc"
+                                    />
+                                </description>
+
+                                <option value="minimal">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.checkoutAppearance.minimal"
+                                    />
+                                </option>
+                                <option value="compact">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.checkoutAppearance.compact"
+                                    />
+                                </option>
+                                <option value="full">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.checkoutAppearance.full"
+                                    />
+                                </option>
+
+                            </select>
 
                             <!-- show retail price -->
                             <input conf="templateCologne.settings.showRetailPrice" type="checkbox">

@@ -15,6 +15,13 @@
     width: 30%;
 }
 
+@media screen and (min-width: 768px) {
+    .quiqqer-product-sidebar {
+        position: sticky;
+        top: 60px;
+    }
+}
+
 .quiqqer-products-category,
 .quiqqer-products-productsearch,
 .quiqqer-products-product {

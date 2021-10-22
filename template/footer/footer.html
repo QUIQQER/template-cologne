@@ -1,14 +1,21 @@
-<footer class="template-footer">
-    {* footer brick area *}
-    {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
+{assign var=smallFooter value=''}
+{if !$Template->getAttribute('showFooter')}
+    {assign var=smallFooter value='template-footer__small'}
+{/if}
 
-    {* pre-defined footer *}
-    {fetch template="template/footer/predefinedFooter.html"
-        paymentsData=$paymentsData
-        shortText=$shortText
-        urlList=$urlList
-        featuredProducts=$featuredProducts
-    }
+<footer class="template-footer {$smallFooter}">
+    {if $Template->getAttribute('showFooter')}
+        {* footer brick area *}
+        {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
+
+        {* pre-defined footer *}
+        {fetch template="template/footer/predefinedFooter.html"
+            paymentsData=$paymentsData
+            shortText=$shortText
+            urlList=$urlList
+            featuredProducts=$featuredProducts
+        }
+    {/if}
 
     {* footer copyright *}
     {fetch template="template/footer/copyright.html"}
