@@ -1,5 +1,5 @@
 {* template settings *}
-{assign var=hideEmptyFields value=QUI::getRewrite()->getProject()->getConfig('templateCologne.settings.hideEmptyFields')}
+        {assign var=hideEmptyFields value=QUI::getRewrite()->getProject()->getConfig('templateCologne.settings.hideEmptyFields')}
 
 <article>
     {template_event name="quiqqer::products::product::begin" Product=$Product}
@@ -22,17 +22,19 @@
 
         <div class="product-data-price">
             {if $Site->getProject()->getConfig('templateCologne.settings.showRetailPrice')}
-                {if $Product->hasOfferPrice()}
-                    {*<!-- Offer price (Angebotspreis) -->*}
-                    <div class="product-data-price-retail text-muted">
-                        {$PriceOldDisplay->create()}
-                    </div>
-                {elseif $PriceRetailDisplay && $Price->getPrice() < $PriceRetail->getPrice()}
-                    {*<!-- Retail price (UVP) -->*}
-                    <div class="product-data-price-retail text-muted">
-                        {$PriceRetailDisplay->create()}
-                    </div>
-                {/if}
+            {if $Product->hasOfferPrice()}
+            {*<!-- Offer price (Angebotspreis) -->*}
+            <div class="product-data-price-retail text-muted">
+                {$PriceOldDisplay->create()}
+            </div>
+            {elseif $PriceRetailDisplay && $Price->getPrice()
+            <
+            $PriceRetail->getPrice()}
+            {*<!-- Retail price (UVP) -->*}
+            <div class="product-data-price-retail text-muted">
+                {$PriceRetailDisplay->create()}
+            </div>
+            {/if}
             {/if}
             <div class="product-data-price-main">
                 {$PriceDisplay->create()}
@@ -66,14 +68,15 @@
             </div>
             {/foreach}
 
-            {assign var=ShippingTimeFrontendView value=\QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
+            {assign var=ShippingTimeFrontendView
+            value=\QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
             {if $ShippingTimeFrontendView}
-                {$ShippingTimeFrontendView->create()}
+            {$ShippingTimeFrontendView->create()}
             {/if}
 
             {assign var=StockFrontendView value=\QUI\TemplateCologne\Utils::getStockFrontendView($Product->getId())}
             {if $StockFrontendView}
-                {$StockFrontendView->create()}
+            {$StockFrontendView->create()}
             {/if}
         </div>
 
@@ -83,6 +86,8 @@
             {template_event name="quiqqer::products::product::buttons::end" Product=$Product}
         </div>
     </div>
+
+    {template_event name="quiqqer::products::product::buttons::after" Product=$Product}
 
     {assign var=ContentField value=$Product->getField(6)}
 
@@ -121,13 +126,13 @@
                 {foreach $detailFields as $Field}
 
                 {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT &&
-                    $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
-                    {continue}
+                $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
+                {continue}
                 {/if}
 
                 {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS &&
-                    $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
-                    {continue}
+                $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
+                {continue}
                 {/if}
 
                 {* hide empty fields *}
@@ -139,7 +144,7 @@
                 {* hide empty fields *}
                 {assign var=fieldValue value=$Field->getValue()}
                 {if $hideEmptyFields && empty($fieldValue)}
-                    {continue}
+                {continue}
                 {/if}
 
                 <li class="product-data-more-tabs-tab"
@@ -209,23 +214,23 @@
                 {$Files->create()}
             </section>
             {/if}
-            
+
             {foreach $detailFields as $Field}
 
             {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT &&
-                $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
-                {continue}
+            $Project->getConfig('templateCologne.settings.showEquipment') != 'asTab'}
+            {continue}
             {/if}
 
             {if $Field->getId() == QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS &&
-                $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
-                {continue}
+            $Project->getConfig('templateCologne.settings.showSimilarProducts') != 'asTab'}
+            {continue}
             {/if}
 
             {* hide empty fields *}
             {assign var=fieldValue value=$Field->getValue()}
             {if $hideEmptyFields && empty($fieldValue)}
-                {continue}
+            {continue}
             {/if}
 
             <section class="product-data-more-sheet hide" id="panelF{$Field->getId()}" role="tabpanel"
@@ -256,7 +261,7 @@
 
     {* <!-- Visited products --> *}
     {if isset($VisitedProducts) &&
-        $Project->getConfig('templateCologne.settings.showVisitedProducts')}
+    $Project->getConfig('templateCologne.settings.showVisitedProducts')}
     <section class="product-productsList product-visited-products">
         <header>
             <h1>
@@ -270,8 +275,8 @@
 
     {* <!-- Similar products --> *}
     {if $Project->getConfig('templateCologne.settings.showSimilarProducts') == 'afterDesc' &&
-        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS) &&
-        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()}
+    $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS) &&
+    $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()}
     <section class="product-productsList product-similar-products">
         <header>
             <h1>
@@ -280,8 +285,8 @@
         </header>
 
         {control control='QUI\ERP\Products\Controls\Products\ProductList'
-                currentProductId=$Product->getId()
-                productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()
+        currentProductId=$Product->getId()
+        productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_SIMILAR_PRODUCTS)->getValue()
         }
     </section>
     {/if}
@@ -289,7 +294,7 @@
     {* <!-- Equipments products --> *}
     {if $Project->getConfig('templateCologne.settings.showEquipment') == 'afterDesc' &&
     $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT) &&
-        $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()}
+    $Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()}
     <section class="product-productsList product-equipment-products">
         <header>
             <h1>
@@ -298,8 +303,8 @@
         </header>
 
         {control control='QUI\ERP\Products\Controls\Products\ProductList'
-                currentProductId=$Product->getId()
-                productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()
+        currentProductId=$Product->getId()
+        productIds=$Product->getField(QUI\ERP\Products\Handler\Fields::FIELD_EQUIPMENT)->getValue()
         }
     </section>
     {/if}
