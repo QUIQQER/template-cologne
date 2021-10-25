@@ -1141,6 +1141,7 @@ a.toTop:before {
     color: inherit;
     font-size: 1.5rem;
     outline: none;
+    transform: scale(0);
 }
 
 /* user & basket container */
