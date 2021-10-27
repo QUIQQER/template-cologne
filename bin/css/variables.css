@@ -1,0 +1,11 @@
+:root {
+    --font-size-sm: 12px;
+    --font-size: 14px; /* default */
+    --font-size-lg: 16px;
+
+    /* spacing for margin, padding, etc */
+    --spacing-xs: 0.875rem;
+    --spacing-sm: 1rem;
+    --spacing: 1.3rem; /* default */
+    --spacing-lg: 1.5rem;
+}

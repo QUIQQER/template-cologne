@@ -492,7 +492,8 @@ a.toTop:before {
     text-align: center;
 }
 
-.control-content {
+.control-content,
+.control-body {
     margin: 0 0 3rem;
 }
 
