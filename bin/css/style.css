@@ -492,7 +492,8 @@ a.toTop:before {
     text-align: center;
 }
 
-.control-content {
+.control-content,
+.control-body {
     margin: 0 0 3rem;
 }
 
@@ -1141,6 +1142,7 @@ a.toTop:before {
     color: inherit;
     font-size: 1.5rem;
     outline: none;
+    transform: scale(0);
 }
 
 /* user & basket container */
