@@ -714,8 +714,8 @@
             <en><![CDATA[Show products]]></en>
         </locale>
         <locale name="copyright.text" html="true">
-            <de><![CDATA[&copy; [year] - Template Cologne umgesetzt mit <a href="https://www.quiqqer.de">QUIQQER</a>]]></de>
-            <en><![CDATA[&copy; [year] - Template Cologne realized with <a href="https://www.quiqqer.com">QUIQQER</a>]]></en>
+            <de><![CDATA[&copy; [year] - Template Cologne umgesetzt mit <a href="https://www.ecoyn.de">ecoyn</a>]]></de>
+            <en><![CDATA[&copy; [year] - Template Cologne realized with <a href="https://www.ecoyn.com">ecoyn</a>]]></en>
         </locale>
         <locale name="template.button.toTop">
             <de><![CDATA[Nach oben]]></de>
