@@ -89,6 +89,11 @@ body.type-quiqqer-order-types-orderingProcess.type-minimal-design,
 body.type-quiqqer-order-types-shoppingCart.type-minimal-design {
     display: flex !important;
     flex-direction: column;
+
+}
+
+body.type-quiqqer-order-types-orderingProcess.type-minimal-design,
+body.type-quiqqer-order-types-shoppingCart.type-minimal-design {
     min-height: 100vh;
 }
 
