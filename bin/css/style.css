@@ -40,6 +40,10 @@
     url('../fonts/maven-pro-v11-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/maven-pro-v11-latin-500.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/maven-pro-v11-latin-500.woff') format('woff'), /* Modern Browsers */ url('../fonts/maven-pro-v11-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/maven-pro-v11-latin-500.svg#MavenPro') format('svg'); /* Legacy iOS */
 }
 
+html {
+    height: 100%;
+}
+
 .mobile-grid-5, .mobile-grid-10, .mobile-grid-15, .mobile-grid-20, .mobile-grid-25, .mobile-grid-30, .mobile-grid-35, .mobile-grid-40, .mobile-grid-45, .mobile-grid-50, .mobile-grid-55, .mobile-grid-60, .mobile-grid-65, .mobile-grid-70, .mobile-grid-75, .mobile-grid-80, .mobile-grid-85, .mobile-grid-90, .mobile-grid-95, .mobile-grid-100, .mobile-grid-33, .mobile-grid-66, .grid-5, .grid-10, .grid-15, .grid-20, .grid-25, .grid-30, .grid-35, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60, .grid-65, .grid-70, .grid-75, .grid-80, .grid-85, .grid-90, .grid-95, .grid-100, .grid-33, .grid-66, .grid-container {
     padding-left: 20px;
     padding-right: 20px;
