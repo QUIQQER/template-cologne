@@ -62,13 +62,13 @@
         </div>
         <div class="quiqqer-products-productList-sort-display" style="display: none">
             <span class="fa fa-th button quiqqer-products-productList-sort-display-gallery"
-                  data-tooltip="{locale group="quiqqer/products" var="category.control.productlist.view.gallery"}"
+                  data-tooltip="{locale group='quiqqer/products' var='category.control.productlist.view.gallery'}"
             ></span>
             <span class="fa fa-list-ul button quiqqer-products-productList-sort-display-details"
-                  data-tooltip="{locale group="quiqqer/products" var="category.control.productlist.view.details"}"
+                  data-tooltip="{locale group='quiqqer/products' var='category.control.productlist.view.details'}"
             ></span>
             <span class="fa fa-align-justify button quiqqer-products-productList-sort-display-list"
-                  data-tooltip="{locale group="quiqqer/products" var="category.control.productlist.view.list"}"
+                  data-tooltip="{locale group='quiqqer/products' var='category.control.productlist.view.list'}"
             ></span>
         </div>
     </div>
@@ -83,8 +83,10 @@
             <span class="quiqqer-products-productList-filterList-title text-muted">
                 {locale group="quiqqer/products" var="category.control.productlist.selectionTitle"}
             </span>
-            <div class="quiqqer-products-productList-filterList-fields"></div>
-            <div class="quiqqer-products-productList-filterList-list"></div>
+            <div class="quiqqer-products-productList-filterList-wrapper">
+                <div class="quiqqer-products-productList-filterList-fields"></div>
+                <div class="quiqqer-products-productList-filterList-list"></div>
+            </div>
         </div>
         <div class="quiqqer-products-productList-resultInfo">
             <div class="quiqqer-products-productList-resultInfo-text text-muted">

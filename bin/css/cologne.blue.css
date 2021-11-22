@@ -50,7 +50,8 @@ a:hover,
 }
 
 /* products filter */
-.quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter {
+.quiqqer-products-productList-filterList-fields .quiqqer-products-productList-filter,
+.quiqqer-products-productList-filterList-list .quiqqer-products-productList-filter {
     background: #e5effb;
 }
 
