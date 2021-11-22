@@ -59,7 +59,7 @@
         </div>
         {/if}
 
-        {if isset($ProductList) && $ProductList->count() && !empty($filter) || $ProductList->getAttribute('showFilterInfo')}
+        {if isset($ProductList) && $ProductList->count() && !empty($filter) || isset($ProductList) && $ProductList->getAttribute('showFilterInfo')}
         <div class="product-sidebar-container product-sidebar-filter template-grid-row clearfix">
             <header class="left-sidebar-filter-header">
                 <h2>{locale group="quiqqer/products" var="type.category.filterTitle"}</h2>
