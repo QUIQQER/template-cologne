@@ -773,6 +773,13 @@
     width: 100%;
 }
 
+.quiqqer-productList-product-list-buttons > a {
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
 @media screen and (max-width: 767px) {
     .quiqqer-productList-product-list {
         display: grid;

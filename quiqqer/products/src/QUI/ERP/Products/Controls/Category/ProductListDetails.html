@@ -53,28 +53,39 @@
         <div class="cologne-productList-product-details-content-buttons">
             <!--<span class="fa fa-envelope button__small quiqqer-products-product-button-purchase"></span>-->
             <!--<span class="fa fa-plus button__small quiqqer-products-product-button-add"></span>-->
-            {assign var=disabled value=0}
-            {if $Product->getMaximumQuantity() < 1}
-                {assign var=disabled value=1}
-            {/if}
-            {if !$Product->hasRequiredUserInputFields()}
-            <a href="{$Product->getUrl()}"
-               class="btn btn-primary add-to-basket"
-               data-product-id="{$Product->getId()}"
-               data-product-animatable="1"
-               data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
-               {if $disabled}disabled="disabled"{/if}
-               data-qui-options-disabled="{$disabled}"
-            >
-                <label>
-                    {locale group="quiqqer/product-bricks" var="button.product.addToCart"}
-                </label>
-            </a>
-            {/if}
 
-            <a href="{$Product->getUrl()}" class="btn btn-secondary btn-outline">
-                {locale group="quiqqer/template-cologne" var="template.button.openProduct"}
-            </a>
+            {if QUI\ERP\Products\Utils\Products::isVariant($Product)}
+                <a href="{$Product->getUrl()}"
+                   title="{$Product->getTitle()|escape:'html'}"
+                   class="btn btn-primary"
+                >
+                    {locale group="quiqqer/order" var="control.basket.buttonVariantAdd.text"}
+                </a>
+            {else}
+
+                {assign var=disabled value=0}
+                {if $Product->getMaximumQuantity() < 1}
+                    {assign var=disabled value=1}
+                {/if}
+                {if !$Product->hasRequiredUserInputFields()}
+                <a href="{$Product->getUrl()}"
+                   class="btn btn-primary add-to-basket"
+                   data-product-id="{$Product->getId()}"
+                   data-product-animatable="1"
+                   data-qui="package/quiqqer/product-bricks/bin/controls/basket/AddToBasket"
+                   {if $disabled}disabled="disabled"{/if}
+                   data-qui-options-disabled="{$disabled}"
+                >
+                    <label>
+                        {locale group="quiqqer/product-bricks" var="button.product.addToCart"}
+                    </label>
+                </a>
+                {/if}
+
+                <a href="{$Product->getUrl()}" class="btn btn-secondary btn-outline">
+                    {locale group="quiqqer/template-cologne" var="template.button.openProduct"}
+                </a>
+            {/if}
 
         </div>
     </div>
