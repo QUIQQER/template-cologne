@@ -798,6 +798,10 @@ a.toTop:before {
     width: 100%;
 }
 
+.cologne-breadcrumb {
+    flex-shrink: 0;
+}
+
 .cologne-breadcrumb-wrapper {
     height: 100%;
 }
