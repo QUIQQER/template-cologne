@@ -1,13 +1,30 @@
-.qui-products-price-display-vat {
+/*********/
+/* Price */
+/*********/
+.qui-products-price-display {
+    line-height: 1.25rem;
+}
+
+.qui-products-price-display-value:after {
+    content: '';
     display: block;
-    font-size: 0.75rem;
-    font-weight: normal;
+}
+
+/* Shipping button info */
+.quiqqer-shipping-shippingInformation-btn,
+.qui-products-price-display-vat {
+    font-size: 0.875rem;
+}
+
+.qui-products-price-display-vat:not(:last-child) {
+    margin-right: 0.5em;
 }
 
 .quiqqer-products-wrapper {
     align-items: flex-start;
     display: flex;
 }
+/* Price end */
 
 .quiqqer-product-sidebar {
     flex-shrink: 0;
@@ -557,16 +574,12 @@
     text-decoration: line-through;
 }
 
-.cologne-products-productGallery-products-product-price-regular {
+.cologne-products-productGallery-products-product-price-regular .qui-products-price-display-value {
     font-weight: bold;
 }
 
 .cologne-products-productGallery-products-product-price .qui-products-price-display {
     display: inline;
-}
-
-.cologne-products-productGallery-products-product-price .qui-products-price-display-vat {
-    display: block;
 }
 
 .cologne-products-productGallery-products-product-price-shippingTime {
@@ -667,9 +680,10 @@
     text-decoration: line-through;
     font-size: 0.9rem;
 }
-.cologne-productList-product-details-content-regular {
+
+.cologne-productList-product-details-content-regular .qui-products-price-display-value {
     font-size: 1.2em;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .cologne-productList-product-details-content-price .qui-products-price-display {
@@ -930,13 +944,23 @@
     margin-top: 2rem;
 }
 
+.product-data .product-data-price:not(:first-child) {
+    margin-top: 3rem;
+}
+
 .product-data .product-data-price .qui-products-price-display {
     text-align: left;
+}
+
+.product-data .product-data-price .qui-products-price-display-value {
+    line-height: inherit;
+    display: inline;
 }
 
 /* retail price */
 .product-data-price .product-data-price-retail .qui-products-price-display-value {
     font-size: 1.3em;
+    display: block;
     text-decoration: line-through;
 }
 
@@ -948,11 +972,6 @@
 
 .product-data-price .qui-products-price-display-vat {
     text-align: left;
-}
-
-.qui-products-price-display-prefix {
-    display: inline-block;
-    padding-right: 5px;
 }
 
 /******************/
@@ -1037,10 +1056,12 @@
 }
 
 .product-data-fieldlist .product-data-fieldlist-reset {
-    width: 100%;
-    margin-left: 20px;
-    padding: 10px 0;
-    text-align: center;
+    margin-left: auto;
+    padding: 0.5rem 0;
+}
+
+.product-data-fieldlist .product-data-fieldlist-reset:hover {
+    background: none;
 }
 
 /* button add to basket */
