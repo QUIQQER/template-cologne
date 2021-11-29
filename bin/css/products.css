@@ -1058,6 +1058,7 @@
 .product-data-fieldlist .product-data-fieldlist-reset {
     margin-left: auto;
     padding: 0.5rem 0;
+    width: 100%;
 }
 
 .product-data-fieldlist .product-data-fieldlist-reset:hover {
