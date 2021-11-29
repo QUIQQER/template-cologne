@@ -183,6 +183,10 @@ small {
     font-weight: 700;
 }
 
+[role="button"] {
+    cursor: pointer;
+}
+
 /***************************/
 /* noUi Slider input range */
 /***************************/
