@@ -61,6 +61,13 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>afterDesc</defaultvalue>
                     </conf>
+                    <conf name="hideCategoryContent">
+                        <type><![CDATA[bool]]></type>
+                    </conf>
+                    <conf name="categoryContentHeight">
+                        <type><![CDATA[number]]></type>
+                        <defaultvalue>80</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -451,6 +458,27 @@
                                     />
                                 </option>
                             </select>
+
+                            <input conf="templateCologne.settings.hideCategoryContent" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.hideCategoryContent"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.hideCategoryContent.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templateCologne.settings.categoryContentHeight" type="number" min="0" max="500">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.categoryContentHeight"
+                                    />
+                                </text>
+                            </input>
                         </settings>
 
                         <!-- header -->

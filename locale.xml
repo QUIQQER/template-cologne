@@ -361,6 +361,22 @@
             <de><![CDATA[Nach der Produktbeschreibung anzeigen]]></de>
             <en><![CDATA[Show after product description]]></en>
         </locale>
+        <locale name="settings.shop.hideCategoryContent">
+            <de><![CDATA[Seiteninhalt auf Produktkategorie zum Teil verstecken]]></de>
+            <en><![CDATA[Partially hide content on product category site]]></en>
+        </locale>
+        <locale name="settings.shop.hideCategoryContent.desc">
+            <de><![CDATA[Wenn aktiviert, der Inhalt bekommt eine festgesetzte Höhe. Der Rest des Inhalts wird vorerst nicht sichtbar, bis der Benutzer auf den Button "Mehr anzeigen" klickt.]]></de>
+            <en><![CDATA[When enabled, the content gets a fixed height. The rest of the content will not be visible for now, until the user clicks the "Show more" button.]]></en>
+        </locale>
+        <locale name="settings.shop.categoryContentHeight">
+            <de><![CDATA[Maximale Höhe des Inhalts (Kategorie Seite)]]></de>
+            <en><![CDATA[Max content heigt of category site]]></en>
+        </locale>
+        <locale name="frontend.categoryContent.showMoreButton">
+            <de><![CDATA[Mehr anzeigen]]></de>
+            <en><![CDATA[Show more]]></en>
+        </locale>
 
         <locale name="settings.shop.showEquipment">
             <de><![CDATA[Zubehör auf Produktseite]]></de>
