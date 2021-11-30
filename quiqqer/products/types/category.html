@@ -137,9 +137,33 @@
             {/if}
 
             {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
-            <section class="content-body quiqqer-category-content">
-                {$Site->getAttribute('content')}
-            </section>
+                {*
+                Template setting: hide category content
+                *}
+                {if $Project->getConfig('templateCologne.settings.hideCategoryContent')}
+                    {assign var=contentHeight value=80}
+                    {if $Project->getConfig('templateCologne.settings.categoryContentHeight') > 0}
+                        {assign var=contentHeight value=$Project->getConfig('templateCologne.settings.categoryContentHeight')}
+                    {/if}
+                    <section class="content-body quiqqer-category-content quiqqer-category-content__hidden">
+                        <div class="quiqqer-category-content-inner" style="max-height: {$contentHeight}px;">
+                            <div class="quiqqer-category-content-inner-body">
+                                {$Site->getAttribute('content')}
+                                <div class="quiqqer-category-content-inner-body__bg"></div>
+                            </div>
+                        </div>
+                        <div class="quiqqer-category-content-button" >
+                            <button class="btn btn-link" style="display: none; opacity: 0;">
+                                {locale group='quiqqer/template-cologne' var='frontend.categoryContent.showMoreButton'}
+                                <span class="fa fa-angle-down"></span>
+                            </button>
+                        </div>
+                    </section>
+                {else}
+                    <section class="content-body quiqqer-category-content">
+                        {$Site->getAttribute('content')}
+                    </section>
+                {/if}
             {/if}
 
             {$ProductList->create()}

@@ -10,6 +10,10 @@ window.addEvent('domready', function () {
 
         initMobileMenu();
 
+        if (document.body.hasClass('type-quiqqer-products-types-category')) {
+            initExpandCategoryContent();
+        }
+
         /**
          * toTop button
          */
@@ -536,6 +540,82 @@ window.addEvent('domready', function () {
                     OpenCategoryBtn.addEvent('click', function () {
                         MenuControl.toggle();
                     });
+                });
+            });
+        }
+
+        /**
+         * Show content of category site after click on button
+         */
+        function initExpandCategoryContent () {
+            var ButtonContainer = document.getElement('.quiqqer-category-content-button'),
+                Wrapper         = document.getElement('.quiqqer-category-content-inner'),
+                Body            = document.getElement('.quiqqer-category-content-inner-body'),
+                Bg              = document.getElement('.quiqqer-category-content-inner-body__bg');
+
+            if (!ButtonContainer || !Wrapper || !Body) {
+                return;
+            }
+
+            var Button     = ButtonContainer.getElement('button'),
+                realHeight = Body.getSize().y;
+
+            if (!Button) {
+                return;
+            }
+
+
+            if (Wrapper.getSize().y >= realHeight) {
+                // content is small, no button needed
+                Wrapper.setStyle('max-height', null);
+                Button.destroy();
+
+                if (Bg) {
+                    Bg.destroy();
+                }
+
+                return;
+            }
+
+            (function () {
+                Button.setStyle('display', null);
+
+                moofx(Button).animate({
+                    opacity: 1
+                }, {
+                    duration: 200
+                });
+            }).delay(500);
+
+            Button.addEvent('click', function (event) {
+                event.stop();
+
+                moofx(Wrapper).animate({
+                    maxHeight: realHeight
+                }, {
+                    callback: function () {
+                        moofx(ButtonContainer).animate({
+                            opacity: 0
+                        }, {
+                            duration: 200,
+                            callback: function () {
+                                ButtonContainer.destroy();
+                            }
+                        });
+
+                        if (Bg) {
+                            moofx(Bg).animate({
+                                opacity: 0
+                            }, {
+                                duration: 200,
+                                callback: function () {
+                                    Bg.destroy();
+                                }
+                            });
+                        }
+
+                        Wrapper.setStyle('maxHeight', null);
+                    }
                 });
             });
         }
