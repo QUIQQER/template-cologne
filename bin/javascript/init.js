@@ -9,7 +9,10 @@ window.addEvent('domready', function () {
     ], function (QUI) {
 
         initMobileMenu();
-        initExpandCategoryContent();
+
+        if (document.body.hasClass('type-quiqqer-products-types-category')) {
+            initExpandCategoryContent();
+        }
 
         /**
          * toTop button
