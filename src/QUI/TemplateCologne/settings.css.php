@@ -13,6 +13,7 @@ ob_start();
 .page-content-header,
 .content-body,
 .content-template,
+.control-template,
 .template-grid-row,
 .template-grid-row {
     margin-bottom: 5em;
