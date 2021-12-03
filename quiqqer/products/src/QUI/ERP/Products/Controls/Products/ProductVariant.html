@@ -185,7 +185,7 @@
                     {if !empty($Field->getValue()) || is_numeric($Field->getValue())}
                     <tr>
                         <td>
-                            {$Field->getView()->create()}
+                            {$Field->getValueView()->create()}
                         </td>
                     </tr>
                     {else}
