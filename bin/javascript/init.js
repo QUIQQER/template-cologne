@@ -12,6 +12,7 @@ window.addEvent('domready', function () {
 
         if (document.body.hasClass('type-quiqqer-products-types-category')) {
             initExpandCategoryContent();
+            setSidebarPosition();
         }
 
         /**
@@ -618,6 +619,24 @@ window.addEvent('domready', function () {
                     }
                 });
             });
+        }
+
+        /**
+         * Change position sticky to initial
+         */
+        function setSidebarPosition () {
+            var Sidebar = document.getElement('.quiqqer-product-sidebar');
+
+            if (!Sidebar) {
+                return;
+            }
+
+            var sidebarHeight = Sidebar.getSize().y,
+                windowHeight  = QUI.getWindowSize().y;
+
+            if (sidebarHeight > windowHeight - 60) {
+                Sidebar.setStyle('position', 'initial');
+            }
         }
 
         // end region functions
