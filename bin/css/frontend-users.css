@@ -284,6 +284,13 @@
     width: 100%;
 }
 
+.quiqqer-frontendUsers-login .quiqqer-fu-login-container {
+    background: none;
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
 @media screen and (max-width: 767px) {
     .quiqqer-fu-registrationSignUp {
         padding: 0;
