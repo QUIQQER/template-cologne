@@ -20,6 +20,7 @@
     "quiqqer\/quiqqer": "1.*|dev-master|dev-dev",
     "quiqqer\/erp": "1.*|dev-master|dev-dev",
     "quiqqer\/products": "^1.3.1|dev-master|dev-dev",
+    "quiqqer\/order": "^1.3|dev-master|dev-dev",
     "quiqqer\/product-bricks": "1.*|dev-master|dev-dev",
     "quiqqer\/frontend-users": "1.*|dev-master|dev-dev",
     "quiqqer\/menu": "1.*|dev-master|dev-dev",
