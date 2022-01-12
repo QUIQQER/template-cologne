@@ -1,14 +1,6 @@
 /*********/
 /* Price */
 /*********/
-.qui-products-price-display {
-    line-height: 1.25rem;
-}
-
-.qui-products-price-display-value:after {
-    content: '';
-    display: block;
-}
 
 /* Shipping button info */
 .quiqqer-shipping-shippingInformation-btn,
@@ -18,6 +10,10 @@
 
 .qui-products-price-display-vat:not(:last-child) {
     margin-right: 0.5em;
+}
+
+.quiqqer-productList-product-list .qui-products-price-display-vat {
+    margin-right: 0;
 }
 
 .quiqqer-products-wrapper {
@@ -988,6 +984,10 @@
     font-size: 1.3em;
     display: block;
     text-decoration: line-through;
+}
+
+.product-data-price-retail br {
+    display: none;
 }
 
 /* price */
