@@ -514,6 +514,10 @@
             <de><![CDATA[Im Header und in der Brotkrümnavigation]]></de>
             <en><![CDATA[Both: in header and breadcrumb]]></en>
         </locale>
+        <locale name="settings.pageTitle.disable">
+            <de><![CDATA[Deaktiviert]]></de>
+            <en><![CDATA[Disabled]]></en>
+        </locale>
 
         <!-- category menu -->
         <locale name="settings.categoryMenu.title">

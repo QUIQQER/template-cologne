@@ -700,6 +700,11 @@
                                             var="settings.pageTitle.both"
                                     />
                                 </option>
+                                <option value="disable">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.disable"
+                                    />
+                                </option>
                             </select>
 
                             <!-- page title: no sidebar -->
@@ -723,6 +728,11 @@
                                 <option value="both">
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.pageTitle.both"
+                                    />
+                                </option>
+                                <option value="disable">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.disable"
                                     />
                                 </option>
                             </select>
@@ -750,6 +760,11 @@
                                             var="settings.pageTitle.both"
                                     />
                                 </option>
+                                <option value="disable">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.disable"
+                                    />
+                                </option>
                             </select>
 
                             <!-- page title: left sidebar -->
@@ -775,6 +790,11 @@
                                             var="settings.pageTitle.both"
                                     />
                                 </option>
+                                <option value="disable">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.disable"
+                                    />
+                                </option>
                             </select>
 
                             <!-- page title: right sidebar -->
@@ -798,6 +818,11 @@
                                 <option value="both">
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.pageTitle.both"
+                                    />
+                                </option>
+                                <option value="disable">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.pageTitle.disable"
                                     />
                                 </option>
                             </select>

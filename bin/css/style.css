@@ -1433,17 +1433,30 @@ a.toTop:before {
 /*********/
 /* Popup */
 /*********/
-.qui-window-popup-title-close {
-    align-items: center;
-    color: inherit;
-    display: flex;
-    justify-content: center;
-    line-height: 0;
-    padding-bottom: 0;
-    padding-top: 0;
+.qui-window-popup-title-icon,
+.qui-window-popup-title-text {
+    display: none !important;
 }
 
-.qui-window-popup-buttons.box {
+.qui-window-popup .qui-window-popup-title {
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+.qui-window-popup-title .qui-window-popup-title-close {
+    padding-bottom: 0;
+    padding-top: 0;
+    z-index: 50;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+}
+
+.qui-window-popup-title .qui-window-popup-title-close:hover {
+    color: inherit;
+    background-color: transparent !important;
+}
+
+.qui-window-popup .qui-window-popup-buttons {
     background: none;
     height: auto !important;
     padding: 20px 0;
