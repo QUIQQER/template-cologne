@@ -1441,6 +1441,8 @@ a.toTop:before {
 .qui-window-popup .qui-window-popup-title {
     background-color: transparent;
     padding: 10px 20px;
+    flex-shrink: 0;
+    min-height: 40px;
 }
 
 .qui-window-popup-title .qui-window-popup-title-close {
