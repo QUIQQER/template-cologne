@@ -87,6 +87,10 @@ body {
     width: 100%;
 }
 
+body.iosFix {
+    top: 0 !important;
+}
+
 body,
 .slideout-panel,
 body.type-quiqqer-order-types-orderingProcess.type-minimal-design,

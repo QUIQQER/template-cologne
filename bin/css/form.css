@@ -60,7 +60,7 @@ textarea:focus {
 
 /* iOs input search fix */
 input[type="search"] {
-    -webkit-appearance: textfield;
+    -webkit-appearance: none;
 }
 
 .quiqqer-simple-contact label {
