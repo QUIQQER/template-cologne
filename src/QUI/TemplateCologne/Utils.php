@@ -553,7 +553,7 @@ class Utils
     }
 
     /**
-     * Add a suffix to brick css class(es) and return
+     * Add a suffix to brick css class(es)
      *
      * @param array $classes
      * @return string
