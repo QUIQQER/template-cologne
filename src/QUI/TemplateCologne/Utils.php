@@ -558,7 +558,8 @@ class Utils
      * @param array $classes
      * @return string
      */
-    public static function convertBrickCSSClass(array $classes) {
+    public static function convertBrickCSSClass(array $classes)
+    {
         if (\count($classes) < 1) {
             return '';
         }
