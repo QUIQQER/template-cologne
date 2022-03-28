@@ -5,6 +5,7 @@
     <attributes>
         <attribute>templateCologne.header</attribute>
         <attribute>templateCologne.largeSpacing</attribute>
+        <attribute>templateCologne.pageCustomClass</attribute>
     </attributes>
 
     <settings>
@@ -49,6 +50,18 @@
                         <locale group="quiqqer/template-cologne"
                                 var="siteSettings.largeSpacing"/>
                     </text>
+                </input>
+
+                <!-- custom css class for entire page -->
+                <input conf="templateCologne.pageCustomClass" type="text">
+                    <text>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageCustomClass"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageCustomClass.desc"/>
+                    </description>
                 </input>
             </settings>
         </category>

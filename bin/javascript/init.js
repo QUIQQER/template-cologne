@@ -5,10 +5,15 @@ window.addEvent('domready', function () {
     "use strict";
 
     require([
-        'qui/QUI'
-    ], function (QUI) {
+        'qui/QUI',
+        'qui/utils/System'
+    ], function (QUI, QUISystemUtils) {
 
         initMobileMenu();
+
+        if (QUISystemUtils.iOSversion()) {
+            document.body.classList.add('iosFix');
+        }
 
         if (document.body.hasClass('type-quiqqer-products-types-category')) {
             initExpandCategoryContent();

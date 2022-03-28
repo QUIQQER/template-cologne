@@ -24,7 +24,10 @@
     {if $Brick->getSetting('general.noSpacing')}
         {assign var=brickNoPadding value="brick-no-spacing"}
     {/if}
-    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')}">
+
+    {assign var=classes value=\QUI\TemplateCologne\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+
+    <section class="template-brick-container template-brick-headerSuffix brick-id-{$Brick->getAttribute('id')} {$classes}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
@@ -50,7 +53,10 @@
     {if $Brick->getSetting('general.noSpacing')}
         {assign var=brickNoPadding value="brick-no-spacing"}
     {/if}
-    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')}">
+
+    {assign var=classes value=\QUI\TemplateCologne\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+
+    <section class="template-brick-container template-brick-footerPrefix brick-id-{$Brick->getAttribute('id')} {$classes}">
         <div class="template-grid-container template-grid-row {$brickFullWidth} {$brickNoPadding}">
             {$Brick->create()}
         </div>
