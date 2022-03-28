@@ -233,6 +233,13 @@ class Utils
             }
         }
 
+        /* page custom class */
+        $pageCustomClass = false;
+
+        if ($Site->getAttribute('templateCologne.pageCustomClass') && $Site->getAttribute('templateCologne.pageCustomClass') !== '') {
+            $pageCustomClass = 'templateCologne__' . $Site->getAttribute('templateCologne.pageCustomClass');
+        }
+
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
@@ -248,6 +255,7 @@ class Utils
         $config['typeClass']          = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['minimalDesignClass'] = $minimalDesign ? 'type-minimal-design' : '';
         $config['siteType']           = $siteType;
+        $config['pageCustomClass']    = $pageCustomClass;
         $config['basketStyle']        = $basketStyle;
         $config['basketOpen']         = $basketOpen;
         $config['showCategoryMenu']   = $showCategoryMenu;
@@ -567,7 +575,7 @@ class Utils
         $text = '';
 
         foreach ($classes as $classString) {
-            $text .= ' brick-container__' . $classString;
+            $text .= ' brick-container__'.$classString;
         }
 
         return $text;

@@ -258,8 +258,18 @@
             <en><![CDATA[<string>Show header</strong> overwrites the template settings.]]></en>
         </locale>
         <locale name="siteSettings.largeSpacing">
-            <de><![CDATA[Standard-Abstand erhöhen? Das beeinflusst den vertikalen Abstand zwischen Bausteinen, Seiteninhalt, usw. Meistens benutzt für Landing-Page. ]]></de>
+            <de><![CDATA[Standard-Abstand erhöhen? Das beeinflusst den vertikalen Abstand zwischen Bausteinen, Seiteninhalt, usw. Meistens benutzt für Landing-Page.]]></de>
             <en><![CDATA[Increase standard distance? This affects the vertical distance between bricks, side content, etc. Mostly used for landing page.]]></en>
+        </locale>
+        <locale name="siteSettings.pageCustomClass">
+            <de><![CDATA[CSS Klasse]]></de>
+            <en><![CDATA[CSS class]]></en>
+        </locale>
+        <locale name="siteSettings.pageCustomClass.desc" html="true">
+            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite separate CSS Klasse geben. Diese wird auf das <i>&lt;body&gt;</i> Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live und Dev Umgebung existeirt (oder auch lokale Installation), die nicht exakt gleich sind.<br>
+                Die CSS klasse wird so aufgebaut: <code>templateCologne__deine-css-klasse</code>]]></de>
+            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.<br>
+                The CSS class looks like this: <code>templateCologne__your-css-class</code>]]></en>
         </locale>
 
         <!-- template settings -->
