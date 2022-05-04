@@ -261,6 +261,7 @@ class Utils
         $config['showCategoryMenu']   = $showCategoryMenu;
         $config['homeLink']           = $homeLink;
         $config['homeLinkText']       = $homeLinkText;
+        $config['useSlideOutMenu']       = true; // for now is always true because quiqqer use currently only SlideOut nav
 
         // set cache
         QUI\Cache\Manager::set(

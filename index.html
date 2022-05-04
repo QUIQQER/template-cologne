@@ -31,6 +31,9 @@
 <body class="page-{$Site->getId()} {$typeClass} {$siteType} {$minimalDesignClass} {$pageCustomClass}">
 {template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
 
+{if $useSlideOutMenu}
+<div class="slideout-panel">
+{/if}
 {* small top bar *}
 {if $Template->getAttribute('showTopBar')}
     {fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar
@@ -77,6 +80,9 @@
 
 {template_event name="quiqqer::template-cologne::body::afterPage" Template=$Template}
 
+{if $useSlideOutMenu}
+</div>
+{/if}
 {template_event name="quiqqer::template-cologne::body::end" Template=$Template}
 </body>
 </html>
