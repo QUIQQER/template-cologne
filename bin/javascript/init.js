@@ -10,6 +10,7 @@ window.addEvent('domready', function () {
     ], function (QUI, QUISystemUtils) {
 
         initMobileMenu();
+        initScrollToAnchor();
 
         if (QUISystemUtils.iOSversion()) {
             document.body.classList.add('iosFix');
@@ -478,8 +479,6 @@ window.addEvent('domready', function () {
         function createLoginWindow (onlyLogin = false) {
             USER_BUTTON_CLICKED = false;
 
-            console.log("huhu")
-
             require([
                 'Locale',
                 'utils/Controls',
@@ -641,6 +640,66 @@ window.addEvent('domready', function () {
 
             if (sidebarHeight > windowHeight - 60) {
                 Sidebar.setStyle('position', 'initial');
+            }
+        }
+
+        /**
+         * Find all anchors and set click event to smoothly scroll to the element
+         *
+         * Anchor settings (HTML attributes):
+         *   data-qui-scroll="1" - [required] only anchors with this attribute will be considered
+         *   data-qui-offset="120" - [optional] scroll offset
+         */
+        function  initScrollToAnchor() {
+            let links = document.querySelectorAll('[data-qui-scroll="1"]');
+
+            let getTarget = function (Link) {
+                let href = Link.href;
+
+                if (href.indexOf('#') === -1) {
+                    return false;
+                }
+
+                let targetString = href.substring(href.indexOf('#') + 1);
+
+                if (targetString.length < 1) {
+                    return false;
+                }
+
+                let TargetElm = document.getElementById(targetString);
+
+                if (!TargetElm) {
+                    return false;
+                }
+
+                return TargetElm;
+            };
+
+            let clickEvent = function (Target, offset) {
+                new Fx.Scroll(window, {
+                    offset: {
+                        y: -offset
+                    }
+                }).toElement(Target);
+            };
+
+            for (let Link of links) {
+                let TargetElm = getTarget(Link);
+
+                if (!TargetElm) {
+                    continue;
+                }
+
+                let offset = Link.get('data-qui-offset');
+
+                if (!offset) {
+                    offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+                }
+
+                Link.addEvent('click', function (event) {
+                    event.stop();
+                    clickEvent(TargetElm, offset);
+                });
             }
         }
 
