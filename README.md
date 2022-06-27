@@ -47,25 +47,31 @@ If you wont to test confirmation mail template you will finde some
  information in [QUIQQER Order wiki](https://dev.quiqqer.com/quiqqer/order/wikis/Home/Send-order-confirmation-mail-console-tool). 
 
 ### Smooth scroll to element by click
-You can give an a-tag an extra attribute to smoothly scroll to the target element. All you need is to 
-give at least one HTML attribute:
-- `data-qui-scroll="1"` - _[required]_ only anchors with this attribute will be considered
-- `data-qui-offset="120"` - _[optional]_ scroll offset
+You can give each html element an extra CSS class to smoothly scroll to the target element. All you need is to 
+give at least `scrollToLink` class. For more control, consider the following parameters: 
+- `data-qui-target="#myElement"` - _[optional]_ every valid css selector
+- `data-qui-offset="60"` - _[optional]_ scroll offset
 
 Example:
 
 ```html
 <!-- Top of the page -->
 <p>
- <a class="btn btn-primary btn-large" href="#Contact"  data-qui-scroll="1" data-qui-offset="120">
+ <a class="btn btn-primary btn-large" href="#Contact" data-qui-offset="120">
   Get in touch <span class="fa fa-long-arrow-right"></span>
  </a>
 </p>
+<p>
+ <button class="btn btn-secondary btn-large" data-qui-target=".myContactForm" data-qui-offset="100">
+  Get in touch one more time <span class="fa fa-long-arrow-right"></span>
+ </button>
+</p>
+
 
 <!-- ... -->
 
 <!-- Contact form at the bottom -->
-<h2 id="Contact">Send us a message</h2>
+<h2 id="Contact" class="myContactForm">Send us a message</h2>
 <form>
  <!-- ... -->
 </form>
