@@ -644,19 +644,32 @@ window.addEvent('domready', function () {
         }
 
         /**
-         * Find all anchors and set click event to smoothly scroll to the element
+         * Find all anchors and set click event to smoothly scroll to the element.
+         * It works both with all HTML elements.
+         * Every element witch is not an <a> tag, needs "data-qui-target-id" or "data-qui-target-class" attribute.
+         * Target for <a> elements is always a # (hash) string
          *
-         * Anchor settings (HTML attributes):
-         *   data-qui-scroll="1" - [required] only anchors with this attribute will be considered
-         *   data-qui-offset="120" - [optional] scroll offset
+         * Anchor settings:
+         *   scrollToLink - [required] only elements with this css class will be considered
+         *   data-qui-target="myTargetElement" - [optional] every valid css selector
+         *   data-qui-offset="60" - [optional] scroll offset
+         *
+         * Examples:
+         * <a class="scrollToLink" href="#myElement">Scroll to myElement</a>
+         * <button class="scrollToLink" data-qui-target"#myElement">Scroll to element with ID myElement</button>
+         * <span class="scrollToLink" data-qui-target=".exampleParagraph" data-qui-offset="150">Scroll to element with CSS class exampleParagraph</span>
          */
         function  initScrollToAnchor() {
-            let links = document.querySelectorAll('[data-qui-scroll="1"]');
+            let links = document.querySelectorAll('.scrollToLink');
 
             let getTarget = function (Link) {
+                if (Link.get('data-qui-target')) {
+                    return document.querySelector(Link.get('data-qui-target'));
+                }
+
                 let href = Link.href;
 
-                if (href.indexOf('#') === -1) {
+                if (!href || href.indexOf('#') === -1) {
                     return false;
                 }
 
