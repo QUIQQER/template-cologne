@@ -95,6 +95,10 @@
     color: inherit;
 }
 
+.quiqqer-products-category-freetextSearch {
+    display: flex;
+}
+
 .content-headerpage-multible-left .quiqqer-products-category-freetextSearch,
 .content-headerpage-multible-left .quiqqer-products-category-menu {
     margin-bottom: 20px !important;
@@ -105,11 +109,13 @@
     display: flex;
 }
 
+.quiqqer-products-category-freetextSearch input,
 .quiqqer-products-search-form input {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
+.quiqqer-products-category-freetextSearch button,
 .quiqqer-products-search-form button {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -143,6 +149,12 @@
     font-size: 0.9rem !important;
     margin: 1rem 0 0.75rem;
     padding: 0 10px;
+}
+
+.quiqqer-products-searchtype-checkbox .quiqqer-products-productList-filter-entry-title {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
 }
 
 /*****************/

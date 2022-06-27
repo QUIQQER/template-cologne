@@ -10,6 +10,7 @@ window.addEvent('domready', function () {
     ], function (QUI, QUISystemUtils) {
 
         initMobileMenu();
+        initScrollToAnchor();
 
         if (QUISystemUtils.iOSversion()) {
             document.body.classList.add('iosFix');
@@ -478,8 +479,6 @@ window.addEvent('domready', function () {
         function createLoginWindow (onlyLogin = false) {
             USER_BUTTON_CLICKED = false;
 
-            console.log("huhu")
-
             require([
                 'Locale',
                 'utils/Controls',
@@ -641,6 +640,79 @@ window.addEvent('domready', function () {
 
             if (sidebarHeight > windowHeight - 60) {
                 Sidebar.setStyle('position', 'initial');
+            }
+        }
+
+        /**
+         * Find all anchors and set click event to smoothly scroll to the element.
+         * It works both with all HTML elements.
+         * Every element witch is not an <a> tag, needs "data-qui-target-id" or "data-qui-target-class" attribute.
+         * Target for <a> elements is always a # (hash) string
+         *
+         * Anchor settings:
+         *   scrollToLink - [required] only elements with this css class will be considered
+         *   data-qui-target="myTargetElement" - [optional] every valid css selector
+         *   data-qui-offset="60" - [optional] scroll offset
+         *
+         * Examples:
+         * <a class="scrollToLink" href="#myElement">Scroll to myElement</a>
+         * <button class="scrollToLink" data-qui-target"#myElement">Scroll to element with ID myElement</button>
+         * <span class="scrollToLink" data-qui-target=".exampleParagraph" data-qui-offset="150">Scroll to element with CSS class exampleParagraph</span>
+         */
+        function  initScrollToAnchor() {
+            let links = document.querySelectorAll('.scrollToLink');
+
+            let getTarget = function (Link) {
+                if (Link.get('data-qui-target')) {
+                    return document.querySelector(Link.get('data-qui-target'));
+                }
+
+                let href = Link.href;
+
+                if (!href || href.indexOf('#') === -1) {
+                    return false;
+                }
+
+                let targetString = href.substring(href.indexOf('#') + 1);
+
+                if (targetString.length < 1) {
+                    return false;
+                }
+
+                let TargetElm = document.getElementById(targetString);
+
+                if (!TargetElm) {
+                    return false;
+                }
+
+                return TargetElm;
+            };
+
+            let clickEvent = function (Target, offset) {
+                new Fx.Scroll(window, {
+                    offset: {
+                        y: -offset
+                    }
+                }).toElement(Target);
+            };
+
+            for (let Link of links) {
+                let TargetElm = getTarget(Link);
+
+                if (!TargetElm) {
+                    continue;
+                }
+
+                let offset = Link.get('data-qui-offset');
+
+                if (!offset) {
+                    offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+                }
+
+                Link.addEvent('click', function (event) {
+                    event.stop();
+                    clickEvent(TargetElm, offset);
+                });
             }
         }
 
