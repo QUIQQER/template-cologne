@@ -233,11 +233,16 @@ class Utils
             }
         }
 
+        $showNavAfterScroll = 0;
+        if ($Project->getConfig('templateCologne.settings.showNavAfterScroll') && intval($Project->getConfig('templateCologne.settings.showNavAfterScroll')) > 0) {
+            $showNavAfterScroll = intval($Project->getConfig('templateCologne.settings.showNavAfterScroll'));
+        }
+
         /* page custom class */
         $pageCustomClass = false;
 
         if ($Site->getAttribute('templateCologne.pageCustomClass') && $Site->getAttribute('templateCologne.pageCustomClass') !== '') {
-            $pageCustomClass = 'templateCologne__' . $Site->getAttribute('templateCologne.pageCustomClass');
+            $pageCustomClass = 'templateCologne__'.$Site->getAttribute('templateCologne.pageCustomClass');
         }
 
         // predefined footer
@@ -261,7 +266,8 @@ class Utils
         $config['showCategoryMenu']   = $showCategoryMenu;
         $config['homeLink']           = $homeLink;
         $config['homeLinkText']       = $homeLinkText;
-        $config['useSlideOutMenu']       = true; // for now is always true because quiqqer use currently only SlideOut nav
+        $config['useSlideOutMenu']    = true; // for now is always true because quiqqer use currently only SlideOut nav
+        $config['showNavAfterScroll'] = $showNavAfterScroll;
 
         // set cache
         QUI\Cache\Manager::set(

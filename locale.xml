@@ -446,6 +446,26 @@
             <en><![CDATA[Show Buy Now Button]]></en>
         </locale>
 
+        <!-- nav settings -->
+        <locale name="settings.nav.title">
+            <de><![CDATA[Menü Einstellungen]]></de>
+            <en><![CDATA[Navigation settings]]></en>
+        </locale>
+        <locale name="settings.nav.text">
+            <de><![CDATA[Diese Einstellungen betreffen die Hauptnavigation.]]></de>
+            <en><![CDATA[These settings affect the main navigation.]]></en>
+        </locale>
+        <locale name="settings.nav.showNavAfterScroll">
+            <de><![CDATA[Navigation nach Scrollen anzeigen]]></de>
+            <en><![CDATA[Show navigation after scroll]]></en>
+        </locale>
+        <locale name="settings.nav.showNavAfterScroll.desc" html="true">
+            <de><![CDATA[Standardmäßig "klebt" das Menü an oberen Browserrand, sobald das Menü beim Scrollen auf das Rand stoßt.
+             Setz man z.B. <strong>500</strong> bedeutet das, dass das Menü erst dann von oben aufpoppt wenn man mindestens 500px nach unten scrollt.]]></de>
+            <en><![CDATA[By default, the menu "sticks" to the top edge of the browser as soon as the menu meets the edge while scrolling.
+            If you set <strong>500</strong>, for example, this means that the menu will pop up from the top if you scroll down at least 500px.]]></en>
+        </locale>
+
         <!-- header settings -->
         <locale name="settings.header.title">
             <de><![CDATA[Header Einstellungen]]></de>

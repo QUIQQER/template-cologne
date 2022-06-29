@@ -69,6 +69,12 @@
                         <defaultvalue>80</defaultvalue>
                     </conf>
 
+                    <!-- nav -->
+                    <conf name="showNavAfterScroll">
+                        <type><![CDATA[number]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
                     <!-- header -->
                     <conf name="headerStartPage">
                         <type><![CDATA[string]]></type>
@@ -478,6 +484,35 @@
                                             var="settings.shop.categoryContentHeight"
                                     />
                                 </text>
+                            </input>
+                        </settings>
+
+                        <!-- nav -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.nav.settings">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.nav.title"
+                                />
+                            </title>
+
+                            <text>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.nav.text"/>
+                            </text>
+
+                            <!-- nav: show nav after scrolling x pixel -->
+                            <input conf="templateCologne.settings.showNavAfterScroll" type="number" min="0">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.nav.showNavAfterScroll"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.nav.showNavAfterScroll.desc"
+                                    />
+                                </description>
                             </input>
                         </settings>
 

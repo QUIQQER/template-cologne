@@ -184,10 +184,15 @@ window.addEvent('domready', function () {
             var showMenuFrom = TopBar ? TopBar.getSize().y : 0,
                 isMenuSticky = false,
                 SearchBtn    = Menu.getElement('.search-button'),
-                SearchInput  = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null;
+                SearchInput  = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null,
+                MenuWrapper = document.querySelector('.cologne-header-menu-wrapper');
 
-            if (SHOW_MENU_START_POS && SHOW_MENU_START_POS.toInt() > 0) {
-                showMenuFrom = SHOW_MENU_START_POS.toInt();
+//            var height = MenuWrapper ? MenuWrapper.offsetTop : 0;
+
+//            console.log(document.querySelector('.cologne-header-menu-wrapper').offsetTop)
+
+            if (SHOW_MENU_AFTER_SCROLL_POS && SHOW_MENU_AFTER_SCROLL_POS.toInt() > 0) {
+                showMenuFrom = SHOW_MENU_AFTER_SCROLL_POS.toInt();
             }
 
             if (SearchBtn && SearchInput) {
@@ -220,12 +225,9 @@ window.addEvent('domready', function () {
                         transform: 'translateY(-100px)'
                     });
 
-                    // Delay 500ms for performance reasons (on page load)
-                    (function () {
-                        moofx(Menu).animate({
-                            transform: 'translateY(0)'
-                        });
-                    }).delay(500);
+                    moofx(Menu).animate({
+                        transform: 'translateY(0)'
+                    });
                 }
 
                 Menu.addClass('cologne-header-fixed');
@@ -277,14 +279,17 @@ window.addEvent('domready', function () {
             };
 
             // check on page load if menu should stick to the top
-            if (QUI.getScroll().y >= showMenuFrom) {
-                if (isMenuSticky) {
-                    return;
-                }
+            // delay 500ms for performance reasons on page load
+            setTimeout(() => {
+                if (QUI.getScroll().y >= showMenuFrom) {
+                    if (isMenuSticky) {
+                        return;
+                    }
 
-                setMenuFixed(true);
-                showSearchBtn();
-            }
+                    setMenuFixed(true);
+                    showSearchBtn();
+                }
+            }, 500)
 
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y >= showMenuFrom) {
@@ -300,6 +305,11 @@ window.addEvent('domready', function () {
                 if (!isMenuSticky) {
                     return;
                 }
+
+//                if (QUI.getScroll().y <= height) {
+//                    removeMenuFixed();
+//                    hideSearchBtn();
+//                }
 
                 removeMenuFixed();
                 hideSearchBtn();
