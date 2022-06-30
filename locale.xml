@@ -446,6 +446,36 @@
             <en><![CDATA[Show Buy Now Button]]></en>
         </locale>
 
+        <!-- nav settings -->
+        <locale name="settings.nav.title">
+            <de><![CDATA[Menü Einstellungen]]></de>
+            <en><![CDATA[Navigation settings]]></en>
+        </locale>
+        <locale name="settings.nav.text">
+            <de><![CDATA[Diese Einstellungen betreffen die Hauptnavigation.]]></de>
+            <en><![CDATA[These settings affect the main navigation.]]></en>
+        </locale>
+        <locale name="settings.nav.showNavAfterScroll">
+            <de><![CDATA[Navigation nach Scrollen anzeigen]]></de>
+            <en><![CDATA[Show navigation after scroll]]></en>
+        </locale>
+        <locale name="settings.nav.showNavAfterScroll.desc" html="true">
+            <de><![CDATA[Standardmäßig "klebt" das Menü an oberen Browserrand, sobald das Menü beim Scrollen auf das Rand stoßt.
+             Setz man z.B. <strong>500</strong> bedeutet das, dass das Menü erst dann von oben aufpoppt wenn man mindestens 500px nach unten scrollt.]]></de>
+            <en><![CDATA[By default, the menu "sticks" to the top edge of the browser as soon as the menu meets the edge while scrolling.
+            If you set <strong>500</strong>, for example, this means that the menu will pop up from the top if you scroll down at least 500px.]]></en>
+        </locale>
+        <locale name="settings.nav.setMenuPosBackOnInit">
+            <de><![CDATA[Menü-Position zurücksetzen oben]]></de>
+            <en><![CDATA[Reset nav position on top]]></en>
+        </locale>
+        <locale name="settings.nav.setMenuPosBackOnInit.desc" html="true">
+            <de><![CDATA[Standardmäßig wird das Menü beim Scrollen am oberen Browserrand fixiert. Ab wie viel Pixel das passiert, hängt von der Option <i>"Navigation nach Scrollen anzeigen"</i>. Setzt man da z.B. 500px, wird das Menü nach 500px oben festgeklebt. Scrollt man wieder nach oben, wird das Menü ab den 500 Pixel wieder normal platziert.
+                        Wenn man den Haken hier setzt, wird das Menü von oberen Rand gelöst und "normal" platziert <strong>erst wenn man die ursprüngliche Position des Menü erreicht (in den meisten Fällen wenn man ganz nach oben scrollt)</strong>.]]></de>
+            <en><![CDATA[By default, the menu is fixed at the top of the browser by scrolling. From how many pixels this happens depends on the option <i>"Show navigation after scroll"</i>. If you set 500px, for example, the menu will be stuck at the top after 500px. If you scroll up again, the menu will be placed normally again under 500 pixels.
+                    If you check this box, the menu will be detached from the top and initial placed <strong>only when you reach the initial position of the menu (in most cases when you scroll all the way up)</strong>.]]></en>
+        </locale>
+
         <!-- header settings -->
         <locale name="settings.header.title">
             <de><![CDATA[Header Einstellungen]]></de>

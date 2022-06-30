@@ -233,35 +233,54 @@ class Utils
             }
         }
 
+        /**
+         * Menu appearance and smooth scroll
+         */
+        $showNavAfterScroll   = 0;
+        $showMenuSmooth       = false; // smooth animation
+        $setMenuPosBackOnInit = false; // if true menu will be no longer fixed when user scrolls to menu initial position
+        if ($Project->getConfig('templateCologne.settings.showNavAfterScroll') && intval($Project->getConfig('templateCologne.settings.showNavAfterScroll')) > 0) {
+            $showNavAfterScroll = intval($Project->getConfig('templateCologne.settings.showNavAfterScroll'));
+            $showMenuSmooth     = true;
+        }
+
+        if ($Project->getConfig('templateCologne.settings.setMenuPosBackOnInit')) {
+            $setMenuPosBackOnInit = true;
+        }
+
+
         /* page custom class */
         $pageCustomClass = false;
 
         if ($Site->getAttribute('templateCologne.pageCustomClass') && $Site->getAttribute('templateCologne.pageCustomClass') !== '') {
-            $pageCustomClass = 'templateCologne__' . $Site->getAttribute('templateCologne.pageCustomClass');
+            $pageCustomClass = 'templateCologne__'.$Site->getAttribute('templateCologne.pageCustomClass');
         }
 
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
-        $config['header']             = $header;
-        $config['logoHeight']         = $logoHeight;
-        $config['pageTitle']          = $pageTitle;
-        $config['showBreadcrumb']     = $showBreadcrumb;
-        $config['minimalDesign']      = $minimalDesign;
-        $config['showTopBar']         = $showTopBar;
-        $config['showNav']            = $showNav;
-        $config['showFooter']         = $showFooter;
-        $config['settingsCSS']        = '<style>'.$settingsCSS.'</style>';
-        $config['typeClass']          = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
-        $config['minimalDesignClass'] = $minimalDesign ? 'type-minimal-design' : '';
-        $config['siteType']           = $siteType;
-        $config['pageCustomClass']    = $pageCustomClass;
-        $config['basketStyle']        = $basketStyle;
-        $config['basketOpen']         = $basketOpen;
-        $config['showCategoryMenu']   = $showCategoryMenu;
-        $config['homeLink']           = $homeLink;
-        $config['homeLinkText']       = $homeLinkText;
-        $config['useSlideOutMenu']       = true; // for now is always true because quiqqer use currently only SlideOut nav
+        $config['header']               = $header;
+        $config['logoHeight']           = $logoHeight;
+        $config['pageTitle']            = $pageTitle;
+        $config['showBreadcrumb']       = $showBreadcrumb;
+        $config['minimalDesign']        = $minimalDesign;
+        $config['showTopBar']           = $showTopBar;
+        $config['showNav']              = $showNav;
+        $config['showFooter']           = $showFooter;
+        $config['settingsCSS']          = '<style>'.$settingsCSS.'</style>';
+        $config['typeClass']            = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['minimalDesignClass']   = $minimalDesign ? 'type-minimal-design' : '';
+        $config['siteType']             = $siteType;
+        $config['pageCustomClass']      = $pageCustomClass;
+        $config['basketStyle']          = $basketStyle;
+        $config['basketOpen']           = $basketOpen;
+        $config['showCategoryMenu']     = $showCategoryMenu;
+        $config['homeLink']             = $homeLink;
+        $config['homeLinkText']         = $homeLinkText;
+        $config['useSlideOutMenu']      = true; // for now is always true because quiqqer use currently only SlideOut nav
+        $config['showNavAfterScroll']   = $showNavAfterScroll;
+        $config['showMenuSmooth']       = $showMenuSmooth;
+        $config['setMenuPosBackOnInit'] = $setMenuPosBackOnInit;
 
         // set cache
         QUI\Cache\Manager::set(
