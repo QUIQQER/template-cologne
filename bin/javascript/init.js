@@ -185,12 +185,8 @@ window.addEvent('domready', function () {
                 isMenuSticky = false,
                 SearchBtn    = Menu.getElement('.search-button'),
                 SearchInput  = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null,
-                MenuWrapper  = document.querySelector('.cologne-header-menu-wrapper');
-
-            var menuPos = MenuWrapper ? MenuWrapper.offsetTop : 0;
-
-//            console.log(document.querySelector('.cologne-header-menu-wrapper').offsetTop)
-
+                MenuWrapper  = document.querySelector('.cologne-header-menu-wrapper'),
+                menuPos      = MenuWrapper ? MenuWrapper.offsetTop : 0;
 
             if (SHOW_MENU_AFTER_SCROLL_POS && SHOW_MENU_AFTER_SCROLL_POS.toInt() > 0) {
                 showMenuFrom = SHOW_MENU_AFTER_SCROLL_POS.toInt();
@@ -275,16 +271,10 @@ window.addEvent('domready', function () {
              * Set menu position to initial
              */
             var removeMenuFixed = function () {
-
-                console.log("huhu")
-
-
                 Menu.removeClass('cologne-header-fixed');
                 Menu.setStyle('position', null);
                 document.body.removeClass('header-fixed');
                 isMenuSticky = false;
-
-
             };
 
             // check on page load if menu should stick to the top
@@ -322,7 +312,7 @@ window.addEvent('domready', function () {
                 }
 
 
-                // set menu positon back on menu initial position
+                // set menu position back on menu initial position
                 if (SET_MENU_POS_BACK_ON_INIT === true) {
                     if (QUI.getScroll().y <= menuPos) {
 
@@ -334,7 +324,7 @@ window.addEvent('domready', function () {
                     return;
                 }
 
-                // set menu position back on point "show menu from"
+                // set menu position back depend on "show menu from" setting
                 removeMenuFixed();
                 hideSearchBtn();
             });
