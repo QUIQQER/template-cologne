@@ -759,13 +759,13 @@ a.toTop:before {
     top: 0;
     width: 100%;
     z-index: 99;
+    transition: 0.25s height;
 }
 
 .cologne-header-fixed {
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
     height: 60px;
     position: fixed;
-    transition: 0.25s height;
     z-index: 100; /* Because of the search dropdown */
 }
 

@@ -74,6 +74,10 @@
                         <type><![CDATA[number]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="setMenuPosBackOnInit">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>false</defaultvalue>
+                    </conf>
 
                     <!-- header -->
                     <conf name="headerStartPage">
@@ -511,6 +515,20 @@
                                 <description>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.nav.showNavAfterScroll.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <!-- nav: set menu position back by scrolling to menu init position -->
+                            <input conf="templateCologne.settings.setMenuPosBackOnInit" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.nav.setMenuPosBackOnInit"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.nav.setMenuPosBackOnInit.desc"
                                     />
                                 </description>
                             </input>

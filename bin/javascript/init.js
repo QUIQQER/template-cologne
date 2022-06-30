@@ -185,11 +185,12 @@ window.addEvent('domready', function () {
                 isMenuSticky = false,
                 SearchBtn    = Menu.getElement('.search-button'),
                 SearchInput  = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null,
-                MenuWrapper = document.querySelector('.cologne-header-menu-wrapper');
+                MenuWrapper  = document.querySelector('.cologne-header-menu-wrapper');
 
-//            var height = MenuWrapper ? MenuWrapper.offsetTop : 0;
+            var menuPos = MenuWrapper ? MenuWrapper.offsetTop : 0;
 
 //            console.log(document.querySelector('.cologne-header-menu-wrapper').offsetTop)
+
 
             if (SHOW_MENU_AFTER_SCROLL_POS && SHOW_MENU_AFTER_SCROLL_POS.toInt() > 0) {
                 showMenuFrom = SHOW_MENU_AFTER_SCROLL_POS.toInt();
@@ -216,13 +217,15 @@ window.addEvent('domready', function () {
             /**
              * Stick menu to the top
              *
-             * @param smooth {bool} - helpful on page reload when the page is already scrolled
+             * @param smooth {boolean} - helpful on page reload when the page is already scrolled
              */
             function setMenuFixed (smooth) {
+                smooth = !!smooth;
+
                 if (smooth === true) {
                     Menu.setStyles({
                         position : 'fixed',
-                        transform: 'translateY(-100px)'
+                        transform: 'translateY(-150px)'
                     });
 
                     moofx(Menu).animate({
@@ -272,27 +275,39 @@ window.addEvent('domready', function () {
              * Set menu position to initial
              */
             var removeMenuFixed = function () {
+
+                console.log("huhu")
+
+
                 Menu.removeClass('cologne-header-fixed');
                 Menu.setStyle('position', null);
                 document.body.removeClass('header-fixed');
                 isMenuSticky = false;
+
+
             };
 
             // check on page load if menu should stick to the top
             // delay 500ms for performance reasons on page load
             setTimeout(() => {
-                if (QUI.getScroll().y >= showMenuFrom) {
+                if (QUI.getScroll().y > showMenuFrom) {
                     if (isMenuSticky) {
                         return;
                     }
 
-                    setMenuFixed(true);
+                    let showMenuSmooth = false;
+
+                    if (QUI.getScroll().y > MenuWrapper.offsetHeight + MenuWrapper.offsetTop) {
+                        showMenuSmooth = true;
+                    }
+
+                    setMenuFixed(showMenuSmooth);
                     showSearchBtn();
                 }
             }, 500)
 
             QUI.addEvent('scroll', function () {
-                if (QUI.getScroll().y >= showMenuFrom) {
+                if (QUI.getScroll().y > showMenuFrom) {
                     if (isMenuSticky) {
                         return;
                     }
@@ -306,11 +321,20 @@ window.addEvent('domready', function () {
                     return;
                 }
 
-//                if (QUI.getScroll().y <= height) {
-//                    removeMenuFixed();
-//                    hideSearchBtn();
-//                }
 
+                // set menu positon back on menu initial position
+                if (SET_MENU_POS_BACK_ON_INIT === true) {
+                    if (QUI.getScroll().y <= menuPos) {
+
+                        removeMenuFixed();
+                        hideSearchBtn();
+
+                    }
+
+                    return;
+                }
+
+                // set menu position back on point "show menu from"
                 removeMenuFixed();
                 hideSearchBtn();
             });
@@ -669,7 +693,7 @@ window.addEvent('domready', function () {
          * <button class="scrollToLink" data-qui-target"#myElement">Scroll to element with ID myElement</button>
          * <span class="scrollToLink" data-qui-target=".exampleParagraph" data-qui-offset="150">Scroll to element with CSS class exampleParagraph</span>
          */
-        function  initScrollToAnchor() {
+        function initScrollToAnchor () {
             let links = document.querySelectorAll('.scrollToLink');
 
             let getTarget = function (Link) {
