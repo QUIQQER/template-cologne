@@ -137,7 +137,6 @@
     }
 }
 
-
 /**********/
 /* Filter */
 /**********/
@@ -145,17 +144,43 @@
     margin-bottom: 1rem;
 }
 
-.quiqqer-products-searchtype-checkbox,
-.quiqqer-products-productList-filter-entry-title {
-    font-size: 0.9rem !important;
-    margin: 1rem 0 0.75rem;
-    padding: 0 10px;
+.quiqqer-products-productList-filter-entry label {
+    cursor: pointer;
 }
 
+.quiqqer-products-productList-filter-entry-title,
+.quiqqer-products-searchtype-checkboxList-label,
+.quiqqer-products-searchtype-checkbox {
+    font-size: 1rem !important;
+    margin: 1rem 0 0.75rem;
+    float: none !important;
+    display: flex;
+    cursor: pointer;
+}
+
+.quiqqer-products-productList-filter-entry-title {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.quiqqer-products-searchtype-checkboxList-label .quiqqer-products-searchtype-checkboxList-label-title,
 .quiqqer-products-searchtype-checkbox .quiqqer-products-productList-filter-entry-title {
     padding-left: 0;
     padding-right: 0;
     margin: 0;
+}
+
+.quiqqer-products-searchtype-checkboxList-label,
+.quiqqer-products-searchtype-checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.quiqqer-products-searchtype-checkboxList input[type="checkbox"],
+.quiqqer-products-searchtype-checkbox input[type="checkbox"] {
+    margin-top: 1px;
 }
 
 /*****************/
