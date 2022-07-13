@@ -78,11 +78,17 @@ class Categories extends QUI\Control
         } catch (QUI\Exception $Exception) {
         }
 
+        $showBasketButton = $this->getAttribute('showBasketButton');
+
+        if (!QUI::getPackageManager()->isInstalled('quiqqer/order')) {
+            $showBasketButton = false;
+        }
+
         $Engine->assign([
             'menuFile'         => $this->getAttribute('menuFile'),
             'this'             => $this,
             'showDescFor'      => $this->getAttribute('showDescFor'),
-            'showBasketButton' => $this->getAttribute('showBasketButton'),
+            'showBasketButton' => $showBasketButton,
             'Site'             => $Site,
             'Project'          => $Project
         ]);
