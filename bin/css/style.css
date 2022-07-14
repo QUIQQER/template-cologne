@@ -1621,6 +1621,13 @@ a.toTop:before {
     width: 100%;
 }
 
+/*************************/
+/* Passwort reset window */
+/*************************/
+.qui-controls-user-password-quiWindow .qui-window-popup-title {
+    display: none;
+}
+
 /** Product Children Slider (horizontal)
  ===================================== */
 /* @todo das muss noch geprüft werden - nicht alle Regeln werden benötigt */
