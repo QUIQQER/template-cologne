@@ -59,7 +59,9 @@ $logoHeight = $templateSettings['logoHeight'];
 $logoWidth  = false;
 
 try {
-    $logoWidth = $Logo->getResizeSize(false, $logoHeight)['width'];
+    if ($Logo) {
+        $logoWidth = $Logo->getResizeSize(false, $logoHeight)['width'];
+    }
 } catch (QUI\Exception $Exception) {
     QUI\System\Log::addNotice($Exception->getMessage());
 }
