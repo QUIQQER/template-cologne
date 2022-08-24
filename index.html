@@ -1,6 +1,7 @@
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
 <head>
+    {template_event name="quiqqer::template::header::begin" Template=$Template}
     {template_event name="quiqqer::template-cologne::header::begin" Template=$Template}
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -28,8 +29,10 @@
     {template_event name="quiqqer::template-cologne::header::afterSettingsCSS" Template=$Template}
 
     {template_event name="quiqqer::template-cologne::header::end" Template=$Template}
+    {template_event name="quiqqer::template::header::end" Template=$Template}
 </head>
 <body class="page-{$Site->getId()} {$typeClass} {$siteType} {$minimalDesignClass} {$pageCustomClass}">
+{template_event name="quiqqer::template::body::begin" Template=$Template}
 {template_event name="quiqqer::template-cologne::body::begin" Template=$Template}
 
 {if $useSlideOutMenu}
@@ -85,5 +88,6 @@
 </div>
 {/if}
 {template_event name="quiqqer::template-cologne::body::end" Template=$Template}
+{template_event name="quiqqer::template::body::end" Template=$Template}
 </body>
 </html>
