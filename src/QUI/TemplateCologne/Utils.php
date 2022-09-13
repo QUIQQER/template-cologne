@@ -267,7 +267,7 @@ class Utils
         $config['showTopBar']           = $showTopBar;
         $config['showNav']              = $showNav;
         $config['showFooter']           = $showFooter;
-        $config['settingsCSS']          = '<style>'.$settingsCSS.'</style>';
+        $config['settingsCSS']          = '<style data-no-cache="1">'.$settingsCSS.'</style>';
         $config['typeClass']            = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['minimalDesignClass']   = $minimalDesign ? 'type-minimal-design' : '';
         $config['siteType']             = $siteType;
