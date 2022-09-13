@@ -254,6 +254,7 @@ class Utils
 
         if ($Site->getAttribute('templateCologne.pageCustomClass') && $Site->getAttribute('templateCologne.pageCustomClass') !== '') {
             $pageCustomClass = 'templateCologne__'.$Site->getAttribute('templateCologne.pageCustomClass');
+            $pageCustomClass .= ' '.$Site->getAttribute('templateCologne.pageCustomClass');
         }
 
         // predefined footer
