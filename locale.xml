@@ -547,11 +547,11 @@
             <en><![CDATA[In header or page content]]></en>
         </locale>
         <locale name="settings.pageTitle.breadcrumb">
-            <de><![CDATA[In der Brotkrümnavigation (breadcrumb)]]></de>
+            <de><![CDATA[In der Brotkrümelnavigation (breadcrumb)]]></de>
             <en><![CDATA[In breadcrumb]]></en>
         </locale>
         <locale name="settings.pageTitle.both">
-            <de><![CDATA[Im Header und in der Brotkrümnavigation]]></de>
+            <de><![CDATA[Im Header und in der Brotkrümelnavigation]]></de>
             <en><![CDATA[Both: in header and breadcrumb]]></en>
         </locale>
         <locale name="settings.pageTitle.disable">
@@ -629,11 +629,11 @@
 
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">
-            <de><![CDATA[Brotkrumennavigation Einstellungen (breadcrumb)]]></de>
+            <de><![CDATA[Brotkrümelnavigation Einstellungen (breadcrumb)]]></de>
             <en><![CDATA[Breadcrumb settings]]></en>
         </locale>
         <locale name="settings.breadcrumb.text" html="true">
-            <pl><![CDATA[Brotkrumennavigation anzeigen? <br/>Bestimmen Sie für jeden Seitentyp, ob die Brotkrumennavigation angezeigt werden soll.]]></pl>
+            <pl><![CDATA[Brotkrümelnavigation anzeigen? <br/>Bestimmen Sie für jeden Seitentyp, ob die Brotkrümelnavigation angezeigt werden soll.]]></pl>
             <en><![CDATA[Display breadcrumb? <br/>For each page type, specify if you want the breadcrumb navigation to be displayed.]]></en>
         </locale>
 

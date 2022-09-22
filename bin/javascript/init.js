@@ -92,7 +92,7 @@ window.addEvent('domready', function () {
         /**
          * User icon
          */
-        if (Menu && TopBar) {
+        if (TopBar) {
             require([
                 'Locale',
                 'package/quiqqer/tooltips/bin/html5tooltips'
@@ -100,7 +100,7 @@ window.addEvent('domready', function () {
                 QUI.setAttribute('control-loader-type', 'fa-spinner');
                 QUI.setAttribute('control-loader-color', '#999999');
 
-                var Logo       = Menu.getElement('.logo'),
+                var Logo       = Menu ? Menu.getElement('.logo') : null,
                     UserButton = document.getElement('.cologne-header-control-user');
 
                 if (!UserButton) {
