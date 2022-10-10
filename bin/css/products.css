@@ -587,10 +587,6 @@
     width: 100%;
 }
 
-.quiqqer-product-list[data-qui-options-view="gallery"] .quiqqer-products-productList-products-container-real__noProducts {
-    display: block;
-}
-
 .cologne-products-productGallery-products-product {
     align-items: center;
     background: #fff;
@@ -916,7 +912,6 @@
 .quiqqer-products-productList-sort__noProducts {
     grid-column: 1 / 4;
 }
-
 
 /***********/
 /* Product */
