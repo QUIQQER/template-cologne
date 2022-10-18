@@ -23,7 +23,7 @@
     "quiqqer\/order": "^1.3|dev-master|dev-dev",
     "quiqqer\/product-bricks": "1.*|dev-master|dev-dev",
     "quiqqer\/frontend-users": "1.*|dev-master|dev-dev",
-    "quiqqer\/menu": "1.*|dev-master|dev-dev",
+    "quiqqer\/menu": "2.*|dev-master|dev-dev",
     "quiqqer\/sitetypes": "1.*|dev-master|dev-dev",
     "quiqqer\/unsemantic": "1.*",
     "quiqqer-asset\/fastclick": "1.*",
