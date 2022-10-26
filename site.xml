@@ -6,6 +6,7 @@
         <attribute>templateCologne.header</attribute>
         <attribute>templateCologne.largeSpacing</attribute>
         <attribute>templateCologne.pageCustomClass</attribute>
+        <attribute>templateCologne.independentMenuId</attribute>
     </attributes>
 
     <settings>
@@ -61,6 +62,23 @@
                     <description>
                         <locale group="quiqqer/template-cologne"
                                 var="siteSettings.pageCustomClass.desc"/>
+                    </description>
+                </input>
+
+                <!-- Independent mnenu / own menu -->
+                <input conf="templateCologne.independentMenuId"
+                       type="text"
+                       data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                    <text>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.independentMenuId"
+                        />
+                    </text>
+
+                    <description>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.independentMenuId.desc"
+                        />
                     </description>
                 </input>
             </settings>

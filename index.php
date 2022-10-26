@@ -18,23 +18,32 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
 /**
  * Menu
  */
-$homeLink     = false;
-$homeLinkText = false;
+$menuParams = [
+    'showStart'                   => false,
+    'data-show-button-on-desktop' => 1,
+    'Project'                     => $Site->getProject()
+];
 
 if (isset($templateSettings['homeLink']) && $templateSettings['homeLink']) {
-    $homeLink = true;
+    $menuParams['showStart'] = true;
 }
 
 if (isset($templateSettings['homeLinkText']) && $templateSettings['homeLinkText'] !== '') {
-    $homeLinkText = $templateSettings['homeLinkText'];
+    $menuParams['startText'] = $templateSettings['homeLinkText'];
 }
 
-$Menu = new QUI\Menu\MegaMenu([
-    'showStart'                   => $homeLink,
-    'startText'                   => $homeLinkText,
-    'data-show-button-on-desktop' => 1,
-    'Project'                     => $Site->getProject()
-]);
+if ($Project->getConfig('templateCologne.settings.enableIndependentMenu') && $Project->getConfig('templateCologne.settings.menuId')) {
+    $menuParams['menuId']              = $Project->getConfig('templateCologne.settings.menuId');
+    $menuParams['showFirstLevelIcons'] = $Project->getConfig('templateCologne.settings.showFirstLevelIcons');
+    $menuParams['showStart']           = false;
+}
+
+// Site own / independent menu
+if ($Site->getAttribute('templateCologne.independentMenuId')) {
+    $menuParams['menuId'] = $Site->getAttribute('templateCologne.independentMenuId');
+}
+
+$Menu = new QUI\Menu\MegaMenu($menuParams);
 
 /**
  * Basket button
