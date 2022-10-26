@@ -79,6 +79,18 @@
                         <defaultvalue>false</defaultvalue>
                     </conf>
 
+                    <!-- nav / menu: independent -->
+                    <conf name="enableIndependentMenu">
+                        <type><![CDATA[bool]]></type>
+                    </conf>
+                    <conf name="menuId">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
+                    <conf name="showFirstLevelIcons">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
                     <!-- header -->
                     <conf name="headerStartPage">
                         <type><![CDATA[string]]></type>
@@ -531,6 +543,50 @@
                                             var="settings.nav.setMenuPosBackOnInit.desc"
                                     />
                                 </description>
+                            </input>
+                        </settings>
+
+                        <!-- Nav / menu: independent -->
+                        <settings title="templateCologne.settings"
+                                  name="settings.independentMenu.title">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="templateCologne.settings.independentMenu.title"
+                                />
+                            </title>
+
+                            <input conf="templateCologne.settings.enableIndependentMenu"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.independentMenu.enableIndependentMenu"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.menuId"
+                                   type="text"
+                                   data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.independentMenu.menuId"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.independentMenu.menuId.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templateCologne.settings.showFirstLevelIcons"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.independentMenu.showFirstLevelIcons"
+                                    />
+                                </text>
                             </input>
                         </settings>
 

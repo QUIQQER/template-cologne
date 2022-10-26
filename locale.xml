@@ -266,10 +266,17 @@
             <en><![CDATA[CSS class]]></en>
         </locale>
         <locale name="siteSettings.pageCustomClass.desc" html="true">
-            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite separate CSS Klasse geben. Diese wird auf das <i>&lt;body&gt;</i> Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live und Dev Umgebung existeirt (oder auch lokale Installation), die nicht exakt gleich sind.<br>
-                Die CSS klasse wird so aufgebaut: <code>templateCologne__deine-css-klasse</code>]]></de>
-            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.<br>
-                The CSS class looks like this: <code>templateCologne__your-css-class</code>]]></en>
+            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite separate CSS Klasse geben. Diese wird auf das <i>&lt;body&gt;</i> Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live und Dev Umgebung existeirt (oder auch lokale Installation), die nicht exakt gleich sind.]]></de>
+            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.]]></en>
+        </locale>
+
+        <locale name="siteSettings.independentMenuId">
+            <de><![CDATA[Eigenes Menü]]></de>
+            <en><![CDATA[Independent]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuId.desc">
+            <de><![CDATA[Die Option ermöglichst separates und unabhängiges Menü für eine einzelne Seite zu setzen.]]></de>
+            <en><![CDATA[The option allows to set separate and independent menu for single page.]]></en>
         </locale>
 
         <!-- template settings -->
@@ -474,6 +481,28 @@
                         Wenn man den Haken hier setzt, wird das Menü von oberen Rand gelöst und "normal" platziert <strong>erst wenn man die ursprüngliche Position des Menü erreicht (in den meisten Fällen wenn man ganz nach oben scrollt)</strong>.]]></de>
             <en><![CDATA[By default, the menu is fixed at the top of the browser by scrolling. From how many pixels this happens depends on the option <i>"Show navigation after scroll"</i>. If you set 500px, for example, the menu will be stuck at the top after 500px. If you scroll up again, the menu will be placed normally again under 500 pixels.
                     If you check this box, the menu will be detached from the top and initial placed <strong>only when you reach the initial position of the menu (in most cases when you scroll all the way up)</strong>.]]></en>
+        </locale>
+
+        <!-- nav / menu: independent -->
+        <locale name="templateCologne.settings.independentMenu.title">
+            <de><![CDATA[Eigenes Menü]]></de>
+            <en><![CDATA[Independent menu]]></en>
+        </locale>
+        <locale name="settings.independentMenu.enableIndependentMenu">
+            <de><![CDATA[Eigenes Menü aktivieren]]></de>
+            <en><![CDATA[Enable independent menu]]></en>
+        </locale>
+        <locale name="settings.independentMenu.menuId">
+            <de><![CDATA[Menü auswählen]]></de>
+            <en><![CDATA[Select menu]]></en>
+        </locale>
+        <locale name="settings.independentMenu.menuId.desc">
+            <de><![CDATA[Wenn ein eigenes Menü ausgewählt ist, wird dieses als Navigation angezeigt.]]></de>
+            <en><![CDATA[If a custom (independent) menu is selected, this will be displayed as navigation.]]></en>
+        </locale>
+        <locale name="settings.independentMenu.showFirstLevelIcons">
+            <de><![CDATA[Icons in der erster Ebene anzeigen]]></de>
+            <en><![CDATA[Show icons in the first level]]></en>
         </locale>
 
         <!-- header settings -->
