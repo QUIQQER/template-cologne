@@ -15,30 +15,30 @@ textarea {
 }
 
 select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
     background-color: #fff;
     background-image: url("../images/arrow-select.svg");
-    background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
     background-size: 20px auto;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    background-size: 8px;
+    height: 40px;
+    padding-bottom: 0;
     padding-right: 28px;
-    transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
+    padding-top: 0;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
-    height: 40px;
-    padding-top: 0;
-    padding-bottom: 0;
-    background-size: 8px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 
 textarea {
     line-height: 1.6em;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 input[type="text"]:hover,
@@ -115,6 +115,62 @@ div.qui-select .text {
 div.qui-select .drop-icon {
     height: inherit;
     width: 28px;
+}
+
+/*******************/
+/* Forms structure */
+/*******************/
+.form-group,
+fieldset ,
+legend {
+    margin-bottom: var(--qui-spacing, 1rem);
+}
+
+.form-label {
+    display: inline-block;
+    margin-bottom: var(--qui-spacing-xs, 0.5rem);
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+}
+
+.form-text {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm, 0.875rem);
+    margin-top: var(--qui-spacing-xs, 0.5rem);
+}
+
+.form-check {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+fieldset > [class^="grid-"]:first-child {
+    padding-left: 0;
+}
+
+fieldset > [class^="grid-"]:last-child {
+    padding-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+    fieldset > [class^="grid-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+legend {
+    font-size: var(--qui-fs-md, 1.25rem);
+    display: block;
+    width: 100%;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+    vertical-align: middle;
 }
 
 /** checkbox
