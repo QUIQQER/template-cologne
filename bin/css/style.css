@@ -1076,7 +1076,7 @@ a.toTop:before {
     margin-left: 5px;
 }
 
-.quiqqer-menu-megaMenu-list-item a {
+.quiqqer-menu-megaMenu-list-item .quiqqer-menu-megaMenu-list-item-inner {
     align-items: center;
     display: flex !important;
     height: 100%;
