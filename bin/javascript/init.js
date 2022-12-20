@@ -287,7 +287,7 @@ window.addEvent('domready', function () {
 
                     let showMenuSmooth = false;
 
-                    if (QUI.getScroll().y > MenuWrapper.offsetHeight + MenuWrapper.offsetTop) {
+                    if (MenuWrapper && QUI.getScroll().y > MenuWrapper.offsetHeight + MenuWrapper.offsetTop) {
                         showMenuSmooth = true;
                     }
 

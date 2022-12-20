@@ -2,24 +2,25 @@
 {if !$Template->getAttribute('showFooter')}
     {assign var=smallFooter value='template-footer__small'}
 {/if}
+<section data-nosnippet="true">
+    <footer class="template-footer {$smallFooter}">
+        {if $Template->getAttribute('showFooter')}
+            {* footer brick area *}
+            {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
 
-<footer class="template-footer {$smallFooter}">
-    {if $Template->getAttribute('showFooter')}
-        {* footer brick area *}
-        {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
+            {* pre-defined footer *}
+            {fetch template="template/footer/predefinedFooter.html"
+                paymentsData=$paymentsData
+                shortText=$shortText
+                urlList=$urlList
+                featuredProducts=$featuredProducts
+            }
+        {/if}
 
-        {* pre-defined footer *}
-        {fetch template="template/footer/predefinedFooter.html"
-            paymentsData=$paymentsData
-            shortText=$shortText
-            urlList=$urlList
-            featuredProducts=$featuredProducts
-        }
-    {/if}
-
-    {* footer copyright *}
-    {fetch template="template/footer/copyright.html"}
-</footer>
+        {* footer copyright *}
+        {fetch template="template/footer/copyright.html"}
+    </footer>
+</section>
 
 {* to top icon *}
 {fetch template="template/footer/toTop.html"}
