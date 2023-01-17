@@ -19,8 +19,9 @@
     {/foreach}
     {/if}
 
-    {if $header == 'beforeContent' && !$productPage}
-        {if $Site->getAttribute('image_emotion')}
+
+    {if ($header == 'beforeContent' || $header == 'hide') && !$productPage}
+        {if $Site->getAttribute('image_emotion') &&  $header == 'beforeContent' }
         <header class="page-content-header page-content-header-emotion"
                 style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"
         >
