@@ -38,7 +38,7 @@
             </form>
         </div>
 
-        {if isset($ProductList) && $ProductList->count() && !empty($filter)}
+        {if !empty($ProductList->getFilter())}
         <div class="product-sidebar-container product-sidebar-filter template-grid-row clearfix">
             <header class="left-sidebar-filter-header">
                 <h2>{locale group="quiqqer/products" var="type.search.filterTitle"}</h2>
