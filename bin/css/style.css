@@ -86,7 +86,7 @@ body {
 
 body.iosFix {
     /*height: 100%;*/
-    top: 0 !important;
+    /*top: 0 !important;*/
 }
 
 body.iosFix .qui-window-popup {
