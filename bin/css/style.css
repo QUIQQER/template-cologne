@@ -151,11 +151,16 @@ small, .font_small, .font-small {
     font-size: 0.75em;
 }
 
+/*
+ 1. Quiqqer sets the width and height HTML attributes on each <img> element (smarty function.image.php).
+    Therefore, we need to set the width and height properties to 'auto'
+    to avoid images being displayed at a reduced size.
+*/
 img {
     max-height: 100%;
     max-width: 100%;
-    height: auto;
-    width: auto;
+    height: auto; /* 1 */
+    width: auto; /* 1 */
 }
 
 .html5tooltip-box {
