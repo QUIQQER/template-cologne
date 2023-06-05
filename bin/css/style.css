@@ -154,6 +154,8 @@ small, .font_small, .font-small {
 img {
     max-height: 100%;
     max-width: 100%;
+    height: auto;
+    width: auto;
 }
 
 .html5tooltip-box {
