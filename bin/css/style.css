@@ -528,6 +528,13 @@ a.toTop:before {
     visibility: hidden; /* jumping fix */
 }
 
+.tobpar--separator {
+    margin-inline: 0.5em;
+    height: 1.25em;
+    width: 1px;
+    background: #ddd;
+}
+
 .topbar-left,
 .topbar-left > p {
     align-items: center;
@@ -593,6 +600,24 @@ a.toTop:before {
     .topbar {
         border-bottom: none;
     }
+}
+
+/******************************/
+/* LanguageSwitches\DropDown  */
+/******************************/
+.topbar-right > .quiqqer-bricks-languageswitch-dropdown {
+    height: 100%;
+}
+
+/*
+1. because `.cologne-header` has z-index 99, we must set this control to 100
+*/
+.topbar-right > .quiqqer-bricks-languageswitch-dropdown > .quiqqer-control-languageswitch-dropdown {
+    position: relative;
+    z-index: 100; /* 1 */
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 /***************************/

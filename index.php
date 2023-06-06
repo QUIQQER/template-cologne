@@ -110,7 +110,8 @@ $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
 /**
  * Lang currency swtich control
  */
-$LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
+//$LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
+$LangCurrencySwitch = null;
 
 /**
  * Sign up / registration page

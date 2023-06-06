@@ -10,7 +10,13 @@
         </div>
 
         {* language & currency switch *}
-        {$LangCurrencySwitch->create()}
+        {if false}
+            {$LangCurrencySwitch->create()}
+        {else}
+            {control control="\QUI\Bricks\Controls\LanguageSwitches\DropDown" showArrow=false}
+            <span class="tobpar--separator"></span>
+            {control control="QUI\TemplateCologne\Controls\CurrencySwitch"}
+        {/if}
 
         <span class="cologne-header-control-user">
             {if $User->getId()}
