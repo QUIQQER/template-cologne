@@ -17,6 +17,13 @@
                         <defaultvalue>60</defaultvalue>
                     </conf>
 
+                    <!-- currency and language switch -->
+                    <conf name="currencyLangSwitch.controlType">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>currencyAndLang</defaultvalue>
+                    </conf>
+
+                    <!-- ecommerce settings -->
                     <conf name="checkoutAppearance">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>minimal</defaultvalue>
@@ -291,6 +298,48 @@
                                     />
                                 </description>
                             </input>
+                        </settings>
+
+                        <!-- currency and lang switch -->
+                        <settings title="templateCologne.settings"
+                                  name="templateCologne.settings.currencyLangSwitch">
+                            <title>
+                                <locale group="quiqqer/template-cologne"
+                                        var="settings.general.currencyLangSwitch.title"
+                                />
+                            </title>
+
+
+                            <!-- checkout and basket page design -->
+                            <select conf="templateCologne.settings.currencyLangSwitch.controlType">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.currencyLangSwitch.controlType"
+                                    />
+                                </text>
+
+
+                                <option value="currencyAndLang">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.currencyLangSwitch.controlType.currencyAndLang"
+                                    />
+                                </option>
+                                <option value="onlyCurrency">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.currencyLangSwitch.controlType.onlyCurrency"
+                                    />
+                                </option>
+                                <option value="onlyLang">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.currencyLangSwitch.controlType.onlyLang"
+                                    />
+                                </option>
+                                <option value="disabled">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.currencyLangSwitch.controlType.disabled"
+                                    />
+                                </option>
+                            </select>
                         </settings>
 
                         <settings title="templateCologne.settings"

@@ -40,9 +40,7 @@
 {/if}
 {* small top bar *}
 {if $Template->getAttribute('showTopBar')}
-    {fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar
-        Flags=$Flags LangCurrencySwitch=$LangCurrencySwitch Search=$Search
-    }
+    {fetch template="template/topBar.html" Menu=$Menu User=$User Avatar=$Avatar Search=$Search Template=$Template}
 {/if}
 
 {template_event name="quiqqer::template-cologne::body::afterTopBar" Template=$Template}

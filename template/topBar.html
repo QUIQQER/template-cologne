@@ -10,7 +10,19 @@
         </div>
 
         {* language & currency switch *}
-        {$LangCurrencySwitch->create()}
+        {if $Template->getAttribute('showTopbarLanguageSwitch')}
+            {control control="\QUI\Bricks\Controls\LanguageSwitches\DropDown" showArrow=false}
+        {/if}
+
+        {* Show separator only if both controls are enabled *}
+        {if $Template->getAttribute('showTopbarLanguageSwitch') && $Template->getAttribute('showTopbarCurrencySwitch')}
+            <span class="tobpar--separator"></span>
+        {/if}
+
+        {if $Template->getAttribute('showTopbarCurrencySwitch')}
+            {control control="QUI\TemplateCologne\Controls\CurrencySwitch"}
+        {/if}
+        {* END language & currency switch *}
 
         <span class="cologne-header-control-user">
             {if $User->getId()}
@@ -23,6 +35,5 @@
                 <span class="fa fa-pulse fa-spinner"></span>
             </span>
         </span>
-
     </div>
 </div>

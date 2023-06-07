@@ -312,6 +312,34 @@
             <de><![CDATA[Maximale Logo Höhe. Bitte beachte das Logo wird nie größer als das Menü.]]></de>
             <en><![CDATA[Maximum logo height. Please note the logo will never be higher than the menu height.]]></en>
         </locale>
+        <locale name="settings.general.currencyLangSwitch.title">
+            <de><![CDATA[Sprach- und Währung-Auswahl]]></de>
+            <en><![CDATA[Lang and currency select]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType">
+            <de><![CDATA[Widget-Type]]></de>
+            <en><![CDATA[Widget type]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.desc">
+            <de><![CDATA[Diese Einstellung beeinflusst die Sprach- und Währung-Auswahl in Topbar (oben auf der Seite)]]></de>
+            <en><![CDATA[This setting affects the language and currency selection in Topbar (on the top of the page)]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.disabled">
+            <de><![CDATA[Deaktiviert - weder Sprach- noch Währung-Auswahl werden angezeigt]]></de>
+            <en><![CDATA[Disabled - neither language nor currency switch are displayed]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.currencyAndLang">
+            <de><![CDATA[Sprach- und Währung-Auswahl aktivieren]]></de>
+            <en><![CDATA[Enable language and currency switch]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.onlyCurrency">
+            <de><![CDATA[Nur Währung-Auswahl aktivieren]]></de>
+            <en><![CDATA[Enable currency switch only]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.onlyLang">
+            <de><![CDATA[Nur Sprache-Auswahl aktivieren]]></de>
+            <en><![CDATA[Enable language switch only]]></en>
+        </locale>
         <locale name="settings.shop.title">
             <de><![CDATA[Shop-Einstellungen]]></de>
             <en><![CDATA[Shop settings]]></en>
@@ -337,16 +365,16 @@
             <en><![CDATA[Full: in addition to the "compact", the page title and breadcrumb navigation are also displayed.]]></en>
         </locale>
         <locale name="settings.shop.retailPrice">
-            <de><![CDATA[UVP anzeigen]]></de>
-            <en><![CDATA[Show retail price ]]></en>
+            <de><![CDATA[Sonderangeboten anzeigen]]></de>
+            <en><![CDATA[Show special offer price]]></en>
         </locale>
         <locale name="settings.shop.retailPrice.desc" html="true">
             <de><![CDATA[
-            <br />Aktiviert das Anzeigen von UVP (unverbindliche Preisempfehlung der Herstellers) neben dem aktuellen Preis.
+            <br />Aktiviert das Anzeigen von Sonderangeboten neben dem aktuellen Preis.
             Die UVP wird nur dann angezeigt, wenn die sie in Produkt-Eigenschaften eingetragen ist.
             <br /><strong>Die Einstellung hat Auswirkung nur auf das Template. Externe Bausteine können das anders regeln.</strong>]]></de>
             <en><![CDATA[
-            <br />Display the recommended retail price next to the current price.
+            <br />Display the special offer price retail price next to the current price.
             The retail price field in product properties must be filled.
             <br /><strong>The setting only affects the template. External bricks can regulate this differently.</strong>]]></en>
         </locale>

@@ -1,0 +1,23 @@
+/**********/
+/* button */
+/**********/
+.quiqqer-currency-switch-display.placeholder {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* custom loader */
+.quiqqer-currency-switch-customLoader {
+    position: absolute;
+    font-size: 1.5em;
+    left: calc(50% - 0.75em);
+}
+
+/* styling from: packages/quiqqer/currency/bin/controls/Switch.css to avoid jumping effect */
+.quiqqer-currency-switch-sign.placeholder {
+    margin-right: 0.5em;
+}
+
+.quiqqer-currency-switch-display.placeholder {
+    display: inline;
+}
