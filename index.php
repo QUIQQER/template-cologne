@@ -115,7 +115,6 @@ $LangCurrencySwitch = null;
 
 
 
-
 /**
  * Sign up / registration page
  */

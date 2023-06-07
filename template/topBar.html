@@ -10,17 +10,16 @@
         </div>
 
         {* language & currency switch *}
-        {if isset($Template['showTopbarLanguageSwitch']) && $Template['showTopbarLanguageSwitch']}
+        {if $Template->getAttribute('showTopbarLanguageSwitch')}
             {control control="\QUI\Bricks\Controls\LanguageSwitches\DropDown" showArrow=false}
         {/if}
 
         {* Show separator only if both controls are enabled *}
-        {if isset($Template['showTopbarLanguageSwitch']) && $Template['showTopbarLanguageSwitch'] &&
-            isset($Template['showTopbarCurrencySwitch']) && $Template['showTopbarCurrencySwitch']}
+        {if $Template->getAttribute('showTopbarLanguageSwitch') && $Template->getAttribute('showTopbarCurrencySwitch')}
             <span class="tobpar--separator"></span>
         {/if}
 
-        {if isset($Template['showTopbarCurrencySwitch']) && $Template['showTopbarCurrencySwitch']}
+        {if $Template->getAttribute('showTopbarCurrencySwitch')}
             {control control="QUI\TemplateCologne\Controls\CurrencySwitch"}
         {/if}
         {* END language & currency switch *}
