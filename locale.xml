@@ -312,6 +312,34 @@
             <de><![CDATA[Maximale Logo Höhe. Bitte beachte das Logo wird nie größer als das Menü.]]></de>
             <en><![CDATA[Maximum logo height. Please note the logo will never be higher than the menu height.]]></en>
         </locale>
+        <locale name="settings.general.currencyLangSwitch.title">
+            <de><![CDATA[Sprach- und Währung-Auswahl]]></de>
+            <en><![CDATA[Lang and currency select]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType">
+            <de><![CDATA[Widget-Type]]></de>
+            <en><![CDATA[Widget type]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.desc">
+            <de><![CDATA[Diese Einstellung beeinflusst die Sprach- und Währung-Auswahl in Topbar (oben auf der Seite)]]></de>
+            <en><![CDATA[This setting affects the language and currency selection in Topbar (on the top of the page)]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.disabled">
+            <de><![CDATA[Deaktiviert - weder Sprach- noch Währung-Auswahl werden angezeigt]]></de>
+            <en><![CDATA[Disabled - neither language nor currency switch are displayed]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.currencyAndLang">
+            <de><![CDATA[Sprach- und Währung-Auswahl aktivieren]]></de>
+            <en><![CDATA[Enable language and currency switch]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.onlyCurrency">
+            <de><![CDATA[Nur Währung-Auswahl aktivieren]]></de>
+            <en><![CDATA[Enable currency switch only]]></en>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.onlyLang">
+            <de><![CDATA[Nur Sprache-Auswahl aktivieren]]></de>
+            <en><![CDATA[Enable language switch only]]></en>
+        </locale>
         <locale name="settings.shop.title">
             <de><![CDATA[Shop-Einstellungen]]></de>
             <en><![CDATA[Shop settings]]></en>

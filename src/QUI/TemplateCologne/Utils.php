@@ -257,31 +257,60 @@ class Utils
             $pageCustomClass .= ' '.$Site->getAttribute('templateCologne.pageCustomClass');
         }
 
+        /**
+         * Language and currency settings
+         */
+        switch ($Project->getConfig('templateCologne.settings.currencyLangSwitch.controlType')) {
+            case 'onlyCurrency':
+                $showTopbarLanguageSwitch = false;
+                $showTopbarCurrencySwitch = true;
+                break;
+
+            case 'onlyLang':
+                $showTopbarLanguageSwitch = true;
+                $showTopbarCurrencySwitch = false;
+                break;
+
+            case 'disabled':
+                $showTopbarLanguageSwitch = false;
+                $showTopbarCurrencySwitch = false;
+                break;
+                
+            case 'currencyAndLang':
+            default:
+                $showTopbarLanguageSwitch = true;
+                $showTopbarCurrencySwitch = true;
+                break;
+        }
+
+
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
-        $config['header']               = $header;
-        $config['logoHeight']           = $logoHeight;
-        $config['pageTitle']            = $pageTitle;
-        $config['showBreadcrumb']       = $showBreadcrumb;
-        $config['minimalDesign']        = $minimalDesign;
-        $config['showTopBar']           = $showTopBar;
-        $config['showNav']              = $showNav;
-        $config['showFooter']           = $showFooter;
-        $config['settingsCSS']          = '<style data-no-cache="1">'.$settingsCSS.'</style>';
-        $config['typeClass']            = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
-        $config['minimalDesignClass']   = $minimalDesign ? 'type-minimal-design' : '';
-        $config['siteType']             = $siteType;
-        $config['pageCustomClass']      = $pageCustomClass;
-        $config['basketStyle']          = $basketStyle;
-        $config['basketOpen']           = $basketOpen;
-        $config['showCategoryMenu']     = $showCategoryMenu;
-        $config['homeLink']             = $homeLink;
-        $config['homeLinkText']         = $homeLinkText;
-        $config['useSlideOutMenu']      = true; // for now is always true because quiqqer use currently only SlideOut nav
-        $config['showNavAfterScroll']   = $showNavAfterScroll;
-        $config['showMenuSmooth']       = $showMenuSmooth;
-        $config['setMenuPosBackOnInit'] = $setMenuPosBackOnInit;
+        $config['header']                   = $header;
+        $config['logoHeight']               = $logoHeight;
+        $config['pageTitle']                = $pageTitle;
+        $config['showBreadcrumb']           = $showBreadcrumb;
+        $config['minimalDesign']            = $minimalDesign;
+        $config['showTopBar']               = $showTopBar;
+        $config['showNav']                  = $showNav;
+        $config['showFooter']               = $showFooter;
+        $config['settingsCSS']              = '<style data-no-cache="1">'.$settingsCSS.'</style>';
+        $config['typeClass']                = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['minimalDesignClass']       = $minimalDesign ? 'type-minimal-design' : '';
+        $config['siteType']                 = $siteType;
+        $config['pageCustomClass']          = $pageCustomClass;
+        $config['basketStyle']              = $basketStyle;
+        $config['basketOpen']               = $basketOpen;
+        $config['showCategoryMenu']         = $showCategoryMenu;
+        $config['homeLink']                 = $homeLink;
+        $config['homeLinkText']             = $homeLinkText;
+        $config['useSlideOutMenu']          = true; // for now is always true because quiqqer use currently only SlideOut nav
+        $config['showNavAfterScroll']       = $showNavAfterScroll;
+        $config['showMenuSmooth']           = $showMenuSmooth;
+        $config['setMenuPosBackOnInit']     = $setMenuPosBackOnInit;
+        $config['showTopbarLanguageSwitch'] = $showTopbarLanguageSwitch;
+        $config['showTopbarCurrencySwitch'] = $showTopbarCurrencySwitch;
 
         // set cache
         QUI\Cache\Manager::set(
