@@ -1,14 +1,7 @@
-<div class="lcs-button">
-    {if $currencySwitch}
-    <span class="lcs-button-currency" title="{$DefaultCurrency->getText()}">
-        <span class="lcs-button-currency-sign">{$DefaultCurrency->getSign()}</span>
-        <span class="lcs-button-currency-code text-muted">{$DefaultCurrency->getCode()}</span>
-    </span>
-    {/if}
-
-    {if $enableChange}
-    <span class="fa fa-caret-down"></span>
-    {/if}
-</div>
-
-<div class="lcs-menu-wrapper"></div>
+{strip}
+    <div class="quiqqer-currency-switch-display placeholder" title="{$DefaultCurrency->getText()}">
+        <span class="quiqqer-currency-switch-sign placeholder">{$DefaultCurrency->getSign()}</span>
+        <span class="quiqqer-currency-switch-code placeholder">{$DefaultCurrency->getCode()}</span>
+    </div>
+{*    <span class="fa fa-spinner fa-pulse fa-fw quiqqer-currency-switch-customLoader"></span>*}
+{/strip}

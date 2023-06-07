@@ -607,6 +607,7 @@ a.toTop:before {
 /******************************/
 .topbar-right > .quiqqer-bricks-languageswitch-dropdown {
     height: 100%;
+    flex-shrink: 0;
 }
 
 /*
@@ -618,6 +619,37 @@ a.toTop:before {
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.quiqqer-control-languageswitch-dropdown-dd-entry:hover {
+    color: inherit;
+}
+
+.quiqqer-control-languageswitch-dropdown-dd {
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+}
+
+/*******************/
+/* Currency switch */
+/*******************/
+/*
+1. because `.cologne-header` has z-index 99, we must set this control to 100
+*/
+.topbar-right .quiqqer-currency-switch {
+    z-index: 100; /* 1 */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 0.5em;
+    position: relative;
+}
+
+.quiqqer-currency-switch-dd {
+    box-shadow: 0 7px 22px -5px rgba(48, 60, 72, 0.2);
+}
+
+.quiqqer-currency-switch-sign {
+    font-size: 1.2rem;
 }
 
 /***************************/

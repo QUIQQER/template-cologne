@@ -21,12 +21,11 @@ class CurrencySwitch extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'               => 'currency-switch',
-//            'data-qui'            => 'package/quiqqer/template-cologne/bin/javascript/controls/CurrencySwitch',
+            'class'               => 'quiqqer-currency-switch',
             'userRelatedCurrency' => 1, // 1 / 0 -> is user allowed to change currency?
         ]);
 
-        $this->addCSSFile(dirname(__FILE__) . '/CurrencySwitch.css');
+        $this->addCSSFile(dirname(__FILE__).'/CurrencySwitch.css');
 
         parent::__construct($attributes);
     }
@@ -40,31 +39,26 @@ class CurrencySwitch extends QUI\Control
      */
     public function getBody()
     {
-        $Engine       = QUI::getTemplateManager()->getEngine();
-        $enableChange = false;
+        $Engine = QUI::getTemplateManager()->getEngine();
+
+        $this->setJavaScriptControlOption('buttonshowsign', 1);
+        $this->setJavaScriptControlOption('dropdownshowsign', 1);
+        $this->setJavaScriptControlOption('showarrow', 0);
+        $this->setJavaScriptControlOption('showloader', 0);
+        $this->setJavaScriptControlOption('dropdownposition', 'right');
 
         // is user allowed to change currency?
-        $currencySwitch = false;
-        $userrelatedcurrency = 0;
-
         if ($this->isCurrencySwitchAllowed()) {
             try {
                 $Package = QUI::getPackage('quiqqer/erp');
                 $Config  = $Package->getConfig();
 
                 if ($Config->getValue('general', 'userRelatedCurrency')) {
-                    $userrelatedcurrency = 1;
-                    $currencySwitch = true;
+                    $this->setJavaScriptControl('package/quiqqer/currency/bin/controls/Switch');
                 }
             } catch (QUI\Exception $Exception) {
                 QUI\System\Log::writeException($Exception);
             }
-        }
-        $this->setJavaScriptControlOption('userrelatedcurrency', $userrelatedcurrency);
-
-
-        if ($currencySwitch) {
-            $enableChange = true;
         }
 
         $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
@@ -75,12 +69,10 @@ class CurrencySwitch extends QUI\Control
 
         $Engine->assign([
             'this'            => $this,
-            'currencySwitch'  => $currencySwitch,
             'DefaultCurrency' => $Currency,
-            'enableChange'    => $enableChange
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/CurrencySwitch.html');
+        return $Engine->fetch(dirname(__FILE__).'/CurrencySwitch.html');
     }
 
     /**
