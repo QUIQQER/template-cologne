@@ -2,7 +2,7 @@
 {if !$Template->getAttribute('showFooter')}
     {assign var=smallFooter value='template-footer__small'}
 {/if}
-<section data-nosnippet="true">
+<section data-nosnippet="true" class="template-footer-wrapper">
     <footer class="template-footer {$smallFooter}">
         {if $Template->getAttribute('showFooter')}
             {* footer brick area *}
