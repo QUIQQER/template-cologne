@@ -797,11 +797,19 @@ a.toTop:before {
     margin: 0;
 }
 
-.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li {
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li,
+.quiqqer-products-mobileSuggest-results-list-showAllResults {
     background: none;
     border-color: #ddd;
     color: #606975;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li {
     padding: 20px 20px 40px 20px;
+}
+
+.quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results-list-showAllResults > a:not(:hover, :active, :focus) {
+    color: inherit;
 }
 
 .quiqqer-products-mobileSuggest .quiqqer-products-mobileSuggest-results li:first-child {
