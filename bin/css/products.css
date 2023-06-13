@@ -1141,6 +1141,7 @@
     justify-content: flex-end;
     padding: 20px 20px 20px 0;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .product-data-actionButtons-buyNow button {
@@ -1164,6 +1165,7 @@
     float: left;
     margin: 0 0 0 20px;
     width: 45%;
+    flex-grow: 1;
 }
 
 .product-data-actionButtons-buyNow button[disabled]:hover .add-to-basket-text {
@@ -1227,6 +1229,7 @@
 .quiqqer-order-button-add .disable-spins .quiqqer-order-button-add-quantity-input {
     height: auto;
     width: 40px;
+    line-height: inherit;
 }
 
 .quiqqer-order-button-add .quiqqer-order-button-add-quantity-input {
