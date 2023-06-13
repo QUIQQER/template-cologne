@@ -339,9 +339,6 @@ window.addEvent('domready', function () {
             ], function (Basket) {
                 new Basket({
                     open  : BASKET_OPEN.toInt(),
-                    styles: {
-                        float: 'right'
-                    },
                     events: {
                         onCreate: function (Basket) {
                             var BasketNode     = Basket.getElm(),
