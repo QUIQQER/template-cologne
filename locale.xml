@@ -616,6 +616,16 @@
             <en><![CDATA[Disabled]]></en>
         </locale>
 
+        <!-- page short description -->
+        <locale name="settings.pageShortDesc.title">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.pageShortDesc.text">
+            <de><![CDATA[Die Kurzbeschreibung kann pro Seiten-Layout de- bzw aktiviert werden.]]></de>
+            <en><![CDATA[The page description can be enabled or disabled per page layout.]]></en>
+        </locale>
+
         <!-- category menu -->
         <locale name="settings.categoryMenu.title">
             <de><![CDATA[Shop-Kategorie Navigation]]></de>

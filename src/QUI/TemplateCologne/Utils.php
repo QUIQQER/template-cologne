@@ -103,6 +103,7 @@ class Utils
          */
         $header         = 'hide';
         $pageTitle      = 'breadcrumb'; // where to show page title: in header, in breadcrumb or both?
+        $pageShortDesc  = false;
         $showBreadcrumb = false;
         $showTopBar     = true;
         $showNav        = true;
@@ -114,6 +115,7 @@ class Utils
             case 'layout/startPage':
                 $header         = $Project->getConfig('templateCologne.settings.headerStartPage');
                 $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleStartPage');
+                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescStartPage');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbStartPage');
                 $siteType       = 'layout-start-page';
                 break;
@@ -121,6 +123,7 @@ class Utils
             case 'layout/noSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerNoSidebar');
                 $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleNoSidebar');
+                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescNoSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebar');
                 $siteType       = 'layout-no-sidebar';
                 break;
@@ -128,6 +131,7 @@ class Utils
             case 'layout/noSidebarThin':
                 $header         = $Project->getConfig('templateCologne.settings.headerNoSidebarThin');
                 $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleNoSidebarThin');
+                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescNoSidebarThin');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebarThin');
                 $siteType       = 'layout-no-sidebar';
                 break;
@@ -135,6 +139,7 @@ class Utils
             case 'layout/rightSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerRightSidebar');
                 $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleRightSidebar');
+                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescLeftSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbRightSidebar');
                 $siteType       = 'layout-right-sidebar';
                 break;
@@ -142,13 +147,16 @@ class Utils
             case 'layout/leftSidebar':
                 $header         = $Project->getConfig('templateCologne.settings.headerLeftSidebar');
                 $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleLeftSidebar');
+                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbLeftSidebar');
                 $siteType       = 'layout-left-sidebar';
                 break;
         }
 
-        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
-            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart') {
+        if (
+            $Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
+            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart'
+        ) {
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
                 case 'compact':
                     $showBreadcrumb = false;
@@ -275,7 +283,7 @@ class Utils
                 $showTopbarLanguageSwitch = false;
                 $showTopbarCurrencySwitch = false;
                 break;
-                
+
             case 'currencyAndLang':
             default:
                 $showTopbarLanguageSwitch = true;
@@ -290,6 +298,7 @@ class Utils
         $config['header']                   = $header;
         $config['logoHeight']               = $logoHeight;
         $config['pageTitle']                = $pageTitle;
+        $config['settings.pageShortDesc']            = $pageShortDesc;
         $config['showBreadcrumb']           = $showBreadcrumb;
         $config['minimalDesign']            = $minimalDesign;
         $config['showTopBar']               = $showTopBar;
@@ -337,9 +346,12 @@ class Utils
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.shortText')) {
             $shortText = [];
 
-            $titles = json_decode($Project->getConfig(
-                'templateCologne.settings.predefinedFooter.shortText.title'
-            ), true);
+            $titles = json_decode(
+                $Project->getConfig(
+                    'templateCologne.settings.predefinedFooter.shortText.title'
+                ),
+                true
+            );
 
             $title = false;
 
@@ -356,9 +368,12 @@ class Utils
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList')) {
             $urlList = [];
 
-            $titles = json_decode($Project->getConfig(
-                'templateCologne.settings.predefinedFooter.urlList.title'
-            ), true);
+            $titles = json_decode(
+                $Project->getConfig(
+                    'templateCologne.settings.predefinedFooter.urlList.title'
+                ),
+                true
+            );
 
             $title = false;
 
@@ -482,9 +497,12 @@ class Utils
 
             $featuredProducts['controlParsed'] = QUI\ControlUtils::parse($FeaturedProduct);
 
-            $titles = json_decode($Project->getConfig(
-                'templateCologne.settings.predefinedFooter.featuredProducts.title'
-            ), true);
+            $titles = json_decode(
+                $Project->getConfig(
+                    'templateCologne.settings.predefinedFooter.featuredProducts.title'
+                ),
+                true
+            );
 
             $title = false;
 
@@ -498,17 +516,22 @@ class Utils
         /** Predefined footer: Payments Control */
         $paymentsData = false;
 
-        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
-            \class_exists('\QUI\ERP\Accounting\Payments\Payments')) {
+        if (
+            $Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
+            \class_exists('\QUI\ERP\Accounting\Payments\Payments')
+        ) {
             $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
             ]);
 
             $paymentsData['controlParsed'] = QUI\ControlUtils::parse($PaymentsControl);
 
-            $titles = json_decode($Project->getConfig(
-                'templateCologne.settings.predefinedFooter.payments.title'
-            ), true);
+            $titles = json_decode(
+                $Project->getConfig(
+                    'templateCologne.settings.predefinedFooter.payments.title'
+                ),
+                true
+            );
 
             $title = false;
 

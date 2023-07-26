@@ -1,6 +1,8 @@
-
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
+
+{assign var=pageTitle value=$Template->getAttribute('pageTitle')}
+{assign var=pageShort value=$Template->getAttribute('settings.pageShortDesc')}
 
 <div class="main-start-page">
     {if !empty( $prefixContentBricks )}
@@ -27,21 +29,25 @@
             >
                 <div class="page-content-header-emotion-container">
                     {if $pageTitle == 'header' || $pageTitle == 'both'}
-                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                        <h1>{$Site->getAttribute('title')|nl2br}</h1>
                     {/if}
+                    {if $pageShort}
+                        <div class="page-content-emotion-short">
+                            {$Site->getAttribute('short')|nl2br}
+                        </div>
+                    {/if}
+                </div>
+            </header>
+            {elseif ($pageTitle == 'header' || $pageTitle == 'header') || $pageShort}
+            <header class="page-content-header">
+                {if $pageTitle == 'header' || $pageTitle == 'both'}
+                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                {/if}
+                {if $pageShort}
                     <div class="page-content-emotion-short">
                         {$Site->getAttribute('short')|nl2br}
                     </div>
-                </div>
-            </header>
-            {else}
-            <header class="page-content-header">
-                {if $pageTitle == 'header' || $pageTitle == 'both'}
-                <h1>{$Site->getAttribute('title')|nl2br}</h1>
                 {/if}
-                <div class="page-content-emotion-short">
-                    {$Site->getAttribute('short')|nl2br}
-                </div>
             </header>
             {/if}
         {/if}
