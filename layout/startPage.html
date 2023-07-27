@@ -1,6 +1,5 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
-
 {assign var=pageTitle value=$Template->getAttribute('pageTitle')}
 {assign var=pageShort value=$Template->getAttribute('settings.pageShortDesc')}
 
@@ -22,7 +21,10 @@
     {/if}
 
     <div role="main">
-        {if ($header == 'beforeContent' || $header == 'hide') && !$productPage}
+        {* $productPage manages header, page title and desc by itself *}
+        {* $productPage means "quiqqer/products:types/category" or "quiqqer/productsearch:types/search" *}
+        {* Template Cologne overrides this 2 site types *}
+        {if !$productPage && ($header == 'beforeContent' || $header == 'hide')}
             {if $Site->getAttribute('image_emotion') &&  $header == 'beforeContent' }
             <header class="page-content-header page-content-header-emotion"
                     style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"
@@ -38,7 +40,7 @@
                     {/if}
                 </div>
             </header>
-            {elseif ($pageTitle == 'header' || $pageTitle == 'header') || $pageShort}
+            {elseif ($pageTitle == 'header' || $pageTitle == 'both') || $pageShort}
             <header class="page-content-header">
                 {if $pageTitle == 'header' || $pageTitle == 'both'}
                     <h1>{$Site->getAttribute('title')|nl2br}</h1>
