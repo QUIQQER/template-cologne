@@ -153,8 +153,7 @@ class Utils
                 break;
         }
 
-        if (
-            $Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
+        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
             $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart'
         ) {
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
@@ -516,8 +515,7 @@ class Utils
         /** Predefined footer: Payments Control */
         $paymentsData = false;
 
-        if (
-            $Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
             \class_exists('\QUI\ERP\Accounting\Payments\Payments')
         ) {
             $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
