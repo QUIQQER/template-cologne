@@ -149,7 +149,7 @@ $templateSettings['productPage']        = $productPage;
 $templateSettings['Flags']              = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
 $templateSettings['countLanguages']     = \count($Project->getLanguages());
-$templateSettings['Search']             = new QUI\ERP\Products\Controls\Search\Suggest([
+$templateSettings['Search']             = new QUI\ERP\Products\Search\Controls\Suggest([
     'globalsearch' => true
 ]);
 $templateSettings['registerSiteUrl']    = $registerSiteUrl;
