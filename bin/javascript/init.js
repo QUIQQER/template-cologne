@@ -9,6 +9,9 @@ window.addEvent('domready', function () {
         'qui/utils/System'
     ], function (QUI, QUISystemUtils) {
 
+        // change default loader
+        QUI.setAttribute('control-loader-type', 'fa-circle-o-notch');
+
         initMobileMenu();
         initScrollToAnchor();
 
@@ -97,9 +100,6 @@ window.addEvent('domready', function () {
                 'Locale',
                 'package/quiqqer/tooltips/bin/html5tooltips'
             ], function (QUILocale, html5tooltips) {
-                QUI.setAttribute('control-loader-type', 'fa-spinner');
-                QUI.setAttribute('control-loader-color', '#999999');
-
                 var Logo       = Menu ? Menu.getElement('.logo') : null,
                     UserButton = document.getElement('.cologne-header-control-user');
 
@@ -339,9 +339,6 @@ window.addEvent('domready', function () {
             ], function (Basket) {
                 new Basket({
                     open  : BASKET_OPEN.toInt(),
-                    styles: {
-                        float: 'right'
-                    },
                     events: {
                         onCreate: function (Basket) {
                             var BasketNode     = Basket.getElm(),

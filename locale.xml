@@ -600,8 +600,8 @@
             <en><![CDATA[Specify where the page title is displayed.]]></en>
         </locale>
         <locale name="settings.pageTitle.header">
-            <de><![CDATA[Im Header bzw. Seiteninhalt]]></de>
-            <en><![CDATA[In header or page content]]></en>
+            <de><![CDATA[Im Header bzw. vor dem Seiteninhalt (wenn der Header deaktiviert ist)]]></de>
+            <en><![CDATA[In header or before page content (if header is disabled)]]></en>
         </locale>
         <locale name="settings.pageTitle.breadcrumb">
             <de><![CDATA[In der Brotkrümelnavigation (breadcrumb)]]></de>
@@ -614,6 +614,16 @@
         <locale name="settings.pageTitle.disable">
             <de><![CDATA[Deaktiviert]]></de>
             <en><![CDATA[Disabled]]></en>
+        </locale>
+
+        <!-- page short description -->
+        <locale name="settings.pageShortDesc.title">
+            <de><![CDATA[Kurzbeschreibung]]></de>
+            <en><![CDATA[Short description]]></en>
+        </locale>
+        <locale name="settings.pageShortDesc.text">
+            <de><![CDATA[Die Kurzbeschreibung kann pro Seiten-Layout de- bzw aktiviert werden.]]></de>
+            <en><![CDATA[The page description can be enabled or disabled per page layout.]]></en>
         </locale>
 
         <!-- category menu -->

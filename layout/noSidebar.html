@@ -1,6 +1,7 @@
-
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('contentPrefix', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('contentSuffix', $Site)}
+{assign var=pageTitle value=$Template->getAttribute('pageTitle')}
+{assign var=pageShort value=$Template->getAttribute('settings.pageShortDesc')}
 
 <div class="main-no-sidebar">
     {if !empty( $prefixContentBricks )}
@@ -20,29 +21,36 @@
     {/if}
 
 
-    {if ($header == 'beforeContent' || $header == 'hide') && !$productPage}
+    {* $productPage manages header, page title and desc by itself *}
+    {* $productPage means "quiqqer/products:types/category" or "quiqqer/productsearch:types/search" *}
+    {* Template Cologne overrides this 2 site types *}
+    {if !$productPage && ($header == 'beforeContent' || $header == 'hide')}
         {if $Site->getAttribute('image_emotion') &&  $header == 'beforeContent' }
         <header class="page-content-header page-content-header-emotion"
                 style="background-image: url('{image src=$Site->getAttribute('image_emotion') width=1160 onlysrc=1 rewrited=1}')"
         >
             <div class="page-content-header-emotion-container">
                 {if $pageTitle == 'header' || $pageTitle == 'both'}
-                <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
                 {/if}
-                <div class="page-content-emotion-short">
-                    {$Site->getAttribute('short')|nl2br}
-                </div>
+                {if $pageShort}
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
+                {/if}
             </div>
         </header>
-        {else}
-        <header class="page-content-header">
-            {if $pageTitle == 'header' || $pageTitle == 'both'}
-            <h1>{$Site->getAttribute('title')|nl2br}</h1>
-            {/if}
-            <div class="page-content-emotion-short">
-                {$Site->getAttribute('short')|nl2br}
-            </div>
-        </header>
+        {elseif ($pageTitle == 'header' || $pageTitle == 'both') || $pageShort}
+            <header class="page-content-header">
+                {if $pageTitle == 'header' || $pageTitle == 'both'}
+                    <h1>{$Site->getAttribute('title')|nl2br}</h1>
+                {/if}
+                {if $pageShort}
+                    <div class="page-content-emotion-short">
+                        {$Site->getAttribute('short')|nl2br}
+                    </div>
+                {/if}
+            </header>
         {/if}
     {/if}
 
