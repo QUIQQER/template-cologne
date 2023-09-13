@@ -4,6 +4,8 @@
     <!-- global attributes -->
     <attributes>
         <attribute>templateCologne.header</attribute>
+        <attribute>templateCologne.pageTitle</attribute>
+        <attribute>templateCologne.pageDesc</attribute>
         <attribute>templateCologne.largeSpacing</attribute>
         <attribute>templateCologne.pageCustomClass</attribute>
         <attribute>templateCologne.independentMenuId</attribute>
@@ -25,7 +27,7 @@
                     </text>
                     <option value="default">
                         <locale group="quiqqer/template-cologne"
-                                var="siteSettings.showEmotion.default"/>
+                                var="siteSettings.header.display.default"/>
                     </option>
                     <option value="afterNav">
                         <locale group="quiqqer/template-cologne"
@@ -44,6 +46,54 @@
                     <locale group="quiqqer/template-cologne"
                             var="siteSettings.info"/>
                 </text>
+
+                <!-- show page title -->
+                <select conf="templateCologne.pageTitle">
+                    <text>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageTitle"/>
+                    </text>
+                    <option value="default">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageTitle.default"/>
+                    </option>
+                    <option value="header">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageTitle.header"/>
+                    </option>
+                    <option value="breadcrumb">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageTitle.breadcrumb"/>
+                    </option>
+                    <option value="both">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageTitle.both"/>
+                    </option>
+                    <option value="disable">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageTitle.disable"/>
+                    </option>
+                </select>
+
+                <!-- show page description -->
+                <select conf="templateCologne.pageDesc">
+                    <text>
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageDesc"/>
+                    </text>
+                    <option value="default">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageDesc.default"/>
+                    </option>
+                    <option value="enable">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageDesc.enable"/>
+                    </option>
+                    <option value="disable">
+                        <locale group="quiqqer/template-cologne"
+                                var="siteSettings.pageDesc.disable"/>
+                    </option>
+                </select>
 
                 <!-- more spacing between bricks -->
                 <input conf="templateCologne.largeSpacing" type="checkbox">

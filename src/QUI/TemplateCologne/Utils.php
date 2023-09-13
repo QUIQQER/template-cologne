@@ -184,6 +184,25 @@ class Utils
                 $header = $Site->getAttribute('templateCologne.header');
         }
 
+        /* site own page title settings */
+        switch ($Site->getAttribute('templateCologne.pageTitle')) {
+            case 'header':
+            case 'breadcrumb':
+            case 'both':
+            case 'disable':
+                $pageTitle = $Site->getAttribute('templateCologne.pageTitle');
+        }
+
+        /* site own page description settings */
+        switch ($Site->getAttribute('templateCologne.pageDesc')) {
+            case 'enable':
+                $pageShortDesc = $Site->getAttribute('templateCologne.pageDesc');
+                break;
+
+            case 'disable':
+                $pageShortDesc = false;
+        }
+
         // basket style
         $basketStyle = 'full';
 
