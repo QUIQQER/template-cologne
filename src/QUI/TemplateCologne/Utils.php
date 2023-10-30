@@ -154,7 +154,8 @@ class Utils
         }
 
         if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
-            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart'
+            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart' ||
+            $Site->getAttribute('type') === 'quiqqer/order-simple-checkout:types/simpleCheckout'
         ) {
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
                 case 'compact':
