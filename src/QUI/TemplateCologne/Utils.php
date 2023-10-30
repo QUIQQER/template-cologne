@@ -359,11 +359,9 @@ class Utils
         $lang = $Project->getLang();
 
         /** Predefined footer: short text */
-        $shortText = false;
+        $shortText = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.shortText')) {
-            $shortText = [];
-
             $titles = json_decode(
                 $Project->getConfig(
                     'templateCologne.settings.predefinedFooter.shortText.title'
@@ -381,11 +379,9 @@ class Utils
         }
 
         /** Predefined footer: url list */
-        $urlList = false;
+        $urlList = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList')) {
-            $urlList = [];
-
             $titles = json_decode(
                 $Project->getConfig(
                     'templateCologne.settings.predefinedFooter.urlList.title'
@@ -504,7 +500,7 @@ class Utils
         }
 
         /** Featured products */
-        $featuredProducts = false;
+        $featuredProducts = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.featuredProducts')) {
             $FeaturedProduct = new QUI\ProductBricks\Controls\FeaturedProducts([
@@ -532,7 +528,7 @@ class Utils
         }
 
         /** Predefined footer: Payments Control */
-        $paymentsData = false;
+        $paymentsData = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
             \class_exists('\QUI\ERP\Accounting\Payments\Payments')
