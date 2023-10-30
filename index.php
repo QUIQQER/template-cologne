@@ -57,7 +57,8 @@ if (!$Currency) {
 $createBasketButton = true;
 
 if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
-    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart') {
+    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart' ||
+    $Site->getAttribute('type') == 'quiqqer/order-simple-checkout:types/simpleCheckout') {
     $createBasketButton = false;
 
     $Template->setAttribute('content-header', false);
