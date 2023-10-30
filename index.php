@@ -12,7 +12,7 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
  */
 $templateSettings = QUI\TemplateCologne\Utils::getConfig([
     'Project' => $Project,
-    'Site'    => $Site,
+    'Site'    => $Site
 ]);
 
 /**
@@ -57,8 +57,11 @@ if (!$Currency) {
 $createBasketButton = true;
 
 if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
-    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart') {
+    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart' ||
+    $Site->getAttribute('type') == 'quiqqer/order-simple-checkout:types/simpleCheckout') {
     $createBasketButton = false;
+
+    $Template->setAttribute('content-header', false);
 }
 
 $InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);

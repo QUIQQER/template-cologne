@@ -154,7 +154,8 @@ class Utils
         }
 
         if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
-            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart'
+            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart' ||
+            $Site->getAttribute('type') === 'quiqqer/order-simple-checkout:types/simpleCheckout'
         ) {
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
                 case 'compact':
@@ -182,6 +183,25 @@ class Utils
             case 'beforeContent':
             case 'hide':
                 $header = $Site->getAttribute('templateCologne.header');
+        }
+
+        /* site own page title settings */
+        switch ($Site->getAttribute('templateCologne.pageTitle')) {
+            case 'header':
+            case 'breadcrumb':
+            case 'both':
+            case 'disable':
+                $pageTitle = $Site->getAttribute('templateCologne.pageTitle');
+        }
+
+        /* site own page description settings */
+        switch ($Site->getAttribute('templateCologne.pageDesc')) {
+            case 'enable':
+                $pageShortDesc = $Site->getAttribute('templateCologne.pageDesc');
+                break;
+
+            case 'disable':
+                $pageShortDesc = false;
         }
 
         // basket style
@@ -340,11 +360,9 @@ class Utils
         $lang = $Project->getLang();
 
         /** Predefined footer: short text */
-        $shortText = false;
+        $shortText = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.shortText')) {
-            $shortText = [];
-
             $titles = json_decode(
                 $Project->getConfig(
                     'templateCologne.settings.predefinedFooter.shortText.title'
@@ -362,11 +380,9 @@ class Utils
         }
 
         /** Predefined footer: url list */
-        $urlList = false;
+        $urlList = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList')) {
-            $urlList = [];
-
             $titles = json_decode(
                 $Project->getConfig(
                     'templateCologne.settings.predefinedFooter.urlList.title'
@@ -485,7 +501,7 @@ class Utils
         }
 
         /** Featured products */
-        $featuredProducts = false;
+        $featuredProducts = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.featuredProducts')) {
             $FeaturedProduct = new QUI\ProductBricks\Controls\FeaturedProducts([
@@ -513,7 +529,7 @@ class Utils
         }
 
         /** Predefined footer: Payments Control */
-        $paymentsData = false;
+        $paymentsData = [];
 
         if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
             \class_exists('\QUI\ERP\Accounting\Payments\Payments')
