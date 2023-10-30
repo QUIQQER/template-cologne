@@ -155,7 +155,6 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     background: #f8f8f8;
     border: 1px solid #ddd;
     clear: both;
-    float: left;
     margin-top: 20px;
     min-height: 90px;
     padding: 20px;
@@ -181,7 +180,6 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
 .quiqqer-order-basket-total {
     background: #f8f8f8;
     border: 1px solid #ddd;
-    float: right;
     margin-top: 20px;
     padding: 5px 10px;
     text-align: right;
