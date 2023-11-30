@@ -1,37 +1,11 @@
 /** Order Process
  =================================================== */
-.quiqqer-order-ordering .quiqqer-order-ordering-timeline {
-    border-bottom: none;
-}
-
 .quiqqer-order-ordering-timeline a {
     color: inherit;
 }
 
 .type-quiqqer-order-types-orderingProcess .content-template {
     padding: 0;
-}
-
-.cologne-main .message-error {
-    padding: 20px;
-}
-
-.quiqqer-order-ordering-buttons-next {
-    cursor: pointer;
-}
-
-.quiqqer-order-ordering-timeline li {
-    cursor: pointer;
-}
-
-@media screen and (max-width: 767px) {
-    .quiqqer-order-ordering .quiqqer-order-ordering-timeline li {
-        width: 140px !important;
-    }
-
-    .quiqqer-order-ordering-timeline .quiqqer-order-ordering-timeline-container li .title {
-        font-size: 11px;
-    }
 }
 
 /****************/
@@ -60,7 +34,6 @@ th.quiqqer-order-basket-articles-header-pos {
     border-left: 1px solid #ddd;
     text-align: left;
     width: 60px;
-
 }
 
 th.quiqqer-order-basket-articles-header-quantity {
@@ -81,9 +54,8 @@ th.quiqqer-order-basket-articles-header-price {
     width: 50px;
 }
 
-
 .quiqqer-order-basket-articles-header {
-    font-size: 12px;
+    font-size: 0.875rem;
     line-height: 30px;
 }
 
@@ -110,10 +82,8 @@ th.quiqqer-order-basket-articles-header-price {
 
 .quiqqer-order-basket-articles-article-quantity button {
     display: inline-block;
-    height: 30px;
-    line-height: 20px;
+    margin-right: 0.5em;
 }
-
 
 .quiqqer-order-basket-articles-unitPrice {
     width: 200px;
@@ -213,11 +183,6 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     display: none;
 }
 
-.content-template .quiqqer-order-ordering {
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
 .quiqqer-order-basket-total-subSum-text,
 .quiqqer-order-basket-total-subSum-value {
     border-bottom: 1px solid #999999;
@@ -273,73 +238,22 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 }
 
 .quiqqer-order-basket-articles-article-productno {
-    color: #adadad;
+    color: var(--text-muted);
     font-size: 12px;
 }
 
 /***********************/
 /* step: customer data */
 /***********************/
-.quiqqer-order-customerData-container {
-    display: flex;
-}
-
-.quiqqer-order-customerData {
-    margin-right: 20px;
-}
-
-.quiqqer-order-customerData-container .quiqqer-order-customerData,
-.quiqqer-order-customerData-container .quiqqer-order-customerData-comment {
-    width: calc(50% - 20px);
-}
-
-.quiqqer-order-customerData-edit .quiqqer-order-customerData-edit-salutation {
-    margin-top: 0;
-}
-
 .quiqqer-order-ordering-step .quiqqer-order-customerData-comment {
     align-self: flex-start;
     background: #f8f8f8;
     border: 1px solid #ddd;
-    margin-left: 20px;
-    margin-top: 0;
     padding: 1rem;
-}
-
-.quiqqer-order-customerData header h1 button {
-    margin-left: 1rem;
 }
 
 .quiqqer-order-customerData header h1 button > .fa {
     margin: 0;
-}
-
-.quiqqer-order-customerData .quiqqer-order-customerData-display {
-    margin-top: 2rem;
-    max-width: initial;
-    padding-right: 0;
-}
-
-.quiqqer-order-customerData-display-customerNo,
-.quiqqer-order-customerData-display-eMail,
-.quiqqer-order-customerData-display-tel {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.quiqqer-order-customerData-display-customerNo span:first-child,
-.quiqqer-order-customerData-display-eMail span:first-child,
-.quiqqer-order-customerData-display-tel span:first-child {
-    opacity: 0.75;
-    width: 160px;
-}
-
-.quiqqer-order-customerData-display .quiqqer-order-customerData-display-address {
-    margin-top: 2rem;
-}
-
-.quiqqer-order-customerData-edit {
-    margin-top: 2rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -363,129 +277,8 @@ input.quiqqer-coupons-couponcodeinput-input:active {
 }
 
 /******************/
-/* step: shipping */
-/******************/
-
-.quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry {
-    border-bottom: none;
-}
-
-.quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry:hover {
-    background: #f8f8f8 !important;
-}
-
-.quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.quiqqer-order-step-shipping-list-entry-price {
-    display: flex;
-    white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry {
-        display: flex !important;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .quiqqer-order-step-shipping-list-entry:last-child {
-        margin-bottom: 0;
-    }
-
-    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry.selected {
-        background: none;
-    }
-
-    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry-select {
-        display: flex !important;
-        flex: initial;
-        width: 40px;
-    }
-
-    .quiqqer-order-step-shipping-list-entry-select input[type="radio"] {
-        margin: 0;
-    }
-
-    .quiqqer-order-step-shipping-list .quiqqer-order-step-shipping-list-entry-icon {
-        padding: 0 !important;
-        width: calc(100% - 80px) !important;
-    }
-
-    .quiqqer-order-step-shipping-list-entry-text,
-    .quiqqer-order-step-shipping-list-entry-price {
-        padding: 10px 10px 10px 40px;
-    }
-
-    .quiqqer-order-step-shipping-list-entry-text,
-    .quiqqer-order-step-shipping-list-entry-price {
-        margin-left: 40px;
-    }
-}
-
-/******************/
-/* step: payments */
-/******************/
-.quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry {
-    border-bottom: none;
-}
-
-.quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry:hover .quiqqer-order-step-payments-list-entry-select {
-    background: none;
-}
-
-.quiqqer-order-step-payments-list-entry-select input[type="radio"] {
-    margin: 0;
-}
-
-.quiqqer-order-step-payments-list-entry:hover {
-    background: #f8f8f8 !important;
-}
-
-@media screen and (max-width: 767px) {
-    .quiqqer-order-step-payments-list .quiqqer-order-step-payments-list-entry {
-        display: flex !important;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 20px;
-    }
-
-    .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-text {
-        padding: 10px 0 0;
-    }
-
-    .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-icon {
-        padding: 0 !important;
-    }
-
-    .quiqqer-order-step-payments-list-entry.selected {
-        background: none !important;
-    }
-
-    .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-select {
-        align-items: center;
-        display: flex !important;
-        justify-content: center;
-        width: 40px;
-    }
-
-    .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-icon,
-    .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-text {
-        width: calc(100% - 40px) !important;
-    }
-
-    .quiqqer-order-step-payments-list-entry .quiqqer-order-step-payments-list-entry-text {
-        margin-left: 40px;
-    }
-}
-
-/******************/
 /* step: checkout */
 /******************/
-
 .quiqqer-order-step-checkout-invoiceAddress .postal-country {
     float: left;
 }
@@ -497,17 +290,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     float: left;
 }
 
-/** article content
- =========================================== */
-.quiqqer-order-basket-articles-article-data ul {
-    margin-left: 20px;
-}
-
 @media (max-width: 768px) {
-    .quiqqer-order-step-basket {
-        display: block;
-    }
-
     .quiqqer-order-ordering header h1 {
         font-size: 2em;
     }
@@ -561,14 +344,6 @@ input.quiqqer-coupons-couponcodeinput-input:active {
         width: 100%;
     }
 
-    .quiqqer-order-ordering-buttons {
-        margin-bottom: 10px;
-    }
-
-    .quiqqer-order-ordering-buttons-previous {
-        margin-bottom: 20px;
-    }
-
     .quiqqer-order-ordering-buttons-backToShop {
         display: none;
     }
@@ -614,27 +389,11 @@ input.quiqqer-coupons-couponcodeinput-input:active {
         display: block;
         padding: 5px 10px;
     }
-
-    .quiqqer-order-next-mobile {
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
 }
-
-.quiqqer-order-customerData-edit [name="businessType"] {
-    line-height: 40px;
-    padding: 0 8px;
-    width: 60% !important;
-}
-
 
 /******************/
 /* step: checkout */
 /******************/
-.quiqqer-order-step-checkout-attention {
-    margin-bottom: 20px;
-}
-
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-invoiceAddress,
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-deliveryAddress,
 .quiqqer-order-step-checkout .quiqqer-order-step-checkout-payments {
