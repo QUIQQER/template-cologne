@@ -193,7 +193,13 @@ window.addEvent('domready', function () {
             }
 
             if (SearchBtn && SearchInput) {
-                var clickEvent = function () {
+                const ActionSearchBtn = document.getElement('.quiqqer-products-search-suggest-form-button');
+
+                if (!ActionSearchBtn) {
+                    return;
+                }
+
+                let clickEvent = function () {
                     new Fx.Scroll(window, {
                         onComplete: function () {
                             SearchInput.focus();
@@ -202,8 +208,11 @@ window.addEvent('domready', function () {
                 };
 
                 if (QUI.getWindowSize().x < 767) {
+                    // https://dev.quiqqer.com/quiqqer/template-cologne/-/issues/104
+                    ActionSearchBtn.removeAttribute('type');
+
                     clickEvent = function () {
-                        document.getElement('.quiqqer-products-search-suggest-form-button').click();
+                        ActionSearchBtn.click();
                     };
                 }
 
