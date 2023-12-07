@@ -561,11 +561,20 @@ window.addEvent('domready', function () {
                 return;
             }
 
-            var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
+            let OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
                 MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
+            if (!MenuElm) {
+                MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideoutAdvanced"]');
+            }
+
+            if (!MenuElm) {
+                console.debug('Neither SlideOut nor SlideoutAdvanced found.');
+                return;
+            }
+
             if (!OpenCategoryBtn) {
-                console.error('Open Category Button ".shop-category-menu-button" not found.');
+                console.debug('Open Category Button ".shop-category-menu-button" not found.');
                 return;
             }
 
