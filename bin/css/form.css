@@ -32,8 +32,8 @@ select {
     -o-transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
+    color: inherit;
 }
-
 
 textarea {
     line-height: 1.6em;
