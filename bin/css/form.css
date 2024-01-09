@@ -104,6 +104,11 @@ input[type="search"] {
 div.qui-select {
     height: 40px;
     line-height: 40px;
+    display: flex;
+}
+
+div.qui-select .icon {
+    height: inherit;
 }
 
 div.qui-select .text {

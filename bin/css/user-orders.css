@@ -32,8 +32,12 @@ section.quiqqer-order-profile-orders-order {
     display: block;
 }
 
-.quiqqer-order-profile-orders-order-header-addressInvoice address {
-    top: 48px !important;
+/**
+ 1. avoid !important and increase the specificity (not good)
+ 2. set address position at the bottom line 100% height + 10px padding of "header"
+ */
+.quiqqer-order-profile-orders-order-header-addressInvoice address:is(address) { /* 1 */
+    top: calc(100% + 10px); /* 2 */
 }
 
 .quiqqer-order-profile-orders-order-header-addressInvoice span {
