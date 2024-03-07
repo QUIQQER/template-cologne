@@ -109,10 +109,6 @@ window.addEvent('domready', function () {
 
                 var UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
 
-                window.addEvent('load', function () {
-                    document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
-                });
-
                 /**
                  * Login
                  */
@@ -193,7 +189,13 @@ window.addEvent('domready', function () {
             }
 
             if (SearchBtn && SearchInput) {
-                var clickEvent = function () {
+                const ActionSearchBtn = document.getElement('.quiqqer-products-search-suggest-form-button');
+
+                if (!ActionSearchBtn) {
+                    return;
+                }
+
+                let clickEvent = function () {
                     new Fx.Scroll(window, {
                         onComplete: function () {
                             SearchInput.focus();
@@ -202,8 +204,11 @@ window.addEvent('domready', function () {
                 };
 
                 if (QUI.getWindowSize().x < 767) {
+                    // https://dev.quiqqer.com/quiqqer/template-cologne/-/issues/104
+                    ActionSearchBtn.removeAttribute('type');
+
                     clickEvent = function () {
-                        document.getElement('.quiqqer-products-search-suggest-form-button').click();
+                        ActionSearchBtn.click();
                     };
                 }
 
@@ -552,11 +557,20 @@ window.addEvent('domready', function () {
                 return;
             }
 
-            var OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
+            let OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
                 MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
+            if (!MenuElm) {
+                MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideoutAdvanced"]');
+            }
+
+            if (!MenuElm) {
+                console.debug('Neither SlideOut nor SlideoutAdvanced found.');
+                return;
+            }
+
             if (!OpenCategoryBtn) {
-                console.error('Open Category Button ".shop-category-menu-button" not found.');
+                console.debug('Open Category Button ".shop-category-menu-button" not found.');
                 return;
             }
 

@@ -32,8 +32,8 @@ select {
     -o-transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
+    color: inherit;
 }
-
 
 textarea {
     line-height: 1.6em;
@@ -104,6 +104,11 @@ input[type="search"] {
 div.qui-select {
     height: 40px;
     line-height: 40px;
+    display: flex;
+}
+
+div.qui-select .icon {
+    height: inherit;
 }
 
 div.qui-select .text {
