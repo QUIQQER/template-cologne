@@ -109,10 +109,6 @@ window.addEvent('domready', function () {
 
                 var UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
 
-                window.addEvent('load', function () {
-                    document.getElement('.cologne-header-menu').setStyle('overflow', 'visible');
-                });
-
                 /**
                  * Login
                  */
