@@ -12,6 +12,7 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
  */
 $templateSettings = QUI\TemplateCologne\Utils::getConfig([
     'Project' => $Project,
+    'Template' => $Template,
     'Site'    => $Site
 ]);
 

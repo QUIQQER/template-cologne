@@ -19,6 +19,7 @@ class Utils
      * Get user avatar. If no avatar available return false.
      *
      * @param $User QUI\Interfaces\Users\User
+     *
      * @return QUI\Projects\Media\Image|false
      * @throws QUI\Exception
      *
@@ -60,6 +61,7 @@ class Utils
      * Returns config. If a cache exists, it will be returned.
      *
      * @param $params
+     *
      * @return array|bool|object|string
      * @throws QUI\Exception
      */
@@ -71,11 +73,14 @@ class Utils
         /* @var $Project QUI\Projects\Project */
         $Project = $params['Project'];
 
-        $cacheName = md5($params['Site']->getId().$Project->getName().$Project->getLang());
+        /* @var $Project QUI\Template */
+        $Template = $params['Template'];
+
+        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateCologne/'.$cacheName
+                'quiqqer/templateCologne/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -101,61 +106,61 @@ class Utils
          *
          * own site type
          */
-        $header         = 'hide';
-        $pageTitle      = 'breadcrumb'; // where to show page title: in header, in breadcrumb or both?
-        $pageShortDesc  = false;
+        $header = 'hide';
+        $pageTitle = 'breadcrumb'; // where to show page title: in header, in breadcrumb or both?
+        $pageShortDesc = false;
         $showBreadcrumb = false;
-        $showTopBar     = true;
-        $showNav        = true;
-        $showFooter     = true;
-        $minimalDesign  = false;
-        $siteType       = 'no-sidebar';
+        $showTopBar = true;
+        $showNav = true;
+        $showFooter = true;
+        $minimalDesign = false;
+        $siteType = 'no-sidebar';
 
         switch ($Site->getAttribute('layout')) {
             case 'layout/startPage':
-                $header         = $Project->getConfig('templateCologne.settings.headerStartPage');
-                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleStartPage');
-                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescStartPage');
+                $header = $Project->getConfig('templateCologne.settings.headerStartPage');
+                $pageTitle = $Project->getConfig('templateCologne.settings.pageTitleStartPage');
+                $pageShortDesc = $Project->getConfig('templateCologne.settings.shortDescStartPage');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbStartPage');
-                $siteType       = 'layout-start-page';
+                $siteType = 'layout-start-page';
                 break;
 
             case 'layout/noSidebar':
-                $header         = $Project->getConfig('templateCologne.settings.headerNoSidebar');
-                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleNoSidebar');
-                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescNoSidebar');
+                $header = $Project->getConfig('templateCologne.settings.headerNoSidebar');
+                $pageTitle = $Project->getConfig('templateCologne.settings.pageTitleNoSidebar');
+                $pageShortDesc = $Project->getConfig('templateCologne.settings.shortDescNoSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebar');
-                $siteType       = 'layout-no-sidebar';
+                $siteType = 'layout-no-sidebar';
                 break;
 
             case 'layout/noSidebarThin':
-                $header         = $Project->getConfig('templateCologne.settings.headerNoSidebarThin');
-                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleNoSidebarThin');
-                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescNoSidebarThin');
+                $header = $Project->getConfig('templateCologne.settings.headerNoSidebarThin');
+                $pageTitle = $Project->getConfig('templateCologne.settings.pageTitleNoSidebarThin');
+                $pageShortDesc = $Project->getConfig('templateCologne.settings.shortDescNoSidebarThin');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbNoSidebarThin');
-                $siteType       = 'layout-no-sidebar';
+                $siteType = 'layout-no-sidebar';
                 break;
 
             case 'layout/rightSidebar':
-                $header         = $Project->getConfig('templateCologne.settings.headerRightSidebar');
-                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleRightSidebar');
-                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescLeftSidebar');
+                $header = $Project->getConfig('templateCologne.settings.headerRightSidebar');
+                $pageTitle = $Project->getConfig('templateCologne.settings.pageTitleRightSidebar');
+                $pageShortDesc = $Project->getConfig('templateCologne.settings.shortDescLeftSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbRightSidebar');
-                $siteType       = 'layout-right-sidebar';
+                $siteType = 'layout-right-sidebar';
                 break;
 
             case 'layout/leftSidebar':
-                $header         = $Project->getConfig('templateCologne.settings.headerLeftSidebar');
-                $pageTitle      = $Project->getConfig('templateCologne.settings.pageTitleLeftSidebar');
-                $pageShortDesc  = $Project->getConfig('templateCologne.settings.shortDescRightSidebar');
+                $header = $Project->getConfig('templateCologne.settings.headerLeftSidebar');
+                $pageTitle = $Project->getConfig('templateCologne.settings.pageTitleLeftSidebar');
+                $pageShortDesc = $Project->getConfig('templateCologne.settings.shortDescRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templateCologne.settings.showBreadcrumbLeftSidebar');
-                $siteType       = 'layout-left-sidebar';
+                $siteType = 'layout-left-sidebar';
                 break;
         }
 
-        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess' ||
-            $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart' ||
-            $Site->getAttribute('type') === 'quiqqer/order-simple-checkout:types/simpleCheckout'
+        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess'
+            || $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart'
+            || $Site->getAttribute('type') === 'quiqqer/order-simple-checkout:types/simpleCheckout'
         ) {
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
                 case 'compact':
@@ -168,13 +173,23 @@ class Utils
 
                 case 'minimal':
                 default:
-                    $showTopBar     = false;
-                    $showNav        = false;
-                    $showFooter     = false;
+                    $showTopBar = false;
+                    $showNav = false;
+                    $showFooter = false;
                     $showBreadcrumb = false;
-                    $minimalDesign  = true;
+                    $minimalDesign = true;
                     break;
             }
+        }
+
+        // Show header & footer only if requested (support for quiqqer/app)
+        if (!$Template->getAttribute('template-header')) {
+            $showTopBar = false;
+            $showNav = false;
+        }
+
+        if (!$Template->getAttribute('template-footer')) {
+            $showFooter = false;
         }
 
         /* site own show header */
@@ -234,8 +249,8 @@ class Utils
 
         if ($showCategoryMenu) {
             $CategoriesMenu = new QUI\TemplateCologne\Controls\Menu\Categories([
-                'showDescFor'      => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
-                'startId'          => $Project->getConfig('templateCologne.settings.categoryStartId'),
+                'showDescFor' => $Project->getConfig('templateCologne.settings.showCategoryShortFor'),
+                'startId' => $Project->getConfig('templateCologne.settings.categoryStartId'),
                 'showBasketButton' => $Project->getConfig('templateCologne.settings.showBasketButton')
             ]);
 
@@ -245,7 +260,7 @@ class Utils
         /***
          * Mega menu settings
          */
-        $homeLink     = false;
+        $homeLink = false;
         $homeLinkText = '';
 
         if ($Project->getConfig('templateCologne.settings.homeLink')) {
@@ -263,12 +278,17 @@ class Utils
         /**
          * Menu appearance and smooth scroll
          */
-        $showNavAfterScroll   = 0;
-        $showMenuSmooth       = false; // smooth animation
-        $setMenuPosBackOnInit = false; // if true menu will be no longer fixed when user scrolls to menu initial position
-        if ($Project->getConfig('templateCologne.settings.showNavAfterScroll') && intval($Project->getConfig('templateCologne.settings.showNavAfterScroll')) > 0) {
+        $showNavAfterScroll = 0;
+        $showMenuSmooth = false; // smooth animation
+        $setMenuPosBackOnInit
+            = false; // if true menu will be no longer fixed when user scrolls to menu initial position
+        if ($Project->getConfig('templateCologne.settings.showNavAfterScroll')
+            && intval(
+                $Project->getConfig('templateCologne.settings.showNavAfterScroll')
+            ) > 0
+        ) {
             $showNavAfterScroll = intval($Project->getConfig('templateCologne.settings.showNavAfterScroll'));
-            $showMenuSmooth     = true;
+            $showMenuSmooth = true;
         }
 
         if ($Project->getConfig('templateCologne.settings.setMenuPosBackOnInit')) {
@@ -279,9 +299,13 @@ class Utils
         /* page custom class */
         $pageCustomClass = false;
 
-        if ($Site->getAttribute('templateCologne.pageCustomClass') && $Site->getAttribute('templateCologne.pageCustomClass') !== '') {
-            $pageCustomClass = 'templateCologne__'.$Site->getAttribute('templateCologne.pageCustomClass');
-            $pageCustomClass .= ' '.$Site->getAttribute('templateCologne.pageCustomClass');
+        if ($Site->getAttribute('templateCologne.pageCustomClass')
+            && $Site->getAttribute(
+                'templateCologne.pageCustomClass'
+            ) !== ''
+        ) {
+            $pageCustomClass = 'templateCologne__' . $Site->getAttribute('templateCologne.pageCustomClass');
+            $pageCustomClass .= ' ' . $Site->getAttribute('templateCologne.pageCustomClass');
         }
 
         /**
@@ -314,35 +338,35 @@ class Utils
         // predefined footer
         $config += self::getPredefinedFooter($Project);
 
-        $config['header']                   = $header;
-        $config['logoHeight']               = $logoHeight;
-        $config['pageTitle']                = $pageTitle;
-        $config['settings.pageShortDesc']            = $pageShortDesc;
-        $config['showBreadcrumb']           = $showBreadcrumb;
-        $config['minimalDesign']            = $minimalDesign;
-        $config['showTopBar']               = $showTopBar;
-        $config['showNav']                  = $showNav;
-        $config['showFooter']               = $showFooter;
-        $config['settingsCSS']              = '<style data-no-cache="1">'.$settingsCSS.'</style>';
-        $config['typeClass']                = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
-        $config['minimalDesignClass']       = $minimalDesign ? 'type-minimal-design' : '';
-        $config['siteType']                 = $siteType;
-        $config['pageCustomClass']          = $pageCustomClass;
-        $config['basketStyle']              = $basketStyle;
-        $config['basketOpen']               = $basketOpen;
-        $config['showCategoryMenu']         = $showCategoryMenu;
-        $config['homeLink']                 = $homeLink;
-        $config['homeLinkText']             = $homeLinkText;
-        $config['useSlideOutMenu']          = true; // for now is always true because quiqqer use currently only SlideOut nav
-        $config['showNavAfterScroll']       = $showNavAfterScroll;
-        $config['showMenuSmooth']           = $showMenuSmooth;
-        $config['setMenuPosBackOnInit']     = $setMenuPosBackOnInit;
+        $config['header'] = $header;
+        $config['logoHeight'] = $logoHeight;
+        $config['pageTitle'] = $pageTitle;
+        $config['settings.pageShortDesc'] = $pageShortDesc;
+        $config['showBreadcrumb'] = $showBreadcrumb;
+        $config['minimalDesign'] = $minimalDesign;
+        $config['showTopBar'] = $showTopBar;
+        $config['showNav'] = $showNav;
+        $config['showFooter'] = $showFooter;
+        $config['settingsCSS'] = '<style data-no-cache="1">' . $settingsCSS . '</style>';
+        $config['typeClass'] = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['minimalDesignClass'] = $minimalDesign ? 'type-minimal-design' : '';
+        $config['siteType'] = $siteType;
+        $config['pageCustomClass'] = $pageCustomClass;
+        $config['basketStyle'] = $basketStyle;
+        $config['basketOpen'] = $basketOpen;
+        $config['showCategoryMenu'] = $showCategoryMenu;
+        $config['homeLink'] = $homeLink;
+        $config['homeLinkText'] = $homeLinkText;
+        $config['useSlideOutMenu'] = true; // for now is always true because quiqqer use currently only SlideOut nav
+        $config['showNavAfterScroll'] = $showNavAfterScroll;
+        $config['showMenuSmooth'] = $showMenuSmooth;
+        $config['setMenuPosBackOnInit'] = $setMenuPosBackOnInit;
         $config['showTopbarLanguageSwitch'] = $showTopbarLanguageSwitch;
         $config['showTopbarCurrencySwitch'] = $showTopbarCurrencySwitch;
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateCologne/'.$cacheName,
+            'quiqqer/templateCologne/' . $cacheName,
             $config
         );
 
@@ -353,6 +377,7 @@ class Utils
      * Returns data for predefined footer if enabled.
      *
      * @param \QUI\Projects\Project $Project
+     *
      * @return array - data for predefined footer
      */
     private static function getPredefinedFooter($Project)
@@ -397,7 +422,7 @@ class Utils
             }
 
             $siteIds = $Project->getConfig('templateCologne.settings.predefinedFooter.urlList.sites');
-            $sites   = [];
+            $sites = [];
 
             if ($siteIds) {
                 $sites = QUI\Projects\Site\Utils::getSitesByInputList($Project, $siteIds, [
@@ -414,15 +439,15 @@ class Utils
             foreach ($sites as $Site) {
                 $sitesData[] = [
                     'title' => $Site->getAttribute('title'),
-                    'url'   => $Site->getUrlRewritten()
+                    'url' => $Site->getUrlRewritten()
                 ];
             }
 
-            $urlList['title']                     = $title;
-            $urlList['sites']                     = $sitesData;
-            $urlList['productSearch']             = false;
-            $urlList['legalNotes']                = false;
-            $urlList['privacyPolicy']             = false;
+            $urlList['title'] = $title;
+            $urlList['sites'] = $sitesData;
+            $urlList['productSearch'] = false;
+            $urlList['legalNotes'] = false;
+            $urlList['privacyPolicy'] = false;
             $urlList['generalTermsAndConditions'] = false;
 
             if ($Project->getConfig('templateCologne.settings.predefinedFooter.urlList.showStandardSites')) {
@@ -430,7 +455,7 @@ class Utils
                 $productSearch = $Project->getSites([
                     'where' => [
                         'type' => [
-                            'type'  => 'IN',
+                            'type' => 'IN',
                             'value' => 'quiqqer/products:types/search'
                         ]
                     ],
@@ -440,7 +465,7 @@ class Utils
                 if (count($productSearch)) {
                     $urlList['productSearch'] = [
                         'title' => $productSearch[0]->getAttribute('title'),
-                        'url'   => $productSearch[0]->getUrlRewritten()
+                        'url' => $productSearch[0]->getUrlRewritten()
                     ];
                 }
 
@@ -448,7 +473,7 @@ class Utils
                 $legalNotes = $Project->getSites([
                     'where' => [
                         'type' => [
-                            'type'  => 'IN',
+                            'type' => 'IN',
                             'value' => 'quiqqer/sitetypes:types/legalnotes'
                         ]
                     ],
@@ -458,7 +483,7 @@ class Utils
                 if (count($legalNotes)) {
                     $urlList['legalNotes'] = [
                         'title' => $legalNotes[0]->getAttribute('title'),
-                        'url'   => $legalNotes[0]->getUrlRewritten()
+                        'url' => $legalNotes[0]->getUrlRewritten()
                     ];
                 }
 
@@ -466,7 +491,7 @@ class Utils
                 $privacyPolicy = $Project->getSites([
                     'where' => [
                         'type' => [
-                            'type'  => 'IN',
+                            'type' => 'IN',
                             'value' => 'quiqqer/sitetypes:types/privacypolicy'
                         ]
                     ],
@@ -476,7 +501,7 @@ class Utils
                 if (count($privacyPolicy)) {
                     $urlList['privacyPolicy'] = [
                         'title' => $privacyPolicy[0]->getAttribute('title'),
-                        'url'   => $privacyPolicy[0]->getUrlRewritten()
+                        'url' => $privacyPolicy[0]->getUrlRewritten()
                     ];
                 }
 
@@ -484,7 +509,7 @@ class Utils
                 $generalTermsAndConditions = $Project->getSites([
                     'where' => [
                         'type' => [
-                            'type'  => 'IN',
+                            'type' => 'IN',
                             'value' => 'quiqqer/sitetypes:types/generalTermsAndConditions'
                         ]
                     ],
@@ -494,7 +519,7 @@ class Utils
                 if (count($generalTermsAndConditions)) {
                     $urlList['generalTermsAndConditions'] = [
                         'title' => $generalTermsAndConditions[0]->getAttribute('title'),
-                        'url'   => $generalTermsAndConditions[0]->getUrlRewritten()
+                        'url' => $generalTermsAndConditions[0]->getUrlRewritten()
                     ];
                 }
             }
@@ -531,8 +556,10 @@ class Utils
         /** Predefined footer: Payments Control */
         $paymentsData = [];
 
-        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments') &&
-            \class_exists('\QUI\ERP\Accounting\Payments\Payments')
+        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')
+            && \class_exists(
+                '\QUI\ERP\Accounting\Payments\Payments'
+            )
         ) {
             $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
@@ -557,10 +584,10 @@ class Utils
         }
 
         return [
-            'shortText'        => $shortText,
-            'urlList'          => $urlList,
+            'shortText' => $shortText,
+            'urlList' => $urlList,
             'featuredProducts' => $featuredProducts,
-            'paymentsData'     => $paymentsData
+            'paymentsData' => $paymentsData
         ];
     }
 
@@ -570,6 +597,7 @@ class Utils
      * requires quiqqer/shipping to be installed
      *
      * @param int $productId
+     *
      * @return false|QUI\ERP\Products\Field\View
      */
     public static function getShippingTimeFrontendView(int $productId)
@@ -607,12 +635,13 @@ class Utils
      * requires quiqqer/stock-management to be installed
      *
      * @param int $productId
+     *
      * @return false|QUI\ERP\Products\Field\View
      */
     public static function getStockFrontendView(int $productId)
     {
         try {
-            $Project   = QUI::getRewrite()->getProject();
+            $Project = QUI::getRewrite()->getProject();
             $showStock = $Project->getConfig('templateCologne.settings.showStock');
 
             if (empty($showStock)) {
@@ -629,7 +658,7 @@ class Utils
         }
 
         try {
-            $Product    = QUI\ERP\Products\Handler\Products::getProduct($productId);
+            $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
             $StockField = $Product->getField(StockManager::PRODUCT_FIELD_STOCK);
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
@@ -651,6 +680,7 @@ class Utils
      * Add a suffix to brick css class(es)
      *
      * @param array $classes
+     *
      * @return string
      */
     public static function convertBrickCSSClass(array $classes)
@@ -662,7 +692,7 @@ class Utils
         $text = '';
 
         foreach ($classes as $classString) {
-            $text .= ' brick-container__'.$classString;
+            $text .= ' brick-container__' . $classString;
         }
 
         return $text;
