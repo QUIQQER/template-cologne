@@ -24,7 +24,7 @@ class SimpleUserInfo extends QUI\Control
             'User' => null
         ]);
 
-        $this->addCSSFile(dirname(__FILE__).'/SimpleUserInfo.css');
+        $this->addCSSFile(dirname(__FILE__) . '/SimpleUserInfo.css');
 
         parent::__construct($attributes);
     }
@@ -32,14 +32,13 @@ class SimpleUserInfo extends QUI\Control
     /**
      * (non-PHPdoc)
      *
-     * @see \QUI\Control::create()
-     *
      * @throws QUI\Exception
+     * @see \QUI\Control::create()
      */
     public function getBody()
     {
         $Engine = QUI::getTemplateManager()->getEngine();
-        $User   = $this->getUser();
+        $User = $this->getUser();
 
         $avatarUrl = URL_OPT_DIR . 'quiqqer/template-cologne/bin/images/avatar-placeholder.svg';
 
@@ -48,9 +47,9 @@ class SimpleUserInfo extends QUI\Control
         }
 
         $Engine->assign([
-            'name'         => $User->getName(),
+            'name' => $User->getName(),
             'registrationDay' => $User->getAttribute('regdate'),
-            'avatarUrl'    => $avatarUrl,
+            'avatarUrl' => $avatarUrl,
             'ordersNumber' => $this->getOrdersNumber($User)
         ]);
 
@@ -100,6 +99,7 @@ class SimpleUserInfo extends QUI\Control
      * Get number of orders
      *
      * @param $User QUI\Interfaces\Users\User
+     *
      * @return int
      */
     public function getOrdersNumber($User)

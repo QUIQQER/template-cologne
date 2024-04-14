@@ -8,6 +8,7 @@ namespace QUI\TemplateCologne\Controls;
 
 use QUI;
 use QUI\ERP\Products\Handler\Fields;
+
 use function is_a;
 use function usort;
 
@@ -43,7 +44,7 @@ class ProductGallery extends QUI\Control
             return '';
         }
 
-        $Engine  = QUI::getTemplateManager()->getEngine();
+        $Engine = QUI::getTemplateManager()->getEngine();
         $Product = $this->getAttribute('Product');
         $Gallery = new QUI\Gallery\Controls\Slider();
 
@@ -52,7 +53,7 @@ class ProductGallery extends QUI\Control
         }
 
         $typeVariantParent = is_a($Product->getType(), QUI\ERP\Products\Product\Types\VariantParent::class, true);
-        $typeVariantChild  = is_a($Product->getType(), QUI\ERP\Products\Product\Types\VariantChild::class, true);
+        $typeVariantChild = is_a($Product->getType(), QUI\ERP\Products\Product\Types\VariantChild::class, true);
 
         // gallery
         $PlaceholderImage = $this->getProject()->getMedia()->getPlaceholderImage();
@@ -100,7 +101,7 @@ class ProductGallery extends QUI\Control
             'Gallery' => $Gallery,
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/ProductGallery.html');
+        return $Engine->fetch(dirname(__FILE__) . '/ProductGallery.html');
     }
 
     /**
@@ -109,6 +110,7 @@ class ProductGallery extends QUI\Control
      * By @peat
      *
      * @param QUI\ERP\Products\Product\Product $Product
+     *
      * @return QUI\Projects\Media\Image[]
      */
     protected function getVariantImages(QUI\ERP\Products\Product\Product $Product): array
@@ -116,8 +118,8 @@ class ProductGallery extends QUI\Control
         $images = $Product->getImages();
 
         try {
-            $MainImage    = $Product->getImage();
-            $mainImageId  = $MainImage->getId();
+            $MainImage = $Product->getImage();
+            $mainImageId = $MainImage->getId();
             $hasMainImage = false;
 
             foreach ($images as $Image) {

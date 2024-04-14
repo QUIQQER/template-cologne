@@ -26,13 +26,13 @@ class Payments extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'          => 'quiqqer-payments-control',
-            'showInactive'   => false,
-            'template'       => 'list',
+            'class' => 'quiqqer-payments-control',
+            'showInactive' => false,
+            'template' => 'list',
             // Custom children template (path to html file); overwrites "template".
             'customTemplate' => false,
             // Custom children template css (path to css file); overwrites "template".
-            'customCss'      => false,
+            'customCss' => false,
         ]);
 
         parent::__construct($attributes);
@@ -51,7 +51,7 @@ class Payments extends QUI\Control
             return '';
         }
 
-        $Engine   = QUI::getTemplateManager()->getEngine();
+        $Engine = QUI::getTemplateManager()->getEngine();
         $Payments = \QUI\ERP\Accounting\Payments\Payments::getInstance();
         $payments = $Payments->getpayments();
 
@@ -62,17 +62,16 @@ class Payments extends QUI\Control
         }
 
         $Engine->assign([
-            'payments'     => $payments,
+            'payments' => $payments,
             'showInactive' => $this->getAttribute('showInactive')
         ]);
 
         // load custom template (if set)
-        if ($this->getAttribute('customTemplate')
-            && \file_exists($this->getAttribute('customTemplate'))
-        ) {
-            if ($this->getAttribute('customCss')
-                && \file_exists($this->getAttribute('customCss'))
-            ) {
+        $customTemplate = $this->getAttribute('customTemplate');
+        $customCss = $this->getAttribute('customCss');
+
+        if ($customTemplate && \file_exists($customTemplate)) {
+            if ($customCss && \file_exists($customCss)) {
                 $this->addCSSFile($this->getAttribute('customCss'));
             }
 
@@ -83,12 +82,12 @@ class Payments extends QUI\Control
         switch ($this->getAttribute('template')) {
             case 'list':
                 $template = dirname(__FILE__) . '/Payments.List.html';
-                $css      = dirname(__FILE__) . '/Payments.List.css';
+                $css = dirname(__FILE__) . '/Payments.List.css';
                 break;
             case 'grid':
             default:
                 $template = dirname(__FILE__) . '/Payments.Grid.html';
-                $css      = dirname(__FILE__) . '/Payments.Grid.css';
+                $css = dirname(__FILE__) . '/Payments.Grid.css';
         }
 
         $this->addCSSFile($css);
