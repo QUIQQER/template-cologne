@@ -1,2 +1,3 @@
 include:
-  - component: dev.quiqqer.com/quiqqer/stabilization/ci-cd-components/quiqqer-package-bundle/quiqqer-package-bundle@main
+  - project: 'quiqqer/stabilization/semantic-release'
+    file: '/ci-templates/.gitlab-ci.yml'
