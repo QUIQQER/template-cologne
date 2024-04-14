@@ -21,11 +21,11 @@ class CurrencySwitch extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'               => 'quiqqer-currency-switch',
+            'class' => 'quiqqer-currency-switch',
             'userRelatedCurrency' => 1, // 1 / 0 -> is user allowed to change currency?
         ]);
 
-        $this->addCSSFile(dirname(__FILE__).'/CurrencySwitch.css');
+        $this->addCSSFile(dirname(__FILE__) . '/CurrencySwitch.css');
 
         parent::__construct($attributes);
     }
@@ -51,7 +51,7 @@ class CurrencySwitch extends QUI\Control
         if ($this->isCurrencySwitchAllowed()) {
             try {
                 $Package = QUI::getPackage('quiqqer/erp');
-                $Config  = $Package->getConfig();
+                $Config = $Package->getConfig();
 
                 if ($Config->getValue('general', 'userRelatedCurrency')) {
                     $this->setJavaScriptControl('package/quiqqer/currency/bin/controls/Switch');
@@ -68,11 +68,11 @@ class CurrencySwitch extends QUI\Control
         }
 
         $Engine->assign([
-            'this'            => $this,
+            'this' => $this,
             'DefaultCurrency' => $Currency,
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/CurrencySwitch.html');
+        return $Engine->fetch(dirname(__FILE__) . '/CurrencySwitch.html');
     }
 
     /**

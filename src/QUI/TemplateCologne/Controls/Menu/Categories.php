@@ -27,16 +27,16 @@ class Categories extends QUI\Control
     public function __construct($attributes = [])
     {
         $this->setAttributes([
-            'class'            => 'quiqqer-categories-menu',
-            'startId'          => 1, // site id or site link where menu starts by. 1 is start page (first project page)
-            'template'         => \dirname(__FILE__).'/Categories.html', // nav wrapper
-            'menuFile'         => \dirname(__FILE__).'/Categories.Menu.html', // contains children (sites),
-            'jsControl'        => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
-            'showDescFor'      => 'all', // Show category description: all / firstLevel / none
+            'class' => 'quiqqer-categories-menu',
+            'startId' => 1, // site id or site link where menu starts by. 1 is start page (first project page)
+            'template' => \dirname(__FILE__) . '/Categories.html', // nav wrapper
+            'menuFile' => \dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
+            'jsControl' => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
+            'showDescFor' => 'all', // Show category description: all / firstLevel / none
             'showBasketButton' => false
         ]);
 
-        $this->addCSSFile(\dirname(__FILE__).'/Categories.css');
+        $this->addCSSFile(\dirname(__FILE__) . '/Categories.css');
 
         parent::__construct($attributes);
     }
@@ -47,7 +47,7 @@ class Categories extends QUI\Control
      */
     public function getBody()
     {
-        $Engine  = QUI::getTemplateManager()->getEngine();
+        $Engine = QUI::getTemplateManager()->getEngine();
         $Project = $this->getProject();
 
 
@@ -66,10 +66,10 @@ class Categories extends QUI\Control
             return '';
         }
 
-        $cache = EventHandler::menuCacheName().'/megaMenu/';
+        $cache = EventHandler::menuCacheName() . '/megaMenu/';
 
         $cache .= \md5(
-            $this->getSite()->getCachePath().
+            $this->getSite()->getCachePath() .
             \serialize($this->getAttributes())
         );
 
@@ -85,12 +85,12 @@ class Categories extends QUI\Control
         }
 
         $Engine->assign([
-            'menuFile'         => $this->getAttribute('menuFile'),
-            'this'             => $this,
-            'showDescFor'      => $this->getAttribute('showDescFor'),
+            'menuFile' => $this->getAttribute('menuFile'),
+            'this' => $this,
+            'showDescFor' => $this->getAttribute('showDescFor'),
             'showBasketButton' => $showBasketButton,
-            'Site'             => $Site,
-            'Project'          => $Project
+            'Site' => $Site,
+            'Project' => $Project
         ]);
 
         $result = $Engine->fetch($this->getAttribute('template'));

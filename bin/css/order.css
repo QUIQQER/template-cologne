@@ -343,11 +343,7 @@ input.quiqqer-coupons-couponcodeinput-input:active {
         display: block;
         width: 100%;
     }
-
-    .quiqqer-order-ordering-buttons-backToShop {
-        display: none;
-    }
-
+    
     .quiqqer-order-ordering-buttons-next,
     .quiqqer-order-ordering-buttons a {
         width: 100%;
