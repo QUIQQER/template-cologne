@@ -76,7 +76,7 @@ class Utils
         /* @var $Project QUI\Template */
         $Template = $params['Template'];
 
-        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
+        $cacheName = md5($Site->getId() . $Project->getName() . $Project->getLang());
 
         try {
             return QUI\Cache\Manager::get(
@@ -92,7 +92,6 @@ class Utils
         /**
          * Logo height
          */
-
         $logoHeight = 60;
 
         if (intval($Project->getConfig('templateCologne.settings.logoHeight'))) {
@@ -158,10 +157,13 @@ class Utils
                 break;
         }
 
-        if ($Site->getAttribute('type') === 'quiqqer/order:types/orderingProcess'
-            || $Site->getAttribute('type') === 'quiqqer/order:types/shoppingCart'
-            || $Site->getAttribute('type') === 'quiqqer/order-simple-checkout:types/simpleCheckout'
-        ) {
+        $orderSiteTypes = [
+            'quiqqer/order:types/orderingProcess',
+            'quiqqer/order:types/shoppingCart',
+            'quiqqer/order-simple-checkout:types/simpleCheckout'
+        ];
+
+        if (in_array($Site->getAttribute('type'), $orderSiteTypes)) {
             switch ($Project->getConfig('templateCologne.settings.checkoutAppearance')) {
                 case 'compact':
                     $showBreadcrumb = false;
@@ -278,16 +280,14 @@ class Utils
         /**
          * Menu appearance and smooth scroll
          */
+        $showNavAfterScrollSetting = intval($Project->getConfig('templateCologne.settings.showNavAfterScroll'));
         $showNavAfterScroll = 0;
         $showMenuSmooth = false; // smooth animation
-        $setMenuPosBackOnInit
-            = false; // if true menu will be no longer fixed when user scrolls to menu initial position
-        if ($Project->getConfig('templateCologne.settings.showNavAfterScroll')
-            && intval(
-                $Project->getConfig('templateCologne.settings.showNavAfterScroll')
-            ) > 0
-        ) {
-            $showNavAfterScroll = intval($Project->getConfig('templateCologne.settings.showNavAfterScroll'));
+        // if true menu will be no longer fixed when user scrolls to menu initial position
+        $setMenuPosBackOnInit = false;
+
+        if ($showNavAfterScrollSetting && $showNavAfterScrollSetting > 0) {
+            $showNavAfterScroll = $showNavAfterScrollSetting;
             $showMenuSmooth = true;
         }
 
@@ -295,17 +295,11 @@ class Utils
             $setMenuPosBackOnInit = true;
         }
 
-
         /* page custom class */
-        $pageCustomClass = false;
+        $pageCustomClass = $Site->getAttribute('templateCologne.pageCustomClass');
 
-        if ($Site->getAttribute('templateCologne.pageCustomClass')
-            && $Site->getAttribute(
-                'templateCologne.pageCustomClass'
-            ) !== ''
-        ) {
-            $pageCustomClass = 'templateCologne__' . $Site->getAttribute('templateCologne.pageCustomClass');
-            $pageCustomClass .= ' ' . $Site->getAttribute('templateCologne.pageCustomClass');
+        if ($pageCustomClass && $pageCustomClass !== '') {
+            $pageCustomClass .= 'templateCologne__' . $pageCustomClass;
         }
 
         /**
@@ -556,10 +550,9 @@ class Utils
         /** Predefined footer: Payments Control */
         $paymentsData = [];
 
-        if ($Project->getConfig('templateCologne.settings.predefinedFooter.payments')
-            && \class_exists(
-                '\QUI\ERP\Accounting\Payments\Payments'
-            )
+        if (
+            $Project->getConfig('templateCologne.settings.predefinedFooter.payments')
+            && \class_exists('\QUI\ERP\Accounting\Payments\Payments')
         ) {
             $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')

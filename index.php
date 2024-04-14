@@ -20,9 +20,9 @@ $templateSettings = QUI\TemplateCologne\Utils::getConfig([
  * Menu
  */
 $menuParams = [
-    'showStart'                   => false,
+    'showStart' => false,
     'data-show-button-on-desktop' => 1,
-    'Project'                     => $Site->getProject()
+    'Project' => $Site->getProject()
 ];
 
 if (isset($templateSettings['homeLink']) && $templateSettings['homeLink']) {
@@ -33,10 +33,13 @@ if (isset($templateSettings['homeLinkText']) && $templateSettings['homeLinkText'
     $menuParams['startText'] = $templateSettings['homeLinkText'];
 }
 
-if ($Project->getConfig('templateCologne.settings.enableIndependentMenu') && $Project->getConfig('templateCologne.settings.menuId')) {
-    $menuParams['menuId']              = $Project->getConfig('templateCologne.settings.menuId');
+$enableIndependentMenu = $Project->getConfig('templateCologne.settings.enableIndependentMenu');
+$independentMenuId = $Project->getConfig('templateCologne.settings.menuId');
+
+if ($enableIndependentMenu && $independentMenuId) {
+    $menuParams['menuId'] = $enableIndependentMenu;
     $menuParams['showFirstLevelIcons'] = $Project->getConfig('templateCologne.settings.showFirstLevelIcons');
-    $menuParams['showStart']           = false;
+    $menuParams['showStart'] = false;
 }
 
 // Site own / independent menu
@@ -56,20 +59,22 @@ if (!$Currency) {
 }
 
 $createBasketButton = true;
+$simpleSiteTypes = [
+    'quiqqer/order:types/orderingProcess',
+    'quiqqer/order:types/shoppingCart',
+    'quiqqer/order-simple-checkout:types/simpleCheckout',
+];
 
-if ($Site->getAttribute('type') == 'quiqqer/order:types/orderingProcess' ||
-    $Site->getAttribute('type') == 'quiqqer/order:types/shoppingCart' ||
-    $Site->getAttribute('type') == 'quiqqer/order-simple-checkout:types/simpleCheckout') {
+if (in_array($Site->getAttribute('type'), $simpleSiteTypes)) {
     $createBasketButton = false;
-
     $Template->setAttribute('content-header', false);
 }
 
 $InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
 
-$Logo       = $Project->getMedia()->getLogoImage();
+$Logo = $Project->getMedia()->getLogoImage();
 $logoHeight = $templateSettings['logoHeight'];
-$logoWidth  = false;
+$logoWidth = false;
 
 try {
     if ($Logo) {
@@ -79,9 +84,9 @@ try {
     QUI\System\Log::addNotice($Exception->getMessage());
 }
 
-$templateSettings['Logo']               = $Logo;
-$templateSettings['logoHeight']         = $logoHeight;
-$templateSettings['logoWidth']          = $logoWidth;
+$templateSettings['Logo'] = $Logo;
+$templateSettings['logoHeight'] = $logoHeight;
+$templateSettings['logoWidth'] = $logoWidth;
 $templateSettings['initialBasketPrice'] = $InitialBasketPrice->getDisplayPrice();
 $templateSettings['createBasketButton'] = $createBasketButton;
 
@@ -104,12 +109,11 @@ switch ($Site->getAttribute('type')) {
  * Flags
  */
 $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
-    'Site'      => $Site,
+    'Site' => $Site,
     'showFlags' => true,
-    'showText'  => true,
-    'all'       => true
+    'showText' => true,
+    'all' => true
 ]);
-
 
 /**
  * Langguage and currency swtich
@@ -117,14 +121,12 @@ $Flags = new QUI\Bricks\Controls\LanguageSwitches\Flags([
 //$LangCurrencySwitch = new \QUI\TemplateCologne\Controls\LangCurrencySwitch();
 $LangCurrencySwitch = null;
 
-
-
 /**
  * Sign up / registration page
  */
 $registerSiteUrl = false;
 
-$types = [
+$registerSiteTypes = [
     'quiqqer/frontend-users:types/registrationSignUp',
     'quiqqer/frontend-users:types/registration',
 ];
@@ -133,7 +135,7 @@ $registerSite = $Project->getSites([
     'where' => [
         'type' => [
             'type'  => 'IN',
-            'value' => $types
+            'value' => $registerSiteTypes
         ]
     ],
     'limit' => 1
@@ -145,18 +147,18 @@ if (count($registerSite)) {
 }
 
 // array to assign
-$templateSettings['BricksManager']      = QUI\Bricks\Manager::init();
-$templateSettings['Project']            = $Project;
-$templateSettings['Menu']               = $Menu;
-$templateSettings['Avatar']             = $Avatar;
-$templateSettings['productPage']        = $productPage;
-$templateSettings['Flags']              = $Flags;
+$templateSettings['BricksManager'] = QUI\Bricks\Manager::init();
+$templateSettings['Project'] = $Project;
+$templateSettings['Menu'] = $Menu;
+$templateSettings['Avatar'] = $Avatar;
+$templateSettings['productPage'] = $productPage;
+$templateSettings['Flags'] = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
-$templateSettings['countLanguages']     = \count($Project->getLanguages());
-$templateSettings['Search']             = new QUI\ERP\Products\Search\Controls\Suggest([
+$templateSettings['countLanguages'] = \count($Project->getLanguages());
+$templateSettings['Search'] = new QUI\ERP\Products\Search\Controls\Suggest([
     'globalsearch' => true
 ]);
-$templateSettings['registerSiteUrl']    = $registerSiteUrl;
+$templateSettings['registerSiteUrl'] = $registerSiteUrl;
 
 $Template->setAttributes($templateSettings);
 
