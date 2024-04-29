@@ -17,7 +17,7 @@
   },
   "require": {
     "php": "^8.1",
-    "quiqqer/quiqqer": "^2",
+    "quiqqer/core": "^2",
     "quiqqer/erp": "^3",
     "quiqqer/products": "^2",
     "quiqqer/order": "^2",
