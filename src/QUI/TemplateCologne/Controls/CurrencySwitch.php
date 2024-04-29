@@ -18,7 +18,7 @@ class CurrencySwitch extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->setAttributes([
             'class' => 'quiqqer-currency-switch',
@@ -37,7 +37,7 @@ class CurrencySwitch extends QUI\Control
      * @see \QUI\Control::create()
      *
      */
-    public function getBody()
+    public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
@@ -79,9 +79,8 @@ class CurrencySwitch extends QUI\Control
      * Is currency switch allowed? Setting has over currencies number.
      *
      * @return bool
-     * @throws QUI\Exception
      */
-    protected function isCurrencySwitchAllowed()
+    protected function isCurrencySwitchAllowed(): bool
     {
         if (!$this->getAttribute('userRelatedCurrency')) {
             return false;
