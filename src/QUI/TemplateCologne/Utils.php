@@ -12,7 +12,6 @@ use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
 use QUI\Projects\Site;
-
 use QUI\TemplateCologne\Controls\Payments;
 
 use function class_exists;
