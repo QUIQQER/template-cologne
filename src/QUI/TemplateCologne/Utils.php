@@ -7,8 +7,16 @@
 namespace QUI\TemplateCologne;
 
 use QUI;
+use QUI\Database\Exception;
 use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
+use QUI\Projects\Project;
+use QUI\Projects\Site;
+use QUI\TemplateCologne\Controls\Payments;
+
+use function class_exists;
+use function count;
+use function method_exists;
 
 /**
  * Class Utils
@@ -24,7 +32,7 @@ class Utils
      * @throws QUI\Exception
      *
      */
-    public static function getAvatar($User)
+    public static function getAvatar(mixed $User): QUI\Projects\Media\Image|bool
     {
         if (!$User instanceof QUI\Interfaces\Users\User) {
             throw new QUI\Exception([
@@ -38,7 +46,7 @@ class Utils
         $result = QUI::getEvents()->fireEvent('userGetAvatar', [$User]);
 
         foreach ($result as $Entry) {
-            if ($Entry instanceof QUI\Interfaces\Projects\Media\File) {
+            if ($Entry instanceof QUI\Projects\Media\Image) {
                 return $Entry;
             }
         }
@@ -51,7 +59,7 @@ class Utils
 
         try {
             return QUI\Projects\Media\Utils::getImageByUrl($avatar);
-        } catch (QUI\Exception $Exception) {
+        } catch (QUI\Exception) {
         }
 
         return false;
@@ -60,17 +68,17 @@ class Utils
     /**
      * Returns config. If a cache exists, it will be returned.
      *
-     * @param $params
+     * @param array $params
      *
      * @return array|bool|object|string
      * @throws QUI\Exception
      */
-    public static function getConfig($params)
+    public static function getConfig(array $params): object|array|bool|string
     {
-        /** @var $Site \QUI\Projects\Site */
+        /** @var $Site Site */
         $Site = $params['Site'];
 
-        /* @var $Project QUI\Projects\Project */
+        /* @var $Project Project */
         $Project = $params['Project'];
 
         /* @var $Project QUI\Template */
@@ -370,11 +378,12 @@ class Utils
     /**
      * Returns data for predefined footer if enabled.
      *
-     * @param \QUI\Projects\Project $Project
+     * @param Project $Project
      *
      * @return array - data for predefined footer
+     * @throws Exception
      */
-    private static function getPredefinedFooter($Project)
+    private static function getPredefinedFooter(Project $Project): array
     {
         $lang = $Project->getLang();
 
@@ -552,9 +561,9 @@ class Utils
 
         if (
             $Project->getConfig('templateCologne.settings.predefinedFooter.payments')
-            && \class_exists('\QUI\ERP\Accounting\Payments\Payments')
+            && class_exists('\QUI\ERP\Accounting\Payments\Payments')
         ) {
-            $PaymentsControl = new \QUI\TemplateCologne\Controls\Payments([
+            $PaymentsControl = new Payments([
                 'template' => $Project->getConfig('templateCologne.settings.predefinedFooter.payments.layout')
             ]);
 
@@ -662,7 +671,7 @@ class Utils
         /** @var QUI\ERP\StockManagement\Products\Fields\StockView $StockView */
         $StockView = $StockField->getFrontendView();
 
-        if (\method_exists($StockView, 'setProduct')) {
+        if (method_exists($StockView, 'setProduct')) {
             $StockView->setProduct($Product);
         }
 
@@ -676,9 +685,9 @@ class Utils
      *
      * @return string
      */
-    public static function convertBrickCSSClass(array $classes)
+    public static function convertBrickCSSClass(array $classes): string
     {
-        if (\count($classes) < 1) {
+        if (count($classes) < 1) {
             return '';
         }
 

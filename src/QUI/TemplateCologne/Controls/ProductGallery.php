@@ -6,6 +6,7 @@
 
 namespace QUI\TemplateCologne\Controls;
 
+use Exception;
 use QUI;
 use QUI\ERP\Products\Handler\Fields;
 
@@ -22,7 +23,7 @@ class ProductGallery extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->setAttributes([
             'Product' => false
@@ -32,13 +33,10 @@ class ProductGallery extends QUI\Control
     }
 
     /**
-     * (non-PHPdoc)
-     *
-     * @throws QUI\Exception
-     * @see \QUI\Control::create()
-     *
+     * @return string
+     * @throws Exception
      */
-    public function getBody()
+    public function getBody(): string
     {
         if (!$this->getAttribute('Product')) {
             return '';
@@ -69,7 +67,7 @@ class ProductGallery extends QUI\Control
 
         try {
             $Gallery->setAttribute('folderId', $Product->getFieldValue(Fields::FIELD_FOLDER));
-        } catch (QUI\Exception $Exception) {
+        } catch (QUI\Exception) {
         }
 
         if ($typeVariantParent || $typeVariantChild) {
@@ -132,7 +130,7 @@ class ProductGallery extends QUI\Control
             if (!$hasMainImage) {
                 $images[] = $MainImage;
             }
-        } catch (\Exception $Exception) {
+        } catch (Exception $Exception) {
             QUI\System\Log::writeDebugException($Exception);
             $mainImageId = false;
         }

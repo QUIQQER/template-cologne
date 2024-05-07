@@ -18,13 +18,13 @@ class LangCurrencySwitch extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->setAttributes([
-            'class'               => 'lang-currency-switch',
-            'data-qui'            => 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
+            'class' => 'lang-currency-switch',
+            'data-qui' => 'package/quiqqer/template-cologne/bin/javascript/controls/LangCurrencySwitch',
             'userRelatedCurrency' => 1, // 1 / 0 -> is user allowed to change currency?
-            'flagFolder'          => URL_BIN_DIR . '16x16/flags/',
+            'flagFolder' => URL_BIN_DIR . '16x16/flags/',
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/LangCurrencySwitch.css');
@@ -39,18 +39,14 @@ class LangCurrencySwitch extends QUI\Control
      * @see \QUI\Control::create()
      *
      */
-    public function getBody()
+    public function getBody(): string
     {
-        $Engine       = QUI::getTemplateManager()->getEngine();
-        $Site         = $this->getSite();
-        $Project      = $Site->getProject();
-        $Locale       = QUI::getLocale();
-        $flagFolder   = $this->getAttribute('flagFolder');
+        $Engine = QUI::getTemplateManager()->getEngine();
+        $Site = $this->getSite();
+        $Project = $Site->getProject();
+        $Locale = QUI::getLocale();
+        $flagFolder = $this->getAttribute('flagFolder');
         $enableChange = false;
-
-        if (!$Site) {
-            return '';
-        }
 
         // is user allowed to change currency?
         $currencySwitch = false;
@@ -59,7 +55,7 @@ class LangCurrencySwitch extends QUI\Control
         if ($this->isCurrencySwitchAllowed()) {
             try {
                 $Package = QUI::getPackage('quiqqer/erp');
-                $Config  = $Package->getConfig();
+                $Config = $Package->getConfig();
 
                 if ($Config->getValue('general', 'userRelatedCurrency')) {
                     $this->setJavaScriptControlOption('userrelatedcurrency', '1');
@@ -93,13 +89,13 @@ class LangCurrencySwitch extends QUI\Control
         };
 
         $Engine->assign([
-            'this'            => $this,
-            'projectLang'     => $Project->getLang(),
-            'currencySwitch'  => $currencySwitch,
+            'this' => $this,
+            'projectLang' => $Project->getLang(),
+            'currencySwitch' => $currencySwitch,
             'DefaultCurrency' => $Currency,
-            'flagFolderPath'  => $flagFolder,
-            'imgAltText'      => $imgAltText,
-            'enableChange'    => $enableChange
+            'flagFolderPath' => $flagFolder,
+            'imgAltText' => $imgAltText,
+            'enableChange' => $enableChange
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/LangCurrencySwitch.html');
@@ -108,10 +104,10 @@ class LangCurrencySwitch extends QUI\Control
     /**
      * Return the Project
      *
-     * @return mixed|QUI\Projects\Site
+     * @return QUI\Interfaces\Projects\Site
      * @throws QUI\Exception
      */
-    protected function getSite()
+    protected function getSite(): QUI\Interfaces\Projects\Site
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');
@@ -124,11 +120,9 @@ class LangCurrencySwitch extends QUI\Control
      * Is currency switch allowed? Setting has over currencies number.
      *
      * @return bool
-     * @throws QUI\Exception
      */
-    protected function isCurrencySwitchAllowed()
+    protected function isCurrencySwitchAllowed(): bool
     {
-
         if (!$this->getAttribute('userRelatedCurrency')) {
             return false;
         }

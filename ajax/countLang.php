@@ -12,9 +12,9 @@
 QUI::$Ajax->registerFunction(
     'package_quiqqer_template-cologne_ajax_countLang',
     function () {
-        $Site    = QUI::getRewrite()->getSite();
+        $Site = QUI::getRewrite()->getSite();
         $Project = $Site->getProject();
 
-        return \count($Project->getLanguages());
+        return count($Project->getLanguages());
     }
 );
