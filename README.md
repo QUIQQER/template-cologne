@@ -79,7 +79,7 @@ Example:
 
 ### Available template events
 For more information go to
- [QUIQQER Wiki - Template events](https://dev.quiqqer.com/quiqqer/quiqqer/wikis/design_standard#template-events).
+ [QUIQQER Wiki - Template events](https://dev.quiqqer.com/quiqqer/core/wikis/design_standard#template-events).
 
 
 ```html

@@ -1310,10 +1310,10 @@
                                     <locale group="quiqqer/system" var="release_from_desc"/>
                                 </option>
                                 <option value="order_field ASC">
-                                    <locale group="quiqqer/quiqqer" var="order_field_asc"/>
+                                    <locale group="quiqqer/core" var="order_field_asc"/>
                                 </option>
                                 <option value="order_field DESC">
-                                    <locale group="quiqqer/quiqqer" var="order_field_desc"/>
+                                    <locale group="quiqqer/core" var="order_field_desc"/>
                                 </option>
                             </select>
                         </settings>

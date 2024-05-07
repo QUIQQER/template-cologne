@@ -959,7 +959,7 @@
     </groups>
 
     <!-- override locale -->
-    <groups name="quiqqer/quiqqer" datatype="php">
+    <groups name="quiqqer/core" datatype="php">
         <locale name="templates.mail.body.header.social" priority="10" html="true">
             <de>
                 <![CDATA[
