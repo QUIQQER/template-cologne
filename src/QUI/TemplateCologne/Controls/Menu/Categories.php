@@ -3,16 +3,21 @@
 /**
  * This file contains QUI\TemplateCologne\Controls\Menu\Categories
  *
- * Creates an "slide out" menu with product categories.
+ * Creates a "slide out" menu with product categories.
  *
  * @author www.pcsg.de (Michael Danielczok)
  */
 
 namespace QUI\TemplateCologne\Controls\Menu;
 
+use Exception;
 use QUI;
 use QUI\Menu\EventHandler;
 use QUI\Projects\Site\Utils;
+
+use function dirname;
+use function md5;
+use function serialize;
 
 /**
  * Class Categories
@@ -24,28 +29,28 @@ class Categories extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->setAttributes([
             'class' => 'quiqqer-categories-menu',
             'startId' => 1, // site id or site link where menu starts by. 1 is start page (first project page)
-            'template' => \dirname(__FILE__) . '/Categories.html', // nav wrapper
-            'menuFile' => \dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
+            'template' => dirname(__FILE__) . '/Categories.html', // nav wrapper
+            'menuFile' => dirname(__FILE__) . '/Categories.Menu.html', // contains children (sites),
             'jsControl' => 'package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories',
             'showDescFor' => 'all', // Show category description: all / firstLevel / none
             'showBasketButton' => false
         ]);
 
-        $this->addCSSFile(\dirname(__FILE__) . '/Categories.css');
+        $this->addCSSFile(dirname(__FILE__) . '/Categories.css');
 
         parent::__construct($attributes);
     }
 
     /**
      * @return string
-     * @throws QUI\Exception
+     * @throws QUI\Exception|Exception
      */
-    public function getBody()
+    public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
         $Project = $this->getProject();
@@ -68,14 +73,14 @@ class Categories extends QUI\Control
 
         $cache = EventHandler::menuCacheName() . '/megaMenu/';
 
-        $cache .= \md5(
+        $cache .= md5(
             $this->getSite()->getCachePath() .
-            \serialize($this->getAttributes())
+            serialize($this->getAttributes())
         );
 
         try {
             return QUI\Cache\Manager::get($cache);
-        } catch (QUI\Exception $Exception) {
+        } catch (QUI\Exception) {
         }
 
         $showBasketButton = $this->getAttribute('showBasketButton');
@@ -103,9 +108,10 @@ class Categories extends QUI\Control
     /**
      * Return the current site
      *
-     * @return mixed|QUI\Projects\Site
+     * @return QUI\Interfaces\Projects\Site
+     * @throws QUI\Exception
      */
-    protected function getSite()
+    protected function getSite(): QUI\Interfaces\Projects\Site
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');

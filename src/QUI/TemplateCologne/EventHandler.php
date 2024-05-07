@@ -7,6 +7,8 @@
 namespace QUI\TemplateCologne;
 
 use QUI;
+use QUI\ERP\Products\Product\ViewFrontend;
+use QUI\Smarty\Collector;
 
 /**
  * Event Class
@@ -20,13 +22,9 @@ class EventHandler
      *
      * @return void
      */
-    public static function onProjectConfigSave()
+    public static function onProjectConfigSave(): void
     {
-        try {
-            QUI\Cache\Manager::clear('quiqqer/templateCologne');
-        } catch (QUI\Exception $Exception) {
-            QUI\System\Log::writeException($Exception);
-        }
+        QUI\Cache\Manager::clear('quiqqer/templateCologne');
     }
 
     /**
@@ -34,25 +32,21 @@ class EventHandler
      *
      * @return void
      */
-    public static function onSiteSave()
+    public static function onSiteSave(): void
     {
-        try {
-            QUI\Cache\Manager::clear('quiqqer/templateCologne');
-        } catch (QUI\Exception $Exception) {
-            QUI\System\Log::writeException($Exception);
-        }
+        QUI\Cache\Manager::clear('quiqqer/templateCologne');
     }
 
     /**
-     * @param \Quiqqer\Engine\Collector $Collector
-     * @param QUI\ERP\Products\Product\ViewFrontend $Product
+     * @param Collector $Collector
+     * @param ViewFrontend $Product
      *
      * @throws QUI\Exception
      */
     public static function onQuiqqerProductsProductButtonsEnd(
-        \Quiqqer\Engine\Collector $Collector,
-        \QUI\ERP\Products\Product\ViewFrontend $Product
-    ) {
+        QUI\Smarty\Collector $Collector,
+        ViewFrontend $Product
+    ): void {
         // setting
         $Project = QUI::getRewrite()->getProject();
 
