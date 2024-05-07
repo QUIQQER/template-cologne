@@ -13,6 +13,9 @@ namespace QUI\TemplateCologne\Controls;
 
 use QUI;
 
+use function class_exists;
+use function file_exists;
+
 /**
  * Class Payments
  */
@@ -23,7 +26,7 @@ class Payments extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->setAttributes([
             'class' => 'quiqqer-payments-control',
@@ -39,20 +42,16 @@ class Payments extends QUI\Control
     }
 
     /**
-     * (non-PHPdoc)
-     *
-     * @throws QUI\Exception
-     * @see \QUI\Control::create()
-     *
+     * @return string
      */
-    public function getBody()
+    public function getBody(): string
     {
-        if (!\class_exists('\QUI\ERP\Accounting\Payments\Payments')) {
+        if (!class_exists('\QUI\ERP\Accounting\Payments\Payments')) {
             return '';
         }
 
         $Engine = QUI::getTemplateManager()->getEngine();
-        $Payments = \QUI\ERP\Accounting\Payments\Payments::getInstance();
+        $Payments = QUI\ERP\Accounting\Payments\Payments::getInstance();
         $payments = $Payments->getpayments();
 
         if (count($payments) < 1) {
@@ -70,8 +69,8 @@ class Payments extends QUI\Control
         $customTemplate = $this->getAttribute('customTemplate');
         $customCss = $this->getAttribute('customCss');
 
-        if ($customTemplate && \file_exists($customTemplate)) {
-            if ($customCss && \file_exists($customCss)) {
+        if ($customTemplate && file_exists($customTemplate)) {
+            if ($customCss && file_exists($customCss)) {
                 $this->addCSSFile($this->getAttribute('customCss'));
             }
 

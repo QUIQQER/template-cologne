@@ -7,6 +7,7 @@
 namespace QUI\TemplateCologne\Controls;
 
 use QUI;
+use QUI\Database\Exception;
 
 /**
  * Class ProductGallery
@@ -18,7 +19,7 @@ class SimpleUserInfo extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->setAttributes([
             'User' => null
@@ -35,7 +36,7 @@ class SimpleUserInfo extends QUI\Control
      * @throws QUI\Exception
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
         $User = $this->getUser();
@@ -62,7 +63,7 @@ class SimpleUserInfo extends QUI\Control
      * @return QUI\Interfaces\Users\User
      * @throws QUI\FrontendUsers\Exception
      */
-    public function getUser()
+    public function getUser(): QUI\Interfaces\Users\User
     {
         $User = $this->getAttribute('User');
 
@@ -83,10 +84,10 @@ class SimpleUserInfo extends QUI\Control
     /**
      * Return the current site
      *
-     * @return QUI\Projects\Site
+     * @return QUI\Interfaces\Projects\Site
      * @throws QUI\Exception
      */
-    public function getSite()
+    public function getSite(): QUI\Interfaces\Projects\Site
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');
@@ -101,8 +102,9 @@ class SimpleUserInfo extends QUI\Control
      * @param $User QUI\Interfaces\Users\User
      *
      * @return int
+     * @throws Exception
      */
-    public function getOrdersNumber($User)
+    public function getOrdersNumber(QUI\Interfaces\Users\User $User): int
     {
         $Orders = QUI\ERP\Order\Handler::getInstance();
 
