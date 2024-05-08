@@ -82,8 +82,8 @@ class LangCurrencySwitch extends QUI\Control
             $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
         }
 
-        if ($Locale->exists('quiqqer/quiqqer', 'language.' . $Project->getLang())) {
-            $imgAltText = $Locale->get('quiqqer/quiqqer', 'language.' . $Project->getLang());
+        if ($Locale->exists('quiqqer/core', 'language.' . $Project->getLang())) {
+            $imgAltText = $Locale->get('quiqqer/core', 'language.' . $Project->getLang());
         } else {
             $imgAltText = $Locale->get('quiqqer/template-cologne', 'label.language');
         };
