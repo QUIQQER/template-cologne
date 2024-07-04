@@ -24,7 +24,7 @@
         {/if}
         {* END language & currency switch *}
 
-        <span class="cologne-header-control-user">
+        <div class="cologne-header-control-user">
             {if $User->getId()}
                 {$Avatar->create()}
             {else}
@@ -34,6 +34,6 @@
             <span class="cologne-header-control-user-loader">
                 <span class="fa fa-pulse fa-circle-o-notch"></span>
             </span>
-        </span>
+        </div>
     </div>
 </div>

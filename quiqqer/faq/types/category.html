@@ -6,28 +6,14 @@
 
 {* Template: default*}
 {if $faqTemplate == 'default'}
-    {if $offset}
-        {*
-        This CSS is used to scroll the page down a bit when accessed with a # in the url.
-        By doing this the menu no longer hides the linked content.
-        *}
-        <style type="text/css">
-            :target::before {
-                content: '';
-                display: block;
-                height: {$offset}px;
-                margin-top: -{$offset}px;
-            }
-        </style>
-    {/if}
-
-    <section itemscope itemtype="http://schema.org/ItemList"
+    <section itemscope itemtype="https://schema.org/ItemList"
              class="content-template quiqqer-faq clear-fix cologne-quiqqer-faq"
              data-qui="package/quiqqer/faq/bin/Category"
              data-qui-options-offset="{$offset}"
+             {if $offset}style="--_qui-faq-scrollOffset: var(--qui-faq-scrollOffset, {$offset}px);"{/if}
     >
         {if count($entries)}
-            <ul class="quiqqer-faq-list" id="faqList" name="faqList">
+            <ul class="quiqqer-faq-list" id="faqList">
                 {foreach $entries as $Faq}
                     <li>
                         <a href="{url site=$Site}#faq{$Faq->getId()}">
@@ -40,7 +26,7 @@
         {/if}
 
         {foreach $entries as $Faq}
-            <article id="faq{$Faq->getId()}" class="clear-fix">
+            <article id="faq{$Faq->getId()}" class="quiqqer-faq__entry">
                 <header>
                     <h2><span class="fa fa-file-text"></span> {$Faq->getAttribute('title')}</h2>
                 </header>
@@ -65,6 +51,10 @@
 
             {/if}
         {/foreach}
+
+        {if $faqStructuredData}
+            {$faqStructuredData}
+        {/if}
     </section>
 {/if}
 
