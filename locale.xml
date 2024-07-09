@@ -500,6 +500,15 @@
                 <en><![CDATA[Compact (only icon)]]></en>
             </locale>
 
+        <locale name="settings.shop.order.basket.showImages">
+            <de><![CDATA[Produktbilder im Warenkorb anzeigen]]></de>
+            <en><![CDATA[Show product images in basket]]></en>
+        </locale>
+        <locale name="settings.shop.order.basket.showImages.desc">
+            <de><![CDATA[Wenn aktiviert, werden in Warenkorb und Bestellung die Produktbilder angezeigt.]]></de>
+            <en><![CDATA[If the option ist enabled, the product images are displayed in the shopping basket and order.]]></en>
+        </locale>
+
         <!-- basket open -->
         <locale name="settings.shop.basketOpen">
             <de><![CDATA[Aktion bei Klick auf Warenkorb]]></de>

@@ -69,6 +69,21 @@ th.quiqqer-order-basket-articles-header-price {
     width: 60px;
 }
 
+.quiqqer-order-basket-articles-header-image {
+    width: var(--_qui-order-basket-articles-image-width);
+}
+
+.quiqqer-order-basket-articles-article-image {
+    width: var(--_qui-order-basket-articles-image-width);
+    text-align: center;
+}
+
+.quiqqer-order-basket-articles-article-image__img {
+    width: var(--_qui-order-basket-articles-image-width);
+    height: var(--_qui-order-basket-articles-image-height);
+    object-fit: contain;
+}
+
 .quiqqer-order-basket-articles-article-quantity {
     text-align: center;
     width: 100px;
