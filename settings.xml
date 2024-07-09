@@ -36,6 +36,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>full</defaultvalue>
                     </conf>
+                    <conf name="order.basket.showImages">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
                     <conf name="basketOpen">
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>2</defaultvalue>
@@ -436,6 +440,19 @@
                                     />
                                 </option>
                             </select>
+
+                                <input conf="templateCologne.settings.order.basket.showImages" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.order.basket.showImages"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.order.basket.showImages.desc"
+                                    />
+                                </description>
+                            </input>
 
                             <!-- basket open (nothing order window, order page)-->
                             <select conf="templateCologne.settings.basketOpen">

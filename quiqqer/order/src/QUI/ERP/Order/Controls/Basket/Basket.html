@@ -1,0 +1,242 @@
+{template_event name="quiqqer::order::basket::begin" Basket=$Basket}
+
+{if $Products->count()}
+<table class="quiqqer-order-basket-articles">
+    <thead>
+    <tr class="quiqqer-order-basket-articles-header">
+        <th class="quiqqer-order-basket-articles-header-pos"
+            title="{locale group='quiqqer/erp' var='article.list.articles.header.pos'}"
+        >
+            {locale group="quiqqer/erp" var="article.list.articles.header.pos"}
+        </th>
+        {if QUI\TemplateCologne\Utils::getSetting('order.basket.showImages')}
+        <th class="quiqqer-order-basket-articles-header-image"
+            title="{locale group='quiqqer/erp' var='article.list.articles.header.image'}"
+        >
+            {locale group="quiqqer/erp" var="article.list.articles.header.image"}
+        </th>
+        {/if}
+        <th class="quiqqer-order-basket-articles-header-information"
+            title="{locale group='quiqqer/erp' var='article.list.articles.header.description'}"
+        >
+            {locale group="quiqqer/erp" var="article.list.articles.header.description"}
+        </th>
+        <th class="quiqqer-order-basket-articles-header-quantity"
+            title="{locale group='quiqqer/erp' var='article.list.articles.header.quantity'}"
+        >
+            {locale group="quiqqer/erp" var="article.list.articles.header.quantity"}
+        </th>
+        <th class="quiqqer-order-basket-articles-unitPrice"
+            title="{locale group='quiqqer/erp' var='article.list.articles.header.unitprice'}"
+        >
+            {locale group="quiqqer/erp" var="article.list.articles.header.unitprice"}
+        </th>
+        <th class="quiqqer-order-basket-articles-header-price"
+            title="{locale group='quiqqer/erp' var='article.list.articles.header.price'}"
+        >
+            {locale group="quiqqer/erp" var="article.list.articles.header.price"}
+        </th>
+        {if $this->getAttribute('editable')}
+        <th class="quiqqer-order-basket-articles-header-action"></th>
+        {/if}
+    </tr>
+    </thead>
+    <tbody>
+    {assign var=pos value=1}
+    {foreach $products as $product}
+    <tr class="quiqqer-order-basket-articles-article" data-pos="{$pos}">
+        <td class="quiqqer-order-basket-articles-article-pos"
+            data-label="{locale group='quiqqer/erp' var='article.list.articles.header.pos'}"
+        >
+            {$pos}
+        </td>
+        {if QUI\TemplateCologne\Utils::getSetting('order.basket.showImages')}
+        <td class="quiqqer-order-basket-articles-article-image"
+            data-label="{locale group='quiqqer/erp' var='article.list.articles.header.image'}"
+        >
+            {image src=$product.imageSrc width=300 height=300 class="quiqqer-order-basket-articles-article-image__img"}
+        </td>
+        {/if}
+        <td class="quiqqer-order-basket-articles-article-data"
+            data-label="{locale group='quiqqer/erp' var='article.list.articles.header.description'}"
+        >
+            <div class="quiqqer-order-basket-articles-article-title">{$product.title}</div>
+            <div class="quiqqer-order-basket-articles-article-description">
+                {$product.description}
+            </div>
+
+            <ul class="quiqqer-order-basket-articles-article-fields">
+                {foreach $product.attributes as $attribute}
+                <li class="quiqqer-order-basket-articles-article-fields-field">
+                    <span>{$attribute.title}:</span>
+                    <span>{$this->getValueText($attribute.valueText)}</span>
+                </li>
+                {/foreach}
+            </ul>
+
+            {if $showArticleNumber && !empty($product.productNo)}
+            <div class="quiqqer-order-basket-articles-article-productno">
+                {locale group="quiqqer/order" var="basket.articles.articleNo"} {$product.productNo}
+            </div>
+            {/if}
+        </td>
+        <td class="quiqqer-order-basket-articles-article-quantity"
+            data-label="{locale group='quiqqer/erp' var='article.list.articles.header.quantity'}"
+        >
+            {assign var=maxQuantity value=""}
+            {assign var=maxQuantityAttr value=""}
+            {if isset($product.maximumQuantity) && $product.maximumQuantity && $product.maximumQuantity !== true}
+            {assign var=maxQuantityAttr value=" max='{$product.maximumQuantity}'"}
+            {assign var=maxQuantity value=(int)$product.maximumQuantity}
+            {/if}
+
+            {if $Utils->isBasketProductEditable($product) && $this->getAttribute('editable') && $maxQuantity != 1}
+            <label>
+                <input type="number"
+                       name="quantity"
+                       min="0"
+                       value="{$product.quantity}"
+                       {$maxQuantityAttr}
+                />
+            </label>
+            {else}
+            <div class="quiqqer-order-basket-articles-article-quantity-value">
+                {$product.quantity}
+            </div>
+            {/if}
+        </td>
+        <td class="quiqqer-order-basket-articles-article-price"
+            data-label="{locale group='quiqqer/erp' var='article.list.articles.header.unitprice'}"
+        >
+            {if !isset($product.displayPrice) || $product.displayPrice}
+            {$product.price}
+            {/if}
+        </td>
+        <td class="quiqqer-order-basket-articles-article-sum"
+            data-label="{locale group='quiqqer/erp' var='article.list.articles.header.price'}"
+        >
+            {if !isset($product.displayPrice) || $product.displayPrice}
+            <span>{$product.sum}</span>
+            {/if}
+
+            {if !isset($product.hasOfferPrice) || $product.hasOfferPrice}
+            <span class="offer-original-price">
+                {$product.originalPrice}
+            </span>
+            {/if}
+        </td>
+        {if $this->getAttribute('editable')}
+        <td class="quiqqer-order-basket-articles-article-remove">
+            <button type="button">
+                <span class="fa fa-trash"></span>
+            </button>
+        </td>
+        {/if}
+    </tr>
+    {assign var=pos value=$pos+1}
+    {/foreach}
+    </tbody>
+</table>
+
+{template_event name="quiqqer::order::basket::middle" Basket=$Basket}
+
+<table class="quiqqer-order-basket-total">
+    <tr class="quiqqer-order-basket-total-subSum">
+        <td class="quiqqer-order-basket-total-firstCell">
+            <span class="quiqqer-order-basket-total-subSum-text">
+                {locale group="quiqqer/order" var="control.order.overview.subSum"}
+            </span>
+        </td>
+        <td class="quiqqer-order-basket-total-secondCell">
+            <span class="quiqqer-order-basket-total-subSum-value">
+                {$data.subSum}
+            </span>
+        </td>
+    </tr>
+
+    {foreach $data.attributes as $attribute}
+    <tr>
+        <td>
+            {$attribute.title} {if !empty($attribute.valueText)}({$attribute.valueText}){/if}
+        </td>
+        <td>
+            {$attribute.value}
+        </td>
+    </tr>
+    {/foreach}
+
+    {if count($data.attributes)}
+    <tr>
+        <td colspan="2"><br/></td>
+    </tr>
+    {/if}
+
+    {foreach $data.vat as $vat}
+    <tr>
+        <td>
+            {$vat.text}
+        </td>
+        <td>
+            {$vat.value}
+        </td>
+    </tr>
+    {/foreach}
+
+
+    {if isset($data.grandTotalFactors) && count($data.grandTotalFactors)}
+    <tr class="quiqqer-order-basket-total-grandSubSum">
+        <td class="quiqqer-order-basket-total-firstCell">
+            <span class="quiqqer-order-basket-total-grandSubSum-text">
+                {locale group="quiqqer/order" var="control.order.overview.grandSubSum"}
+            </span>
+        </td>
+        <td class="quiqqer-order-basket-total-secondCell">
+            <span class="quiqqer-order-basket-total-grandSubSum-value">
+                {$data.grandSubSum}
+            </span>
+        </td>
+    </tr>
+    {foreach $data.grandTotalFactors as $attribute}
+    <tr>
+        <td>
+            {$attribute.title} {if !empty($attribute.valueText) && $attribute.valueText !==
+            '-'}({$attribute.valueText}){/if}
+        </td>
+        <td>
+            {$attribute.value}
+        </td>
+    </tr>
+    {/foreach}
+    {/if}
+
+
+    {if count($data.attributes)}
+    <tr>
+        <td colspan="2"><br/></td>
+    </tr>
+    {/if}
+    <tr class="quiqqer-order-basket-total-sum">
+        <td>
+            <span class="quiqqer-order-basket-total-sum-text">
+                {locale group="quiqqer/order" var="control.order.overview.sum"}
+            </span>
+        </td>
+        <td>
+            <span class="quiqqer-order-basket-total-sum-value">
+                {$data.sum}
+            </span>
+        </td>
+    </tr>
+</table>
+
+{elseif $this->isGuest() && $this->isLoading()}
+<div class="quiqqer-order-basket-isLoading">
+    <span class="fa fa-spinner fa-spin"></span>
+</div>
+{else}
+<div class="quiqqer-order-basket-isEmpty">
+    {locale group="quiqqer/order" var="message.basket.is.empty"}
+</div>
+{/if}
+
+{template_event name="quiqqer::order::basket::end" Basket=$Basket}
