@@ -74,7 +74,7 @@ th.quiqqer-order-basket-articles-header-price {
 }
 
 .quiqqer-order-basket-articles-article-image {
-    width: var(--_qui-order-basket-articles-image-width-width);
+    width: var(--_qui-order-basket-articles-image-width);
     text-align: center;
 }
 
