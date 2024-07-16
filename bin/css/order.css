@@ -529,7 +529,7 @@ th.articles-article-header-information {
     padding: 10px;
 }
 
-.articles-sum {
+:where(.quiqqer-order-step-checkout-article) .articles-sum {
     background: #f8f8f8;
     border: 1px solid #ddd;
     float: right;
