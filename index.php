@@ -37,7 +37,7 @@ $enableIndependentMenu = $Project->getConfig('templateCologne.settings.enableInd
 $independentMenuId = $Project->getConfig('templateCologne.settings.menuId');
 
 if ($enableIndependentMenu && $independentMenuId) {
-    $menuParams['menuId'] = $enableIndependentMenu;
+    $menuParams['menuId'] = $independentMenuId;
     $menuParams['showFirstLevelIcons'] = $Project->getConfig('templateCologne.settings.showFirstLevelIcons');
     $menuParams['showStart'] = false;
 }
