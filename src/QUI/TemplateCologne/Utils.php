@@ -732,6 +732,5 @@ class Utils
 
             return '';
         }
-
     }
 }

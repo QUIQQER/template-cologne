@@ -1,0 +1,51 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method QUI\\\\Interfaces\\\\Projects\\\\Site\\:\\:getCachePath\\(\\)\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Controls/Menu/Categories.php
+
+		-
+			message: "#^Access to constant PRODUCT_FIELD_SHIPPING_TIME on an unknown class QUI\\\\ERP\\\\Shipping\\\\Shipping\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^Access to constant PRODUCT_FIELD_STOCK on an unknown class QUI\\\\ERP\\\\StockManagement\\\\StockManager\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^Call to method setProduct\\(\\) on an unknown class QUI\\\\ERP\\\\StockManagement\\\\Products\\\\Fields\\\\StockView\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^Call to static method getShippingTimeFrontendViewByProduct\\(\\) on an unknown class QUI\\\\ERP\\\\StockManagement\\\\StockManager\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^Method QUI\\\\TemplateCologne\\\\Utils\\:\\:getStockFrontendView\\(\\) should return QUI\\\\ERP\\\\Products\\\\Field\\\\View\\|false but returns QUI\\\\ERP\\\\StockManagement\\\\Products\\\\Fields\\\\StockView\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$StockView contains unknown class QUI\\\\ERP\\\\StockManagement\\\\Products\\\\Fields\\\\StockView\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^PHPDoc tag @var has invalid value \\(\\$Site Site\\)\\: Unexpected token \"\\$Site\", expected type at offset 9$#"
+			count: 1
+			path: src/QUI/TemplateCologne/Utils.php
+
+		-
+			message: "#^Variable \\$Project might not be defined\\.$#"
+			count: 2
+			path: src/QUI/TemplateCologne/settings.css.php
+
+		-
+			message: "#^Variable \\$Site might not be defined\\.$#"
+			count: 1
+			path: src/QUI/TemplateCologne/settings.css.php
