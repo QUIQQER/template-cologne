@@ -21,4 +21,6 @@
     /* ecoyn / ecommerce */
     --_qui-order-basket-articles-image-width: var(--qui-order-basket-articles-image-width, 100px);
     --_qui-order-basket-articles-image-height: var(--qui-order-basket-articles-image-height, 100px);
+    --_qui-order-articles-image-width: var(--qui-order-articles-image-width, 100px);
+    --_qui-order-articles-image-height: var(--qui-order-articles-image-height, 100px);
 }

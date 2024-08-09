@@ -454,6 +454,17 @@ table.articles-article {
     vertical-align: top;
 }
 
+.articles-article-image {
+    width: var(--_qui-order-basket-articles-image-width);
+    text-align: center;
+}
+
+.articles-article-image__img {
+    width: var(--_qui-order-articles-image-width);
+    height: var(--_qui-order-articles-image-height);
+    object-fit: contain;
+}
+
 td.articles-article-information {
     text-align: left;
 }
