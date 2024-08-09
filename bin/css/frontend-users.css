@@ -245,12 +245,12 @@
 /*****************/
 /* Login control */
 /*****************/
-.quiqqer-fu-login-container,
-.quiqqer-fu-registrationSignUp {
+:where(.loginAndRegister) .quiqqer-fu-login-container,
+:where(.loginAndRegister) .quiqqer-fu-registrationSignUp {
     padding: 1.5rem 2rem;
 }
 
-.quiqqer-fu-login-container {
+:where(.loginAndRegister) .quiqqer-fu-login-container {
     background: #f8f8f8;
     border: 1px solid #ddd;
     max-width: 400px;
@@ -258,7 +258,7 @@
     width: 100%;
 }
 
-.quiqqer-frontendUsers-login .quiqqer-fu-login-container {
+:where(.loginAndRegister) .quiqqer-frontendUsers-login .quiqqer-fu-login-container {
     background: none;
     border: none;
     margin: 0 auto;
@@ -266,7 +266,7 @@
 }
 
 @media screen and (max-width: 767px) {
-    .quiqqer-fu-registrationSignUp {
+    :where(.loginAndRegister) .quiqqer-fu-registrationSignUp {
         padding: 0;
     }
 }
@@ -274,7 +274,7 @@
 /******************/
 /* reset password */
 /******************/
-.quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [name="cancel"] {
+:where(.loginAndRegister) .quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [name="cancel"] {
     background: none;
     border: none;
     color: inherit;
@@ -284,7 +284,7 @@
     position: initial;
 }
 
-.quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [type="submit"] {
+:where(.loginAndRegister) .quiqqer-fu-login-container .quiqqer-fu-login-forget-password-reset [type="submit"] {
     margin-top: 1rem;
 }
 
