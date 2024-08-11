@@ -699,4 +699,38 @@ class Utils
 
         return $text;
     }
+
+    /**
+     * Get template setting for given string.
+     * By passing setting name you can omit template prefix setting name ("templateCologne.settings.")
+     *
+     * Usage:
+     *   QUI\TemplateCologne\Utils::getSettings('homeLink');
+     *   or
+     *   QUI\TemplateCologne\Utils::getSettings('templateCologne.settings.homeLink');
+     *
+     * @param string $settingName
+     * @return bool|array|int|string
+     */
+    public static function getSetting(string $settingName): bool|array|int|string
+    {
+        if (empty($settingName)) {
+            return false;
+        }
+
+        $a = strpos($settingName, 'templateCologne.settings.');
+        if (!str_contains($settingName, 'templateCologne.settings.')) {
+            $settingName = 'templateCologne.settings.' . $settingName;
+        }
+
+        try {
+            $Project = QUI::getRewrite()->getProject();
+
+            return $Project->getConfig($settingName);
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+
+            return '';
+        }
+    }
 }

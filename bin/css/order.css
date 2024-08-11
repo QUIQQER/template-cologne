@@ -69,6 +69,21 @@ th.quiqqer-order-basket-articles-header-price {
     width: 60px;
 }
 
+.quiqqer-order-basket-articles-header-image {
+    width: var(--_qui-order-basket-articles-image-width);
+}
+
+.quiqqer-order-basket-articles-article-image {
+    width: var(--_qui-order-basket-articles-image-width);
+    text-align: center;
+}
+
+.quiqqer-order-basket-articles-article-image__img {
+    width: var(--_qui-order-basket-articles-image-width);
+    height: var(--_qui-order-basket-articles-image-height);
+    object-fit: contain;
+}
+
 .quiqqer-order-basket-articles-article-quantity {
     text-align: center;
     width: 100px;
@@ -439,6 +454,17 @@ table.articles-article {
     vertical-align: top;
 }
 
+.articles-article-image {
+    width: var(--_qui-order-basket-articles-image-width);
+    text-align: center;
+}
+
+.articles-article-image__img {
+    width: var(--_qui-order-articles-image-width);
+    height: var(--_qui-order-articles-image-height);
+    object-fit: contain;
+}
+
 td.articles-article-information {
     text-align: left;
 }
@@ -514,7 +540,7 @@ th.articles-article-header-information {
     padding: 10px;
 }
 
-.articles-sum {
+:where(.quiqqer-order-step-checkout-article) .articles-sum {
     background: #f8f8f8;
     border: 1px solid #ddd;
     float: right;
