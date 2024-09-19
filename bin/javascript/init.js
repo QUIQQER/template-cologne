@@ -364,7 +364,7 @@ window.addEvent('domready', function () {
 
                             new Element('span', {
                                 'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
-                                html   : '0'
+                                html   : '<span class="fa fa-spinner fa-spin"></span>'
                             }).inject(BasketNode);
 
                             if (BASKET_STYLE && BASKET_STYLE === 'full') {
