@@ -17,6 +17,7 @@
     --bg-primary: #ddd;
     --bg-secondary: #f5f5f5;
 
+    --_qui-cologne-header-height: 100px;
 
     /* ecoyn / ecommerce */
     --_qui-order-basket-articles-image-width: var(--qui-order-basket-articles-image-width, 100px);

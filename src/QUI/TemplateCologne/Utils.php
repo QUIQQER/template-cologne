@@ -237,13 +237,10 @@ class Utils
         }
 
         // basket open
-        $basketOpen = 2;
+        $basketAction = $Project->getConfig('templateCologne.settings.basketAction');
 
-        switch ($Project->getConfig('templateCologne.settings.basketOpen')) {
-            case '0':
-            case '1':
-            case '2':
-                $basketOpen = $Project->getConfig('templateCologne.settings.basketOpen');
+        if (!in_array($basketAction, ['openSmallBasket', 'openOrderProcessUrl', 'openOrderProcess'])) {
+            $basketAction = 'openSmallBasket';
         }
 
         $settingsCSS = include 'settings.css.php';
@@ -355,7 +352,7 @@ class Utils
         $config['siteType'] = $siteType;
         $config['pageCustomClass'] = $pageCustomClass;
         $config['basketStyle'] = $basketStyle;
-        $config['basketOpen'] = $basketOpen;
+        $config['basketAction'] = $basketAction;
         $config['showCategoryMenu'] = $showCategoryMenu;
         $config['homeLink'] = $homeLink;
         $config['homeLinkText'] = $homeLinkText;

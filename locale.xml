@@ -509,22 +509,26 @@
             <en><![CDATA[If the option ist enabled, the product images are displayed in the shopping basket and order.]]></en>
         </locale>
 
-        <!-- basket open -->
-        <locale name="settings.shop.basketOpen">
-            <de><![CDATA[Aktion bei Klick auf Warenkorb]]></de>
-            <en><![CDATA[What should happen when the user clicks on the shopping cart?]]></en>
+        <!-- basket action -->
+        <locale name="settings.shop.basketAction">
+            <de><![CDATA[Aktion bei Klick auf Warenkorb-Icon]]></de>
+            <en><![CDATA[Shopping card action on click]]></en>
         </locale>
-            <locale name="settings.shop.basketOpen.nothing">
-                <de><![CDATA[Bestellprozes nicht öffnen]]></de>
-                <en><![CDATA[Do not open order process]]></en>
+        <locale name="settings.shop.basketAction.desc">
+            <de><![CDATA[Diese Option gilt nur für Desktop Ansicht. Auf mobilen Geräten wird immer zu der Bestellseite geleitet.]]></de>
+            <en><![CDATA[This option only applies to desktop view. On mobile devices it will always be redirected to the order process page.]]></en>
+        </locale>
+            <locale name="settings.shop.basketAction.openSmallBasket">
+                <de><![CDATA[Kleinen Warenkorb öffnen]]></de>
+                <en><![CDATA[Open small basket]]></en>
             </locale>
-            <locale name="settings.shop.basketOpen.window">
-                <de><![CDATA[Bestellprozes in einem Fenster öffnen]]></de>
+            <locale name="settings.shop.basketAction.openOrderProcessUrl">
+                <de><![CDATA[Bestellseite öffnen]]></de>
+                <en><![CDATA[Open order process page]]></en>
+            </locale>
+            <locale name="settings.shop.basketAction.openOrderProcess">
+                <de><![CDATA[Bestellung in einem Popup Fenster öffnen]]></de>
                 <en><![CDATA[Open order process in a popup]]></en>
-            </locale>
-            <locale name="settings.shop.basketOpen.page">
-                <de><![CDATA[Zu Bestellprozess-Seite leiten]]></de>
-                <en><![CDATA[Go to order page]]></en>
             </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">

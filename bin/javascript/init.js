@@ -343,7 +343,7 @@ window.addEvent('domready', function () {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function (Basket) {
                 new Basket({
-                    open  : BASKET_OPEN.toInt(),
+                    action  : BASKET_ACTION,
                     events: {
                         onCreate: function (Basket) {
                             var BasketNode     = Basket.getElm(),
