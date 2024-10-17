@@ -1,9 +1,15 @@
 <?php
 
 /**
+ * Register smarty functions
+ */
+if (method_exists($Engine, 'getSmarty')) {
+    $Engine->getSmarty()->registerClass('TemplateCologneUtils', 'QUI\TemplateCologne\Utils');
+}
+
+/**
  * Emotion
  */
-
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 
@@ -13,7 +19,7 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 $templateSettings = QUI\TemplateCologne\Utils::getConfig([
     'Project' => $Project,
     'Template' => $Template,
-    'Site'    => $Site
+    'Site' => $Site
 ]);
 
 /**
@@ -93,7 +99,7 @@ $templateSettings['createBasketButton'] = $createBasketButton;
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
     'showLogout' => false, // template cologne use own logout popup (see bin/javascript/init.js)
-    'User'       => QUI::getUserBySession()
+    'User' => QUI::getUserBySession()
 ]);
 
 /* product page - for layouts */
@@ -134,7 +140,7 @@ $registerSiteTypes = [
 $registerSite = $Project->getSites([
     'where' => [
         'type' => [
-            'type'  => 'IN',
+            'type' => 'IN',
             'value' => $registerSiteTypes
         ]
     ],

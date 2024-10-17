@@ -9,7 +9,7 @@
 
         {if !empty( $prefixContentBricks )}
             {foreach from=$prefixContentBricks item=Brick}
-                {assign var=classes value=\QUI\TemplateCologne\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+                {assign var=classes value=$TemplateCologneUtils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 
                 <section
                         class="template-brick-container template-brick-contentPrefix brick-id-{$Brick->getAttribute('id')} {$classes}">
@@ -63,7 +63,7 @@
 
         {if !empty( $suffixContentBricks )}
             {foreach from=$suffixContentBricks item=Brick}
-                {assign var=classes value=\QUI\TemplateCologne\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+                {assign var=classes value=$TemplateCologneUtils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 
                 <section class="template-brick-container template-brick-contentSuffix brick-id-{$Brick->getAttribute('id')} {$classes}">
                     <div class="template-grid-row">
