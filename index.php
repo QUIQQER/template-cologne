@@ -12,6 +12,7 @@
 /**
  * Register smarty functions
  */
+
 if (method_exists($Engine, 'getSmarty')) {
     $Engine->getSmarty()->registerClass('TemplateCologneUtils', 'QUI\TemplateCologne\Utils');
 }
