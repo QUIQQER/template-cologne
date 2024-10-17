@@ -1523,6 +1523,12 @@ a.toTop:before {
 
 .cologne-login-dialog .qui-window-popup-content {
     padding: 20px 40px;
+    display: grid;
+    grid-template-areas:
+        'logo'
+        'body'
+        'reset';
+    grid-template-rows: auto 1fr;
 }
 
 .quiqqer-frontendUsers-loginWindow .quiqqer-frontendUsers-login {
@@ -1615,11 +1621,12 @@ a.toTop:before {
 
 /* sing up / registration in link */
 .login-popup-create-account-wrapper {
-    bottom: 10px;
-    left: 0;
-    position: absolute;
     text-align: center;
     width: 100%;
+    grid-area: reset;
+    margin-top: 1rem;
+    z-index: 1;
+    position: relative;
 }
 
 /*************************/
