@@ -42,7 +42,7 @@
         {/if}
 
         {if $Project->getConfig('templateCologne.settings.categoryShowStock')}
-            {assign var=ShippingTimeFrontendView value=$TemplateCologneUtils::getShippingTimeFrontendView($Product->getId())}
+            {assign var=ShippingTimeFrontendView value=QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
             {if $ShippingTimeFrontendView}
             <div class="cologne-productList-product-details-content-shippingTime">
                 {$ShippingTimeFrontendView->create()}

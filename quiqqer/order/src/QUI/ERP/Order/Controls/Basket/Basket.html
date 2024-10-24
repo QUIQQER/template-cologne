@@ -9,7 +9,7 @@
         >
             {locale group="quiqqer/erp" var="article.list.articles.header.pos"}
         </th>
-        {if $TemplateCologneUtils::getSetting('order.basket.showImages')}
+        {if QUI\TemplateCologne\Utils::getSetting('order.basket.showImages')}
         <th class="quiqqer-order-basket-articles-header-image"
             title="{locale group='quiqqer/erp' var='article.list.articles.header.image'}"
         >
@@ -50,7 +50,7 @@
         >
             {$pos}
         </td>
-        {if $TemplateCologneUtils::getSetting('order.basket.showImages')}
+        {if QUI\TemplateCologne\Utils::getSetting('order.basket.showImages')}
         <td class="quiqqer-order-basket-articles-article-image"
             data-label="{locale group='quiqqer/erp' var='article.list.articles.header.image'}"
         >
