@@ -11,7 +11,6 @@ use QUI\Database\Exception;
 use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
-use QUI\Projects\Site;
 use QUI\TemplateCologne\Controls\Payments;
 
 use function class_exists;
@@ -75,13 +74,8 @@ class Utils
      */
     public static function getConfig(array $params): object|array|bool|string
     {
-        /** @var $Site Site */
         $Site = $params['Site'];
-
-        /* @var $Project Project */
         $Project = $params['Project'];
-
-        /* @var $Project QUI\Template */
         $Template = $params['Template'];
 
         $cacheName = md5($Site->getId() . $Project->getName() . $Project->getLang());
@@ -599,7 +593,7 @@ class Utils
      *
      * @return false|QUI\ERP\Products\Field\View
      */
-    public static function getShippingTimeFrontendView(int $productId)
+    public static function getShippingTimeFrontendView(int $productId): bool | QUI\ERP\Products\Field\View
     {
         try {
             $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
@@ -609,7 +603,7 @@ class Utils
             return false;
         }
 
-        if (QUI::getPackageManager()->isInstalled('quiqqer/stock-management')) {
+        if (class_exists('QUI\ERP\StockManagement\StockManager')) {
             return StockManager::getShippingTimeFrontendViewByProduct($Product);
         }
 
@@ -656,6 +650,10 @@ class Utils
             return false;
         }
 
+        if (!class_exists('QUI\ERP\StockManagement\StockManager')) {
+            return false;
+        }
+
         try {
             $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
             $StockField = $Product->getField(StockManager::PRODUCT_FIELD_STOCK);
@@ -665,7 +663,6 @@ class Utils
             return false;
         }
 
-        /** @var QUI\ERP\StockManagement\Products\Fields\StockView $StockView */
         $StockView = $StockField->getFrontendView();
 
         if (method_exists($StockView, 'setProduct')) {
