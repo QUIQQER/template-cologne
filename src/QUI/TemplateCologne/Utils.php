@@ -12,7 +12,6 @@ use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
 use QUI\TemplateCologne\Controls\Payments;
-
 use ReflectionClass;
 
 use function class_exists;
@@ -622,7 +621,7 @@ class Utils
         if (!$reflection->hasConstant('PRODUCT_FIELD_SHIPPING_TIME')) {
             return false;
         }
-        
+
         try {
             $ShippingField = $Product->getField(Shipping::PRODUCT_FIELD_SHIPPING_TIME);
         } catch (\Exception $Exception) {
