@@ -611,6 +611,10 @@ class Utils
             return false;
         }
 
+        if (!defined('PRODUCT_FIELD_SHIPPING_TIME')) {
+            return false;
+        }
+
         try {
             $ShippingField = $Product->getField(Shipping::PRODUCT_FIELD_SHIPPING_TIME);
         } catch (\Exception $Exception) {
