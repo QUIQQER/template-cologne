@@ -13,6 +13,8 @@ use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
 use QUI\TemplateCologne\Controls\Payments;
 
+use ReflectionClass;
+
 use function class_exists;
 use function count;
 use function method_exists;
@@ -31,7 +33,7 @@ class Utils
      * @throws QUI\Exception
      *
      */
-    public static function getAvatar(mixed $User): QUI\Projects\Media\Image|bool
+    public static function getAvatar(mixed $User): QUI\Projects\Media\Image | bool
     {
         if (!$User instanceof QUI\Interfaces\Users\User) {
             throw new QUI\Exception([
@@ -72,7 +74,7 @@ class Utils
      * @return array|bool|object|string
      * @throws QUI\Exception
      */
-    public static function getConfig(array $params): object|array|bool|string
+    public static function getConfig(array $params): object | array | bool | string
     {
         $Site = $params['Site'];
         $Project = $params['Project'];
@@ -611,10 +613,16 @@ class Utils
             return false;
         }
 
-        if (!defined('PRODUCT_FIELD_SHIPPING_TIME')) {
+        if (!class_exists('QUI\ERP\Shipping\Shipping')) {
             return false;
         }
 
+        $reflection = new ReflectionClass(Shipping::class);
+
+        if (!$reflection->hasConstant('PRODUCT_FIELD_SHIPPING_TIME')) {
+            return false;
+        }
+        
         try {
             $ShippingField = $Product->getField(Shipping::PRODUCT_FIELD_SHIPPING_TIME);
         } catch (\Exception $Exception) {
@@ -710,7 +718,7 @@ class Utils
      * @param string $settingName
      * @return bool|array|int|string
      */
-    public static function getSetting(string $settingName): bool|array|int|string
+    public static function getSetting(string $settingName): bool | array | int | string
     {
         if (empty($settingName)) {
             return false;
