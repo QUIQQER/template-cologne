@@ -28,14 +28,9 @@ a.qui-button,
     float: none; /* qui-button reset */
 }
 
-button > .fa,
-.btn > .fa {
+button > .fa:not(:only-child),
+.btn > .fa:not(:only-child) {
     margin-right: .75rem;
-}
-
-button.loading > .fa,
-.btn.loading > .fa {
-    margin-right: 0;
 }
 
 /*****************************/
