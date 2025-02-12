@@ -146,18 +146,28 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
 
 .quiqqer-shoppingCart-basket-end,
 .quiqqer-order-basket-end {
+    --gap: 1.5rem;
+    
     background: #f8f8f8;
     border: 1px solid #ddd;
-    clear: both;
     margin-top: 20px;
-    min-height: 90px;
     padding: 20px;
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.quiqqer-order-basket-end > *:not(:first-child, :only-child) {
+    border-top: var(--_qui-cologne-theme-border-width) solid var(--_qui-cologne-theme-border-color);
+    padding-top: var(--gap);
 }
 
 @media screen and (max-width: 767px) {
-    .quiqqer-shoppingCart-basket-end, .quiqqer-order-basket-end {
+    .quiqqer-shoppingCart-basket-end,
+    .quiqqer-order-basket-end {
+        --gap: 1rem;
         padding: 10px;
     }
 }
@@ -217,45 +227,7 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     border-bottom: 3px double #999999;
 }
 
-/* coupons */
-.quiqqer-coupons-couponcodeinput-title {
-    display: none;
-}
-
-input.quiqqer-coupons-couponcodeinput-input:hover,
-input.quiqqer-coupons-couponcodeinput-input:focus,
-input.quiqqer-coupons-couponcodeinput-input:active {
-    background: #fff;
-    border-color: #28a745;
-}
-
-.btn.quiqqer-coupons-couponcodeinput-btn {
-    background: #fff;
-    border-color: #28a745;
-    color: #28a745;
-}
-
-.btn.quiqqer-coupons-couponcodeinput-btn:hover,
-.btn.quiqqer-coupons-couponcodeinput-btn:active {
-    background: #28a745;
-    color: #fff;
-}
-
 @media screen and (max-width: 767px) {
-    .quiqqer-coupons-couponcodeinput {
-        flex-wrap: wrap;
-    }
-
-    .quiqqer-coupons-couponcodeinput label {
-        margin: 0 0 1rem 0;
-        width: 100%;
-    }
-
-    .quiqqer-coupons-couponcodeinput input,
-    .btn.quiqqer-coupons-couponcodeinput-btn {
-        width: 100%;
-    }
-
     .quiqqer-order-basket-articles-article td:before {
         font-weight: bold;
     }
@@ -371,43 +343,6 @@ input.quiqqer-coupons-couponcodeinput-input:active {
     .quiqqer-order-ordering-buttons-next,
     .quiqqer-order-ordering-buttons a {
         width: 100%;
-    }
-
-    .quiqqer-order-basket-end {
-        height: inherit;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .quiqqer-order-basket-end > * {
-        display: inline-block;
-        float: none !important;
-        margin: 0 !important;
-        width: 100%;
-    }
-
-    .quiqqer-order-basket-end > * + * {
-        margin-top: 20px !important;
-    }
-
-    .quiqqer-payment-paypal-express {
-        padding: 1rem 0;
-    }
-
-    .quiqqer-order-basket-end .quiqqer-coupons-couponcodeinput {
-        flex-direction: column;
-        padding: 0;
-        text-align: left;
-    }
-
-    .quiqqer-order-basket-end .quiqqer-coupons-couponcodeinput input {
-        margin-bottom: 1rem;
-        width: 100%;
-    }
-
-    .quiqqer-coupons-couponcodeinput label span {
-        display: block;
-        padding: 5px 10px;
     }
 }
 
