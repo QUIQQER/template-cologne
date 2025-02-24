@@ -20,7 +20,7 @@
         "quiqqer/core": "^2",
         "quiqqer/erp": "^3",
         "quiqqer/products": "^2",
-        "quiqqer/order": "^2.7.7",
+        "quiqqer/order": "^2.7.23",
         "quiqqer/product-bricks": "^2",
         "quiqqer/frontend-users": "^2",
         "quiqqer/menu": "^3",
