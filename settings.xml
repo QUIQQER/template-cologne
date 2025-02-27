@@ -40,9 +40,9 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
-                    <conf name="basketOpen">
-                        <type><![CDATA[integer]]></type>
-                        <defaultvalue>2</defaultvalue>
+                    <conf name="basketAction">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>openSmallBasket</defaultvalue>
                     </conf>
                     <conf name="hideEmptyFields">
                         <type><![CDATA[bool]]></type>
@@ -454,27 +454,35 @@
                                 </description>
                             </input>
 
-                            <!-- basket open (nothing order window, order page)-->
-                            <select conf="templateCologne.settings.basketOpen">
+
+
+
+                            <!-- basket action (openSmallBasket, openOrderProcessUrl, openOrderProcess (qui popup))-->
+                            <select conf="templateCologne.settings.basketAction">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.shop.basketOpen"
+                                            var="settings.shop.basketAction"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketAction.desc"
+                                    />
+                                </description>
 
-                                <option value="0">
+                                <option value="openSmallBasket">
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.shop.basketOpen.nothing"
+                                            var="settings.shop.basketAction.openSmallBasket"
                                     />
                                 </option>
-                                <option value="1">
+                                <option value="openOrderProcessUrl">
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.shop.basketOpen.window"
+                                            var="settings.shop.basketAction.openOrderProcessUrl"
                                     />
                                 </option>
-                                <option value="2">
+                                <option value="openOrderProcess">
                                     <locale group="quiqqer/template-cologne"
-                                            var="settings.shop.basketOpen.page"
+                                                var="settings.shop.basketAction.openOrderProcess"
                                     />
                                 </option>
                             </select>

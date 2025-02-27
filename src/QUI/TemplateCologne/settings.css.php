@@ -1,4 +1,12 @@
 <?php
+/**
+ * cologne template file
+ *
+ * @var QUI\Projects\Project $Project
+ * @var QUI\Projects\Site $Site
+ * @var QUI\Interfaces\Template\EngineInterface $Engine
+ * @var QUI\Template $Template
+ **/
 
 $largeSpacing = $Site->getAttribute('templateCologne.largeSpacing');
 $headerImagePosition = $Project->getConfig('templateCologne.settings.headerImagePosition');
@@ -7,7 +15,6 @@ $headerHeight = $Project->getConfig('templateCologne.settings.headerHeight');
 ob_start();
 
 ?>
-
 <?php if ($largeSpacing) { ?>
 /* more spacing */
 .page-content-header,

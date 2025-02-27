@@ -11,8 +11,8 @@ use QUI\Database\Exception;
 use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
-use QUI\Projects\Site;
 use QUI\TemplateCologne\Controls\Payments;
+use ReflectionClass;
 
 use function class_exists;
 use function count;
@@ -32,7 +32,7 @@ class Utils
      * @throws QUI\Exception
      *
      */
-    public static function getAvatar(mixed $User): QUI\Projects\Media\Image|bool
+    public static function getAvatar(mixed $User): QUI\Projects\Media\Image | bool
     {
         if (!$User instanceof QUI\Interfaces\Users\User) {
             throw new QUI\Exception([
@@ -73,15 +73,10 @@ class Utils
      * @return array|bool|object|string
      * @throws QUI\Exception
      */
-    public static function getConfig(array $params): object|array|bool|string
+    public static function getConfig(array $params): object | array | bool | string
     {
-        /** @var $Site Site */
         $Site = $params['Site'];
-
-        /* @var $Project Project */
         $Project = $params['Project'];
-
-        /* @var $Project QUI\Template */
         $Template = $params['Template'];
 
         $cacheName = md5($Site->getId() . $Project->getName() . $Project->getLang());
@@ -237,13 +232,10 @@ class Utils
         }
 
         // basket open
-        $basketOpen = 2;
+        $basketAction = $Project->getConfig('templateCologne.settings.basketAction');
 
-        switch ($Project->getConfig('templateCologne.settings.basketOpen')) {
-            case '0':
-            case '1':
-            case '2':
-                $basketOpen = $Project->getConfig('templateCologne.settings.basketOpen');
+        if (!in_array($basketAction, ['openSmallBasket', 'openOrderProcessUrl', 'openOrderProcess'])) {
+            $basketAction = 'openSmallBasket';
         }
 
         $settingsCSS = include 'settings.css.php';
@@ -355,7 +347,7 @@ class Utils
         $config['siteType'] = $siteType;
         $config['pageCustomClass'] = $pageCustomClass;
         $config['basketStyle'] = $basketStyle;
-        $config['basketOpen'] = $basketOpen;
+        $config['basketAction'] = $basketAction;
         $config['showCategoryMenu'] = $showCategoryMenu;
         $config['homeLink'] = $homeLink;
         $config['homeLinkText'] = $homeLinkText;
@@ -602,7 +594,7 @@ class Utils
      *
      * @return false|QUI\ERP\Products\Field\View
      */
-    public static function getShippingTimeFrontendView(int $productId)
+    public static function getShippingTimeFrontendView(int $productId): bool | QUI\ERP\Products\Field\View
     {
         try {
             $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
@@ -612,11 +604,21 @@ class Utils
             return false;
         }
 
-        if (QUI::getPackageManager()->isInstalled('quiqqer/stock-management')) {
+        if (class_exists('QUI\ERP\StockManagement\StockManager')) {
             return StockManager::getShippingTimeFrontendViewByProduct($Product);
         }
 
         if (!QUI::getPackageManager()->isInstalled('quiqqer/shipping')) {
+            return false;
+        }
+
+        if (!class_exists('QUI\ERP\Shipping\Shipping')) {
+            return false;
+        }
+
+        $reflection = new ReflectionClass(Shipping::class);
+
+        if (!$reflection->hasConstant('PRODUCT_FIELD_SHIPPING_TIME')) {
             return false;
         }
 
@@ -659,6 +661,10 @@ class Utils
             return false;
         }
 
+        if (!class_exists('QUI\ERP\StockManagement\StockManager')) {
+            return false;
+        }
+
         try {
             $Product = QUI\ERP\Products\Handler\Products::getProduct($productId);
             $StockField = $Product->getField(StockManager::PRODUCT_FIELD_STOCK);
@@ -668,7 +674,6 @@ class Utils
             return false;
         }
 
-        /** @var QUI\ERP\StockManagement\Products\Fields\StockView $StockView */
         $StockView = $StockField->getFrontendView();
 
         if (method_exists($StockView, 'setProduct')) {
@@ -712,7 +717,7 @@ class Utils
      * @param string $settingName
      * @return bool|array|int|string
      */
-    public static function getSetting(string $settingName): bool|array|int|string
+    public static function getSetting(string $settingName): bool | array | int | string
     {
         if (empty($settingName)) {
             return false;

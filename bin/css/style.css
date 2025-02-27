@@ -747,7 +747,7 @@ a.toTop:before {
     border-bottom: 1px solid #ddd;
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0);
     display: flex;
-    height: 100px;
+    height: var(--_qui-cologne-header-height, 100px);
     justify-content: space-between;
     left: 0;
     position: relative;
@@ -758,8 +758,9 @@ a.toTop:before {
 }
 
 .cologne-header-fixed {
+    --_qui-cologne-header-height: 60px;
+
     box-shadow: 0 0 20px 0 rgba(57, 57, 57, 0.2);
-    height: 60px;
     position: fixed;
     z-index: 100; /* Because of the search dropdown */
 }
@@ -927,6 +928,7 @@ a.toTop:before {
 
 .cologne-main {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
@@ -1522,6 +1524,12 @@ a.toTop:before {
 
 .cologne-login-dialog .qui-window-popup-content {
     padding: 20px 40px;
+    display: grid;
+    grid-template-areas:
+        'logo'
+        'body'
+        'reset';
+    grid-template-rows: auto 1fr;
 }
 
 .quiqqer-frontendUsers-loginWindow .quiqqer-frontendUsers-login {
@@ -1614,11 +1622,12 @@ a.toTop:before {
 
 /* sing up / registration in link */
 .login-popup-create-account-wrapper {
-    bottom: 10px;
-    left: 0;
-    position: absolute;
     text-align: center;
     width: 100%;
+    grid-area: reset;
+    margin-top: 1rem;
+    z-index: 1;
+    position: relative;
 }
 
 /*************************/

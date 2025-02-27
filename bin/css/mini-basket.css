@@ -11,6 +11,7 @@
     max-height: calc(100vh - 130px); /* header height + top bar height */
     padding: 0 !important;
     width: 350px;
+    top: calc(var(--_qui-cologne-header-height, 100px) - 1px) !important; /* -1 because of border width */
 }
 
 .quiqqer-order-basket-small-container > .qui-control {

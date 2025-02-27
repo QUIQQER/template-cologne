@@ -7,6 +7,7 @@
 namespace QUI\TemplateCologne;
 
 use QUI;
+use Smarty;
 use QUI\ERP\Products\Product\ViewFrontend;
 use QUI\Smarty\Collector;
 
@@ -70,5 +71,18 @@ class EventHandler
                 </button>
             </div>'
         );
+    }
+
+    /**
+     * Event: on smarty init
+     *
+     * @param Smarty $Smarty
+     * @return void
+     */
+    public static function onSmartyInit(Smarty $Smarty): void
+    {
+        $Smarty->registerClass('QUI\TemplateCologne\Utils', '\QUI\TemplateCologne\Utils');
+        $Smarty->registerClass('QUI\Bricks\Manager', '\QUI\Bricks\Manager');
+        $Smarty->registerClass('QUI\ERP\Products\Utils\Products', '\QUI\ERP\Products\Utils\Products');
     }
 }

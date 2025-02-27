@@ -1,76 +1,87 @@
 {if !$Category}
-<p>
-    {locale group="quiqqer/frontend-users" var="profile.no_categories_available"}
-</p>
+    <div class="quiqqer-frontendUsers-controls-profile__noCategoriesInfo">
+        <p>
+            {locale group="quiqqer/frontend-users" var="profile.no_categories_available"}
+        </p>
+    </div>
 {else}
+    <div class="quiqqer-frontendUsers-controls-profile__sidebar">
+        {if $this->getAttribute('menu')}
+            <div class="quiqqer-frontendUsers-controls-profile-categories">
 
-{if $this->getAttribute('menu')}
-<div class="quiqqer-frontendUsers-controls-profile-categories">
+                <div class="quiqqer-fupc-userinfo">
+                    {control control="QUI\TemplateCologne\Controls\SimpleUserInfo" assign=SimpleUserInfo}
+                    {$SimpleUserInfo->create()}
+                </div>
 
-    <div class="quiqqer-fupc-userinfo">
-        {control control="QUI\TemplateCologne\Controls\SimpleUserInfo" assign=SimpleUserInfo}
-        {$SimpleUserInfo->create()}
-    </div>
-
-    {foreach $categories as $category}
-    <div class="quiqqer-fupc-category quiqqer-fupc-category--open"
-         data-category="{$category.name}"
-    >
-        <div class="quiqqer-fupc-category-header">
-            {$category.title}
-        </div>
-        <div class="quiqqer-fu-profile-categories-category-items">
-            {foreach $category.items as $setting}
-
-            {assign var=active value=""}
-            {if $currentCategory == $category.name && $currentSetting == $setting.name}
-            {assign var=active value=" quiqqer-fupc-category-items-item--active"}
-            {/if}
-            <a href="{$Site->getUrlRewritten()}/{$category.name}/{$setting.name}"
-               class="quiqqer-fupc-category-items-item{$active}"
-               data-setting="{$setting.name}"
-            >
-                {if $setting.icon}
-                <span class="quiqqer-fupc-category-items-item-icon {$setting.icon}"></span>
-                {/if}
-                <span>{$setting.title}</span>
-            </a>
-            {/foreach}
-        </div>
-    </div>
-    {/foreach}
-</div>
-{/if}
-
-<form action="" method="post">
-    <label class="quiqqer-frontendUsers-controls-profile-categories-mobile">
-        <select name="profile-categories">
-            {foreach $categories as $category}
-            <optgroup label="{$category.title}">
-                {foreach $category.items as $setting}
-                {assign var=active value=""}
-                {if $currentCategory== $category.name}
-                {assign var=active value=" selected"}
-                {/if}
-                <option value="{$category.name}:{$setting.name}"{$active}>
-                    {$setting.title}
-                </option>
+                {foreach $categories as $category}
+                <div class="quiqqer-fupc-category"
+                     data-category="{$category.name}"
+                     data-name="nav-category"
+                     data-open="1"
+                >
+                    <div class="quiqqer-fupc-category-header" data-name="header">
+                        <span class="quiqqer-fupc-category-header__text">{$category.title}</span>
+                        <span class="fa-solid fa-angle-right quiqqer-fupc-category-header__icon" data-name="opener"></span>
+                    </div>
+                    <div class="quiqqer-fu-profile-categories-category-items">
+                        {foreach $category.items as $setting}
+                            {assign var=active value=false}
+                            {if $currentCategory == $category.name && $currentSetting == $setting.name}
+                                {assign var=active value=true}
+                            {/if}
+                            <a href="{$Site->getUrlRewritten()}/{$category.name}/{$setting.name}"
+                                class="quiqqer-fupc-category-items-item"
+                                {if $active}data-active{/if}
+                                data-name="nav-category-item"
+                                data-setting="{$setting.name}"
+                            >
+                                {if $setting.icon}
+                                <span class="fa-fw quiqqer-fupc-category-items-item-icon {$setting.icon}"></span>
+                                {/if}
+                                <span>{$setting.title}</span>
+                            </a>
+                        {/foreach}
+                    </div>
+                </div>
                 {/foreach}
-            </optgroup>
-            {/foreach}
-        </select>
-    </label>
-</form>
+            </div>
+        {/if}
 
-<form class="quiqqer-frontendUsers-controls-profile-categoryContent"
-      method="post"
-      action=""
-      data-category="{$currentCategory}"
-      data-setting="{$currentSetting}"
->
-    <div class="quiqqer-frontendUsers-controls-profile-categoryContentAnimation">
-        {$Category->create()}
-        <input type="hidden" name="profile-save" value="1">
+        {* mobile categories *}
+        <form action="" method="post" class="quiqqer-frontendUsers-controls-profile-categories-mobile">
+            <label class="quiqqer-frontendUsers-controls-profile-categories-mobile-label">
+                <select name="profile-categories-mobile">
+                    {foreach $categories as $category}
+                        <optgroup label="{$category.title}">
+                            {foreach $category.items as $setting}
+                                {assign var=active value=""}
+                                {if $currentCategory == $category.name && $currentSetting == $setting.name}
+                                    {assign var=active value="selected"}
+                                {/if}
+                                <option value="{$category.name}:{$setting.name}" {$active}>
+                                    {$setting.title}
+                                </option>
+                            {/foreach}
+                        </optgroup>
+                    {/foreach}
+                </select>
+            </label>
+        </form>
     </div>
-</form>
+
+    <div class="quiqqer-frontendUsers-controls-profile__content">
+        <form class="quiqqer-frontendUsers-controls-profile-categoryContent"
+              data-name="form"
+              method="post"
+              action=""
+              data-category="{$currentCategory}"
+              data-setting="{$currentSetting}"
+        >
+            <div class="quiqqer-frontendUsers-controls-profile-categoryContentAnimation" data-name="content-animated">
+                {$Category->create()}
+                <input type="hidden" name="profile-save" value="1">
+            </div>
+        </form>
+    </div>
 {/if}

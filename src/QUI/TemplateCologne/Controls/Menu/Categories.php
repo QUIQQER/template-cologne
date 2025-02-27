@@ -72,10 +72,14 @@ class Categories extends QUI\Control
         }
 
         $cache = EventHandler::menuCacheName() . '/megaMenu/';
+        $cachePah = '';
+
+        if (method_exists($this->getSite(), 'getCachePath')) {
+            $cachePah = $this->getSite()->getCachePath();
+        }
 
         $cache .= md5(
-            $this->getSite()->getCachePath() .
-            serialize($this->getAttributes())
+            $cachePah . serialize($this->getAttributes())
         );
 
         try {

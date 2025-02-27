@@ -343,7 +343,7 @@ window.addEvent('domready', function () {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function (Basket) {
                 new Basket({
-                    open  : BASKET_OPEN.toInt(),
+                    action  : BASKET_ACTION,
                     events: {
                         onCreate: function (Basket) {
                             var BasketNode     = Basket.getElm(),
@@ -364,7 +364,7 @@ window.addEvent('domready', function () {
 
                             new Element('span', {
                                 'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
-                                html   : '0'
+                                html   : '<span class="fa fa-spinner fa-spin"></span>'
                             }).inject(BasketNode);
 
                             if (BASKET_STYLE && BASKET_STYLE === 'full') {
