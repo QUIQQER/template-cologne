@@ -17,8 +17,16 @@
     --bg-primary: #ddd;
     --bg-secondary: #f5f5f5;
 
+    --_qui-cologne-header-height: 100px;
+    --_qui-template-scrollMarginTop: var(--qui-template-scrollMarginTop, var(--_qui-cologne-header-height));
+
+    --_qui-cologne-theme-border-color: var(--qui-cologne-theme-border-color, #ddd);
+    --_qui-cologne-theme-border-width: var(--qui-cologne-theme-border-width, 1px);
 
     /* ecoyn / ecommerce */
     --_qui-order-basket-articles-image-width: var(--qui-order-basket-articles-image-width, 100px);
     --_qui-order-basket-articles-image-height: var(--qui-order-basket-articles-image-height, 100px);
+
+    --_qui-order-articles-image-width: var(--qui-order-articles-image-width, 100px);
+    --_qui-order-articles-image-height: var(--qui-order-articles-image-height, 100px);
 }

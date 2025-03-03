@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * cologne template file
+ *
+ * @var QUI\Projects\Project $Project
+ * @var QUI\Projects\Site $Site
+ * @var QUI\Interfaces\Template\EngineInterface $Engine
+ * @var QUI\Template $Template
+ **/
+
+/**
  * Emotion
  */
 
@@ -13,7 +22,7 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'layout');
 $templateSettings = QUI\TemplateCologne\Utils::getConfig([
     'Project' => $Project,
     'Template' => $Template,
-    'Site'    => $Site
+    'Site' => $Site
 ]);
 
 /**
@@ -37,7 +46,7 @@ $enableIndependentMenu = $Project->getConfig('templateCologne.settings.enableInd
 $independentMenuId = $Project->getConfig('templateCologne.settings.menuId');
 
 if ($enableIndependentMenu && $independentMenuId) {
-    $menuParams['menuId'] = $enableIndependentMenu;
+    $menuParams['menuId'] = $independentMenuId;
     $menuParams['showFirstLevelIcons'] = $Project->getConfig('templateCologne.settings.showFirstLevelIcons');
     $menuParams['showStart'] = false;
 }
@@ -93,7 +102,7 @@ $templateSettings['createBasketButton'] = $createBasketButton;
 /* user avatar */
 $Avatar = new QUI\FrontendUsers\Controls\UserIcon([
     'showLogout' => false, // template cologne use own logout popup (see bin/javascript/init.js)
-    'User'       => QUI::getUserBySession()
+    'User' => QUI::getUserBySession()
 ]);
 
 /* product page - for layouts */
@@ -134,7 +143,7 @@ $registerSiteTypes = [
 $registerSite = $Project->getSites([
     'where' => [
         'type' => [
-            'type'  => 'IN',
+            'type' => 'IN',
             'value' => $registerSiteTypes
         ]
     ],

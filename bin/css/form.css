@@ -21,7 +21,6 @@ select {
     background-image: url("../images/arrow-select.svg");
     background-position: calc(100% - 10px) center;
     background-repeat: no-repeat;
-    background-size: 20px auto;
     background-size: 8px;
     height: 40px;
     padding-bottom: 0;
@@ -56,6 +55,28 @@ select:focus,
 textarea:hover,
 textarea:focus {
     border-color: #a9a8a5;
+}
+
+/* disabled */
+:is(
+    input:where(:not([type])),
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select
+):where([disabled]) {
+    opacity: 0.6;
 }
 
 /* iOs input search fix */

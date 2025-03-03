@@ -231,11 +231,23 @@
 
 {elseif $this->isGuest() && $this->isLoading()}
 <div class="quiqqer-order-basket-isLoading">
-    <span class="fa fa-spinner fa-spin"></span>
+    <div class="quiqqer-order-basket-isLoading__inner">
+        <span class="fa fa-circle-notch fa-spin"></span>
+    </div>
 </div>
 {else}
 <div class="quiqqer-order-basket-isEmpty">
-    {locale group="quiqqer/order" var="message.basket.is.empty"}
+    <div class="quiqqer-order-basket-isEmpty__iconContainer">
+        <div class="decorative-element">
+            <div class="decorative-element__line decorative-element__line--1 animation"></div>
+            <div class="decorative-element__line decorative-element__line--2 animation"></div>
+            <div class="decorative-element__line decorative-element__line--3 animation"></div>
+        </div>
+        <i class="fa-solid fa-cart-shopping quiqqer-order-basket-isEmpty__icon animation"></i>
+    </div>
+    <div class="quiqqer-order-basket-isEmpty__text animation">
+        {locale group="quiqqer/order" var="message.basket.is.empty"}
+    </div>
 </div>
 {/if}
 

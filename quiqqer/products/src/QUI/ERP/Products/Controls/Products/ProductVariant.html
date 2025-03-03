@@ -52,12 +52,12 @@
             {/foreach}
 
             {assign var=ShippingTimeFrontendView
-            value=\QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
+            value=QUI\TemplateCologne\Utils::getShippingTimeFrontendView($Product->getId())}
             {if $ShippingTimeFrontendView}
                 {$ShippingTimeFrontendView->create()}
             {/if}
 
-            {assign var=StockFrontendView value=\QUI\TemplateCologne\Utils::getStockFrontendView($Product->getId())}
+            {assign var=StockFrontendView value=QUI\TemplateCologne\Utils::getStockFrontendView($Product->getId())}
             {if $StockFrontendView}
                 {$StockFrontendView->create()}
             {/if}
