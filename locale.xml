@@ -904,8 +904,8 @@
             <en><![CDATA[&copy; [year] - Template Cologne built with <a href="https://www.ecoyn.com">ecoyn</a>]]></en>
         </locale>
         <locale name="template.button.toTop">
-            <de><![CDATA[Nach oben]]></de>
-            <en><![CDATA[To top]]></en>
+            <de><![CDATA[Zum Seitenanfang]]></de>
+            <en><![CDATA[Go to top of page]]></en>
         </locale>
         <locale name="template.button.search">
             <de><![CDATA[Produkte durchsuchen]]></de>
