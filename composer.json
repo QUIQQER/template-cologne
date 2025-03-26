@@ -28,7 +28,7 @@
         "quiqqer/unsemantic": "^2",
         "quiqqer-asset/fastclick": "^1",
         "quiqqer/tooltips": "^2",
-        "quiqqer/currency": "^2",
+        "quiqqer/currency": "^2.2",
         "quiqqer/smarty4": "^2.0.7"
     },
     "autoload": {

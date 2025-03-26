@@ -61,12 +61,6 @@ $Menu = new QUI\Menu\MegaMenu($menuParams);
 /**
  * Basket button
  */
-$Currency = QUI\ERP\Currency\Handler::getUserCurrency();
-
-if (!$Currency) {
-    $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
-}
-
 $createBasketButton = true;
 $simpleSiteTypes = [
     'quiqqer/order:types/orderingProcess',
@@ -79,7 +73,7 @@ if (in_array($Site->getAttribute('type'), $simpleSiteTypes)) {
     $Template->setAttribute('content-header', false);
 }
 
-$InitialBasketPrice = new QUI\ERP\Money\Price(0, $Currency);
+$InitialBasketPrice = new QUI\ERP\Money\Price(0, QUI\ERP\Currency\Handler::getRuntimeCurrency());
 
 $Logo = $Project->getMedia()->getLogoImage();
 $logoHeight = $templateSettings['logoHeight'];

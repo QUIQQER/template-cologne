@@ -30,13 +30,6 @@ class CurrencySwitch extends QUI\Control
         parent::__construct($attributes);
     }
 
-    /**
-     * (non-PHPdoc)
-     *
-     * @throws QUI\Exception
-     * @see \QUI\Control::create()
-     *
-     */
     public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
@@ -61,15 +54,9 @@ class CurrencySwitch extends QUI\Control
             }
         }
 
-        $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
-
-        if (QUI\ERP\Currency\Handler::getUserCurrency()) {
-            $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
-        }
-
         $Engine->assign([
             'this' => $this,
-            'DefaultCurrency' => $Currency,
+            'DefaultCurrency' => QUI\ERP\Currency\Handler::getRuntimeCurrency()
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/CurrencySwitch.html');
