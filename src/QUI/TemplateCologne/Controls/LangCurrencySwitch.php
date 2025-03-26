@@ -8,6 +8,8 @@ namespace QUI\TemplateCologne\Controls;
 
 use QUI;
 
+use function count;
+
 /**
  * Class LangCurrencySwitch
  */
@@ -32,13 +34,6 @@ class LangCurrencySwitch extends QUI\Control
         parent::__construct($attributes);
     }
 
-    /**
-     * (non-PHPdoc)
-     *
-     * @throws QUI\Exception
-     * @see \QUI\Control::create()
-     *
-     */
     public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
@@ -67,19 +62,13 @@ class LangCurrencySwitch extends QUI\Control
         }
 
         $langSwitch = false;
-        if (\count($Project->getLanguages()) > 1) {
+        if (count($Project->getLanguages()) > 1) {
             $langSwitch = true;
         }
 
         if ($currencySwitch || $langSwitch) {
             $this->setJavaScriptControlOption('flag-folder', $flagFolder);
             $enableChange = true;
-        }
-
-        $Currency = QUI\ERP\Currency\Handler::getDefaultCurrency();
-
-        if (QUI\ERP\Currency\Handler::getUserCurrency()) {
-            $Currency = QUI\ERP\Currency\Handler::getUserCurrency();
         }
 
         if ($Locale->exists('quiqqer/core', 'language.' . $Project->getLang())) {
@@ -92,7 +81,7 @@ class LangCurrencySwitch extends QUI\Control
             'this' => $this,
             'projectLang' => $Project->getLang(),
             'currencySwitch' => $currencySwitch,
-            'DefaultCurrency' => $Currency,
+            'DefaultCurrency' => QUI\ERP\Currency\Handler::getRuntimeCurrency(),
             'flagFolderPath' => $flagFolder,
             'imgAltText' => $imgAltText,
             'enableChange' => $enableChange
