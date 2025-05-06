@@ -23,14 +23,15 @@
         <div class="product-data-price">
             {if $Site->getProject()->getConfig('templateCologne.settings.showRetailPrice')}
             {if $Product->hasOfferPrice()}
-            {*<!-- Offer price (Angebotspreis) -->*}
+            <!-- Offer price (Angebotspreis) -->
             <div class="product-data-price-retail text-muted">
                 {$PriceOldDisplay->create()}
             </div>
-            {elseif $PriceRetailDisplay && $Price->getPrice()
-            <
-            $PriceRetail->getPrice()}
-            {*<!-- Retail price (UVP) -->*}
+            {elseif $PriceRetailDisplay
+                && $Price
+                && $PriceRetail
+                && $Price->getPrice() < $PriceRetail->getPrice()}
+            <!-- Retail price (UVP) -->
             <div class="product-data-price-retail text-muted">
                 {$PriceRetailDisplay->create()}
             </div>

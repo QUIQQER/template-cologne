@@ -27,9 +27,10 @@
             <div class="product-data-price-retail text-muted">
                 {$PriceOldDisplay->create()}
             </div>
-            {elseif $PriceRetailDisplay && $Price->getPrice()
-            <
-            $PriceRetail->getPrice()}
+            {elseif $PriceRetailDisplay
+                && $Price
+                && $PriceRetail
+                && $Price->getPrice() < $PriceRetail->getPrice()}
             {*<!-- Retail price (UVP) -->*}
             <div class="product-data-price-retail text-muted">
                 {$PriceRetailDisplay->create()}
