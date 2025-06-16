@@ -299,7 +299,7 @@ class Utils
         $pageCustomClass = $Site->getAttribute('templateCologne.pageCustomClass');
 
         if ($pageCustomClass && $pageCustomClass !== '') {
-            $pageCustomClass .= 'templateCologne__' . $pageCustomClass;
+            $pageCustomClass .= ' templateCologne__' . $pageCustomClass;
         }
 
         /**
