@@ -773,6 +773,12 @@ a.toTop:before {
     z-index: 2;
 }
 
+@media screen and (min-width: 768px) {
+    .cologne-header-logo {
+        flex-shrink: 0;
+    }
+}
+
 .cologne-header-logo-link {
     align-items: center;
     display: flex;
@@ -780,18 +786,10 @@ a.toTop:before {
     padding: 10px 0;
 }
 
-.cologne-header-logo-link picture {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    width: auto;
-}
-
-.cologne-header-logo-link img {
+.cologne-header-logo__img {
     max-height: 100%;
-    max-width: initial;
-    min-width: 100%;
-    width: auto;
+    max-width: 100%;
+    display: block;
 }
 
 .cologne-breadcrumb,
