@@ -84,5 +84,7 @@ class EventHandler
         $Smarty->registerClass('QUI\TemplateCologne\Utils', '\QUI\TemplateCologne\Utils');
         $Smarty->registerClass('QUI\Bricks\Manager', '\QUI\Bricks\Manager');
         $Smarty->registerClass('QUI\ERP\Products\Utils\Products', '\QUI\ERP\Products\Utils\Products');
+        $Smarty->registerPlugin('modifier', 'sizeof', 'sizeof');
+
     }
 }
