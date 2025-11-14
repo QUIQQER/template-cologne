@@ -786,10 +786,18 @@ a.toTop:before {
     padding: 10px 0;
 }
 
+.cologne-header-logo-link picture {
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
 .cologne-header-logo__img {
     max-height: 100%;
     max-width: 100%;
     display: block;
+    width: auto;
+    height: var(--qui-nav-height);
 }
 
 .cologne-breadcrumb,
@@ -1021,6 +1029,10 @@ a.toTop:before {
 
 /** Mega Menu
  ===================================== */
+.quiqqer-menu-megaMenu {
+    --qui-megaMenu-link-borderRadius: 0;
+}
+
 .quiqqer-menu-megaMenu nav {
     align-items: center;
     display: flex;
