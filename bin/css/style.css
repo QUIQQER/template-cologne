@@ -1029,6 +1029,10 @@ a.toTop:before {
 
 /** Mega Menu
  ===================================== */
+.quiqqer-menu-megaMenu {
+    --qui-megaMenu-link-borderRadius: 0;
+}
+
 .quiqqer-menu-megaMenu nav {
     align-items: center;
     display: flex;
