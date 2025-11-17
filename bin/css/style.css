@@ -1,3 +1,5 @@
+@import "loaders.css";
+
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -773,6 +775,12 @@ a.toTop:before {
     z-index: 2;
 }
 
+@media screen and (min-width: 768px) {
+    .cologne-header-logo {
+        flex-shrink: 0;
+    }
+}
+
 .cologne-header-logo-link {
     align-items: center;
     display: flex;
@@ -781,17 +789,17 @@ a.toTop:before {
 }
 
 .cologne-header-logo-link picture {
+    height: 100%;
     align-items: center;
     display: flex;
-    height: 100%;
-    width: auto;
 }
 
-.cologne-header-logo-link img {
+.cologne-header-logo__img {
     max-height: 100%;
-    max-width: initial;
-    min-width: 100%;
+    max-width: 100%;
+    display: block;
     width: auto;
+    height: var(--qui-nav-height);
 }
 
 .cologne-breadcrumb,
@@ -1023,6 +1031,10 @@ a.toTop:before {
 
 /** Mega Menu
  ===================================== */
+.quiqqer-menu-megaMenu {
+    --qui-megaMenu-link-borderRadius: 0;
+}
+
 .quiqqer-menu-megaMenu nav {
     align-items: center;
     display: flex;

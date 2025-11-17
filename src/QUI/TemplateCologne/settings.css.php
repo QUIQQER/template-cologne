@@ -11,10 +11,17 @@
 $largeSpacing = $Site->getAttribute('templateCologne.largeSpacing');
 $headerImagePosition = $Project->getConfig('templateCologne.settings.headerImagePosition');
 $headerHeight = $Project->getConfig('templateCologne.settings.headerHeight');
+$logoHeight = $Project->getConfig('templateCologne.settings.logoHeight');
 
 ob_start();
 
 ?>
+:root {
+<?php if ($logoHeight) { ?>
+    --qui-nav-height: <?php echo $logoHeight; ?>px;
+<?php }; ?>
+}
+
 <?php if ($largeSpacing) { ?>
 /* more spacing */
 .page-content-header,
