@@ -1,0 +1,33 @@
+/**
+ * This file contains loaders utility classes
+ */
+
+/**
+ * Skeleton loader
+ */
+.skeleton-loader {
+    --bg: var(--qui-colors-gray-50, #f5f5f5);
+    --shine-color: var(--qui-colors-gray-25, #fcfcfc);
+    --anim-delay: 1s;
+    --anim-duration: 1.5s;
+
+    background-color: var(--bg);
+    background-image: linear-gradient(110deg, transparent 18%, var(--shine-color) 30%, transparent 43%);
+    background-repeat: repeat;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: var(--anim-duration) qui-animation__skeleton-loader-shine linear infinite;
+    animation-delay: var(--anim-delay);
+    border-radius: inherit;
+}
+
+.skeleton-loading-effect--darker {
+    --bg-normal: var(--qui-colors-gray-100, #eee);
+    --bg-shine: var(--qui-colors-gray-50, #f5f5f5);
+}
+
+@keyframes qui-animation__skeleton-loader-shine {
+    to {
+        background-position-x: -100%;
+    }
+}
