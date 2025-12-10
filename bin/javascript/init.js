@@ -63,18 +63,6 @@ window.addEvent('domready', function () {
 
         var Header = document.getElement('.cologne-header');
 
-        require.config({
-            paths: {
-                Hammer   : URL_OPT_DIR + 'bin/quiqqer-asset/hammerjs/hammerjs/hammer.min',
-                //FastClick: URL_OPT_DIR + 'bin/quiqqer-asset/fastclick/fastclick/lib/fastclick'
-            }
-        });
-
-        /*
-        require(['FastClick'], function (FastClick) {
-            FastClick.attach(document.body);
-        });
-        */
 
         /**
          * Sticky menu
