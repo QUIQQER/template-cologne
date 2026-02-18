@@ -768,7 +768,6 @@ a.toTop:before {
 .cologne-header-logo {
     align-items: center;
     display: flex;
-    flex-basis: 300px;
     flex-grow: 1;
     height: 100%;
     position: relative;
@@ -1171,7 +1170,6 @@ a.toTop:before {
 .cologne-header-control {
     align-items: center;
     display: flex;
-    flex-basis: 300px;
     flex-grow: 1;
     height: 100%;
     justify-content: flex-end;
@@ -1191,6 +1189,7 @@ a.toTop:before {
 .tpl-btn.quiqqer-order-basketButton {
     align-items: center;
     display: flex;
+    gap: 0.75em;
 }
 
 /* end fix */
@@ -1215,18 +1214,14 @@ a.toTop:before {
 
 .basket-style-full .quiqqer-order-basketButton-icon-custom,
 .basket-style-full .quiqqer-order-basketButton-batch-custom {
-    margin-right: 10px;
+    min-width: 1em;
+    text-align: center;
 }
 
 .basket-style-full .quiqqer-order-basketButton-sum {
     border-left: 1px solid #ddd;
-    min-width: 80px;
-    padding-left: 10px;
+    min-width: 5em;
     text-align: right;
-}
-
-.basket-style-full .quiqqer-order-basketButton-quantity {
-    margin-right: 20px;
 }
 
 /* style: compact */
@@ -1250,7 +1245,6 @@ a.toTop:before {
 
 @media screen and (max-width: 767px) {
     .cologne-header-control {
-        flex-basis: auto;
         flex-grow: 0;
         margin-left: auto;
     }
@@ -1262,14 +1256,6 @@ a.toTop:before {
     .quiqqer-menu-megaMenu .hide-on-desktop {
         display: flex;
         height: 100%;
-    }
-
-    .tpl-btn.quiqqer-order-basketButton {
-        padding: 10px;
-    }
-
-    .tpl-btn.quiqqer-order-basketButton .quiqqer-order-basketButton-quantity {
-        margin-right: 0;
     }
 
     .basket-style-full .quiqqer-order-basketButton-sum {
@@ -1313,6 +1299,7 @@ a.toTop:before {
 .page-menu .page-navigation a {
     align-items: center;
     display: flex;
+    gap: 1ch;
 }
 
 .page-menu .page-navigation-home {

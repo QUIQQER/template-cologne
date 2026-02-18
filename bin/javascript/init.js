@@ -1,13 +1,13 @@
-var lg                  = 'quiqqer/template-cologne',
-    USER_BUTTON_CLICKED = false;
+window.addEvent('domready', function() {
+    'use strict';
 
-window.addEvent('domready', function () {
-    "use strict";
+    const lg = 'quiqqer/template-cologne';
+    let userButtonClicked = false;
 
     require([
         'qui/QUI',
         'qui/utils/System'
-    ], function (QUI, QUISystemUtils) {
+    ], function(QUI, QUISystemUtils) {
 
         // change default loader
         QUI.setAttribute('control-loader-type', 'fa-circle-o-notch');
@@ -28,8 +28,8 @@ window.addEvent('domready', function () {
          * toTop button
          */
         if (document.getElements('[href=#top]')) {
-            var toTop         = document.getElements('[href=#top]'),
-                buttonVisible = false;
+            const toTop = document.getElements('[href=#top]');
+            let buttonVisible = false;
 
             // show on load after 1s delay
             if (QUI.getScroll().y > 300) {
@@ -38,7 +38,7 @@ window.addEvent('domready', function () {
             }
 
             // show button toTop after scrolling down
-            QUI.addEvent('scroll', function () {
+            QUI.addEvent('scroll', function() {
                 if (QUI.getScroll().y > 300) {
                     if (!buttonVisible) {
                         toTop.addClass('toTop__show');
@@ -55,21 +55,21 @@ window.addEvent('domready', function () {
             });
 
             // scroll to top
-            toTop.addEvent('click', function (event) {
+            toTop.addEvent('click', function(event) {
                 event.stop();
                 new Fx.Scroll(window).toTop();
             });
         }
 
-        var Header = document.getElement('.cologne-header');
+        const Header = document.getElement('.cologne-header');
 
 
         /**
          * Sticky menu
          * @type {boolean}
          */
-        var Menu   = document.getElement('.cologne-header'),
-            TopBar = document.getElement('.topbar');
+        const Menu = document.getElement('.cologne-header');
+        const TopBar = document.getElement('.topbar');
 
         if (Menu) {
             initMenu(Menu, TopBar);
@@ -89,46 +89,46 @@ window.addEvent('domready', function () {
             require([
                 'Locale',
                 'package/quiqqer/tooltips/bin/html5tooltips'
-            ], function (QUILocale, html5tooltips) {
-                var Logo       = Menu ? Menu.getElement('.logo') : null,
-                    UserButton = document.getElement('.cologne-header-control-user');
+            ], function(QUILocale, html5tooltips) {
+                const Logo = Menu ? Menu.getElement('.logo') : null;
+                const UserButton = document.getElement('.cologne-header-control-user');
 
                 if (!UserButton) {
                     return;
                 }
 
-                var UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
+                const UserButtonLoader = UserButton.getElement('.cologne-header-control-user-loader');
 
                 /**
                  * Login
                  */
                 require([
                     'utils/Controls'
-                ], function (QUIControlUtils) {
+                ], function(QUIControlUtils) {
                     if (QUIQQER_USER.id) {
-                        var UserIcon = document.getElement(
+                        const UserIcon = document.getElement(
                             '[data-qui="package/quiqqer/frontend-users/bin/frontend/controls/UserIcon"]'
                         );
 
-                        QUIControlUtils.getControlByElement(UserIcon).then(function (UserIconControl) {
-                            UserIconControl.addEvent('load', function () {
+                        QUIControlUtils.getControlByElement(UserIcon).then(function(UserIconControl) {
+                            UserIconControl.addEvent('load', function() {
                                 userIconLoadEvent(UserIconControl, QUILocale);
                             });
                         });
                     }
 
                     UserButton.addEvents({
-                        click: function (event) {
+                        click: function(event) {
                             if (event) {
                                 event.stop();
                             }
 
                             if (!QUIQQER_USER.id) {
-                                if (USER_BUTTON_CLICKED) {
+                                if (userButtonClicked) {
                                     return;
                                 }
 
-                                USER_BUTTON_CLICKED = true;
+                                userButtonClicked = true;
                                 createLoginWindow();
                             }
                         }
@@ -138,20 +138,20 @@ window.addEvent('domready', function () {
                         moofx(UserButtonLoader).animate({
                             opacity: 0
                         }, {
-                            callback: function () {
+                            callback: function() {
                                 UserButtonLoader.destroy();
                             }
                         });
                     }
 
-                    if ("QUIQQER_LOGIN_FAILED" in window && window.QUIQQER_LOGIN_FAILED) {
+                    if ('QUIQQER_LOGIN_FAILED' in window && window.QUIQQER_LOGIN_FAILED) {
                         new LoginWindow({
-                            maxHeight   : 380,
-                            social      : false,
+                            maxHeight: 380,
+                            social: false,
                             registration: false,
-                            logo        : Logo ? Logo.src : '',
-                            events      : {
-                                onSuccess: function () {
+                            logo: Logo ? Logo.src : '',
+                            events: {
+                                onSuccess: function() {
                                     window.location.reload();
                                 }
                             }
@@ -166,13 +166,14 @@ window.addEvent('domready', function () {
         /**
          * Init menu
          */
-        function initMenu (Menu, TopBar) {
-            var showMenuFrom = TopBar ? TopBar.getSize().y : 0,
-                isMenuSticky = false,
-                SearchBtn    = Menu.getElement('.search-button'),
-                SearchInput  = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null,
-                MenuWrapper  = document.querySelector('.cologne-header-menu-wrapper'),
-                menuPos      = MenuWrapper ? MenuWrapper.offsetTop : 0;
+        function initMenu(Menu, TopBar)
+        {
+            let showMenuFrom = TopBar ? TopBar.getSize().y : 0;
+            let isMenuSticky = false;
+            const SearchBtn = Menu.getElement('.search-button');
+            const SearchInput = TopBar ? TopBar.getElement('.template-search input[type="search"]') : null;
+            const MenuWrapper = document.querySelector('.cologne-header-menu-wrapper');
+            const menuPos = MenuWrapper ? MenuWrapper.offsetTop : 0;
 
             if (SHOW_MENU_AFTER_SCROLL_POS && SHOW_MENU_AFTER_SCROLL_POS.toInt() > 0) {
                 showMenuFrom = SHOW_MENU_AFTER_SCROLL_POS.toInt();
@@ -185,19 +186,19 @@ window.addEvent('domready', function () {
                     return;
                 }
 
-                let clickEvent = function () {
+                let clickEvent = function() {
                     new Fx.Scroll(window, {
-                        onComplete: function () {
+                        onComplete: function() {
                             SearchInput.focus();
                         }
                     }).toTop();
                 };
 
-                if (QUI.getWindowSize().x < 767) {
+                if (QUI.getWindowSize().x <= MENU_BREAK_POINT) {
                     // https://dev.quiqqer.com/quiqqer/template-cologne/-/issues/104
                     ActionSearchBtn.removeAttribute('type');
 
-                    clickEvent = function () {
+                    clickEvent = function() {
                         ActionSearchBtn.click();
                     };
                 }
@@ -210,12 +211,13 @@ window.addEvent('domready', function () {
              *
              * @param smooth {boolean} - helpful on page reload when the page is already scrolled
              */
-            function setMenuFixed (smooth) {
+            function setMenuFixed(smooth)
+            {
                 smooth = !!smooth;
 
                 if (smooth === true) {
                     Menu.setStyles({
-                        position : 'fixed',
+                        position: 'fixed',
                         transform: 'translateY(-150px)'
                     });
 
@@ -232,13 +234,13 @@ window.addEvent('domready', function () {
             /**
              * Show search button
              */
-            var showSearchBtn = function () {
+            const showSearchBtn = function() {
                 if (!SearchBtn) {
                     return;
                 }
 
                 moofx(SearchBtn).animate({
-                    opacity  : 1,
+                    opacity: 1,
                     transform: 'scale(1)'
                 }, {
                     duration: 300,
@@ -249,13 +251,13 @@ window.addEvent('domready', function () {
             /**
              * Hide search button
              */
-            var hideSearchBtn = function () {
+            const hideSearchBtn = function() {
                 if (!SearchBtn) {
                     return;
                 }
 
                 moofx(SearchBtn).animate({
-                    opacity  : 0,
+                    opacity: 0,
                     transform: 'scale(0)'
                 }, {
                     duration: 300
@@ -265,7 +267,7 @@ window.addEvent('domready', function () {
             /**
              * Set menu position to initial
              */
-            var removeMenuFixed = function () {
+            const removeMenuFixed = function() {
                 Menu.removeClass('cologne-header-fixed');
                 Menu.setStyle('position', null);
                 document.body.removeClass('header-fixed');
@@ -289,9 +291,9 @@ window.addEvent('domready', function () {
                     setMenuFixed(showMenuSmooth);
                     showSearchBtn();
                 }
-            }, 500)
+            }, 500);
 
-            QUI.addEvent('scroll', function () {
+            QUI.addEvent('scroll', function() {
                 if (QUI.getScroll().y > showMenuFrom) {
                     if (isMenuSticky) {
                         return;
@@ -328,16 +330,17 @@ window.addEvent('domready', function () {
         /**
          * Basket
          */
-        function initBasket () {
+        function initBasket()
+        {
             require([
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
-            ], function (Basket) {
+            ], function(Basket) {
                 new Basket({
-                    action  : BASKET_ACTION,
+                    action: BASKET_ACTION,
                     events: {
-                        onCreate: function (Basket) {
-                            var BasketNode     = Basket.getElm(),
-                                basketStyleCss = '';
+                        onCreate: function(Basket) {
+                            const BasketNode = Basket.getElm();
+                            let basketStyleCss = '';
 
                             if (BASKET_STYLE) {
                                 basketStyleCss = 'basket-style-' + BASKET_STYLE;
@@ -349,18 +352,18 @@ window.addEvent('domready', function () {
 
                             new Element('span', {
                                 'class': 'quiqqer-order-basketButton-icon-custom',
-                                html   : '<span class="fa fa-shopping-basket"></span>'
+                                html: '<span class="fa fa-shopping-basket"></span>'
                             }).inject(BasketNode);
 
                             new Element('span', {
                                 'class': 'quiqqer-order-basketButton-quantity quiqqer-order-basketButton-batch-custom',
-                                html   : '<span class="fa fa-spinner fa-spin"></span>'
+                                html: '<span class="fa fa-spinner fa-spin"></span>'
                             }).inject(BasketNode);
 
                             if (BASKET_STYLE && BASKET_STYLE === 'full') {
                                 new Element('span', {
                                     'class': 'quiqqer-order-basketButton-sum',
-                                    html   : INITAL_BASKET_PRICE
+                                    html: INITIAL_BASKET_PRICE
                                 }).inject(BasketNode);
                             }
 
@@ -373,13 +376,13 @@ window.addEvent('domready', function () {
                          * @param pos - position of popup basket
                          * @param height - height of basket button
                          */
-                        showBasketBegin: function (Basket, pos, height) {
+                        showBasketBegin: function(Basket, pos, height) {
 
                             // move basket popup from bottom of the page to header
                             // it's better to manage for sticky header
                             Header.getElement('.cologne-header-control').adopt(Basket.$BasketContainer);
 
-                            var headerHeight = Header.getSize().y;
+                            const headerHeight = Header.getSize().y;
 
                             // -1px because of header bottom border
                             pos.y = headerHeight - 1;
@@ -393,7 +396,7 @@ window.addEvent('domready', function () {
                             });
 
                             // Do not scroll the page
-                            Basket.$BasketContainer.addEvent('focus', function (event) {
+                            Basket.$BasketContainer.addEvent('focus', function(event) {
                                 event.preventDefault();
                             });
 
@@ -412,22 +415,23 @@ window.addEvent('domready', function () {
          * @param UserIconControl
          * @param QUILocale
          */
-        function userIconLoadEvent (UserIconControl, QUILocale) {
-            var Menu = UserIconControl.$Menu;
+        function userIconLoadEvent(UserIconControl, QUILocale)
+        {
+            const Menu = UserIconControl.$Menu;
 
             require([
                 'controls/users/LogoutWindow',
                 'qui/controls/contextmenu/Item',
                 'qui/controls/contextmenu/Separator'
-            ], function (LogoutWindow, Item, Separator) {
+            ], function(LogoutWindow, Item, Separator) {
                 Menu.appendChild(new Separator());
                 // own logout entry
                 Menu.appendChild(
                     new Item({
-                        icon  : 'fa fa-sign-out',
-                        text  : QUILocale.get(lg, 'frontend.usericon.menuentry.logout.label'),
+                        icon: 'fa fa-sign-out',
+                        text: QUILocale.get(lg, 'frontend.usericon.menuentry.logout.label'),
                         events: {
-                            click: function () {
+                            click: function() {
                                 createLogoutWindow(LogoutWindow);
                             }
                         }
@@ -435,9 +439,9 @@ window.addEvent('domready', function () {
                 );
             });
 
-            UserIconControl.addEvent('onMenuShow', function (UserIconControl, MenuNode) {
+            UserIconControl.addEvent('onMenuShow', function(UserIconControl, MenuNode) {
                 MenuNode.setStyles({
-                    left : null,
+                    left: null,
                     right: -25
                 });
             });
@@ -448,37 +452,37 @@ window.addEvent('domready', function () {
          *
          * @param LogoutWindow
          */
-        function createLogoutWindow (LogoutWindow) {
+        function createLogoutWindow(LogoutWindow)
+        {
             new LogoutWindow({
-                class    : 'cologne-logout-dialog',
-                title    : false,
-                icon     : false,
+                class: 'cologne-logout-dialog',
+                title: false,
+                icon: false,
                 maxHeight: 350,
-                maxWidth : 400,
-                events   : {
-                    onOpen: function (Popup) {
+                maxWidth: 400,
+                events: {
+                    onOpen: function(Popup) {
 
-                        var Content     = Popup.getElm(),
-                            ContentElms = [
+                        const Content = Popup.getElm();
+                        const ContentElms = [
                                 Content.getElement('.qui-window-popup-content'),
                                 Content.getElement('.qui-window-popup-buttons')
                             ];
 
-                        ContentElms.each(function (ContentElm) {
+                        ContentElms.each(function(ContentElm) {
                             ContentElm.setStyle('opacity', 0);
                         });
 
-                        var CancelButton = Content.getElement('button[name="cancel"]');
+                        const CancelButton = Content.getElement('button[name="cancel"]');
 
                         if (CancelButton) {
-//                    CancelButton.removeClass('btn-light');
                             CancelButton.addClass('btn-secondary btn-outline');
                         }
 
                         // workaround due to the CancelButton.addClass
                         // to avoid the "flash" effect
-                        (function () {
-                            ContentElms.each(function (ContentElm) {
+                        (function() {
+                            ContentElms.each(function(ContentElm) {
                                 moofx(ContentElm).animate({
                                     opacity: 1
                                 });
@@ -492,21 +496,22 @@ window.addEvent('domready', function () {
         /**
          * Create and open login popup
          */
-        function createLoginWindow (onlyLogin = false) {
-            USER_BUTTON_CLICKED = false;
+        function createLoginWindow(onlyLogin = false)
+        {
+            userButtonClicked = false;
 
             require([
                 'Locale',
                 'utils/Controls',
                 'package/quiqqer/frontend-users/bin/frontend/controls/login/Window'
-            ], function (QUILocale, QUIControlUtils, LoginWindow) {
+            ], function(QUILocale, QUIControlUtils, LoginWindow) {
                 new LoginWindow({
-                    class    : 'cologne-login-dialog',
-                    title    : false,
+                    class: 'cologne-login-dialog',
+                    title: false,
                     maxHeight: 550,
-                    maxWidth : 400,
-                    events   : {
-                        onOpen   : function (LoginWindow) {
+                    maxWidth: 400,
+                    events: {
+                        onOpen: function(LoginWindow) {
                             if (!REGISTER_URL && !onlyLogin) {
                                 return;
                             }
@@ -515,20 +520,19 @@ window.addEvent('domready', function () {
                                 return;
                             }
 
-                            var Elm = LoginWindow.getElm();
-
-                            var CreateAccountWrapper = new Element('div', {
+                            const Elm = LoginWindow.getElm();
+                            const CreateAccountWrapper = new Element('div', {
                                 'class': 'login-popup-create-account-wrapper'
                             });
 
                             new Element('a', {
                                 href: REGISTER_URL,
-                                html: QUILocale.get(lg, 'template.popup.login.registration.button'),
+                                html: QUILocale.get(lg, 'template.popup.login.registration.button')
                             }).inject(CreateAccountWrapper);
 
                             CreateAccountWrapper.inject(Elm.getElement('.qui-window-popup-content'));
                         },
-                        onSuccess: function () {
+                        onSuccess: function() {
                             window.location.reload();
                         }
                     }
@@ -539,19 +543,20 @@ window.addEvent('domready', function () {
         /**
          * Menu mobile
          *
-         * In mobile resolution (less than 767px) opens category menu button
+         * In mobile resolution (less than MENU_BREAK_POINT, default 767) opens category menu button
          * the mobile navigation instead category navigation.
          */
-        function initMobileMenu () {
-            if (QUI.getWindowSize().x >= 768) {
+        function initMobileMenu()
+        {
+            if (QUI.getWindowSize().x > MENU_BREAK_POINT) {
                 return;
             }
 
             let OpenCategoryBtn = document.getElement('.shop-category-menu-button'),
-                MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
+                MenuElm = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideOut"]');
 
             if (!MenuElm) {
-                MenuElm         = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideoutAdvanced"]');
+                MenuElm = document.getElement('[data-qui="package/quiqqer/menu/bin/SlideoutAdvanced"]');
             }
 
             if (!MenuElm) {
@@ -564,10 +569,10 @@ window.addEvent('domready', function () {
                 return;
             }
 
-            require(['utils/Controls'], function (Controls) {
-                Controls.getControlByElement(MenuElm).then(function (MenuControl) {
+            require(['utils/Controls'], function(Controls) {
+                Controls.getControlByElement(MenuElm).then(function(MenuControl) {
                     OpenCategoryBtn.removeEvents('click');
-                    OpenCategoryBtn.addEvent('click', function () {
+                    OpenCategoryBtn.addEvent('click', function() {
                         MenuControl.toggle();
                     });
                 });
@@ -577,23 +582,23 @@ window.addEvent('domready', function () {
         /**
          * Show content of category site after click on button
          */
-        function initExpandCategoryContent () {
-            var ButtonContainer = document.getElement('.quiqqer-category-content-button'),
-                Wrapper         = document.getElement('.quiqqer-category-content-inner'),
-                Body            = document.getElement('.quiqqer-category-content-inner-body'),
-                Bg              = document.getElement('.quiqqer-category-content-inner-body__bg');
+        function initExpandCategoryContent()
+        {
+            const ButtonContainer = document.getElement('.quiqqer-category-content-button');
+            const Wrapper = document.getElement('.quiqqer-category-content-inner');
+            const Body = document.getElement('.quiqqer-category-content-inner-body');
+            const Bg = document.getElement('.quiqqer-category-content-inner-body__bg');
 
             if (!ButtonContainer || !Wrapper || !Body) {
                 return;
             }
 
-            var Button     = ButtonContainer.getElement('button'),
-                realHeight = Body.getSize().y;
+            const Button = ButtonContainer.getElement('button');
+            const realHeight = Body.getSize().y;
 
             if (!Button) {
                 return;
             }
-
 
             if (Wrapper.getSize().y >= realHeight) {
                 // content is small, no button needed
@@ -607,7 +612,7 @@ window.addEvent('domready', function () {
                 return;
             }
 
-            (function () {
+            (function() {
                 Button.setStyle('display', null);
 
                 moofx(Button).animate({
@@ -617,18 +622,18 @@ window.addEvent('domready', function () {
                 });
             }).delay(500);
 
-            Button.addEvent('click', function (event) {
+            Button.addEvent('click', function(event) {
                 event.stop();
 
                 moofx(Wrapper).animate({
                     maxHeight: realHeight
                 }, {
-                    callback: function () {
+                    callback: function() {
                         moofx(ButtonContainer).animate({
                             opacity: 0
                         }, {
                             duration: 200,
-                            callback: function () {
+                            callback: function() {
                                 ButtonContainer.destroy();
                             }
                         });
@@ -638,7 +643,7 @@ window.addEvent('domready', function () {
                                 opacity: 0
                             }, {
                                 duration: 200,
-                                callback: function () {
+                                callback: function() {
                                     Bg.destroy();
                                 }
                             });
@@ -653,15 +658,16 @@ window.addEvent('domready', function () {
         /**
          * Change position sticky to initial
          */
-        function setSidebarPosition () {
-            var Sidebar = document.getElement('.quiqqer-product-sidebar');
+        function setSidebarPosition()
+        {
+            const Sidebar = document.getElement('.quiqqer-product-sidebar');
 
             if (!Sidebar) {
                 return;
             }
 
-            var sidebarHeight = Sidebar.getSize().y,
-                windowHeight  = QUI.getWindowSize().y;
+            const sidebarHeight = Sidebar.getSize().y;
+            const windowHeight = QUI.getWindowSize().y;
 
             if (sidebarHeight > windowHeight - 60) {
                 Sidebar.setStyle('position', 'initial');
@@ -684,10 +690,11 @@ window.addEvent('domready', function () {
          * <button class="scrollToLink" data-qui-target"#myElement">Scroll to element with ID myElement</button>
          * <span class="scrollToLink" data-qui-target=".exampleParagraph" data-qui-offset="150">Scroll to element with CSS class exampleParagraph</span>
          */
-        function initScrollToAnchor () {
+        function initScrollToAnchor()
+        {
             let links = document.querySelectorAll('.scrollToLink');
 
-            let getTarget = function (Link) {
+            let getTarget = function(Link) {
                 if (Link.get('data-qui-target')) {
                     return document.querySelector(Link.get('data-qui-target'));
                 }
@@ -713,7 +720,7 @@ window.addEvent('domready', function () {
                 return TargetElm;
             };
 
-            let clickEvent = function (Target, offset) {
+            let clickEvent = function(Target, offset) {
                 new Fx.Scroll(window, {
                     offset: {
                         y: -offset
@@ -734,7 +741,7 @@ window.addEvent('domready', function () {
                     offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
                 }
 
-                Link.addEvent('click', function (event) {
+                Link.addEvent('click', function(event) {
                     event.stop();
                     clickEvent(TargetElm, offset);
                 });
