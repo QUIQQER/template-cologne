@@ -22,6 +22,12 @@ ob_start();
 <?php }; ?>
 }
 
+@media screen and (max-width: <?php echo $menuBreakPoint; ?>px) {
+    .hide-desktop-menu-breakpoint {
+        display: none;
+    }
+}
+
 <?php if ($largeSpacing) { ?>
 /* more spacing */
 .page-content-header,

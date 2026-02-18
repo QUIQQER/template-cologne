@@ -75,6 +75,11 @@ class Utils
      */
     public static function getConfig(array $params): object | array | bool | string
     {
+        /**
+         * @var QUI\Projects\Site $Site
+         * @var QUI\Projects\Project $Project
+         * @var QUI\Template $Template
+         */
         $Site = $params['Site'];
         $Project = $params['Project'];
         $Template = $params['Template'];
@@ -238,6 +243,12 @@ class Utils
             $basketAction = 'openSmallBasket';
         }
 
+        $menuBreakPoint = intval($Project->getConfig('mobileMenu.settings.breakPoint'));
+
+        if (!$menuBreakPoint) {
+            $menuBreakPoint = 767;
+        }
+
         $settingsCSS = include 'settings.css.php';
 
         /**
@@ -357,6 +368,7 @@ class Utils
         $config['setMenuPosBackOnInit'] = $setMenuPosBackOnInit;
         $config['showTopbarLanguageSwitch'] = $showTopbarLanguageSwitch;
         $config['showTopbarCurrencySwitch'] = $showTopbarCurrencySwitch;
+        $config['menuBreakPoint'] = $menuBreakPoint;
 
         // set cache
         QUI\Cache\Manager::set(
