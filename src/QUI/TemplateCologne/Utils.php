@@ -75,13 +75,13 @@ class Utils
      */
     public static function getConfig(array $params): object | array | bool | string
     {
-        /**
-         * @var QUI\Projects\Site $Site
-         * @var QUI\Projects\Project $Project
-         * @var QUI\Template $Template
-         */
+        /** @var QUI\Projects\Site $Site */
         $Site = $params['Site'];
+
+        /** @var QUI\Projects\Project $Project */
         $Project = $params['Project'];
+
+        /** @var QUI\Template $Template */
         $Template = $params['Template'];
 
         $cacheName = md5($Site->getId() . $Project->getName() . $Project->getLang());
