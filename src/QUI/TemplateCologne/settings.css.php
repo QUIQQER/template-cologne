@@ -8,6 +8,7 @@
  * @var QUI\Template $Template
  **/
 
+$menuBreakPoint = $menuBreakPoint ?? 767;
 $largeSpacing = $Site->getAttribute('templateCologne.largeSpacing');
 $headerImagePosition = $Project->getConfig('templateCologne.settings.headerImagePosition');
 $headerHeight = $Project->getConfig('templateCologne.settings.headerHeight');
