@@ -8,6 +8,7 @@
  * @var QUI\Template $Template
  **/
 
+$menuBreakPoint = $menuBreakPoint ?? 767;
 $largeSpacing = $Site->getAttribute('templateCologne.largeSpacing');
 $headerImagePosition = $Project->getConfig('templateCologne.settings.headerImagePosition');
 $headerHeight = $Project->getConfig('templateCologne.settings.headerHeight');
@@ -20,6 +21,12 @@ ob_start();
 <?php if ($logoHeight) { ?>
     --qui-nav-height: <?php echo $logoHeight; ?>px;
 <?php }; ?>
+}
+
+@media screen and (max-width: <?php echo $menuBreakPoint; ?>px) {
+    .hide-desktop-menu-breakpoint {
+        display: none;
+    }
 }
 
 <?php if ($largeSpacing) { ?>
