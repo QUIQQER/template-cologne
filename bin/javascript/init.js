@@ -459,37 +459,7 @@ window.addEvent('domready', function() {
                 title: false,
                 icon: false,
                 maxHeight: 350,
-                maxWidth: 400,
-                events: {
-                    onOpen: function(Popup) {
-
-                        const Content = Popup.getElm();
-                        const ContentElms = [
-                                Content.getElement('.qui-window-popup-content'),
-                                Content.getElement('.qui-window-popup-buttons')
-                            ];
-
-                        ContentElms.each(function(ContentElm) {
-                            ContentElm.setStyle('opacity', 0);
-                        });
-
-                        const CancelButton = Content.getElement('button[name="cancel"]');
-
-                        if (CancelButton) {
-                            CancelButton.addClass('btn-secondary btn-outline');
-                        }
-
-                        // workaround due to the CancelButton.addClass
-                        // to avoid the "flash" effect
-                        (function() {
-                            ContentElms.each(function(ContentElm) {
-                                moofx(ContentElm).animate({
-                                    opacity: 1
-                                });
-                            });
-                        }).delay(50);
-                    }
-                }
+                maxWidth: 400
             }).open();
         }
 
