@@ -5,7 +5,10 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75em;
     font-weight: 400;
     text-align: center;
     vertical-align: middle;
@@ -26,11 +29,6 @@ a.qui-button,
     -moz-box-shadow: none; /* qui-button reset */
     box-shadow: none; /* qui-button reset */
     float: none; /* qui-button reset */
-}
-
-button > .fa:not(:only-child),
-.btn > .fa:not(:only-child) {
-    margin-right: .75rem;
 }
 
 /*****************************/
@@ -153,6 +151,33 @@ button.qui-button.btn-link-dark:active,
 .btn-link-dark:hover,
 .btn-link-dark:active {
     color: #3986dd;
+}
+
+/********************/
+/* button link body */
+/********************/
+input[type="submit"].btn-link-body,
+input[type="button"].btn-link-body,
+input[type="reset"].btn-link-body,
+button.qui-button.btn-link-body,
+button.btn-link-body,
+.btn-link-body {
+    background: none;
+    border: none;
+    color: hsl(from currentColor h s l);
+}
+
+input[type="submit"].btn-link-body:hover,
+input[type="submit"].btn-link-body:active,
+input[type="button"].btn-link-body:hover,
+input[type="button"].btn-link-body:active,
+input[type="reset"].btn-link-body:hover,
+input[type="reset"].btn-link-body:active,
+button.qui-button.btn-link-body:hover,
+button.qui-button.btn-link-body:active,
+.btn-link-body:hover,
+.btn-link-body:active {
+    color: color-mix(in srgb, currentColor, white 10%);
 }
 
 /********************/
@@ -673,12 +698,61 @@ input[type="reset"].btn-large,
 }
 
 /**
- * Button icon
+ * Button sizes
  */
-.btn.btn-icon {
-    aspect-ratio: 1;
+.btn-sm {
+    padding-block: 0.5em;
+    padding-inline: 1em;
+    font-size: .875em;
 }
 
-.btn.btn-rounded {
-    border-radius: 10em;
+.btn-lg {
+    gap: 1em;
+    font-size: 1.25em;
+}
+
+/**
+ * Button inner
+ */
+.btn__icon {
+    line-height: inherit;
+}
+
+/**
+ * Button icon & close
+ */
+.btn-icon,
+.btn-close {
+    padding: 0;
+    aspect-ratio: 1;
+    border-radius: .25rem;
+    width: 2.75em;
+}
+
+.btn-close {
+    color: color-mix(in srgb, currentColor, white 40%);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-close:hover {
+    color: hsl(from currentColor h s l);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-close:disabled {
+    color: color-mix(in srgb, currentColor, white 40%);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-icon svg,
+.btn-close svg {
+    width: 1em;
+    height: 1em;
+}
+
+.btn-rounded {
+    border-radius: 999px;
 }
