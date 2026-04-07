@@ -1776,6 +1776,7 @@ table tr:last-child th {
     margin-bottom: 2rem !important;
     margin-top: 2rem !important;
     padding: 1rem 1rem 1rem 50px !important;
+    border-radius: 0.25rem;
 }
 
 .content-message-attention:before,
@@ -1826,6 +1827,82 @@ table tr:last-child th {
 
 .content-message-information:before {
     content: "\f0e5";
+}
+
+/**
+ * New message component
+ */
+
+/* basic styling */
+.q-message {
+    background: #eff0f0;
+    color: #3b3b3a;
+    border: 1px solid #dfe0e1;
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Error message */
+.q-message-error,
+.q-message-danger {
+    background: #feeded;
+    color: #f65555;
+    border: 1px solid #fccfcf;
+}
+
+/* Info message */
+.q-message-info {
+    background: #e5f5fd;
+    color: #059fe4;
+    border: 1px solid #b8e4f9;
+}
+
+/* Warning message */
+.q-message-warning {
+    background: #fff6e8;
+    color: #f28f09;
+    border: 1px solid #fce0b8;
+}
+
+/* Success message */
+.q-message-success {
+    background: #eaf9f3;
+    color: #2dc38e;
+    border: 1px solid #c4eede;
+}
+
+
+/* variant: solid */
+/* Error message */
+.q-message-error--solid,
+.q-message-danger--solid {
+    background: #dc4139;
+    color: #fff;
+    border: 1px solid #c63a33;
+}
+
+/* Info message */
+.q-message-info--solid {
+    background: #4ca5ce;
+    color: #fff;
+    border: 1px solid #4494b9;
+}
+
+/* Warning message */
+.q-message-warning--solid {
+    background: #ffd147;
+    color: #3b3b3a;
+    border: 1px solid #e6bc40;
+}
+
+/* Success message */
+.q-message-success--solid {
+    background: #28a745;
+    color: #fff;
+    border: 1px solid #24963e;
 }
 
 /*****************/
