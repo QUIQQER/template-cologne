@@ -16,7 +16,6 @@ use ReflectionClass;
 
 use function class_exists;
 use function count;
-use function method_exists;
 
 /**
  * Class Utils
@@ -309,7 +308,7 @@ class Utils
         /* page custom class */
         $pageCustomClass = $Site->getAttribute('templateCologne.pageCustomClass');
 
-        if ($pageCustomClass && $pageCustomClass !== '') {
+        if ($pageCustomClass) {
             $pageCustomClass .= ' templateCologne__' . $pageCustomClass;
         }
 
@@ -688,9 +687,7 @@ class Utils
 
         $StockView = $StockField->getFrontendView();
 
-        if (method_exists($StockView, 'setProduct')) {
-            $StockView->setProduct($Product);
-        }
+        $StockView->setProduct($Product);
 
         return $StockView;
     }
