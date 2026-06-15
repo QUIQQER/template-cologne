@@ -8,6 +8,7 @@ namespace QUI\TemplateCologne;
 
 use QUI;
 use QUI\Database\Exception;
+use QUI\ERP\Order\CancellationPolicy\CancellationFormHelper;
 use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
@@ -312,6 +313,8 @@ class Utils
             $pageCustomClass .= ' templateCologne__' . $pageCustomClass;
         }
 
+        $urlToRevocationForm = false;
+
         /**
          * Language and currency settings
          */
@@ -338,6 +341,21 @@ class Utils
                 break;
         }
 
+        if (
+            $Project->getConfig('templateCologne.settings.showRevocationFormLink')
+            && QUI::getPackageManager()->isInstalled('quiqqer/order-cancellation-policy')
+            && class_exists(CancellationFormHelper::class)
+        ) {
+            try {
+                $CancellationFormSite = CancellationFormHelper::getCancellationFormSite($Project);
+
+                if ($CancellationFormSite instanceof QUI\Projects\Site) {
+                    $urlToRevocationForm = $CancellationFormSite->getUrlRewritten();
+                }
+            } catch (QUI\Exception $Exception) {
+                QUI\System\Log::writeException($Exception);
+            }
+        }
 
         // predefined footer
         $config += self::getPredefinedFooter($Project);
@@ -368,6 +386,7 @@ class Utils
         $config['showTopbarLanguageSwitch'] = $showTopbarLanguageSwitch;
         $config['showTopbarCurrencySwitch'] = $showTopbarCurrencySwitch;
         $config['menuBreakPoint'] = $menuBreakPoint;
+        $config['urlToRevocationForm'] = $urlToRevocationForm;
 
         // set cache
         QUI\Cache\Manager::set(

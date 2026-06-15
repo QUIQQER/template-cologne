@@ -1,5 +1,13 @@
+{assign var=urlToRevocationForm value=''}
+{if $Template->getAttribute('urlToRevocationForm')}
+    {assign var=urlToRevocationForm value=$Template->getAttribute('urlToRevocationForm')}
+{/if}
+
 <div class="cologne-footer-copyright">
     <div class="cologne-grid-container">
         {locale group="quiqqer/template-cologne" var="copyright.text" year=$smarty.now|date_format:'Y'}
+        {if $urlToRevocationForm}
+            | <a href="{$urlToRevocationForm}">{locale group="quiqqer/template-cologne" var="copyright.revocationForm"}</a>
+        {/if}
     </div>
 </div>
