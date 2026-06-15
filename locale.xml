@@ -539,6 +539,14 @@
             <de><![CDATA[Sofort Kauf Button anzeigen]]></de>
             <en><![CDATA[Show Buy Now Button]]></en>
         </locale>
+        <locale name="settings.shop.showRevocationFormLink">
+            <de><![CDATA[Widerrufslink zum Formular anzeigen]]></de>
+            <en><![CDATA[Show revocation form link]]></en>
+        </locale>
+        <locale name="settings.shop.showRevocationFormLink.desc" html="true">
+            <de><![CDATA[Zeigt im Copyright-Bereich einen Link zum Widerrufsformular an. Erfordert das installierte Paket <b>quiqqer/order-cancellation-policy</b> sowie eine vorhandene Seite vom Typ <b>Widerrufsformular</b>.]]></de>
+            <en><![CDATA[Shows a link to the revocation form in the copyright area. Requires the installed package <b>quiqqer/order-cancellation-policy</b> and an existing page of type <b>Cancellation form</b>.]]></en>
+        </locale>
 
         <!-- nav settings -->
         <locale name="settings.nav.title">
@@ -902,6 +910,10 @@
         <locale name="copyright.text" html="true">
             <de><![CDATA[&copy; [year] - umgesetzt mit <a href="https://www.quiqqer.de">QUIQQER - Template Cologne</a>]]></de>
             <en><![CDATA[&copy; [year] - built with <a href="https://www.quiqqer.com">QUIQQER - Template Cologne</a>]]></en>
+        </locale>
+        <locale name="copyright.revocationForm">
+            <de><![CDATA[Widerrufsformular]]></de>
+            <en><![CDATA[Revocation form]]></en>
         </locale>
         <locale name="template.button.toTop">
             <de><![CDATA[Zum Seitenanfang]]></de>

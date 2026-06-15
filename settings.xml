@@ -52,6 +52,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="showRevocationFormLink">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
                     <conf name="showStock">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -503,6 +507,19 @@
                                             var="settings.shop.showBuyNowButton"
                                     />
                                 </text>
+                            </input>
+
+                            <input conf="templateCologne.settings.showRevocationFormLink" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showRevocationFormLink"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.showRevocationFormLink.desc"
+                                    />
+                                </description>
                             </input>
 
                             <input conf="templateCologne.settings.showStock" type="checkbox">
