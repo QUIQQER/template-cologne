@@ -6,7 +6,7 @@
     <footer class="template-footer {$smallFooter}">
         {if $Template->getAttribute('showFooter')}
             {* footer brick area *}
-            {fetch template="template/footer/bricks.html" BricksManager=$BricksManager}
+            {fetch template="template/footer/bricks.html" BricksManager=$BricksManager Template=$Template}
 
             {* pre-defined footer *}
             {fetch template="template/footer/predefinedFooter.html"
@@ -14,16 +14,17 @@
                 shortText=$shortText
                 urlList=$urlList
                 featuredProducts=$featuredProducts
+                Template=$Template
             }
 
             {* footer copyright *}
-            {fetch template="template/footer/copyright.html"}
+            {fetch template="template/footer/copyright.html" Template=$Template}
         {/if}
     </footer>
 </section>
 
 {* to top icon *}
-{fetch template="template/footer/toTop.html"}
+{fetch template="template/footer/toTop.html" Template=$Template}
 
 {* scripts *}
 {fetch template="template/footer/scripts.html" Template=$Template}

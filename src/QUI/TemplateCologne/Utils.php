@@ -312,6 +312,8 @@ class Utils
             $pageCustomClass .= ' templateCologne__' . $pageCustomClass;
         }
 
+        $urlToRevocationForm = false;
+
         /**
          * Language and currency settings
          */
@@ -338,6 +340,25 @@ class Utils
                 break;
         }
 
+        if (
+            $Project->getConfig('templateCologne.settings.showRevocationFormLink')
+            && QUI::getPackageManager()->isInstalled('quiqqer/order-cancellation-policy')
+        ) {
+            try {
+                $result = $Project->getSites([
+                    'where' => [
+                        'type' => 'quiqqer/order-cancellation-policy:types/cancellationForm'
+                    ],
+                    'limit' => 1
+                ]);
+
+                if (isset($result[0]) && $result[0] instanceof QUI\Projects\Site) {
+                    $urlToRevocationForm = $result[0]->getUrlRewritten();
+                }
+            } catch (QUI\Exception $Exception) {
+                QUI\System\Log::writeException($Exception);
+            }
+        }
 
         // predefined footer
         $config += self::getPredefinedFooter($Project);
@@ -368,6 +389,7 @@ class Utils
         $config['showTopbarLanguageSwitch'] = $showTopbarLanguageSwitch;
         $config['showTopbarCurrencySwitch'] = $showTopbarCurrencySwitch;
         $config['menuBreakPoint'] = $menuBreakPoint;
+        $config['urlToRevocationForm'] = $urlToRevocationForm;
 
         // set cache
         QUI\Cache\Manager::set(
