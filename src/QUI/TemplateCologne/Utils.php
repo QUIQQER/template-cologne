@@ -8,6 +8,7 @@ namespace QUI\TemplateCologne;
 
 use QUI;
 use QUI\Database\Exception;
+use QUI\ERP\Order\CancellationPolicy\CancellationFormHelper;
 use QUI\ERP\Shipping\Shipping;
 use QUI\ERP\StockManagement\StockManager;
 use QUI\Projects\Project;
@@ -343,17 +344,13 @@ class Utils
         if (
             $Project->getConfig('templateCologne.settings.showRevocationFormLink')
             && QUI::getPackageManager()->isInstalled('quiqqer/order-cancellation-policy')
+            && class_exists(CancellationFormHelper::class)
         ) {
             try {
-                $result = $Project->getSites([
-                    'where' => [
-                        'type' => 'quiqqer/order-cancellation-policy:types/cancellationForm'
-                    ],
-                    'limit' => 1
-                ]);
+                $CancellationFormSite = CancellationFormHelper::getCancellationFormSite($Project);
 
-                if (isset($result[0]) && $result[0] instanceof QUI\Projects\Site) {
-                    $urlToRevocationForm = $result[0]->getUrlRewritten();
+                if ($CancellationFormSite instanceof QUI\Projects\Site) {
+                    $urlToRevocationForm = $CancellationFormSite->getUrlRewritten();
                 }
             } catch (QUI\Exception $Exception) {
                 QUI\System\Log::writeException($Exception);
