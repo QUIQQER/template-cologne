@@ -979,6 +979,16 @@ a.toTop:before {
     text-align: center;
 }
 
+.cologne-footer-copyright-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1ch;
+}
+
+.cologne-footer-copyright__defaultText p:last-child {
+    margin-bottom: 0;
+}
+
 /****************/
 /* small footer */
 /****************/
