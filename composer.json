@@ -23,7 +23,7 @@
         "quiqqer/order": "^2.7.24",
         "quiqqer/product-bricks": "^2",
         "quiqqer/frontend-users": "^2",
-        "quiqqer/menu": "^3",
+        "quiqqer/menu": "^3.9",
         "quiqqer/sitetypes": "^2",
         "quiqqer/unsemantic": "^2",
         "quiqqer/tooltips": "^2",

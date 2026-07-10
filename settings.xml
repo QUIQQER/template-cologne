@@ -98,8 +98,9 @@
                     <conf name="enableIndependentMenu">
                         <type><![CDATA[bool]]></type>
                     </conf>
+                    <!-- multilingual: JSON {lang: menuId}, plain menu id = old format -->
                     <conf name="menuId">
-                        <type><![CDATA[integer]]></type>
+                        <type><![CDATA[string]]></type>
                     </conf>
                     <conf name="showFirstLevelIcons">
                         <type><![CDATA[bool]]></type>
@@ -679,7 +680,7 @@
 
                             <input conf="templateCologne.settings.menuId"
                                    type="text"
-                                   data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                                   data-qui="package/quiqqer/menu/bin/Controls/Independent/InputMultiLang">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
                                             var="settings.independentMenu.menuId"
