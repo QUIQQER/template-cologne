@@ -11,7 +11,7 @@
 
             <!-- template settings: general -->
             <setting name="templateCologne.settings.homeLink" value="1"/>
-            <setting name="templateCologne.settings.homeLinkText" value="<![CDATA[{\"de\":\"Home\"}]]>"/>
+            <setting name="templateCologne.settings.homeLinkText" value="{&quot;de&quot;:&quot;Home&quot;}"/>
 
             <!-- template settings: ecommerce -->
             <setting name="templateCologne.settings.showRetailPrice" value="1"/>
@@ -54,16 +54,16 @@
             <setting name="templateCologne.settings.showBreadcrumbRightSidebar" value="1"/>
 
             <!-- template settings: predefined footer -->
-            <setting name="templateCologne.settings.predefinedFooter.shortText.title" value="<![CDATA[{\"de\":\"Über uns\"}]]>"/>
+            <setting name="templateCologne.settings.predefinedFooter.shortText.title" value="{&quot;de&quot;:&quot;Über uns&quot;}"/>
             <setting name="templateCologne.settings.predefinedFooter.payments" value="0"/>
             <setting name="templateCologne.settings.predefinedFooter.payments.layout" value="grid"/>
             <setting name="templateCologne.settings.predefinedFooter.urlList" value="1"/>
-            <setting name="templateCologne.settings.predefinedFooter.urlList.title" value="<![CDATA[{\"de\":\"Informationen\"}]]>"/>
+            <setting name="templateCologne.settings.predefinedFooter.urlList.title" value="{&quot;de&quot;:&quot;Informationen&quot;}"/>
             <setting name="templateCologne.settings.predefinedFooter.urlList.sites" value=""/>
             <setting name="templateCologne.settings.predefinedFooter.urlList.sites.order" value=""/>
             <setting name="templateCologne.settings.predefinedFooter.urlList.sites.showStandardSites" value="1"/>
             <setting name="templateCologne.settings.predefinedFooter.featuredProducts" value="1"/>
-            <setting name="templateCologne.settings.predefinedFooter.featuredProducts.title" value="<![CDATA[{\"de\":\"Neueste Produkte\"}]]>"/>
+            <setting name="templateCologne.settings.predefinedFooter.featuredProducts.title" value="{&quot;de&quot;:&quot;Neueste Produkte&quot;}"/>
             <setting name="templateCologne.settings.predefinedFooter.featuredProducts.category" value="0"/>
             <setting name="templateCologne.settings.predefinedFooter.featuredProducts.order" value="c_date ASC"/>
             <setting name="templateCologne.settings.predefinedFooter.shortText" value="1"/>

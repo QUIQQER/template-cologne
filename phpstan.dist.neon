@@ -1,11 +1,12 @@
-includes:
-	- phpstan-baseline.neon
-
 parameters:
-    level: 5
+    level: 8
+    phpVersion:
+        min: 80200
+        max: 80509
     paths:
         - src
         - ajax
+        - index.php
     bootstrapFiles:
         - tests/phpstan-bootstrap.php
     tipsOfTheDay: false

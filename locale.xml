@@ -7,8 +7,8 @@
             <en><![CDATA[QUIQQER E-Commerce Cologne - Template]]></en>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
+            <de><![CDATA[Responsives E-Commerce-Template für QUIQQER.]]></de>
+            <en><![CDATA[Responsive e-commerce template for QUIQQER.]]></en>
         </locale>
 
 
@@ -592,8 +592,8 @@
             <en><![CDATA[Select menu]]></en>
         </locale>
         <locale name="settings.independentMenu.menuId.desc">
-            <de><![CDATA[Wenn ein eigenes Menü ausgewählt ist, wird dieses als Navigation angezeigt.]]></de>
-            <en><![CDATA[If a custom (independent) menu is selected, this will be displayed as navigation.]]></en>
+            <de><![CDATA[Wenn ein eigenes Menü ausgewählt ist, wird dieses als Navigation angezeigt. Das Menü kann pro Sprache festgelegt werden; Sprachen ohne eigene Auswahl verwenden das Menü der Standardsprache.]]></de>
+            <en><![CDATA[If a custom (independent) menu is selected, this will be displayed as navigation. The menu can be set per language; languages without their own selection use the menu of the default language.]]></en>
         </locale>
         <locale name="settings.independentMenu.showFirstLevelIcons">
             <de><![CDATA[Icons in der erster Ebene anzeigen]]></de>

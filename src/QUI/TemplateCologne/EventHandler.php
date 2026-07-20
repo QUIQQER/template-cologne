@@ -51,6 +51,10 @@ class EventHandler
         // setting
         $Project = QUI::getRewrite()->getProject();
 
+        if (!$Project instanceof QUI\Projects\Project) {
+            return;
+        }
+
         if (!(int)$Project->getConfig('templateCologne.settings.showBuyNowButton')) {
             return;
         }
