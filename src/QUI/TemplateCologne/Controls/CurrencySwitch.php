@@ -16,7 +16,7 @@ class CurrencySwitch extends QUI\Control
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -46,7 +46,7 @@ class CurrencySwitch extends QUI\Control
                 $Package = QUI::getPackage('quiqqer/erp');
                 $Config = $Package->getConfig();
 
-                if ($Config->getValue('general', 'userRelatedCurrency')) {
+                if ($Config?->getValue('general', 'userRelatedCurrency')) {
                     $this->setJavaScriptControl('package/quiqqer/currency/bin/controls/Switch');
                 }
             } catch (QUI\Exception $Exception) {

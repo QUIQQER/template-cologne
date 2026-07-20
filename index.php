@@ -54,7 +54,11 @@ if (is_array($menuLanguages)) {
     $independentMenuId = $menuLanguages[$Project->getLang()] ?? '';
 
     if (empty($independentMenuId)) {
-        $independentMenuId = $menuLanguages[$Project->getAttribute('default_lang')] ?? '';
+        $defaultLanguage = $Project->getAttribute('default_lang');
+
+        if (is_string($defaultLanguage) || is_int($defaultLanguage)) {
+            $independentMenuId = $menuLanguages[$defaultLanguage] ?? '';
+        }
     }
 }
 
@@ -158,8 +162,12 @@ $registerSite = $Project->getSites([
 ]);
 
 
-if (count($registerSite)) {
-    $registerSiteUrl = $registerSite[0]->getUrlRewritten();
+if (is_array($registerSite)) {
+    $RegistrationSite = reset($registerSite);
+
+    if ($RegistrationSite instanceof QUI\Interfaces\Projects\Site) {
+        $registerSiteUrl = $RegistrationSite->getUrlRewritten();
+    }
 }
 
 // array to assign

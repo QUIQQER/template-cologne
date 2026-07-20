@@ -7,13 +7,18 @@
 /**
  * Return the lang list (html)
  *
- * @return array
+ * @return string
  */
-QUI::$Ajax->registerFunction(
+QUI::getAjax()->registerFunction(
     'package_quiqqer_template-cologne_ajax_getLangList',
-    function ($flagFolderPath, $siteId) {
+    function (string $flagFolderPath, int $siteId): string {
         $Engine = QUI::getTemplateManager()->getEngine();
         $Project = QUI::getRewrite()->getProject();
+
+        if (!$Project instanceof QUI\Projects\Project) {
+            throw new QUI\Exception('No project available.');
+        }
+
         $Site = $Project->get($siteId);
         $langs = $Project->getLanguages();
 

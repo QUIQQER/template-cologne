@@ -7,12 +7,17 @@
 /**
  * Return number of project languages
  *
- * @return number
+ * @return int
  */
-QUI::$Ajax->registerFunction(
+QUI::getAjax()->registerFunction(
     'package_quiqqer_template-cologne_ajax_countLang',
-    function () {
+    function (): int {
         $Site = QUI::getRewrite()->getSite();
+
+        if (!$Site instanceof QUI\Interfaces\Projects\Site) {
+            throw new QUI\Exception('No site available.');
+        }
+
         $Project = $Site->getProject();
 
         return count($Project->getLanguages());
