@@ -2000,19 +2000,3 @@ table tr:last-child th {
 .quiqqer-simple-contact textarea {
     min-height: 160px;
 }
-
-/*************/
-/* Accordion */
-/*************/
-.quiqqer-accordion-item {
-    border-bottom: none !important;
-}
-
-.quiqqer-accordion-item-header {
-    background: var(--bg-secondary);
-    padding: var(--spacing);
-}
-
-.quiqqer-accordion-item-content-wrapper {
-    margin-top: 1rem;
-}
