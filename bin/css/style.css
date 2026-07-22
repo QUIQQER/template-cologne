@@ -979,6 +979,16 @@ a.toTop:before {
     text-align: center;
 }
 
+.cologne-footer-copyright-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1ch;
+}
+
+.cologne-footer-copyright__defaultText p:last-child {
+    margin-bottom: 0;
+}
+
 /****************/
 /* small footer */
 /****************/
@@ -1989,20 +1999,4 @@ table tr:last-child th {
 /***********/
 .quiqqer-simple-contact textarea {
     min-height: 160px;
-}
-
-/*************/
-/* Accordion */
-/*************/
-.quiqqer-accordion-item {
-    border-bottom: none !important;
-}
-
-.quiqqer-accordion-item-header {
-    background: var(--bg-secondary);
-    padding: var(--spacing);
-}
-
-.quiqqer-accordion-item-content-wrapper {
-    margin-top: 1rem;
 }

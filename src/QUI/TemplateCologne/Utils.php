@@ -68,12 +68,16 @@ class Utils
     /**
      * Returns config. If a cache exists, it will be returned.
      *
-     * @param array $params
+     * @param array{
+     *     Site: QUI\Projects\Site,
+     *     Project: QUI\Projects\Project,
+     *     Template: QUI\Template
+     * } $params
      *
-     * @return array|bool|object|string
+     * @return array<string, mixed>
      * @throws QUI\Exception
      */
-    public static function getConfig(array $params): object | array | bool | string
+    public static function getConfig(array $params): array
     {
         /** @var QUI\Projects\Site $Site */
         $Site = $params['Site'];
@@ -87,10 +91,14 @@ class Utils
         $cacheName = md5($Site->getId() . $Project->getName() . $Project->getLang());
 
         try {
-            return QUI\Cache\Manager::get(
+            $cachedConfig = QUI\Cache\Manager::get(
                 'quiqqer/templateCologne/' . $cacheName
             );
-        } catch (QUI\Exception $Exception) {
+
+            if (is_array($cachedConfig)) {
+                return $cachedConfig;
+            }
+        } catch (QUI\Exception) {
         }
 
         $config = [];
@@ -402,7 +410,7 @@ class Utils
      *
      * @param Project $Project
      *
-     * @return array - data for predefined footer
+     * @return array<string, mixed> Data for the predefined footer.
      * @throws Exception
      */
     private static function getPredefinedFooter(Project $Project): array
@@ -487,10 +495,12 @@ class Utils
                     'limit' => 1
                 ]);
 
-                if (count($productSearch)) {
+                $ProductSearchSite = self::getFirstSite($productSearch);
+
+                if ($ProductSearchSite) {
                     $urlList['productSearch'] = [
-                        'title' => $productSearch[0]->getAttribute('title'),
-                        'url' => $productSearch[0]->getUrlRewritten()
+                        'title' => $ProductSearchSite->getAttribute('title'),
+                        'url' => $ProductSearchSite->getUrlRewritten()
                     ];
                 }
 
@@ -505,10 +515,12 @@ class Utils
                     'limit' => 1
                 ]);
 
-                if (count($legalNotes)) {
+                $LegalNotesSite = self::getFirstSite($legalNotes);
+
+                if ($LegalNotesSite) {
                     $urlList['legalNotes'] = [
-                        'title' => $legalNotes[0]->getAttribute('title'),
-                        'url' => $legalNotes[0]->getUrlRewritten()
+                        'title' => $LegalNotesSite->getAttribute('title'),
+                        'url' => $LegalNotesSite->getUrlRewritten()
                     ];
                 }
 
@@ -523,10 +535,12 @@ class Utils
                     'limit' => 1
                 ]);
 
-                if (count($privacyPolicy)) {
+                $PrivacyPolicySite = self::getFirstSite($privacyPolicy);
+
+                if ($PrivacyPolicySite) {
                     $urlList['privacyPolicy'] = [
-                        'title' => $privacyPolicy[0]->getAttribute('title'),
-                        'url' => $privacyPolicy[0]->getUrlRewritten()
+                        'title' => $PrivacyPolicySite->getAttribute('title'),
+                        'url' => $PrivacyPolicySite->getUrlRewritten()
                     ];
                 }
 
@@ -541,10 +555,12 @@ class Utils
                     'limit' => 1
                 ]);
 
-                if (count($generalTermsAndConditions)) {
+                $TermsSite = self::getFirstSite($generalTermsAndConditions);
+
+                if ($TermsSite) {
                     $urlList['generalTermsAndConditions'] = [
-                        'title' => $generalTermsAndConditions[0]->getAttribute('title'),
-                        'url' => $generalTermsAndConditions[0]->getUrlRewritten()
+                        'title' => $TermsSite->getAttribute('title'),
+                        'url' => $TermsSite->getUrlRewritten()
                     ];
                 }
             }
@@ -616,6 +632,20 @@ class Utils
     }
 
     /**
+     * @param array<int, mixed>|int $sites
+     */
+    private static function getFirstSite(array | int $sites): ?QUI\Interfaces\Projects\Site
+    {
+        if (!is_array($sites)) {
+            return null;
+        }
+
+        $Site = reset($sites);
+
+        return $Site instanceof QUI\Interfaces\Projects\Site ? $Site : null;
+    }
+
+    /**
      * Get FrontendView of ShippingTime field
      *
      * requires quiqqer/shipping to be installed
@@ -672,10 +702,15 @@ class Utils
      *
      * @return false|QUI\ERP\Products\Field\View
      */
-    public static function getStockFrontendView(int $productId)
+    public static function getStockFrontendView(int $productId): bool | QUI\ERP\Products\Field\View
     {
         try {
             $Project = QUI::getRewrite()->getProject();
+
+            if (!$Project instanceof Project) {
+                return false;
+            }
+
             $showStock = $Project->getConfig('templateCologne.settings.showStock');
 
             if (empty($showStock)) {
@@ -714,7 +749,7 @@ class Utils
     /**
      * Add a suffix to brick css class(es)
      *
-     * @param array $classes
+     * @param array<int, string> $classes
      *
      * @return string
      */
@@ -743,7 +778,7 @@ class Utils
      *   QUI\TemplateCologne\Utils::getSettings('templateCologne.settings.homeLink');
      *
      * @param string $settingName
-     * @return bool|array|int|string
+     * @return bool|array<array-key, mixed>|int|string
      */
     public static function getSetting(string $settingName): bool | array | int | string
     {
@@ -751,13 +786,16 @@ class Utils
             return false;
         }
 
-        $a = strpos($settingName, 'templateCologne.settings.');
         if (!str_contains($settingName, 'templateCologne.settings.')) {
             $settingName = 'templateCologne.settings.' . $settingName;
         }
 
         try {
             $Project = QUI::getRewrite()->getProject();
+
+            if (!$Project instanceof Project) {
+                return '';
+            }
 
             return $Project->getConfig($settingName);
         } catch (\Exception $Exception) {

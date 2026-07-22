@@ -18,7 +18,7 @@ class LangCurrencySwitch extends QUI\Control
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -52,7 +52,7 @@ class LangCurrencySwitch extends QUI\Control
                 $Package = QUI::getPackage('quiqqer/erp');
                 $Config = $Package->getConfig();
 
-                if ($Config->getValue('general', 'userRelatedCurrency')) {
+                if ($Config?->getValue('general', 'userRelatedCurrency')) {
                     $this->setJavaScriptControlOption('userrelatedcurrency', '1');
                     $currencySwitch = true;
                 }
@@ -98,11 +98,21 @@ class LangCurrencySwitch extends QUI\Control
      */
     protected function getSite(): QUI\Interfaces\Projects\Site
     {
-        if ($this->getAttribute('Site')) {
-            return $this->getAttribute('Site');
+        $Site = $this->getAttribute('Site');
+
+        if ($Site instanceof QUI\Interfaces\Projects\Site) {
+            return $Site;
         }
 
-        return QUI::getRewrite()->getSite();
+        $Site = QUI::getRewrite()->getSite();
+
+        if (!$Site instanceof QUI\Interfaces\Projects\Site) {
+            throw new QUI\Exception('No site available.');
+        }
+
+        $this->setAttribute('Site', $Site);
+
+        return $Site;
     }
 
     /**

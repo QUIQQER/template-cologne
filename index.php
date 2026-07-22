@@ -45,6 +45,23 @@ if (isset($templateSettings['homeLinkText']) && $templateSettings['homeLinkText'
 $enableIndependentMenu = $Project->getConfig('templateCologne.settings.enableIndependentMenu');
 $independentMenuId = $Project->getConfig('templateCologne.settings.menuId');
 
+// menu setting may be multilingual: JSON {lang: menuId}; a language without
+// its own menu falls back to the default language. A plain menu id (old
+// format) applies to all languages.
+$menuLanguages = json_decode((string)$independentMenuId, true);
+
+if (is_array($menuLanguages)) {
+    $independentMenuId = $menuLanguages[$Project->getLang()] ?? '';
+
+    if (empty($independentMenuId)) {
+        $defaultLanguage = $Project->getAttribute('default_lang');
+
+        if (is_string($defaultLanguage) || is_int($defaultLanguage)) {
+            $independentMenuId = $menuLanguages[$defaultLanguage] ?? '';
+        }
+    }
+}
+
 if ($enableIndependentMenu && $independentMenuId) {
     $menuParams['menuId'] = $independentMenuId;
     $menuParams['showFirstLevelIcons'] = $Project->getConfig('templateCologne.settings.showFirstLevelIcons');
@@ -145,8 +162,12 @@ $registerSite = $Project->getSites([
 ]);
 
 
-if (count($registerSite)) {
-    $registerSiteUrl = $registerSite[0]->getUrlRewritten();
+if (is_array($registerSite)) {
+    $RegistrationSite = reset($registerSite);
+
+    if ($RegistrationSite instanceof QUI\Interfaces\Projects\Site) {
+        $registerSiteUrl = $RegistrationSite->getUrlRewritten();
+    }
 }
 
 // array to assign

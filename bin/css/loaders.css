@@ -1,31 +1,109 @@
 /**
  * This file contains loaders utility classes
+ *
+ * .qui-skeleton* is the current naming (future qui framework).
+ * .skeleton-loader* is a deprecated alias and will be removed.
  */
 
 /**
  * Skeleton loader
  */
-.skeleton-loader {
-    --bg: var(--qui-colors-gray-50, #f5f5f5);
-    --shine-color: var(--qui-colors-gray-25, #fcfcfc);
+.skeleton-loader,
+.qui-skeleton,
+.qui-skeleton-form {
+    --bg: rgb(0 0 0 / 5%);
+    --bg: light-dark(rgb(0 0 0 / 5%), rgb(255 255 255 / 5%));
+    --shine-color: rgb(255 255 255 / 40%);
+    --shine-color: light-dark(rgb(255 255 255 / 40%), rgb(255 255 255 / 5%));
     --anim-delay: 1s;
     --anim-duration: 1.5s;
+}
 
+.skeleton-loader,
+.qui-skeleton {
     background-color: var(--bg);
     background-image: linear-gradient(110deg, transparent 18%, var(--shine-color) 30%, transparent 43%);
     background-repeat: repeat;
     background-size: 200% 100%;
     background-position: 100% 0;
-    animation: var(--anim-duration) qui-animation__skeleton-loader-shine linear infinite;
+    animation: var(--anim-duration) qui-skeleton-shine linear infinite;
     animation-delay: var(--anim-delay);
     border-radius: inherit;
 }
 
-.skeleton-loading-effect--darker {
-    --bg-normal: var(--qui-colors-gray-100, #eee);
-    --bg-shine: var(--qui-colors-gray-50, #f5f5f5);
+.skeleton-loader-header,
+.skeleton-loader-text,
+.qui-skeleton--heading,
+.qui-skeleton--text {
+    display: inline-block;
+    width: 100%;
+    height: var(--height);
+    border-radius: 0.75rem;
 }
 
+.skeleton-loader-header,
+.qui-skeleton--heading {
+    --height: calc(1.25rem * var(--qui-line-height, 1.45));
+
+    margin-bottom: calc(var(--height) * 0.5);
+}
+
+.skeleton-loader-text,
+.qui-skeleton--text {
+    --height: calc(1rem * var(--qui-line-height, 1.45));
+}
+
+.skeleton-loader-text--sm,
+.qui-skeleton--text-sm {
+    --height: calc(0.75rem * var(--qui-line-height, 1.45));
+}
+
+.skeleton-loader-text--lg,
+.qui-skeleton--text-lg {
+    --height: calc(1.25rem * var(--qui-line-height, 1.45));
+}
+
+/**
+ * Skeleton form state
+ *
+ * Wrap server side rendered form markup with this class to show it as a
+ * skeleton until a JS control takes over and removes the wrapper.
+ * The !important declarations are intended: a loading mask has to win
+ * against any form styling of the template.
+ */
+.qui-skeleton-form {
+    pointer-events: none;
+}
+
+.qui-skeleton-form :is(label, input, button, select, textarea) {
+    color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    background-color: var(--bg) !important;
+    background-image: linear-gradient(110deg, transparent 18%, var(--shine-color) 30%, transparent 43%) !important;
+    background-repeat: repeat !important;
+    background-size: 200% 100% !important;
+    background-position: 100% 0 !important;
+    animation: var(--anim-duration) qui-skeleton-shine linear infinite;
+    animation-delay: var(--anim-delay);
+}
+
+.qui-skeleton-form label {
+    width: fit-content;
+    border-radius: 0.25em;
+}
+
+.qui-skeleton-form ::placeholder {
+    color: transparent;
+}
+
+@keyframes qui-skeleton-shine {
+    to {
+        background-position-x: -100%;
+    }
+}
+
+/* deprecated alias, will be removed */
 @keyframes qui-animation__skeleton-loader-shine {
     to {
         background-position-x: -100%;

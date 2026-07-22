@@ -1,38 +1,52 @@
 {
     "name": "quiqqer/template-cologne",
     "type": "quiqqer-template",
-    "description": "The QUIQQER Cologne E-Commerce Template",
-    "license": "GPLv3",
+    "description": "A responsive e-commerce template for QUIQQER.",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Henning Leutz",
-            "email": "support@pcsg.de",
-            "homepage": "https://www.pcsg.de",
-            "role": "Developer"
+            "name": "PCSG - Computer & Internet Service OHG",
+            "email": "info@quiqqer.com",
+            "homepage": "https://www.quiqqer.com",
+            "role": "Maintainer"
         }
     ],
+    "homepage": "https://www.quiqqer.com",
     "support": {
-        "email": "support@pcsg.de",
-        "url": "https://www.pcsg.de"
+        "email": "support@quiqqer.com",
+        "issues": "https://dev.quiqqer.com/quiqqer/template-cologne/issues",
+        "source": "https://dev.quiqqer.com/quiqqer/template-cologne"
     },
     "require": {
-        "php": "^8.1",
-        "quiqqer/core": "^2",
-        "quiqqer/erp": "^3",
+        "php": "^8.2",
+        "quiqqer/core": "^2.24",
+        "quiqqer/bricks": "^2.28",
+        "quiqqer/gallery": "^2",
         "quiqqer/products": "^2",
         "quiqqer/order": "^2.7.24",
         "quiqqer/product-bricks": "^2",
+        "quiqqer/productsearch": "^2",
         "quiqqer/frontend-users": "^2",
-        "quiqqer/menu": "^3",
+        "quiqqer/menu": "^3.9",
         "quiqqer/sitetypes": "^2",
         "quiqqer/unsemantic": "^2",
         "quiqqer/tooltips": "^2",
         "quiqqer/currency": "^2.2",
         "quiqqer/smarty4": "^2.0.7"
     },
+    "suggest": {
+        "quiqqer/order-cancellation-policy": "Adds a cancellation form link to the predefined footer.",
+        "quiqqer/shipping": "Displays product shipping times when configured.",
+        "quiqqer/stock-management": "Displays product stock information when configured."
+    },
     "autoload": {
         "psr-4": {
             "QUI\\TemplateCologne\\": "src/QUI/TemplateCologne"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QUI\\TemplateCologne\\Tests\\": "tests/"
         }
     },
     "scripts": {
