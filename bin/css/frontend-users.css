@@ -112,13 +112,9 @@
 /*****************/
 /* Login control */
 /*****************/
-:where(.loginAndRegister) .quiqqer-fu-login-container,
-:where(.loginAndRegister) .quiqqer-fu-registrationSignUp {
-    padding: 1.5rem 2rem;
-}
-
 :where(.loginAndRegister) .quiqqer-fu-login-container {
     background: #f8f8f8;
+    padding: 1.5rem 2rem;
     border: var(--_qui-cologne-theme-border-width) solid var(--_qui-cologne-theme-border-color);
     max-width: 400px;
     position: relative;
