@@ -8,6 +8,16 @@
             <locale group="quiqqer/template-cologne" var="package.description"/>
         </description>
 
+        <capabilities schemaVersion="1">
+            <capability id="commerce.storefront-presentation">
+                <title>E-commerce storefront presentation</title>
+                <description>
+                    Provides a responsive, configurable storefront presentation with commerce-oriented layouts,
+                    navigation, product, basket and checkout integration.
+                </description>
+            </capability>
+        </capabilities>
+
         <image src="URL_OPT_DIR/quiqqer/template-cologne/bin/images/Logo.png"/>
 
         <support>
