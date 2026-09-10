@@ -1,0 +1,719 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<locales>
+    <groups name="quiqqer/template-cologne" datatype="php,js">
+        <locale name="package.title">
+            <it><![CDATA[QUIQQER E-Commerce Cologne - Template]]></it>
+        </locale>
+        <locale name="package.description">
+            <it><![CDATA[Template e-commerce responsive per QUIQQER.]]></it>
+        </locale>
+        <!-- global brick settings -->
+        <locale name="brick.general.fullWidth">
+            <it><![CDATA[Il blocco occupa tutta la larghezza. Funziona solo nelle aree sotto l’intestazione (Header Suffix) e sopra il piè di pagina (Footer Prefix).]]></it>
+        </locale>
+        <locale name="brick.general.noSpacing">
+            <it><![CDATA[Senza spazio sopra e sotto. Utile per i blocchi che occupano tutta la larghezza della pagina.]]></it>
+        </locale>
+        <!-- layouts -->
+        <locale name="admin.layout.startpage">
+            <it><![CDATA[Pagina di destinazione (pagina iniziale)]]></it>
+        </locale>
+        <locale name="admin.layout.startpage.description">
+            <it><![CDATA[Layout senza barre laterali, pensato per la pagina iniziale.]]></it>
+        </locale>
+        <locale name="admin.layout.noSidebar">
+            <it><![CDATA[Senza barra laterale]]></it>
+        </locale>
+        <locale name="admin.layout.noSidebar.description">
+            <it><![CDATA[Layout senza barre laterali, generalmente usato per le pagine diverse da quella iniziale.]]></it>
+        </locale>
+        <locale name="admin.layout.noSidebarThin">
+            <it><![CDATA[Senza barra laterale (stretto)]]></it>
+        </locale>
+        <locale name="admin.layout.noSidebarThin.description">
+            <it><![CDATA[Layout senza barre laterali con un’area contenuti più stretta. Ideale per articoli del blog o notizie.]]></it>
+        </locale>
+        <locale name="admin.layout.leftSidebar">
+            <it><![CDATA[Barra laterale sinistra]]></it>
+        </locale>
+        <locale name="admin.layout.leftSidebar.description">
+            <it><![CDATA[Layout con un’area blocchi a sinistra.]]></it>
+        </locale>
+        <locale name="admin.layout.rightSidebar">
+            <it><![CDATA[Barra laterale destra]]></it>
+        </locale>
+        <locale name="admin.layout.rightSidebar.description">
+            <it><![CDATA[Layout con un’area blocchi a destra.]]></it>
+        </locale>
+        <!-- areas -->
+        <locale name="area.headerSuffix.title">
+            <it><![CDATA[Area sotto l’intestazione]]></it>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <it><![CDATA[Area blocchi dopo l’intestazione]]></it>
+        </locale>
+        <locale name="area.contentPrefix.title">
+            <it><![CDATA[Area sopra i contenuti]]></it>
+        </locale>
+        <locale name="area.contentPrefix.description">
+            <it><![CDATA[Area blocchi prima dei contenuti]]></it>
+        </locale>
+        <locale name="area.contentSuffix.title">
+            <it><![CDATA[Area sotto i contenuti]]></it>
+        </locale>
+        <locale name="area.contentSuffix.description">
+            <it><![CDATA[Area blocchi dopo i contenuti]]></it>
+        </locale>
+        <locale name="area.footerPrefix.title">
+            <it><![CDATA[Area sopra il piè di pagina]]></it>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <it><![CDATA[Area blocchi prima del piè di pagina]]></it>
+        </locale>
+        <locale name="area.leftSidebar.title">
+            <it><![CDATA[Area blocchi a sinistra]]></it>
+        </locale>
+        <locale name="area.leftSidebar.description">
+            <it><![CDATA[Area blocchi a sinistra dei contenuti]]></it>
+        </locale>
+        <locale name="area.rightSidebar.title">
+            <it><![CDATA[Area blocchi a destra]]></it>
+        </locale>
+        <locale name="area.rightSidebar.description">
+            <it><![CDATA[Area blocchi a destra dei contenuti]]></it>
+        </locale>
+        <locale name="area.footer.title">
+            <it><![CDATA[Area blocchi del piè di pagina]]></it>
+        </locale>
+        <locale name="area.footer.description">
+            <it><![CDATA[Area dei blocchi nel piè di pagina]]></it>
+        </locale>
+        <!-- product sidebar prefix -->
+        <locale name="area.productSidebarPrefix.title">
+            <it><![CDATA[Prodotti: area prima dei filtri nella barra laterale]]></it>
+        </locale>
+        <locale name="area.productSidebarPrefix.description">
+            <it><![CDATA[Area blocchi visibile solo nella pagina dei prodotti. I blocchi vengono posizionati prima dei filtri.]]></it>
+        </locale>
+        <!-- product sidebar suffix -->
+        <locale name="area.productSidebarSuffix.title">
+            <it><![CDATA[Prodotti: area dopo i filtri nella barra laterale]]></it>
+        </locale>
+        <locale name="area.productSidebarSuffix.description">
+            <it><![CDATA[Area blocchi visibile solo nella pagina dei prodotti. I blocchi vengono posizionati dopo i filtri.]]></it>
+        </locale>
+        <!-- product category prefix (area before product list) -->
+        <locale name="area.productCategoryPrefix.title">
+            <it><![CDATA[Prodotti: area prima dell’elenco dei prodotti]]></it>
+        </locale>
+        <locale name="area.productCategoryPrefix.description">
+            <it><![CDATA[Area blocchi visibile solo nella pagina dei prodotti. I blocchi vengono posizionati prima dell’elenco dei prodotti.]]></it>
+        </locale>
+        <!-- product category suffix (area after product list) -->
+        <locale name="area.productCategorySuffix.title">
+            <it><![CDATA[Prodotti: area dopo l’elenco dei prodotti]]></it>
+        </locale>
+        <locale name="area.productCategorySuffix.description">
+            <it><![CDATA[Area blocchi visibile solo nella pagina dei prodotti. I blocchi vengono posizionati dopo l’elenco dei prodotti.]]></it>
+        </locale>
+        <locale name="label.language">
+            <it><![CDATA[Lingua]]></it>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-cologne" datatype="php">
+        <locale name="template.login">
+            <it><![CDATA[Accedi]]></it>
+        </locale>
+        <locale name="template.logged.in">
+            <it><![CDATA[Accesso effettuato come: [username]]]></it>
+        </locale>
+        <locale name="template.topbar.content.left" html="true">
+            <it><![CDATA[
+                    <span class="topbar-contact-mail">
+                        <span class="fa fa-envelope-o">&nbsp;</span>
+                        <a href="mailto:info@e-commerce.de">info@e-commerce.de</a>
+                    </span>
+
+                    <span class="topbar-phone">
+                        <span class="fa fa-phone">&nbsp;</span>
+                        0202 2454545
+                    </span>
+
+                    <a href="#" class="topbar-social-link"><span class="fa fa-facebook">&nbsp;</span></a>
+                    <a href="#" class="topbar-social-link"><span class="fa fa-twitter">&nbsp;</span></a>
+
+]]></it>
+        </locale>
+        <locale name="template.basket.removeProductFromBasket">
+            <it><![CDATA[Rimuovi il prodotto dal carrello]]></it>
+        </locale>
+        <locale name="template.simpleUserInfo.ordersNumber">
+            <it><![CDATA[ordini]]></it>
+        </locale>
+        <locale name="template.simpleUserInfo.ordersNumber.info">
+            <it><![CDATA[Numero di ordini già effettuati: [ordersNumber].]]></it>
+        </locale>
+        <locale name="template.simpleUserInfo.joined">
+            <it><![CDATA[Account dal]]></it>
+        </locale>
+        <!-- site settings -->
+        <locale name="templateCologne.siteSettings">
+            <it><![CDATA[Impostazioni del template Cologne]]></it>
+        </locale>
+        <locale name="siteSettings.header">
+            <it><![CDATA[Mostra l’intestazione]]></it>
+        </locale>
+        <locale name="siteSettings.header.display.default">
+            <it><![CDATA[Usa l’impostazione predefinita del template]]></it>
+        </locale>
+        <locale name="siteSettings.info" html="true">
+            <it><![CDATA[L’intestazione mostra il titolo e la descrizione breve, salvo diversa configurazione. Se disattivi completamente l’intestazione, entrambi appaiono sopra i contenuti della pagina. Per nasconderli del tutto, devi configurare le rispettive opzioni separatamente. <br>L’opzione <strong>«Mostra l’intestazione»</strong> ha la precedenza sulle impostazioni del template.]]></it>
+        </locale>
+        <!-- page title -->
+        <locale name="siteSettings.pageTitle">
+            <it><![CDATA[Mostra il titolo della pagina]]></it>
+        </locale>
+        <locale name="siteSettings.pageTitle.default">
+            <it><![CDATA[Usa l’impostazione predefinita del template]]></it>
+        </locale>
+        <locale name="siteSettings.pageTitle.header">
+            <it><![CDATA[Nell’intestazione o prima dei contenuti se l’intestazione è disattivata]]></it>
+        </locale>
+        <locale name="siteSettings.pageTitle.breadcrumb">
+            <it><![CDATA[Nel percorso di navigazione]]></it>
+        </locale>
+        <locale name="siteSettings.pageTitle.both">
+            <it><![CDATA[Nell’intestazione e nel percorso di navigazione]]></it>
+        </locale>
+        <locale name="siteSettings.pageTitle.disable">
+            <it><![CDATA[Disattivato]]></it>
+        </locale>
+        <!-- page description -->
+        <locale name="siteSettings.pageDesc">
+            <it><![CDATA[Descrizione breve della pagina]]></it>
+        </locale>
+        <locale name="siteSettings.pageDesc.default">
+            <it><![CDATA[Usa l’impostazione predefinita del template]]></it>
+        </locale>
+        <locale name="siteSettings.pageDesc.enable">
+            <it><![CDATA[Attivato]]></it>
+        </locale>
+        <locale name="siteSettings.pageDesc.disable">
+            <it><![CDATA[Disattivato]]></it>
+        </locale>
+        <locale name="siteSettings.largeSpacing">
+            <it><![CDATA[Aumentare la spaziatura predefinita? Modifica lo spazio verticale tra blocchi, contenuti della pagina e altri elementi. Usato soprattutto nelle pagine di destinazione.]]></it>
+        </locale>
+        <locale name="siteSettings.pageCustomClass">
+            <it><![CDATA[Classe CSS]]></it>
+        </locale>
+        <locale name="siteSettings.pageCustomClass.desc" html="true">
+            <it><![CDATA[<strong>Per gli sviluppatori:</strong> puoi assegnare una classe CSS specifica alla pagina. Viene aggiunta al tag <i>&lt;body&gt;</i> e consente di selezionare la pagina senza dipendere dal suo ID. È utile quando gli ambienti di produzione, sviluppo o l’installazione locale non sono identici.]]></it>
+        </locale>
+        <locale name="siteSettings.independentMenuId">
+            <it><![CDATA[Menu indipendente]]></it>
+        </locale>
+        <locale name="siteSettings.independentMenuId.desc">
+            <it><![CDATA[Consente di impostare un menu indipendente per una singola pagina.]]></it>
+        </locale>
+        <!-- template settings -->
+        <locale name="settings.menu.title">
+            <it><![CDATA[Impostazioni del template Cologne]]></it>
+        </locale>
+        <locale name="settings.general.title">
+            <it><![CDATA[Impostazioni generali]]></it>
+        </locale>
+        <locale name="settings.shop.title">
+            <it><![CDATA[Impostazioni del negozio]]></it>
+        </locale>
+        <locale name="settings.general.homeLink">
+            <it><![CDATA[Mostra il link alla pagina iniziale nella navigazione]]></it>
+        </locale>
+        <locale name="settings.general.homeLinkText">
+            <it><![CDATA[Testo del link]]></it>
+        </locale>
+        <locale name="settings.general.homeLinkText.desc">
+            <it><![CDATA[Se lasciato vuoto, come testo del link viene usato il titolo della pagina iniziale.]]></it>
+        </locale>
+        <locale name="settings.general.logoHeight">
+            <it><![CDATA[Altezza del logo]]></it>
+        </locale>
+        <locale name="settings.general.logoHeight.desc">
+            <it><![CDATA[Altezza massima del logo. Non supererà mai l’altezza del menu.]]></it>
+        </locale>
+        <locale name="settings.general.currencyLangSwitch.title">
+            <it><![CDATA[Selezione di lingua e valuta]]></it>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType">
+            <it><![CDATA[Tipo di widget]]></it>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.desc">
+            <it><![CDATA[Questa impostazione controlla la selezione di lingua e valuta nella barra superiore della pagina.]]></it>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.disabled">
+            <it><![CDATA[Disattivato: non mostrare i selettori di lingua e valuta]]></it>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.currencyAndLang">
+            <it><![CDATA[Attiva la selezione di lingua e valuta]]></it>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.onlyCurrency">
+            <it><![CDATA[Attiva solo la selezione della valuta]]></it>
+        </locale>
+        <locale name="settings.currencyLangSwitch.controlType.onlyLang">
+            <it><![CDATA[Attiva solo la selezione della lingua]]></it>
+        </locale>
+        <locale name="settings.shop.title">
+            <it><![CDATA[Impostazioni del negozio]]></it>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance">
+            <it><![CDATA[Aspetto delle pagine di acquisto e del carrello]]></it>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.desc" html="true">
+            <it><![CDATA[Definisce l’aspetto delle pagine del processo di acquisto e del carrello.]]></it>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.minimal">
+            <it><![CDATA[Minimale: gli elementi abituali della pagina sono disattivati.]]></it>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.compact">
+            <it><![CDATA[Compatto: mostra la barra superiore, la navigazione e il piè di pagina.]]></it>
+        </locale>
+        <locale name="settings.shop.checkoutAppearance.full">
+            <it><![CDATA[Completo: oltre agli elementi della modalità compatta, mostra il titolo della pagina e il percorso di navigazione.]]></it>
+        </locale>
+        <locale name="settings.shop.retailPrice">
+            <it><![CDATA[Mostra le offerte speciali]]></it>
+        </locale>
+        <locale name="settings.shop.retailPrice.desc" html="true">
+            <it><![CDATA[<br />Mostra il prezzo di vendita consigliato accanto al prezzo attuale per evidenziare l’offerta. Il prezzo consigliato deve essere indicato nelle proprietà del prodotto.<br /><strong>Questa impostazione riguarda solo il template. I blocchi esterni possono gestire questo comportamento diversamente.</strong>]]></it>
+        </locale>
+        <locale name="settings.shop.showStock">
+            <it><![CDATA[Mostra le scorte nei dettagli del prodotto]]></it>
+        </locale>
+        <locale name="settings.shop.categoryShowStock">
+            <it><![CDATA[Mostra le scorte nell’elenco dei prodotti]]></it>
+        </locale>
+        <locale name="settings.shop.showVisitedProducts">
+            <it><![CDATA[Mostra i prodotti visualizzati nella pagina del prodotto]]></it>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts">
+            <it><![CDATA[Prodotti simili nella pagina del prodotto]]></it>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts.hide">
+            <it><![CDATA[Nascondi]]></it>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts.asTab">
+            <it><![CDATA[Mostra in una scheda]]></it>
+        </locale>
+        <locale name="settings.shop.showSimilarProducts.afterDesc">
+            <it><![CDATA[Mostra dopo la descrizione del prodotto]]></it>
+        </locale>
+        <locale name="settings.shop.hideCategoryContent">
+            <it><![CDATA[Nascondi parte dei contenuti della pagina della categoria di prodotti]]></it>
+        </locale>
+        <locale name="settings.shop.hideCategoryContent.desc">
+            <it><![CDATA[Se attivata, questa opzione assegna un’altezza fissa ai contenuti. Il resto viene mostrato quando l’utente fa clic su «Mostra altro».]]></it>
+        </locale>
+        <locale name="settings.shop.categoryContentHeight">
+            <it><![CDATA[Altezza massima dei contenuti della pagina della categoria]]></it>
+        </locale>
+        <locale name="frontend.categoryContent.showMoreButton">
+            <it><![CDATA[Mostra altro]]></it>
+        </locale>
+        <locale name="settings.shop.showEquipment">
+            <it><![CDATA[Accessori nella pagina del prodotto]]></it>
+        </locale>
+        <locale name="settings.shop.showEquipment.hide">
+            <it><![CDATA[Nascondi]]></it>
+        </locale>
+        <locale name="settings.shop.showEquipment.asTab">
+            <it><![CDATA[Mostra in una scheda]]></it>
+        </locale>
+        <locale name="settings.shop.showEquipment.afterDesc">
+            <it><![CDATA[Mostra dopo la descrizione del prodotto]]></it>
+        </locale>
+        <!-- basket style -->
+        <locale name="settings.shop.basketStyle">
+            <it><![CDATA[Stile del carrello]]></it>
+        </locale>
+        <locale name="settings.shop.basketStyle.full">
+            <it><![CDATA[Completo (con icona e prezzo)]]></it>
+        </locale>
+        <locale name="settings.shop.basketStyle.compact">
+            <it><![CDATA[Compatto (solo icona)]]></it>
+        </locale>
+        <locale name="settings.shop.order.basket.showImages">
+            <it><![CDATA[Mostra le immagini dei prodotti nel carrello]]></it>
+        </locale>
+        <locale name="settings.shop.order.basket.showImages.desc">
+            <it><![CDATA[Se attivata, questa opzione mostra le immagini dei prodotti nel carrello e nell’ordine.]]></it>
+        </locale>
+        <!-- basket action -->
+        <locale name="settings.shop.basketAction">
+            <it><![CDATA[Azione al clic sull’icona del carrello]]></it>
+        </locale>
+        <locale name="settings.shop.basketAction.desc">
+            <it><![CDATA[Questa opzione si applica solo alla visualizzazione desktop. Sui dispositivi mobili viene sempre aperta la pagina di acquisto.]]></it>
+        </locale>
+        <locale name="settings.shop.basketAction.openSmallBasket">
+            <it><![CDATA[Apri il mini carrello]]></it>
+        </locale>
+        <locale name="settings.shop.basketAction.openOrderProcessUrl">
+            <it><![CDATA[Apri la pagina di acquisto]]></it>
+        </locale>
+        <locale name="settings.shop.basketAction.openOrderProcess">
+            <it><![CDATA[Apri il processo di acquisto in una finestra popup]]></it>
+        </locale>
+        <!-- hide empty fields -->
+        <locale name="settings.shop.hideEmptyFields">
+            <it><![CDATA[Nascondere le schede dei campi vuoti nei dettagli del prodotto?]]></it>
+        </locale>
+        <locale name="settings.shop.showBuyNowButton">
+            <it><![CDATA[Mostra il pulsante «Acquista ora»]]></it>
+        </locale>
+        <locale name="settings.shop.showRevocationFormLink">
+            <it><![CDATA[Mostra il link al modulo di recesso]]></it>
+        </locale>
+        <locale name="settings.shop.showRevocationFormLink.desc" html="true">
+            <it><![CDATA[Mostra un link al modulo di recesso nell’area del copyright. Richiede il pacchetto <b>quiqqer/order-cancellation-policy</b> installato e una pagina di tipo <b>Modulo di recesso</b>.]]></it>
+        </locale>
+        <!-- nav settings -->
+        <locale name="settings.nav.title">
+            <it><![CDATA[Impostazioni di navigazione]]></it>
+        </locale>
+        <locale name="settings.nav.text">
+            <it><![CDATA[Queste impostazioni riguardano la navigazione principale.]]></it>
+        </locale>
+        <locale name="settings.nav.showNavAfterScroll">
+            <it><![CDATA[Mostra la navigazione dopo lo scorrimento]]></it>
+        </locale>
+        <locale name="settings.nav.showNavAfterScroll.desc" html="true">
+            <it><![CDATA[Per impostazione predefinita, il menu si fissa al bordo superiore del browser quando lo raggiunge durante lo scorrimento. Impostando ad esempio <strong>500</strong>, il menu compare dall’alto dopo uno scorrimento verso il basso di almeno 500px.]]></it>
+        </locale>
+        <locale name="settings.nav.setMenuPosBackOnInit">
+            <it><![CDATA[Ripristina il menu al ritorno alla posizione iniziale]]></it>
+        </locale>
+        <locale name="settings.nav.setMenuPosBackOnInit.desc" html="true">
+            <it><![CDATA[Il menu si fissa in cima al browser durante lo scorrimento. La soglia dipende dall’opzione <i>«Mostra la navigazione dopo lo scorrimento»</i>. Con 500px, ad esempio, si fissa oltre questa distanza e torna alla posizione normale risalendo al di sotto della soglia. Se attivi questa opzione, il menu torna alla posizione normale <strong>solo quando raggiungi la sua posizione iniziale, generalmente tornando all’inizio della pagina</strong>.]]></it>
+        </locale>
+        <!-- nav / menu: independent -->
+        <locale name="templateCologne.settings.independentMenu.title">
+            <it><![CDATA[Menu indipendente]]></it>
+        </locale>
+        <locale name="settings.independentMenu.enableIndependentMenu">
+            <it><![CDATA[Attiva il menu indipendente]]></it>
+        </locale>
+        <locale name="settings.independentMenu.menuId">
+            <it><![CDATA[Seleziona menu]]></it>
+        </locale>
+        <locale name="settings.independentMenu.menuId.desc">
+            <it><![CDATA[Se selezioni un menu personalizzato, verrà usato per la navigazione. Puoi scegliere un menu per ogni lingua; le lingue senza una selezione specifica usano il menu della lingua predefinita.]]></it>
+        </locale>
+        <locale name="settings.independentMenu.showFirstLevelIcons">
+            <it><![CDATA[Mostra le icone nel primo livello]]></it>
+        </locale>
+        <!-- header settings -->
+        <locale name="settings.header.title">
+            <it><![CDATA[Impostazioni dell’intestazione]]></it>
+        </locale>
+        <!-- header settings: display -->
+        <locale name="settings.header.text">
+            <it><![CDATA[Specifica dove mostrare l’intestazione per ogni tipo di pagina.]]></it>
+        </locale>
+        <locale name="settings.header.text" html="true">
+            <it><![CDATA[Mostrare l’intestazione? <br />Specifica dove mostrare l’intestazione per ogni tipo di pagina.]]></it>
+        </locale>
+        <locale name="settings.header.display.afterNav">
+            <it><![CDATA[Dopo la navigazione]]></it>
+        </locale>
+        <locale name="settings.header.display.beforeContent">
+            <it><![CDATA[Prima dei contenuti]]></it>
+        </locale>
+        <locale name="settings.header.display.hide">
+            <it><![CDATA[Nascondi]]></it>
+        </locale>
+        <!-- header settings: size -->
+        <locale name="settings.header.height.text">
+            <it><![CDATA[Imposta l’altezza minima dell’intestazione. Se il titolo e la descrizione breve richiedono più spazio, l’intestazione aumenta in altezza.]]></it>
+        </locale>
+        <locale name="settings.header.height.value">
+            <it><![CDATA[Altezza (in pixel)]]></it>
+        </locale>
+        <!-- header settings: image position -->
+        <locale name="settings.header.imagePosition.text">
+            <it><![CDATA[Posizione dell’immagine]]></it>
+        </locale>
+        <locale name="settings.header.imagePosition.top">
+            <it><![CDATA[In alto]]></it>
+        </locale>
+        <locale name="settings.header.imagePosition.center">
+            <it><![CDATA[Al centro]]></it>
+        </locale>
+        <locale name="settings.header.imagePosition.bottom">
+            <it><![CDATA[In basso]]></it>
+        </locale>
+        <!-- page title settings -->
+        <locale name="settings.pageTitle.title">
+            <it><![CDATA[Titolo della pagina]]></it>
+        </locale>
+        <locale name="settings.pageTitle.text">
+            <it><![CDATA[Specifica dove mostrare il titolo della pagina.]]></it>
+        </locale>
+        <locale name="settings.pageTitle.header">
+            <it><![CDATA[Nell’intestazione o prima dei contenuti se l’intestazione è disattivata]]></it>
+        </locale>
+        <locale name="settings.pageTitle.breadcrumb">
+            <it><![CDATA[Nel percorso di navigazione]]></it>
+        </locale>
+        <locale name="settings.pageTitle.both">
+            <it><![CDATA[Nell’intestazione e nel percorso di navigazione]]></it>
+        </locale>
+        <locale name="settings.pageTitle.disable">
+            <it><![CDATA[Disattivato]]></it>
+        </locale>
+        <!-- page short description -->
+        <locale name="settings.pageShortDesc.title">
+            <it><![CDATA[Descrizione breve]]></it>
+        </locale>
+        <locale name="settings.pageShortDesc.text">
+            <it><![CDATA[La descrizione breve può essere attivata o disattivata per ogni layout di pagina.]]></it>
+        </locale>
+        <!-- category menu -->
+        <locale name="settings.categoryMenu.title">
+            <it><![CDATA[Menu delle categorie del negozio]]></it>
+        </locale>
+        <locale name="settings.categoryMenu.text">
+            <it><![CDATA[Questo menu mostra solo le categorie del negozio.]]></it>
+        </locale>
+        <!-- category menu: show -->
+        <locale name="settings.categoryMenu.show">
+            <it><![CDATA[Mostra il menu delle categorie del negozio]]></it>
+        </locale>
+        <!-- category menu: show short desc of category for... -->
+        <locale name="settings.categoryMenu.showDescFor">
+            <it><![CDATA[Descrizioni brevi delle categorie]]></it>
+        </locale>
+        <locale name="settings.categoryMenu.showDescFor.all">
+            <it><![CDATA[Mostra per tutte le categorie]]></it>
+        </locale>
+        <locale name="settings.categoryMenu.showDescFor.firstLevel">
+            <it><![CDATA[Mostra solo per le categorie principali (primo livello del menu)]]></it>
+        </locale>
+        <locale name="settings.categoryMenu.showDescFor.none">
+            <it><![CDATA[Non mostrare]]></it>
+        </locale>
+        <!-- category menu: start id -->
+        <locale name="settings.categoryMenu.startId">
+            <it><![CDATA[Pagina iniziale della categoria (per impostazione predefinita, la pagina iniziale del sito)]]></it>
+        </locale>
+        <!-- category menu: show basket button -->
+        <locale name="settings.showBasketButton">
+            <it><![CDATA[Mostra il carrello e l’importo totale nel menu delle categorie del negozio]]></it>
+        </locale>
+        <locale name="categoryMenu.openButton.title">
+            <it><![CDATA[Apri le categorie del negozio]]></it>
+        </locale>
+        <locale name="categoryMenu.title">
+            <it><![CDATA[Categorie del negozio]]></it>
+        </locale>
+        <locale name="categoryMenu.button.back">
+            <it><![CDATA[Indietro]]></it>
+        </locale>
+        <locale name="categoryMenu.button.back.title">
+            <it><![CDATA[Torna al livello precedente]]></it>
+        </locale>
+        <locale name="categoryMenu.button.nextCat.title" html="true">
+            <it><![CDATA[Mostra le categorie di [title]]]></it>
+        </locale>
+        <locale name="categoryMenu.basketButton.title">
+            <it><![CDATA[Procedi all’acquisto]]></it>
+        </locale>
+        <!-- breadcrumb settings -->
+        <locale name="settings.breadcrumb.title">
+            <it><![CDATA[Impostazioni del percorso di navigazione]]></it>
+        </locale>
+        <locale name="settings.breadcrumb.text" html="true">
+            <it><![CDATA[Mostrare il percorso di navigazione? <br/>Specifica se deve essere visualizzato per ogni tipo di pagina.]]></it>
+        </locale>
+        <!-- predefined footer: short text -->
+        <locale name="settings.predefinedFooter.shortText">
+            <it><![CDATA[Piè di pagina predefinito: testo breve]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.info">
+            <it><![CDATA[Per modificare il testo, modifica la variabile di lingua <strong>settings.predefinedFooter.shortText.content</strong> in Amministrazione → Variabili di lingua.]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.title">
+            <it><![CDATA[Titolo]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.content" html="true">
+            <it><![CDATA[
+            <p>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+
+            <p><span class="fa fa-envelope-o" style="margin-right: 10px;">&nbsp;</span>&nbsp;<a href="mailto:support@test-domain.de">support@test-domain.de</a></p>
+
+            <p>&nbsp;</p>
+
+            <p>
+            <a class="font-icon" href="#"><span class="fa fa-facebook">&nbsp;</span></a>
+            <a class="font-icon" href="#"><span class="fa fa-twitter">&nbsp;</span></a>
+            </p>
+
+]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.shortText.show">
+            <it><![CDATA[Attiva]]></it>
+        </locale>
+        <!-- predefined footer: url list -->
+        <locale name="settings.predefinedFooter.urlList">
+            <it><![CDATA[Piè di pagina predefinito: elenco di link]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.show">
+            <it><![CDATA[Attiva]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.title">
+            <it><![CDATA[Titolo]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.sites">
+            <it><![CDATA[Pagine]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.sites.order">
+            <it><![CDATA[Ordine]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.urlList.showStandardSites">
+            <it><![CDATA[Mostra le pagine standard (condizioni generali, note legali, ecc.). Vengono mostrate solo le pagine create e attive nel sistema.]]></it>
+        </locale>
+        <!-- predefined footer: featured products -->
+        <locale name="settings.predefinedFooter.featuredProducts">
+            <it><![CDATA[Piè di pagina predefinito: elenco di prodotti]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.show">
+            <it><![CDATA[Attiva]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.title">
+            <it><![CDATA[Titolo]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.category">
+            <it><![CDATA[Categoria]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.featuredProducts.order">
+            <it><![CDATA[Ordine]]></it>
+        </locale>
+        <!-- predefined footer: payments -->
+        <locale name="settings.predefinedFooter.title">
+            <it><![CDATA[Piè di pagina predefinito: metodi di pagamento]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.payments">
+            <it><![CDATA[Attiva]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.payments.title">
+            <it><![CDATA[Titolo]]></it>
+        </locale>
+        <locale name="settings.predefinedFooter.payments.layout">
+            <it><![CDATA[Layout]]></it>
+        </locale>
+        <locale name="settings.footer.predefinedFooter.layout.grid">
+            <it><![CDATA[Griglia (riquadri)]]></it>
+        </locale>
+        <locale name="settings.footer.predefinedFooter.layout.list">
+            <it><![CDATA[Elenco]]></it>
+        </locale>
+        <!-- exceptions -->
+        <locale name="exception.user.required">
+            <it><![CDATA[È richiesto un oggetto utente (QUI\Interfaces\Users\User).]]></it>
+        </locale>
+        <!-- others -->
+        <locale name="template.button.openProduct">
+            <it><![CDATA[Visualizza prodotto]]></it>
+        </locale>
+        <locale name="copyright.text" html="true">
+            <it><![CDATA[&copy; [year] - realizzato con <a href="https://www.quiqqer.com">QUIQQER - Template Cologne</a>]]></it>
+        </locale>
+        <locale name="copyright.revocationForm">
+            <it><![CDATA[Modulo di recesso]]></it>
+        </locale>
+        <locale name="template.button.toTop">
+            <it><![CDATA[Torna all’inizio della pagina]]></it>
+        </locale>
+        <locale name="template.button.search">
+            <it><![CDATA[Cerca prodotti]]></it>
+        </locale>
+        <locale name="template.basket.small.otherPaymentMethodsSpacer" html="true">
+            <it><![CDATA[- oppure -]]></it>
+        </locale>
+        <!-- site types -->
+        <locale name="admin.types.registration">
+            <it><![CDATA[Registrazione]]></it>
+        </locale>
+        <locale name="admin.types.setting.registration">
+            <it><![CDATA[Registrazione]]></it>
+        </locale>
+        <locale name="quiqqer.settings.registration.contentPos">
+            <it><![CDATA[Dove mostrare i contenuti della pagina?]]></it>
+        </locale>
+        <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
+            <it><![CDATA[Accanto al modulo di registrazione]]></it>
+        </locale>
+        <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
+            <it><![CDATA[Prima del modulo di registrazione]]></it>
+        </locale>
+        <locale name="control.product.buy.know.button">
+            <it><![CDATA[Acquista ora]]></it>
+        </locale>
+        <locale name="shop.product.showSimilarProducts.title">
+            <it><![CDATA[Prodotti simili]]></it>
+        </locale>
+        <locale name="shop.product.showEquipment.title">
+            <it><![CDATA[Accessori]]></it>
+        </locale>
+        <locale name="ERP.Products.Controls.Category.ProductList.categoryLabel">
+            <it><![CDATA[Categorie]]></it>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-cologne" datatype="js">
+        <locale name="frontend.usericon.menuentry.logout.label">
+            <it><![CDATA[Esci]]></it>
+        </locale>
+        <locale name="template.popup.login.registration.button">
+            <it><![CDATA[Crea un account]]></it>
+        </locale>
+    </groups>
+    <!-- override locale -->
+    <groups name="quiqqer/core" datatype="php">
+        <locale name="templates.mail.body.header.social" priority="10" html="true">
+            <it><![CDATA[
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Seguici su Facebook">
+                    <img width="15" height="15"  src="[HOST]packages/quiqqer/template-cologne/bin/images/social/facebook.png"
+                        alt="Seguici su Facebook" />
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Seguici su Twitter">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/twitter.png"
+                        alt="Seguici su Twitter">
+                 </a>
+
+
+
+]]></it>
+        </locale>
+        <locale name="templates.mail.body.footer.social" priority="10" html="true">
+            <it><![CDATA[
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Seguici su Facebook">
+                    <img width="15" height="15"  src="[HOST]packages/quiqqer/template-cologne/bin/images/social/facebook.png"
+                        alt="Seguici su Facebook" />
+                 </a>
+
+                 <a href="#" target="_blank" rel="noreferrer" style="color: #666666; text-decoration: none; padding: 0 10px;"
+                    title="Seguici su Twitter">
+                     <img width="15" height="15" src="[HOST]packages/quiqqer/template-cologne/bin/images/social/twitter.png"
+                        alt="Seguici su Twitter">
+                 </a>
+
+
+]]></it>
+        </locale>
+    </groups>
+</locales>
