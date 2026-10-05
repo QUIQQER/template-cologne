@@ -179,7 +179,7 @@ $templateSettings['productPage'] = $productPage;
 $templateSettings['Flags'] = $Flags;
 $templateSettings['LangCurrencySwitch'] = $LangCurrencySwitch;
 $templateSettings['countLanguages'] = \count($Project->getLanguages());
-$templateSettings['Search'] = new QUI\ERP\Products\Search\Controls\Suggest([
+$templateSettings['Search'] = new QUI\ERP\Products\Search\Controls\SuggestLazy([
     'globalsearch' => true
 ]);
 $templateSettings['registerSiteUrl'] = $registerSiteUrl;
