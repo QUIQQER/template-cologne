@@ -645,76 +645,184 @@ window.addEvent('domready', function() {
         }
 
         /**
-         * Find all anchors and set click event to smoothly scroll to the element.
-         * It works both with all HTML elements.
-         * Every element witch is not an <a> tag, needs "data-qui-target-id" or "data-qui-target-class" attribute.
-         * Target for <a> elements is always a # (hash) string
-         *
-         * Anchor settings:
-         *   scrollToLink - [required] only elements with this css class will be considered
-         *   data-qui-target="myTargetElement" - [optional] every valid css selector
-         *   data-qui-offset="60" - [optional] scroll offset
-         *
-         * Examples:
-         * <a class="scrollToLink" href="#myElement">Scroll to myElement</a>
-         * <button class="scrollToLink" data-qui-target"#myElement">Scroll to element with ID myElement</button>
-         * <span class="scrollToLink" data-qui-target=".exampleParagraph" data-qui-offset="150">Scroll to element with CSS class exampleParagraph</span>
+         * Scroll same-page links automatically. Keep scrollToLink and data-qui-target
+         * for existing controls; data-qui-offset overrides the measured menu height.
          */
         function initScrollToAnchor()
         {
-            let links = document.querySelectorAll('.scrollToLink');
+            const Menu = document.querySelector('[data-name="main-menu"]');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let initialScrollCancelled = false;
 
-            let getTarget = function(Link) {
-                if (Link.get('data-qui-target')) {
-                    return document.querySelector(Link.get('data-qui-target'));
+            function cancelInitialScroll() {
+                initialScrollCancelled = true;
+            }
+
+            function getHashTarget(hash) {
+                if (!hash || hash === '#') {
+                    return null;
                 }
 
-                let href = Link.href;
-
-                if (!href || href.indexOf('#') === -1) {
-                    return false;
+                try {
+                    return document.getElementById(decodeURIComponent(hash.substring(1)));
+                } catch (error) {
+                    return null;
                 }
+            }
 
-                let targetString = href.substring(href.indexOf('#') + 1);
+            function getOffset(Target, Link) {
+                const offsets = [
+                    Link ? Link.getAttribute('data-qui-offset') : null,
+                    Target.getAttribute('data-qui-offset'),
+                    window.SCROLL_OFFSET
+                ];
 
-                if (targetString.length < 1) {
-                    return false;
-                }
-
-                let TargetElm = document.getElementById(targetString);
-
-                if (!TargetElm) {
-                    return false;
-                }
-
-                return TargetElm;
-            };
-
-            let clickEvent = function(Target, offset) {
-                new Fx.Scroll(window, {
-                    offset: {
-                        y: -offset
+                for (const value of offsets) {
+                    if (value === null || typeof value === 'undefined' || String(value).trim() === '') {
+                        continue;
                     }
-                }).toElement(Target);
-            };
 
-            for (let Link of links) {
-                let TargetElm = getTarget(Link);
+                    const offset = Number(value);
 
-                if (!TargetElm) {
-                    continue;
+                    if (Number.isFinite(offset) && offset >= 0) {
+                        return offset;
+                    }
                 }
 
-                let offset = Link.get('data-qui-offset');
+                // The expanded menu is taller than the pinned menu, so this also
+                // leaves enough room when the menu shrinks during the scroll.
+                const menuHeight = Menu ? Menu.getBoundingClientRect().height : 0;
 
-                if (!offset) {
-                    offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+                return menuHeight > 0 ? menuHeight + 20 : 0;
+            }
+
+            function scrollToTarget(Target, Link, smooth) {
+                const top = Target.getBoundingClientRect().top + window.scrollY - getOffset(Target, Link);
+
+                if (typeof Target.focus === 'function') {
+                    Target.focus({preventScroll: true});
+
+                    if (document.activeElement !== Target && !Target.hasAttribute('tabindex')) {
+                        Target.setAttribute('tabindex', '-1');
+                        Target.addEventListener('blur', function() {
+                            if (Target.getAttribute('tabindex') === '-1') {
+                                Target.removeAttribute('tabindex');
+                            }
+                        }, {once: true});
+                        Target.focus({preventScroll: true});
+                    }
                 }
 
-                Link.addEvent('click', function(event) {
-                    event.stop();
-                    clickEvent(TargetElm, offset);
+                window.scrollTo({
+                    top: Math.max(0, top),
+                    behavior: smooth && !reducedMotion.matches ? 'smooth' : 'instant'
                 });
+            }
+
+            document.addEventListener('click', function(event) {
+                if (
+                    event.defaultPrevented ||
+                    event.button !== 0 ||
+                    event.ctrlKey ||
+                    event.metaKey ||
+                    event.shiftKey ||
+                    event.altKey
+                ) {
+                    return;
+                }
+
+                // The class selector is retained only for the existing opt-in API.
+                const Link = event.target.closest?.('a[href], .scrollToLink');
+
+                if (!Link || Link.getAttribute('data-qui-disableTemplateScroll') === '1') {
+                    return;
+                }
+
+                let url = null;
+
+                if (Link.matches('a[href]')) {
+                    const target = Link.getAttribute('target') ||
+                        document.querySelector('base[target]')?.getAttribute('target');
+
+                    if (Link.hasAttribute('download') || (target && target.toLowerCase() !== '_self')) {
+                        return;
+                    }
+
+                    try {
+                        url = new URL(Link.href, document.baseURI);
+                    } catch (error) {
+                        return;
+                    }
+
+                    if (
+                        url.origin !== window.location.origin ||
+                        url.pathname !== window.location.pathname ||
+                        url.search !== window.location.search
+                    ) {
+                        return;
+                    }
+                }
+
+                let Target = url ? getHashTarget(url.hash) : null;
+                const selector = Link.getAttribute('data-qui-target');
+
+                if (Link.classList.contains('scrollToLink') && selector) {
+                    try {
+                        Target = document.querySelector(selector);
+                    } catch (error) {
+                        return;
+                    }
+                }
+
+                if (!Target) {
+                    return;
+                }
+
+                event.preventDefault();
+                cancelInitialScroll();
+
+                if (url && url.hash && url.hash !== window.location.hash) {
+                    window.history.pushState(null, '', url.href);
+                }
+
+                scrollToTarget(Target, Link, true);
+            });
+
+            function scrollToInitialHash() {
+                for (const eventName of ['pointerdown', 'wheel', 'keydown']) {
+                    window.removeEventListener(eventName, cancelInitialScroll);
+                }
+
+                const navigation = performance.getEntriesByType('navigation')[0];
+
+                // Reload and back/forward navigation keep the browser's saved position.
+                if (initialScrollCancelled || (navigation && navigation.type !== 'navigate')) {
+                    return;
+                }
+
+                const Target = getHashTarget(window.location.hash);
+
+                if (Target) {
+                    window.requestAnimationFrame(function() {
+                        if (!initialScrollCancelled) {
+                            scrollToTarget(Target, null, false);
+                        }
+                    });
+                }
+            }
+
+            if (!window.location.hash) {
+                return;
+            }
+
+            if (document.readyState === 'complete') {
+                scrollToInitialHash();
+            } else {
+                for (const eventName of ['pointerdown', 'wheel', 'keydown']) {
+                    window.addEventListener(eventName, cancelInitialScroll, {passive: true, once: true});
+                }
+
+                window.addEventListener('load', scrollToInitialHash, {once: true});
             }
         }
 
