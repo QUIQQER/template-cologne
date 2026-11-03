@@ -81,6 +81,7 @@
             <div class="quiqqer-frontendUsers-controls-profile-categoryContentAnimation" data-name="content-animated">
                 {$Category->create()}
                 <input type="hidden" name="profile-save" value="1">
+                <input type="hidden" name="_csrf" data-name="csrf-token" value="{$csrfToken|escape:'html'}">
             </div>
         </form>
     </div>
