@@ -349,10 +349,10 @@
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
-            <es><![CDATA[Acción al pulsar el icono del carrito]]></es>
+            <es><![CDATA[Acción al pulsar el icono del carrito (escritorio)]]></es>
         </locale>
         <locale name="settings.shop.basketAction.desc">
-            <es><![CDATA[Esta opción solo se aplica a la vista de escritorio. En dispositivos móviles siempre se abre la página de compra.]]></es>
+            <es><![CDATA[Se aplica a la cabecera y al menú de categorías por encima de 768 píxeles. La página de pedido da prioridad a Simple Checkout y después a Order. La opción del carrito busca primero el carrito y después utiliza el mismo orden.]]></es>
         </locale>
         <locale name="settings.shop.basketAction.openSmallBasket">
             <es><![CDATA[Abrir el minicarrito]]></es>
@@ -362,6 +362,18 @@
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
             <es><![CDATA[Abrir el proceso de compra en una ventana emergente]]></es>
+        </locale>
+        <locale name="settings.shop.basketAction.openShoppingCart">
+            <es><![CDATA[Abrir la página del carrito]]></es>
+        </locale>
+        <locale name="settings.shop.basketMobileAction">
+            <es><![CDATA[Acción al pulsar el icono del carrito (móvil)]]></es>
+        </locale>
+        <locale name="settings.shop.basketMobileAction.desc">
+            <es><![CDATA[Se aplica a la cabecera y al menú de categorías hasta 768 píxeles inclusive. De forma predeterminada se abre el carrito. Si no está disponible o se selecciona la página de pedido, se busca primero Simple Checkout y después Order.]]></es>
+        </locale>
+        <locale name="basket.navigation.unavailable">
+            <es><![CDATA[La página solicitada no se puede abrir en este momento. Inténtalo de nuevo más tarde.]]></es>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">

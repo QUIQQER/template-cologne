@@ -349,10 +349,10 @@
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
-            <fr><![CDATA[Action au clic sur l’icône du panier]]></fr>
+            <fr><![CDATA[Action au clic sur l’icône du panier (ordinateur)]]></fr>
         </locale>
         <locale name="settings.shop.basketAction.desc">
-            <fr><![CDATA[Cette option ne s’applique qu’à l’affichage sur ordinateur. Sur mobile, la page de commande s’ouvre toujours.]]></fr>
+            <fr><![CDATA[Concerne l’en-tête et le menu des catégories au-delà de 768 pixels. La page de commande privilégie Simple Checkout, puis Order. L’option du panier recherche d’abord le panier, puis suit le même ordre.]]></fr>
         </locale>
         <locale name="settings.shop.basketAction.openSmallBasket">
             <fr><![CDATA[Ouvrir le mini-panier]]></fr>
@@ -362,6 +362,18 @@
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
             <fr><![CDATA[Ouvrir le processus de commande dans une fenêtre contextuelle]]></fr>
+        </locale>
+        <locale name="settings.shop.basketAction.openShoppingCart">
+            <fr><![CDATA[Ouvrir la page du panier]]></fr>
+        </locale>
+        <locale name="settings.shop.basketMobileAction">
+            <fr><![CDATA[Action au clic sur l’icône du panier (mobile)]]></fr>
+        </locale>
+        <locale name="settings.shop.basketMobileAction.desc">
+            <fr><![CDATA[Concerne l’en-tête et le menu des catégories jusqu’à 768 pixels inclus. Le panier est ouvert par défaut. S’il est indisponible ou si la page de commande est sélectionnée, Simple Checkout est recherché avant Order.]]></fr>
+        </locale>
+        <locale name="basket.navigation.unavailable">
+            <fr><![CDATA[La page demandée ne peut pas être ouverte pour le moment. Veuillez réessayer plus tard.]]></fr>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">

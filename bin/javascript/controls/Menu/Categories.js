@@ -9,10 +9,11 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
     'qui/QUI',
     'qui/controls/Control',
+    'Locale',
     'package/quiqqer/menu/bin/SlideOut',
     'package/quiqqer/order/bin/frontend/controls/basket/Button'
 
-], function (QUI, QUIControl, SlideOut, BasketBtn) {
+], function (QUI, QUIControl, QUILocale, SlideOut, BasketBtn) {
     "use strict";
 
     return new Class({
@@ -76,15 +77,19 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
                 self.BasketBtnContainer = new Element('div', {
                     'class': 'categories-menu-basketButtonContainer',
-                    title  : 'Zum Bestellprozess'
+                    title  : QUILocale.get('quiqqer/order', 'control.basket.button.text')
                 });
 
                 self.BasketBtnContainer.inject(self.Wrapper);
 
                 BasketButton.inject(self.BasketBtnContainer);
 
-                self.BasketBtnContainer.addEvent('click', function () {
-                    BasketButton.getElm().click();
+                self.BasketBtnContainer.addEventListener('click', function (event) {
+                    const button = BasketButton.getElm();
+
+                    if (!button.contains(event.target)) {
+                        button.click();
+                    }
                 });
 
                 self.Wrapper.setStyle('height', 'calc(100vh - ' + self.BasketBtnContainer.getSize().y + 'px)');
@@ -258,7 +263,17 @@ define('package/quiqqer/template-cologne/bin/javascript/controls/Menu/Categories
 
         createBasketButton: function () {
             return new BasketBtn({
-                open                     : 2,
+                action: typeof BASKET_ACTION === 'string' ? BASKET_ACTION : 'openSmallBasket',
+                mobileAction: typeof BASKET_MOBILE_ACTION === 'string' ? BASKET_MOBILE_ACTION : 'openShoppingCart',
+                getNavigationUrl: function(mobile) {
+                    return new Promise(function(resolve, reject) {
+                        require([
+                            'package/quiqqer/template-cologne/bin/javascript/BasketNavigation'
+                        ], resolve, reject);
+                    }).then(function(BasketNavigation) {
+                        return BasketNavigation.getNavigationUrl(mobile);
+                    });
+                },
                 showMiniBasketOnMouseOver: 0,
                 events                   : {
                     onCreate: function (Basket) {
