@@ -245,11 +245,8 @@ class Utils
         }
 
         // basket open
-        $basketAction = $Project->getConfig('templateCologne.settings.basketAction');
-
-        if (!in_array($basketAction, ['openSmallBasket', 'openOrderProcessUrl', 'openOrderProcess'])) {
-            $basketAction = 'openSmallBasket';
-        }
+        $basketAction = BasketNavigation::getAction($Project, false);
+        $basketMobileAction = BasketNavigation::getAction($Project, true);
 
         $menuBreakPoint = intval($Project->getConfig('mobileMenu.settings.breakPoint'));
 
@@ -383,7 +380,8 @@ class Utils
         $config['siteType'] = $siteType;
         $config['pageCustomClass'] = $pageCustomClass;
         $config['basketStyle'] = $basketStyle;
-        $config['basketAction'] = $basketAction;
+        $config['basketAction'] = $basketAction['value'];
+        $config['basketMobileAction'] = $basketMobileAction['value'];
         $config['showCategoryMenu'] = $showCategoryMenu;
         $config['homeLink'] = $homeLink;
         $config['homeLinkText'] = $homeLinkText;

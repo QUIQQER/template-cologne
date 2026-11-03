@@ -36,6 +36,35 @@ checkout appearance, language and currency controls, and predefined footer.
 Individual sites can override selected layout, header, title, description, and
 menu settings through their site attributes.
 
+### Basket navigation
+
+The header and category-menu basket buttons share separate desktop and mobile
+click settings. Desktop keeps its existing default (small basket) and also
+offers the shopping cart page. At widths up to and including 768 pixels, the
+new `templateCologne.settings.basketMobileAction` defaults to the shopping cart
+page, including in existing shops. An explicit order-page selection is respected.
+
+The shared navigation JavaScript is loaded only when a page-navigation action
+is clicked. The destination lookup then runs via AJAX, not during page rendering.
+Opening the small basket or checkout popup does not load this navigation module.
+
+The order-page action prefers a standalone Simple Checkout page and falls back
+to an Order page. The shopping-cart action first looks for a cart page and then
+uses that same checkout order. If none of the applicable pages is usable,
+the visitor stays on the current page and receives a message. The failed click
+logs an error with the project, language, setting, effective value, value source
+and lookup failures. Successful fallbacks do not log an error. Existing checkout
+links and popup actions are unchanged.
+
+This intentionally changes existing order-page selections: when both checkout
+site types exist, Simple Checkout now wins. The configuration within the Order
+page does not affect destination selection.
+
+This feature requires `quiqqer/order` ^2.21.0. Release the basket Button
+extension (`mobileAction` and `getNavigationUrl`) in Order 2.21.0 before
+publishing this Cologne version. If the extension ships in a later version,
+adjust the minimum dependency accordingly before publishing.
+
 ## Smooth scrolling
 
 Add `scrollToLink` to an anchor or button. The target can come from the link's

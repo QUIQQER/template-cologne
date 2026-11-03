@@ -349,10 +349,10 @@
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
-            <pl><![CDATA[Działanie po kliknięciu ikony koszyka]]></pl>
+            <pl><![CDATA[Działanie po kliknięciu ikony koszyka (komputer)]]></pl>
         </locale>
         <locale name="settings.shop.basketAction.desc">
-            <pl><![CDATA[Ta opcja dotyczy tylko widoku na komputerze. Na urządzeniach mobilnych zawsze otwierana jest strona składania zamówienia.]]></pl>
+            <pl><![CDATA[Dotyczy nagłówka i menu kategorii przy szerokości powyżej 768 pikseli. Strona zamówienia preferuje Simple Checkout, a następnie Order. Opcja koszyka najpierw szuka koszyka, a potem stosuje tę samą kolejność.]]></pl>
         </locale>
         <locale name="settings.shop.basketAction.openSmallBasket">
             <pl><![CDATA[Otwórz minikoszyk]]></pl>
@@ -362,6 +362,18 @@
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
             <pl><![CDATA[Otwórz składanie zamówienia w wyskakującym oknie]]></pl>
+        </locale>
+        <locale name="settings.shop.basketAction.openShoppingCart">
+            <pl><![CDATA[Otwórz stronę koszyka]]></pl>
+        </locale>
+        <locale name="settings.shop.basketMobileAction">
+            <pl><![CDATA[Działanie po kliknięciu ikony koszyka (urządzenia mobilne)]]></pl>
+        </locale>
+        <locale name="settings.shop.basketMobileAction.desc">
+            <pl><![CDATA[Dotyczy nagłówka i menu kategorii przy szerokości do 768 pikseli włącznie. Domyślnie otwiera koszyk. Jeśli koszyk jest niedostępny lub wybrano stronę zamówienia, najpierw wyszukiwany jest Simple Checkout, a następnie Order.]]></pl>
+        </locale>
+        <locale name="basket.navigation.unavailable">
+            <pl><![CDATA[Nie można teraz otworzyć żądanej strony. Spróbuj ponownie później.]]></pl>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">

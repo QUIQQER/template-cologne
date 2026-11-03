@@ -48,6 +48,7 @@ class UtilsConfigTest extends TestCase
         self::assertSame('enable', $config['settings.pageShortDesc']);
         self::assertSame('type-quiqqer-products-types-list', $config['typeClass']);
         self::assertSame('openSmallBasket', $config['basketAction']);
+        self::assertSame('openShoppingCart', $config['basketMobileAction']);
         self::assertStringContainsString('--qui-nav-height: 72px', $config['settingsCSS']);
         self::assertStringContainsString('max-width: 900px', $config['settingsCSS']);
     }
@@ -127,6 +128,7 @@ class UtilsConfigTest extends TestCase
             [
                 'templateCologne.settings.basketStyle' => 'compact',
                 'templateCologne.settings.basketAction' => 'openOrderProcessUrl',
+                'templateCologne.settings.basketMobileAction' => 'openOrderProcessUrl',
                 'templateCologne.settings.homeLink' => true,
                 'templateCologne.settings.homeLinkText' => '{"en":"Store"}',
                 'templateCologne.settings.showNavAfterScroll' => 120,
@@ -145,6 +147,7 @@ class UtilsConfigTest extends TestCase
         self::assertFalse($config['showFooter']);
         self::assertSame('compact', $config['basketStyle']);
         self::assertSame('openOrderProcessUrl', $config['basketAction']);
+        self::assertSame('openOrderProcessUrl', $config['basketMobileAction']);
         self::assertTrue($config['homeLink']);
         self::assertSame('Store', $config['homeLinkText']);
         self::assertSame(120, $config['showNavAfterScroll']);

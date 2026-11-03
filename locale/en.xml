@@ -352,10 +352,10 @@
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
-            <en><![CDATA[Shopping card action on click]]></en>
+            <en><![CDATA[Action when clicking the basket icon (desktop)]]></en>
         </locale>
         <locale name="settings.shop.basketAction.desc">
-            <en><![CDATA[This option only applies to desktop view. On mobile devices it will always be redirected to the order process page.]]></en>
+            <en><![CDATA[Applies to the header and category menu above 768 pixels. Opening the order page prefers Simple Checkout, then the Order page. Opening the shopping cart page looks for the cart first, then uses the same checkout order.]]></en>
         </locale>
         <locale name="settings.shop.basketAction.openSmallBasket">
             <en><![CDATA[Open small basket]]></en>
@@ -365,6 +365,18 @@
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
             <en><![CDATA[Open order process in a popup]]></en>
+        </locale>
+        <locale name="settings.shop.basketAction.openShoppingCart">
+            <en><![CDATA[Open shopping cart page]]></en>
+        </locale>
+        <locale name="settings.shop.basketMobileAction">
+            <en><![CDATA[Action when clicking the basket icon (mobile)]]></en>
+        </locale>
+        <locale name="settings.shop.basketMobileAction.desc">
+            <en><![CDATA[Applies to the header and category menu up to and including 768 pixels. The default is to open the shopping cart page. If the cart is unavailable or the order page is selected, Simple Checkout takes priority over the Order page.]]></en>
+        </locale>
+        <locale name="basket.navigation.unavailable">
+            <en><![CDATA[The requested page cannot be opened right now. Please try again later.]]></en>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
