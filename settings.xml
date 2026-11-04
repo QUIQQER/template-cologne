@@ -44,6 +44,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>openSmallBasket</defaultvalue>
                     </conf>
+                    <conf name="basketMobileAction">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>openShoppingCart</defaultvalue>
+                    </conf>
                     <conf name="hideEmptyFields">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -462,7 +466,7 @@
 
 
 
-                            <!-- basket action (openSmallBasket, openOrderProcessUrl, openOrderProcess (qui popup))-->
+                            <!-- desktop basket action -->
                             <select conf="templateCologne.settings.basketAction">
                                 <text>
                                     <locale group="quiqqer/template-cologne"
@@ -489,6 +493,29 @@
                                     <locale group="quiqqer/template-cologne"
                                                 var="settings.shop.basketAction.openOrderProcess"
                                     />
+                                </option>
+                                <option value="openShoppingCart">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketAction.openShoppingCart"/>
+                                </option>
+                            </select>
+
+                            <select conf="templateCologne.settings.basketMobileAction">
+                                <text>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketMobileAction"/>
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketMobileAction.desc"/>
+                                </description>
+                                <option value="openShoppingCart">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketAction.openShoppingCart"/>
+                                </option>
+                                <option value="openOrderProcessUrl">
+                                    <locale group="quiqqer/template-cologne"
+                                            var="settings.shop.basketAction.openOrderProcessUrl"/>
                                 </option>
                             </select>
 

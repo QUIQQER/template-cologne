@@ -352,10 +352,10 @@
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
-            <de><![CDATA[Aktion bei Klick auf Warenkorb-Icon]]></de>
+            <de><![CDATA[Aktion bei Klick auf Warenkorb-Icon (Desktop)]]></de>
         </locale>
         <locale name="settings.shop.basketAction.desc">
-            <de><![CDATA[Diese Option gilt nur für Desktop Ansicht. Auf mobilen Geräten wird immer zu der Bestellseite geleitet.]]></de>
+            <de><![CDATA[Gilt für Header und Kategorienmenü oberhalb von 768 Pixeln. „Bestellseite öffnen“ bevorzugt Simple Checkout, danach die Order-Seite. „Warenkorbseite öffnen“ sucht zuerst die Warenkorbseite und verwendet danach dieselbe Reihenfolge.]]></de>
         </locale>
         <locale name="settings.shop.basketAction.openSmallBasket">
             <de><![CDATA[Kleinen Warenkorb öffnen]]></de>
@@ -365,6 +365,18 @@
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
             <de><![CDATA[Bestellung in einem Popup Fenster öffnen]]></de>
+        </locale>
+        <locale name="settings.shop.basketAction.openShoppingCart">
+            <de><![CDATA[Warenkorbseite öffnen]]></de>
+        </locale>
+        <locale name="settings.shop.basketMobileAction">
+            <de><![CDATA[Aktion bei Klick auf Warenkorb-Icon (mobil)]]></de>
+        </locale>
+        <locale name="settings.shop.basketMobileAction.desc">
+            <de><![CDATA[Gilt für Header und Kategorienmenü bis einschließlich 768 Pixel. Standard ist „Warenkorbseite öffnen“. Fehlt die Warenkorbseite oder ist „Bestellseite öffnen“ gewählt, wird zuerst Simple Checkout und danach die Order-Seite gesucht.]]></de>
+        </locale>
+        <locale name="basket.navigation.unavailable">
+            <de><![CDATA[Die gewünschte Seite kann derzeit nicht geöffnet werden. Bitte versuche es später erneut.]]></de>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">

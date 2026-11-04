@@ -349,10 +349,10 @@
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
-            <it><![CDATA[Azione al clic sull’icona del carrello]]></it>
+            <it><![CDATA[Azione al clic sull’icona del carrello (desktop)]]></it>
         </locale>
         <locale name="settings.shop.basketAction.desc">
-            <it><![CDATA[Questa opzione si applica solo alla visualizzazione desktop. Sui dispositivi mobili viene sempre aperta la pagina di acquisto.]]></it>
+            <it><![CDATA[Si applica all’intestazione e al menu delle categorie oltre 768 pixel. La pagina di ordine dà priorità a Simple Checkout, poi a Order. L’opzione del carrello cerca prima il carrello e poi segue lo stesso ordine.]]></it>
         </locale>
         <locale name="settings.shop.basketAction.openSmallBasket">
             <it><![CDATA[Apri il mini carrello]]></it>
@@ -362,6 +362,18 @@
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
             <it><![CDATA[Apri il processo di acquisto in una finestra popup]]></it>
+        </locale>
+        <locale name="settings.shop.basketAction.openShoppingCart">
+            <it><![CDATA[Apri la pagina del carrello]]></it>
+        </locale>
+        <locale name="settings.shop.basketMobileAction">
+            <it><![CDATA[Azione al clic sull’icona del carrello (mobile)]]></it>
+        </locale>
+        <locale name="settings.shop.basketMobileAction.desc">
+            <it><![CDATA[Si applica all’intestazione e al menu delle categorie fino a 768 pixel inclusi. Per impostazione predefinita si apre il carrello. Se non è disponibile o è selezionata la pagina di ordine, viene cercato prima Simple Checkout e poi Order.]]></it>
+        </locale>
+        <locale name="basket.navigation.unavailable">
+            <it><![CDATA[La pagina richiesta non può essere aperta al momento. Riprova più tardi.]]></it>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">

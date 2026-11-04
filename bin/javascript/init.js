@@ -336,7 +336,17 @@ window.addEvent('domready', function() {
                 'package/quiqqer/order/bin/frontend/controls/basket/Button'
             ], function(Basket) {
                 new Basket({
-                    action: BASKET_ACTION,
+                    action: typeof BASKET_ACTION === 'string' ? BASKET_ACTION : 'openSmallBasket',
+                    mobileAction: typeof BASKET_MOBILE_ACTION === 'string' ? BASKET_MOBILE_ACTION : 'openShoppingCart',
+                    getNavigationUrl: function(mobile) {
+                        return new Promise(function(resolve, reject) {
+                            require([
+                                'package/quiqqer/template-cologne/bin/javascript/BasketNavigation'
+                            ], resolve, reject);
+                        }).then(function(BasketNavigation) {
+                            return BasketNavigation.getNavigationUrl(mobile);
+                        });
+                    },
                     events: {
                         onCreate: function(Basket) {
                             const BasketNode = Basket.getElm();
