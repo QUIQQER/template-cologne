@@ -238,6 +238,49 @@ td.quiqqer-order-basket-articles-article-remove button:hover {
     font-size: 12px;
 }
 
+/*************************/
+/* guarantee information */
+/*************************/
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees {
+    margin: 20px 0;
+}
+
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees summary {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    gap: 15px;
+    min-height: 48px;
+    padding: 15px 20px;
+}
+
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees summary::after {
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    content: "";
+    flex-shrink: 0;
+    height: 8px;
+    margin-left: auto;
+    margin-right: 3px;
+    transform: rotate(45deg);
+    width: 8px;
+}
+
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees details[open] > summary::after {
+    transform: rotate(225deg);
+}
+
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees summary:hover,
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees summary:focus-visible {
+    background: #eee;
+    border-color: #aaa;
+}
+
+:is(.quiqqer-order-step-basket, .quiqqer-order-step-checkout) .quiqqer-product-guarantees summary:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
 /***********************/
 /* step: customer data */
 /***********************/
