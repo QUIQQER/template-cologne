@@ -1,19 +1,94 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-cologne" datatype="php,js">
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
             <es><![CDATA[QUIQQER E-Commerce Cologne - Plantilla]]></es>
         </locale>
-        <locale name="package.description">
+        <locale name="package.description" context="administration">
             <es><![CDATA[Plantilla adaptable de comercio electrónico para QUIQQER.]]></es>
         </locale>
         <!-- global brick settings -->
-        <locale name="brick.general.fullWidth">
+        <locale name="brick.general.fullWidth" context="administration">
             <es><![CDATA[El bloque ocupa todo el ancho. Solo funciona en las zonas situadas debajo de la cabecera (Header Suffix) y encima del pie de página (Footer Prefix).]]></es>
         </locale>
-        <locale name="brick.general.noSpacing">
+        <locale name="brick.general.noSpacing" context="administration">
             <es><![CDATA[Sin espacio arriba ni abajo. Útil para los bloques que ocupan todo el ancho de la página.]]></es>
         </locale>
+        <!-- areas -->
+        <locale name="area.headerSuffix.title" context="administration">
+            <es><![CDATA[Zona bajo la cabecera]]></es>
+        </locale>
+        <locale name="area.headerSuffix.description" context="administration">
+            <es><![CDATA[Zona de bloques después de la cabecera]]></es>
+        </locale>
+        <locale name="area.contentPrefix.title" context="administration">
+            <es><![CDATA[Zona anterior al contenido]]></es>
+        </locale>
+        <locale name="area.contentPrefix.description" context="administration">
+            <es><![CDATA[Zona de bloques antes del contenido]]></es>
+        </locale>
+        <locale name="area.contentSuffix.title" context="administration">
+            <es><![CDATA[Zona posterior al contenido]]></es>
+        </locale>
+        <locale name="area.contentSuffix.description" context="administration">
+            <es><![CDATA[Zona de bloques después del contenido]]></es>
+        </locale>
+        <locale name="area.footerPrefix.title" context="administration">
+            <es><![CDATA[Zona sobre el pie de página]]></es>
+        </locale>
+        <locale name="area.footerPrefix.description" context="administration">
+            <es><![CDATA[Zona de bloques antes del pie de página]]></es>
+        </locale>
+        <locale name="area.leftSidebar.title" context="administration">
+            <es><![CDATA[Zona de bloques izquierda]]></es>
+        </locale>
+        <locale name="area.leftSidebar.description" context="administration">
+            <es><![CDATA[Zona de bloques a la izquierda del contenido]]></es>
+        </locale>
+        <locale name="area.rightSidebar.title" context="administration">
+            <es><![CDATA[Zona de bloques derecha]]></es>
+        </locale>
+        <locale name="area.rightSidebar.description" context="administration">
+            <es><![CDATA[Zona de bloques a la derecha del contenido]]></es>
+        </locale>
+        <locale name="area.footer.title" context="administration">
+            <es><![CDATA[Zona de bloques del pie de página]]></es>
+        </locale>
+        <locale name="area.footer.description" context="administration">
+            <es><![CDATA[Zona de bloques situada en el pie de página]]></es>
+        </locale>
+        <!-- product sidebar prefix -->
+        <locale name="area.productSidebarPrefix.title" context="administration">
+            <es><![CDATA[Productos: zona antes de los filtros en la barra lateral]]></es>
+        </locale>
+        <locale name="area.productSidebarPrefix.description" context="administration">
+            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan antes de los filtros.]]></es>
+        </locale>
+        <!-- product sidebar suffix -->
+        <locale name="area.productSidebarSuffix.title" context="administration">
+            <es><![CDATA[Productos: zona después de los filtros en la barra lateral]]></es>
+        </locale>
+        <locale name="area.productSidebarSuffix.description" context="administration">
+            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan después de los filtros.]]></es>
+        </locale>
+        <!-- product category prefix (area before product list) -->
+        <locale name="area.productCategoryPrefix.title" context="administration">
+            <es><![CDATA[Productos: zona antes de la lista de productos]]></es>
+        </locale>
+        <locale name="area.productCategoryPrefix.description" context="administration">
+            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan antes de la lista de productos.]]></es>
+        </locale>
+        <!-- product category suffix (area after product list) -->
+        <locale name="area.productCategorySuffix.title" context="administration">
+            <es><![CDATA[Productos: zona después de la lista de productos]]></es>
+        </locale>
+        <locale name="area.productCategorySuffix.description" context="administration">
+            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan después de la lista de productos.]]></es>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-cologne" datatype="php">
         <!-- layouts -->
         <locale name="admin.layout.startpage">
             <es><![CDATA[Página de destino (página de inicio)]]></es>
@@ -45,87 +120,11 @@
         <locale name="admin.layout.rightSidebar.description">
             <es><![CDATA[Diseño con una zona de bloques a la derecha.]]></es>
         </locale>
-        <!-- areas -->
-        <locale name="area.headerSuffix.title">
-            <es><![CDATA[Zona bajo la cabecera]]></es>
-        </locale>
-        <locale name="area.headerSuffix.description">
-            <es><![CDATA[Zona de bloques después de la cabecera]]></es>
-        </locale>
-        <locale name="area.contentPrefix.title">
-            <es><![CDATA[Zona anterior al contenido]]></es>
-        </locale>
-        <locale name="area.contentPrefix.description">
-            <es><![CDATA[Zona de bloques antes del contenido]]></es>
-        </locale>
-        <locale name="area.contentSuffix.title">
-            <es><![CDATA[Zona posterior al contenido]]></es>
-        </locale>
-        <locale name="area.contentSuffix.description">
-            <es><![CDATA[Zona de bloques después del contenido]]></es>
-        </locale>
-        <locale name="area.footerPrefix.title">
-            <es><![CDATA[Zona sobre el pie de página]]></es>
-        </locale>
-        <locale name="area.footerPrefix.description">
-            <es><![CDATA[Zona de bloques antes del pie de página]]></es>
-        </locale>
-        <locale name="area.leftSidebar.title">
-            <es><![CDATA[Zona de bloques izquierda]]></es>
-        </locale>
-        <locale name="area.leftSidebar.description">
-            <es><![CDATA[Zona de bloques a la izquierda del contenido]]></es>
-        </locale>
-        <locale name="area.rightSidebar.title">
-            <es><![CDATA[Zona de bloques derecha]]></es>
-        </locale>
-        <locale name="area.rightSidebar.description">
-            <es><![CDATA[Zona de bloques a la derecha del contenido]]></es>
-        </locale>
-        <locale name="area.footer.title">
-            <es><![CDATA[Zona de bloques del pie de página]]></es>
-        </locale>
-        <locale name="area.footer.description">
-            <es><![CDATA[Zona de bloques situada en el pie de página]]></es>
-        </locale>
-        <!-- product sidebar prefix -->
-        <locale name="area.productSidebarPrefix.title">
-            <es><![CDATA[Productos: zona antes de los filtros en la barra lateral]]></es>
-        </locale>
-        <locale name="area.productSidebarPrefix.description">
-            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan antes de los filtros.]]></es>
-        </locale>
-        <!-- product sidebar suffix -->
-        <locale name="area.productSidebarSuffix.title">
-            <es><![CDATA[Productos: zona después de los filtros en la barra lateral]]></es>
-        </locale>
-        <locale name="area.productSidebarSuffix.description">
-            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan después de los filtros.]]></es>
-        </locale>
-        <!-- product category prefix (area before product list) -->
-        <locale name="area.productCategoryPrefix.title">
-            <es><![CDATA[Productos: zona antes de la lista de productos]]></es>
-        </locale>
-        <locale name="area.productCategoryPrefix.description">
-            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan antes de la lista de productos.]]></es>
-        </locale>
-        <!-- product category suffix (area after product list) -->
-        <locale name="area.productCategorySuffix.title">
-            <es><![CDATA[Productos: zona después de la lista de productos]]></es>
-        </locale>
-        <locale name="area.productCategorySuffix.description">
-            <es><![CDATA[Zona de bloques visible solo en la página de productos. Los bloques se colocan después de la lista de productos.]]></es>
-        </locale>
         <locale name="label.language">
             <es><![CDATA[Idioma]]></es>
         </locale>
-    </groups>
-    <groups name="quiqqer/template-cologne" datatype="php">
         <locale name="template.login">
             <es><![CDATA[Iniciar sesión]]></es>
-        </locale>
-        <locale name="template.logged.in">
-            <es><![CDATA[Sesión iniciada como: [username]]]></es>
         </locale>
         <locale name="template.topbar.content.left" html="true">
             <es><![CDATA[
@@ -232,9 +231,6 @@
         <locale name="settings.general.homeLinkText">
             <es><![CDATA[Texto del enlace]]></es>
         </locale>
-        <locale name="settings.general.homeLinkText.desc">
-            <es><![CDATA[Si se deja vacío, se utilizará el título de la página de inicio como texto del enlace.]]></es>
-        </locale>
         <locale name="settings.general.logoHeight">
             <es><![CDATA[Altura del logotipo]]></es>
         </locale>
@@ -247,9 +243,6 @@
         <locale name="settings.currencyLangSwitch.controlType">
             <es><![CDATA[Tipo de widget]]></es>
         </locale>
-        <locale name="settings.currencyLangSwitch.controlType.desc">
-            <es><![CDATA[Este ajuste controla la selección de idioma y moneda en la barra superior de la página.]]></es>
-        </locale>
         <locale name="settings.currencyLangSwitch.controlType.disabled">
             <es><![CDATA[Desactivado: no se muestra ningún selector de idioma ni de moneda]]></es>
         </locale>
@@ -261,9 +254,6 @@
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.onlyLang">
             <es><![CDATA[Activar solo la selección de idioma]]></es>
-        </locale>
-        <locale name="settings.shop.title">
-            <es><![CDATA[Configuración de la tienda]]></es>
         </locale>
         <locale name="settings.shop.checkoutAppearance">
             <es><![CDATA[Diseño de las páginas de compra y del carrito]]></es>
@@ -372,9 +362,6 @@
         <locale name="settings.shop.basketMobileAction.desc">
             <es><![CDATA[Se aplica a la cabecera y al menú de categorías hasta 768 píxeles inclusive. De forma predeterminada se abre el carrito. Si no está disponible o se selecciona la página de pedido, se busca primero Simple Checkout y después Order.]]></es>
         </locale>
-        <locale name="basket.navigation.unavailable">
-            <es><![CDATA[La página solicitada no se puede abrir en este momento. Inténtalo de nuevo más tarde.]]></es>
-        </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
             <es><![CDATA[¿Ocultar las pestañas de campos vacíos en los detalles del producto?]]></es>
@@ -428,9 +415,6 @@
             <es><![CDATA[Configuración de la cabecera]]></es>
         </locale>
         <!-- header settings: display -->
-        <locale name="settings.header.text">
-            <es><![CDATA[Indica dónde debe aparecer la cabecera para cada tipo de página.]]></es>
-        </locale>
         <locale name="settings.header.text" html="true">
             <es><![CDATA[¿Mostrar la cabecera? <br />Indica dónde debe aparecer la cabecera para cada tipo de página.]]></es>
         </locale>
@@ -536,9 +520,6 @@
         <locale name="categoryMenu.button.nextCat.title" html="true">
             <es><![CDATA[Mostrar las categorías de [title]]]></es>
         </locale>
-        <locale name="categoryMenu.basketButton.title">
-            <es><![CDATA[Continuar con la compra]]></es>
-        </locale>
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">
             <es><![CDATA[Configuración de la ruta de navegación]]></es>
@@ -589,9 +570,6 @@
         </locale>
         <locale name="settings.predefinedFooter.urlList.sites.order">
             <es><![CDATA[Orden]]></es>
-        </locale>
-        <locale name="settings.predefinedFooter.urlList.showStandardSites">
-            <es><![CDATA[Mostrar las páginas estándar (condiciones generales, aviso legal, etc.). Solo se muestran las páginas creadas y activas en el sistema.]]></es>
         </locale>
         <!-- predefined footer: featured products -->
         <locale name="settings.predefinedFooter.featuredProducts">
@@ -652,21 +630,6 @@
             <es><![CDATA[- o -]]></es>
         </locale>
         <!-- site types -->
-        <locale name="admin.types.registration">
-            <es><![CDATA[Registro]]></es>
-        </locale>
-        <locale name="admin.types.setting.registration">
-            <es><![CDATA[Registro]]></es>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos">
-            <es><![CDATA[¿Dónde debe mostrarse el contenido de la página?]]></es>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
-            <es><![CDATA[Junto al formulario de registro]]></es>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
-            <es><![CDATA[Antes del formulario de registro]]></es>
-        </locale>
         <locale name="control.product.buy.know.button">
             <es><![CDATA[Comprar ahora]]></es>
         </locale>
@@ -681,11 +644,14 @@
         </locale>
     </groups>
     <groups name="quiqqer/template-cologne" datatype="js">
-        <locale name="frontend.usericon.menuentry.logout.label">
+        <locale name="frontend.usericon.menuentry.logout.label" context="frontend">
             <es><![CDATA[Cerrar sesión]]></es>
         </locale>
-        <locale name="template.popup.login.registration.button">
+        <locale name="template.popup.login.registration.button" context="frontend">
             <es><![CDATA[Crear una cuenta]]></es>
+        </locale>
+        <locale name="basket.navigation.unavailable" context="frontend">
+            <es><![CDATA[La página solicitada no se puede abrir en este momento. Inténtalo de nuevo más tarde.]]></es>
         </locale>
     </groups>
     <!-- override locale -->
@@ -729,3 +695,4 @@
         </locale>
     </groups>
 </locales>
+</quiqqer>

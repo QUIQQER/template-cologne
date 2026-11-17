@@ -1,25 +1,100 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-cologne" datatype="php,js">
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
             <de><![CDATA[QUIQQER E-Commerce Cologne - Template]]></de>
         </locale>
-        <locale name="package.description">
+        <locale name="package.description" context="administration">
             <de><![CDATA[Responsives E-Commerce-Template für QUIQQER.]]></de>
         </locale>
         <!-- global brick settings -->
-        <locale name="brick.general.fullWidth">
+        <locale name="brick.general.fullWidth" context="administration">
             <de><![CDATA[Baustein nimmt volle Breite. Funktioniert nur in 2 Bausteinzonen: Header Suffix und Footer Prefix.]]></de>
         </locale>
-        <locale name="brick.general.noSpacing">
+        <locale name="brick.general.noSpacing" context="administration">
             <de><![CDATA[Kein Abstand von oben und unten. Hilfreich für Bausteine, die sich auf die ganze Breite der Seite erstrecken.]]></de>
         </locale>
+        <!-- areas -->
+        <locale name="area.headerSuffix.title" context="administration">
+            <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
+        </locale>
+        <locale name="area.headerSuffix.description" context="administration">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+        </locale>
+        <locale name="area.contentPrefix.title" context="administration">
+            <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
+        </locale>
+        <locale name="area.contentPrefix.description" context="administration">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+        </locale>
+        <locale name="area.contentSuffix.title" context="administration">
+            <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
+        </locale>
+        <locale name="area.contentSuffix.description" context="administration">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+        </locale>
+        <locale name="area.footerPrefix.title" context="administration">
+            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
+        </locale>
+        <locale name="area.footerPrefix.description" context="administration">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+        </locale>
+        <locale name="area.leftSidebar.title" context="administration">
+            <de><![CDATA[Linke Bausteinzone]]></de>
+        </locale>
+        <locale name="area.leftSidebar.description" context="administration">
+            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
+        </locale>
+        <locale name="area.rightSidebar.title" context="administration">
+            <de><![CDATA[Rechte Bausteinzone]]></de>
+        </locale>
+        <locale name="area.rightSidebar.description" context="administration">
+            <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
+        </locale>
+        <locale name="area.footer.title" context="administration">
+            <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
+        </locale>
+        <locale name="area.footer.description" context="administration">
+            <de><![CDATA[Bausteinzone des Footers]]></de>
+        </locale>
+        <!-- product sidebar prefix -->
+        <locale name="area.productSidebarPrefix.title" context="administration">
+            <de><![CDATA[Produkte: Zone vor den Filtern in der Sidebar]]></de>
+        </locale>
+        <locale name="area.productSidebarPrefix.description" context="administration">
+            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden vor den Filtern platziert.]]></de>
+        </locale>
+        <!-- product sidebar suffix -->
+        <locale name="area.productSidebarSuffix.title" context="administration">
+            <de><![CDATA[Produkte: Zone nach den Filtern in der Sidebar]]></de>
+        </locale>
+        <locale name="area.productSidebarSuffix.description" context="administration">
+            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach den Filtern platziert.]]></de>
+        </locale>
+        <!-- product category prefix (area before product list) -->
+        <locale name="area.productCategoryPrefix.title" context="administration">
+            <de><![CDATA[Produkte: Zone vor der Produktliste (Kategorie-Prefix)]]></de>
+        </locale>
+        <locale name="area.productCategoryPrefix.description" context="administration">
+            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden vor der Produktliste platziert.]]></de>
+        </locale>
+        <!-- product category suffix (area after product list) -->
+        <locale name="area.productCategorySuffix.title" context="administration">
+            <de><![CDATA[Produkte: Zone nach der Produktliste (Kategorie-Suffix)]]></de>
+        </locale>
+        <locale name="area.productCategorySuffix.description" context="administration">
+            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach der Produktliste platziert.]]></de>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-cologne" datatype="php">
         <!-- layouts -->
         <locale name="admin.layout.startpage">
             <de><![CDATA[Landingpage (Startpage)]]></de>
         </locale>
         <locale name="admin.layout.startpage.description">
-            <de><![CDATA[Layout ohne Sidebars. Passend für Startseite.]]></de>
+            <de><![CDATA[Layout ohne Sidebars. Passend für die Startseite.]]></de>
         </locale>
         <locale name="admin.layout.noSidebar">
             <de><![CDATA[Keine Sidebar]]></de>
@@ -31,7 +106,7 @@
             <de><![CDATA[Keine Sidebar (schmal)]]></de>
         </locale>
         <locale name="admin.layout.noSidebarThin.description">
-            <de><![CDATA[Layout ohne Sidebars. Der Inhalt ist schmaler als andere layouts. Es eignet sich perfekt für Blog oder News Beiträge.]]></de>
+            <de><![CDATA[Layout ohne Sidebars. Der Inhalt ist schmaler als bei anderen Layouts. Es eignet sich perfekt für Blog- oder News-Beiträge.]]></de>
         </locale>
         <locale name="admin.layout.leftSidebar">
             <de><![CDATA[Linke Sidebar]]></de>
@@ -45,87 +120,11 @@
         <locale name="admin.layout.rightSidebar.description">
             <de><![CDATA[Layout mit dem rechten Bereich für Bausteine.]]></de>
         </locale>
-        <!-- areas -->
-        <locale name="area.headerSuffix.title">
-            <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
-        </locale>
-        <locale name="area.headerSuffix.description">
-            <de><![CDATA[Bausteinzone nach dem Header]]></de>
-        </locale>
-        <locale name="area.contentPrefix.title">
-            <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
-        </locale>
-        <locale name="area.contentPrefix.description">
-            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
-        </locale>
-        <locale name="area.contentSuffix.title">
-            <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
-        </locale>
-        <locale name="area.contentSuffix.description">
-            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
-        </locale>
-        <locale name="area.footerPrefix.title">
-            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
-        </locale>
-        <locale name="area.footerPrefix.description">
-            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
-        </locale>
-        <locale name="area.leftSidebar.title">
-            <de><![CDATA[Linke Bausteinzone]]></de>
-        </locale>
-        <locale name="area.leftSidebar.description">
-            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
-        </locale>
-        <locale name="area.rightSidebar.title">
-            <de><![CDATA[Rechte Bausteinzone]]></de>
-        </locale>
-        <locale name="area.rightSidebar.description">
-            <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
-        </locale>
-        <locale name="area.footer.title">
-            <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
-        </locale>
-        <locale name="area.footer.description">
-            <de><![CDATA[Bausteinzone des Footer]]></de>
-        </locale>
-        <!-- product sidebar prefix -->
-        <locale name="area.productSidebarPrefix.title">
-            <de><![CDATA[Produkte: Zone vor den Filtern in Sidebar]]></de>
-        </locale>
-        <locale name="area.productSidebarPrefix.description">
-            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden vor den Filtern platziert.]]></de>
-        </locale>
-        <!-- product sidebar suffix -->
-        <locale name="area.productSidebarSuffix.title">
-            <de><![CDATA[Produkte: Zone nach den Filtern in Sidebar]]></de>
-        </locale>
-        <locale name="area.productSidebarSuffix.description">
-            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach den Filtern platziert.]]></de>
-        </locale>
-        <!-- product category prefix (area before product list) -->
-        <locale name="area.productCategoryPrefix.title">
-            <de><![CDATA[Produkte: Zone vor der Produktliste (Kategorie-Prefix)]]></de>
-        </locale>
-        <locale name="area.productCategoryPrefix.description">
-            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden vor der Produktliste platziert.]]></de>
-        </locale>
-        <!-- product category suffix (area after product list) -->
-        <locale name="area.productCategorySuffix.title">
-            <de><![CDATA[Produkte: Zone nach der Produktliste (Kategorie-Suffix)]]></de>
-        </locale>
-        <locale name="area.productCategorySuffix.description">
-            <de><![CDATA[Bausteinzone, die nur auf der Produktseite auftaucht. Die Bausteine werden nach der Produktliste platziert.]]></de>
-        </locale>
         <locale name="label.language">
             <de><![CDATA[Sprache]]></de>
         </locale>
-    </groups>
-    <groups name="quiqqer/template-cologne" datatype="php">
         <locale name="template.login">
             <de><![CDATA[Login]]></de>
-        </locale>
-        <locale name="template.logged.in">
-            <de><![CDATA[Angemeldet als: [username]]]></de>
         </locale>
         <locale name="template.topbar.content.left" html="true">
             <de><![CDATA[
@@ -190,7 +189,7 @@
         </locale>
         <!-- page description -->
         <locale name="siteSettings.pageDesc">
-            <de><![CDATA[Seiten Kurzbeschreibung]]></de>
+            <de><![CDATA[Seitenkurzbeschreibung]]></de>
         </locale>
         <locale name="siteSettings.pageDesc.default">
             <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
@@ -202,26 +201,26 @@
             <de><![CDATA[Deaktiviert]]></de>
         </locale>
         <locale name="siteSettings.largeSpacing">
-            <de><![CDATA[Standard-Abstand erhöhen? Das beeinflusst den vertikalen Abstand zwischen Bausteinen, Seiteninhalt, usw. Meistens benutzt für Landing-Page.]]></de>
+            <de><![CDATA[Standard-Abstand erhöhen? Das beeinflusst den vertikalen Abstand zwischen Bausteinen, Seiteninhalt, usw. Meistens benutzt für Landingpages.]]></de>
         </locale>
         <locale name="siteSettings.pageCustomClass">
-            <de><![CDATA[CSS Klasse]]></de>
+            <de><![CDATA[CSS-Klasse]]></de>
         </locale>
         <locale name="siteSettings.pageCustomClass.desc" html="true">
-            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite separate CSS Klasse geben. Diese wird auf das <i>&lt;body&gt;</i> Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live und Dev Umgebung existeirt (oder auch lokale Installation), die nicht exakt gleich sind.]]></de>
+            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite eine separate CSS-Klasse geben. Diese wird auf das <i>&lt;body&gt;</i>-Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live- und Dev-Umgebung existieren (oder auch eine lokale Installation), die nicht exakt gleich sind.]]></de>
         </locale>
         <locale name="siteSettings.independentMenuId">
             <de><![CDATA[Eigenes Menü]]></de>
         </locale>
         <locale name="siteSettings.independentMenuId.desc">
-            <de><![CDATA[Die Option ermöglichst separates und unabhängiges Menü für eine einzelne Seite zu setzen.]]></de>
+            <de><![CDATA[Die Option ermöglicht es, ein separates und unabhängiges Menü für eine einzelne Seite zu setzen.]]></de>
         </locale>
         <!-- template settings -->
         <locale name="settings.menu.title">
             <de><![CDATA[Template Cologne Einstellungen]]></de>
         </locale>
         <locale name="settings.general.title">
-            <de><![CDATA[Allgemeine-Einstellungen]]></de>
+            <de><![CDATA[Allgemeine Einstellungen]]></de>
         </locale>
         <locale name="settings.shop.title">
             <de><![CDATA[Shop-Einstellungen]]></de>
@@ -232,44 +231,35 @@
         <locale name="settings.general.homeLinkText">
             <de><![CDATA[Link-Text]]></de>
         </locale>
-        <locale name="settings.general.homeLinkText.desc">
-            <de><![CDATA[Wenn es leer ist, als Link-Text wird der Titel der Startseite verwendet.]]></de>
-        </locale>
         <locale name="settings.general.logoHeight">
-            <de><![CDATA[Logo Höhe]]></de>
+            <de><![CDATA[Logo-Höhe]]></de>
         </locale>
         <locale name="settings.general.logoHeight.desc">
-            <de><![CDATA[Maximale Logo Höhe. Bitte beachte das Logo wird nie größer als das Menü.]]></de>
+            <de><![CDATA[Maximale Logo-Höhe. Bitte beachte, dass das Logo nie größer als das Menü wird.]]></de>
         </locale>
         <locale name="settings.general.currencyLangSwitch.title">
-            <de><![CDATA[Sprach- und Währung-Auswahl]]></de>
+            <de><![CDATA[Sprach- und Währungsauswahl]]></de>
         </locale>
         <locale name="settings.currencyLangSwitch.controlType">
-            <de><![CDATA[Widget-Type]]></de>
-        </locale>
-        <locale name="settings.currencyLangSwitch.controlType.desc">
-            <de><![CDATA[Diese Einstellung beeinflusst die Sprach- und Währung-Auswahl in Topbar (oben auf der Seite)]]></de>
+            <de><![CDATA[Widget-Typ]]></de>
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.disabled">
-            <de><![CDATA[Deaktiviert - weder Sprach- noch Währung-Auswahl werden angezeigt]]></de>
+            <de><![CDATA[Deaktiviert - weder Sprach- noch Währungsauswahl werden angezeigt]]></de>
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.currencyAndLang">
-            <de><![CDATA[Sprach- und Währung-Auswahl aktivieren]]></de>
+            <de><![CDATA[Sprach- und Währungsauswahl aktivieren]]></de>
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.onlyCurrency">
-            <de><![CDATA[Nur Währung-Auswahl aktivieren]]></de>
+            <de><![CDATA[Nur Währungsauswahl aktivieren]]></de>
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.onlyLang">
-            <de><![CDATA[Nur Sprache-Auswahl aktivieren]]></de>
-        </locale>
-        <locale name="settings.shop.title">
-            <de><![CDATA[Shop-Einstellungen]]></de>
+            <de><![CDATA[Nur Sprachauswahl aktivieren]]></de>
         </locale>
         <locale name="settings.shop.checkoutAppearance">
-            <de><![CDATA[Design von Bestellung und Warenkorb Seiten]]></de>
+            <de><![CDATA[Design von Bestell- und Warenkorbseiten]]></de>
         </locale>
         <locale name="settings.shop.checkoutAppearance.desc" html="true">
-            <de><![CDATA[Bestimmt wie die Bestellprozess und Warenkorb Seiten aussehen.]]></de>
+            <de><![CDATA[Bestimmt, wie die Bestell- und Warenkorbseiten aussehen.]]></de>
         </locale>
         <locale name="settings.shop.checkoutAppearance.minimal">
             <de><![CDATA[Minimal: übliche Elemente der Seite sind deaktiviert.]]></de>
@@ -278,15 +268,15 @@
             <de><![CDATA[Kompakt: Obere Leiste, Menü und Footer sind aktiv.]]></de>
         </locale>
         <locale name="settings.shop.checkoutAppearance.full">
-            <de><![CDATA[Komplett: zusätzlich zum "Kompakt" wird auch Seitentitel und Brotkrümelnavigation angezeigt.]]></de>
+            <de><![CDATA[Komplett: zusätzlich zum "Kompakt" werden auch Seitentitel und Brotkrümelnavigation angezeigt.]]></de>
         </locale>
         <locale name="settings.shop.retailPrice">
-            <de><![CDATA[Sonderangeboten anzeigen]]></de>
+            <de><![CDATA[Sonderangebote anzeigen]]></de>
         </locale>
         <locale name="settings.shop.retailPrice.desc" html="true">
             <de><![CDATA[
             <br />Aktiviert das Anzeigen von Sonderangeboten neben dem aktuellen Preis.
-            Die UVP wird nur dann angezeigt, wenn die sie in Produkt-Eigenschaften eingetragen ist.
+            Die UVP wird nur dann angezeigt, wenn sie in den Produkteigenschaften eingetragen ist.
             <br /><strong>Die Einstellung hat Auswirkung nur auf das Template. Externe Bausteine können das anders regeln.</strong>]]></de>
         </locale>
         <locale name="settings.shop.showStock">
@@ -314,10 +304,10 @@
             <de><![CDATA[Seiteninhalt auf Produktkategorie zum Teil verstecken]]></de>
         </locale>
         <locale name="settings.shop.hideCategoryContent.desc">
-            <de><![CDATA[Wenn aktiviert, der Inhalt bekommt eine festgesetzte Höhe. Der Rest des Inhalts wird vorerst nicht sichtbar, bis der Benutzer auf den Button "Mehr anzeigen" klickt.]]></de>
+            <de><![CDATA[Wenn die Option aktiviert ist, bekommt der Inhalt eine festgesetzte Höhe. Der Rest des Inhalts wird vorerst nicht sichtbar, bis der Benutzer auf den Button "Mehr anzeigen" klickt.]]></de>
         </locale>
         <locale name="settings.shop.categoryContentHeight">
-            <de><![CDATA[Maximale Höhe des Inhalts (Kategorie Seite)]]></de>
+            <de><![CDATA[Maximale Höhe des Inhalts (Kategorieseite)]]></de>
         </locale>
         <locale name="frontend.categoryContent.showMoreButton">
             <de><![CDATA[Mehr anzeigen]]></de>
@@ -339,7 +329,7 @@
             <de><![CDATA[Warenkorb Style]]></de>
         </locale>
         <locale name="settings.shop.basketStyle.full">
-            <de><![CDATA[Komplett (mit Icon und Price)]]></de>
+            <de><![CDATA[Komplett (mit Icon und Preis)]]></de>
         </locale>
         <locale name="settings.shop.basketStyle.compact">
             <de><![CDATA[Kompakt (nur Icon)]]></de>
@@ -348,7 +338,7 @@
             <de><![CDATA[Produktbilder im Warenkorb anzeigen]]></de>
         </locale>
         <locale name="settings.shop.order.basket.showImages.desc">
-            <de><![CDATA[Wenn aktiviert, werden in Warenkorb und Bestellung die Produktbilder angezeigt.]]></de>
+            <de><![CDATA[Wenn aktiviert, werden im Warenkorb und in der Bestellung die Produktbilder angezeigt.]]></de>
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
@@ -364,7 +354,7 @@
             <de><![CDATA[Bestellseite öffnen]]></de>
         </locale>
         <locale name="settings.shop.basketAction.openOrderProcess">
-            <de><![CDATA[Bestellung in einem Popup Fenster öffnen]]></de>
+            <de><![CDATA[Bestellung in einem Popup-Fenster öffnen]]></de>
         </locale>
         <locale name="settings.shop.basketAction.openShoppingCart">
             <de><![CDATA[Warenkorbseite öffnen]]></de>
@@ -375,15 +365,12 @@
         <locale name="settings.shop.basketMobileAction.desc">
             <de><![CDATA[Gilt für Header und Kategorienmenü bis einschließlich 768 Pixel. Standard ist „Warenkorbseite öffnen“. Fehlt die Warenkorbseite oder ist „Bestellseite öffnen“ gewählt, wird zuerst Simple Checkout und danach die Order-Seite gesucht.]]></de>
         </locale>
-        <locale name="basket.navigation.unavailable">
-            <de><![CDATA[Die gewünschte Seite kann derzeit nicht geöffnet werden. Bitte versuche es später erneut.]]></de>
-        </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
             <de><![CDATA[Leere Produktfelder als Tab in Produktdetails ausblenden?]]></de>
         </locale>
         <locale name="settings.shop.showBuyNowButton">
-            <de><![CDATA[Sofort Kauf Button anzeigen]]></de>
+            <de><![CDATA[Sofortkauf-Button anzeigen]]></de>
         </locale>
         <locale name="settings.shop.showRevocationFormLink">
             <de><![CDATA[Widerrufslink zum Formular anzeigen]]></de>
@@ -393,7 +380,7 @@
         </locale>
         <!-- nav settings -->
         <locale name="settings.nav.title">
-            <de><![CDATA[Menü Einstellungen]]></de>
+            <de><![CDATA[Menüeinstellungen]]></de>
         </locale>
         <locale name="settings.nav.text">
             <de><![CDATA[Diese Einstellungen betreffen die Hauptnavigation.]]></de>
@@ -402,15 +389,15 @@
             <de><![CDATA[Navigation nach Scrollen anzeigen]]></de>
         </locale>
         <locale name="settings.nav.showNavAfterScroll.desc" html="true">
-            <de><![CDATA[Standardmäßig "klebt" das Menü an oberen Browserrand, sobald das Menü beim Scrollen auf das Rand stoßt.
-             Setz man z.B. <strong>500</strong> bedeutet das, dass das Menü erst dann von oben aufpoppt wenn man mindestens 500px nach unten scrollt.]]></de>
+            <de><![CDATA[Standardmäßig "klebt" das Menü am oberen Browserrand, sobald das Menü beim Scrollen an den Rand stößt.
+             Setzt man z. B. <strong>500</strong>, bedeutet das, dass das Menü erst dann von oben aufpoppt, wenn man mindestens 500 px nach unten scrollt.]]></de>
         </locale>
         <locale name="settings.nav.setMenuPosBackOnInit">
             <de><![CDATA[Menü-Position zurücksetzen oben]]></de>
         </locale>
         <locale name="settings.nav.setMenuPosBackOnInit.desc" html="true">
-            <de><![CDATA[Standardmäßig wird das Menü beim Scrollen am oberen Browserrand fixiert. Ab wie viel Pixel das passiert, hängt von der Option <i>"Navigation nach Scrollen anzeigen"</i>. Setzt man da z.B. 500px, wird das Menü nach 500px oben festgeklebt. Scrollt man wieder nach oben, wird das Menü ab den 500 Pixel wieder normal platziert.
-                        Wenn man den Haken hier setzt, wird das Menü von oberen Rand gelöst und "normal" platziert <strong>erst wenn man die ursprüngliche Position des Menü erreicht (in den meisten Fällen wenn man ganz nach oben scrollt)</strong>.]]></de>
+            <de><![CDATA[Standardmäßig wird das Menü beim Scrollen am oberen Browserrand fixiert. Ab wie vielen Pixeln das passiert, hängt von der Option <i>"Navigation nach Scrollen anzeigen"</i> ab. Setzt man da z.B. 500px, wird das Menü nach 500px oben festgeklebt. Scrollt man wieder nach oben, wird das Menü ab 500 Pixeln wieder normal platziert.
+                        Wenn man den Haken hier setzt, wird das Menü vom oberen Rand gelöst und "normal" platziert <strong>erst wenn man die ursprüngliche Position des Menüs erreicht (in den meisten Fällen, wenn man ganz nach oben scrollt)</strong>.]]></de>
         </locale>
         <!-- nav / menu: independent -->
         <locale name="templateCologne.settings.independentMenu.title">
@@ -426,16 +413,13 @@
             <de><![CDATA[Wenn ein eigenes Menü ausgewählt ist, wird dieses als Navigation angezeigt. Das Menü kann pro Sprache festgelegt werden; Sprachen ohne eigene Auswahl verwenden das Menü der Standardsprache.]]></de>
         </locale>
         <locale name="settings.independentMenu.showFirstLevelIcons">
-            <de><![CDATA[Icons in der erster Ebene anzeigen]]></de>
+            <de><![CDATA[Icons in der ersten Ebene anzeigen]]></de>
         </locale>
         <!-- header settings -->
         <locale name="settings.header.title">
-            <de><![CDATA[Header Einstellungen]]></de>
+            <de><![CDATA[Header-Einstellungen]]></de>
         </locale>
         <!-- header settings: display -->
-        <locale name="settings.header.text">
-            <de><![CDATA[Bestimmen Sie für jeden Seitentyp, wo der Header angezeigt werden soll.]]></de>
-        </locale>
         <locale name="settings.header.text" html="true">
             <de><![CDATA[Header anzeigen? <br />Bestimmen Sie für jeden Seitentyp, wo der Header angezeigt werden soll.]]></de>
         </locale>
@@ -450,7 +434,7 @@
         </locale>
         <!-- header settings: size -->
         <locale name="settings.header.height.text">
-            <de><![CDATA[Höhe des Headers einstellen. Das ist die minimale Höhe. Wenn der Text (Titel und Kurzbeschreibung) mehr platz brauchen, wird der Header größer.]]></de>
+            <de><![CDATA[Höhe des Headers einstellen. Das ist die minimale Höhe. Wenn der Text (Titel und Kurzbeschreibung) mehr Platz braucht, wird der Header größer.]]></de>
         </locale>
         <locale name="settings.header.height.value">
             <de><![CDATA[Höhe (in Pixel)]]></de>
@@ -492,7 +476,7 @@
             <de><![CDATA[Kurzbeschreibung]]></de>
         </locale>
         <locale name="settings.pageShortDesc.text">
-            <de><![CDATA[Die Kurzbeschreibung kann pro Seiten-Layout de- bzw aktiviert werden.]]></de>
+            <de><![CDATA[Die Kurzbeschreibung kann pro Seiten-Layout de- bzw. aktiviert werden.]]></de>
         </locale>
         <!-- category menu -->
         <locale name="settings.categoryMenu.title">
@@ -536,13 +520,10 @@
             <de><![CDATA[Zurück]]></de>
         </locale>
         <locale name="categoryMenu.button.back.title">
-            <de><![CDATA[Eine Ebene zurück gehen]]></de>
+            <de><![CDATA[Eine Ebene zurückgehen]]></de>
         </locale>
         <locale name="categoryMenu.button.nextCat.title" html="true">
             <de><![CDATA[Kategorien von [title] anzeigen]]></de>
-        </locale>
-        <locale name="categoryMenu.basketButton.title">
-            <de><![CDATA[Zum Bestellprozess]]></de>
         </locale>
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">
@@ -553,7 +534,7 @@
         </locale>
         <!-- predefined footer: short text -->
         <locale name="settings.predefinedFooter.shortText">
-            <de><![CDATA[Predefiniertes Footer: kurzer Text]]></de>
+            <de><![CDATA[Vordefinierter Footer: kurzer Text]]></de>
         </locale>
         <locale name="settings.predefinedFooter.shortText.info">
             <de><![CDATA[
@@ -582,7 +563,7 @@
         </locale>
         <!-- predefined footer: url list -->
         <locale name="settings.predefinedFooter.urlList">
-            <de><![CDATA[Predefiniertes Footer: Url-Liste]]></de>
+            <de><![CDATA[Vordefinierter Footer: URL-Liste]]></de>
         </locale>
         <locale name="settings.predefinedFooter.urlList.show">
             <de><![CDATA[Anzeigen]]></de>
@@ -596,12 +577,9 @@
         <locale name="settings.predefinedFooter.urlList.sites.order">
             <de><![CDATA[Reihenfolge]]></de>
         </locale>
-        <locale name="settings.predefinedFooter.urlList.showStandardSites">
-            <de><![CDATA[Standardseiten anzeigen (AGB, Impressum, etc.). Es werden nur die Seiten angezeigt, die im System angelegt und aktiv sind.]]></de>
-        </locale>
         <!-- predefined footer: featured products -->
         <locale name="settings.predefinedFooter.featuredProducts">
-            <de><![CDATA[Predefiniertes Footer: Produktliste]]></de>
+            <de><![CDATA[Vordefinierter Footer: Produktliste]]></de>
         </locale>
         <locale name="settings.predefinedFooter.featuredProducts.show">
             <de><![CDATA[Anzeigen]]></de>
@@ -617,7 +595,7 @@
         </locale>
         <!-- predefined footer: payments -->
         <locale name="settings.predefinedFooter.title">
-            <de><![CDATA[Predefiniertes Footer: Zahlungsmöglichkeiten]]></de>
+            <de><![CDATA[Vordefinierter Footer: Zahlungsmöglichkeiten]]></de>
         </locale>
         <locale name="settings.predefinedFooter.payments">
             <de><![CDATA[Anzeigen]]></de>
@@ -658,21 +636,6 @@
             <de><![CDATA[- oder -]]></de>
         </locale>
         <!-- site types -->
-        <locale name="admin.types.registration">
-            <de><![CDATA[Registrierung]]></de>
-        </locale>
-        <locale name="admin.types.setting.registration">
-            <de><![CDATA[Registrierung]]></de>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos">
-            <de><![CDATA[Wo soll der Seiteninhalt angezeigt werden?]]></de>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
-            <de><![CDATA[Neben dem Registrierungsformular]]></de>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
-            <de><![CDATA[Vor dem Registrierungsformular]]></de>
-        </locale>
         <locale name="control.product.buy.know.button">
             <de><![CDATA[Jetzt kaufen]]></de>
         </locale>
@@ -687,11 +650,14 @@
         </locale>
     </groups>
     <groups name="quiqqer/template-cologne" datatype="js">
-        <locale name="frontend.usericon.menuentry.logout.label">
+        <locale name="frontend.usericon.menuentry.logout.label" context="frontend">
             <de><![CDATA[Abmelden]]></de>
         </locale>
-        <locale name="template.popup.login.registration.button">
+        <locale name="template.popup.login.registration.button" context="frontend">
             <de><![CDATA[Kundenkonto anlegen]]></de>
+        </locale>
+        <locale name="basket.navigation.unavailable" context="frontend">
+            <de><![CDATA[Die gewünschte Seite kann derzeit nicht geöffnet werden. Bitte versuche es später erneut.]]></de>
         </locale>
     </groups>
     <!-- override locale -->
@@ -734,3 +700,4 @@
         </locale>
     </groups>
 </locales>
+</quiqqer>
