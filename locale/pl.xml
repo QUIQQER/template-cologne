@@ -1,19 +1,94 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-cologne" datatype="php,js">
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
             <pl><![CDATA[QUIQQER E-Commerce Cologne - Szablon]]></pl>
         </locale>
-        <locale name="package.description">
+        <locale name="package.description" context="administration">
             <pl><![CDATA[Responsywny szablon sklepu internetowego dla QUIQQER.]]></pl>
         </locale>
         <!-- global brick settings -->
-        <locale name="brick.general.fullWidth">
+        <locale name="brick.general.fullWidth" context="administration">
             <pl><![CDATA[Blok zajmuje całą szerokość. Działa tylko w obszarach pod nagłówkiem (Header Suffix) i nad stopką (Footer Prefix).]]></pl>
         </locale>
-        <locale name="brick.general.noSpacing">
+        <locale name="brick.general.noSpacing" context="administration">
             <pl><![CDATA[Bez odstępów u góry i u dołu. Przydatne w przypadku bloków zajmujących całą szerokość strony.]]></pl>
         </locale>
+        <!-- areas -->
+        <locale name="area.headerSuffix.title" context="administration">
+            <pl><![CDATA[Obszar pod nagłówkiem]]></pl>
+        </locale>
+        <locale name="area.headerSuffix.description" context="administration">
+            <pl><![CDATA[Obszar bloków za nagłówkiem]]></pl>
+        </locale>
+        <locale name="area.contentPrefix.title" context="administration">
+            <pl><![CDATA[Obszar nad treścią]]></pl>
+        </locale>
+        <locale name="area.contentPrefix.description" context="administration">
+            <pl><![CDATA[Obszar bloków przed treścią]]></pl>
+        </locale>
+        <locale name="area.contentSuffix.title" context="administration">
+            <pl><![CDATA[Obszar pod treścią]]></pl>
+        </locale>
+        <locale name="area.contentSuffix.description" context="administration">
+            <pl><![CDATA[Obszar bloków za treścią]]></pl>
+        </locale>
+        <locale name="area.footerPrefix.title" context="administration">
+            <pl><![CDATA[Obszar nad stopką]]></pl>
+        </locale>
+        <locale name="area.footerPrefix.description" context="administration">
+            <pl><![CDATA[Obszar bloków przed stopką]]></pl>
+        </locale>
+        <locale name="area.leftSidebar.title" context="administration">
+            <pl><![CDATA[Lewy obszar bloków]]></pl>
+        </locale>
+        <locale name="area.leftSidebar.description" context="administration">
+            <pl><![CDATA[Obszar bloków po lewej stronie treści]]></pl>
+        </locale>
+        <locale name="area.rightSidebar.title" context="administration">
+            <pl><![CDATA[Prawy obszar bloków]]></pl>
+        </locale>
+        <locale name="area.rightSidebar.description" context="administration">
+            <pl><![CDATA[Obszar bloków po prawej stronie treści]]></pl>
+        </locale>
+        <locale name="area.footer.title" context="administration">
+            <pl><![CDATA[Obszar bloków stopki]]></pl>
+        </locale>
+        <locale name="area.footer.description" context="administration">
+            <pl><![CDATA[Obszar bloków w stopce strony]]></pl>
+        </locale>
+        <!-- product sidebar prefix -->
+        <locale name="area.productSidebarPrefix.title" context="administration">
+            <pl><![CDATA[Produkty: obszar przed filtrami w kolumnie bocznej]]></pl>
+        </locale>
+        <locale name="area.productSidebarPrefix.description" context="administration">
+            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane przed filtrami.]]></pl>
+        </locale>
+        <!-- product sidebar suffix -->
+        <locale name="area.productSidebarSuffix.title" context="administration">
+            <pl><![CDATA[Produkty: obszar za filtrami w kolumnie bocznej]]></pl>
+        </locale>
+        <locale name="area.productSidebarSuffix.description" context="administration">
+            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane za filtrami.]]></pl>
+        </locale>
+        <!-- product category prefix (area before product list) -->
+        <locale name="area.productCategoryPrefix.title" context="administration">
+            <pl><![CDATA[Produkty: obszar przed listą produktów]]></pl>
+        </locale>
+        <locale name="area.productCategoryPrefix.description" context="administration">
+            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane przed listą produktów.]]></pl>
+        </locale>
+        <!-- product category suffix (area after product list) -->
+        <locale name="area.productCategorySuffix.title" context="administration">
+            <pl><![CDATA[Produkty: obszar za listą produktów]]></pl>
+        </locale>
+        <locale name="area.productCategorySuffix.description" context="administration">
+            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane za listą produktów.]]></pl>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-cologne" datatype="php">
         <!-- layouts -->
         <locale name="admin.layout.startpage">
             <pl><![CDATA[Strona docelowa (strona główna)]]></pl>
@@ -45,87 +120,11 @@
         <locale name="admin.layout.rightSidebar.description">
             <pl><![CDATA[Układ z obszarem bloków po prawej stronie.]]></pl>
         </locale>
-        <!-- areas -->
-        <locale name="area.headerSuffix.title">
-            <pl><![CDATA[Obszar pod nagłówkiem]]></pl>
-        </locale>
-        <locale name="area.headerSuffix.description">
-            <pl><![CDATA[Obszar bloków za nagłówkiem]]></pl>
-        </locale>
-        <locale name="area.contentPrefix.title">
-            <pl><![CDATA[Obszar nad treścią]]></pl>
-        </locale>
-        <locale name="area.contentPrefix.description">
-            <pl><![CDATA[Obszar bloków przed treścią]]></pl>
-        </locale>
-        <locale name="area.contentSuffix.title">
-            <pl><![CDATA[Obszar pod treścią]]></pl>
-        </locale>
-        <locale name="area.contentSuffix.description">
-            <pl><![CDATA[Obszar bloków za treścią]]></pl>
-        </locale>
-        <locale name="area.footerPrefix.title">
-            <pl><![CDATA[Obszar nad stopką]]></pl>
-        </locale>
-        <locale name="area.footerPrefix.description">
-            <pl><![CDATA[Obszar bloków przed stopką]]></pl>
-        </locale>
-        <locale name="area.leftSidebar.title">
-            <pl><![CDATA[Lewy obszar bloków]]></pl>
-        </locale>
-        <locale name="area.leftSidebar.description">
-            <pl><![CDATA[Obszar bloków po lewej stronie treści]]></pl>
-        </locale>
-        <locale name="area.rightSidebar.title">
-            <pl><![CDATA[Prawy obszar bloków]]></pl>
-        </locale>
-        <locale name="area.rightSidebar.description">
-            <pl><![CDATA[Obszar bloków po prawej stronie treści]]></pl>
-        </locale>
-        <locale name="area.footer.title">
-            <pl><![CDATA[Obszar bloków stopki]]></pl>
-        </locale>
-        <locale name="area.footer.description">
-            <pl><![CDATA[Obszar bloków w stopce strony]]></pl>
-        </locale>
-        <!-- product sidebar prefix -->
-        <locale name="area.productSidebarPrefix.title">
-            <pl><![CDATA[Produkty: obszar przed filtrami w kolumnie bocznej]]></pl>
-        </locale>
-        <locale name="area.productSidebarPrefix.description">
-            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane przed filtrami.]]></pl>
-        </locale>
-        <!-- product sidebar suffix -->
-        <locale name="area.productSidebarSuffix.title">
-            <pl><![CDATA[Produkty: obszar za filtrami w kolumnie bocznej]]></pl>
-        </locale>
-        <locale name="area.productSidebarSuffix.description">
-            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane za filtrami.]]></pl>
-        </locale>
-        <!-- product category prefix (area before product list) -->
-        <locale name="area.productCategoryPrefix.title">
-            <pl><![CDATA[Produkty: obszar przed listą produktów]]></pl>
-        </locale>
-        <locale name="area.productCategoryPrefix.description">
-            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane przed listą produktów.]]></pl>
-        </locale>
-        <!-- product category suffix (area after product list) -->
-        <locale name="area.productCategorySuffix.title">
-            <pl><![CDATA[Produkty: obszar za listą produktów]]></pl>
-        </locale>
-        <locale name="area.productCategorySuffix.description">
-            <pl><![CDATA[Obszar bloków widoczny tylko na stronie produktów. Bloki są umieszczane za listą produktów.]]></pl>
-        </locale>
         <locale name="label.language">
             <pl><![CDATA[Język]]></pl>
         </locale>
-    </groups>
-    <groups name="quiqqer/template-cologne" datatype="php">
         <locale name="template.login">
             <pl><![CDATA[Zaloguj się]]></pl>
-        </locale>
-        <locale name="template.logged.in">
-            <pl><![CDATA[Zalogowano jako: [username]]]></pl>
         </locale>
         <locale name="template.topbar.content.left" html="true">
             <pl><![CDATA[
@@ -232,9 +231,6 @@
         <locale name="settings.general.homeLinkText">
             <pl><![CDATA[Tekst linku]]></pl>
         </locale>
-        <locale name="settings.general.homeLinkText.desc">
-            <pl><![CDATA[Jeśli pole pozostanie puste, tekstem linku będzie tytuł strony głównej.]]></pl>
-        </locale>
         <locale name="settings.general.logoHeight">
             <pl><![CDATA[Wysokość logo]]></pl>
         </locale>
@@ -247,9 +243,6 @@
         <locale name="settings.currencyLangSwitch.controlType">
             <pl><![CDATA[Typ widżetu]]></pl>
         </locale>
-        <locale name="settings.currencyLangSwitch.controlType.desc">
-            <pl><![CDATA[To ustawienie dotyczy wyboru języka i waluty na górnym pasku strony.]]></pl>
-        </locale>
         <locale name="settings.currencyLangSwitch.controlType.disabled">
             <pl><![CDATA[Wyłączone: bez wyboru języka i waluty]]></pl>
         </locale>
@@ -261,9 +254,6 @@
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.onlyLang">
             <pl><![CDATA[Włącz tylko wybór języka]]></pl>
-        </locale>
-        <locale name="settings.shop.title">
-            <pl><![CDATA[Ustawienia sklepu]]></pl>
         </locale>
         <locale name="settings.shop.checkoutAppearance">
             <pl><![CDATA[Wygląd stron składania zamówienia i koszyka]]></pl>
@@ -372,9 +362,6 @@
         <locale name="settings.shop.basketMobileAction.desc">
             <pl><![CDATA[Dotyczy nagłówka i menu kategorii przy szerokości do 768 pikseli włącznie. Domyślnie otwiera koszyk. Jeśli koszyk jest niedostępny lub wybrano stronę zamówienia, najpierw wyszukiwany jest Simple Checkout, a następnie Order.]]></pl>
         </locale>
-        <locale name="basket.navigation.unavailable">
-            <pl><![CDATA[Nie można teraz otworzyć żądanej strony. Spróbuj ponownie później.]]></pl>
-        </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
             <pl><![CDATA[Ukryć zakładki pustych pól w szczegółach produktu?]]></pl>
@@ -428,9 +415,6 @@
             <pl><![CDATA[Ustawienia nagłówka]]></pl>
         </locale>
         <!-- header settings: display -->
-        <locale name="settings.header.text">
-            <pl><![CDATA[Określ, gdzie ma być wyświetlany nagłówek dla każdego typu strony.]]></pl>
-        </locale>
         <locale name="settings.header.text" html="true">
             <pl><![CDATA[Wyświetlać nagłówek? <br />Określ, gdzie ma być wyświetlany nagłówek dla każdego typu strony.]]></pl>
         </locale>
@@ -536,9 +520,6 @@
         <locale name="categoryMenu.button.nextCat.title" html="true">
             <pl><![CDATA[Pokaż kategorie z [title]]]></pl>
         </locale>
-        <locale name="categoryMenu.basketButton.title">
-            <pl><![CDATA[Przejdź do składania zamówienia]]></pl>
-        </locale>
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">
             <pl><![CDATA[Ustawienia ścieżki nawigacji]]></pl>
@@ -589,9 +570,6 @@
         </locale>
         <locale name="settings.predefinedFooter.urlList.sites.order">
             <pl><![CDATA[Kolejność]]></pl>
-        </locale>
-        <locale name="settings.predefinedFooter.urlList.showStandardSites">
-            <pl><![CDATA[Pokaż strony standardowe (regulamin, informacje prawne itp.). Wyświetlane są tylko strony utworzone i aktywne w systemie.]]></pl>
         </locale>
         <!-- predefined footer: featured products -->
         <locale name="settings.predefinedFooter.featuredProducts">
@@ -652,21 +630,6 @@
             <pl><![CDATA[- lub -]]></pl>
         </locale>
         <!-- site types -->
-        <locale name="admin.types.registration">
-            <pl><![CDATA[Rejestracja]]></pl>
-        </locale>
-        <locale name="admin.types.setting.registration">
-            <pl><![CDATA[Rejestracja]]></pl>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos">
-            <pl><![CDATA[Gdzie ma być wyświetlana treść strony?]]></pl>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
-            <pl><![CDATA[Obok formularza rejestracji]]></pl>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
-            <pl><![CDATA[Przed formularzem rejestracji]]></pl>
-        </locale>
         <locale name="control.product.buy.know.button">
             <pl><![CDATA[Kup teraz]]></pl>
         </locale>
@@ -681,11 +644,14 @@
         </locale>
     </groups>
     <groups name="quiqqer/template-cologne" datatype="js">
-        <locale name="frontend.usericon.menuentry.logout.label">
+        <locale name="frontend.usericon.menuentry.logout.label" context="frontend">
             <pl><![CDATA[Wyloguj się]]></pl>
         </locale>
-        <locale name="template.popup.login.registration.button">
+        <locale name="template.popup.login.registration.button" context="frontend">
             <pl><![CDATA[Utwórz konto]]></pl>
+        </locale>
+        <locale name="basket.navigation.unavailable" context="frontend">
+            <pl><![CDATA[Nie można teraz otworzyć żądanej strony. Spróbuj ponownie później.]]></pl>
         </locale>
     </groups>
     <!-- override locale -->
@@ -729,3 +695,4 @@
         </locale>
     </groups>
 </locales>
+</quiqqer>

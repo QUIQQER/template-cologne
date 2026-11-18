@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/site.xsd">
 <site>
 
     <!-- global attributes -->
@@ -42,10 +44,10 @@
                                 var="settings.header.display.hide"/>
                     </option>
                 </select>
-                <text>
+                <description>
                     <locale group="quiqqer/template-cologne"
                             var="siteSettings.info"/>
-                </text>
+                </description>
 
                 <!-- show page title -->
                 <select conf="templateCologne.pageTitle">
@@ -143,7 +145,7 @@
                 <locale group="quiqqer/template-cologne" var="admin.layout.startpage"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.startpage.desc"/>
+                <locale group="quiqqer/template-cologne" var="admin.layout.startpage.description"/>
             </description>
         </layout>
 
@@ -153,7 +155,7 @@
                 <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar.desc"/>
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebar.description"/>
             </description>
         </layout>
 
@@ -163,7 +165,7 @@
                 <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin.desc"/>
+                <locale group="quiqqer/template-cologne" var="admin.layout.noSidebarThin.description"/>
             </description>
         </layout>
 
@@ -173,7 +175,7 @@
                 <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar.desc"/>
+                <locale group="quiqqer/template-cologne" var="admin.layout.leftSidebar.description"/>
             </description>
         </layout>
 
@@ -183,9 +185,10 @@
                 <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar.desc"/>
+                <locale group="quiqqer/template-cologne" var="admin.layout.rightSidebar.description"/>
             </description>
         </layout>
     </layouts>
     
 </site>
+</quiqqer>

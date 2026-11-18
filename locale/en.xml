@@ -1,22 +1,97 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-cologne" datatype="php,js">
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
             <en><![CDATA[QUIQQER E-Commerce Cologne - Template]]></en>
         </locale>
-        <locale name="package.description">
+        <locale name="package.description" context="administration">
             <en><![CDATA[Responsive e-commerce template for QUIQQER.]]></en>
         </locale>
         <!-- global brick settings -->
-        <locale name="brick.general.fullWidth">
+        <locale name="brick.general.fullWidth" context="administration">
             <en><![CDATA[Brick takes full width. Only works in 2 block areas: Header Suffix and Footer Prefix.]]></en>
         </locale>
-        <locale name="brick.general.noSpacing">
+        <locale name="brick.general.noSpacing" context="administration">
             <en><![CDATA[No spacing top and bottom. May be useful for bricks that extend across the entire width of the page.]]></en>
         </locale>
+        <!-- areas -->
+        <locale name="area.headerSuffix.title" context="administration">
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description" context="administration">
+            <en><![CDATA[Brick area after the header]]></en>
+        </locale>
+        <locale name="area.contentPrefix.title" context="administration">
+            <en><![CDATA[Content prefix]]></en>
+        </locale>
+        <locale name="area.contentPrefix.description" context="administration">
+            <en><![CDATA[Brick area before the content]]></en>
+        </locale>
+        <locale name="area.contentSuffix.title" context="administration">
+            <en><![CDATA[Content suffix]]></en>
+        </locale>
+        <locale name="area.contentSuffix.description" context="administration">
+            <en><![CDATA[Brick area after the content]]></en>
+        </locale>
+        <locale name="area.footerPrefix.title" context="administration">
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description" context="administration">
+            <en><![CDATA[Brick area before the footer]]></en>
+        </locale>
+        <locale name="area.leftSidebar.title" context="administration">
+            <en><![CDATA[Left brick area]]></en>
+        </locale>
+        <locale name="area.leftSidebar.description" context="administration">
+            <en><![CDATA[Brick area to the left of the content]]></en>
+        </locale>
+        <locale name="area.rightSidebar.title" context="administration">
+            <en><![CDATA[Right brick area]]></en>
+        </locale>
+        <locale name="area.rightSidebar.description" context="administration">
+            <en><![CDATA[Brick area to the right of the content]]></en>
+        </locale>
+        <locale name="area.footer.title" context="administration">
+            <en><![CDATA[Footer brick area]]></en>
+        </locale>
+        <locale name="area.footer.description" context="administration">
+            <en><![CDATA[Brick area of the footer]]></en>
+        </locale>
+        <!-- product sidebar prefix -->
+        <locale name="area.productSidebarPrefix.title" context="administration">
+            <en><![CDATA[Products: brick area before the product filters in the sidebar]]></en>
+        </locale>
+        <locale name="area.productSidebarPrefix.description" context="administration">
+            <en><![CDATA[Brick area that only appears on the product page. The bricks are placed before filters.]]></en>
+        </locale>
+        <!-- product sidebar suffix -->
+        <locale name="area.productSidebarSuffix.title" context="administration">
+            <en><![CDATA[Products: brick area after the product filters in the sidebar]]></en>
+        </locale>
+        <locale name="area.productSidebarSuffix.description" context="administration">
+            <en><![CDATA[Brick area that only appears on the product page. The bricks are placed after filters.]]></en>
+        </locale>
+        <!-- product category prefix (area before product list) -->
+        <locale name="area.productCategoryPrefix.title" context="administration">
+            <en><![CDATA[Products: area before product list (category prefix)]]></en>
+        </locale>
+        <locale name="area.productCategoryPrefix.description" context="administration">
+            <en><![CDATA[Brick area that only appears on the product page. The bricks are placed before product list.]]></en>
+        </locale>
+        <!-- product category suffix (area after product list) -->
+        <locale name="area.productCategorySuffix.title" context="administration">
+            <en><![CDATA[Products: area after product list (category suffix)]]></en>
+        </locale>
+        <locale name="area.productCategorySuffix.description" context="administration">
+            <en><![CDATA[Brick area that only appears on the product page. The bricks are placed after product list.]]></en>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-cologne" datatype="php">
         <!-- layouts -->
         <locale name="admin.layout.startpage">
-            <en><![CDATA[Landingpage (start page)]]></en>
+            <en><![CDATA[Landing page (start page)]]></en>
         </locale>
         <locale name="admin.layout.startpage.description">
             <en><![CDATA[Layout without sidebars. Intended for homepage / start page.]]></en>
@@ -31,7 +106,7 @@
             <en><![CDATA[No sidebar (thin)]]></en>
         </locale>
         <locale name="admin.layout.noSidebarThin.description">
-            <en><![CDATA[Layout without sidebars. The content is thiner than other layouts. It is perfect for blog or news posts.]]></en>
+            <en><![CDATA[Layout without sidebars. The content is thinner than in other layouts. It is perfect for blog or news posts.]]></en>
         </locale>
         <locale name="admin.layout.leftSidebar">
             <en><![CDATA[Left sidebar]]></en>
@@ -45,87 +120,11 @@
         <locale name="admin.layout.rightSidebar.description">
             <en><![CDATA[Layout with the right area for bricks.]]></en>
         </locale>
-        <!-- areas -->
-        <locale name="area.headerSuffix.title">
-            <en><![CDATA[Header suffix]]></en>
-        </locale>
-        <locale name="area.headerSuffix.description">
-            <en><![CDATA[Brick area after the header]]></en>
-        </locale>
-        <locale name="area.contentPrefix.title">
-            <en><![CDATA[Content prefix]]></en>
-        </locale>
-        <locale name="area.contentPrefix.description">
-            <en><![CDATA[Brick area before the content]]></en>
-        </locale>
-        <locale name="area.contentSuffix.title">
-            <en><![CDATA[Content suffix]]></en>
-        </locale>
-        <locale name="area.contentSuffix.description">
-            <en><![CDATA[Brick area after the content]]></en>
-        </locale>
-        <locale name="area.footerPrefix.title">
-            <en><![CDATA[Footer Prefix]]></en>
-        </locale>
-        <locale name="area.footerPrefix.description">
-            <en><![CDATA[Brick area before the footer]]></en>
-        </locale>
-        <locale name="area.leftSidebar.title">
-            <en><![CDATA[Left brick area]]></en>
-        </locale>
-        <locale name="area.leftSidebar.description">
-            <en><![CDATA[Brick area to the left of the content]]></en>
-        </locale>
-        <locale name="area.rightSidebar.title">
-            <en><![CDATA[Right brick area]]></en>
-        </locale>
-        <locale name="area.rightSidebar.description">
-            <en><![CDATA[Brick area to the right of the content]]></en>
-        </locale>
-        <locale name="area.footer.title">
-            <en><![CDATA[Footer brick area]]></en>
-        </locale>
-        <locale name="area.footer.description">
-            <en><![CDATA[Brick area of the footer]]></en>
-        </locale>
-        <!-- product sidebar prefix -->
-        <locale name="area.productSidebarPrefix.title">
-            <en><![CDATA[Products: brick area before the product filters in sidbear]]></en>
-        </locale>
-        <locale name="area.productSidebarPrefix.description">
-            <en><![CDATA[Brick area that only appears on the product side. The bricks are placed before filters.]]></en>
-        </locale>
-        <!-- product sidebar suffix -->
-        <locale name="area.productSidebarSuffix.title">
-            <en><![CDATA[Products: brick area after the product filters in sidbear]]></en>
-        </locale>
-        <locale name="area.productSidebarSuffix.description">
-            <en><![CDATA[Brick area that only appears on the product side. The bricks are placed after filters.]]></en>
-        </locale>
-        <!-- product category prefix (area before product list) -->
-        <locale name="area.productCategoryPrefix.title">
-            <en><![CDATA[Products: area before product list (category prefix)]]></en>
-        </locale>
-        <locale name="area.productCategoryPrefix.description">
-            <en><![CDATA[Brick area that only appears on the product side. The bricks are placed before product list.]]></en>
-        </locale>
-        <!-- product category suffix (area after product list) -->
-        <locale name="area.productCategorySuffix.title">
-            <en><![CDATA[Products: area after product list (category suffix)]]></en>
-        </locale>
-        <locale name="area.productCategorySuffix.description">
-            <en><![CDATA[Brick area that only appears on the product side. The bricks are placed after product list.]]></en>
-        </locale>
         <locale name="label.language">
             <en><![CDATA[Language]]></en>
         </locale>
-    </groups>
-    <groups name="quiqqer/template-cologne" datatype="php">
         <locale name="template.login">
             <en><![CDATA[Login]]></en>
-        </locale>
-        <locale name="template.logged.in">
-            <en><![CDATA[Loged in as: [username]]]></en>
         </locale>
         <locale name="template.topbar.content.left" html="true">
             <en><![CDATA[
@@ -158,7 +157,7 @@
         </locale>
         <!-- site settings -->
         <locale name="templateCologne.siteSettings">
-            <en><![CDATA[Template cologne settings]]></en>
+            <en><![CDATA[Template Cologne settings]]></en>
         </locale>
         <locale name="siteSettings.header">
             <en><![CDATA[Show header]]></en>
@@ -171,7 +170,7 @@
         </locale>
         <!-- page title -->
         <locale name="siteSettings.pageTitle">
-            <en><![CDATA[Show page titel]]></en>
+            <en><![CDATA[Show page title]]></en>
         </locale>
         <locale name="siteSettings.pageTitle.default">
             <en><![CDATA[Default template setting]]></en>
@@ -202,19 +201,19 @@
             <en><![CDATA[Disabled]]></en>
         </locale>
         <locale name="siteSettings.largeSpacing">
-            <en><![CDATA[Increase standard distance? This affects the vertical distance between bricks, side content, etc. Mostly used for landing page.]]></en>
+            <en><![CDATA[Increase standard distance? This affects the vertical distance between bricks, side content, etc. Mostly used for landing pages.]]></en>
         </locale>
         <locale name="siteSettings.pageCustomClass">
             <en><![CDATA[CSS class]]></en>
         </locale>
         <locale name="siteSettings.pageCustomClass.desc" html="true">
-            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.]]></en>
+            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. live and dev environments exist (or local installation), which are not exactly the same.]]></en>
         </locale>
         <locale name="siteSettings.independentMenuId">
             <en><![CDATA[Independent]]></en>
         </locale>
         <locale name="siteSettings.independentMenuId.desc">
-            <en><![CDATA[The option allows to set separate and independent menu for single page.]]></en>
+            <en><![CDATA[The option allows you to set a separate and independent menu for a single page.]]></en>
         </locale>
         <!-- template settings -->
         <locale name="settings.menu.title">
@@ -232,11 +231,8 @@
         <locale name="settings.general.homeLinkText">
             <en><![CDATA[Link text]]></en>
         </locale>
-        <locale name="settings.general.homeLinkText.desc">
-            <en><![CDATA[If it is empty, the title of the start page is used as link text.]]></en>
-        </locale>
         <locale name="settings.general.logoHeight">
-            <en><![CDATA[Loog height]]></en>
+            <en><![CDATA[Logo height]]></en>
         </locale>
         <locale name="settings.general.logoHeight.desc">
             <en><![CDATA[Maximum logo height. Please note the logo will never be higher than the menu height.]]></en>
@@ -247,11 +243,8 @@
         <locale name="settings.currencyLangSwitch.controlType">
             <en><![CDATA[Widget type]]></en>
         </locale>
-        <locale name="settings.currencyLangSwitch.controlType.desc">
-            <en><![CDATA[This setting affects the language and currency selection in Topbar (on the top of the page)]]></en>
-        </locale>
         <locale name="settings.currencyLangSwitch.controlType.disabled">
-            <en><![CDATA[Disabled - neither language nor currency switch are displayed]]></en>
+            <en><![CDATA[Disabled - neither language nor currency switch is displayed]]></en>
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.currencyAndLang">
             <en><![CDATA[Enable language and currency switch]]></en>
@@ -261,9 +254,6 @@
         </locale>
         <locale name="settings.currencyLangSwitch.controlType.onlyLang">
             <en><![CDATA[Enable language switch only]]></en>
-        </locale>
-        <locale name="settings.shop.title">
-            <en><![CDATA[Shop settings]]></en>
         </locale>
         <locale name="settings.shop.checkoutAppearance">
             <en><![CDATA[Checkout and basket page design]]></en>
@@ -317,13 +307,13 @@
             <en><![CDATA[When enabled, the content gets a fixed height. The rest of the content will not be visible for now, until the user clicks the "Show more" button.]]></en>
         </locale>
         <locale name="settings.shop.categoryContentHeight">
-            <en><![CDATA[Max content heigt of category site]]></en>
+            <en><![CDATA[Max content height of category site]]></en>
         </locale>
         <locale name="frontend.categoryContent.showMoreButton">
             <en><![CDATA[Show more]]></en>
         </locale>
         <locale name="settings.shop.showEquipment">
-            <en><![CDATA[Show equipments on product]]></en>
+            <en><![CDATA[Show equipment on the product page]]></en>
         </locale>
         <locale name="settings.shop.showEquipment.hide">
             <en><![CDATA[Hide]]></en>
@@ -339,7 +329,7 @@
             <en><![CDATA[Basket style]]></en>
         </locale>
         <locale name="settings.shop.basketStyle.full">
-            <en><![CDATA[Complete ( with icon and price)]]></en>
+            <en><![CDATA[Complete (with icon and price)]]></en>
         </locale>
         <locale name="settings.shop.basketStyle.compact">
             <en><![CDATA[Compact (only icon)]]></en>
@@ -348,7 +338,7 @@
             <en><![CDATA[Show product images in basket]]></en>
         </locale>
         <locale name="settings.shop.order.basket.showImages.desc">
-            <en><![CDATA[If the option ist enabled, the product images are displayed in the shopping basket and order.]]></en>
+            <en><![CDATA[If the option is enabled, the product images are displayed in the shopping basket and order.]]></en>
         </locale>
         <!-- basket action -->
         <locale name="settings.shop.basketAction">
@@ -374,9 +364,6 @@
         </locale>
         <locale name="settings.shop.basketMobileAction.desc">
             <en><![CDATA[Applies to the header and category menu up to and including 768 pixels. The default is to open the shopping cart page. If the cart is unavailable or the order page is selected, Simple Checkout takes priority over the Order page.]]></en>
-        </locale>
-        <locale name="basket.navigation.unavailable">
-            <en><![CDATA[The requested page cannot be opened right now. Please try again later.]]></en>
         </locale>
         <!-- hide empty fields -->
         <locale name="settings.shop.hideEmptyFields">
@@ -410,7 +397,7 @@
         </locale>
         <locale name="settings.nav.setMenuPosBackOnInit.desc" html="true">
             <en><![CDATA[By default, the menu is fixed at the top of the browser by scrolling. From how many pixels this happens depends on the option <i>"Show navigation after scroll"</i>. If you set 500px, for example, the menu will be stuck at the top after 500px. If you scroll up again, the menu will be placed normally again under 500 pixels.
-                    If you check this box, the menu will be detached from the top and initial placed <strong>only when you reach the initial position of the menu (in most cases when you scroll all the way up)</strong>.]]></en>
+                    If you check this box, the menu will be detached from the top and placed in its initial position <strong>only when you reach the initial position of the menu (in most cases when you scroll all the way up)</strong>.]]></en>
         </locale>
         <!-- nav / menu: independent -->
         <locale name="templateCologne.settings.independentMenu.title">
@@ -433,9 +420,6 @@
             <en><![CDATA[Header settings]]></en>
         </locale>
         <!-- header settings: display -->
-        <locale name="settings.header.text">
-            <en><![CDATA[For each page type, specify where you want the header to appear.]]></en>
-        </locale>
         <locale name="settings.header.text" html="true">
             <en><![CDATA[Display header? <br />For each page type, specify where you want the header to appear.]]></en>
         </locale>
@@ -453,7 +437,7 @@
             <en><![CDATA[Adjust the height of the header. This is the minimum height. If the text (title and short description) needs more space, the header gets higher.]]></en>
         </locale>
         <locale name="settings.header.height.value">
-            <en><![CDATA[Height (in pixel)]]></en>
+            <en><![CDATA[Height (in pixels)]]></en>
         </locale>
         <!-- header settings: image position -->
         <locale name="settings.header.imagePosition.text">
@@ -541,9 +525,6 @@
         <locale name="categoryMenu.button.nextCat.title" html="true">
             <en><![CDATA[Show categories from [title]]]></en>
         </locale>
-        <locale name="categoryMenu.basketButton.title">
-            <en><![CDATA[Go to the order process]]></en>
-        </locale>
         <!-- breadcrumb settings -->
         <locale name="settings.breadcrumb.title">
             <en><![CDATA[Breadcrumb settings]]></en>
@@ -596,9 +577,6 @@
         <locale name="settings.predefinedFooter.urlList.sites.order">
             <en><![CDATA[Order]]></en>
         </locale>
-        <locale name="settings.predefinedFooter.urlList.showStandardSites">
-            <en><![CDATA[Show standard pages (Terms and conditions, etc.). Only the pages that are created and active in the system are displayed.]]></en>
-        </locale>
         <!-- predefined footer: featured products -->
         <locale name="settings.predefinedFooter.featuredProducts">
             <en><![CDATA[Pre-defined footer: product list]]></en>
@@ -617,7 +595,7 @@
         </locale>
         <!-- predefined footer: payments -->
         <locale name="settings.predefinedFooter.title">
-            <en><![CDATA[Pre-defined footer: Payments methods]]></en>
+            <en><![CDATA[Pre-defined footer: Payment methods]]></en>
         </locale>
         <locale name="settings.predefinedFooter.payments">
             <en><![CDATA[Enable]]></en>
@@ -658,21 +636,6 @@
             <en><![CDATA[- or -]]></en>
         </locale>
         <!-- site types -->
-        <locale name="admin.types.registration">
-            <en><![CDATA[Registration]]></en>
-        </locale>
-        <locale name="admin.types.setting.registration">
-            <en><![CDATA[Registration]]></en>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos">
-            <en><![CDATA[Where should the page content be displayed?]]></en>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.nextToRegistrationForm">
-            <en><![CDATA[Next to the registration form]]></en>
-        </locale>
-        <locale name="quiqqer.settings.registration.contentPos.beforeRegistrationForm">
-            <en><![CDATA[Before the registration form]]></en>
-        </locale>
         <locale name="control.product.buy.know.button">
             <en><![CDATA[Buy now]]></en>
         </locale>
@@ -687,11 +650,14 @@
         </locale>
     </groups>
     <groups name="quiqqer/template-cologne" datatype="js">
-        <locale name="frontend.usericon.menuentry.logout.label">
+        <locale name="frontend.usericon.menuentry.logout.label" context="frontend">
             <en><![CDATA[Logout]]></en>
         </locale>
-        <locale name="template.popup.login.registration.button">
+        <locale name="template.popup.login.registration.button" context="frontend">
             <en><![CDATA[Create account]]></en>
+        </locale>
+        <locale name="basket.navigation.unavailable" context="frontend">
+            <en><![CDATA[The requested page cannot be opened right now. Please try again later.]]></en>
         </locale>
     </groups>
     <!-- override locale -->
@@ -735,3 +701,4 @@
         </locale>
     </groups>
 </locales>
+</quiqqer>
